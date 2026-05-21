@@ -1163,12 +1163,16 @@ img { max-width: 100%; display: block; }
   text-transform: uppercase;
 }
 
-/* Quando si incolla l'iframe SnapWidget/Lightwidget al posto dei placeholder */
+/* Quando l'iframe Lightwidget e' presente, occupa tutta la grid */
+.ig-grid {
+  display: block;
+}
+
 .ig-grid iframe {
-  grid-column: 1 / -1;
-  width: 100%;
-  border: 0;
-  aspect-ratio: 3 / 1;
+  width: 100% !important;
+  border: 0 !important;
+  min-height: 480px;
+  aspect-ratio: 3 / 2;
 }
 
 /* BIG CTA — Telegram & WhatsApp in evidenza */
