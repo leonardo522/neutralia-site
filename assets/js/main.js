@@ -134,18 +134,10 @@ async function loadInstagramFeed() {
 loadInstagramFeed();
 
 // ============================================
-// LANGUAGE SWITCHER — Google Translate
+// LANGUAGE SWITCHER
+// I link sono diretti alle versioni tradotte (en/, fr/, es/, de/).
+// Nessun JS necessario: comportamento <a href> standard.
 // ============================================
-document.querySelectorAll('.lang-switcher a[data-lang]').forEach(link => {
-  link.addEventListener('click', (e) => {
-    e.preventDefault();
-    const lang = link.dataset.lang;
-    const currentUrl = window.location.href.split('#')[0];
-    // Google Translate URL: traduce in nuova tab la pagina corrente
-    const translateUrl = `https://translate.google.com/translate?sl=it&tl=${lang}&u=${encodeURIComponent(currentUrl)}`;
-    window.open(translateUrl, '_blank', 'noopener');
-  });
-});
 
 // ============================================
 // NEWSLETTER FORM (sezione prima del footer)

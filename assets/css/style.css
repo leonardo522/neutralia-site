@@ -137,6 +137,13 @@ img { max-width: 100%; display: block; }
   border-color: var(--giallo);
 }
 
+.lang-switcher a.lang-current {
+  color: var(--giallo);
+  border-color: var(--giallo);
+  background: rgba(239, 232, 71, 0.1);
+  pointer-events: none;
+}
+
 .nav-cta:hover {
   background: transparent;
   color: var(--giallo);
