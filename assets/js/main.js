@@ -85,7 +85,7 @@ document.addEventListener('keydown', (e) => {
 // Quando crei il feed su https://behold.so, ti viene generato un URL pubblico
 // tipo: https://feeds.behold.so/XXXXXXXXX
 // Sostituisci qui sotto. Lascia stringa vuota per usare solo il fallback statico.
-const BEHOLD_FEED_URL = '';
+const BEHOLD_FEED_URL = 'https://feeds.behold.so/b1nAJf39h8WrQslhIhzg';
 
 async function loadInstagramFeed() {
   const grid = document.getElementById('ig-feed');
