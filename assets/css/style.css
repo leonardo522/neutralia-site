@@ -908,6 +908,452 @@ img { max-width: 100%; display: block; }
 }
 
 /* ============================================
+   NAV "Firma" — evidenziato nel nav
+   ============================================ */
+.nav-links a.nav-firma {
+  color: var(--giallo);
+  font-weight: 700;
+}
+
+.nav-links a.nav-firma::before {
+  content: '● ';
+  color: var(--giallo);
+}
+
+/* ============================================
+   FIRMA BAND — CTA Iniziativa Legislativa Popolare
+   ============================================ */
+.firma-band {
+  background: var(--giallo);
+  color: var(--nero);
+  padding: 5rem 0;
+  border-top: 4px solid var(--nero);
+  border-bottom: 4px solid var(--nero);
+}
+
+.firma-band-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 3rem;
+  align-items: center;
+}
+
+.firma-band-eyebrow {
+  font-family: var(--sans);
+  font-weight: 700;
+  font-size: 0.78rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+  opacity: 0.85;
+}
+
+.firma-band h2 {
+  font-family: var(--sans);
+  font-weight: 900;
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  letter-spacing: 0.02em;
+  line-height: 1;
+  margin-bottom: 1.2rem;
+  text-transform: uppercase;
+}
+
+.firma-band-lead {
+  font-family: var(--serif);
+  font-size: 1.15rem;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+}
+
+.firma-band-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.firma-band-counter {
+  text-align: center;
+  border: 4px solid var(--nero);
+  padding: 2rem 1.5rem;
+  background: rgba(0, 0, 0, 0.04);
+}
+
+.firma-band-counter-label {
+  font-family: var(--sans);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+.firma-band-counter-number {
+  font-family: var(--sans);
+  font-weight: 900;
+  font-size: clamp(3rem, 8vw, 5.5rem);
+  line-height: 1;
+  letter-spacing: 0.02em;
+  margin: 0.5rem 0;
+}
+
+.firma-band-counter-sub {
+  font-family: var(--serif);
+  font-size: 0.95rem;
+  font-style: italic;
+}
+
+.btn-large {
+  padding: 1.2rem 2.5rem;
+  font-size: 1rem;
+}
+
+/* ============================================
+   FIRMA PAGE — pagina dedicata /firma.html
+   ============================================ */
+.firma-page .appro-header { text-align: center; }
+.firma-page .appro-back { display: inline-block; }
+
+.firma-cta-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.25rem;
+  margin: 3rem 0 4rem;
+}
+
+.firma-cta-big {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2.5rem 1.5rem;
+  text-decoration: none;
+  text-align: center;
+  border: 3px solid var(--nero);
+  transition: all 0.3s ease;
+  background: var(--bianco);
+  color: var(--nero);
+}
+
+.firma-cta-big:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+}
+
+.firma-cta-primary {
+  background: var(--giallo);
+}
+
+.firma-cta-primary:hover {
+  background: var(--nero);
+  color: var(--giallo);
+  border-color: var(--giallo);
+}
+
+.firma-cta-dona:hover {
+  background: var(--nero);
+  color: var(--bianco);
+}
+
+.firma-cta-banchetto:hover {
+  background: var(--giallo);
+}
+
+.firma-cta-icon {
+  font-size: 2.4rem;
+  margin-bottom: 0.8rem;
+  line-height: 1;
+}
+
+.firma-cta-label {
+  font-family: var(--sans);
+  font-weight: 900;
+  font-size: 1.15rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  margin-bottom: 0.3rem;
+}
+
+.firma-cta-sub {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 0.95rem;
+  opacity: 0.8;
+}
+
+.firma-stato-box {
+  background: rgba(239, 232, 71, 0.12);
+  border-left: 4px solid var(--giallo);
+  padding: 1.5rem 2rem;
+  margin: 2rem 0;
+}
+
+.firma-stato-eyebrow {
+  font-family: var(--sans);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--grigio-medio);
+  margin-bottom: 0.8rem;
+}
+
+.firma-stato-text {
+  font-family: var(--serif);
+  font-size: 1.05rem;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+/* Tabella Comitato / Costituzionalisti */
+.comitato-table {
+  border: 2px solid var(--nero);
+  margin: 1.5rem 0 2rem;
+  font-family: var(--serif);
+}
+
+.comitato-row {
+  display: grid;
+  grid-template-columns: 1.2fr 2fr 0.8fr;
+  gap: 1rem;
+  padding: 1rem 1.25rem;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  align-items: center;
+}
+
+.comitato-row:last-child { border-bottom: none; }
+
+.comitato-head {
+  background: var(--nero);
+  color: var(--giallo);
+  font-family: var(--sans);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+.comitato-row > span:first-child {
+  font-weight: 600;
+}
+
+.status-pending {
+  font-family: var(--sans);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--grigio-medio);
+}
+
+.status-pending::before {
+  content: '◯ ';
+  color: var(--grigio-medio);
+}
+
+.status-accepted {
+  color: #2e7d32;
+}
+
+.status-accepted::before {
+  content: '✓ ';
+  color: #2e7d32;
+}
+
+.status-declined {
+  color: #c62828;
+}
+
+.status-declined::before {
+  content: '✗ ';
+  color: #c62828;
+}
+
+/* Dettagli lettera (collassabile) */
+.lettera-details {
+  margin: 2rem 0 3rem;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  background: rgba(0, 0, 0, 0.02);
+}
+
+.lettera-details summary {
+  font-family: var(--sans);
+  font-size: 0.9rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 1rem 1.5rem;
+  cursor: pointer;
+  list-style: none;
+  background: var(--giallo);
+  color: var(--nero);
+  border-bottom: 1px solid var(--nero);
+}
+
+.lettera-details summary::-webkit-details-marker { display: none; }
+.lettera-details summary::before { content: '📩  '; }
+.lettera-details[open] summary::before { content: '📩  '; }
+
+.lettera-content {
+  padding: 2rem;
+  font-family: var(--serif);
+  font-size: 1rem;
+  line-height: 1.65;
+}
+
+.lettera-content p { margin-bottom: 1rem; }
+
+/* Documenti scaricabili */
+.documenti-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.25rem;
+  margin: 2rem 0 3rem;
+}
+
+.doc-card {
+  display: flex;
+  flex-direction: column;
+  padding: 1.75rem;
+  text-decoration: none;
+  border: 2px solid var(--nero);
+  background: var(--bianco);
+  color: var(--nero);
+  transition: all 0.3s ease;
+}
+
+.doc-card:hover {
+  background: var(--giallo);
+  transform: translateY(-3px);
+}
+
+.doc-icon {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  line-height: 1;
+}
+
+.doc-card h3 {
+  font-family: var(--sans);
+  font-weight: 900;
+  font-size: 1.05rem;
+  letter-spacing: 0.02em;
+  line-height: 1.3;
+  margin-bottom: 0.6rem;
+  text-transform: uppercase;
+  border-left: none;
+  padding-left: 0;
+}
+
+.doc-card p {
+  font-size: 0.95rem;
+  line-height: 1.5;
+  margin-bottom: 1.2rem;
+  flex-grow: 1;
+}
+
+.doc-link {
+  font-family: var(--sans);
+  font-weight: 700;
+  font-size: 0.78rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  border-bottom: 2px solid currentColor;
+  padding-bottom: 2px;
+  align-self: flex-start;
+}
+
+.firma-footer-note {
+  margin-top: 2rem;
+  font-family: var(--serif);
+  font-size: 0.95rem;
+  line-height: 1.7;
+  color: var(--grigio-medio);
+}
+
+.testo-legge-footer-note {
+  margin-top: 3rem;
+  padding-top: 2rem;
+  border-top: 2px solid rgba(0, 0, 0, 0.1);
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: var(--grigio-medio);
+}
+
+/* ============================================
+   AI4PEACE BAND — sezione accademica
+   ============================================ */
+.ai4peace-band {
+  background: var(--nero);
+  color: var(--bianco);
+  padding: 5rem 0;
+  border-top: 4px solid var(--giallo);
+}
+
+.ai4peace-grid {
+  display: grid;
+  grid-template-columns: 2.5fr 1fr;
+  gap: 3rem;
+  align-items: center;
+}
+
+.ai4peace-eyebrow {
+  font-family: var(--sans);
+  font-weight: 700;
+  font-size: 0.75rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--giallo);
+  margin-bottom: 1rem;
+}
+
+.ai4peace-band h2 {
+  font-family: var(--sans);
+  font-weight: 900;
+  font-size: clamp(1.8rem, 4vw, 2.6rem);
+  letter-spacing: 0.02em;
+  line-height: 1.15;
+  margin-bottom: 1.5rem;
+  text-transform: uppercase;
+}
+
+.ai4peace-band h2 em {
+  font-family: var(--serif);
+  font-style: italic;
+  font-weight: 500;
+  text-transform: none;
+  color: var(--giallo);
+}
+
+.ai4peace-text p {
+  font-family: var(--serif);
+  font-size: 1.05rem;
+  line-height: 1.7;
+  margin-bottom: 1.2rem;
+  opacity: 0.92;
+}
+
+.ai4peace-text p em {
+  color: var(--giallo);
+  font-style: italic;
+}
+
+.ai4peace-text .btn {
+  margin-top: 0.5rem;
+}
+
+.ai4peace-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ai4peace-icon svg {
+  width: 100%;
+  max-width: 220px;
+  height: auto;
+}
+
+/* ============================================
    NEWSLETTER BAND — prima del footer
    ============================================ */
 .newsletter-band {
@@ -1701,6 +2147,35 @@ img { max-width: 100%; display: block; }
     gap: 1.5rem;
     text-align: center;
   }
+
+  .firma-band-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    text-align: center;
+  }
+
+  .firma-band-actions {
+    justify-content: center;
+  }
+
+  .ai4peace-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    text-align: center;
+  }
+
+  .ai4peace-icon { order: -1; }
+  .ai4peace-icon svg { max-width: 140px; }
+
+  .comitato-row {
+    grid-template-columns: 1fr;
+    gap: 0.3rem;
+  }
+
+  .comitato-head { display: none; }
+
+  .comitato-row > span:first-child { font-size: 1.05rem; }
+  .comitato-row > span:nth-child(2) { font-size: 0.9rem; color: var(--grigio-medio); }
 }
 
 @media (prefers-reduced-motion: reduce) {
