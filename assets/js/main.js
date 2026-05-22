@@ -80,45 +80,25 @@ document.addEventListener('keydown', (e) => {
 });
 
 // ============================================
-// INSTAGRAM FEED — Behold.so
+// INSTAGRAM FEED — JSON locale aggiornato dalla GitHub Action
+// .github/workflows/instagram-feed.yml ogni 6 ore:
+// 1) chiama Behold (https://feeds.behold.so/...)
+// 2) scarica le thumbnail in assets/img/instagram/
+// 3) riscrive assets/data/instagram.json con URL locali
+// Risultato: le immagini non scadono mai (Instagram CDN scade dopo ~6 giorni).
 // ============================================
-// Quando crei il feed su https://behold.so, ti viene generato un URL pubblico
-// tipo: https://feeds.behold.so/XXXXXXXXX
-// Sostituisci qui sotto. Lascia stringa vuota per usare solo il fallback statico.
-const BEHOLD_FEED_URL = 'https://feeds.behold.so/b1nAJf39h8WrQslhIhzg';
-
 async function loadInstagramFeed() {
   const grid = document.getElementById('ig-feed');
   if (!grid) return;
 
-  let posts = null;
+  let posts;
   try {
-    if (BEHOLD_FEED_URL) {
-      const res = await fetch(BEHOLD_FEED_URL);
-      if (res.ok) {
-        const data = await res.json();
-        posts = (data.posts || []).slice(0, 6).map(p => ({
-          permalink: p.permalink,
-          thumbnailUrl: p.thumbnailUrl || p.mediaUrl,
-          mediaType: p.mediaType,
-          isReel: p.isReel,
-          captionShort: (p.caption || '').split('.')[0].slice(0, 80)
-        }));
-      }
-    }
+    const res = await fetch('assets/data/instagram.json', { cache: 'no-cache' });
+    const data = await res.json();
+    posts = data.posts;
   } catch (err) {
-    console.warn('Behold fetch failed, using fallback:', err);
-  }
-
-  if (!posts) {
-    try {
-      const res = await fetch('assets/data/instagram.json');
-      const data = await res.json();
-      posts = data.posts;
-    } catch (err) {
-      console.error('Instagram fallback failed:', err);
-      return;
-    }
+    console.error('Instagram feed load failed:', err);
+    return;
   }
 
   grid.innerHTML = posts.map(p => `

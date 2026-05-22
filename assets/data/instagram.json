@@ -1,38 +1,41 @@
 {
-  "_comment": "Fallback statico dei post Instagram. Aggiornato manualmente. Per fetch live, configura BEHOLD_FEED_URL in assets/js/main.js",
+  "_comment": "Generato automaticamente da .github/workflows/instagram-feed.yml ogni 6 ore. Non modificare a mano.",
+  "updatedFrom": "2026-05-20T18:53:41+0000",
   "posts": [
     {
       "permalink": "https://www.instagram.com/reel/DYkjRWMx4nm/",
-      "thumbnailUrl": "https://scontent-sof1-1.cdninstagram.com/v/t51.71878-15/670431334_2533688250423277_1200734608656609208_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=106&ccb=7-5&_nc_sid=18de74&_nc_ohc=cH5Y2yYAjGEQ7kNvwEr7OzL&_nc_zt=23&_nc_ht=scontent-sof1-1.cdninstagram.com&edm=ANo9K5cEAAAA&oh=00_Af6gaVw5pizofvd1TBBmgj8e9JsFQdrCA7StMAZPOw6aeQ&oe=6A156E19",
+      "thumbnailUrl": "assets/img/instagram/1.jpg",
       "mediaType": "VIDEO",
       "isReel": true,
-      "captionShort": "Aspen Institute Italia — il club che produce i Presidenti"
+      "captionShort": "Aspen Institute Italia (USA) — il club che produce i Presidenti, quasi mai trattato come lobby nei media mainstream perc…"
     },
     {
       "permalink": "https://www.instagram.com/p/DYfGKW9jG1h/",
-      "thumbnailUrl": "https://scontent-sof1-1.cdninstagram.com/v/t51.82787-15/703032057_17863445940628691_7668689126323958189_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=104&ccb=7-5&_nc_sid=18de74&_nc_ohc=DHg-z7ijYdsQ7kNvwGQHYni&_nc_zt=23&_nc_ht=scontent-sof1-1.cdninstagram.com&edm=ANo9K5cEAAAA&oh=00_Af758Sy3fbuJxDawVwkmIlrCc0moWN5XB-2uyKpZALyyFA&oe=6A155B33",
+      "thumbnailUrl": "assets/img/instagram/2.jpg",
       "mediaType": "CAROUSEL_ALBUM",
-      "captionShort": "La legge spazza-corrotti e il comma 28-bis"
+      "isReel": false,
+      "captionShort": "Il 9 gennaio 2019 la legge “spazza-corrotti” vieta ai partiti italiani di ricevere fondi dall’estero, ed estende il divi…"
     },
     {
       "permalink": "https://www.instagram.com/reel/DYWyxP-sTYX/",
-      "thumbnailUrl": "https://scontent-sof1-2.cdninstagram.com/v/t51.71878-15/692356810_1354843503186696_6442067379131563094_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=107&ccb=7-5&_nc_sid=18de74&_nc_ohc=lyLcc2pEsMoQ7kNvwFDYvK_&_nc_zt=23&_nc_ht=scontent-sof1-2.cdninstagram.com&edm=ANo9K5cEAAAA&oh=00_Af44ZHZsRwkIQgxHNDHONGvXrv6btDwJmixvIUUw1uHm1g&oe=6A155093",
+      "thumbnailUrl": "assets/img/instagram/3.jpg",
       "mediaType": "VIDEO",
       "isReel": true,
-      "captionShort": "Cittadini italiani picchiati: la sovranità formale e quella sostanziale"
+      "captionShort": "Cittadini italiani vengono picchiati dai coloni e sequestrati in acque internazionali e il governo italiano si limita a…"
     },
     {
       "permalink": "https://www.instagram.com/reel/DYRslXesmXI/",
-      "thumbnailUrl": "https://scontent-sof1-2.cdninstagram.com/v/t51.71878-15/692512782_2044806832734966_835233198454938170_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=107&ccb=7-5&_nc_sid=18de74&_nc_ohc=v2i3vgX1zXkQ7kNvwGtB5kI&_nc_zt=23&_nc_ht=scontent-sof1-2.cdninstagram.com&edm=ANo9K5cEAAAA&oh=00_Af6mQ6321KEXpH7K0mBeBA5_tzS3vtHlvhism49hgzwBWQ&oe=6A1559C4",
+      "thumbnailUrl": "assets/img/instagram/4.jpg",
       "mediaType": "VIDEO",
       "isReel": true,
-      "captionShort": "Mattei, La Pira, Moro: tre visioni di un'Italia sovrana"
+      "captionShort": "C’era un’Italia che trattava con tutti"
     },
     {
       "permalink": "https://www.instagram.com/p/DYPCjSwjKAI/",
-      "thumbnailUrl": "https://scontent-sof1-1.cdninstagram.com/v/t51.82787-15/692533767_17862638010628691_2981052400404426579_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=106&ccb=7-5&_nc_sid=18de74&_nc_ohc=PiQlKIz_n7wQ7kNvwE9J-5c&_nc_zt=23&_nc_ht=scontent-sof1-1.cdninstagram.com&edm=ANo9K5cEAAAA&oh=00_Af73-oFurRJZTmlio6vNuXMbBlx_iQsBks-F_txMZYnEsw&oe=6A15452D",
+      "thumbnailUrl": "assets/img/instagram/5.jpg",
       "mediaType": "CAROUSEL_ALBUM",
-      "captionShort": "Sovranità non è una parola di destra"
+      "isReel": false,
+      "captionShort": "Sovranità è la capacità di un popolo di decidere di sé"
     },
     {
       "permalink": "https://www.instagram.com/_neutralia_/",
