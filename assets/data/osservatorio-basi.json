@@ -483,6 +483,210 @@
       "problemi_sanitari": [],
       "conflitti": ["libia-2011", "siria-2014"],
       "fonti": ["Aeronautica Militare — sito ufficiale"]
+    },
+    {
+      "id": "gaeta",
+      "nome": "Base navale di Gaeta — USS Mount Whitney",
+      "lat": 41.2103,
+      "lon": 13.5708,
+      "regione": "Lazio",
+      "comune": "Gaeta (LT)",
+      "tipo": "Base navale USA — nave ammiraglia 6ª Flotta",
+      "gestione": "US Navy — Commander, U.S. Sixth Fleet (COMSIXTHFLT)",
+      "funzione": "Porto di base della USS Mount Whitney (LCC-20), nave da comando e controllo (command ship) della 6ª Flotta della US Navy. Dal 1967 Gaeta ospita stabilmente l'ammiraglia della flotta USA nel Mediterraneo: a bordo viene esercitato il comando delle operazioni navali statunitensi nel teatro mediterraneo, baltico e africano. Una porzione del porto cittadino è di fatto sottratta all'uso civile.",
+      "estensione_ha": 15,
+      "armamento": [
+        "USS Mount Whitney (LCC-20) — nave da comando, dotata di sistemi di comunicazione satellitare strategica, sistemi di guerra elettronica e centro operazioni della 6ª Flotta",
+        "Personale USA permanente a Gaeta: ~600 militari e famiglie"
+      ],
+      "problemi_ambientali": [
+        "Trasformazione di una parte del porto storico in zona militare USA",
+        "Episodi di inquinamento nelle acque portuali documentati nel tempo"
+      ],
+      "problemi_sanitari": [],
+      "conflitti": ["libia-2011", "siria-2014"],
+      "fonti": [
+        "US Navy — sito ufficiale COMSIXTHFLT",
+        "Pax Christi Italia — dossier basi USA nel Lazio",
+        "Incidente USS Belknap (1975, collisione con USS John F. Kennedy nel Mediterraneo): 8 morti USA, alimenti narrativa controversa sulla 6ª Flotta"
+      ]
+    },
+    {
+      "id": "poggio-renatico",
+      "nome": "Comando Operazioni Aeree — Poggio Renatico",
+      "lat": 44.7647,
+      "lon": 11.4783,
+      "regione": "Emilia-Romagna",
+      "comune": "Poggio Renatico (FE)",
+      "tipo": "Comando aereo NATO + italiano (DACCC)",
+      "gestione": "Aeronautica Militare Italiana + NATO — Deployable Air Command and Control Centre (DACCC)",
+      "funzione": "Una delle 2 sedi NATO di Deployable Air Command and Control Centre al mondo (l'altra è in Germania, Uedem). Da Poggio Renatico viene coordinato il comando e controllo delle operazioni aeree NATO nel teatro mediterraneo-balcanico-mediorientale. Ospita anche il Comando Operazioni Aeree (COA) dell'Aeronautica Militare Italiana.",
+      "estensione_ha": 200,
+      "armamento": [
+        "Centri di comando, sale operative, sistemi di comunicazione e tracking",
+        "Personale NATO multinazionale"
+      ],
+      "problemi_ambientali": [],
+      "problemi_sanitari": [],
+      "conflitti": ["libia-2011", "siria-2014"],
+      "fonti": [
+        "NATO — sito ufficiale Deployable Air Command and Control Centre",
+        "Aeronautica Militare — Comando Operazioni Aeree"
+      ]
+    },
+    {
+      "id": "gioia-del-colle",
+      "nome": "Base aerea di Gioia del Colle",
+      "lat": 40.7681,
+      "lon": 16.9333,
+      "regione": "Puglia",
+      "comune": "Gioia del Colle (BA)",
+      "tipo": "Base aerea italiana — supporto NATO/USA",
+      "gestione": "Aeronautica Militare Italiana (36° Stormo)",
+      "funzione": "Una delle principali basi caccia italiane. Sede del 36° Stormo «Helmuth Seidl» con Eurofighter Typhoon. Da qui partono le missioni di polizia aerea NATO (anche in Lituania ed Estonia), i pattugliamenti del Mediterraneo, i raid in Libia (2011), Iraq e Siria. Aperta agli aerei NATO in transito.",
+      "estensione_ha": 400,
+      "armamento": [
+        "Eurofighter Typhoon",
+        "F-35A in arrivo nel piano di transizione AM"
+      ],
+      "problemi_ambientali": [
+        "Inquinamento acustico nei comuni della Murgia",
+        "Bonifica residuati bellici in corso da anni"
+      ],
+      "problemi_sanitari": [],
+      "conflitti": ["libia-2011", "iraq-2003", "siria-2014"],
+      "fonti": [
+        "Aeronautica Militare — 36° Stormo",
+        "Atti delle missioni italiane in Libia, Iraq e Siria"
+      ]
+    },
+    {
+      "id": "brindisi",
+      "nome": "Base navale e aerea di Brindisi + UN Logistics Base",
+      "lat": 40.6543,
+      "lon": 17.9460,
+      "regione": "Puglia",
+      "comune": "Brindisi",
+      "tipo": "Base navale + base aerea + hub logistico NATO/ONU",
+      "gestione": "Marina Militare Italiana + Aeronautica Militare + ONU (Brindisi UNLB) + NATO Support and Procurement Agency (NSPA)",
+      "funzione": "Hub logistico multiplo: 1) Base navale italiana storica (Stazione Navale Vittoria); 2) Aeroporto militare-civile Brindisi-Casale; 3) UN Logistics Base (UNLB), uno dei principali hub mondiali ONU per le operazioni di peacekeeping (depositi, formazione, dispacciamento personale); 4) Hub NSPA per la NATO. Da Brindisi sono passate le forniture per Kosovo 1999, Albania (operazione Alba), Libia 2011, Iraq, Afghanistan.",
+      "estensione_ha": 380,
+      "armamento": [
+        "Unità Marina Militare",
+        "Velivoli da trasporto strategico (C-130J)",
+        "Magazzini logistici NATO/ONU"
+      ],
+      "problemi_ambientali": [
+        "Brindisi è un'area di Interesse Nazionale (SIN) per le bonifiche, contaminazione storica del petrolchimico — la base militare insiste su porzione del territorio inquinato"
+      ],
+      "problemi_sanitari": [
+        "Cluster di malattie correlate al petrolchimico Brindisi (rapporti ISS — SENTIERI)"
+      ],
+      "conflitti": ["kosovo-1999", "libia-2011", "iraq-2003", "afghanistan-2001"],
+      "fonti": [
+        "UN Department of Operational Support — Logistics Base Brindisi (un.org)",
+        "Marina Militare — Stazione Navale Vittoria",
+        "ISS — Progetto SENTIERI, SIN Brindisi"
+      ]
+    },
+    {
+      "id": "nato-defense-college",
+      "nome": "NATO Defense College — Roma",
+      "lat": 41.8181,
+      "lon": 12.4853,
+      "regione": "Lazio",
+      "comune": "Roma — Cecchignola",
+      "tipo": "Istituzione formativa NATO (alti comandanti)",
+      "gestione": "NATO — direzione internazionale, gerarchia che ruota tra paesi membri",
+      "funzione": "Istituto NATO di formazione strategica per ufficiali e funzionari civili di rango superiore, fondato nel 1951 su proposta del Generale Dwight D. Eisenhower (primo SACEUR). Trasferito a Roma (Cecchignola) nel 1966 quando la Francia uscì dalla struttura militare NATO. Forma la cultura strategica della classe dirigente militare e diplomatica alleata: i Senior Course producono molti dei futuri capi di stato maggiore.",
+      "estensione_ha": 10,
+      "armamento": [],
+      "problemi_ambientali": [],
+      "problemi_sanitari": [],
+      "conflitti": [],
+      "fonti": [
+        "NATO Defense College — sito ufficiale (ndc.nato.int)",
+        "Daniele Ganser — letteratura sulla formazione delle élite militari NATO"
+      ]
+    },
+    {
+      "id": "cmre-la-spezia",
+      "nome": "NATO Centre for Maritime Research and Experimentation (CMRE)",
+      "lat": 44.0966,
+      "lon": 9.8633,
+      "regione": "Liguria",
+      "comune": "La Spezia",
+      "tipo": "Centro di ricerca NATO (sub & sistemi marini)",
+      "gestione": "NATO Science and Technology Organization — STO/CMRE",
+      "funzione": "Centro di ricerca scientifica della NATO sui sistemi marini, sensoristica subacquea, sonar, guerra antisommergibile (ASW), veicoli autonomi marini. Erede del SACLANT Undersea Research Centre fondato negli anni '50. Personale internazionale, gestione NATO. Lavora con le marine alleate sullo sviluppo delle tecnologie sottomarine.",
+      "estensione_ha": 8,
+      "armamento": [
+        "Laboratori di ricerca subacquea",
+        "Nave da ricerca NRV Alliance"
+      ],
+      "problemi_ambientali": [
+        "Test di sonar attivi in Mediterraneo con impatto documentato su cetacei e fauna marina (letteratura biologia marina)"
+      ],
+      "problemi_sanitari": [],
+      "conflitti": [],
+      "fonti": [
+        "CMRE — sito ufficiale (cmre.nato.int)",
+        "NATO STO — Science and Technology Organization"
+      ]
+    },
+    {
+      "id": "motta-livenza-cimic",
+      "nome": "Multinational CIMIC Group — Motta di Livenza",
+      "lat": 45.7833,
+      "lon": 12.6167,
+      "regione": "Veneto",
+      "comune": "Motta di Livenza (TV)",
+      "tipo": "Comando multinazionale NATO (CIMIC)",
+      "gestione": "NATO — Multinational CIMIC Group, framework nation Italia",
+      "funzione": "Sede del Multinational CIMIC Group, uno dei tre CIMIC Group della NATO. CIMIC = Civil-Military Cooperation: coordina l'interazione tra forze armate alleate e popolazione civile nei teatri di operazioni (Afghanistan, Iraq, Kosovo, Mali). Personale italiano e da una dozzina di altre nazioni NATO. Strumento controverso perché istituzionalizza la commistione fra azione militare e umanitaria.",
+      "estensione_ha": 25,
+      "armamento": [],
+      "problemi_ambientali": [],
+      "problemi_sanitari": [],
+      "conflitti": ["afghanistan-2001", "iraq-2003", "kosovo-1999", "libia-2011"],
+      "fonti": [
+        "Multinational CIMIC Group — sito ufficiale (cimicgroup.org)",
+        "NATO — CIMIC doctrine AJP-3.4.9"
+      ]
+    },
+    {
+      "id": "crotone-radar",
+      "nome": "Stazione radar di Crotone",
+      "lat": 39.0967,
+      "lon": 17.0817,
+      "regione": "Calabria",
+      "comune": "Crotone",
+      "tipo": "Stazione radar — copertura Mediterraneo centrale",
+      "gestione": "Aeronautica Militare Italiana — uso NATO",
+      "funzione": "Sito radar di sorveglianza dello spazio aereo del Mediterraneo centrale, inserito nel sistema di difesa aerea NATO (NATINAMDS). Contribuisce alla copertura del Canale d'Otranto e del Mar Ionio. Personale e gestione italiani.",
+      "estensione_ha": 10,
+      "armamento": ["Radar a lungo raggio per sorveglianza aerea"],
+      "problemi_ambientali": [],
+      "problemi_sanitari": [],
+      "conflitti": [],
+      "fonti": ["Aeronautica Militare — Comando Aeronautico"]
+    },
+    {
+      "id": "sellia-marina-radar",
+      "nome": "Stazione radar di Sellia Marina",
+      "lat": 38.8533,
+      "lon": 16.7300,
+      "regione": "Calabria",
+      "comune": "Sellia Marina (CZ)",
+      "tipo": "Stazione radar — copertura Adriatico meridionale e Ionio",
+      "gestione": "Aeronautica Militare Italiana — uso NATO",
+      "funzione": "Sito radar dell'Aeronautica Militare per la sorveglianza dello spazio aereo del basso Adriatico e del Mar Ionio, integrato nel sistema NATO di difesa aerea (NATINAMDS).",
+      "estensione_ha": 8,
+      "armamento": ["Radar a lungo raggio per sorveglianza aerea"],
+      "problemi_ambientali": [],
+      "problemi_sanitari": [],
+      "conflitti": [],
+      "fonti": ["Aeronautica Militare — Comando Aeronautico"]
     }
   ]
 }
