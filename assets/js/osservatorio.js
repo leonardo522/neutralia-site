@@ -357,9 +357,12 @@
     const mappaEl = document.getElementById('mappa');
     function aggiornaScalaZoom() {
       const z = mappa.getZoom();
-      const tier = z <= 6 ? 'low' : (z <= 7 ? 'med' : 'high');
+      let tier, baseR;
+      if (z <= 6)      { tier = 'low';  baseR = 3.5; }
+      else if (z <= 7) { tier = 'med';  baseR = 5.2; }
+      else if (z <= 8) { tier = 'high'; baseR = 7;   }
+      else             { tier = 'max';  baseR = 9.5; }
       mappaEl.setAttribute('data-zoom-tier', tier);
-      const baseR = z <= 6 ? 3.5 : (z <= 7 ? 5.2 : 7);
       layers.basi.eachLayer(l => {
         if (l instanceof L.CircleMarker && l.options.className && l.options.className.includes('osv-dot-base')) {
           l.setRadius(baseR);
