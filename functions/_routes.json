@@ -1,0 +1,6 @@
+{
+  "version": 1,
+  "description": "Routing esplicito per Cloudflare Pages Functions: /api/* gestito dalle functions in /functions/api/, tutto il resto servito come statico.",
+  "include": ["/api/*"],
+  "exclude": []
+}
