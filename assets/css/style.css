@@ -2399,36 +2399,110 @@ body.page-osservatorio {
   transform: scale(1.22);
 }
 
-/* POPUP */
-.leaflet-popup-content-wrapper.osv-popup,
+/* POPUP — modale centrato a schermo (desktop + mobile)
+   Indipendente dalla posizione del marker, sempre leggibile. */
+
+/* Backdrop scuro quando un popup è aperto */
+body.mappa-popup-open::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.65);
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
+  z-index: 998;
+  pointer-events: none;
+  opacity: 0;
+  animation: osv-backdrop-fade 0.2s forwards;
+}
+
+@keyframes osv-backdrop-fade {
+  to { opacity: 1; }
+}
+
+/* Sovrascrive completamente il posizionamento Leaflet per i popup mappa */
+.leaflet-popup.osv-popup,
+#mappa .leaflet-popup {
+  position: fixed !important;
+  top: 50% !important;
+  left: 50% !important;
+  bottom: auto !important;
+  right: auto !important;
+  transform: translate(-50%, -50%) !important;
+  margin: 0 !important;
+  width: min(540px, 92vw) !important;
+  max-width: 92vw !important;
+  z-index: 1000 !important;
+}
+
 .osv-popup .leaflet-popup-content-wrapper {
   background: #0d0d0d;
   color: var(--bianco);
   border: 1px solid var(--giallo);
-  border-radius: 4px;
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.8);
+  border-radius: 6px;
+  box-shadow: 0 16px 60px rgba(0, 0, 0, 0.85);
   padding: 0;
+  width: 100% !important;
 }
 
 .osv-popup .leaflet-popup-content {
   margin: 0;
-  padding: 1.1rem 1.25rem;
+  padding: 1.4rem 1.5rem 1.2rem;
   font-family: var(--serif);
   font-size: 0.95rem;
-  line-height: 1.45;
-  max-height: 65vh;
+  line-height: 1.5;
+  max-height: 78vh;
   overflow-y: auto;
+  width: 100% !important;
 }
 
-.osv-popup .leaflet-popup-tip {
-  background: #0d0d0d;
-  border: 1px solid var(--giallo);
+/* Niente freccetta: il popup è centrato, non collegato visivamente al marker */
+.osv-popup .leaflet-popup-tip-container,
+.osv-popup .leaflet-popup-tip,
+#mappa .leaflet-popup-tip-container {
+  display: none !important;
 }
 
-.osv-popup .leaflet-popup-close-button {
+.leaflet-popup.osv-popup .leaflet-popup-close-button {
+  position: absolute !important;
+  top: 4px !important;
+  right: 4px !important;
   color: var(--giallo) !important;
-  font-size: 22px !important;
-  padding: 6px 8px 0 0 !important;
+  font-size: 28px !important;
+  font-weight: 700 !important;
+  padding: 0 !important;
+  width: 40px !important;
+  height: 40px !important;
+  z-index: 10 !important;
+  line-height: 40px !important;
+  text-align: center !important;
+  text-decoration: none !important;
+  background: transparent;
+  border-radius: 4px;
+  transition: background 0.15s;
+}
+
+.leaflet-popup.osv-popup .leaflet-popup-close-button:hover {
+  background: rgba(239, 232, 71, 0.18) !important;
+  color: var(--giallo) !important;
+}
+
+/* Mobile tweaks: padding più stretto, font leggermente più piccolo */
+@media (max-width: 760px) {
+  .leaflet-popup.osv-popup,
+  #mappa .leaflet-popup {
+    width: 94vw !important;
+  }
+  .osv-popup .leaflet-popup-content {
+    max-height: 80vh;
+    padding: 1.2rem 1rem 1rem;
+    font-size: 0.92rem;
+  }
+  .osv-popup .leaflet-popup-close-button {
+    font-size: 32px !important;
+    width: 44px !important;
+    height: 44px !important;
+  }
 }
 
 .popup-eyebrow {
@@ -2446,6 +2520,13 @@ body.page-osservatorio {
 .popup-eyebrow-produzione { color: #ff8a00; border-color: #ff8a00; }
 .popup-eyebrow-porto      { color: var(--giallo); border-color: var(--giallo); }
 .popup-eyebrow-conflitto  { color: #c8c8c8; border-color: #c8c8c8; }
+.popup-eyebrow-incidente  { color: #ffffff; border-color: #ffffff; }
+
+.popup-stat-rosso {
+  background: rgba(255, 42, 42, 0.15) !important;
+  border-left-color: #ff2a2a !important;
+}
+.popup-stat-rosso strong { color: #ff6a6a !important; }
 
 .popup h3 {
   font-family: var(--sans);
@@ -2695,6 +2776,7 @@ body.page-osservatorio {
 .legenda-svg svg { width: 100%; height: 100%; display: block; }
 .legenda-svg-prod  { color: #ff8a00; }
 .legenda-svg-porto { color: var(--giallo); }
+.legenda-svg-inc   { color: #ffffff; }
 
 .dot-area {
   flex: 0 0 22px;

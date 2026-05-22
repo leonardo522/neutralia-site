@@ -1,0 +1,57 @@
+{
+  "categoria": "incidenti",
+  "descrizione": "Incidenti e casi documentati legati alla presenza militare USA / NATO sul suolo italiano. Vittime civili italiane causate o coperte dall'immunità giurisdizionale prevista dalla Convenzione di Londra del 1951 (SOFA — Status of Forces Agreement).",
+  "items": [
+    {
+      "id": "cermis-1998",
+      "nome": "Strage del Cermis",
+      "lat": 46.2867,
+      "lon": 11.4670,
+      "data": "3 febbraio 1998",
+      "regione": "Trentino-Alto Adige",
+      "comune": "Cavalese (TN)",
+      "vittime": 20,
+      "base_collegata": "aviano",
+      "sintesi": "Un aereo militare statunitense Grumman EA-6B Prowler del Corpo dei Marines USA, decollato dalla base di Aviano in volo di addestramento a bassa quota e in violazione dei regolamenti, taglia con un'ala il cavo portante della funivia del Cermis. La cabina precipita per 80 metri. Muoiono tutti e 20 i passeggeri (turisti tedeschi, polacchi, austriaci, belgi, olandesi, italiani).",
+      "esito_giudiziario": [
+        "La Convenzione di Londra del 1951 (SOFA — Status of Forces Agreement NATO) attribuisce la giurisdizione esclusiva agli Stati Uniti.",
+        "Il capitano Richard Ashby e il capitano Joseph Schweitzer sono assolti dall'accusa di omicidio colposo plurimo dalla corte marziale USA nel marzo 1999.",
+        "Vengono condannati solo per «ostruzione alla giustizia» per aver distrutto la videocassetta dell'incidente; congedo con disonore.",
+        "Nel 2012 Schweitzer confessa pubblicamente: «Ho bruciato la cassetta»."
+      ],
+      "risarcimenti": "Il Parlamento italiano stanzia inizialmente ~40 milioni di dollari per i risarcimenti, ma il Segretario alla Difesa USA respinge lo stanziamento. L'Italia paga interamente, gli USA rimborsano in un secondo momento il 75% in base agli obblighi NATO.",
+      "rilevanza": "Caso simbolo dell'impunità garantita dal SOFA ai militari USA in Italia: in caso di reati commessi nell'esercizio del servizio, l'Italia rinuncia automaticamente alla propria giurisdizione.",
+      "fonti": [
+        "Wikipedia, «Incidente della funivia del Cermis» (it.wikipedia.org/wiki/Incidente_della_funivia_del_Cermis)",
+        "Convenzione di Londra, 19 giugno 1951 (NATO SOFA), artt. VII",
+        "Atti del processo della Corte marziale USA, Camp Lejeune, marzo 1999",
+        "Commissione parlamentare di inchiesta sulla strage del Cermis (Camera dei deputati, XIII legislatura)"
+      ]
+    },
+    {
+      "id": "vicenza-violenze",
+      "nome": "Casi di violenze sessuali — soldati USA, Vicenza",
+      "lat": 45.5483,
+      "lon": 11.5471,
+      "data": "Casi ricorrenti documentati 2007-oggi",
+      "regione": "Veneto",
+      "comune": "Vicenza",
+      "vittime": null,
+      "base_collegata": "vicenza-ederle",
+      "sintesi": "Vicenza ospita la principale concentrazione di truppe USA da combattimento in Italia: la 173rd Airborne Brigade (Camp Ederle e Caserma Del Din). La stampa locale e nazionale ha documentato negli anni numerosi casi di violenza sessuale, aggressione e omicidio commessi da militari statunitensi stanziati nelle basi vicentine ai danni di civili italiani, in genere donne italiane.",
+      "esito_giudiziario": [
+        "La giurisdizione su reati commessi 'fuori servizio' resta in linea teorica italiana, ma in pratica il Comando USA può negoziare il trasferimento del militare negli Stati Uniti prima dell'esercizio dell'azione penale italiana.",
+        "Molti casi vengono archiviati per impossibilità di rintracciare l'imputato dopo il rientro negli USA.",
+        "Le associazioni cittadine vicentine («Presidio Permanente No Dal Molin», centri antiviolenza) denunciano da anni una sotto-rappresentazione mediatica e processuale del fenomeno."
+      ],
+      "risarcimenti": "Risarcimenti spesso non corrisposti per impossibilità di completare i procedimenti.",
+      "rilevanza": "La presenza di una base USA da combattimento nel cuore di una città italiana di 110.000 abitanti rende la convivenza con civili italiani un problema strutturale, non aneddotico.",
+      "fonti": [
+        "Today.it — «Soldati USA accusati di stupro a Vicenza» (today.it/citta/vicenza-soldati-usa-stupro.html)",
+        "Presidio Permanente No Dal Molin — archivio dei casi documentati 2007-oggi",
+        "Convenzione di Londra 1951 (NATO SOFA), art. VII §3 (giurisdizione concorrente)",
+        "Atti consiglio comunale Vicenza — interrogazioni 2017-2024"
+      ]
+    }
+  ]
+}

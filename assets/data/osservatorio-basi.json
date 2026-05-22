@@ -385,6 +385,39 @@
       ]
     },
     {
+      "id": "capo-marrargiu",
+      "nome": "Base militare di Capo Marrargiu (ex centro Gladio)",
+      "lat": 40.2547,
+      "lon": 8.4253,
+      "regione": "Sardegna",
+      "comune": "Bosa / Alghero (SS-OR)",
+      "tipo": "Centro Addestramento Guastatori (CAG) — base storica Gladio NATO",
+      "gestione": "Ministero della Difesa italiano (storicamente con coinvolgimento Servizi segreti e NATO Stay-Behind)",
+      "funzione": "Centro segreto di addestramento per Gladio, la rete clandestina italiana della Stay-Behind NATO, acquisito dal Ministero della Difesa nel 1954 e operativo a partire dal 1955-56. Per quasi quarant'anni vi sono stati addestrati i 'gladiatori' alla guerriglia, al sabotaggio e alla resistenza armata in caso di invasione sovietica. L'esistenza della rete fu rivelata pubblicamente dal Presidente del Consiglio Giulio Andreotti nel 1990. Il sito è ancora attivo come installazione militare.",
+      "estensione_ha": 100,
+      "armamento": [
+        "Storicamente: armi leggere, esplosivi, materiali per sabotaggio depositati nei NASCO (Nuclei di Armi Speciali di Communications Operations) sparsi sul territorio nazionale",
+        "Strutture per addestramento paracadutismo, esplosivi, comunicazioni"
+      ],
+      "problemi_ambientali": [
+        "100 ettari di costa nord-occidentale sarda di altissimo pregio paesaggistico interdetti all'uso civile",
+        "Inserimento nell'area UNESCO della costa sarda compromesso dalla presenza militare"
+      ],
+      "problemi_sanitari": [],
+      "conflitti": [],
+      "fatti_storici": [
+        "Secondo gli atti della Commissione parlamentare Stragi (presieduta da Giovanni Pellegrino), nel quadro del 'Piano Solo' del generale Giovanni De Lorenzo (1964), Capo Marrargiu sarebbe stato il luogo di deportazione di 731 oppositori politici da internare in un campo di prigionia",
+        "Coinvolgimenti emersi a inchieste sulla 'strategia della tensione' degli anni '70 (collegamenti con Freda e Ventura)",
+        "Interrogazione parlamentare del 2013 chiede trasparenza sulle attività passate e attuali del centro"
+      ],
+      "fonti": [
+        "ITenovas — «Capo Marrargiu, la base segreta Gladio in Sardegna» (itenovas.com/in-italia/474-capo-marrargiu-sardegna-gladio.html)",
+        "Commissione parlamentare di inchiesta sulle Stragi (relazione Pellegrino, 1995-2001)",
+        "Dichiarazioni del PdC Giulio Andreotti al Parlamento, 24 ottobre e 9 novembre 1990 — rivelazione esistenza Operazione Gladio",
+        "Daniele Ganser, «Gli eserciti segreti della NATO», 2005"
+      ]
+    },
+    {
       "id": "trapani-birgi",
       "nome": "Base aerea di Trapani-Birgi",
       "lat": 37.9114,

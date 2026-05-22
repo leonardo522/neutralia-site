@@ -13,7 +13,8 @@
     basi:       'assets/data/osservatorio-basi.json',
     produzione: 'assets/data/osservatorio-produzione.json',
     porti:      'assets/data/osservatorio-porti.json',
-    conflitti:  'assets/data/osservatorio-conflitti.json'
+    conflitti:  'assets/data/osservatorio-conflitti.json',
+    incidenti:  'assets/data/osservatorio-incidenti.json'
   };
 
   const COLORI = {
@@ -21,8 +22,20 @@
     produzione: '#ff8a00',
     porti:      '#efe847',
     conflitti:  '#9a9a9a',
+    incidenti:  '#ffffff',
     confine:    '#ffffff',
     aree:       '#ff2a2a'
+  };
+
+  // Popup come modale centrato a schermo (gestito dal CSS).
+  // Disattivo autoPan perché non ha senso panare la mappa: il popup è fisso.
+  const POPUP_OPTS = {
+    maxWidth: 1000,            // largo: il CSS lo limiterà a min(540px, 92vw)
+    minWidth: 0,
+    autoPan: false,
+    keepInView: false,
+    closeOnEscapeKey: true,
+    className: 'osv-popup'
   };
 
   // ---------- INIT MAPPA ----------
@@ -54,7 +67,8 @@
     aree:       L.layerGroup().addTo(mappa),
     basi:       L.layerGroup().addTo(mappa),
     produzione: L.layerGroup().addTo(mappa),
-    porti:      L.layerGroup().addTo(mappa)
+    porti:      L.layerGroup().addTo(mappa),
+    incidenti:  L.layerGroup().addTo(mappa)
   };
 
   // ---------- HELPERS ----------
@@ -83,7 +97,7 @@
     });
   }
 
-  // Icone SVG tematiche per produzione e porti
+  // Icone SVG tematiche per produzione, porti, incidenti
   const ICONE = {
     porto: {
       svg: '<svg viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="4.5" r="2.5"/><line x1="12" y1="7" x2="12" y2="22"/><line x1="8" y1="12" x2="16" y2="12"/><path d="M3 13c0 5 4 9 9 9s9-4 9-9"/></svg>',
@@ -94,6 +108,11 @@
       svg: '<svg viewBox="0 0 24 24"><path d="M12 1.5 L7 8 L7 17 L17 17 L17 8 Z" fill="currentColor"/><rect x="7" y="17" width="10" height="5.2" rx="0.6" fill="currentColor" opacity="0.55"/><line x1="9" y1="19.6" x2="15" y2="19.6" stroke="#000" stroke-width="0.6" opacity="0.5"/></svg>',
       color: '#ff8a00',
       className: 'osv-icon-produzione'
+    },
+    incidente: {
+      svg: '<svg viewBox="0 0 24 24"><path d="M12 2 L22 21 L2 21 Z" fill="currentColor" stroke="#000" stroke-width="0.8" stroke-linejoin="round"/><rect x="11" y="9" width="2" height="6" fill="#000"/><rect x="11" y="17" width="2" height="2" fill="#000"/></svg>',
+      color: '#ffffff',
+      className: 'osv-icon-incidente'
     }
   };
 
@@ -136,8 +155,9 @@
     fetch(DATA.basi).then(r => r.json()),
     fetch(DATA.produzione).then(r => r.json()),
     fetch(DATA.porti).then(r => r.json()),
-    fetch(DATA.conflitti).then(r => r.json())
-  ]).then(([italia, aree, basi, produzione, porti, conflitti]) => {
+    fetch(DATA.conflitti).then(r => r.json()),
+    fetch(DATA.incidenti).then(r => r.json())
+  ]).then(([italia, aree, basi, produzione, porti, conflitti, incidenti]) => {
 
     // CONFINE ITALIA
     L.geoJSON(italia, {
@@ -171,7 +191,7 @@
             <p class="popup-stat"><strong>${fmtNum(p.estensione_kmq)} km²</strong> di mare interdetto alla pesca durante le esercitazioni.</p>
           </div>
         `;
-        layer.bindPopup(html, { maxWidth: 380, className: 'osv-popup' });
+        layer.bindPopup(html, POPUP_OPTS);
       }
     }).addTo(layers.aree);
 
@@ -183,7 +203,7 @@
     basi.items.forEach(b => {
       const pulse = makePulseMarker(b.lat, b.lon, COLORI.basi);
       const dot = makeDotMarker(b.lat, b.lon, COLORI.basi, 'osv-dot-base');
-      dot.bindPopup(popupBase(b, conflittiPerId), { maxWidth: 460, className: 'osv-popup' });
+      dot.bindPopup(popupBase(b, conflittiPerId), POPUP_OPTS);
       dot.on('click', () => disegnaLineeEConflitti(b, conflittiPerId));
       pulse.addTo(layers.basi);
       dot.addTo(layers.basi);
@@ -192,24 +212,62 @@
     // PRODUZIONE — icona proiettile arancione
     produzione.items.forEach(p => {
       const marker = makeIconMarker(p.lat, p.lon, 'produzione', 'osv-icon-produzione');
-      marker.bindPopup(popupProduzione(p), { maxWidth: 460, className: 'osv-popup' });
+      marker.bindPopup(popupProduzione(p), POPUP_OPTS);
       marker.addTo(layers.produzione);
     });
 
     // PORTI — icona ancora gialla
     porti.items.forEach(p => {
       const marker = makeIconMarker(p.lat, p.lon, 'porto', 'osv-icon-porto');
-      marker.bindPopup(popupPorto(p), { maxWidth: 460, className: 'osv-popup' });
+      marker.bindPopup(popupPorto(p), POPUP_OPTS);
       marker.addTo(layers.porti);
     });
 
-    // Chiusura popup base → pulisci rotte e conflitti
+    // INCIDENTI — triangolo warning bianco
+    incidenti.items.forEach(inc => {
+      const marker = makeIconMarker(inc.lat, inc.lon, 'incidente', 'osv-icon-incidente');
+      marker.bindPopup(popupIncidente(inc), POPUP_OPTS);
+      marker.addTo(layers.incidenti);
+    });
+
+    // Apertura popup → sposta in body (per liberarlo dal transform del pane)
+    mappa.on('popupopen', (e) => {
+      document.body.classList.add('mappa-popup-open');
+      const el = e.popup.getElement();
+      if (el && el.parentElement && el.parentElement !== document.body) {
+        el._osvOriginalParent = el.parentElement;
+        document.body.appendChild(el);
+      }
+    });
+
+    // Chiusura popup → pulisci rotte/conflitti se era una base + rimetti popup nel pane
     mappa.on('popupclose', (e) => {
-      // Pulisci solo se il popup chiuso era di una base (non un conflitto)
+      document.body.classList.remove('mappa-popup-open');
+      const el = e.popup.getElement();
+      if (el && el._osvOriginalParent) {
+        el._osvOriginalParent.appendChild(el);
+        delete el._osvOriginalParent;
+      }
       const html = e.popup && e.popup.getContent && e.popup.getContent();
       if (typeof html === 'string' && html.includes('popup-base')) {
         layers.linee.clearLayers();
         layers.conflitti.clearLayers();
+      }
+    });
+
+    // Click sul backdrop chiude il popup
+    document.body.addEventListener('click', (ev) => {
+      if (!document.body.classList.contains('mappa-popup-open')) return;
+      // Se il click non è dentro un popup, chiudi
+      if (!ev.target.closest('.leaflet-popup')) {
+        mappa.closePopup();
+      }
+    });
+
+    // ESC chiude (oltre al default Leaflet, per sicurezza)
+    document.addEventListener('keydown', (ev) => {
+      if (ev.key === 'Escape' && document.body.classList.contains('mappa-popup-open')) {
+        mappa.closePopup();
       }
     });
 
@@ -257,7 +315,7 @@
         fillOpacity: 1,
         className: 'osv-dot osv-dot-conflitto'
       });
-      dotConf.bindPopup(popupConflitto(c), { maxWidth: 460, className: 'osv-popup' });
+      dotConf.bindPopup(popupConflitto(c), POPUP_OPTS);
       pulse.addTo(layers.conflitti);
       dotConf.addTo(layers.conflitti);
 
@@ -362,6 +420,26 @@
           <h4>Ruolo dell'Italia</h4>
           <p>${escapeHTML(c.ruolo_italia)}</p>
         </div>
+      </div>
+    `;
+  }
+
+  function popupIncidente(i) {
+    return `
+      <div class="popup popup-incidente">
+        <p class="popup-eyebrow popup-eyebrow-incidente">Incidente / caso documentato</p>
+        <h3>${escapeHTML(i.nome)}</h3>
+        <p class="popup-loc">${escapeHTML(i.comune)} · ${escapeHTML(i.regione)} · ${escapeHTML(i.data)}</p>
+
+        ${i.vittime ? `<p class="popup-stat popup-stat-rosso"><strong>${fmtNum(i.vittime)}</strong> vittime</p>` : ''}
+
+        <p class="popup-funzione">${escapeHTML(i.sintesi)}</p>
+
+        ${i.esito_giudiziario && i.esito_giudiziario.length ? `<div class="popup-section popup-warning"><h4>Esito giudiziario</h4>${listToHTML(i.esito_giudiziario)}</div>` : ''}
+        ${i.risarcimenti ? `<div class="popup-section"><h4>Risarcimenti</h4><p>${escapeHTML(i.risarcimenti)}</p></div>` : ''}
+        ${i.rilevanza ? `<div class="popup-section"><h4>Perché è significativo</h4><p>${escapeHTML(i.rilevanza)}</p></div>` : ''}
+
+        ${i.fonti && i.fonti.length ? `<details class="popup-fonti"><summary>Fonti (${i.fonti.length})</summary>${listToHTML(i.fonti)}</details>` : ''}
       </div>
     `;
   }
