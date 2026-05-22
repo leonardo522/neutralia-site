@@ -80,12 +80,10 @@ document.addEventListener('keydown', (e) => {
 });
 
 // ============================================
-// INSTAGRAM FEED — JSON locale aggiornato dalla GitHub Action
-// .github/workflows/instagram-feed.yml ogni 6 ore:
-// 1) chiama Behold (https://feeds.behold.so/...)
-// 2) scarica le thumbnail in assets/img/instagram/
-// 3) riscrive assets/data/instagram.json con URL locali
-// Risultato: le immagini non scadono mai (Instagram CDN scade dopo ~6 giorni).
+// INSTAGRAM FEED — Cloudflare Pages Function /api/instagram-feed
+// Proxy Behold con caching CDN 6h + proxy immagini /api/instagram-image
+// (cachate 30gg). Niente più scadenze Instagram CDN, niente GitHub Action,
+// niente commit periodici. Fallback a JSON locale se l'endpoint non c'è.
 // ============================================
 async function loadInstagramFeed() {
   const grid = document.getElementById('ig-feed');
@@ -93,12 +91,19 @@ async function loadInstagramFeed() {
 
   let posts;
   try {
-    const res = await fetch('assets/data/instagram.json', { cache: 'no-cache' });
-    const data = await res.json();
-    posts = data.posts;
-  } catch (err) {
-    console.error('Instagram feed load failed:', err);
-    return;
+    // Prima prova: endpoint dinamico su Cloudflare Pages
+    let res = await fetch('/api/instagram-feed', { cache: 'no-cache' });
+    if (!res.ok) throw new Error('feed function ' + res.status);
+    posts = (await res.json()).posts;
+  } catch (errFn) {
+    // Fallback: JSON locale (utile in dev locale senza Pages Functions)
+    try {
+      const res = await fetch('assets/data/instagram.json', { cache: 'no-cache' });
+      posts = (await res.json()).posts;
+    } catch (err) {
+      console.error('Instagram feed load failed:', err, errFn);
+      return;
+    }
   }
 
   grid.innerHTML = posts.map(p => `
