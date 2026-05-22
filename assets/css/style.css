@@ -2415,6 +2415,11 @@ body.page-osservatorio {
    - med  (z = 7)                    → icone al 75%, pulse leggero
    - high (z >= 8, zoom dettaglio)   → dimensioni piene */
 
+/* SCALING ZOOM: applico il transform sull'SVG INTERNO ma compenso l'hit-area
+   del marker wrapper con padding negativo virtuale via outline trasparente.
+   In realtà la cosa più semplice è che l'SVG resti centrato e l'hit area
+   del .osv-icon-marker (sempre 32x32) sia sufficiente. */
+
 #mappa[data-zoom-tier="low"] .osv-icon-svg,
 #mappa[data-zoom-tier="low"] .osv-nuke-svg {
   transform: scale(0.55);
@@ -2441,6 +2446,16 @@ body.page-osservatorio {
 #mappa[data-zoom-tier="max"] .osv-nuke-svg {
   transform: scale(1.3);
   transform-origin: center;
+}
+
+/* FIX HIT AREA: a tutti i tier zoom, espando l'area cliccabile del wrapper
+   con un padding invisibile, così anche se l'icona è scalata 1.3x i bordi
+   restano cliccabili. */
+.osv-icon-marker::after {
+  content: '';
+  position: absolute;
+  inset: -8px;
+  pointer-events: auto;
 }
 
 @keyframes osv-pulse-anim {
