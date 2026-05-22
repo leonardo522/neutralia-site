@@ -1,0 +1,206 @@
+{
+  "categoria": "produzione",
+  "descrizione": "Principali siti di produzione di armi sul territorio italiano. Dati pubblici da bilanci aziendali, SIPRI, Osservatorio Permanente sulle Armi Leggere (OPAL), Rete Italiana per il Disarmo.",
+  "items": [
+    {
+      "id": "domusnovas-rwm",
+      "nome": "RWM Italia — stabilimento di Domusnovas",
+      "lat": 39.3239,
+      "lon": 8.6347,
+      "regione": "Sardegna",
+      "comune": "Domusnovas (SU)",
+      "azienda": "RWM Italia S.p.A. — controllata da Rheinmetall AG (Germania)",
+      "tipo": "Bombe d'aereo, munizioni navali, sistemi d'arma",
+      "produzione": [
+        "Bombe d'aereo della famiglia MK-80 (MK-82 da 250 kg, MK-83 da 450 kg, MK-84 da 900 kg)",
+        "Bombe a guida laser",
+        "Munizioni navali e per artiglieria"
+      ],
+      "destinazioni_documentate": [
+        "Arabia Saudita: forniture documentate fino al 2021 (sospese dal Governo Draghi gennaio 2021, parzialmente ripristinate dal Governo Meloni ottobre 2023)",
+        "Emirati Arabi Uniti, Egitto, Turchia, USA, NATO"
+      ],
+      "casi_documentati": [
+        "8 ottobre 2016, villaggio di Deir Al-Hajari (Yemen): bomba MK-82 con numero seriale RWM Italia (lotto identificato dal NYT e da Mwatana for Human Rights) uccide 6 civili della stessa famiglia, tra cui 4 bambini",
+        "Inchiesta Procura di Roma per concorso in omicidio (archiviata 2021); ricorso in Corte di Cassazione e procedimento alla Corte Penale Internazionale"
+      ],
+      "occupazione": "Circa 250 dipendenti diretti",
+      "problemi_ambientali": [
+        "Stabilimento in area di alta disoccupazione (Sulcis-Iglesiente): la presenza viene difesa anche da forze politiche e sindacali locali per ragioni occupazionali"
+      ],
+      "fonti": [
+        "New York Times — «An Italian Bomb in Yemen», 2017",
+        "Mwatana for Human Rights — rapporti annuali",
+        "Rete Italiana per il Disarmo + ECCHR — esposto Procura di Roma",
+        "Relazione governativa annuale L.185/90 sull'export di armi"
+      ]
+    },
+    {
+      "id": "cameri-faco",
+      "nome": "FACO Cameri — Final Assembly F-35",
+      "lat": 45.5294,
+      "lon": 8.6692,
+      "regione": "Piemonte",
+      "comune": "Cameri (NO)",
+      "azienda": "Leonardo S.p.A. + Lockheed Martin (USA)",
+      "tipo": "Linea di assemblaggio finale e manutenzione caccia F-35 Lightning II",
+      "produzione": [
+        "F-35A (convenzionale) e F-35B (STOVL) per Italia, Olanda, Belgio futuro, Polonia futura",
+        "Unica FACO F-35 in Europa",
+        "Componenti ala in materiale composito per tutta la flotta globale F-35"
+      ],
+      "destinazioni_documentate": [
+        "Aeronautica Militare Italiana (90 F-35A + 15 F-35B previsti)",
+        "Marina Militare Italiana (15 F-35B per portaerei Cavour)",
+        "Klu — Royal Netherlands Air Force"
+      ],
+      "casi_documentati": [
+        "Programma F-35: costo totale italiano stimato 14 miliardi € (acquisto 90 velivoli) + ulteriori 60 miliardi € di ciclo vita 30 anni (Corte dei Conti USA — GAO)",
+        "F-35A italiani certificati per il trasporto della bomba nucleare B61-12 — i Tornado di Ghedi saranno sostituiti progressivamente"
+      ],
+      "occupazione": "Circa 800 addetti diretti",
+      "problemi_ambientali": [],
+      "fonti": [
+        "Corte dei Conti italiana — relazioni annuali sul Programma F-35",
+        "Sbilanciamoci! — rapporti annuali sulle spese militari",
+        "Leonardo — bilancio annuale"
+      ]
+    },
+    {
+      "id": "la-spezia-oto",
+      "nome": "Leonardo (ex OTO Melara) — La Spezia",
+      "lat": 44.1097,
+      "lon": 9.8225,
+      "regione": "Liguria",
+      "comune": "La Spezia",
+      "azienda": "Leonardo S.p.A. (Divisione Sistemi di Difesa)",
+      "tipo": "Sistemi cannone navali, sistemi terrestri",
+      "produzione": [
+        "Cannone navale 76/62 Super Rapid (montato su navi di oltre 60 marine nel mondo)",
+        "Cannone navale 127/64 Lightweight",
+        "Sistema antimissile DART"
+      ],
+      "destinazioni_documentate": [
+        "Marine NATO, Arabia Saudita, Egitto, Indonesia, Algeria, vari paesi del Golfo"
+      ],
+      "casi_documentati": [],
+      "occupazione": "Circa 1.000 addetti diretti",
+      "problemi_ambientali": [
+        "La Spezia è anche sede dell'arsenale militare della Marina e di un'intensa attività industriale dual-use"
+      ],
+      "fonti": ["Leonardo — bilancio annuale", "SIPRI Arms Industry Database"]
+    },
+    {
+      "id": "gardone-beretta",
+      "nome": "Distretto armi della Val Trompia — Beretta",
+      "lat": 45.6892,
+      "lon": 10.1903,
+      "regione": "Lombardia",
+      "comune": "Gardone Val Trompia (BS)",
+      "azienda": "Fabbrica d'Armi Pietro Beretta S.p.A.",
+      "tipo": "Armi leggere (pistole, fucili, mitragliatrici)",
+      "produzione": [
+        "Pistole semiautomatiche (M9, APX, 92FS)",
+        "Fucili automatici (ARX-160)",
+        "Carabine, fucili da caccia e sportivi"
+      ],
+      "destinazioni_documentate": [
+        "Forze armate USA (pistola M9 in dotazione US Army per 30 anni)",
+        "Forze armate italiane",
+        "Polizie e forze armate di oltre 100 paesi"
+      ],
+      "casi_documentati": [
+        "Distretto armi Val Trompia: ~300 aziende coinvolte, circa 6.000 addetti totali",
+        "Tradizione armiera plurisecolare; oggi è il principale polo europeo dell'arma leggera"
+      ],
+      "occupazione": "Circa 2.700 addetti diretti Beretta + indotto di 6.000",
+      "problemi_ambientali": [],
+      "fonti": [
+        "OPAL Brescia — Osservatorio Permanente sulle Armi Leggere",
+        "Beretta Holding — bilancio annuale"
+      ]
+    },
+    {
+      "id": "genova-fincantieri",
+      "nome": "Fincantieri Sestri Ponente",
+      "lat": 44.4231,
+      "lon": 8.8478,
+      "regione": "Liguria",
+      "comune": "Genova — Sestri Ponente",
+      "azienda": "Fincantieri S.p.A. (controllata Cassa Depositi e Prestiti)",
+      "tipo": "Navi militari e dual-use",
+      "produzione": [
+        "Fregate FREMM",
+        "Pattugliatori d'altura (PPA)",
+        "Portaerei e LHD (es. Trieste)",
+        "Sottomarini (in collaborazione con ThyssenKrupp)"
+      ],
+      "destinazioni_documentate": [
+        "Marina Militare Italiana",
+        "USA (Constellation class — vinta gara 2020)",
+        "Qatar (corvette), Egitto (2 FREMM, 2022), Indonesia (FREMM)"
+      ],
+      "casi_documentati": [
+        "Vendita Egitto: 2 FREMM ex Marina Militare cedute al regime di al-Sisi nel 2020 — contestata da Amnesty International e dalla famiglia Regeni"
+      ],
+      "occupazione": "Circa 1.500 addetti diretti Sestri",
+      "problemi_ambientali": [],
+      "fonti": [
+        "Fincantieri — bilancio annuale",
+        "Amnesty International Italia — dossier vendita fregate Egitto"
+      ]
+    },
+    {
+      "id": "roma-leonardo",
+      "nome": "Leonardo — sede e stabilimenti Roma",
+      "lat": 41.8997,
+      "lon": 12.4581,
+      "regione": "Lazio",
+      "comune": "Roma",
+      "azienda": "Leonardo S.p.A. (Cassa Depositi e Prestiti 30,2%)",
+      "tipo": "Holding industria difesa italiana",
+      "produzione": [
+        "Sede principale del primo gruppo italiano della difesa",
+        "Tra i top 10 mondiali per fatturato armi (SIPRI)",
+        "Ricavi 2023: ~15,3 miliardi €, di cui >70% da difesa"
+      ],
+      "destinazioni_documentate": [
+        "Oltre 150 paesi clienti"
+      ],
+      "casi_documentati": [
+        "Leonardo è socio AIAD (Federazione Aziende Italiane Aerospazio Difesa Sicurezza)",
+        "Partecipazione in MBDA (missili), Eurofighter, Telespazio, GEM Elettronica"
+      ],
+      "occupazione": "Circa 50.000 dipendenti globali, ~30.000 in Italia",
+      "problemi_ambientali": [],
+      "fonti": [
+        "Leonardo — bilancio annuale",
+        "SIPRI Top 100 Arms Companies"
+      ]
+    },
+    {
+      "id": "pomezia-mbda",
+      "nome": "MBDA Italia — Pomezia",
+      "lat": 41.6692,
+      "lon": 12.5006,
+      "regione": "Lazio",
+      "comune": "Pomezia (RM)",
+      "azienda": "MBDA Italia (controllata da Leonardo 25%, Airbus 37,5%, BAE Systems 37,5%)",
+      "tipo": "Missili e sistemi missilistici",
+      "produzione": [
+        "Missili Aster 15/30 (sistema antimissile SAMP/T)",
+        "Missili antinave Teseo",
+        "Missili anticarro Spike",
+        "Sistemi missilistici per Eurofighter"
+      ],
+      "destinazioni_documentate": [
+        "Forze armate europee, NATO",
+        "Sistemi SAMP/T forniti all'Ucraina (2023-) da Italia e Francia"
+      ],
+      "casi_documentati": [],
+      "occupazione": "Circa 1.500 addetti diretti",
+      "problemi_ambientali": [],
+      "fonti": ["MBDA — sito ufficiale", "Leonardo — bilancio annuale"]
+    }
+  ]
+}

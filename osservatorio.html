@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Osservatorio — Neutralia</title>
+<meta name="description" content="Mappa interattiva delle basi militari NATO e USA in Italia, dei siti di produzione di armi, dei porti di export. Aree marine interdette, problemi ambientali e sanitari, conflitti collegati. Centro Studi Neutralia.">
+<meta name="theme-color" content="#0a0a0a">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap">
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body class="page-osservatorio">
+
+<header class="site-header">
+  <nav class="nav">
+    <a href="index.html" class="logo">NEUTRALIA</a>
+    <ul class="nav-links">
+      <li><a href="index.html#libro">Libro</a></li>
+      <li><a href="index.html#manifesto">Manifesto</a></li>
+      <li><a href="index.html#approfondimenti">Approfondimenti</a></li>
+      <li><a href="osservatorio.html" class="is-current">Osservatorio</a></li>
+      <li><a href="index.html#comunita">Comunità</a></li>
+      <li><a href="index.html#negozio">Negozio</a></li>
+      <li class="nav-links-lang">
+        <a href="en/">EN</a>
+        <a href="fr/">FR</a>
+        <a href="es/">ES</a>
+        <a href="de/">DE</a>
+      </li>
+    </ul>
+    <a href="dona.html" class="nav-cta">Dona</a>
+    <button class="nav-toggle" aria-label="Apri menu">☰</button>
+  </nav>
+</header>
+
+<!-- INTRO -->
+<section class="osservatorio-intro">
+  <div class="container">
+    <p class="osservatorio-eyebrow">Centro Studi Neutralia</p>
+    <h1>Osservatorio</h1>
+    <p class="osservatorio-lead">
+      La mappa delle basi militari NATO e statunitensi sul suolo italiano, dei siti di produzione di armi,
+      dei porti di esportazione, e dei conflitti dal 1945 a cui basi italiane o armi italiane hanno preso parte.
+    </p>
+    <p class="osservatorio-sub">
+      Tutti i dati sono pubblici. Le fonti sono indicate punto per punto.
+      Clicca sui pallini per leggere ciò che lo Stato italiano non vi racconta volentieri.
+    </p>
+  </div>
+</section>
+
+<!-- MAPPA -->
+<section class="osservatorio-mappa-wrap">
+  <div id="mappa" role="application" aria-label="Mappa interattiva dell'Italia militarizzata">
+    <div class="mappa-loading" id="mappa-loading">
+      <p>Caricamento mappa…</p>
+    </div>
+  </div>
+
+  <!-- LEGENDA -->
+  <aside class="legenda" aria-label="Legenda della mappa">
+    <h2>Legenda</h2>
+    <ul class="legenda-lista">
+      <li><span class="dot dot-rosso" aria-hidden="true"></span> Base militare NATO / USA / italiana di rilevanza atlantica</li>
+      <li>
+        <span class="legenda-svg legenda-svg-prod" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><path d="M12 1.5 L7 8 L7 17 L17 17 L17 8 Z" fill="currentColor"/><rect x="7" y="17" width="10" height="5.2" rx="0.6" fill="currentColor" opacity="0.55"/></svg>
+        </span>
+        Sito di produzione di armi
+      </li>
+      <li>
+        <span class="legenda-svg legenda-svg-porto" aria-hidden="true">
+          <svg viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="4.5" r="2.5"/><line x1="12" y1="7" x2="12" y2="22"/><line x1="8" y1="12" x2="16" y2="12"/><path d="M3 13c0 5 4 9 9 9s9-4 9-9"/></svg>
+        </span>
+        Porto di export armi o transito militare
+      </li>
+      <li><span class="dot dot-grigio" aria-hidden="true"></span> Conflitto in cui basi o armi italiane sono coinvolte <small>(al click di una base)</small></li>
+      <li><span class="dot-line" aria-hidden="true"></span> Rotta da una base al conflitto <small>(al click di una base)</small></li>
+      <li><span class="dot-area" aria-hidden="true"></span> Zona di mare interdetta alla pesca</li>
+    </ul>
+    <p class="legenda-tip">Clicca un pallino per i dettagli e le fonti.<br>Clicca una base militare (pallino rosso) per disegnare le rotte verso i conflitti collegati.</p>
+    <div class="legenda-filtri">
+      <h3>Mostra / Nascondi</h3>
+      <label><input type="checkbox" data-filter="basi" checked> Basi</label>
+      <label><input type="checkbox" data-filter="produzione" checked> Produzione</label>
+      <label><input type="checkbox" data-filter="porti" checked> Porti</label>
+      <label><input type="checkbox" data-filter="aree" checked> Mare interdetto</label>
+    </div>
+  </aside>
+</section>
+
+<!-- TESTO METODOLOGICO -->
+<section class="osservatorio-metodo">
+  <div class="container">
+    <div class="metodo-grid">
+      <article class="metodo-block">
+        <h2>Cosa state vedendo</h2>
+        <p>
+          Il territorio italiano è disseminato di basi militari straniere e di siti militari nazionali
+          a vocazione atlantica. Su questo territorio si producono le armi che vengono poi esportate,
+          a volte verso paesi in guerra. Da queste basi partono i velivoli che bombardano altri paesi.
+          Per addestrarsi a farlo, vengono interdetti decine di migliaia di ettari di terra
+          e migliaia di chilometri quadrati di mare alla pesca degli autoctoni.
+        </p>
+        <p>
+          Tutto questo è pubblicamente noto. Non è segreto. Ma è frammentato, sparso tra
+          atti parlamentari, rapporti di organizzazioni indipendenti, inchieste giornalistiche.
+          L'Osservatorio Neutralia mette questi frammenti su una mappa, in un unico colpo d'occhio.
+        </p>
+      </article>
+
+      <article class="metodo-block">
+        <h2>Le 5 cifre da tenere in mente</h2>
+        <ul class="metodo-stats">
+          <li><strong>~40</strong> bombe nucleari tattiche B61 USA stoccate in Italia (Aviano + Ghedi). <em>Fonte: FAS 2023.</em></li>
+          <li><strong>~12.000 ha</strong> di terra militarizzata solo nel poligono di Salto di Quirra. <em>Fonte: Difesa.</em></li>
+          <li><strong>~4.000 km²</strong> di mare interdetto alla pesca davanti alla Sardegna sud-orientale durante le esercitazioni. <em>Fonte: NOTAMAR.</em></li>
+          <li><strong>~377.000</strong> morti nella guerra in Yemen 2015-2024 (combattenti e civili, dirette+indirette). Bombe italiane RWM Domusnovas documentate. <em>Fonte: UNDP 2021.</em></li>
+          <li><strong>~176.000</strong> morti diretti in Afghanistan 2001-2021. Basi italiane (Aviano, Sigonella, Camp Darby) usate per logistica e operazioni. <em>Fonte: Brown Univ. Costs of War.</em></li>
+        </ul>
+      </article>
+
+      <article class="metodo-block">
+        <h2>Trieste: la sovranità che non c'è</h2>
+        <p>
+          Nell'ottobre 2021, durante le proteste No Green Pass dei portuali triestini, la Ministra dell'Interno
+          Luciana Lamorgese dichiarò in audizione parlamentare che il Porto di Trieste «ha una giurisdizione
+          internazionale e particolare»: i Punti Franchi sono extraterritoriali, regolati dall'Allegato VIII
+          del Trattato di Pace del 1947 e dal Memorandum di Londra del 1954.
+        </p>
+        <p>
+          Tradotto: sulle banchine in cui transitano merci (incluse merci militari) verso l'Europa orientale,
+          la sovranità italiana è limitata da un regime giuridico internazionale.
+          Le concessioni sono in larga parte tedesche (HHLA — Hamburger Hafen und Logistik),
+          ungheresi, in passato cinesi (COSCO, Via della Seta, 2019, poi parzialmente sospesa).
+        </p>
+        <p>
+          La domanda non è ideologica. È legale e geopolitica:
+          <em>di chi è davvero il principale porto italiano?</em>
+        </p>
+      </article>
+
+      <article class="metodo-block">
+        <h2>Metodologia & limiti</h2>
+        <ul>
+          <li>Le coordinate delle basi sono pubbliche (visibili su OpenStreetMap, Google Maps, Geoportale della Difesa).</li>
+          <li>Le estensioni in ettari sono indicative, ricostruite da pubblicazioni ufficiali e dossier di organizzazioni indipendenti.</li>
+          <li>I dati sanitari e ambientali sono riportati <strong>come segnalati dalle fonti citate</strong>, con esplicitazione del livello di certezza (inchiesta in corso, cluster non confermato ufficialmente, ecc.).</li>
+          <li>I poligoni delle aree marine interdette sono <strong>ricostruzioni didattiche</strong> a partire dai NOTAMAR; non vanno usati per scopi nautici reali.</li>
+          <li>Le vittime dei conflitti sono <strong>vittime totali del conflitto</strong>, non vittime attribuibili solo alle basi/armi italiane. La presenza in mappa indica coinvolgimento documentato di basi italiane o armi italiane, non responsabilità causale italiana per ogni morte.</li>
+          <li>Questo Osservatorio è un'opera in progress. Segnalazioni di errori, fonti più recenti, integrazioni: <a href="mailto:neutralia.info@gmail.com">neutralia.info@gmail.com</a>.</li>
+        </ul>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <h3>NEUTRALIA</h3>
+        <p>Un'Italia neutrale, un'Italia mediatrice di pace, un'Italia che protegge il suo patrimonio.</p>
+      </div>
+      <div class="footer-contact">
+        <h4>Contattaci</h4>
+        <a href="mailto:neutralia.info@gmail.com">neutralia.info@gmail.com</a>
+      </div>
+      <div class="footer-nav">
+        <h4>Naviga</h4>
+        <ul>
+          <li><a href="index.html#libro">Libro</a></li>
+          <li><a href="index.html#manifesto">Manifesto</a></li>
+          <li><a href="index.html#approfondimenti">Approfondimenti</a></li>
+          <li><a href="osservatorio.html">Osservatorio</a></li>
+          <li><a href="index.html#comunita">Comunità</a></li>
+          <li><a href="index.html#negozio">Negozio</a></li>
+        </ul>
+      </div>
+      <div class="footer-social">
+        <h4>Seguici</h4>
+        <ul>
+          <li><a href="https://www.instagram.com/_neutralia_/" target="_blank" rel="noopener">Instagram</a></li>
+          <li><a href="https://t.me/NEUTRALIATELEGRAM" target="_blank" rel="noopener">Telegram</a></li>
+          <li><a href="dona.html">Dona</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© <span id="year"></span> Neutralia · Tutti i diritti riservati</p>
+    </div>
+  </div>
+</footer>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+<script src="assets/js/osservatorio.js"></script>
+<script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>

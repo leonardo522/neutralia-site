@@ -1,0 +1,369 @@
+/* ============================================
+   NEUTRALIA — Osservatorio (Leaflet)
+   Mappa nera, confine Italia bianco, marker SVG nativi,
+   linee sempre visibili basi→conflitti, aree marine.
+   ============================================ */
+
+(function () {
+  'use strict';
+
+  const DATA = {
+    italia:     'assets/data/italia.geojson',
+    aree:       'assets/data/osservatorio-aree-interdette.geojson',
+    basi:       'assets/data/osservatorio-basi.json',
+    produzione: 'assets/data/osservatorio-produzione.json',
+    porti:      'assets/data/osservatorio-porti.json',
+    conflitti:  'assets/data/osservatorio-conflitti.json'
+  };
+
+  const COLORI = {
+    basi:       '#ff2a2a',
+    produzione: '#ff8a00',
+    porti:      '#efe847',
+    conflitti:  '#9a9a9a',
+    confine:    '#ffffff',
+    aree:       '#ff2a2a'
+  };
+
+  // ---------- INIT MAPPA ----------
+  const mappa = L.map('mappa', {
+    center: [42.3, 12.5],
+    zoom: 6,
+    minZoom: 5,
+    maxZoom: 11,
+    zoomControl: true,
+    attributionControl: false,
+    worldCopyJump: false,
+    preferCanvas: false,
+    maxBounds: [[33.5, 2.0], [50.0, 25.0]],
+    maxBoundsViscosity: 0.8,
+    renderer: L.svg({ padding: 0.5 })
+  });
+
+  L.control.attribution({
+    prefix: '© <a href="https://leafletjs.com/" target="_blank" rel="noopener">Leaflet</a> · dati: <a href="https://github.com/openpolis/geojson-italy" target="_blank" rel="noopener">openpolis</a> · Centro Studi Neutralia'
+  }).addTo(mappa);
+
+  // Esponi la mappa per debug/console
+  window.NeutraliaMap = mappa;
+
+  // ---------- LAYER GROUPS ----------
+  const layers = {
+    linee:      L.layerGroup().addTo(mappa),  // sotto a tutto
+    conflitti:  L.layerGroup().addTo(mappa),
+    aree:       L.layerGroup().addTo(mappa),
+    basi:       L.layerGroup().addTo(mappa),
+    produzione: L.layerGroup().addTo(mappa),
+    porti:      L.layerGroup().addTo(mappa)
+  };
+
+  // ---------- HELPERS ----------
+  function makePulseMarker(lat, lon, color, className) {
+    // Cerchio "alone" che pulsa via CSS animation su r/opacity
+    return L.circleMarker([lat, lon], {
+      radius: 7,
+      color: color,
+      weight: 0,
+      fillColor: color,
+      fillOpacity: 0.55,
+      className: 'osv-pulse ' + (className || ''),
+      interactive: false
+    });
+  }
+
+  function makeDotMarker(lat, lon, color, className) {
+    return L.circleMarker([lat, lon], {
+      radius: 6,
+      color: '#000',
+      weight: 1.5,
+      fillColor: color,
+      fillOpacity: 1,
+      className: 'osv-dot ' + (className || ''),
+      bubblingMouseEvents: false
+    });
+  }
+
+  // Icone SVG tematiche per produzione e porti
+  const ICONE = {
+    porto: {
+      svg: '<svg viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="4.5" r="2.5"/><line x1="12" y1="7" x2="12" y2="22"/><line x1="8" y1="12" x2="16" y2="12"/><path d="M3 13c0 5 4 9 9 9s9-4 9-9"/></svg>',
+      color: '#efe847',
+      className: 'osv-icon-porto'
+    },
+    produzione: {
+      svg: '<svg viewBox="0 0 24 24"><path d="M12 1.5 L7 8 L7 17 L17 17 L17 8 Z" fill="currentColor"/><rect x="7" y="17" width="10" height="5.2" rx="0.6" fill="currentColor" opacity="0.55"/><line x1="9" y1="19.6" x2="15" y2="19.6" stroke="#000" stroke-width="0.6" opacity="0.5"/></svg>',
+      color: '#ff8a00',
+      className: 'osv-icon-produzione'
+    }
+  };
+
+  function makeIconMarker(lat, lon, kind, className) {
+    const ic = ICONE[kind];
+    const icon = L.divIcon({
+      className: 'osv-icon-marker ' + (className || ''),
+      html: `<span class="osv-icon-svg" style="color:${ic.color}">${ic.svg}</span>`,
+      iconSize: [28, 28],
+      iconAnchor: [14, 14],
+      popupAnchor: [0, -14]
+    });
+    return L.marker([lat, lon], { icon, bubblingMouseEvents: false });
+  }
+
+  function listToHTML(arr) {
+    if (!arr || !arr.length) return '<em>—</em>';
+    return '<ul>' + arr.map(x => `<li>${escapeHTML(x)}</li>`).join('') + '</ul>';
+  }
+
+  function escapeHTML(s) {
+    if (s == null) return '';
+    return String(s)
+      .replace(/&/g, '&amp;')
+      .replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;')
+      .replace(/"/g, '&quot;')
+      .replace(/'/g, '&#039;');
+  }
+
+  function fmtNum(n) {
+    if (n == null) return '—';
+    return new Intl.NumberFormat('it-IT').format(n);
+  }
+
+  // ---------- FETCH TUTTI I DATI ----------
+  Promise.all([
+    fetch(DATA.italia).then(r => r.json()),
+    fetch(DATA.aree).then(r => r.json()),
+    fetch(DATA.basi).then(r => r.json()),
+    fetch(DATA.produzione).then(r => r.json()),
+    fetch(DATA.porti).then(r => r.json()),
+    fetch(DATA.conflitti).then(r => r.json())
+  ]).then(([italia, aree, basi, produzione, porti, conflitti]) => {
+
+    // CONFINE ITALIA
+    L.geoJSON(italia, {
+      style: {
+        color: COLORI.confine,
+        weight: 1.2,
+        opacity: 0.95,
+        fillColor: '#111',
+        fillOpacity: 0.55
+      },
+      interactive: false
+    }).addTo(mappa);
+
+    // AREE MARINE INTERDETTE
+    L.geoJSON(aree, {
+      style: {
+        color: COLORI.aree,
+        weight: 1,
+        opacity: 0.85,
+        dashArray: '4 3',
+        fillColor: COLORI.aree,
+        fillOpacity: 0.15
+      },
+      onEachFeature: (feature, layer) => {
+        const p = feature.properties;
+        const html = `
+          <div class="popup popup-area">
+            <p class="popup-eyebrow popup-eyebrow-base">Mare interdetto</p>
+            <h3>${escapeHTML(p.nome)}</h3>
+            <p>${escapeHTML(p.descrizione)}</p>
+            <p class="popup-stat"><strong>${fmtNum(p.estensione_kmq)} km²</strong> di mare interdetto alla pesca durante le esercitazioni.</p>
+          </div>
+        `;
+        layer.bindPopup(html, { maxWidth: 380, className: 'osv-popup' });
+      }
+    }).addTo(layers.aree);
+
+    // Indice conflitti per ID
+    const conflittiPerId = {};
+    conflitti.items.forEach(c => { conflittiPerId[c.id] = c; });
+
+    // BASI
+    basi.items.forEach(b => {
+      const pulse = makePulseMarker(b.lat, b.lon, COLORI.basi);
+      const dot = makeDotMarker(b.lat, b.lon, COLORI.basi, 'osv-dot-base');
+      dot.bindPopup(popupBase(b, conflittiPerId), { maxWidth: 460, className: 'osv-popup' });
+      dot.on('click', () => disegnaLineeEConflitti(b, conflittiPerId));
+      pulse.addTo(layers.basi);
+      dot.addTo(layers.basi);
+    });
+
+    // PRODUZIONE — icona proiettile arancione
+    produzione.items.forEach(p => {
+      const marker = makeIconMarker(p.lat, p.lon, 'produzione', 'osv-icon-produzione');
+      marker.bindPopup(popupProduzione(p), { maxWidth: 460, className: 'osv-popup' });
+      marker.addTo(layers.produzione);
+    });
+
+    // PORTI — icona ancora gialla
+    porti.items.forEach(p => {
+      const marker = makeIconMarker(p.lat, p.lon, 'porto', 'osv-icon-porto');
+      marker.bindPopup(popupPorto(p), { maxWidth: 460, className: 'osv-popup' });
+      marker.addTo(layers.porti);
+    });
+
+    // Chiusura popup base → pulisci rotte e conflitti
+    mappa.on('popupclose', (e) => {
+      // Pulisci solo se il popup chiuso era di una base (non un conflitto)
+      const html = e.popup && e.popup.getContent && e.popup.getContent();
+      if (typeof html === 'string' && html.includes('popup-base')) {
+        layers.linee.clearLayers();
+        layers.conflitti.clearLayers();
+      }
+    });
+
+    // FILTRI
+    document.querySelectorAll('[data-filter]').forEach(input => {
+      input.addEventListener('change', () => {
+        const key = input.dataset.filter;
+        if (input.checked) {
+          mappa.addLayer(layers[key]);
+        } else {
+          mappa.removeLayer(layers[key]);
+        }
+      });
+    });
+
+    // Loading off
+    const loading = document.getElementById('mappa-loading');
+    if (loading) loading.remove();
+
+  }).catch(err => {
+    console.error('Errore caricamento dati osservatorio:', err);
+    const loading = document.getElementById('mappa-loading');
+    if (loading) {
+      loading.innerHTML = '<p style="color:#ff2a2a;">Errore nel caricamento della mappa.<br>Ricarica la pagina.</p>';
+    }
+  });
+
+  // ---------- LINEE BASE → CONFLITTI (al click) ----------
+  function disegnaLineeEConflitti(base, conflittiPerId) {
+    layers.linee.clearLayers();
+    layers.conflitti.clearLayers();
+    if (!base.conflitti) return;
+
+    base.conflitti.forEach(cid => {
+      const c = conflittiPerId[cid];
+      if (!c) return;
+
+      // Pallino grigio sul conflitto
+      const pulse = makePulseMarker(c.lat, c.lon, COLORI.conflitti);
+      const dotConf = L.circleMarker([c.lat, c.lon], {
+        radius: 7,
+        color: '#000',
+        weight: 1.5,
+        fillColor: COLORI.conflitti,
+        fillOpacity: 1,
+        className: 'osv-dot osv-dot-conflitto'
+      });
+      dotConf.bindPopup(popupConflitto(c), { maxWidth: 460, className: 'osv-popup' });
+      pulse.addTo(layers.conflitti);
+      dotConf.addTo(layers.conflitti);
+
+      // Linea tratteggiata base → conflitto
+      const linea = L.polyline([[base.lat, base.lon], [c.lat, c.lon]], {
+        color: COLORI.basi,
+        weight: 1.4,
+        opacity: 0.7,
+        dashArray: '6 5',
+        className: 'osv-line',
+        interactive: false
+      });
+      linea.addTo(layers.linee);
+    });
+  }
+
+  // ---------- POPUP TEMPLATES ----------
+  function popupBase(b, conflittiPerId) {
+    const conflittiHTML = (b.conflitti && b.conflitti.length)
+      ? '<ul class="popup-conflitti">' + b.conflitti.map(cid => {
+          const c = conflittiPerId[cid];
+          if (!c) return '';
+          return `<li><span class="conf-anno">${c.anno_inizio}${c.anno_fine && c.anno_fine !== c.anno_inizio ? '–' + c.anno_fine : c.anno_fine === null ? '–oggi' : ''}</span> <strong>${escapeHTML(c.nome)}</strong></li>`;
+        }).join('') + '</ul>'
+      : '';
+
+    return `
+      <div class="popup popup-base">
+        <p class="popup-eyebrow popup-eyebrow-base">Base militare</p>
+        <h3>${escapeHTML(b.nome)}</h3>
+        <p class="popup-loc">${escapeHTML(b.comune)} · ${escapeHTML(b.regione)}</p>
+
+        <p class="popup-tipo">${escapeHTML(b.tipo)}</p>
+        <p class="popup-gestione"><strong>Gestione:</strong> ${escapeHTML(b.gestione)}</p>
+        <p class="popup-funzione">${escapeHTML(b.funzione)}</p>
+
+        ${b.estensione_ha ? `<p class="popup-stat"><strong>${fmtNum(b.estensione_ha)} ha</strong> di territorio occupato</p>` : ''}
+        ${b.mare_interdetto_kmq ? `<p class="popup-stat"><strong>${fmtNum(b.mare_interdetto_kmq)} km²</strong> di mare interdetto durante le esercitazioni</p>` : ''}
+
+        ${b.armamento && b.armamento.length ? `<div class="popup-section"><h4>Armamento / capacità</h4>${listToHTML(b.armamento)}</div>` : ''}
+        ${b.problemi_ambientali && b.problemi_ambientali.length ? `<div class="popup-section popup-warning"><h4>Problemi ambientali</h4>${listToHTML(b.problemi_ambientali)}</div>` : ''}
+        ${b.problemi_sanitari && b.problemi_sanitari.length ? `<div class="popup-section popup-warning"><h4>Problemi sanitari</h4>${listToHTML(b.problemi_sanitari)}</div>` : ''}
+
+        ${conflittiHTML ? `<div class="popup-section"><h4>Conflitti collegati</h4>${conflittiHTML}</div>` : ''}
+
+        ${b.fonti && b.fonti.length ? `<details class="popup-fonti"><summary>Fonti (${b.fonti.length})</summary>${listToHTML(b.fonti)}</details>` : ''}
+      </div>
+    `;
+  }
+
+  function popupProduzione(p) {
+    return `
+      <div class="popup popup-produzione">
+        <p class="popup-eyebrow popup-eyebrow-produzione">Produzione armi</p>
+        <h3>${escapeHTML(p.nome)}</h3>
+        <p class="popup-loc">${escapeHTML(p.comune)} · ${escapeHTML(p.regione)}</p>
+
+        <p class="popup-tipo">${escapeHTML(p.tipo)}</p>
+        <p class="popup-gestione"><strong>Azienda:</strong> ${escapeHTML(p.azienda)}</p>
+
+        ${p.produzione && p.produzione.length ? `<div class="popup-section"><h4>Cosa producono</h4>${listToHTML(p.produzione)}</div>` : ''}
+        ${p.destinazioni_documentate && p.destinazioni_documentate.length ? `<div class="popup-section"><h4>Destinazioni documentate</h4>${listToHTML(p.destinazioni_documentate)}</div>` : ''}
+        ${p.casi_documentati && p.casi_documentati.length ? `<div class="popup-section popup-warning"><h4>Casi documentati</h4>${listToHTML(p.casi_documentati)}</div>` : ''}
+        ${p.occupazione ? `<p class="popup-stat">${escapeHTML(p.occupazione)}</p>` : ''}
+
+        ${p.fonti && p.fonti.length ? `<details class="popup-fonti"><summary>Fonti (${p.fonti.length})</summary>${listToHTML(p.fonti)}</details>` : ''}
+      </div>
+    `;
+  }
+
+  function popupPorto(p) {
+    return `
+      <div class="popup popup-porto">
+        <p class="popup-eyebrow popup-eyebrow-porto">Porto</p>
+        <h3>${escapeHTML(p.nome)}</h3>
+        <p class="popup-loc">${escapeHTML(p.regione)}</p>
+
+        <p class="popup-tipo">${escapeHTML(p.tipo)}</p>
+        <p class="popup-gestione"><strong>Gestione:</strong> ${escapeHTML(p.gestione)}</p>
+        <p class="popup-funzione">${escapeHTML(p.ruolo_militare)}</p>
+
+        ${p.flussi_stimati ? `<div class="popup-section"><h4>Flussi militari</h4><p>${escapeHTML(p.flussi_stimati)}</p></div>` : ''}
+        ${p.questione_sovranita ? `<div class="popup-section popup-warning"><h4>Questione sovranità</h4><p>${escapeHTML(p.questione_sovranita)}</p></div>` : ''}
+        ${p.casi_documentati && p.casi_documentati.length ? `<div class="popup-section"><h4>Casi documentati</h4>${listToHTML(p.casi_documentati)}</div>` : ''}
+
+        ${p.fonti && p.fonti.length ? `<details class="popup-fonti"><summary>Fonti (${p.fonti.length})</summary>${listToHTML(p.fonti)}</details>` : ''}
+      </div>
+    `;
+  }
+
+  function popupConflitto(c) {
+    return `
+      <div class="popup popup-conflitto">
+        <p class="popup-eyebrow popup-eyebrow-conflitto">Conflitto</p>
+        <h3>${escapeHTML(c.nome)}</h3>
+        <p class="popup-loc">${escapeHTML(c.durata)}</p>
+        <div class="popup-section popup-warning">
+          <h4>Vittime stimate</h4>
+          <p>${escapeHTML(c.vittime_stimate)}</p>
+        </div>
+        <div class="popup-section">
+          <h4>Ruolo dell'Italia</h4>
+          <p>${escapeHTML(c.ruolo_italia)}</p>
+        </div>
+      </div>
+    `;
+  }
+
+})();

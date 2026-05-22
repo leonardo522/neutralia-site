@@ -1,0 +1,90 @@
+{
+  "categoria": "conflitti",
+  "descrizione": "Conflitti dal 1945 in cui basi italiane, forze armate italiane o armi prodotte in Italia hanno avuto un ruolo documentato. Vittime totali del conflitto (non solo civili), con range derivante da fonti accademiche. La presenza in elenco indica coinvolgimento di basi/forze italiane, non responsabilità diretta italiana per tutte le vittime.",
+  "items": [
+    {
+      "id": "bosnia-1995",
+      "nome": "Bosnia — Operation Deliberate Force (NATO)",
+      "lat": 43.9159,
+      "lon": 17.6791,
+      "anno_inizio": 1995,
+      "anno_fine": 1995,
+      "durata": "30 agosto — 20 settembre 1995 (3 settimane di bombardamenti NATO)",
+      "vittime_stimate": "Conflitto bosniaco 1992-1995: ~100.000 morti totali (Research and Documentation Center Sarajevo, dato consolidato). Strage di Srebrenica: 8.372 musulmani bosniaci uccisi.",
+      "ruolo_italia": "Aviano: base aerea principale dei raid USA F-16 e F-117 contro le posizioni serbo-bosniache. Italia: partecipazione con velivoli e contingenti IFOR/SFOR successivi.",
+      "basi_coinvolte": ["aviano"]
+    },
+    {
+      "id": "kosovo-1999",
+      "nome": "Kosovo — Operation Allied Force (NATO)",
+      "lat": 42.6629,
+      "lon": 21.1655,
+      "anno_inizio": 1999,
+      "anno_fine": 1999,
+      "durata": "24 marzo — 10 giugno 1999 (78 giorni di bombardamenti)",
+      "vittime_stimate": "Vittime civili dei bombardamenti NATO: 489-528 (Human Rights Watch, «Civilian Deaths in the NATO Air Campaign», 2000). Stima del governo serbo: 1.200-2.500. Conflitto 1998-1999 (totale): ~13.500 morti tutte le parti.",
+      "ruolo_italia": "Italia: pieno coinvolgimento NATO. Da Aviano partono F-16 USA e da Ghedi i Tornado italiani. Vengono colpiti, oltre a obiettivi militari, ponti, fabbriche, la TV serba (16 morti civili), il Treno di Grdelica (14 morti civili), l'ambasciata cinese (3 morti).",
+      "basi_coinvolte": ["aviano", "ghedi", "sigonella", "decimomannu", "trapani-birgi"]
+    },
+    {
+      "id": "afghanistan-2001",
+      "nome": "Afghanistan — Enduring Freedom + ISAF",
+      "lat": 33.9391,
+      "lon": 67.7100,
+      "anno_inizio": 2001,
+      "anno_fine": 2021,
+      "durata": "Ottobre 2001 — Agosto 2021 (~20 anni)",
+      "vittime_stimate": "176.000 morti diretti totali (Brown University, «Costs of War» Project, 2021): ~46.000 civili afghani, ~70.000 militari/polizia afghani, ~52.000 talebani, ~3.500 soldati internazionali. Vittime indirette stimate molto più alte.",
+      "ruolo_italia": "Italia: contingente militare permanente nella missione ISAF (Provincial Reconstruction Team Herat), poi Resolute Support. 53 militari italiani caduti. Basi italiane utilizzate per logistica (Camp Darby) e droni (Sigonella).",
+      "basi_coinvolte": ["aviano", "sigonella", "camp-darby", "vicenza-ederle", "vicenza-dalmolin", "napoli-jfc"]
+    },
+    {
+      "id": "iraq-2003",
+      "nome": "Iraq — Operazione Iraqi Freedom",
+      "lat": 33.2232,
+      "lon": 43.6793,
+      "anno_inizio": 2003,
+      "anno_fine": 2011,
+      "durata": "Marzo 2003 — Dicembre 2011 (invasione e occupazione); il conflitto a bassa intensità prosegue fino ad oggi",
+      "vittime_stimate": "Vittime totali: tra 200.000 e 1.000.000 (range: Iraq Body Count ~200.000 civili documentati; Lancet Survey 2006 stima 600.000-1.000.000 morti in eccesso). Brown University «Costs of War» stima ~300.000 morti diretti 2003-2021.",
+      "ruolo_italia": "Italia: contingente «Antica Babilonia» 2003-2006 (Nassiriya). 33 militari italiani caduti, di cui 19 nella strage di Nassiriya del 12 novembre 2003. Camp Darby: principale snodo logistico USA per l'invasione. Aviano e Sigonella usate dall'USAF.",
+      "basi_coinvolte": ["aviano", "sigonella", "camp-darby", "vicenza-ederle"]
+    },
+    {
+      "id": "libia-2011",
+      "nome": "Libia — Operation Unified Protector (NATO)",
+      "lat": 26.3351,
+      "lon": 17.2283,
+      "anno_inizio": 2011,
+      "anno_fine": 2011,
+      "durata": "Marzo — Ottobre 2011 (7 mesi di bombardamenti NATO); guerra civile prosegue fino ad oggi",
+      "vittime_stimate": "Conflitto 2011: ~25.000-30.000 morti. Conflitto libico complessivo 2011-2020: stime variano da 50.000 a oltre 100.000. La Libia da allora è uno stato fallito.",
+      "ruolo_italia": "Italia: piena partecipazione NATO. Aerei italiani (Tornado, F-16, Eurofighter, AMX) operano da Trapani-Birgi, Sigonella, Decimomannu, Gioia del Colle. Caduta di Gheddafi (poi linciato 20 ottobre 2011). Conseguenza diretta: collasso degli accordi italiani sul petrolio, flussi migratori incontrollati, infiltrazione ISIS nel Mediterraneo.",
+      "basi_coinvolte": ["aviano", "ghedi", "sigonella", "decimomannu", "trapani-birgi", "napoli-jfc", "capodichino-nsa", "camp-darby"]
+    },
+    {
+      "id": "siria-2014",
+      "nome": "Siria — Operation Inherent Resolve (coalizione anti-ISIS)",
+      "lat": 34.8021,
+      "lon": 38.9968,
+      "anno_inizio": 2014,
+      "anno_fine": null,
+      "durata": "Dal 2014 ad oggi",
+      "vittime_stimate": "Guerra civile siriana 2011-2024: ~610.000 morti totali (Syrian Observatory for Human Rights). Vittime civili dei soli raid coalizione internazionale: ~13.000-15.000 (Airwars, 2024).",
+      "ruolo_italia": "Italia: ricognizione, rifornimento in volo, addestramento curdi e iracheni. Da Sigonella partono droni USA. Da Aviano operano F-16 USA. Da Trapani Eurofighter italiani per pattugliamento.",
+      "basi_coinvolte": ["aviano", "sigonella", "trapani-birgi", "camp-darby"]
+    },
+    {
+      "id": "yemen-2015",
+      "nome": "Yemen — coalizione saudita (armi italiane documentate)",
+      "lat": 15.5527,
+      "lon": 48.5164,
+      "anno_inizio": 2015,
+      "anno_fine": null,
+      "durata": "Dal marzo 2015 ad oggi (tregua tesa dal 2022)",
+      "vittime_stimate": "Stima ONU/UNDP 2021: ~377.000 morti (di cui ~60% per cause indirette: fame, mancanza di cure, epidemie). Vittime dirette dei raid sauditi: oltre 25.000 documentate. Crisi umanitaria peggiore al mondo nel decennio 2015-2025.",
+      "ruolo_italia": "Italia: NO partecipazione militare diretta. SI export di bombe da RWM Italia (Domusnovas) all'Arabia Saudita fino al 2021. Bombe MK-82 italiane identificate dai resti su almeno una strage di civili (Deir Al-Hajari, 8 ottobre 2016, 6 morti tra cui 4 bambini). Sospensione export gennaio 2021 (Governo Draghi); parziale ripristino ottobre 2023 (Governo Meloni).",
+      "basi_coinvolte": ["domusnovas-rwm"]
+    }
+  ]
+}

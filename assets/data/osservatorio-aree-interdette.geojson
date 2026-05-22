@@ -1,0 +1,73 @@
+{
+  "type": "FeatureCollection",
+  "metadata": {
+    "descrizione": "Poligoni indicativi delle zone di mare interdette alla pesca e alla navigazione civile durante le esercitazioni militari. Le coordinate sono ricostruzioni didattiche basate su decreti NOTAMAR e ordinanze delle Capitanerie di Porto; non vanno usate per scopi nautici reali. I confini effettivi variano con le esercitazioni e sono pubblicati di volta in volta dalle Autorità Marittime.",
+    "fonti": [
+      "NOTAMAR — Avvisi ai Naviganti, Marina Militare",
+      "Decreti del Ministero della Difesa sulle zone di pericolo",
+      "Comitato Sardo Gettiamo le Basi"
+    ]
+  },
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "salto-di-quirra-mare",
+        "nome": "Zona di mare interdetta — Salto di Quirra (PISQ)",
+        "base_id": "salto-di-quirra",
+        "estensione_kmq": 4000,
+        "descrizione": "Vasto specchio acqueo a sud-est della Sardegna, di fronte al poligono di Perdasdefogu, periodicamente interdetto alla navigazione e alla pesca per le esercitazioni missilistiche. Una delle più ampie aree marine sottratte all'uso civile in Europa."
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[
+          [9.65, 39.55],
+          [10.40, 39.55],
+          [10.40, 38.95],
+          [9.70, 38.95],
+          [9.65, 39.55]
+        ]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "teulada-mare",
+        "nome": "Zona di mare interdetta — Capo Teulada",
+        "base_id": "teulada",
+        "estensione_kmq": 1300,
+        "descrizione": "Tratto di mare a sud-ovest della Sardegna, davanti al poligono di Capo Teulada. Comprende parte del Golfo di Palmas. Interdetto alla pesca e alla navigazione durante le esercitazioni di tiro e gli sbarchi anfibi."
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[
+          [8.45, 38.92],
+          [9.10, 38.92],
+          [9.10, 38.45],
+          [8.45, 38.45],
+          [8.45, 38.92]
+        ]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "capo-frasca-mare",
+        "nome": "Zona di mare interdetta — Capo Frasca",
+        "base_id": "capo-frasca",
+        "estensione_kmq": 250,
+        "descrizione": "Specchio acqueo davanti alla costa occidentale della Sardegna (Costa Verde), interdetto durante le esercitazioni di tiro aria-suolo del poligono di Capo Frasca."
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[
+          [8.27, 39.80],
+          [8.47, 39.80],
+          [8.47, 39.60],
+          [8.27, 39.60],
+          [8.27, 39.80]
+        ]]
+      }
+    }
+  ]
+}

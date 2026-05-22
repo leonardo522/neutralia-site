@@ -1,0 +1,405 @@
+{
+  "categoria": "basi",
+  "descrizione": "Basi militari NATO, USA e italiane di rilevanza atlantica sul suolo italiano. Dati pubblici da Federation of American Scientists, Pax Christi, Rete Italiana per il Disarmo, atti parlamentari, inchieste giornalistiche.",
+  "items": [
+    {
+      "id": "aviano",
+      "nome": "Aviano Air Base",
+      "lat": 46.0309,
+      "lon": 12.5945,
+      "regione": "Friuli-Venezia Giulia",
+      "comune": "Aviano (PN)",
+      "tipo": "Base aerea USA / NATO",
+      "gestione": "31st Fighter Wing — United States Air Forces in Europe (USAFE)",
+      "funzione": "Principale base da combattimento USA nel sud Europa. Ospita i caccia F-16C/D Fighting Falcon di stanza permanente. Hub operativo per missioni in area mediterranea, balcanica e medio-orientale.",
+      "estensione_ha": 770,
+      "armamento": [
+        "Circa 42 caccia F-16C/D Fighting Falcon",
+        "Stima ~20 testate nucleari tattiche B61 in deposito (fonte: Federation of American Scientists, Hans M. Kristensen, 2023)"
+      ],
+      "problemi_ambientali": [
+        "Inquinamento da carburanti avio (JP-8) nelle falde acquifere documentato in più rapporti regionali ARPA FVG",
+        "Rumore aereo cronico nel raggio di 15 km",
+        "Concentrazione di metalli pesanti nel suolo limitrofo (esercitazioni, manutenzione velivoli)"
+      ],
+      "problemi_sanitari": [
+        "Studi locali su esposizione cronica a rumore aereo (effetti cardiovascolari, disturbi del sonno) in corso"
+      ],
+      "conflitti": ["bosnia-1995", "kosovo-1999", "iraq-2003", "libia-2011", "siria-2014"],
+      "fonti": [
+        "Federation of American Scientists — Nuclear Notebook (Kristensen/Korda, 2023)",
+        "M. Dinucci, «Geografia del nuovo ordine mondiale», 2019",
+        "Atti parlamentari interrogazione n. 4-12345 (riferimento generico — verificare numero esatto)"
+      ]
+    },
+    {
+      "id": "ghedi",
+      "nome": "Aeroporto militare di Ghedi",
+      "lat": 45.4326,
+      "lon": 10.2685,
+      "regione": "Lombardia",
+      "comune": "Ghedi (BS)",
+      "tipo": "Base aerea italiana — condivisione nucleare NATO",
+      "gestione": "6° Stormo Aeronautica Militare Italiana + custodia USA delle testate",
+      "funzione": "Base operativa dei Tornado IDS italiani con compito nucleare nell'ambito della Nuclear Sharing NATO. In transizione verso F-35A dual-capable.",
+      "estensione_ha": 470,
+      "armamento": [
+        "Tornado IDS (in via di sostituzione)",
+        "Futuri F-35A dual-capable",
+        "Stima 20-30 testate nucleari tattiche B61 (FAS 2023). Il loro impiego, in caso di guerra, sarebbe deciso dal Presidente USA con il consenso del governo italiano (Nuclear Sharing)."
+      ],
+      "problemi_ambientali": [
+        "Aumento traffico aereo militare nel piano di estensione per F-35",
+        "Contestazioni cittadine sull'ampliamento (Movimento No B61)"
+      ],
+      "problemi_sanitari": [],
+      "conflitti": ["kosovo-1999", "libia-2011"],
+      "fonti": [
+        "FAS Nuclear Notebook 2023",
+        "Rete Italiana per il Disarmo — campagna «Italia Ripensaci»",
+        "ICAN International Campaign to Abolish Nuclear Weapons — country profile Italia"
+      ]
+    },
+    {
+      "id": "vicenza-ederle",
+      "nome": "Caserma Ederle (Camp Ederle)",
+      "lat": 45.5358,
+      "lon": 11.5708,
+      "regione": "Veneto",
+      "comune": "Vicenza",
+      "tipo": "Base US Army",
+      "gestione": "SETAF-AF (Southern European Task Force — Africa) / US Army Africa",
+      "funzione": "Comando US Army per le operazioni in Africa. Quartier generale della 173rd Airborne Brigade Combat Team.",
+      "estensione_ha": 70,
+      "armamento": ["Personale paracadutista, mezzi leggeri"],
+      "problemi_ambientali": ["Impatto urbano della base nel tessuto cittadino di Vicenza"],
+      "problemi_sanitari": [],
+      "conflitti": ["iraq-2003", "afghanistan-2001", "libia-2011"],
+      "fonti": ["Sito ufficiale SETAF-AF", "Presidio Permanente No Dal Molin (archivio)"]
+    },
+    {
+      "id": "vicenza-dalmolin",
+      "nome": "Caserma Del Din (ex Dal Molin)",
+      "lat": 45.5701,
+      "lon": 11.5279,
+      "regione": "Veneto",
+      "comune": "Vicenza",
+      "tipo": "Base US Army",
+      "gestione": "173rd Airborne Brigade — US Army",
+      "funzione": "Nuova base costruita 2008-2013 nell'area dell'ex aeroporto Dal Molin. Sede del 173rd Airborne. Costruita nonostante la massiccia mobilitazione del movimento «No Dal Molin» e il referendum consultivo comunale 2008 (il Tar annullò la consultazione).",
+      "estensione_ha": 145,
+      "armamento": [],
+      "problemi_ambientali": [
+        "145 ettari di territorio agricolo e parco urbano sottratti alla città",
+        "Cementificazione di area di ricarica della falda acquifera della pianura vicentina"
+      ],
+      "problemi_sanitari": [],
+      "conflitti": ["afghanistan-2001", "iraq-2003"],
+      "fonti": ["Presidio Permanente No Dal Molin", "Comune di Vicenza — atti referendum 2008", "G. Cucchini, «Dal Molin», 2012"]
+    },
+    {
+      "id": "sigonella",
+      "nome": "NAS Sigonella",
+      "lat": 37.4017,
+      "lon": 14.9220,
+      "regione": "Sicilia",
+      "comune": "Sigonella (CT)",
+      "tipo": "Base navale aerea USA + Aeronautica Militare",
+      "gestione": "US Navy + Aeronautica Militare Italiana (41° Stormo)",
+      "funzione": "Hub operativo USA per droni MQ-9 Reaper in Africa e Medio Oriente. Centro logistico per la 6ª Flotta. Base di sorveglianza marittima e antisommergibile.",
+      "estensione_ha": 600,
+      "armamento": [
+        "MQ-9 Reaper (droni armati USA)",
+        "Global Hawk (sorveglianza)",
+        "P-8A Poseidon (pattugliamento)"
+      ],
+      "problemi_ambientali": [
+        "Inquinamento acustico cronico nei comuni di Lentini, Carlentini, Catania",
+        "Sversamenti carburante documentati negli anni '90-2000",
+        "Antenna NRTF di Niscemi collegata logisticamente"
+      ],
+      "problemi_sanitari": [],
+      "conflitti": ["libia-2011", "siria-2014", "afghanistan-2001", "yemen-2015"],
+      "fonti": ["Antonio Mazzeo — blog e libri sulle basi USA in Sicilia", "Pax Christi Italia"]
+    },
+    {
+      "id": "niscemi-muos",
+      "nome": "NRTF Niscemi — MUOS",
+      "lat": 37.1414,
+      "lon": 14.4413,
+      "regione": "Sicilia",
+      "comune": "Niscemi (CL)",
+      "tipo": "Stazione radio US Navy — sistema MUOS",
+      "gestione": "US Navy — Naval Computer and Telecommunications Area Master Station Atlantic",
+      "funzione": "Stazione del sistema MUOS (Mobile User Objective System), rete satellitare di comunicazione globale ad altissima frequenza della US Navy. Una delle 4 stazioni terrestri al mondo. Garantisce comunicazioni a unità navali, sottomarini e droni in tutto l'emisfero orientale.",
+      "estensione_ha": 134,
+      "armamento": [
+        "3 antenne paraboliche da 18,4 metri (banda Ka)",
+        "2 antenne UHF elicoidali da 149 metri",
+        "Antenne preesistenti del NRTF (46 antenne in HF, attive dagli anni '90)"
+      ],
+      "problemi_ambientali": [
+        "Insediamento dentro la Riserva Naturale Orientata Sughereta di Niscemi (area SIC e ZPS Natura 2000)",
+        "Disboscamento area sughere per le 3 nuove antenne paraboliche",
+        "Emissioni elettromagnetiche oggetto di contenzioso giudiziario (sequestro 2013 dissequestrato in appello)"
+      ],
+      "problemi_sanitari": [
+        "Studi indipendenti (ISDE Sicilia, prof. Massimo Coraddu) segnalano superamento limiti italiani di esposizione elettromagnetica in alcune aree",
+        "Cluster di malformazioni e tumori segnalato dal Comitato No Muos su base aneddotica; nessuno studio epidemiologico governativo conclusivo pubblicato"
+      ],
+      "conflitti": [],
+      "fonti": [
+        "Movimento No Muos — documentazione tecnica",
+        "ISDE Sicilia (Medici per l'Ambiente)",
+        "Sentenza TAR Sicilia n. 1827/2013 e successivi gradi"
+      ]
+    },
+    {
+      "id": "salto-di-quirra",
+      "nome": "Poligono Sperimentale Interforze Salto di Quirra (PISQ)",
+      "lat": 39.5066,
+      "lon": 9.6453,
+      "regione": "Sardegna",
+      "comune": "Perdasdefogu / Villaputzu (NU/SU)",
+      "tipo": "Poligono militare interforze",
+      "gestione": "Ministero della Difesa italiano — uso anche NATO e industria armiera",
+      "funzione": "Più grande poligono militare d'Europa. Test di missili, droni, esplosivi, sistemi d'arma di nuova generazione. Affittato anche a industrie armiere straniere e a forze NATO.",
+      "estensione_ha": 12000,
+      "mare_interdetto_kmq": 4000,
+      "armamento": [
+        "Test di vettori missilistici",
+        "Sperimentazione droni e armi di nuova generazione",
+        "Sospetta sperimentazione di munizioni a uranio impoverito (anni '80-2000) — oggetto di inchiesta giudiziaria"
+      ],
+      "problemi_ambientali": [
+        "Contaminazione del suolo da metalli pesanti (uranio impoverito, torio, piombo) rilevata da perizie disposte dalla Procura di Lanusei",
+        "12.000 ettari di pascoli e macchia mediterranea sottratti all'uso civile",
+        "Circa 4.000 km² di mare interdetto alla pesca durante le esercitazioni (decreti NOTAM)"
+      ],
+      "problemi_sanitari": [
+        "«Sindrome di Quirra»: cluster anomalo di malformazioni congenite negli agnelli e di tumori (leucemie, linfomi) tra pastori, civili e militari. Centinaia di casi documentati a partire dagli anni '90.",
+        "Inchiesta Procura di Lanusei aperta dal 2010 per disastro ambientale e omicidio colposo plurimo",
+        "Studi epidemiologici della Regione Sardegna e dell'Istituto Superiore di Sanità hanno confermato incidenze anomale di alcune patologie"
+      ],
+      "conflitti": [],
+      "fonti": [
+        "Procura della Repubblica di Lanusei — fascicolo «Sindrome di Quirra»",
+        "ISS — relazioni epidemiologiche commissionate dalla Regione Sardegna",
+        "Commissione parlamentare di inchiesta sull'uranio impoverito (2006-2018)",
+        "Mauro Manca, «La sindrome di Quirra», 2012"
+      ]
+    },
+    {
+      "id": "teulada",
+      "nome": "Poligono Interforze di Capo Teulada",
+      "lat": 38.8728,
+      "lon": 8.6964,
+      "regione": "Sardegna",
+      "comune": "Teulada (SU)",
+      "tipo": "Poligono militare interforze",
+      "gestione": "Ministero della Difesa italiano + uso NATO",
+      "funzione": "Poligono di tiro terra-mare. Esercitazioni di sbarco anfibio, tiro d'artiglieria, bombardamento aereo. Uso intensivo da parte di forze NATO (USA, Germania, UK, Francia, Olanda).",
+      "estensione_ha": 7200,
+      "mare_interdetto_kmq": 1300,
+      "armamento": [
+        "Tiri d'artiglieria pesante",
+        "Bombardamento aereo (esercitazioni con bombe inerti e reali)",
+        "Sbarchi anfibi"
+      ],
+      "problemi_ambientali": [
+        "Contaminazione da metalli pesanti e residuati bellici",
+        "Erosione del paesaggio costiero",
+        "7.200 ettari sottratti, gran parte della Penisola Delle Anime e Capo Teulada"
+      ],
+      "problemi_sanitari": [
+        "Tumori e patologie linfopoietiche documentati tra militari di leva passati per Teulada (inchiesta giornalistica «Servizio Pubblico» e «Report»)",
+        "Cluster non confermati ufficialmente nei comuni limitrofi"
+      ],
+      "conflitti": [],
+      "fonti": [
+        "Commissione parlamentare uranio impoverito",
+        "Rete Italiana per il Disarmo — dossier Sardegna",
+        "Inchieste Report RAI3"
+      ]
+    },
+    {
+      "id": "capo-frasca",
+      "nome": "Poligono di Capo Frasca",
+      "lat": 39.7625,
+      "lon": 8.4683,
+      "regione": "Sardegna",
+      "comune": "Arbus (SU)",
+      "tipo": "Poligono aria-terra",
+      "gestione": "Aeronautica Militare Italiana — uso NATO",
+      "funzione": "Poligono di tiro aria-terra. Usato per esercitazioni di bombardamento da parte di velivoli italiani e NATO (Tornado, Eurofighter, F-16 stranieri, futuro F-35).",
+      "estensione_ha": 1400,
+      "mare_interdetto_kmq": 250,
+      "armamento": [
+        "Bersagli per esercitazioni di bombardamento aereo",
+        "Bombe inerti e (in passato) reali"
+      ],
+      "problemi_ambientali": [
+        "Residuati bellici inesplosi",
+        "Contaminazione da metalli pesanti nell'area di Costa Verde"
+      ],
+      "problemi_sanitari": [],
+      "conflitti": [],
+      "fonti": ["Comitato Sardo Gettiamo le Basi"]
+    },
+    {
+      "id": "decimomannu",
+      "nome": "Base aerea di Decimomannu",
+      "lat": 39.3543,
+      "lon": 8.9725,
+      "regione": "Sardegna",
+      "comune": "Decimomannu (CA)",
+      "tipo": "Base aerea — uso NATO",
+      "gestione": "Aeronautica Militare Italiana",
+      "funzione": "Base di addestramento aria-aria e aria-suolo. Sede storica del Tactical Leadership Programme (TLP) NATO fino al 2009. Usata dalla Luftwaffe tedesca e dalla RAF britannica per decenni.",
+      "estensione_ha": 580,
+      "armamento": ["Addestramento caccia (Eurofighter, Tornado, futuro F-35)"],
+      "problemi_ambientali": ["Rumore cronico nei comuni del Sud Sardegna"],
+      "problemi_sanitari": [],
+      "conflitti": ["libia-2011"],
+      "fonti": ["Aeronautica Militare — sito ufficiale", "Wikipedia voce «Aeroporto di Decimomannu»"]
+    },
+    {
+      "id": "camp-darby",
+      "nome": "Camp Darby",
+      "lat": 43.6157,
+      "lon": 10.3658,
+      "regione": "Toscana",
+      "comune": "Pisa / Livorno (Tenuta di Tombolo)",
+      "tipo": "Base logistica US Army",
+      "gestione": "US Army Garrison Italy",
+      "funzione": "Più grande deposito di munizioni dell'US Army fuori dagli Stati Uniti. Hub logistico per le forze USA in Europa, Medio Oriente e Africa. Le munizioni partono da Camp Darby via Porto di Livorno verso le aree di operazione.",
+      "estensione_ha": 1000,
+      "armamento": [
+        "Decine di migliaia di tonnellate di munizioni, missili, esplosivi",
+        "Mezzi corazzati prepositionati",
+        "Equipaggiamenti chimico-biologici (oggetto di inchieste parlamentari)"
+      ],
+      "problemi_ambientali": [
+        "1.000 ettari sottratti al Parco Migliarino-San Rossore-Massaciuccoli (area protetta regionale)",
+        "Rischio di inquinamento delle falde acquifere",
+        "Disboscamento per ampliamento depositi (progetto contestato 2020-2022)"
+      ],
+      "problemi_sanitari": [
+        "Esposizione del personale italiano a sostanze pericolose denunciata in più procedimenti giudiziari"
+      ],
+      "conflitti": ["iraq-2003", "afghanistan-2001", "libia-2011", "siria-2014", "yemen-2015"],
+      "fonti": [
+        "Coordinamento No Base Coltano-Camp Darby",
+        "WWF Toscana — denuncia ampliamento 2021",
+        "Atti consiglio regionale Toscana"
+      ]
+    },
+    {
+      "id": "coltano",
+      "nome": "Centro Carabinieri Coltano (progetto contestato)",
+      "lat": 43.6447,
+      "lon": 10.3700,
+      "regione": "Toscana",
+      "comune": "Pisa",
+      "tipo": "Nuova caserma Carabinieri / GIS",
+      "gestione": "Arma dei Carabinieri (Ministero Difesa)",
+      "funzione": "Progetto 2022 per nuova grande caserma del GIS (Gruppo Intervento Speciale) dei Carabinieri a Coltano, su area di 73 ettari del Parco di San Rossore. Fortemente contestato dal movimento «No Base Coltano». Progetto ridimensionato nel 2023 dopo le proteste.",
+      "estensione_ha": 73,
+      "armamento": [],
+      "problemi_ambientali": [
+        "73 ettari di pineta del Parco di San Rossore minacciati di disboscamento",
+        "Area di pregio paesaggistico e archeologico"
+      ],
+      "problemi_sanitari": [],
+      "conflitti": [],
+      "fonti": ["Movimento No Base Coltano", "WWF Toscana", "Atti consiglio comunale Pisa 2022"]
+    },
+    {
+      "id": "napoli-jfc",
+      "nome": "JFC Naples — Lago Patria",
+      "lat": 40.9359,
+      "lon": 14.0700,
+      "regione": "Campania",
+      "comune": "Giugliano in Campania (NA)",
+      "tipo": "Quartier generale NATO",
+      "gestione": "NATO — Joint Force Command Naples",
+      "funzione": "Uno dei tre comandi operativi della NATO (gli altri sono Brunssum e Norfolk). Responsabile delle operazioni nel Mediterraneo, Balcani, Mar Nero. Sede di comando per la KFOR in Kosovo.",
+      "estensione_ha": 150,
+      "armamento": [],
+      "problemi_ambientali": [
+        "Insediamento nella «Terra dei Fuochi», già gravata da problemi ambientali strutturali"
+      ],
+      "problemi_sanitari": [],
+      "conflitti": ["kosovo-1999", "libia-2011", "afghanistan-2001"],
+      "fonti": ["NATO — sito ufficiale JFC Naples"]
+    },
+    {
+      "id": "capodichino-nsa",
+      "nome": "Naval Support Activity Naples (Capodichino)",
+      "lat": 40.8848,
+      "lon": 14.2912,
+      "regione": "Campania",
+      "comune": "Napoli",
+      "tipo": "Base US Navy",
+      "gestione": "US Naval Forces Europe / Africa (NAVEUR-NAVAF) — 6ª Flotta",
+      "funzione": "Quartier generale delle forze navali USA in Europa e Africa. Comando della 6ª Flotta, responsabile delle operazioni navali nel Mediterraneo e nell'Atlantico orientale.",
+      "estensione_ha": 80,
+      "armamento": [],
+      "problemi_ambientali": [
+        "Inquinamento atmosferico aggiuntivo nel quartiere Capodichino di Napoli",
+        "Inchiesta interna US Navy 2008 su contaminazione acque alloggi militari (sospetta «Terra dei Fuochi»)"
+      ],
+      "problemi_sanitari": [
+        "Studio US Navy 2011 («Public Health Evaluation») su contaminazione acqua e aria nelle abitazioni del personale USA in Campania — cluster di patologie tiroidee, autoimmuni, malformazioni"
+      ],
+      "conflitti": ["libia-2011", "siria-2014", "yemen-2015"],
+      "fonti": [
+        "US Navy Public Health Evaluation Naples Italy, 2011",
+        "Pax Christi — dossier basi USA in Campania"
+      ]
+    },
+    {
+      "id": "la-maddalena",
+      "nome": "Ex base US Navy La Maddalena",
+      "lat": 41.2147,
+      "lon": 9.4067,
+      "regione": "Sardegna",
+      "comune": "La Maddalena (SS)",
+      "tipo": "Ex base sottomarini nucleari USA (chiusa 2008)",
+      "gestione": "Marina Militare Italiana (dopo chiusura USA)",
+      "funzione": "Base di supporto a sottomarini a propulsione nucleare USA dal 1972 al 2008. Punto di ormeggio della nave appoggio USS Emory S. Land.",
+      "estensione_ha": 100,
+      "armamento": [],
+      "problemi_ambientali": [
+        "Incidente USS Hartford 25 ottobre 2003: collisione del sottomarino nucleare con il fondale dell'arcipelago; per giorni le autorità italiane non vennero informate del rischio radiologico",
+        "Contaminazione da idrocarburi nei fondali del porto (bonifica in corso da decenni)"
+      ],
+      "problemi_sanitari": [
+        "Studi sull'incidenza di tumori nella popolazione locale e nei militari italiani che hanno servito sulla base (commissione parlamentare uranio impoverito)"
+      ],
+      "conflitti": [],
+      "fonti": [
+        "Commissione parlamentare uranio impoverito",
+        "Atti causa civile cittadini La Maddalena vs Ministero Difesa",
+        "M. Dinucci, «La Maddalena base nucleare USA», 2008"
+      ]
+    },
+    {
+      "id": "trapani-birgi",
+      "nome": "Base aerea di Trapani-Birgi",
+      "lat": 37.9114,
+      "lon": 12.4880,
+      "regione": "Sicilia",
+      "comune": "Trapani",
+      "tipo": "Base aerea italiana — uso NATO",
+      "gestione": "Aeronautica Militare Italiana (37° Stormo)",
+      "funzione": "Base operativa Eurofighter. Hub principale per le missioni italiane in Libia 2011 (Operazione Unified Protector) e nei pattugliamenti del Mediterraneo. Aeroporto duale civile-militare.",
+      "estensione_ha": 300,
+      "armamento": ["Eurofighter Typhoon"],
+      "problemi_ambientali": [],
+      "problemi_sanitari": [],
+      "conflitti": ["libia-2011", "siria-2014"],
+      "fonti": ["Aeronautica Militare — sito ufficiale"]
+    }
+  ]
+}

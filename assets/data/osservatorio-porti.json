@@ -1,0 +1,153 @@
+{
+  "categoria": "porti",
+  "descrizione": "Principali porti italiani coinvolti nell'export di armamenti o nel transito di forniture militari. Dati pubblici da Autorità di Sistema Portuale, Relazione governativa annuale L.185/90, OPAL, inchieste giornalistiche.",
+  "items": [
+    {
+      "id": "genova",
+      "nome": "Porto di Genova",
+      "lat": 44.4056,
+      "lon": 8.9343,
+      "regione": "Liguria",
+      "tipo": "Porto commerciale — export armi documentato",
+      "gestione": "Autorità di Sistema Portuale del Mar Ligure Occidentale (ente pubblico — Stato italiano)",
+      "ruolo_militare": "Principale porto italiano per l'export di armamenti per anni. Snodo storico della rotta della saudita Bahri Yanbu verso il Medio Oriente (Yemen). I lavoratori portuali del Collettivo Autonomo Lavoratori Portuali (CALP) hanno organizzato dal 2019 ripetuti blocchi delle navi armi dirette in Arabia Saudita.",
+      "flussi_stimati": "Centinaia di tonnellate di armamenti italiani (RWM Domusnovas, Leonardo) e statunitensi (in transito) caricati ogni anno fino al 2021. Le quantità precise sono coperte da segreto commerciale, ma documentate dalle UAMA (Unità Autorizzazioni Materiali di Armamento).",
+      "casi_documentati": [
+        "20 maggio 2019: il CALP blocca per la prima volta la nave Bahri Yanbu, che trasportava 8 generatori per elicotteri Caesar verso l'Arabia Saudita",
+        "Aprile 2021: nuovo blocco contro container di esplosivi RWM Italia",
+        "2019-2021: la rotta Bahri Yanbu-Genova è documentata da OPAL Brescia e Weapon Watch"
+      ],
+      "fonti": [
+        "Weapon Watch — Osservatorio sulle armi nei porti europei e mediterranei",
+        "Collettivo Autonomo Lavoratori Portuali Genova (CALP-USB)",
+        "Relazione governativa annuale L.185/90"
+      ]
+    },
+    {
+      "id": "livorno",
+      "nome": "Porto di Livorno",
+      "lat": 43.5460,
+      "lon": 10.3026,
+      "regione": "Toscana",
+      "tipo": "Porto commerciale — uscita armi US Army (Camp Darby)",
+      "gestione": "Autorità di Sistema Portuale del Mar Tirreno Settentrionale",
+      "ruolo_militare": "Porto di uscita dei materiali militari USA depositati a Camp Darby. Tutto l'armamento US Army diretto a Medio Oriente, Africa, Europa orientale passa da qui. Banchine dedicate e protocolli speciali per il transito di munizioni ed esplosivi.",
+      "flussi_stimati": "Stime non pubbliche. In occasione della guerra in Iraq (2003) e Afghanistan (2001-2021) il flusso annuale è stato documentato da inchieste in decine di migliaia di tonnellate.",
+      "casi_documentati": [
+        "Aprile 2003: blocco dei portuali livornesi contro le navi cariche di armi per la guerra in Iraq",
+        "Ottobre 2023 in poi: monitoraggio inviato a Israele documentato dal Movimento No Base",
+        "2014: incidente sulla nave Lyme Bay (carico armi UK in transito) con sversamento"
+      ],
+      "fonti": [
+        "Weapon Watch",
+        "USB Porto Livorno",
+        "Comitato No Base Coltano"
+      ]
+    },
+    {
+      "id": "la-spezia-porto",
+      "nome": "Porto della Spezia",
+      "lat": 44.1086,
+      "lon": 9.8265,
+      "regione": "Liguria",
+      "tipo": "Porto commerciale + Arsenale Militare Marittimo",
+      "gestione": "Autorità di Sistema Portuale del Mar Ligure Orientale + Marina Militare",
+      "ruolo_militare": "Sede dell'Arsenale Militare Marittimo della Marina Militare (uno dei più antichi e attivi d'Italia). Cantieri Fincantieri-Muggiano (sottomarini). Porto di transito per armamenti prodotti localmente (Leonardo-OTO Melara).",
+      "flussi_stimati": "Difficile da quantificare per la mescolanza commerciale-militare. L'export navale Fincantieri (fregate, sottomarini, corvette) passa anche da qui.",
+      "casi_documentati": [],
+      "fonti": ["Marina Militare — sito ufficiale Arsenale La Spezia", "Fincantieri"]
+    },
+    {
+      "id": "trieste",
+      "nome": "Porto di Trieste",
+      "lat": 45.6495,
+      "lon": 13.7768,
+      "regione": "Friuli-Venezia Giulia",
+      "tipo": "Porto Franco internazionale — statuto sui generis",
+      "gestione": "Autorità di Sistema Portuale del Mare Adriatico Orientale. I Punti Franchi sono giuridicamente extraterritoriali, regolati dall'Allegato VIII del Trattato di Pace del 1947 e dal Memorandum di Londra del 1954.",
+      "ruolo_militare": "Porto di transito per armamenti e dual-use verso Europa orientale, Balcani, Asia centrale. Lo statuto di Porto Franco internazionale crea un'anomalia di sovranità: le merci in transito sono soggette a un regime giuridico misto, non puramente italiano.",
+      "flussi_stimati": "Trieste è il principale porto italiano per volumi (oltre 60 milioni di tonnellate/anno totali). La quota armi non è pubblica.",
+      "casi_documentati": [
+        "Ottobre 2021: nel pieno delle proteste No Green Pass dei portuali triestini (CLPT — Coordinamento Lavoratori Portuali Triestini), la Ministra dell'Interno Luciana Lamorgese dichiara in audizione che il Porto di Trieste «ha una giurisdizione internazionale e particolare»: i Punti Franchi sono giuridicamente extra-doganali e la sovranità italiana è limitata da norme internazionali (Allegato VIII Trattato di Pace 1947).",
+        "Il Porto di Trieste è in larga parte controllato dal capitale tedesco (HHLA — Hamburger Hafen und Logistik AG ha acquisito Piattaforma Logistica Trieste e Servola nel 2020) e ungherese (Adria Port). Concessioni a Cina (COSCO, accordo del 2019 nell'ambito della Via della Seta, poi parzialmente sospeso) tornate al centro del dibattito.",
+        "Decreto Legislativo Luogotenenziale 6/9/1947 n.1014 e successive convenzioni internazionali regolano un regime sovrano anomalo."
+      ],
+      "questione_sovranita": "I Punti Franchi di Trieste (Punto Franco Vecchio, Nuovo, Scalo Legnami, Oli Minerali, Industriale) sono extraterritoriali per le merci in transito. Su queste banchine: forze dell'ordine italiane operano in regime di cooperazione con l'autorità portuale, non in piena sovranità. Le concessioni a società straniere (HHLA tedesca, MSC svizzera/italiana, ECT olandese in passato) consolidano un controllo non-italiano sull'infrastruttura strategica.",
+      "fonti": [
+        "Trattato di Pace con l'Italia, Parigi 10 febbraio 1947, Allegato VIII",
+        "Memorandum d'intesa di Londra, 5 ottobre 1954",
+        "Audizione Min. Lamorgese, Senato della Repubblica, 21 ottobre 2021",
+        "Movimento Trieste Libera — documentazione storica e giuridica",
+        "Weapon Watch — dossier porto di Trieste"
+      ]
+    },
+    {
+      "id": "augusta",
+      "nome": "Porto di Augusta",
+      "lat": 37.2278,
+      "lon": 15.2200,
+      "regione": "Sicilia",
+      "tipo": "Porto militare + commerciale petrolifero",
+      "gestione": "Autorità di Sistema Portuale del Mare di Sicilia Orientale + Marina Militare (Comando Marittimo Sud)",
+      "ruolo_militare": "Sede del Comando Marittimo Sud della Marina Militare Italiana. Base navale strategica per il controllo del Canale di Sicilia e del Mediterraneo centrale. Punto di rifornimento delle navi NATO che operano nel Mediterraneo.",
+      "flussi_stimati": "Quota militare difficile da scorporare dalla movimentazione petrolifera (Augusta è anche il principale polo petrolchimico siciliano — area SIN ad alto rischio ambientale).",
+      "casi_documentati": [
+        "Augusta è inserita nel SIN (Sito di Interesse Nazionale) per le bonifiche — Priolo, una delle aree più inquinate d'Italia",
+        "Cluster anomalo di tumori e malformazioni nell'area Priolo-Augusta-Melilli da decenni (rapporti ISS — progetto SENTIERI)"
+      ],
+      "fonti": [
+        "Marina Militare — Comando Marittimo Sud",
+        "ISS — Studio SENTIERI sui Siti di Interesse Nazionale"
+      ]
+    },
+    {
+      "id": "napoli-porto",
+      "nome": "Porto di Napoli",
+      "lat": 40.8444,
+      "lon": 14.2483,
+      "regione": "Campania",
+      "tipo": "Porto commerciale + supporto US Navy",
+      "gestione": "Autorità di Sistema Portuale del Mar Tirreno Centrale",
+      "ruolo_militare": "Porto di appoggio alla Naval Support Activity Naples (Capodichino). Le unità della 6ª Flotta USA fanno scalo qui per rifornimenti e licenze. Snodo di transito per materiali militari verso il Medio Oriente.",
+      "flussi_stimati": "Difficile da scorporare dal traffico commerciale ordinario.",
+      "casi_documentati": [],
+      "fonti": ["Autorità Portuale Napoli", "US Navy — NSA Naples"]
+    },
+    {
+      "id": "ravenna",
+      "nome": "Porto di Ravenna",
+      "lat": 44.4912,
+      "lon": 12.2746,
+      "regione": "Emilia-Romagna",
+      "tipo": "Porto commerciale — export armi documentato",
+      "gestione": "Autorità di Sistema Portuale del Mare Adriatico Centro-Settentrionale",
+      "ruolo_militare": "Punto di imbarco per armamenti diretti a paesi del Mediterraneo orientale e Mar Nero. Storicamente legato all'export Beretta (Val Trompia → Ravenna → cliente finale).",
+      "flussi_stimati": "Documentati transiti annuali di munizioni leggere e cartucce da caccia/militari verso paesi MENA. Cifre puntuali non pubbliche.",
+      "casi_documentati": [
+        "2018-2019: documentato il transito di munizioni Cheddite verso il Maghreb",
+        "Inchieste OPAL su cargo container con munizioni leggere"
+      ],
+      "fonti": ["OPAL Brescia", "Weapon Watch"]
+    },
+    {
+      "id": "taranto",
+      "nome": "Porto di Taranto + Mar Grande / Mar Piccolo",
+      "lat": 40.4719,
+      "lon": 17.2306,
+      "regione": "Puglia",
+      "tipo": "Base navale Marina Militare + porto commerciale",
+      "gestione": "Marina Militare (Comando Marittimo Sud II) + Autorità di Sistema Portuale del Mar Ionio",
+      "ruolo_militare": "Principale base navale della Marina Militare Italiana. Sede della Squadra Navale e della Forza Anfibia. Ormeggio della portaerei Cavour e della nave-portaerei Trieste. Arsenale storico in via di ridimensionamento.",
+      "flussi_stimati": "Movimentazione prevalentemente militare interna (no export commerciale armi).",
+      "casi_documentati": [
+        "Mar Piccolo: gravissima contaminazione da PCB e diossine attribuita anche alle attività dell'Arsenale Militare e dell'Ilva — area SIN",
+        "Mitili contaminati: divieto di pesca e vendita dei mitili tarantini dal 2011"
+      ],
+      "fonti": [
+        "Marina Militare — Arsenale di Taranto",
+        "Procura di Taranto — fascicoli contaminazione Mar Piccolo",
+        "ISS — progetto SENTIERI"
+      ]
+    }
+  ]
+}
