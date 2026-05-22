@@ -12,6 +12,8 @@ Eseguito da .github/workflows/instagram-feed.yml ogni 6 ore.
 from __future__ import annotations
 
 import json
+import ssl
+import subprocess
 import sys
 import urllib.error
 import urllib.request
@@ -32,19 +34,35 @@ UA_IMG = (
 )
 
 
+def _fetch_bytes(url: str, user_agent: str) -> bytes:
+    """Fetcha l'URL con urllib; se fallisce per SSL (tipico su Python brew Mac
+    senza certificati CA), fa fallback a `curl`."""
+    try:
+        req = urllib.request.Request(url, headers={"User-Agent": user_agent})
+        with urllib.request.urlopen(req, timeout=TIMEOUT) as r:
+            return r.read()
+    except (ssl.SSLError, urllib.error.URLError) as e:
+        # Su macOS con Python di Homebrew i certificati CA non sono installati.
+        # Su GitHub Actions / Linux non si entra mai in questo branch.
+        print(f"  urllib failed ({e}); retry con curl", file=sys.stderr)
+        result = subprocess.run(
+            ["curl", "-sS", "--fail", "--max-time", str(TIMEOUT),
+             "-A", user_agent, url],
+            capture_output=True, check=True,
+        )
+        return result.stdout
+
+
 def fetch_json(url: str) -> dict:
-    req = urllib.request.Request(url, headers={"User-Agent": UA_FEED})
-    with urllib.request.urlopen(req, timeout=TIMEOUT) as r:
-        return json.loads(r.read().decode("utf-8"))
+    return json.loads(_fetch_bytes(url, UA_FEED).decode("utf-8"))
 
 
 def fetch_image(url: str, dest: Path) -> bool:
     try:
-        req = urllib.request.Request(url, headers={"User-Agent": UA_IMG})
-        with urllib.request.urlopen(req, timeout=TIMEOUT) as r:
-            dest.write_bytes(r.read())
+        dest.write_bytes(_fetch_bytes(url, UA_IMG))
         return True
-    except (urllib.error.URLError, urllib.error.HTTPError, TimeoutError) as e:
+    except (urllib.error.URLError, urllib.error.HTTPError,
+            subprocess.CalledProcessError, TimeoutError) as e:
         print(f"  ! download failed: {e}", file=sys.stderr)
         return False
 
