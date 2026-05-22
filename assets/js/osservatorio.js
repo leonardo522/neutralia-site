@@ -103,7 +103,8 @@
       className: 'osv-icon-porto'
     },
     produzione: {
-      svg: '<svg viewBox="0 0 24 24"><path d="M 7 17 L 7 7 Q 7 1 12 1 Q 17 1 17 7 L 17 17 Z" fill="currentColor"/><rect x="7" y="17" width="10" height="5.2" rx="0.6" fill="currentColor" opacity="0.55"/><line x1="9" y1="19.6" x2="15" y2="19.6" stroke="#000" stroke-width="0.6" opacity="0.5"/></svg>',
+      // Proiettile 9mm realistico: ogiva curva + cintura + bossolo con striature verticali + fondello + percussore
+      svg: '<svg viewBox="0 0 24 24"><path d="M 7 8 Q 7 2 12 1 Q 17 2 17 8 Z" fill="currentColor"/><rect x="6.7" y="8" width="10.6" height="0.9" fill="currentColor"/><rect x="7" y="8.9" width="10" height="11.2" fill="currentColor" opacity="0.82"/><rect x="8.4" y="8.9" width="0.45" height="11.2" fill="#000" opacity="0.22"/><rect x="10.5" y="8.9" width="0.45" height="11.2" fill="#000" opacity="0.22"/><rect x="13" y="8.9" width="0.45" height="11.2" fill="#000" opacity="0.22"/><rect x="15" y="8.9" width="0.45" height="11.2" fill="#000" opacity="0.22"/><rect x="6.4" y="20.1" width="11.2" height="1.2" fill="currentColor"/><rect x="6.4" y="21.3" width="11.2" height="1.8" rx="0.3" fill="currentColor" opacity="0.55"/></svg>',
       color: '#ff8a00',
       className: 'osv-icon-produzione'
     },
