@@ -672,6 +672,138 @@
       "fonti": ["Aeronautica Militare — Comando Aeronautico"]
     },
     {
+      "id": "tavolara",
+      "nome": "Stazione VLF di Tavolara — comunicazione sottomarini",
+      "lat": 40.8983,
+      "lon": 9.7150,
+      "regione": "Sardegna",
+      "comune": "Olbia (SS) — Isola di Tavolara",
+      "tipo": "Stazione radio VLF (ex US Navy, oggi Marina Militare con uso NATO)",
+      "gestione": "Marina Militare Italiana (Comlogcen Tavolara) — gestita dalla US Navy fino al 2009",
+      "funzione": "Stazione di trasmissione a frequenza molto bassa (VLF, 20 KHz) per le comunicazioni con i sottomarini in immersione. Attiva dal 1962, è una delle 14 stazioni VLF al mondo. L'antenna è alta 250 metri ed emette su un'area di 75 ettari. Funzione analoga a Niscemi MUOS ma per la rete VLF/LF preesistente — comunica con sottomarini americani, britannici e NATO in tutto il Mediterraneo.",
+      "estensione_ha": 75,
+      "armamento": [
+        "Antenna trasmittente VLF (Very Low Frequency) alta 250 m",
+        "Trasmettitore di 1 MW di potenza",
+        "Sistema di rete con la rete VLF/LF globale USA/NATO"
+      ],
+      "problemi_ambientali": [
+        "75 ettari dell'isola di Tavolara — area marina protetta — sottratti all'uso civile",
+        "Possibili effetti elettromagnetici sulla fauna marina del SIC Tavolara-Punta Coda Cavallo"
+      ],
+      "problemi_sanitari": [
+        "Studi su effetti dei campi VLF su fauna marina e ricaduta indiretta su attività di pesca"
+      ],
+      "conflitti": [],
+      "fonti": [
+        "Marina Militare — Comlogcen Tavolara",
+        "Movimento per il disarmo Sardegna",
+        "Federation of American Scientists — global VLF network"
+      ]
+    },
+    {
+      "id": "lampedusa",
+      "nome": "Base militare di Lampedusa (ex stazione Loran-C USA)",
+      "lat": 35.5050,
+      "lon": 12.6150,
+      "regione": "Sicilia",
+      "comune": "Lampedusa (AG)",
+      "tipo": "Base AM + ex stazione di navigazione satellitare USA",
+      "gestione": "Aeronautica Militare Italiana + storica gestione US Coast Guard (1972-1994)",
+      "funzione": "Dal 1972 al 1994 ha ospitato una stazione Loran-C della US Coast Guard, parte del sistema globale di radionavigazione USA per sottomarini, navi e aerei (predecessore del GPS). Oggi sull'isola sono attivi: aeroporto militare AM con radar, distaccamento del Corpo della Guardia di Finanza, base operativa per missioni di soccorso e controllo migratorio nel Canale di Sicilia. Punto più meridionale dell'Italia, a soli 130 km dalla Tunisia.",
+      "estensione_ha": 50,
+      "armamento": [
+        "Radar di sorveglianza aerea e navale",
+        "Aerei di pattugliamento e ricognizione",
+        "In passato: trasmettitore Loran-C da 250 KW (US Coast Guard)"
+      ],
+      "problemi_ambientali": [
+        "Una parte significativa dell'isola interessata da servitù militari",
+        "Inquinamento da carburanti documentato dell'aeroporto militare"
+      ],
+      "problemi_sanitari": [],
+      "conflitti": [],
+      "fonti": [
+        "US Coast Guard — Loran-C station historical archive",
+        "Aeronautica Militare — sito ufficiale base Lampedusa",
+        "Inchieste giornalistiche su servitù militari Pelagie"
+      ]
+    },
+    {
+      "id": "pantelleria",
+      "nome": "Base aerea di Pantelleria",
+      "lat": 36.8167,
+      "lon": 11.9667,
+      "regione": "Sicilia",
+      "comune": "Pantelleria (TP)",
+      "tipo": "Base aerea italiana (duale civile-militare) — uso NATO",
+      "gestione": "Aeronautica Militare Italiana + uso NATO",
+      "funzione": "Aeroporto militare-civile, snodo strategico al centro del Canale di Sicilia (140 km dalle coste libiche). Già fortezza italiana nel periodo fascista, bombardata pesantemente nel 1943. Oggi è base operativa AM e punto di appoggio per le esercitazioni NATO nel Mediterraneo centrale.",
+      "estensione_ha": 120,
+      "armamento": [
+        "Velivoli da pattugliamento e ricognizione",
+        "Radar di sorveglianza"
+      ],
+      "problemi_ambientali": [
+        "Servitù militari estese su isola di pregio naturalistico (Parco Nazionale dell'Isola di Pantelleria, istituito 2016)"
+      ],
+      "problemi_sanitari": [],
+      "conflitti": [],
+      "fatti_storici": [
+        "13 aprile 1986: il leader libico Mu'ammar Gheddafi lancia 2 missili Scud-B contro Pantelleria in risposta al raid USA della notte del 15 aprile su Tripoli e Bengasi (operazione «El Dorado Canyon»). I missili cadono in mare a circa 4 km dalla costa pantesca. Caso simbolo della servitù italiana al teatro di guerra USA-Libia."
+      ],
+      "fonti": [
+        "Aeronautica Militare — sito ufficiale base Pantelleria",
+        "Atti parlamentari italiani sui fatti del 15 aprile 1986",
+        "M. Dinucci — analisi geopolitica del Canale di Sicilia"
+      ]
+    },
+    {
+      "id": "ponza-radar",
+      "nome": "Stazione radar di Ponza",
+      "lat": 40.9000,
+      "lon": 12.9583,
+      "regione": "Lazio",
+      "comune": "Ponza (LT)",
+      "tipo": "Stazione radar AM — controllo Tirreno meridionale",
+      "gestione": "Aeronautica Militare Italiana — 113° Gruppo Radar — uso NATO",
+      "funzione": "Stazione radar di sorveglianza dello spazio aereo del Tirreno centro-meridionale, integrata nel sistema NATO di difesa aerea NATINAMDS. Posizione strategica per il controllo dell'approccio aereo a Roma e all'Italia centrale dal mare. Coinvolta — almeno indirettamente — nel sistema di tracciamento radar la sera del 27 giugno 1980 (strage di Ustica).",
+      "estensione_ha": 25,
+      "armamento": ["Radar a lungo raggio, sistemi di telecomunicazione militare"],
+      "problemi_ambientali": [
+        "Servitù militare su una porzione importante dell'isola di Ponza"
+      ],
+      "problemi_sanitari": [],
+      "conflitti": [],
+      "fonti": [
+        "Aeronautica Militare — 113° Gruppo Radar Ponza",
+        "Atti istruttori della Strage di Ustica (1980) — tracciati radar"
+      ]
+    },
+    {
+      "id": "palmaria",
+      "nome": "Isola Palmaria — installazioni Marina Militare",
+      "lat": 44.0461,
+      "lon": 9.8472,
+      "regione": "Liguria",
+      "comune": "Porto Venere (SP)",
+      "tipo": "Isola militare — Marina Militare + ex polveriera",
+      "gestione": "Marina Militare Italiana",
+      "funzione": "Isola di fronte alla base navale di La Spezia. Storicamente sede della Polveriera della Marina Militare, di postazioni d'artiglieria costiera e fortificazioni. Oggi gran parte dell'isola è ancora militare e ad accesso limitato. Parte del territorio compreso nel Parco Naturale Regionale di Porto Venere. Ospita anche la batteria Umberto I, le batterie Cavour e Semaforo.",
+      "estensione_ha": 280,
+      "armamento": [],
+      "problemi_ambientali": [
+        "Vasta porzione di isola di pregio paesaggistico (Patrimonio UNESCO con Porto Venere e Cinque Terre) interessata da servitù militari",
+        "Bonifica dei residuati bellici e degli esplosivi storicamente immagazzinati in corso"
+      ],
+      "problemi_sanitari": [],
+      "conflitti": [],
+      "fonti": [
+        "Marina Militare — installazioni Golfo della Spezia",
+        "Atti del Parco Naturale Regionale di Porto Venere"
+      ]
+    },
+    {
       "id": "pratica-di-mare",
       "nome": "Aeroporto militare di Pratica di Mare",
       "lat": 41.6553,
