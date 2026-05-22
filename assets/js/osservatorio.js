@@ -255,13 +255,13 @@
       }
     });
 
-    // Click sul backdrop chiude il popup
+    // Click sul backdrop chiude il popup.
+    // Ignora i click dentro la mappa (Leaflet gestisce già) e dentro un popup.
     document.body.addEventListener('click', (ev) => {
       if (!document.body.classList.contains('mappa-popup-open')) return;
-      // Se il click non è dentro un popup, chiudi
-      if (!ev.target.closest('.leaflet-popup')) {
-        mappa.closePopup();
-      }
+      if (ev.target.closest('#mappa')) return;          // click su marker/mappa: lascia fare a Leaflet
+      if (ev.target.closest('.leaflet-popup')) return;  // click dentro popup: niente
+      mappa.closePopup();
     });
 
     // ESC chiude (oltre al default Leaflet, per sicurezza)
