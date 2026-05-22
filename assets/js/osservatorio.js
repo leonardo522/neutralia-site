@@ -288,31 +288,6 @@
       }
     });
 
-    // ROTTA SOTTOMARINI: linea simbolica Gibilterra → Maddalena (rotta SSN USA verso Mediterraneo)
-    const rottaSub = L.polyline([
-      [35.95, -5.61],   // Gibilterra
-      [38.0, 4.0],      // ovest Sardegna
-      [40.5, 8.5],      // sud-ovest Sardegna
-      [41.21, 9.41]     // La Maddalena
-    ], {
-      color: '#ffffff',
-      weight: 1.5,
-      opacity: 0.55,
-      dashArray: '8 6',
-      className: 'osv-rotta-sub',
-      interactive: true
-    }).bindPopup(
-      `<div class="popup popup-area">
-        <p class="popup-eyebrow popup-eyebrow-conflitto">Rotta sub USA (ricostruzione simbolica)</p>
-        <h3>Sottomarini nucleari USA → La Maddalena</h3>
-        <p>La flotta atlantica statunitense pattuglia il Mediterraneo con turni di 6 mesi: ogni missione comprende almeno 2 sottomarini a propulsione nucleare e 1 portaerei anch'essa nucleare. Punto di ingresso: Stretto di Gibilterra. Approdo storico principale: La Maddalena (1972-2008).</p>
-        <p class="popup-stat"><strong>8-22 reattori nucleari</strong> attraversano il Mediterraneo ogni giorno (US + UK + FR)</p>
-        <p class="popup-stat"><strong>12 porti</strong> italiani autorizzati per scali nucleari</p>
-        <p><em>Le rotte esatte sono coperte da segreto militare; questa linea è una ricostruzione simbolica.</em></p>
-      </div>`,
-      POPUP_OPTS
-    );
-    rottaSub.addTo(layers.aree);
 
     // INCIDENTI — triangolo warning bianco
     incidenti.items.forEach(inc => {
