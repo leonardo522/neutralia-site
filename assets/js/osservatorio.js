@@ -53,9 +53,7 @@
     renderer: L.svg({ padding: 0.5 })
   });
 
-  L.control.attribution({
-    prefix: '© <a href="https://leafletjs.com/" target="_blank" rel="noopener">Leaflet</a> · dati: <a href="https://github.com/openpolis/geojson-italy" target="_blank" rel="noopener">openpolis</a> · Centro Studi Neutralia'
-  }).addTo(mappa);
+  // Nessuna attribuzione: niente "Leaflet · openpolis · Centro Studi Neutralia" in basso.
 
   // Esponi la mappa per debug/console
   window.NeutraliaMap = mappa;
