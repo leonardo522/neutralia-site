@@ -15,7 +15,7 @@
       "estensione_ha": 770,
       "armamento": [
         "Circa 42 caccia F-16C/D Fighting Falcon",
-        "Stima ~20 testate nucleari tattiche B61 in deposito (fonte: Federation of American Scientists, Hans M. Kristensen, 2023)"
+        "Testate nucleari tattiche B61 (varianti Mod-3, Mod-4, in transizione verso B61-12) in deposito, potenza regolabile fino a 45-60 chilotoni. Stime: ~20 testate (Federation of American Scientists, Kristensen 2023) — fino a ~40 (Andrea Margelletti CESI / Piero Batacchi RID via Sole 24 Ore, 2022). Gestione interamente USA, a differenza di Ghedi."
       ],
       "problemi_ambientali": [
         "Inquinamento da carburanti avio (JP-8) nelle falde acquifere documentato in più rapporti regionali ARPA FVG",
@@ -28,8 +28,9 @@
       "conflitti": ["bosnia-1995", "kosovo-1999", "iraq-2003", "libia-2011", "siria-2014"],
       "fonti": [
         "Federation of American Scientists — Nuclear Notebook (Kristensen/Korda, 2023)",
+        "Sole 24 Ore, «Nucleare in Italia: oltre 100 ordigni Usa. Ecco dove sono stati dislocati», 22 settembre 2022 (citando Andrea Margelletti — CESI Centro Studi Internazionali, e Piero Batacchi — direttore RID Rivista Italiana Difesa)",
         "M. Dinucci, «Geografia del nuovo ordine mondiale», 2019",
-        "Atti parlamentari interrogazione n. 4-12345 (riferimento generico — verificare numero esatto)"
+        "ICAN — International Campaign to Abolish Nuclear Weapons, country profile Italia"
       ]
     },
     {
@@ -45,8 +46,8 @@
       "estensione_ha": 470,
       "armamento": [
         "Tornado IDS (in via di sostituzione)",
-        "Futuri F-35A dual-capable",
-        "Stima 20-30 testate nucleari tattiche B61 (FAS 2023). Il loro impiego, in caso di guerra, sarebbe deciso dal Presidente USA con il consenso del governo italiano (Nuclear Sharing)."
+        "Futuri F-35A dual-capable (certificati per il trasporto della bomba nucleare B61-12)",
+        "Testate nucleari tattiche B61 (Mod-3 e Mod-4, fino a 45-60 chilotoni, in transizione a B61-12). Stime: 20-30 (Federation of American Scientists, 2023) — fino a ~60 (Margelletti CESI / Batacchi RID via Sole 24 Ore, 2022). Nel quadro del NATO Nuclear Sharing: l'impiego in guerra sarebbe deciso dal Presidente USA con il consenso del governo italiano, e le bombe verrebbero trasportate da piloti italiani."
       ],
       "problemi_ambientali": [
         "Aumento traffico aereo militare nel piano di estensione per F-35",
@@ -55,7 +56,8 @@
       "problemi_sanitari": [],
       "conflitti": ["kosovo-1999", "libia-2011"],
       "fonti": [
-        "FAS Nuclear Notebook 2023",
+        "FAS Nuclear Notebook 2023 (Kristensen/Korda)",
+        "Sole 24 Ore, «Nucleare in Italia: oltre 100 ordigni Usa. Ecco dove sono stati dislocati», 22 settembre 2022 (citando Andrea Margelletti — CESI, e Piero Batacchi — RID)",
         "Rete Italiana per il Disarmo — campagna «Italia Ripensaci»",
         "ICAN International Campaign to Abolish Nuclear Weapons — country profile Italia"
       ]
@@ -368,6 +370,36 @@
       "fonti": [
         "US Navy Public Health Evaluation Naples Italy, 2011",
         "Pax Christi — dossier basi USA in Campania"
+      ]
+    },
+    {
+      "id": "west-star",
+      "nome": "Ex bunker NATO «West Star» — Monte Moscal",
+      "lat": 45.5569,
+      "lon": 10.7697,
+      "regione": "Veneto",
+      "comune": "Affi (VR)",
+      "tipo": "Ex centro di comando e controllo NATO (1966-2007)",
+      "gestione": "NATO — Comando Forze Terrestri Alleate del Sud Europa (COMLANDSOUTH, Verona) + COMFIVEATAF (Vicenza)",
+      "funzione": "Codice NATO «Stella d'Occidente». Il più grande rifugio atomico d'Italia, scavato nelle viscere del Monte Moscal. Centro di comando operativo del fronte settentrionale italiano durante la Guerra Fredda. Avrebbe dovuto garantire la sopravvivenza e l'operatività del Comando NATO sud-Europa per 15 giorni in caso di guerra nucleare. Progettato 1958-60, costruito 1960-66, operativo dal luglio 1966, dismesso dalla NATO nel 2007.",
+      "estensione_ha": 1.3,
+      "armamento": [
+        "13.000 m² scavati nella montagna, ~1 km di gallerie su 3 livelli",
+        "Schermatura EMP (Electro-Magnetic Pulse) per resistere a esplosione nucleare",
+        "Tre ingressi (alfa, beta, emergenza), eliporto, impianti di ventilazione forzata",
+        "Capienza 500 persone (militari + civili) per 15 giorni di autonomia",
+        "120.000 litri di riserva idrica, cucine, infermeria, dormitori, sale operative"
+      ],
+      "problemi_ambientali": [
+        "Riconversione a museo della Guerra Fredda in corso: passaggio al Comune di Affi nel marzo 2018",
+        "Maggio 2026: 7 milioni di euro di fondi governativi assegnati per la realizzazione del museo (segno curioso del riemergere della Guerra Fredda come tema di interesse politico, nel pieno della nuova corsa al riarmo italiana)"
+      ],
+      "problemi_sanitari": [],
+      "conflitti": [],
+      "fonti": [
+        "Wikipedia, «West Star» (it.wikipedia.org/wiki/West_Star)",
+        "Comune di Affi — atti del passaggio di proprietà (marzo 2018)",
+        "Decreto Ministero della Difesa, maggio 2026 — finanziamento museo Guerra Fredda 7M€"
       ]
     },
     {
