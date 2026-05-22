@@ -2357,6 +2357,32 @@ body.page-osservatorio {
   animation: osv-pulse-anim 2.4s ease-out infinite;
 }
 
+/* SCALING DELLE ICONE PER LIVELLO DI ZOOM
+   - low  (z <= 6, vista nazionale)  → icone tematiche al 55%, pulse nascosto
+   - med  (z = 7)                    → icone al 75%, pulse leggero
+   - high (z >= 8, zoom dettaglio)   → dimensioni piene */
+
+#mappa[data-zoom-tier="low"] .osv-icon-svg,
+#mappa[data-zoom-tier="low"] .osv-nuke-svg {
+  transform: scale(0.55);
+  transform-origin: center;
+}
+#mappa[data-zoom-tier="low"] .osv-nuke-svg.osv-nuke-nucleare_scalo {
+  transform: scale(0.62);
+}
+#mappa[data-zoom-tier="low"] .osv-pulse {
+  display: none;
+}
+
+#mappa[data-zoom-tier="med"] .osv-icon-svg,
+#mappa[data-zoom-tier="med"] .osv-nuke-svg {
+  transform: scale(0.78);
+  transform-origin: center;
+}
+#mappa[data-zoom-tier="med"] .osv-pulse {
+  opacity: 0.45;
+}
+
 @keyframes osv-pulse-anim {
   0%   { r: 6;  opacity: 0.55; }
   100% { r: 18; opacity: 0; }

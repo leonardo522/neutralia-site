@@ -353,6 +353,22 @@
     const loading = document.getElementById('mappa-loading');
     if (loading) loading.remove();
 
+    // SCALING ICONE in base al zoom — evita sovrapposizioni su vista panoramica
+    const mappaEl = document.getElementById('mappa');
+    function aggiornaScalaZoom() {
+      const z = mappa.getZoom();
+      const tier = z <= 6 ? 'low' : (z <= 7 ? 'med' : 'high');
+      mappaEl.setAttribute('data-zoom-tier', tier);
+      const baseR = z <= 6 ? 3 : (z <= 7 ? 4.5 : 6);
+      layers.basi.eachLayer(l => {
+        if (l instanceof L.CircleMarker && l.options.className && l.options.className.includes('osv-dot-base')) {
+          l.setRadius(baseR);
+        }
+      });
+    }
+    mappa.on('zoomend', aggiornaScalaZoom);
+    aggiornaScalaZoom();
+
   }).catch(err => {
     console.error('Errore caricamento dati osservatorio:', err);
     const loading = document.getElementById('mappa-loading');
