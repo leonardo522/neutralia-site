@@ -73,7 +73,7 @@
   function makePulseMarker(lat, lon, color, className) {
     // Cerchio "alone" che pulsa via CSS animation su r/opacity
     return L.circleMarker([lat, lon], {
-      radius: 7,
+      radius: 8,
       color: color,
       weight: 0,
       fillColor: color,
@@ -85,7 +85,7 @@
 
   function makeDotMarker(lat, lon, color, className) {
     return L.circleMarker([lat, lon], {
-      radius: 6,
+      radius: 7,
       color: '#000',
       weight: 1.5,
       fillColor: color,
@@ -129,12 +129,12 @@
 
   function makeNukeOverlay(lat, lon, kind) {
     const ic = ICONE[kind];
-    const size = kind === 'nucleare_scalo' ? 14 : 22;
+    const size = kind === 'nucleare_scalo' ? 16 : 25;
     const icon = L.divIcon({
       className: 'osv-nuke-marker',
       html: `<span class="osv-nuke-svg osv-nuke-${kind}">${ic.svg}</span>`,
       iconSize: [size, size],
-      iconAnchor: kind === 'nucleare_scalo' ? [-4, 18] : [-3, 25]
+      iconAnchor: kind === 'nucleare_scalo' ? [-4, 20] : [-3, 28]
     });
     return L.marker([lat, lon], { icon, interactive: false, keyboard: false, zIndexOffset: 1000 });
   }
@@ -144,9 +144,9 @@
     const icon = L.divIcon({
       className: 'osv-icon-marker ' + (className || ''),
       html: `<span class="osv-icon-svg" style="color:${ic.color}">${ic.svg}</span>`,
-      iconSize: [28, 28],
-      iconAnchor: [14, 14],
-      popupAnchor: [0, -14]
+      iconSize: [32, 32],
+      iconAnchor: [16, 16],
+      popupAnchor: [0, -16]
     });
     return L.marker([lat, lon], { icon, bubblingMouseEvents: false });
   }
@@ -359,7 +359,7 @@
       const z = mappa.getZoom();
       const tier = z <= 6 ? 'low' : (z <= 7 ? 'med' : 'high');
       mappaEl.setAttribute('data-zoom-tier', tier);
-      const baseR = z <= 6 ? 3 : (z <= 7 ? 4.5 : 6);
+      const baseR = z <= 6 ? 3.5 : (z <= 7 ? 5.2 : 7);
       layers.basi.eachLayer(l => {
         if (l instanceof L.CircleMarker && l.options.className && l.options.className.includes('osv-dot-base')) {
           l.setRadius(baseR);
@@ -390,7 +390,7 @@
       // Pallino grigio sul conflitto
       const pulse = makePulseMarker(c.lat, c.lon, COLORI.conflitti);
       const dotConf = L.circleMarker([c.lat, c.lon], {
-        radius: 7,
+        radius: 8,
         color: '#000',
         weight: 1.5,
         fillColor: COLORI.conflitti,

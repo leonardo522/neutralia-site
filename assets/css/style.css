@@ -1675,6 +1675,59 @@ img { max-width: 100%; display: block; }
   opacity: 0.95;
 }
 
+/* Cella speciale "Vedi tutti i post" — in stile sito (nero + giallo) */
+.ig-post-vedi-tutti {
+  background:
+    radial-gradient(ellipse at top right, rgba(239, 232, 71, 0.10), transparent 60%),
+    radial-gradient(ellipse at bottom left, rgba(255, 42, 42, 0.10), transparent 60%),
+    #0d0d0d;
+  border: 1px solid rgba(239, 232, 71, 0.35);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  transition: border-color 0.2s, transform 0.2s;
+}
+
+.ig-post-vedi-tutti:hover {
+  border-color: var(--giallo);
+  transform: scale(1.02);
+}
+
+.ig-vedi-tutti {
+  padding: 1rem;
+  font-family: var(--sans);
+  color: var(--bianco);
+}
+
+.ig-vedi-tutti-eyebrow {
+  display: block;
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--giallo);
+  margin-bottom: 0.6rem;
+}
+
+.ig-vedi-tutti-text {
+  display: block;
+  font-weight: 800;
+  font-size: clamp(1.05rem, 2.2vw, 1.5rem);
+  letter-spacing: -0.005em;
+  line-height: 1.1;
+  color: var(--bianco);
+}
+
+.ig-vedi-tutti-handle {
+  display: block;
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 0.85rem;
+  margin-top: 0.6rem;
+  color: rgba(250, 250, 250, 0.65);
+}
+
 /* BIG CTA — Telegram & WhatsApp in evidenza */
 .cta-hero {
   display: flex;
@@ -2384,8 +2437,8 @@ body.page-osservatorio {
 }
 
 @keyframes osv-pulse-anim {
-  0%   { r: 6;  opacity: 0.55; }
-  100% { r: 18; opacity: 0; }
+  0%   { r: 7;  opacity: 0.55; }
+  100% { r: 21; opacity: 0; }
 }
 
 /* Linee basi → conflitti */
@@ -2407,8 +2460,8 @@ body.page-osservatorio {
 
 .osv-icon-svg {
   display: block;
-  width: 28px;
-  height: 28px;
+  width: 32px;
+  height: 32px;
   filter: drop-shadow(0 0 5px currentColor) drop-shadow(0 1px 1px rgba(0, 0, 0, 0.95));
   transition: transform 0.15s ease-out;
   transform-origin: center;
@@ -2434,10 +2487,17 @@ body.page-osservatorio {
 
 .osv-nuke-svg {
   display: block;
-  width: 22px;
-  height: 22px;
+  width: 25px;
+  height: 25px;
   filter: drop-shadow(0 0 6px #ffe600) drop-shadow(0 1px 1px rgba(0, 0, 0, 0.9));
   animation: osv-nuke-pulse 2s ease-in-out infinite;
+}
+
+.osv-nuke-svg.osv-nuke-nucleare_scalo {
+  width: 16px;
+  height: 16px;
+  filter: drop-shadow(0 0 4px #ffffff) drop-shadow(0 1px 1px rgba(0, 0, 0, 0.95));
+  animation: none;
 }
 
 .osv-nuke-svg svg { display: block; width: 100%; height: 100%; }
