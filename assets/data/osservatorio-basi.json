@@ -131,28 +131,40 @@
       "comune": "Niscemi (CL)",
       "tipo": "Stazione radio US Navy — sistema MUOS",
       "gestione": "US Navy — Naval Computer and Telecommunications Area Master Station Atlantic",
-      "funzione": "Stazione del sistema MUOS (Mobile User Objective System), rete satellitare di comunicazione globale ad altissima frequenza della US Navy. Una delle 4 stazioni terrestri al mondo. Garantisce comunicazioni a unità navali, sottomarini e droni in tutto l'emisfero orientale.",
+      "funzione": "Una delle 4 stazioni mondiali del MUOS (Mobile User Objective System), la rete satellitare ad altissima frequenza con cui la US Navy comunica con navi, sottomarini in immersione, droni armati e operazioni speciali in tutto l'emisfero orientale (Mediterraneo, Africa, Medio Oriente, Asia centrale). Realizzata fra 2009 e 2014 nonostante studi indipendenti che ne sconsigliavano l'installazione a ridosso dell'abitato.",
       "estensione_ha": 134,
       "armamento": [
-        "3 antenne paraboliche da 18,4 metri (banda Ka)",
-        "2 antenne UHF elicoidali da 149 metri",
-        "Antenne preesistenti del NRTF (46 antenne in HF, attive dagli anni '90)"
+        "3 antenne paraboliche banda Ka (30-31 GHz), diametro 18,4 m, potenza 1600 W ciascuna, guadagno 71,4 dB, inclinazione minima fascio 17° sull'orizzonte",
+        "2 antenne elicoidali UHF (240-315 MHz), 105 W, lunghezza 4 m",
+        "Stazione NRTF preesistente (dal 1991): 41 antenne radiatori verticali HF (3-30 MHz), 27 in funzione; 1 antenna LF (43 KHz, λ 7 km) per comunicazioni con sottomarini in immersione — trasmettitore VERDIN VLF, picco 500-2000 KW"
       ],
       "problemi_ambientali": [
-        "Insediamento dentro la Riserva Naturale Orientata Sughereta di Niscemi (area SIC e ZPS Natura 2000)",
-        "Disboscamento area sughere per le 3 nuove antenne paraboliche",
-        "Emissioni elettromagnetiche oggetto di contenzioso giudiziario (sequestro 2013 dissequestrato in appello)"
+        "Installazione DENTRO la Riserva Naturale Orientata Sughereta di Niscemi (SIC ITA050007 + ZPS, rete Natura 2000): disboscamento di area protetta per le 3 nuove parabole",
+        "Impatto su avifauna: il fascio principale Ka è potenzialmente fatale per gli uccelli (animali a sangue freddo, alta vulnerabilità termica)",
+        "Impatto su api e impollinatori: disturbati già da campi di 1 V/m → impossibilità di sciamare e nidificare, con ricadute a catena sulla flora",
+        "Spazio aereo: il fascio Ka inclinato a 17° interseca la rotta dei voli civili e militari nel raggio di decine di km (Comiso 19 km, Sigonella 52 km, Fontanarossa Catania 67 km) — rischio totalmente ignorato negli studi US Navy"
       ],
       "problemi_sanitari": [
-        "Studi indipendenti (ISDE Sicilia, prof. Massimo Coraddu) segnalano superamento limiti italiani di esposizione elettromagnetica in alcune aree",
-        "Cluster di malformazioni e tumori segnalato dal Comitato No Muos su base aneddotica; nessuno studio epidemiologico governativo conclusivo pubblicato"
+        "Misure ARPA Sicilia 2008-2010, già PRIMA del MUOS: campo elettrico fino a 5,9 ± 0,6 V/m a contrada Ulmo, ovvero al pelo del limite legale di 6 V/m (DPCM 8/7/2003). La misura sottostima per limiti strumentali (non rileva la banda LF a 43 KHz dell'antenna VERDIN).",
+        "Esposizione cronica popolazione: il rapporto Zucchetti–Coraddu stima che il MUOS aggiungerà ~1 V/m al campo già illegale, su abitazioni a 1-2 km dalle sorgenti (centro Niscemi a 5 km, 26.000 abitanti)",
+        "Effetti acuti del fascio principale Ka (1600 W, guadagno 71,4 dB): limite legale per esposizione acuta (4 W/m²) viene superato entro un raggio di 20,96 km dall'antenna. In caso di errore di puntamento o malfunzionamento, l'INTERA popolazione di Niscemi è esposta a danni gravi e irreversibili (ipertermia, necrosi tissutale, cataratta indotta).",
+        "Rischio cancri emolinfatici da esposizione cronica a radiofrequenze: confermato da più studi epidemiologici su militari (US Navy 1990, Korean War Navy Technicians 2002, radaristi militari belgi 2009)"
       ],
       "conflitti": [],
       "fonti": [
-        "Movimento No Muos — documentazione tecnica",
+        "Prof. Massimo Zucchetti (cattedra Protezione dalle Radiazioni, Politecnico di Torino + Research Affiliate MIT) e Dott. Massimo Coraddu (Dip. Energetica, PoliTo), «Mobile User Objective System (MUOS) presso il Naval Radio Transmitter Facility (NRTF) di Niscemi: Analisi dei rischi», 4 novembre 2011 (staff.polito.it/massimo.zucchetti/RelazionRischiAssociatiRealizzazioneMUOS1.pdf)",
+        "ARPA Sicilia — campagne di misurazione 2008-2010 (protocollo n.19496/2008 e n.0009079/2009)",
+        "Prof. L. Zanforlin e P. Levrieri, Università di Palermo — relazione sul rischio per la popolazione di Niscemi (Ufficio Presidenza Regione Sicilia, prot. n.5515/2011)",
         "ISDE Sicilia (Medici per l'Ambiente)",
-        "Sentenza TAR Sicilia n. 1827/2013 e successivi gradi"
-      ]
+        "Movimento No Muos — documentazione tecnica e mobilitazione 2009-oggi",
+        "Sentenza TAR Sicilia n. 1827/2013 e successivi gradi (sequestro/dissequestro)",
+        "Legge 36 del 22 febbraio 2001 + DPCM 8 luglio 2003 (limiti italiani campi elettromagnetici)"
+      ],
+      "raggi_rischio_km": {
+        "danno_acuto": 20.96,
+        "valore_attenzione": 132.5,
+        "interferenza_aerea": 67
+      }
     },
     {
       "id": "salto-di-quirra",

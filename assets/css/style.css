@@ -2796,6 +2796,24 @@ body.mappa-popup-open::before {
   align-self: center;
 }
 
+.dot-circle {
+  flex: 0 0 16px;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.dot-circle-acuto {
+  background: rgba(255, 42, 42, 0.25);
+  border: 1.5px solid #ff2a2a;
+}
+
+.dot-circle-interf {
+  background: rgba(255, 42, 42, 0.05);
+  border: 1px dashed #ff2a2a;
+}
+
 .legenda-tip {
   font-family: var(--serif);
   font-style: italic;

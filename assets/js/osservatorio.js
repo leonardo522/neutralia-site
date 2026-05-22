@@ -207,6 +207,36 @@
       dot.on('click', () => disegnaLineeEConflitti(b, conflittiPerId));
       pulse.addTo(layers.basi);
       dot.addTo(layers.basi);
+
+      // Cerchi di rischio (es. MUOS Niscemi: danno acuto 20 km, interferenza aerea 67 km)
+      if (b.raggi_rischio_km) {
+        const r = b.raggi_rischio_km;
+        if (r.interferenza_aerea) {
+          L.circle([b.lat, b.lon], {
+            radius: r.interferenza_aerea * 1000,
+            color: '#ff2a2a',
+            weight: 1,
+            opacity: 0.55,
+            dashArray: '5 6',
+            fillColor: '#ff2a2a',
+            fillOpacity: 0.05,
+            interactive: false,
+            className: 'osv-circle-interferenza'
+          }).addTo(layers.basi);
+        }
+        if (r.danno_acuto) {
+          L.circle([b.lat, b.lon], {
+            radius: r.danno_acuto * 1000,
+            color: '#ff2a2a',
+            weight: 1.5,
+            opacity: 0.85,
+            fillColor: '#ff2a2a',
+            fillOpacity: 0.18,
+            interactive: false,
+            className: 'osv-circle-acuto'
+          }).addTo(layers.basi);
+        }
+      }
     });
 
     // PRODUZIONE — icona proiettile arancione
