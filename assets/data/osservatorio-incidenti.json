@@ -3,6 +3,34 @@
   "descrizione": "Incidenti e casi documentati legati alla presenza militare USA / NATO sul suolo italiano. Vittime civili italiane causate o coperte dall'immunità giurisdizionale prevista dalla Convenzione di Londra del 1951 (SOFA — Status of Forces Agreement).",
   "items": [
     {
+      "id": "ustica-1980",
+      "nome": "Strage di Ustica",
+      "lat": 39.72,
+      "lon": 12.93,
+      "data": "27 giugno 1980, ore 20:59",
+      "regione": "Mar Tirreno meridionale",
+      "comune": "tra Ponza e Ustica (acque internazionali / italiane)",
+      "vittime": 81,
+      "base_collegata": null,
+      "sintesi": "Il volo IH 870 della compagnia Itavia, un DC-9 in volo da Bologna a Palermo con 77 passeggeri e 4 membri di equipaggio, precipita nel Mar Tirreno meridionale, a metà strada fra le isole di Ponza e Ustica. Muoiono tutte le 81 persone a bordo. Il relitto giace per anni a 3.700 metri di profondità; viene parzialmente recuperato a partire dal 1987.",
+      "esito_giudiziario": [
+        "Inchieste giudiziarie e parlamentari durate oltre 40 anni, in larga parte ostacolate da depistaggi, falsi testimoniali e «morti sospette» dei militari italiani che ebbero accesso ai tracciati radar.",
+        "Sentenza della Corte d'Appello civile di Roma (28 gennaio 2013) e Corte di Cassazione (28 gennaio 2013): è ormai «giudizialmente accertato» che il DC-9 fu abbattuto nel corso di una «azione di guerra» — un missile o una quasi-collisione — in un teatro affollato di velivoli militari NATO (francesi, statunitensi) impegnati in un'operazione contro un caccia libico, possibilmente con a bordo Mu'ammar Gheddafi.",
+        "Lo Stato italiano è stato condannato a risarcire i familiari delle vittime per non aver protetto adeguatamente lo spazio aereo civile e per aver omesso informazioni rilevanti (sentenze civili 2008, 2011, 2013): oltre 100 milioni di euro complessivi.",
+        "Nessun militare straniero è mai stato processato per i fatti. La giurisdizione penale italiana fu di fatto neutralizzata."
+      ],
+      "risarcimenti": "Decine di milioni di euro a famiglie delle vittime, pagati interamente dallo Stato italiano (mai dai responsabili militari stranieri).",
+      "rilevanza": "Caso simbolo della sovranità italiana negata sui propri cieli: un aereo civile italiano fu coinvolto in un'operazione militare straniera condotta sul territorio nazionale all'insaputa del governo, e i responsabili non sono mai stati identificati. Il Presidente della Repubblica Francesco Cossiga, nel 2008, riconobbe pubblicamente la responsabilità dei militari francesi.",
+      "fonti": [
+        "Wikipedia, «Strage di Ustica» — voce ampiamente documentata",
+        "Sentenze: Corte d'Appello Roma sez. I civile, 28 gennaio 2013; Corte di Cassazione, sentenza 28 gennaio 2013",
+        "Associazione Parenti delle Vittime della Strage di Ustica (stragi80.it) — archivio completo atti",
+        "Daria Bonfietti — Presidente Associazione, autrice di numerose pubblicazioni sul caso",
+        "Museo per la Memoria di Ustica, Bologna (museomemoriaustica.it)",
+        "Dichiarazioni del PdR Francesco Cossiga, 2008 (responsabilità francese)"
+      ]
+    },
+    {
       "id": "cermis-1998",
       "nome": "Strage del Cermis",
       "lat": 46.2867,
