@@ -68,6 +68,66 @@
           [8.27, 39.80]
         ]]
       }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "stretto-messina-sub",
+        "nome": "Stretto di Messina — addestramento sottomarini",
+        "base_id": null,
+        "estensione_kmq": 250,
+        "descrizione": "Porzione dello Stretto di Messina periodicamente interdetta alla navigazione civile per addestramento di sottomarini in immersione (Marina Militare e alleati NATO). Manovre documentate da quotidiani locali (Il Reggino, Cosenza Channel)."
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[
+          [15.55, 38.30],
+          [15.80, 38.30],
+          [15.80, 38.05],
+          [15.55, 38.05],
+          [15.55, 38.30]
+        ]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "golfo-taranto",
+        "nome": "Golfo di Taranto — esercitazioni navali",
+        "base_id": "taranto",
+        "estensione_kmq": 6000,
+        "descrizione": "Vasto specchio acqueo del Mar Ionio davanti alla base navale di Taranto, periodicamente interdetto per le esercitazioni della Squadra Navale della Marina Militare e per le esercitazioni Mare Aperto (annuali, 6.000 militari da 8 paesi NATO, oltre 120 mezzi)."
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[
+          [16.50, 40.40],
+          [18.00, 40.40],
+          [18.00, 39.50],
+          [16.50, 39.50],
+          [16.50, 40.40]
+        ]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "mar-ligure-cmre",
+        "nome": "Mar Ligure — test sonar CMRE NATO",
+        "base_id": "cmre-la-spezia",
+        "estensione_kmq": 1500,
+        "descrizione": "Specchio acqueo davanti a La Spezia regolarmente utilizzato dal CMRE (NATO Centre for Maritime Research and Experimentation) e dalla Marina Militare per test di sonar attivi, veicoli autonomi sottomarini, esperimenti di guerra antisommergibile (ASW). Impatto documentato sui cetacei del Santuario Pelagos."
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[
+          [9.40, 44.05],
+          [10.10, 44.05],
+          [10.10, 43.45],
+          [9.40, 43.45],
+          [9.40, 44.05]
+        ]]
+      }
     }
   ]
 }

@@ -2822,10 +2822,16 @@ body.mappa-popup-open::before {
 }
 
 .legenda-svg svg { width: 100%; height: 100%; display: block; }
-.legenda-svg-prod  { color: #ff8a00; }
-.legenda-svg-porto { color: var(--giallo); }
-.legenda-svg-inc   { color: #ffffff; }
-.legenda-svg-nuke  { filter: drop-shadow(0 0 5px #ffe600); }
+.legenda-svg-prod      { color: #ff8a00; }
+.legenda-svg-porto     { color: var(--giallo); }
+.legenda-svg-inc       { color: #ffffff; }
+.legenda-svg-nuke      { filter: drop-shadow(0 0 5px #ffe600); }
+.legenda-svg-nuke-scalo { filter: drop-shadow(0 0 4px #ffffff); }
+
+.dot-line-bianca {
+  border-top-color: #ffffff !important;
+  opacity: 0.7;
+}
 
 .dot-area {
   flex: 0 0 22px;

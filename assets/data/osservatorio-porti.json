@@ -31,7 +31,8 @@
       "regione": "Toscana",
       "tipo": "Porto commerciale — uscita armi US Army (Camp Darby)",
       "gestione": "Autorità di Sistema Portuale del Mar Tirreno Settentrionale",
-      "ruolo_militare": "Porto di uscita dei materiali militari USA depositati a Camp Darby. Tutto l'armamento US Army diretto a Medio Oriente, Africa, Europa orientale passa da qui. Banchine dedicate e protocolli speciali per il transito di munizioni ed esplosivi.",
+      "scali_nucleari": true,
+      "ruolo_militare": "Porto di uscita dei materiali militari USA depositati a Camp Darby. Tutto l'armamento US Army diretto a Medio Oriente, Africa, Europa orientale passa da qui. Banchine dedicate e protocolli speciali per il transito di munizioni ed esplosivi. Tra i 12 porti italiani autorizzati per scali di navi a propulsione nucleare (USA/UK/FR).",
       "flussi_stimati": "Stime non pubbliche. In occasione della guerra in Iraq (2003) e Afghanistan (2001-2021) il flusso annuale è stato documentato da inchieste in decine di migliaia di tonnellate.",
       "casi_documentati": [
         "Aprile 2003: blocco dei portuali livornesi contro le navi cariche di armi per la guerra in Iraq",
@@ -52,7 +53,8 @@
       "regione": "Liguria",
       "tipo": "Porto commerciale + Arsenale Militare Marittimo",
       "gestione": "Autorità di Sistema Portuale del Mar Ligure Orientale + Marina Militare",
-      "ruolo_militare": "Sede dell'Arsenale Militare Marittimo della Marina Militare (uno dei più antichi e attivi d'Italia). Cantieri Fincantieri-Muggiano (sottomarini). Porto di transito per armamenti prodotti localmente (Leonardo-OTO Melara).",
+      "scali_nucleari": true,
+      "ruolo_militare": "Sede dell'Arsenale Militare Marittimo della Marina Militare (uno dei più antichi e attivi d'Italia). Cantieri Fincantieri-Muggiano (sottomarini convenzionali italiani U212NFS). Porto di transito per armamenti prodotti localmente (Leonardo-OTO Melara). Tra i 12 porti italiani autorizzati per scali di navi a propulsione nucleare (USA/UK/FR).",
       "flussi_stimati": "Difficile da quantificare per la mescolanza commerciale-militare. L'export navale Fincantieri (fregate, sottomarini, corvette) passa anche da qui.",
       "casi_documentati": [],
       "fonti": ["Marina Militare — sito ufficiale Arsenale La Spezia", "Fincantieri"]
@@ -65,7 +67,8 @@
       "regione": "Friuli-Venezia Giulia",
       "tipo": "Porto Franco internazionale — statuto sui generis",
       "gestione": "Autorità di Sistema Portuale del Mare Adriatico Orientale. I Punti Franchi sono giuridicamente extraterritoriali, regolati dall'Allegato VIII del Trattato di Pace del 1947 e dal Memorandum di Londra del 1954.",
-      "ruolo_militare": "Porto di transito per armamenti e dual-use verso Europa orientale, Balcani, Asia centrale. Lo statuto di Porto Franco internazionale crea un'anomalia di sovranità: le merci in transito sono soggette a un regime giuridico misto, non puramente italiano.",
+      "scali_nucleari": true,
+      "ruolo_militare": "Porto di transito per armamenti e dual-use verso Europa orientale, Balcani, Asia centrale. Lo statuto di Porto Franco internazionale crea un'anomalia di sovranità: le merci in transito sono soggette a un regime giuridico misto, non puramente italiano. Tra i 12 porti italiani autorizzati per scali di navi a propulsione nucleare (USA/UK/FR).",
       "flussi_stimati": "Trieste è il principale porto italiano per volumi (oltre 60 milioni di tonnellate/anno totali). La quota armi non è pubblica.",
       "casi_documentati": [
         "Ottobre 2021: nel pieno delle proteste No Green Pass dei portuali triestini (CLPT — Coordinamento Lavoratori Portuali Triestini), la Ministra dell'Interno Luciana Lamorgese dichiara in audizione che il Porto di Trieste «ha una giurisdizione internazionale e particolare»: i Punti Franchi sono giuridicamente extra-doganali e la sovranità italiana è limitata da norme internazionali (Allegato VIII Trattato di Pace 1947).",
@@ -89,7 +92,8 @@
       "regione": "Sicilia",
       "tipo": "Porto militare + commerciale petrolifero",
       "gestione": "Autorità di Sistema Portuale del Mare di Sicilia Orientale + Marina Militare (Comando Marittimo Sud)",
-      "ruolo_militare": "Sede del Comando Marittimo Sud della Marina Militare Italiana. Base navale strategica per il controllo del Canale di Sicilia e del Mediterraneo centrale. Punto di rifornimento delle navi NATO che operano nel Mediterraneo.",
+      "scali_nucleari": true,
+      "ruolo_militare": "Sede del Comando Marittimo Sud della Marina Militare Italiana. Base navale strategica per il controllo del Canale di Sicilia e del Mediterraneo centrale. Punto di rifornimento delle navi NATO che operano nel Mediterraneo. Tra i 12 porti italiani autorizzati per scali di navi a propulsione nucleare (USA/UK/FR).",
       "flussi_stimati": "Quota militare difficile da scorporare dalla movimentazione petrolifera (Augusta è anche il principale polo petrolchimico siciliano — area SIN ad alto rischio ambientale).",
       "casi_documentati": [
         "Augusta è inserita nel SIN (Sito di Interesse Nazionale) per le bonifiche — Priolo, una delle aree più inquinate d'Italia",
@@ -108,7 +112,8 @@
       "regione": "Campania",
       "tipo": "Porto commerciale + supporto US Navy",
       "gestione": "Autorità di Sistema Portuale del Mar Tirreno Centrale",
-      "ruolo_militare": "Porto di appoggio alla Naval Support Activity Naples (Capodichino). Le unità della 6ª Flotta USA fanno scalo qui per rifornimenti e licenze. Snodo di transito per materiali militari verso il Medio Oriente.",
+      "scali_nucleari": true,
+      "ruolo_militare": "Porto di appoggio alla Naval Support Activity Naples (Capodichino). Le unità della 6ª Flotta USA fanno scalo qui per rifornimenti e licenze. Snodo di transito per materiali militari verso il Medio Oriente. Uno dei due porti italiani (con La Maddalena) più visitati da sottomarini nucleari USA. Tra i 12 porti italiani autorizzati per scali di navi a propulsione nucleare (USA/UK/FR).",
       "flussi_stimati": "Difficile da scorporare dal traffico commerciale ordinario.",
       "casi_documentati": [],
       "fonti": ["Autorità Portuale Napoli", "US Navy — NSA Naples"]
@@ -130,6 +135,48 @@
       "fonti": ["OPAL Brescia", "Weapon Watch"]
     },
     {
+      "id": "cagliari",
+      "nome": "Porto di Cagliari",
+      "lat": 39.2138,
+      "lon": 9.1167,
+      "regione": "Sardegna",
+      "tipo": "Porto commerciale + Marina Militare + autorizzato nucleare",
+      "gestione": "Autorità di Sistema Portuale del Mare di Sardegna + Marina Militare (Comando Marittimo Sardegna)",
+      "scali_nucleari": true,
+      "ruolo_militare": "Sede del Comando Marittimo della Sardegna. Tra i 12 porti italiani autorizzati per scali di navi a propulsione nucleare (USA/UK/FR). Snodo logistico militare per le operazioni nel Mediterraneo centrale.",
+      "flussi_stimati": "Difficile da scorporare dal traffico commerciale.",
+      "casi_documentati": [],
+      "fonti": ["Progetto Humus — Porti italiani a rischio nucleare", "Marina Militare — Comando Marittimo Sardegna"]
+    },
+    {
+      "id": "castellammare-di-stabia",
+      "nome": "Porto di Castellammare di Stabia",
+      "lat": 40.7026,
+      "lon": 14.4815,
+      "regione": "Campania",
+      "tipo": "Porto cantieristico + autorizzato nucleare",
+      "gestione": "Autorità di Sistema Portuale del Mar Tirreno Centrale + Fincantieri Castellammare",
+      "scali_nucleari": true,
+      "ruolo_militare": "Storico cantiere navale Fincantieri (ex Cantiere Navale di Castellammare), uno dei più antichi d'Italia (fondato nel 1783). Costruzione di unità navali militari (pattugliatori d'altura PPA, fregate). Tra i 12 porti italiani autorizzati per scali di navi a propulsione nucleare (USA/UK/FR).",
+      "flussi_stimati": "Principalmente costruzione navale Fincantieri.",
+      "casi_documentati": [],
+      "fonti": ["Progetto Humus — Porti italiani a rischio nucleare", "Fincantieri — Cantiere di Castellammare di Stabia"]
+    },
+    {
+      "id": "venezia",
+      "nome": "Porto di Venezia + Arsenale Marina Militare",
+      "lat": 45.4333,
+      "lon": 12.3333,
+      "regione": "Veneto",
+      "tipo": "Porto commerciale + Arsenale storico Marina Militare + autorizzato nucleare",
+      "gestione": "Autorità di Sistema Portuale del Mare Adriatico Settentrionale + Marina Militare (Arsenale di Venezia)",
+      "scali_nucleari": true,
+      "ruolo_militare": "Sede dell'Arsenale di Venezia, una delle strutture militari più antiche al mondo (1104), oggi sede del Comando Marittimo Nord della Marina Militare e del Reggimento San Marco (fanteria di marina). Tra i 12 porti italiani autorizzati per scali di navi a propulsione nucleare (USA/UK/FR). Posizione strategica per l'accesso all'Adriatico settentrionale.",
+      "flussi_stimati": "Quota militare difficile da scorporare dal traffico crocieristico/commerciale, decisamente prevalente.",
+      "casi_documentati": [],
+      "fonti": ["Progetto Humus — Porti italiani a rischio nucleare", "Marina Militare — Arsenale di Venezia"]
+    },
+    {
       "id": "taranto",
       "nome": "Porto di Taranto + Mar Grande / Mar Piccolo",
       "lat": 40.4719,
@@ -137,7 +184,8 @@
       "regione": "Puglia",
       "tipo": "Base navale Marina Militare + porto commerciale",
       "gestione": "Marina Militare (Comando Marittimo Sud II) + Autorità di Sistema Portuale del Mar Ionio",
-      "ruolo_militare": "Principale base navale della Marina Militare Italiana. Sede della Squadra Navale e della Forza Anfibia. Ormeggio della portaerei Cavour e della nave-portaerei Trieste. Arsenale storico in via di ridimensionamento.",
+      "scali_nucleari": true,
+      "ruolo_militare": "Principale base navale della Marina Militare Italiana. Sede della Squadra Navale e della Forza Anfibia. Ormeggio della portaerei Cavour e della nave-portaerei Trieste. Arsenale storico in via di ridimensionamento. Tra i 12 porti italiani autorizzati per scali di navi a propulsione nucleare (USA/UK/FR).",
       "flussi_stimati": "Movimentazione prevalentemente militare interna (no export commerciale armi).",
       "casi_documentati": [
         "Mar Piccolo: gravissima contaminazione da PCB e diossine attribuita anche alle attività dell'Arsenale Militare e dell'Ilva — area SIN",

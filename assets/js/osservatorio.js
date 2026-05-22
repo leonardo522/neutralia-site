@@ -118,8 +118,26 @@
       svg: '<svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="11.5" fill="#ffe600" stroke="#000" stroke-width="0.7"/><circle cx="12" cy="12" r="2.4" fill="#000"/><path d="M 12 12 L 22.4 12 A 10.4 10.4 0 0 0 17.2 3 Z" fill="#000"/><path d="M 12 12 L 6.8 3 A 10.4 10.4 0 0 0 1.6 12 Z" fill="#000"/><path d="M 12 12 L 17.2 21 A 10.4 10.4 0 0 1 6.8 21 Z" fill="#000"/></svg>',
       color: '#ffe600',
       className: 'osv-icon-nucleare'
+    },
+    nucleare_scalo: {
+      // Stesso trifoglio ma bianco (porti/basi autorizzati per scali sub nucleari USA/UK/FR)
+      svg: '<svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="11.5" fill="#ffffff" stroke="#000" stroke-width="0.7"/><circle cx="12" cy="12" r="2.4" fill="#000"/><path d="M 12 12 L 22.4 12 A 10.4 10.4 0 0 0 17.2 3 Z" fill="#000"/><path d="M 12 12 L 6.8 3 A 10.4 10.4 0 0 0 1.6 12 Z" fill="#000"/><path d="M 12 12 L 17.2 21 A 10.4 10.4 0 0 1 6.8 21 Z" fill="#000"/></svg>',
+      color: '#ffffff',
+      className: 'osv-icon-nucleare-scalo'
     }
   };
+
+  function makeNukeOverlay(lat, lon, kind) {
+    const ic = ICONE[kind];
+    const size = kind === 'nucleare_scalo' ? 14 : 22;
+    const icon = L.divIcon({
+      className: 'osv-nuke-marker',
+      html: `<span class="osv-nuke-svg osv-nuke-${kind}">${ic.svg}</span>`,
+      iconSize: [size, size],
+      iconAnchor: kind === 'nucleare_scalo' ? [-4, 18] : [-3, 25]
+    });
+    return L.marker([lat, lon], { icon, interactive: false, keyboard: false, zIndexOffset: 1000 });
+  }
 
   function makeIconMarker(lat, lon, kind, className) {
     const ic = ICONE[kind];
@@ -215,14 +233,11 @@
 
       // Icona ☢ NUCLEARE per basi con testate B61 (Aviano, Ghedi)
       if (b.nucleare) {
-        const ic = ICONE.nucleare;
-        const icon = L.divIcon({
-          className: 'osv-nuke-marker',
-          html: `<span class="osv-nuke-svg">${ic.svg}</span>`,
-          iconSize: [22, 22],
-          iconAnchor: [-3, 25]   // posiziona l'icona in alto a destra rispetto al pallino
-        });
-        L.marker([b.lat, b.lon], { icon, interactive: false, keyboard: false, zIndexOffset: 1000 }).addTo(layers.basi);
+        makeNukeOverlay(b.lat, b.lon, 'nucleare').addTo(layers.basi);
+      }
+      // Icona ☢ BIANCA piccola per basi autorizzate a scali di sub nucleari (La Maddalena, Gaeta, Brindisi)
+      if (b.scali_nucleari) {
+        makeNukeOverlay(b.lat, b.lon, 'nucleare_scalo').addTo(layers.basi);
       }
 
       // Cerchi di rischio (es. MUOS Niscemi: danno acuto 20 km, interferenza aerea 67 km)
@@ -263,12 +278,41 @@
       marker.addTo(layers.produzione);
     });
 
-    // PORTI — icona ancora gialla
+    // PORTI — icona ancora gialla, + ☢ bianca se autorizzato scali nucleari
     porti.items.forEach(p => {
       const marker = makeIconMarker(p.lat, p.lon, 'porto', 'osv-icon-porto');
       marker.bindPopup(popupPorto(p), POPUP_OPTS);
       marker.addTo(layers.porti);
+      if (p.scali_nucleari) {
+        makeNukeOverlay(p.lat, p.lon, 'nucleare_scalo').addTo(layers.porti);
+      }
     });
+
+    // ROTTA SOTTOMARINI: linea simbolica Gibilterra → Maddalena (rotta SSN USA verso Mediterraneo)
+    const rottaSub = L.polyline([
+      [35.95, -5.61],   // Gibilterra
+      [38.0, 4.0],      // ovest Sardegna
+      [40.5, 8.5],      // sud-ovest Sardegna
+      [41.21, 9.41]     // La Maddalena
+    ], {
+      color: '#ffffff',
+      weight: 1.5,
+      opacity: 0.55,
+      dashArray: '8 6',
+      className: 'osv-rotta-sub',
+      interactive: true
+    }).bindPopup(
+      `<div class="popup popup-area">
+        <p class="popup-eyebrow popup-eyebrow-conflitto">Rotta sub USA (ricostruzione simbolica)</p>
+        <h3>Sottomarini nucleari USA → La Maddalena</h3>
+        <p>La flotta atlantica statunitense pattuglia il Mediterraneo con turni di 6 mesi: ogni missione comprende almeno 2 sottomarini a propulsione nucleare e 1 portaerei anch'essa nucleare. Punto di ingresso: Stretto di Gibilterra. Approdo storico principale: La Maddalena (1972-2008).</p>
+        <p class="popup-stat"><strong>8-22 reattori nucleari</strong> attraversano il Mediterraneo ogni giorno (US + UK + FR)</p>
+        <p class="popup-stat"><strong>12 porti</strong> italiani autorizzati per scali nucleari</p>
+        <p><em>Le rotte esatte sono coperte da segreto militare; questa linea è una ricostruzione simbolica.</em></p>
+      </div>`,
+      POPUP_OPTS
+    );
+    rottaSub.addTo(layers.aree);
 
     // INCIDENTI — triangolo warning bianco
     incidenti.items.forEach(inc => {

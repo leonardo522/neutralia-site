@@ -410,28 +410,43 @@
     },
     {
       "id": "la-maddalena",
-      "nome": "Ex base US Navy La Maddalena",
+      "nome": "Ex base US Navy La Maddalena — sottomarini nucleari",
       "lat": 41.2147,
       "lon": 9.4067,
       "regione": "Sardegna",
       "comune": "La Maddalena (SS)",
-      "tipo": "Ex base sottomarini nucleari USA (chiusa 2008)",
-      "gestione": "Marina Militare Italiana (dopo chiusura USA)",
-      "funzione": "Base di supporto a sottomarini a propulsione nucleare USA dal 1972 al 2008. Punto di ormeggio della nave appoggio USS Emory S. Land.",
+      "tipo": "Ex base sottomarini nucleari USA (1972-2008) — oggi Marina Militare",
+      "gestione": "Marina Militare Italiana (dopo chiusura USA nel 2008)",
+      "scali_nucleari": true,
+      "funzione": "Per 36 anni base avanzata della US Navy per i sottomarini nucleari d'attacco (SSN) e i sottomarini lanciatori di missili balistici (SSBN) nel Mediterraneo. Le navi appoggio USS Simon Lake e USS Emory S. Land vi erano ormeggiate permanentemente per la manutenzione, riparazione e rifornimento dei sottomarini, compresi interventi sui reattori nucleari. Una delle 'facilities' italiane più frequentate del Mediterraneo. Ufficialmente chiusa nel 2008, ma il sito resta militare.",
       "estensione_ha": 100,
-      "armamento": [],
+      "armamento": [
+        "Sub USA documentati in scalo: USS Skipjack (SSN-585, 1962), USS Scorpion (SSN-589, 1968 — poi affondato in Atlantico maggio 1968), USS Bergall (SSN-667, 1976-1994), USS Narwhal (SSN-671, 1978-1985), USS Cincinnati (SSN-693, 1979-1994), USS Batfish (SSN-681, 1995-1998), USS Hartford (SSN-768, 2003)",
+        "Sub UK documentati: HMS Splendid (1999), HMS Triumph (2000)",
+        "Sub francesi documentati: S 605 Amethyste (1999)",
+        "Navi appoggio USA: USS Simon Lake (1981-1995), USS Emory S. Land (1995-2008)",
+        "Capacità di intervento sui reattori nucleari"
+      ],
       "problemi_ambientali": [
-        "Incidente USS Hartford 25 ottobre 2003: collisione del sottomarino nucleare con il fondale dell'arcipelago; per giorni le autorità italiane non vennero informate del rischio radiologico",
-        "Contaminazione da idrocarburi nei fondali del porto (bonifica in corso da decenni)"
+        "INCIDENTE USS HARTFORD, 25 ottobre 2003: il sottomarino nucleare SSN-768 sperona il fondale dell'arcipelago. Mezzo timone strappato, sonar e elettronica distrutti, scafo squarciato. Costo riparazione $9,4 milioni. Le autorità italiane informate giorni dopo. Il comandante e il commodoro di Submarine Squadron 22 rimossi dal comando; 6 ufficiali accusati di negligenza.",
+        "16 gennaio 2004: il laboratorio indipendente francese CRIIRAD rileva livelli anomali di Torio-234 nelle alghe dell'arcipelago. L'APAT (poi ISPRA, agenzia ministeriale italiana) attribuisce a «cause naturali». Il dato CRIIRAD resta pubblico, l'inchiesta italiana viene archiviata.",
+        "Contaminazione da idrocarburi nei fondali del porto (bonifica in corso da decenni)",
+        "L'archipelago della Maddalena è dal 1996 Parco Nazionale — la presenza nucleare USA si sovrapponeva all'area protetta"
       ],
       "problemi_sanitari": [
-        "Studi sull'incidenza di tumori nella popolazione locale e nei militari italiani che hanno servito sulla base (commissione parlamentare uranio impoverito)"
+        "5 gennaio 2004: il consigliere provinciale Giulio Giudice annuncia pubblicamente di essere malato di cancro e chiede formale indagine sulla base USA. Apertura inchieste mediatiche (Il Manifesto, PeaceLink), poi insabbiate.",
+        "Indagine della Commissione parlamentare uranio impoverito (2006-2018) su incidenza tumori nei militari italiani e nella popolazione locale: anomalie rilevate ma non attribuite con certezza."
       ],
       "conflitti": [],
       "fonti": [
-        "Commissione parlamentare uranio impoverito",
+        "Wikipedia, «USS Hartford (SSN-768)»",
+        "Il Manifesto, «Disastro nucleare vicino alla costa», 4 agosto 2003",
+        "PeaceLink — dossier «La Maddalena, dall'incidente dell'Hartford all'incubo torio»",
+        "CRIIRAD (Commission de Recherche et d'Information Indépendantes sur la Radioactivité), rilevazioni 16 gennaio 2004",
+        "Commissione parlamentare di inchiesta sull'uranio impoverito (2006-2018)",
         "Atti causa civile cittadini La Maddalena vs Ministero Difesa",
-        "M. Dinucci, «La Maddalena base nucleare USA», 2008"
+        "M. Dinucci, «La Maddalena base nucleare USA», 2008",
+        "Progetto Humus — Porti italiani a rischio nucleare"
       ]
     },
     {
@@ -493,6 +508,7 @@
       "comune": "Gaeta (LT)",
       "tipo": "Base navale USA — nave ammiraglia 6ª Flotta",
       "gestione": "US Navy — Commander, U.S. Sixth Fleet (COMSIXTHFLT)",
+      "scali_nucleari": true,
       "funzione": "Porto di base della USS Mount Whitney (LCC-20), nave da comando e controllo (command ship) della 6ª Flotta della US Navy. Dal 1967 Gaeta ospita stabilmente l'ammiraglia della flotta USA nel Mediterraneo: a bordo viene esercitato il comando delle operazioni navali statunitensi nel teatro mediterraneo, baltico e africano. Una porzione del porto cittadino è di fatto sottratta all'uso civile.",
       "estensione_ha": 15,
       "armamento": [
@@ -569,6 +585,7 @@
       "comune": "Brindisi",
       "tipo": "Base navale + base aerea + hub logistico NATO/ONU",
       "gestione": "Marina Militare Italiana + Aeronautica Militare + ONU (Brindisi UNLB) + NATO Support and Procurement Agency (NSPA)",
+      "scali_nucleari": true,
       "funzione": "Hub logistico multiplo: 1) Base navale italiana storica (Stazione Navale Vittoria); 2) Aeroporto militare-civile Brindisi-Casale; 3) UN Logistics Base (UNLB), uno dei principali hub mondiali ONU per le operazioni di peacekeeping (depositi, formazione, dispacciamento personale); 4) Hub NSPA per la NATO. Da Brindisi sono passate le forniture per Kosovo 1999, Albania (operazione Alba), Libia 2011, Iraq, Afghanistan.",
       "estensione_ha": 380,
       "armamento": [
