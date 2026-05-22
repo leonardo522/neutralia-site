@@ -113,6 +113,12 @@
       svg: '<svg viewBox="0 0 24 24"><path d="M12 2 L22 21 L2 21 Z" fill="currentColor" stroke="#000" stroke-width="0.8" stroke-linejoin="round"/><rect x="11" y="9" width="2" height="6" fill="#000"/><rect x="11" y="17" width="2" height="2" fill="#000"/></svg>',
       color: '#ffffff',
       className: 'osv-icon-incidente'
+    },
+    nucleare: {
+      // Trifoglio radioattivo standard: 3 settori da 60° gialli su sfondo nero, centro giallo
+      svg: '<svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="11.5" fill="#ffe600" stroke="#000" stroke-width="0.7"/><circle cx="12" cy="12" r="2.4" fill="#000"/><path d="M 12 12 L 22.4 12 A 10.4 10.4 0 0 0 17.2 3 Z" fill="#000"/><path d="M 12 12 L 6.8 3 A 10.4 10.4 0 0 0 1.6 12 Z" fill="#000"/><path d="M 12 12 L 17.2 21 A 10.4 10.4 0 0 1 6.8 21 Z" fill="#000"/></svg>',
+      color: '#ffe600',
+      className: 'osv-icon-nucleare'
     }
   };
 
@@ -207,6 +213,18 @@
       dot.on('click', () => disegnaLineeEConflitti(b, conflittiPerId));
       pulse.addTo(layers.basi);
       dot.addTo(layers.basi);
+
+      // Icona ☢ NUCLEARE per basi con testate B61 (Aviano, Ghedi)
+      if (b.nucleare) {
+        const ic = ICONE.nucleare;
+        const icon = L.divIcon({
+          className: 'osv-nuke-marker',
+          html: `<span class="osv-nuke-svg">${ic.svg}</span>`,
+          iconSize: [22, 22],
+          iconAnchor: [-3, 25]   // posiziona l'icona in alto a destra rispetto al pallino
+        });
+        L.marker([b.lat, b.lon], { icon, interactive: false, keyboard: false, zIndexOffset: 1000 }).addTo(layers.basi);
+      }
 
       // Cerchi di rischio (es. MUOS Niscemi: danno acuto 20 km, interferenza aerea 67 km)
       if (b.raggi_rischio_km) {

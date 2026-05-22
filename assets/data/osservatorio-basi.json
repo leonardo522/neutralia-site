@@ -13,9 +13,10 @@
       "gestione": "31st Fighter Wing — United States Air Forces in Europe (USAFE)",
       "funzione": "Principale base da combattimento USA nel sud Europa. Ospita i caccia F-16C/D Fighting Falcon di stanza permanente. Hub operativo per missioni in area mediterranea, balcanica e medio-orientale.",
       "estensione_ha": 770,
+      "nucleare": true,
       "armamento": [
         "Circa 42 caccia F-16C/D Fighting Falcon",
-        "Testate nucleari tattiche B61 (varianti Mod-3, Mod-4, in transizione verso B61-12) in deposito, potenza regolabile fino a 45-60 chilotoni. Stime: ~20 testate (Federation of American Scientists, Kristensen 2023) — fino a ~40 (Andrea Margelletti CESI / Piero Batacchi RID via Sole 24 Ore, 2022). Gestione interamente USA, a differenza di Ghedi."
+        "Testate nucleari tattiche B61 (varianti Mod-3, Mod-4, in transizione verso B61-12) in deposito, potenza regolabile fino a 45-60 chilotoni. Stime: ~20 testate (Federation of American Scientists, Kristensen 2023) — fino a ~40-45 (Margelletti CESI / Batacchi RID via Sole 24 Ore, 2022; stime su capacità delle infrastrutture fino a 70-90 totali in Italia secondo Tuttogolfo.it 2026). Gestione interamente USA, a differenza di Ghedi."
       ],
       "problemi_ambientali": [
         "Inquinamento da carburanti avio (JP-8) nelle falde acquifere documentato in più rapporti regionali ARPA FVG",
@@ -28,7 +29,9 @@
       "conflitti": ["bosnia-1995", "kosovo-1999", "iraq-2003", "libia-2011", "siria-2014"],
       "fonti": [
         "Federation of American Scientists — Nuclear Notebook (Kristensen/Korda, 2023)",
+        "SIPRI Yearbook — Nuclear Forces",
         "Sole 24 Ore, «Nucleare in Italia: oltre 100 ordigni Usa. Ecco dove sono stati dislocati», 22 settembre 2022 (citando Andrea Margelletti — CESI Centro Studi Internazionali, e Piero Batacchi — direttore RID Rivista Italiana Difesa)",
+        "Tuttogolfo.it, «Armi nucleari in Italia: quante sono davvero, dove si trovano e ruolo della NATO», 6 marzo 2026",
         "M. Dinucci, «Geografia del nuovo ordine mondiale», 2019",
         "ICAN — International Campaign to Abolish Nuclear Weapons, country profile Italia"
       ]
@@ -44,10 +47,11 @@
       "gestione": "6° Stormo Aeronautica Militare Italiana + custodia USA delle testate",
       "funzione": "Base operativa dei Tornado IDS italiani con compito nucleare nell'ambito della Nuclear Sharing NATO. In transizione verso F-35A dual-capable.",
       "estensione_ha": 470,
+      "nucleare": true,
       "armamento": [
         "Tornado IDS (in via di sostituzione)",
         "Futuri F-35A dual-capable (certificati per il trasporto della bomba nucleare B61-12)",
-        "Testate nucleari tattiche B61 (Mod-3 e Mod-4, fino a 45-60 chilotoni, in transizione a B61-12). Stime: 20-30 (Federation of American Scientists, 2023) — fino a ~60 (Margelletti CESI / Batacchi RID via Sole 24 Ore, 2022). Nel quadro del NATO Nuclear Sharing: l'impiego in guerra sarebbe deciso dal Presidente USA con il consenso del governo italiano, e le bombe verrebbero trasportate da piloti italiani."
+        "Testate nucleari tattiche B61 (Mod-3 e Mod-4, fino a 45-60 chilotoni, in transizione a B61-12). Stime: 20-30 (Federation of American Scientists, 2023; SIPRI) — fino a ~60 (Margelletti CESI / Batacchi RID via Sole 24 Ore, 2022). Totale Italia: 30-40 confermate da FAS+SIPRI, fino a 70-90 secondo stime giornalistiche (Tuttogolfo.it, marzo 2026). Nel quadro del NATO Nuclear Sharing: in caso di guerra l'impiego sarebbe deciso dal Presidente USA con il consenso del governo italiano, ma le bombe verrebbero materialmente sganciate da piloti italiani."
       ],
       "problemi_ambientali": [
         "Aumento traffico aereo militare nel piano di estensione per F-35",
@@ -57,7 +61,9 @@
       "conflitti": ["kosovo-1999", "libia-2011"],
       "fonti": [
         "FAS Nuclear Notebook 2023 (Kristensen/Korda)",
+        "SIPRI Yearbook — Nuclear Forces",
         "Sole 24 Ore, «Nucleare in Italia: oltre 100 ordigni Usa. Ecco dove sono stati dislocati», 22 settembre 2022 (citando Andrea Margelletti — CESI, e Piero Batacchi — RID)",
+        "Tuttogolfo.it, «Armi nucleari in Italia: quante sono davvero, dove si trovano e ruolo della NATO», 6 marzo 2026",
         "Rete Italiana per il Disarmo — campagna «Italia Ripensaci»",
         "ICAN International Campaign to Abolish Nuclear Weapons — country profile Italia"
       ]
