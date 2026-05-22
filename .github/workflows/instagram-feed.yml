@@ -1,0 +1,42 @@
+name: Update Instagram feed
+
+on:
+  schedule:
+    # Ogni 6 ore (00:17, 06:17, 12:17, 18:17 UTC). Il :17 evita lo spike alle :00 di GH.
+    - cron: '17 */6 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: instagram-feed
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Run updater
+        run: python3 .github/scripts/update-instagram-feed.py
+
+      - name: Commit & push
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add assets/data/instagram.json assets/img/instagram/
+          if git diff --staged --quiet; then
+            echo "No changes — feed unchanged."
+            exit 0
+          fi
+          # Niente [skip ci]: vogliamo che Cloudflare Pages riparta col nuovo feed.
+          git commit -m "chore(instagram): refresh feed"
+          git push
