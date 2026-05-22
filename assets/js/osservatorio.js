@@ -103,7 +103,7 @@
       className: 'osv-icon-porto'
     },
     produzione: {
-      svg: '<svg viewBox="0 0 24 24"><path d="M12 1.5 L7 8 L7 17 L17 17 L17 8 Z" fill="currentColor"/><rect x="7" y="17" width="10" height="5.2" rx="0.6" fill="currentColor" opacity="0.55"/><line x1="9" y1="19.6" x2="15" y2="19.6" stroke="#000" stroke-width="0.6" opacity="0.5"/></svg>',
+      svg: '<svg viewBox="0 0 24 24"><path d="M 7 17 L 7 7 Q 7 1 12 1 Q 17 1 17 7 L 17 17 Z" fill="currentColor"/><rect x="7" y="17" width="10" height="5.2" rx="0.6" fill="currentColor" opacity="0.55"/><line x1="9" y1="19.6" x2="15" y2="19.6" stroke="#000" stroke-width="0.6" opacity="0.5"/></svg>',
       color: '#ff8a00',
       className: 'osv-icon-produzione'
     },
