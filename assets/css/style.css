@@ -144,6 +144,9 @@ img { max-width: 100%; display: block; }
   pointer-events: none;
 }
 
+/* Lang switcher dentro il menu hamburger mobile (nascosto su desktop) */
+.nav-links-lang { display: none; }
+
 .nav-cta:hover {
   background: transparent;
   color: var(--giallo);
@@ -2109,10 +2112,26 @@ img { max-width: 100%; display: block; }
 
   .section { padding: 4rem 0; }
 
+  .nav {
+    padding: 0.75rem 1rem;
+    gap: 0.4rem;
+  }
+
+  .logo {
+    font-size: 1.05rem;
+    letter-spacing: 0.12em;
+  }
+
   .nav-cta {
     margin-left: auto;
-    padding: 0.45rem 1rem;
-    font-size: 0.75rem;
+    padding: 0.4rem 0.85rem;
+    font-size: 0.7rem;
+    letter-spacing: 0.1em;
+  }
+
+  .nav-toggle {
+    font-size: 1.4rem;
+    padding: 0.25rem 0.4rem;
   }
 
   .ig-grid { grid-template-columns: repeat(2, 1fr); }
@@ -2131,15 +2150,45 @@ img { max-width: 100%; display: block; }
   .cta-hero-arrow,
   .ig-cta-arrow { align-self: flex-end; }
 
+  /* Su mobile nascondo lang-switcher inline (sostituito dal menu hamburger) */
   .lang-switcher {
-    margin-left: 0;
-    margin-right: 0.5rem;
-    order: -1;
+    display: none;
   }
 
-  .lang-switcher a {
-    padding: 0.25rem 0.4rem;
-    font-size: 0.65rem;
+  /* Lang switcher dentro il menu hamburger mobile */
+  .nav-links-lang {
+    display: flex;
+    gap: 0.5rem;
+    justify-content: center;
+    padding-top: 1.2rem;
+    margin-top: 0.5rem;
+    border-top: 1px solid rgba(239, 232, 71, 0.25);
+    list-style: none;
+  }
+
+  .nav-links-lang a {
+    font-family: var(--sans);
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    color: rgba(250, 250, 250, 0.85);
+    text-decoration: none;
+    padding: 0.4rem 0.8rem;
+    border: 1px solid rgba(250, 250, 250, 0.3);
+    text-transform: uppercase;
+    transition: all 0.2s ease;
+  }
+
+  .nav-links-lang a:hover {
+    color: var(--giallo);
+    border-color: var(--giallo);
+  }
+
+  .nav-links-lang a.lang-current {
+    color: var(--giallo);
+    border-color: var(--giallo);
+    background: rgba(239, 232, 71, 0.1);
+    pointer-events: none;
   }
 
   .newsletter-grid {
