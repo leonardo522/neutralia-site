@@ -672,6 +672,87 @@
       "fonti": ["Aeronautica Militare — Comando Aeronautico"]
     },
     {
+      "id": "pratica-di-mare",
+      "nome": "Aeroporto militare di Pratica di Mare",
+      "lat": 41.6553,
+      "lon": 12.4458,
+      "regione": "Lazio",
+      "comune": "Pomezia (RM)",
+      "tipo": "Base aerea italiana — comando + intelligence aerea",
+      "gestione": "Aeronautica Militare Italiana — Comando della Squadra Aerea (CSA)",
+      "funzione": "Una delle basi aeree più importanti d'Italia. Sede del Comando della Squadra Aerea (CSA), del 14° Stormo Radio Misure (guerra elettronica e ricognizione strategica), del Centro Sperimentale Volo, del 9° Stormo Caccia, del Reparto Stato Maggiore Difesa Volo. Aeroporto di rappresentanza per i voli di Stato. Sede del summit NATO-Russia del 28 maggio 2002 («Spirito di Pratica di Mare»), che istituì il Consiglio NATO-Russia.",
+      "estensione_ha": 800,
+      "armamento": [
+        "Aerei da guerra elettronica e ricognizione strategica del 14° Stormo (G550 CAEW)",
+        "AWACS NATO in transito",
+        "Voli di Stato e voli di intelligence presidenziale"
+      ],
+      "problemi_ambientali": [],
+      "problemi_sanitari": [],
+      "conflitti": ["libia-2011", "siria-2014"],
+      "fonti": ["Aeronautica Militare — Comando Squadra Aerea", "NATO — Pratica di Mare Summit 28 maggio 2002"]
+    },
+    {
+      "id": "amendola",
+      "nome": "Aeroporto militare di Amendola — Centro Droni",
+      "lat": 41.5419,
+      "lon": 15.7180,
+      "regione": "Puglia",
+      "comune": "Foggia",
+      "tipo": "Base aerea italiana — hub droni armati + F-35",
+      "gestione": "Aeronautica Militare Italiana — 32° Stormo",
+      "funzione": "Hub principale dei velivoli a pilotaggio remoto (UAV/droni) dell'Aeronautica Militare Italiana. Da Amendola operano i droni MQ-1 Predator e MQ-9 Reaper italiani, usati per missioni di sorveglianza e (con armamento USA) potenzialmente per missioni armate in Afghanistan, Iraq, Libia, Mediterraneo centrale. Amendola è anche la prima base italiana operativa con i caccia F-35A (Joint Strike Fighter), in arrivo dal 2018.",
+      "estensione_ha": 600,
+      "armamento": [
+        "MQ-9 Reaper (drone armato, capace di portare missili Hellfire e bombe a guida laser)",
+        "MQ-1 Predator (sorveglianza, in via di dismissione)",
+        "F-35A Lightning II (prima base operativa italiana dal 2018)"
+      ],
+      "problemi_ambientali": [
+        "Inquinamento acustico per voli continuativi"
+      ],
+      "problemi_sanitari": [],
+      "conflitti": ["afghanistan-2001", "iraq-2003", "libia-2011", "siria-2014"],
+      "fonti": ["Aeronautica Militare — 32° Stormo", "Rete Italiana per il Disarmo — campagna contro i droni armati"]
+    },
+    {
+      "id": "cervia",
+      "nome": "Aeroporto militare di Cervia-Pisignano",
+      "lat": 44.2247,
+      "lon": 12.3072,
+      "regione": "Emilia-Romagna",
+      "comune": "Cervia (RA)",
+      "tipo": "Base aerea italiana — caccia adriatica",
+      "gestione": "Aeronautica Militare Italiana — 5° Stormo Caccia «Giuseppe Cenni»",
+      "funzione": "Base caccia sul versante adriatico. Storicamente sede del 50° Stormo (dal 2019 trasformato in 5° Stormo). Da Cervia partirono missioni nella guerra del Kosovo 1999 (Allied Force), in Bosnia, in Libia 2011. Oggi base operativa per Eurofighter Typhoon e in transizione verso F-35.",
+      "estensione_ha": 500,
+      "armamento": [
+        "Eurofighter Typhoon",
+        "F-35A in arrivo"
+      ],
+      "problemi_ambientali": [],
+      "problemi_sanitari": [],
+      "conflitti": ["bosnia-1995", "kosovo-1999", "libia-2011"],
+      "fonti": ["Aeronautica Militare — 5° Stormo"]
+    },
+    {
+      "id": "grosseto",
+      "nome": "Aeroporto militare di Grosseto",
+      "lat": 42.7596,
+      "lon": 11.0719,
+      "regione": "Toscana",
+      "comune": "Grosseto",
+      "tipo": "Base aerea italiana — difesa aerea",
+      "gestione": "Aeronautica Militare Italiana — 4° Stormo Caccia",
+      "funzione": "Sede del 4° Stormo, primo reparto italiano ad aver ricevuto gli Eurofighter Typhoon nel 2003. Difesa dello spazio aereo tirrenico e del centro Italia. Partecipa alle missioni di polizia aerea NATO nei Paesi Baltici e in Islanda.",
+      "estensione_ha": 350,
+      "armamento": ["Eurofighter Typhoon"],
+      "problemi_ambientali": [],
+      "problemi_sanitari": [],
+      "conflitti": ["libia-2011"],
+      "fonti": ["Aeronautica Militare — 4° Stormo"]
+    },
+    {
       "id": "sellia-marina-radar",
       "nome": "Stazione radar di Sellia Marina",
       "lat": 38.8533,
