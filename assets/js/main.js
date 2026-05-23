@@ -2,6 +2,73 @@
 const yearEl = document.getElementById('year');
 if (yearEl) yearEl.textContent = new Date().getFullYear();
 
+// ============================================
+// COOKIE BANNER — minimale, GDPR-compliant
+// Salva la scelta in localStorage; riapribile via link "Gestisci cookie"
+// ============================================
+(function initCookieBanner() {
+  const KEY = 'neutralia_cookie_consent';
+  const VALUE_ACCEPTED = 'accepted';
+  const VALUE_ESSENTIAL = 'essential-only';
+
+  function getConsent() {
+    try { return localStorage.getItem(KEY); } catch { return null; }
+  }
+  function setConsent(v) {
+    try { localStorage.setItem(KEY, v); } catch {}
+  }
+
+  function buildBanner() {
+    const b = document.createElement('aside');
+    b.className = 'cookie-banner';
+    b.setAttribute('role', 'dialog');
+    b.setAttribute('aria-label', 'Informativa sui cookie');
+    b.innerHTML = `
+      <div class="cookie-banner-inner">
+        <p class="cookie-banner-text">
+          Neutralia usa solo <strong>cookie tecnici</strong> e servizi terzi essenziali (Brevo, Stripe).
+          Nessun tracker, nessuna pubblicità. Continuando dichiari di aver letto la
+          <a href="privacy.html">Privacy</a> e la <a href="cookie.html">Cookie Policy</a>.
+        </p>
+        <div class="cookie-banner-actions">
+          <button type="button" class="cookie-btn cookie-btn-secondary" data-cookie="essential">Solo necessari</button>
+          <button type="button" class="cookie-btn cookie-btn-primary" data-cookie="accept">Accetta</button>
+        </div>
+      </div>
+    `;
+    return b;
+  }
+
+  function show() {
+    if (document.querySelector('.cookie-banner')) return;
+    const banner = buildBanner();
+    document.body.appendChild(banner);
+    requestAnimationFrame(() => banner.classList.add('is-open'));
+    banner.addEventListener('click', (e) => {
+      const btn = e.target.closest('[data-cookie]');
+      if (!btn) return;
+      setConsent(btn.dataset.cookie === 'accept' ? VALUE_ACCEPTED : VALUE_ESSENTIAL);
+      banner.classList.remove('is-open');
+      setTimeout(() => banner.remove(), 250);
+    });
+  }
+
+  // Mostra solo se non c'è una scelta precedente
+  if (!getConsent()) {
+    // ritardo leggero per non bloccare il primo render
+    setTimeout(show, 800);
+  }
+
+  // Link "Gestisci cookie" nel footer riapre il banner
+  document.addEventListener('click', (e) => {
+    if (e.target.closest('[data-cookie-manage]')) {
+      e.preventDefault();
+      try { localStorage.removeItem(KEY); } catch {}
+      show();
+    }
+  });
+})();
+
 // Menu mobile toggle
 const navToggle = document.querySelector('.nav-toggle');
 const navLinks = document.querySelector('.nav-links');
