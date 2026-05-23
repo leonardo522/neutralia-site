@@ -262,9 +262,11 @@ img { max-width: 100%; display: block; }
   object-fit: cover;
 }
 
-/* Shift video del +2% verso destra per centrarlo otticamente */
+/* Centratura ottica del video (il contenuto è leggermente a sinistra,
+   sposto il "punto di centratura" del 52% per allineare il libro al centro
+   del riquadro senza creare bordi vuoti). */
 .libro-cover .libro-video {
-  transform: translateX(2%);
+  object-position: 52% 50%;
 }
 
 .libro-eyebrow {
