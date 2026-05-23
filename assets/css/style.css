@@ -262,6 +262,11 @@ img { max-width: 100%; display: block; }
   object-fit: cover;
 }
 
+/* Shift video del +2% verso destra per centrarlo otticamente */
+.libro-cover .libro-video {
+  transform: translateX(2%);
+}
+
 .libro-eyebrow {
   font-family: var(--sans);
   font-weight: 700;
