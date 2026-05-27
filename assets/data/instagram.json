@@ -1,41 +1,41 @@
 {
   "_comment": "Generato automaticamente da .github/workflows/instagram-feed.yml ogni 6 ore. Non modificare a mano.",
-  "updatedFrom": "2026-05-25T09:09:10+0000",
+  "updatedFrom": "2026-05-26T16:34:24+0000",
   "posts": [
     {
-      "permalink": "https://www.instagram.com/reel/DYwYcgzMGEy/",
+      "permalink": "https://www.instagram.com/reel/DYzwVVLsikI/",
       "thumbnailUrl": "assets/img/instagram/1.jpg",
+      "mediaType": "VIDEO",
+      "isReel": true,
+      "captionShort": "C’è qualcosa che il parlamento italiano avrebbe dovuto fare e non ha fatto, e i precedenti che esistono rendono questa c…"
+    },
+    {
+      "permalink": "https://www.instagram.com/reel/DYwYcgzMGEy/",
+      "thumbnailUrl": "assets/img/instagram/2.jpg",
       "mediaType": "VIDEO",
       "isReel": true,
       "captionShort": "Settembre 1974"
     },
     {
       "permalink": "https://www.instagram.com/reel/DYo3jO6M4L4/",
-      "thumbnailUrl": "assets/img/instagram/2.jpg",
+      "thumbnailUrl": "assets/img/instagram/3.jpg",
       "mediaType": "VIDEO",
       "isReel": true,
       "captionShort": "SCARICA IL PDF GRATIS — Trovi il link in bio di: \"Neutralia: Manifesto per il recupero della sovranità italiana\""
     },
     {
       "permalink": "https://www.instagram.com/reel/DYkjRWMx4nm/",
-      "thumbnailUrl": "assets/img/instagram/3.jpg",
+      "thumbnailUrl": "assets/img/instagram/4.jpg",
       "mediaType": "VIDEO",
       "isReel": true,
       "captionShort": "Aspen Institute Italia (USA) — il club che produce i Presidenti, quasi mai trattato come lobby nei media mainstream perc…"
     },
     {
       "permalink": "https://www.instagram.com/p/DYfGKW9jG1h/",
-      "thumbnailUrl": "assets/img/instagram/4.jpg",
+      "thumbnailUrl": "assets/img/instagram/5.jpg",
       "mediaType": "CAROUSEL_ALBUM",
       "isReel": false,
       "captionShort": "Il 9 gennaio 2019 la legge “spazza-corrotti” vieta ai partiti italiani di ricevere fondi dall’estero, ed estende il divi…"
-    },
-    {
-      "permalink": "https://www.instagram.com/reel/DYWyxP-sTYX/",
-      "thumbnailUrl": "assets/img/instagram/5.jpg",
-      "mediaType": "VIDEO",
-      "isReel": true,
-      "captionShort": "Cittadini italiani vengono picchiati dai coloni e sequestrati in acque internazionali e il governo italiano si limita a…"
     },
     {
       "permalink": "https://www.instagram.com/_neutralia_/",
