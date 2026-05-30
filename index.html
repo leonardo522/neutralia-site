@@ -57,18 +57,34 @@
       <p class="evento-eyebrow">Primo evento pubblico</p>
       <h2 class="evento-title">Venerdì 19 giugno · ore 21:00<br>al Teatro India, Roma</h2>
       <p class="evento-info"><strong>Ingresso gratuito.</strong></p>
-      <p class="evento-ospiti-label">Con la partecipazione di:</p>
-      <ul class="evento-ospiti">
-        <li>Elena Basile</li>
-        <li>Gabriele Guzzi</li>
-        <li>Glauco Benigni</li>
-        <li>Antonella De Ninno</li>
-        <li>Guido Grossi</li>
-        <li>Francesco Neri</li>
+      <p class="evento-ospiti-label">Con la partecipazione di <small>(clicca per la bio)</small>:</p>
+      <ul class="evento-ospiti" id="evento-ospiti">
+        <li><button type="button" class="evento-ospite-btn" data-bio="elena-basile">Elena Basile</button></li>
+        <li><button type="button" class="evento-ospite-btn" data-bio="gabriele-guzzi">Gabriele Guzzi</button></li>
+        <li><button type="button" class="evento-ospite-btn" data-bio="glauco-benigni">Glauco Benigni</button></li>
+        <li><button type="button" class="evento-ospite-btn" data-bio="antonella-de-ninno">Antonella De Ninno</button></li>
+        <li><button type="button" class="evento-ospite-btn" data-bio="guido-grossi">Guido Grossi</button></li>
+        <li><button type="button" class="evento-ospite-btn" data-bio="francesco-neri">Francesco Neri</button></li>
       </ul>
+      <div class="evento-bio" id="evento-bio" hidden aria-live="polite">
+        <h3 class="evento-bio-nome"></h3>
+        <p class="evento-bio-testo"></p>
+      </div>
     </div>
   </div>
 </section>
+
+<!-- Bios degli ospiti (template per JS) -->
+<script id="evento-bios" type="application/json">
+{
+  "elena-basile": "Già Ambasciatrice d'Italia in Belgio e Brasile. Oggi voce critica dell'escalation NATO, autrice di saggi su politica estera e diplomazia di pace.",
+  "gabriele-guzzi": "Economista. Autore di Eurosuicidio. Ha fondato Rethinking Economics Bocconi ed è presidente del movimento l'Indispensabile. È dottore di ricerca in Economia Politica presso l'Università Roma Tre.",
+  "glauco-benigni": "Massmediologo e giornalista, già vice direttore di RAI international. Ha dedicato decenni alla sovranità digitale e culturale italiana.",
+  "antonella-de-ninno": "Fisica, ricercatrice ENEA. Da oltre vent'anni lavora alle reazioni nucleari a bassa energia (LENR) — la frontiera scientifica chiave per l'indipendenza energetica italiana.",
+  "guido-grossi": "Economista, già dirigente bancario della BNL. Si occupa di sovranità monetaria e finanziaria per l'Italia.",
+  "francesco-neri": "Scrittore. Divulgatore interdisciplinare, ricercatore di sistemi di resilienza alimentare e medica da oltre vent'anni."
+}
+</script>
 
 <!-- SEZIONE LIBRO — la nuova "hero" -->
 <section id="libro" class="section section-libro section-hero">

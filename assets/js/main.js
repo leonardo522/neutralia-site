@@ -3,6 +3,46 @@ const yearEl = document.getElementById('year');
 if (yearEl) yearEl.textContent = new Date().getFullYear();
 
 // ============================================
+// BIO OSPITI evento 19 giugno — click → mostra bio sotto i nomi
+// ============================================
+(function initEventoBio() {
+  const list = document.getElementById('evento-ospiti');
+  const biosEl = document.getElementById('evento-bios');
+  const panel = document.getElementById('evento-bio');
+  if (!list || !biosEl || !panel) return;
+
+  let bios = {};
+  try { bios = JSON.parse(biosEl.textContent); } catch {}
+
+  const nomeEl = panel.querySelector('.evento-bio-nome');
+  const testoEl = panel.querySelector('.evento-bio-testo');
+  let active = null;
+
+  list.addEventListener('click', (e) => {
+    const btn = e.target.closest('.evento-ospite-btn');
+    if (!btn) return;
+    const id = btn.dataset.bio;
+    const bio = bios[id];
+    if (!bio) return;
+
+    // Toggle: secondo click sullo stesso = chiude
+    if (active === btn) {
+      panel.hidden = true;
+      btn.classList.remove('is-active');
+      active = null;
+      return;
+    }
+    // Disattiva precedente
+    list.querySelectorAll('.evento-ospite-btn.is-active').forEach(b => b.classList.remove('is-active'));
+    btn.classList.add('is-active');
+    nomeEl.textContent = btn.textContent.trim();
+    testoEl.textContent = bio;
+    panel.hidden = false;
+    active = btn;
+  });
+})();
+
+// ============================================
 // COOKIE BANNER — minimale, GDPR-compliant
 // Salva la scelta in localStorage; riapribile via link "Gestisci cookie"
 // ============================================
