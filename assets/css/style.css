@@ -2296,13 +2296,6 @@ img { max-width: 100%; display: block; }
   border-bottom: 1px solid rgba(239, 232, 71, 0.18);
 }
 
-.evento-grid {
-  display: grid;
-  grid-template-columns: 1.4fr 1fr;
-  gap: 3rem;
-  align-items: center;
-}
-
 .evento-eyebrow {
   font-family: var(--sans);
   font-size: 0.78rem;
@@ -2365,43 +2358,6 @@ img { max-width: 100%; display: block; }
   background: rgba(239, 232, 71, 0.05);
 }
 
-.evento-locandina {
-  aspect-ratio: 1/1.4;
-  background: rgba(255, 255, 255, 0.03);
-  border: 1px dashed rgba(239, 232, 71, 0.35);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 4px;
-}
-
-.evento-locandina-placeholder {
-  text-align: center;
-  color: rgba(250, 250, 250, 0.45);
-  font-family: var(--sans);
-  font-size: 0.9rem;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-}
-
-.locandina-icon {
-  display: block;
-  font-size: 3.5rem;
-  margin-bottom: 0.8rem;
-  opacity: 0.55;
-}
-
-@media (max-width: 760px) {
-  .evento-grid {
-    grid-template-columns: 1fr;
-    gap: 1.8rem;
-  }
-  .evento-locandina {
-    max-width: 320px;
-    margin: 0 auto;
-    width: 100%;
-  }
-}
 
 /* ============================================
    COOKIE BANNER
