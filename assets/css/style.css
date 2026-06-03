@@ -2664,6 +2664,199 @@ img { max-width: 100%; display: block; }
 }
 
 /* ============================================
+   PAGINA PRENOTA EVENTO
+   ============================================ */
+.page-prenota {
+  background: var(--nero);
+  color: var(--bianco);
+}
+
+.container-narrow { max-width: 720px; }
+
+.prenota-wrap {
+  padding: 7rem 0 5rem;
+  color: var(--bianco);
+}
+
+.prenota-eyebrow {
+  font-family: var(--sans);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--giallo);
+  margin-bottom: 0.6rem;
+}
+
+.prenota-wrap h1 {
+  font-family: var(--sans);
+  font-weight: 900;
+  font-size: clamp(2.2rem, 5vw, 3.4rem);
+  color: var(--bianco);
+  line-height: 1.05;
+  margin-bottom: 0.6rem;
+}
+
+.prenota-lead {
+  font-family: var(--serif);
+  font-size: 1.08rem;
+  line-height: 1.6;
+  color: rgba(250, 250, 250, 0.85);
+  margin-bottom: 2.4rem;
+}
+
+.prenota-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+}
+
+.prenota-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+@media (max-width: 600px) {
+  .prenota-row { grid-template-columns: 1fr; }
+}
+
+.prenota-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.prenota-field > span {
+  font-family: var(--sans);
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: rgba(250, 250, 250, 0.75);
+}
+
+.prenota-field em {
+  color: var(--giallo);
+  font-style: normal;
+}
+
+.prenota-field small {
+  text-transform: none;
+  letter-spacing: 0;
+  color: rgba(250, 250, 250, 0.45);
+  font-weight: 400;
+  font-style: italic;
+  margin-left: 0.4em;
+  font-family: var(--serif);
+}
+
+.prenota-field input,
+.prenota-field textarea {
+  font-family: var(--serif);
+  font-size: 1rem;
+  padding: 0.75rem 0.9rem;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(239, 232, 71, 0.3);
+  border-radius: 3px;
+  color: var(--bianco);
+  transition: border-color 0.15s, background 0.15s;
+}
+
+.prenota-field input:focus,
+.prenota-field textarea:focus {
+  outline: none;
+  border-color: var(--giallo);
+  background: rgba(239, 232, 71, 0.08);
+}
+
+.prenota-field textarea {
+  resize: vertical;
+  min-height: 80px;
+}
+
+.prenota-consent {
+  display: flex;
+  gap: 0.6rem;
+  align-items: flex-start;
+  font-family: var(--serif);
+  font-size: 0.92rem;
+  line-height: 1.45;
+  color: rgba(250, 250, 250, 0.78);
+  margin-top: 0.4rem;
+}
+
+.prenota-consent input { margin-top: 0.3rem; accent-color: var(--giallo); }
+
+.prenota-consent a {
+  color: var(--giallo);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.prenota-submit {
+  margin-top: 0.8rem;
+  align-self: flex-start;
+  padding: 0.95rem 2rem;
+  font-size: 0.95rem;
+}
+
+.prenota-feedback {
+  font-family: var(--sans);
+  font-size: 0.88rem;
+  padding: 0.7rem 0.9rem;
+  border-radius: 3px;
+  background: rgba(239, 232, 71, 0.12);
+  color: var(--giallo);
+  margin: 0;
+}
+
+.prenota-feedback.is-error {
+  background: rgba(255, 42, 42, 0.15);
+  color: #ff6a6a;
+}
+
+.prenota-success {
+  text-align: center;
+  padding: 3rem 1.5rem;
+  border: 1px solid rgba(239, 232, 71, 0.4);
+  border-radius: 6px;
+  background: rgba(239, 232, 71, 0.05);
+}
+
+.prenota-success-icon {
+  font-size: 3rem;
+  color: var(--giallo);
+  margin: 0 0 0.5rem;
+  line-height: 1;
+}
+
+.prenota-success h2 {
+  font-family: var(--sans);
+  font-weight: 800;
+  font-size: 1.8rem;
+  color: var(--bianco);
+  margin: 0 0 0.8rem;
+}
+
+.prenota-success p {
+  font-family: var(--serif);
+  font-size: 1.05rem;
+  color: rgba(250, 250, 250, 0.85);
+  margin: 0 0 1.5rem;
+}
+
+/* CTA "Prenota un posto" nella sezione evento home */
+.evento-cta-wrap {
+  margin: 1.4rem 0 1.8rem;
+}
+
+.evento-cta {
+  font-size: 0.95rem;
+  padding: 0.95rem 1.8rem;
+}
+
+/* ============================================
    OSSERVATORIO — pagina mappa
    ============================================ */
 

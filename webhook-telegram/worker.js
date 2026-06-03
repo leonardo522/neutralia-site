@@ -91,6 +91,59 @@ export default {
 
 // ---------- Telegram ----------
 
+// ---------- Prenotazione evento 19 giugno ----------
+
+function corsHeaders() {
+  return {
+    'Access-Control-Allow-Origin': '*',
+    'Access-Control-Allow-Methods': 'POST, OPTIONS',
+    'Access-Control-Allow-Headers': 'Content-Type',
+    'Access-Control-Max-Age': '86400',
+  };
+}
+
+async function handlePrenotazione(request, env) {
+  let data;
+  try {
+    data = await request.json();
+  } catch {
+    return new Response('Invalid JSON', { status: 400, headers: corsHeaders() });
+  }
+
+  const nome = String(data.nome || '').trim();
+  const cognome = String(data.cognome || '').trim();
+  const email = String(data.email || '').trim();
+  const partecipanti = parseInt(data.partecipanti, 10) || 1;
+  const note = String(data.note || '').trim();
+
+  if (!nome || !cognome || !email) {
+    return new Response('Campi obbligatori mancanti', { status: 400, headers: corsHeaders() });
+  }
+  if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+    return new Response('Email non valida', { status: 400, headers: corsHeaders() });
+  }
+
+  const msg =
+    `🎭 <b>Nuova prenotazione — Evento 19 giugno</b>\n\n` +
+    `<b>${esc(nome)} ${esc(cognome)}</b>\n` +
+    `📧 ${esc(email)}\n` +
+    `👥 <b>${partecipanti}</b> partecipant${partecipanti === 1 ? 'e' : 'i'}\n` +
+    (note ? `\n📝 <i>${esc(note)}</i>\n` : '') +
+    `\n🕒 ${new Date().toLocaleString('it-IT')}`;
+
+  try {
+    await sendTelegram(env.TELEGRAM_BOT_TOKEN, env.TELEGRAM_CHAT_ID, msg);
+  } catch (e) {
+    console.error('Telegram send failed (prenota):', e.message);
+    return new Response('Errore invio notifica', { status: 500, headers: corsHeaders() });
+  }
+
+  return new Response(JSON.stringify({ ok: true }), {
+    status: 200,
+    headers: { ...corsHeaders(), 'Content-Type': 'application/json' },
+  });
+}
+
 async function sendTelegram(token, chatId, text) {
   if (!token || !chatId) throw new Error('Telegram env vars mancanti');
   const url = `https://api.telegram.org/bot${token}/sendMessage`;

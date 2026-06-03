@@ -3,6 +3,67 @@ const yearEl = document.getElementById('year');
 if (yearEl) yearEl.textContent = new Date().getFullYear();
 
 // ============================================
+// PRENOTA EVENTO 19 giugno — submit form al Worker → notifica Telegram
+// ============================================
+(function initPrenotaForm() {
+  const form = document.getElementById('prenota-form');
+  if (!form) return;
+  const successBox = document.getElementById('prenota-success');
+  const feedback = form.querySelector('.prenota-feedback');
+  const submitBtn = form.querySelector('button[type="submit"]');
+  const endpoint = window.PRENOTA_ENDPOINT;
+
+  function showFeedback(msg, isError) {
+    feedback.textContent = msg;
+    feedback.hidden = false;
+    feedback.classList.toggle('is-error', !!isError);
+  }
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    feedback.hidden = true;
+    if (!form.reportValidity()) return;
+
+    const payload = {
+      nome: form.nome.value.trim(),
+      cognome: form.cognome.value.trim(),
+      email: form.email.value.trim(),
+      partecipanti: parseInt(form.partecipanti.value, 10) || 1,
+      note: form.note.value.trim(),
+    };
+
+    submitBtn.disabled = true;
+    const originalText = submitBtn.textContent;
+    submitBtn.textContent = 'Invio in corso…';
+
+    try {
+      if (!endpoint || endpoint.includes('TODO')) {
+        // Fallback: apre client mail
+        const body = `Nome: ${payload.nome}\nCognome: ${payload.cognome}\nEmail: ${payload.email}\nPartecipanti: ${payload.partecipanti}\nNote: ${payload.note}`;
+        window.location.href = `mailto:neutralia.info@gmail.com?subject=${encodeURIComponent('Prenotazione evento 19 giugno')}&body=${encodeURIComponent(body)}`;
+        showFeedback('Apertura del client di posta…');
+      } else {
+        const res = await fetch(endpoint, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(payload),
+        });
+        if (!res.ok) throw new Error('HTTP ' + res.status);
+        form.hidden = true;
+        successBox.hidden = false;
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+    } catch (err) {
+      console.error('Prenotazione errore:', err);
+      showFeedback('Errore nell\'invio. Riprova o scrivici a neutralia.info@gmail.com', true);
+    } finally {
+      submitBtn.disabled = false;
+      submitBtn.textContent = originalText;
+    }
+  });
+})();
+
+// ============================================
 // BIO OSPITI evento 19 giugno — click → mostra bio sotto i nomi
 // ============================================
 (function initEventoBio() {
