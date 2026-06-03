@@ -20,16 +20,28 @@
 
 export default {
   async fetch(request, env) {
+    const url = new URL(request.url);
+
     // Healthcheck per test manuali
     if (request.method === 'GET') {
-      return new Response('Neutralia webhook OK — invia POST con firma Stripe.', {
+      return new Response('Neutralia webhook OK — POST Stripe sul root, POST JSON su /prenota-evento.', {
         headers: { 'Content-Type': 'text/plain; charset=utf-8' },
       });
+    }
+    // CORS preflight per chiamate dal browser
+    if (request.method === 'OPTIONS') {
+      return new Response(null, { status: 204, headers: corsHeaders() });
     }
     if (request.method !== 'POST') {
       return new Response('Method Not Allowed', { status: 405 });
     }
 
+    // === Endpoint prenotazione evento 19 giugno ===
+    if (url.pathname === '/prenota-evento') {
+      return handlePrenotazione(request, env);
+    }
+
+    // === Webhook Stripe (root) ===
     // 1. Verifica firma Stripe
     const signature = request.headers.get('stripe-signature');
     const body = await request.text();
