@@ -124,7 +124,7 @@ async function handlePrenotazione(request, env) {
 
   const nome = String(data.nome || '').trim();
   const cognome = String(data.cognome || '').trim();
-  const email = String(data.email || '').trim();
+  const email = String(data.email || '').trim().toLowerCase();
   const partecipanti = parseInt(data.partecipanti, 10) || 1;
   const note = String(data.note || '').trim();
 
@@ -135,25 +135,51 @@ async function handlePrenotazione(request, env) {
     return new Response('Email non valida', { status: 400, headers: corsHeaders() });
   }
 
-  const msg =
-    `🎭 <b>Nuova prenotazione — Evento 19 giugno</b>\n\n` +
-    `<b>${esc(nome)} ${esc(cognome)}</b>\n` +
-    `📧 ${esc(email)}\n` +
-    `👥 <b>${partecipanti}</b> partecipant${partecipanti === 1 ? 'e' : 'i'}\n` +
-    (note ? `\n📝 <i>${esc(note)}</i>\n` : '') +
-    `\n🕒 ${new Date().toLocaleString('it-IT')}`;
-
+  // Salva il contatto su Brevo nella lista evento
   try {
-    await sendTelegram(env.TELEGRAM_BOT_TOKEN, env.TELEGRAM_CHAT_ID, msg);
+    await saveToBrevo({
+      apiKey: env.BREVO_API_KEY,
+      listId: parseInt(env.BREVO_EVENT_LIST_ID, 10),
+      email,
+      attributes: {
+        NOME: nome,
+        COGNOME: cognome,
+        PARTECIPANTI: partecipanti,
+        NOTE: note || '',
+        DATA_PRENOTAZIONE: new Date().toISOString(),
+      },
+    });
   } catch (e) {
-    console.error('Telegram send failed (prenota):', e.message);
-    return new Response('Errore invio notifica', { status: 500, headers: corsHeaders() });
+    console.error('Brevo save failed (prenota):', e.message);
+    return new Response('Errore salvataggio prenotazione', { status: 500, headers: corsHeaders() });
   }
 
   return new Response(JSON.stringify({ ok: true }), {
     status: 200,
     headers: { ...corsHeaders(), 'Content-Type': 'application/json' },
   });
+}
+
+async function saveToBrevo({ apiKey, listId, email, attributes }) {
+  if (!apiKey || !listId) throw new Error('Brevo env vars mancanti');
+  const r = await fetch('https://api.brevo.com/v3/contacts', {
+    method: 'POST',
+    headers: {
+      'accept': 'application/json',
+      'content-type': 'application/json',
+      'api-key': apiKey,
+    },
+    body: JSON.stringify({
+      email,
+      attributes,
+      listIds: [listId],
+      updateEnabled: true,
+    }),
+  });
+  if (!r.ok && r.status !== 204) {
+    const t = await r.text();
+    throw new Error(`Brevo API ${r.status}: ${t}`);
+  }
 }
 
 async function sendTelegram(token, chatId, text) {
