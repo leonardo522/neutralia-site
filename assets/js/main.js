@@ -29,7 +29,6 @@ if (yearEl) yearEl.textContent = new Date().getFullYear();
       cognome: form.cognome.value.trim(),
       email: form.email.value.trim(),
       partecipanti: parseInt(form.partecipanti.value, 10) || 1,
-      note: form.note.value.trim(),
     };
 
     submitBtn.disabled = true;
@@ -39,7 +38,7 @@ if (yearEl) yearEl.textContent = new Date().getFullYear();
     try {
       if (!endpoint || endpoint.includes('TODO')) {
         // Fallback: apre client mail
-        const body = `Nome: ${payload.nome}\nCognome: ${payload.cognome}\nEmail: ${payload.email}\nPartecipanti: ${payload.partecipanti}\nNote: ${payload.note}`;
+        const body = `Nome: ${payload.nome}\nCognome: ${payload.cognome}\nEmail: ${payload.email}\nPartecipanti: ${payload.partecipanti}`;
         window.location.href = `mailto:neutralia.info@gmail.com?subject=${encodeURIComponent('Prenotazione evento 19 giugno')}&body=${encodeURIComponent(body)}`;
         showFeedback('Apertura del client di posta…');
       } else {
