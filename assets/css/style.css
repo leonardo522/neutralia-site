@@ -3805,3 +3805,36 @@ body.mappa-popup-open::before {
   .osservatorio-teaser-arrow { display: none; }
 }
 
+/* ============================================
+   VIDEO HERO — YouTube full-screen in cima alla home
+   ============================================ */
+.section-video-hero {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  min-height: 480px;
+  background: #000;
+  overflow: hidden;
+  margin: 0;
+}
+.section-video-hero .video-hero-frame {
+  position: absolute;
+  inset: 0;
+}
+.section-video-hero iframe {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  /* cover trick: enlarge iframe in whichever axis is needed to cover viewport at 16:9 */
+  width: max(100vw, 177.78vh);
+  height: max(100vh, 56.25vw);
+  border: 0;
+  display: block;
+}
+
+/* Su mobile portrait l'altezza 100vh include la barra browser dinamica → usa svh dove disponibile */
+@supports (height: 100svh) {
+  .section-video-hero { height: 100svh; }
+}
+
