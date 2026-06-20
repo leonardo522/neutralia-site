@@ -3843,3 +3843,10 @@ body.mappa-popup-open::before {
   }
 }
 
+/* Mobile: aggancia il video sotto l'header fixed (che altrimenti coprirebbe la parte alta) */
+@media (max-width: 900px) {
+  .section-video-hero {
+    margin-top: 3.5rem;
+  }
+}
+
