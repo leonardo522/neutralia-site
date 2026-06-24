@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Osservatorio Energetico — Neutralia</title>
+<meta name="description" content="Mappa interattiva della sovranità energetica italiana: infrastrutture critiche (rete, gas, rigassificatori), dipendenze estere documentate, asset energetici controllati da soggetti esteri. Centro Studi Neutralia.">
+<meta name="theme-color" content="#0a0a0a">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap">
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body class="page-osservatorio">
+
+<header class="site-header">
+  <nav class="nav">
+    <a href="index.html" class="logo">NEUTRALIA</a>
+    <ul class="nav-links">
+      <li><a href="index.html#libro">Libro</a></li>
+      <li><a href="index.html#manifesto">Manifesto</a></li>
+      <li><a href="index.html#approfondimenti">Approfondimenti</a></li>
+      <li><a href="osservatori.html" class="is-current">Osservatori</a></li>
+      <li><a href="index.html#comunita">Comunità</a></li>
+      <li><a href="index.html#negozio">Negozio</a></li>
+      <li class="nav-links-lang">
+        <a href="en/">EN</a>
+        <a href="fr/">FR</a>
+        <a href="es/">ES</a>
+        <a href="de/">DE</a>
+      </li>
+    </ul>
+    <a href="dona.html" class="nav-cta">Dona</a>
+    <button class="nav-toggle" aria-label="Apri menu">☰</button>
+  </nav>
+</header>
+
+<!-- INTRO -->
+<section class="osservatorio-intro">
+  <div class="container">
+    <h1>Osservatorio Energetico</h1>
+    <p class="osservatorio-lead">
+      La mappa della sovranità energetica italiana: gasdotti di import, rigassificatori, centrali, e
+      asset energetici controllati da soggetti esteri o pubblici italiani.
+    </p>
+    <p class="osservatorio-sub">
+      Tutti i dati sono pubblici. Le fonti sono indicate punto per punto.
+      Clicca sui pallini per leggere chi controlla davvero l'energia che entra in Italia.
+    </p>
+  </div>
+</section>
+
+<!-- MAPPA -->
+<section class="osservatorio-mappa-wrap">
+  <div id="mappa" role="application" aria-label="Mappa interattiva dell'energia italiana">
+    <div class="mappa-loading" id="mappa-loading">
+      <p>Caricamento mappa…</p>
+    </div>
+  </div>
+
+  <!-- LEGENDA -->
+  <aside class="legenda" aria-label="Legenda della mappa">
+    <h2>Legenda</h2>
+    <ul class="legenda-lista">
+      <li><span class="dot dot-rosso" aria-hidden="true"></span> Gasdotto di import (punto di ingresso)</li>
+      <li><span class="dot" style="background:#00aaff" aria-hidden="true"></span> Rigassificatore LNG</li>
+      <li><span class="dot" style="background:#ff8a00" aria-hidden="true"></span> Centrale elettrica</li>
+      <li><span class="dot" style="background:#ffe600" aria-hidden="true"></span> Centrale nucleare storica (in decommissioning)</li>
+      <li><span class="dot" style="background:#ff2a2a" aria-hidden="true"></span> Operatore energetico controllato da estero</li>
+      <li><span class="dot dot-verde" aria-hidden="true"></span> Asset energetico a controllo italiano</li>
+    </ul>
+    <p class="legenda-tip">Clicca un pallino per i dettagli e le fonti.<br>Ogni voce indica chi controlla l'asset e con quali quote.</p>
+    <div class="legenda-filtri">
+      <h3>Mostra / Nascondi</h3>
+      <label><input type="checkbox" data-filter="gasdotto_import" checked> Gasdotti</label>
+      <label><input type="checkbox" data-filter="rigassificatore" checked> Rigassificatori</label>
+      <label><input type="checkbox" data-filter="centrale_elettrica" checked> Centrali</label>
+      <label><input type="checkbox" data-filter="nucleare_storico" checked> Nucleare storico</label>
+      <label><input type="checkbox" data-filter="asset_estero" checked> Asset esteri</label>
+      <label><input type="checkbox" data-filter="asset_italiano" checked> Asset italiani</label>
+    </div>
+  </aside>
+</section>
+
+<!-- TESTO METODOLOGICO -->
+<section class="osservatorio-metodo">
+  <div class="container">
+    <div class="metodo-grid">
+      <article class="metodo-block">
+        <h2>Cosa state vedendo</h2>
+        <p>
+          L'Italia importa circa il 75% dell'energia che consuma. Il gas naturale entra da quattro
+          gasdotti principali (TAG, TransMed, GreenStream, TAP) e da terminali LNG. La rete elettrica
+          è gestita da Terna, la rete gas da Snam, entrambe sotto controllo pubblico via CDP — ma
+          State Grid of China detiene il 35% di CDP Reti, e quindi una quota indiretta significativa
+          delle due infrastrutture nazionali più strategiche.
+        </p>
+        <p>
+          Gli operatori energetici "italiani" sono in larga parte controllati da gruppi esteri:
+          Edison da EDF (Stato francese), E.ON Italia da Berlino, ENGIE Italia da Parigi. Sorgenia
+          è in mano a un fondo spagnolo (Asterion). Solo Eni, Enel, Snam, Terna restano sotto
+          controllo italiano via Stato (MEF + CDP).
+        </p>
+      </article>
+
+      <article class="metodo-block">
+        <h2>Le cifre da tenere in mente</h2>
+        <ul class="metodo-stats">
+          <li><strong>~75%</strong> dell'energia consumata in Italia viene importata. <em>Fonte: IEA Italy Energy Profile 2024.</em></li>
+          <li><strong>33,5 mld m³/anno</strong> di capacità del gasdotto TransMed (Algeria→Mazara). <em>Fonte: Eni / Sonatrach.</em></li>
+          <li><strong>35%</strong> di CDP Reti detenuto da State Grid of China — quindi ~11% indiretto di Snam e Terna. <em>Fonte: Sole 24 Ore, 2014; CDP partecipazioni.</em></li>
+          <li><strong>99,48%</strong> di Edison in mano a EDF (Stato francese). <em>Fonte: Edison annual report.</em></li>
+          <li><strong>4</strong> centrali nucleari italiane in decommissioning sotto Sogin (100% MEF). <em>Fonte: Sogin.</em></li>
+        </ul>
+      </article>
+
+      <article class="metodo-block">
+        <h2>Il caso CDP Reti: la golden share che non c'è</h2>
+        <p>
+          Nel 2014 Cassa Depositi e Prestiti ha venduto il 35% di CDP Reti (la holding che controlla
+          Snam e Terna) a State Grid Corporation of China, gruppo elettrico statale cinese. L'operazione
+          fu valutata 2,1 mld €. Da allora, una quota strategica delle due infrastrutture energetiche
+          fondamentali italiane è di fatto sotto influenza cinese — senza che sia mai stato
+          esercitato golden power per rivedere l'operazione.
+        </p>
+        <p>
+          La domanda non è ideologica. È: <em>chi decide su Snam e Terna in caso di crisi?</em>
+        </p>
+      </article>
+
+      <article class="metodo-block">
+        <h2>Metodologia & limiti</h2>
+        <ul>
+          <li>Le coordinate degli asset sono pubbliche (sedi sociali, infrastrutture geolocalizzate).</li>
+          <li>Le quote di controllo sono ricavate da bilanci pubblici e relazioni finanziarie ufficiali (anno citato per ogni voce).</li>
+          <li>Per i gasdotti, i flussi indicati sono le capacità nominali; i flussi effettivi 2024 sono spesso inferiori per dinamiche di mercato e geopolitica.</li>
+          <li>Questo Osservatorio è un'opera in progress. Segnalazioni di errori, fonti più recenti, integrazioni: <a href="mailto:neutralia.info@gmail.com">neutralia.info@gmail.com</a>.</li>
+        </ul>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <h3>NEUTRALIA</h3>
+        <p>Un'Italia neutrale, un'Italia mediatrice di pace, un'Italia che protegge il suo patrimonio.</p>
+      </div>
+      <div class="footer-contact">
+        <h4>Contattaci</h4>
+        <a href="mailto:neutralia.info@gmail.com">neutralia.info@gmail.com</a>
+      </div>
+      <div class="footer-nav">
+        <h4>Naviga</h4>
+        <ul>
+          <li><a href="index.html#libro">Libro</a></li>
+          <li><a href="index.html#manifesto">Manifesto</a></li>
+          <li><a href="index.html#approfondimenti">Approfondimenti</a></li>
+          <li><a href="osservatori.html">Osservatori</a></li>
+          <li><a href="index.html#comunita">Comunità</a></li>
+          <li><a href="index.html#negozio">Negozio</a></li>
+        </ul>
+      </div>
+      <div class="footer-social">
+        <h4>Seguici</h4>
+        <ul>
+          <li><a href="https://www.instagram.com/_neutralia_/" target="_blank" rel="noopener">Instagram</a></li>
+          <li><a href="https://t.me/NEUTRALIATELEGRAM" target="_blank" rel="noopener">Telegram</a></li>
+          <li><a href="dona.html">Dona</a></li>
+        </ul>
+        <h4 style="margin-top:1.2rem">Legale</h4>
+        <ul>
+          <li><a href="privacy.html">Privacy Policy</a></li>
+          <li><a href="cookie.html">Cookie Policy</a></li>
+          <li><a href="#" data-cookie-manage>Gestisci cookie</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© <span id="year"></span> Neutralia · Tutti i diritti riservati</p>
+    </div>
+  </div>
+</footer>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+<script src="assets/js/osservatorio-tema.js"></script>
+<script>
+  OsservatorioTema.init({
+    theme: 'energetico',
+    dataPath: 'assets/data/osservatorio-energetico.json',
+    center: [42.3, 12.5],
+    zoom: 6,
+    kinds: {
+      gasdotto_import:   { color: '#ff2a2a', label: 'Gasdotto import' },
+      rigassificatore:   { color: '#00aaff', label: 'Rigassificatore' },
+      centrale_elettrica:{ color: '#ff8a00', label: 'Centrale elettrica' },
+      nucleare_storico:  { color: '#ffe600', label: 'Nucleare storico' },
+      asset_estero:      { color: '#ff2a2a', label: 'Asset estero' },
+      asset_italiano:    { color: '#16a34a', label: 'Asset italiano' }
+    }
+  });
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+</body>
+</html>

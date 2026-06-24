@@ -1,0 +1,390 @@
+{
+  "tema": "industriale",
+  "descrizione": "Sovranità industriale italiana: aziende manifatturiere e marchi storici acquisiti da soggetti esteri, delocalizzazioni di filiere strategiche, controllo del know-how nazionale. Tutti i casi citati hanno operazioni di M&A pubbliche e documentate.",
+  "items": [
+    {
+      "id": "pirelli",
+      "nome": "Pirelli & C.",
+      "lat": 45.5106,
+      "lon": 9.2128,
+      "kind": "acquisizione_asia",
+      "eyebrow": "Acquisizione estera",
+      "sottotitolo": "Milano · sede Bicocca",
+      "tipo": "Pneumatici premium",
+      "paese_controllo": "Sinochem (Cina, statale) ~37% via Marco Polo Industrial Holding · Camfin (Italia, Tronchetti Provera) ~14%",
+      "anno": "2015 (OPA ChemChina su Pirelli)",
+      "descrizione": "Storica multinazionale italiana fondata nel 1872. Acquisita nel 2015 da ChemChina/Sinochem (Stato cinese) in joint venture con Camfin. Quotata di nuovo dal 2017 ma il primo azionista resta cinese. Nel 2023 il governo italiano ha esercitato il Golden Power per limitare il controllo cinese.",
+      "valori": [
+        {"label": "Quota cinese (Sinochem)", "value": "~37%"},
+        {"label": "Quota italiana (Camfin)", "value": "~14%"}
+      ],
+      "fatti": [
+        "Operazione 2015 valutata 7,1 mld €",
+        "Golden Power esercitato dal governo Meloni nel 2023",
+        "R&D mantenuta in Italia, ma controllo strategico cinese"
+      ],
+      "fonti": [
+        "Borsa Italiana — Comunicati Pirelli",
+        "Reuters, «Italy invokes Golden Power on Pirelli», 2023",
+        "FT — Sinochem-Pirelli deal coverage"
+      ]
+    },
+    {
+      "id": "italcementi",
+      "nome": "Italcementi",
+      "lat": 45.6948,
+      "lon": 9.6645,
+      "kind": "acquisizione_eu",
+      "eyebrow": "Acquisizione estera",
+      "sottotitolo": "Bergamo · storica sede italiana",
+      "tipo": "Cemento e calcestruzzo (5° produttore mondiale di cemento)",
+      "paese_controllo": "HeidelbergCement (oggi Heidelberg Materials, Germania) 100%",
+      "anno": "2016 (acquisizione totale)",
+      "descrizione": "Quinta multinazionale italiana del cemento, fondata a Bergamo nel 1864 dalla famiglia Pesenti. Nel 2016 venduta interamente al gigante tedesco HeidelbergCement per 3,7 mld €. La sede storica è oggi un brand del gruppo tedesco.",
+      "valori": [
+        {"label": "Valore operazione", "value": "3,7 mld €"},
+        {"label": "Quota Heidelberg", "value": "100%"}
+      ],
+      "fatti": [
+        "Famiglia Pesenti uscita dal capitale nel 2016",
+        "Brand Italcementi mantenuto in Italia",
+        "Decisioni strategiche prese a Heidelberg"
+      ],
+      "fonti": [
+        "HeidelbergCement — Annual Report 2016-2017",
+        "Reuters, «HeidelbergCement completes Italcementi acquisition», 2016"
+      ]
+    },
+    {
+      "id": "magneti-marelli",
+      "nome": "Magneti Marelli (oggi Marelli Holdings)",
+      "lat": 45.4960,
+      "lon": 9.1690,
+      "kind": "acquisizione_asia",
+      "eyebrow": "Acquisizione estera",
+      "sottotitolo": "Corbetta (MI) · Lombardia",
+      "tipo": "Componentistica automotive",
+      "paese_controllo": "KKR (USA, fondo private equity) — controllo di fatto post-merger con Calsonic Kansei (Giappone)",
+      "anno": "2018 (vendita FCA→Calsonic Kansei/KKR)",
+      "descrizione": "Storica controllata Fiat dal 1967. Nel 2018 ceduta da FCA per 6,2 mld € a Calsonic Kansei (giapponese, controllata da KKR). Fusione nel gruppo Marelli Holdings, sede legale in Giappone, controllo finanziario USA.",
+      "valori": [
+        {"label": "Valore operazione", "value": "6,2 mld €"},
+        {"label": "Sede legale post-fusione", "value": "Saitama, Giappone"}
+      ],
+      "fatti": [
+        "Stellantis non controlla più Marelli",
+        "Marelli ha avuto procedura di ristrutturazione del debito 2022-2023 in Giappone",
+        "Stabilimenti italiani: Bologna, Sulmona, Caivano, Melfi (a rischio chiusura)"
+      ],
+      "fonti": [
+        "Marelli Corporation — Annual Report",
+        "Reuters — KKR/Calsonic acquisition coverage"
+      ]
+    },
+    {
+      "id": "pininfarina",
+      "nome": "Pininfarina",
+      "lat": 45.0367,
+      "lon": 7.6822,
+      "kind": "acquisizione_asia",
+      "eyebrow": "Acquisizione estera",
+      "sottotitolo": "Cambiano (TO) · Piemonte",
+      "tipo": "Design e ingegneria automotive",
+      "paese_controllo": "Mahindra & Mahindra (India) 76,06%",
+      "anno": "2015 (acquisizione del gruppo Mahindra)",
+      "descrizione": "Mito del design italiano (Ferrari, Alfa Romeo, Lancia). Ceduta nel 2015 al gruppo indiano Mahindra per ~168 M€ + assunzione debiti. Il brand resta in Italia, il controllo è in mani indiane.",
+      "fatti": [
+        "Famiglia Pininfarina uscita dall'azionariato",
+        "Mahindra possiede anche Automobili Pininfarina (case ad alta gamma)",
+        "Stabilimenti italiani ridimensionati"
+      ],
+      "fonti": [
+        "Pininfarina — Bilanci",
+        "Mahindra — Annual Report"
+      ]
+    },
+    {
+      "id": "ferretti-yacht",
+      "nome": "Ferretti Group",
+      "lat": 44.4071,
+      "lon": 12.2147,
+      "kind": "acquisizione_asia",
+      "eyebrow": "Acquisizione estera",
+      "sottotitolo": "Forlì · Emilia-Romagna",
+      "tipo": "Costruzione yacht di lusso (Riva, Pershing, Itama, Ferretti, Custom Line)",
+      "paese_controllo": "Weichai Holding (Cina, statale) ~38% (azionista di controllo)",
+      "anno": "2012 (acquisizione Weichai)",
+      "descrizione": "Leader mondiale degli yacht di lusso. Dopo crisi finanziaria, acquisita nel 2012 dal gruppo cinese Weichai (statale, parte di Shandong Heavy Industry). Quotato in borsa Hong Kong dal 2022 e Milano dal 2023. Brand storici (Riva di Sarnico) sotto controllo cinese.",
+      "fatti": [
+        "Weichai è una holding statale cinese (Shandong SOE)",
+        "Stabilimenti italiani: Forlì, La Spezia, Cattolica, Mondolfo, Ancona, Sarnico, Cala dei Medici",
+        "R&D mantenuta in Italia"
+      ],
+      "fonti": [
+        "Ferretti Group — Annual Report",
+        "FT, «Ferretti dual listing under Chinese control», 2022-2023"
+      ]
+    },
+    {
+      "id": "krizia",
+      "nome": "Krizia",
+      "lat": 45.4762,
+      "lon": 9.1959,
+      "kind": "acquisizione_asia",
+      "eyebrow": "Acquisizione estera",
+      "sottotitolo": "Milano · storica casa di moda",
+      "tipo": "Alta moda femminile",
+      "paese_controllo": "Shenzhen Marisfrolg Fashion (Cina) 100%",
+      "anno": "2014",
+      "descrizione": "Casa di moda fondata da Mariuccia Mandelli nel 1954. Dopo la morte della stilista, il marchio è stato acquisito dal gruppo cinese Marisfrolg.",
+      "fonti": [
+        "WWD, «Marisfrolg buys Krizia», 2014",
+        "Marisfrolg — Corporate"
+      ]
+    },
+    {
+      "id": "bulgari",
+      "nome": "Bulgari",
+      "lat": 41.9056,
+      "lon": 12.4823,
+      "kind": "acquisizione_eu",
+      "eyebrow": "Acquisizione estera",
+      "sottotitolo": "Roma · storica sede",
+      "tipo": "Gioielleria e lusso",
+      "paese_controllo": "LVMH (Francia, Bernard Arnault) 100%",
+      "anno": "2011",
+      "descrizione": "Maison fondata a Roma nel 1884 dalla famiglia Bulgari. Acquisita da LVMH nel 2011 per 4,3 mld €. Le boutique sono ovunque, il controllo è a Parigi.",
+      "valori": [
+        {"label": "Valore operazione", "value": "4,3 mld €"}
+      ],
+      "fonti": [
+        "LVMH — Document de référence",
+        "Reuters — LVMH/Bulgari deal coverage"
+      ]
+    },
+    {
+      "id": "loro-piana",
+      "nome": "Loro Piana",
+      "lat": 45.7681,
+      "lon": 8.1428,
+      "kind": "acquisizione_eu",
+      "eyebrow": "Acquisizione estera",
+      "sottotitolo": "Quarona (VC) · Piemonte",
+      "tipo": "Tessuti pregiati e abbigliamento",
+      "paese_controllo": "LVMH (Francia) 80% · famiglia Loro Piana 20%",
+      "anno": "2013",
+      "descrizione": "Maison del lusso fondata nel 1924, specializzata in vicuña e cashmere di qualità superiore. Acquisita da LVMH nel 2013 per 2 mld €.",
+      "fonti": [
+        "LVMH — Annual Report",
+        "FT — Loro Piana coverage"
+      ]
+    },
+    {
+      "id": "gucci",
+      "nome": "Gucci",
+      "lat": 43.7711,
+      "lon": 11.2486,
+      "kind": "acquisizione_eu",
+      "eyebrow": "Acquisizione estera",
+      "sottotitolo": "Firenze · sede legale Scandicci",
+      "tipo": "Pelletteria e moda di lusso",
+      "paese_controllo": "Kering (Francia, famiglia Pinault) 100%",
+      "anno": "1999 (acquisizione PPR, oggi Kering)",
+      "descrizione": "Casa di moda fondata a Firenze nel 1921 da Guccio Gucci. Acquisita nel 1999 da PPR (oggi Kering). Il brand più redditizio del gruppo francese.",
+      "fonti": [
+        "Kering — Document d'enregistrement universel"
+      ]
+    },
+    {
+      "id": "versace",
+      "nome": "Versace",
+      "lat": 45.4699,
+      "lon": 9.1862,
+      "kind": "acquisizione_usa",
+      "eyebrow": "Acquisizione estera",
+      "sottotitolo": "Milano · sede storica via Gesù",
+      "tipo": "Alta moda e accessori",
+      "paese_controllo": "Capri Holdings (USA, ex Michael Kors) 100% → trattative di vendita a Prada in corso (2025)",
+      "anno": "2018 (acquisizione Capri)",
+      "descrizione": "Casa di moda fondata a Milano nel 1978 da Gianni Versace. Acquisita nel 2018 dal gruppo statunitense Capri Holdings per 2,15 mld $. Nel 2025 in trattativa per riacquisizione da Prada (riportata italiana).",
+      "valori": [
+        {"label": "Valore operazione Capri", "value": "2,15 mld $"}
+      ],
+      "fatti": [
+        "Trattativa Prada-Capri annunciata aprile 2025 per ~1,375 mld $",
+        "Donatella Versace direttore creativo fino al 2025"
+      ],
+      "fonti": [
+        "Capri Holdings — 10-K filing",
+        "Reuters, «Prada to acquire Versace», aprile 2025"
+      ]
+    },
+    {
+      "id": "valentino",
+      "nome": "Valentino",
+      "lat": 41.9070,
+      "lon": 12.4862,
+      "kind": "acquisizione_extra",
+      "eyebrow": "Acquisizione estera",
+      "sottotitolo": "Roma · sede storica",
+      "tipo": "Alta moda",
+      "paese_controllo": "Mayhoola for Investments (Qatar, sovereign wealth) 70% · Kering (Francia) 30%",
+      "anno": "2012 (Mayhoola) · 2023 (entrata Kering 30%)",
+      "descrizione": "Casa di moda fondata da Valentino Garavani nel 1960. Dal 2012 controllata dal fondo sovrano qatariota Mayhoola. Nel 2023 Kering ha acquisito il 30%, con opzione di salire al 100% entro il 2028.",
+      "fatti": [
+        "Mayhoola è veicolo della famiglia reale del Qatar",
+        "Operazione Kering 30%: 1,7 mld €",
+        "Direzione creativa: Alessandro Michele dal 2024"
+      ],
+      "fonti": [
+        "Kering — Comunicato luglio 2023",
+        "Reuters — Valentino ownership"
+      ]
+    },
+    {
+      "id": "parmalat",
+      "nome": "Parmalat",
+      "lat": 44.8009,
+      "lon": 10.3279,
+      "kind": "acquisizione_eu",
+      "eyebrow": "Acquisizione estera",
+      "sottotitolo": "Collecchio (PR) · Emilia-Romagna",
+      "tipo": "Latte e derivati (filiera strategica alimentare)",
+      "paese_controllo": "Sofil S.A.S. — Lactalis (Francia, famiglia Besnier) 90,7%",
+      "anno": "2011 (OPA Lactalis)",
+      "descrizione": "Marchio storico del latte italiano (Calisto Tanzi), risanato dopo il crac del 2003. Acquisito da Lactalis nel 2011 per ~3,7 mld €. Asset strategico della filiera latte italiana ora controllato in Francia.",
+      "valori": [
+        {"label": "Quota Lactalis", "value": "90,7%"}
+      ],
+      "fatti": [
+        "Famiglia Besnier (Lactalis) controlla anche Galbani",
+        "Stabilimenti italiani: Collecchio, Zevio (VR), Pavia, ecc."
+      ],
+      "fonti": [
+        "Lactalis — Rapporto attività",
+        "Borsa Italiana — Parmalat history"
+      ]
+    },
+    {
+      "id": "galbani",
+      "nome": "Galbani",
+      "lat": 45.6533,
+      "lon": 9.4419,
+      "kind": "acquisizione_eu",
+      "eyebrow": "Acquisizione estera",
+      "sottotitolo": "Melzo (MI) · Lombardia",
+      "tipo": "Formaggi e salumi",
+      "paese_controllo": "Lactalis (Francia, famiglia Besnier)",
+      "anno": "2006 (acquisizione Lactalis)",
+      "descrizione": "Storico marchio italiano di formaggi (mozzarella, certosa, robiola). Acquisito da Lactalis nel 2006. Stabilimenti italiani conservati ma proprietà francese.",
+      "fonti": [
+        "Lactalis — Brand portfolio"
+      ]
+    },
+    {
+      "id": "tim-roma",
+      "nome": "TIM (Telecom Italia)",
+      "lat": 41.9203,
+      "lon": 12.4961,
+      "kind": "acquisizione_misto",
+      "eyebrow": "Capitale frammentato estero",
+      "sottotitolo": "Roma · sede legale",
+      "tipo": "Operatore telecomunicazioni (telco)",
+      "paese_controllo": "Vivendi (Francia) ~24% (in dismissione) · Poste Italiane (Stato) 9,8% · KKR (USA) ha rilevato la rete (NetCo) per 22 mld € nel 2024",
+      "anno": "2024 (vendita NetCo a KKR)",
+      "descrizione": "Storica telco italiana, privatizzata nel 1997. Dal 2015 Vivendi ne è il primo azionista. Nel 2024 KKR (USA) ha acquisito NetCo (rete fissa) per 22 mld €, scorporata da TIM. Asset strategico nazionale ora in mani estere e finanziarie.",
+      "fatti": [
+        "Asset di rete (NetCo) ora in proprietà KKR + MEF + F2i + ADIA (Abu Dhabi)",
+        "ServCo (servizi) resta TIM",
+        "Operazione contestata da CDP e dal governo Meloni nelle modalità ma autorizzata"
+      ],
+      "fonti": [
+        "TIM — Investor Relations",
+        "FT, «KKR buys TIM's network», 2024"
+      ]
+    },
+    {
+      "id": "ilva-taranto",
+      "nome": "Ilva (Acciaierie d'Italia)",
+      "lat": 40.4670,
+      "lon": 17.2200,
+      "kind": "acquisizione_misto",
+      "eyebrow": "Controllo in stallo",
+      "sottotitolo": "Taranto · Puglia",
+      "tipo": "Maggior siderurgico d'Europa",
+      "paese_controllo": "ArcelorMittal (Lussemburgo) 38% · Invitalia (Italia, Stato) 32% (stato dal 2024 in evoluzione)",
+      "anno": "2018 (acquisizione ArcelorMittal post-amministrazione straordinaria)",
+      "descrizione": "Ex Ilva di Taranto, principale acciaieria europea. Acquisita da ArcelorMittal nel 2018 in joint venture con Invitalia. Situazione di crisi permanente per problemi ambientali, sanitari (cluster Taranto), debito. Nel 2024 ingresso del MEF e nuovi piani di rilancio in discussione.",
+      "fatti": [
+        "Cluster epidemiologico Taranto documentato (mortalità +21% area Tamburi vs Italia)",
+        "Sentenza CEDU 2019: Italia condannata per violazione diritto alla vita",
+        "Trattative continue per ingresso nuovo azionista (Baku Steel, Jindal, Vulcan, ecc.)"
+      ],
+      "fonti": [
+        "Acciaierie d'Italia — Bilanci",
+        "CEDU — Cordella e altri c. Italia, 2019",
+        "Studio SENTIERI — Ministero Salute"
+      ]
+    },
+    {
+      "id": "stellantis",
+      "nome": "Stellantis (ex FCA + PSA)",
+      "lat": 45.0411,
+      "lon": 7.6253,
+      "kind": "acquisizione_eu",
+      "eyebrow": "Fusione cross-border",
+      "sottotitolo": "Sede operativa Torino, sede legale Amsterdam",
+      "tipo": "Multinazionale automobilistica",
+      "paese_controllo": "Exor (Italia, Agnelli) 14,9% · Famiglia Peugeot (Francia) 7,1% · BPI France (Francia, statale) 6,4%",
+      "anno": "2021 (fusione FCA-PSA)",
+      "descrizione": "Nata dalla fusione FCA (italiana, Fiat) e PSA (francese, Peugeot) nel 2021. Sede legale ad Amsterdam, sede fiscale Olanda, quotazione Milano/Parigi/New York. Stabilimenti italiani ridimensionati (chiusure annunciate Mirafiori turni, Pomigliano, Cassino).",
+      "valori": [
+        {"label": "Produzione Italia 2024", "value": "~470.000 veicoli (minimo storico)"},
+        {"label": "Produzione Italia 2007", "value": "~1,3 mln (picco)"}
+      ],
+      "fatti": [
+        "Famiglia Agnelli (Exor) primo azionista — 14,9%",
+        "Sede legale e fiscale spostate fuori Italia nel 2014 (Fiat) e mantenute con Stellantis",
+        "Tagli all'occupazione e cassa integrazione strutturale stabilimenti italiani"
+      ],
+      "fonti": [
+        "Stellantis — Annual Report",
+        "ANFIA — Statistiche produzione",
+        "FIM-CISL, FIOM — Comunicati"
+      ]
+    },
+    {
+      "id": "pernigotti",
+      "nome": "Pernigotti",
+      "lat": 44.6772,
+      "lon": 8.6203,
+      "kind": "acquisizione_extra",
+      "eyebrow": "Acquisizione estera (chiusura)",
+      "sottotitolo": "Novi Ligure (AL) · Piemonte",
+      "tipo": "Cioccolato e gianduiotti",
+      "paese_controllo": "Toksöz Group (Turchia) — chiuso, poi rilevato da JP Morgan/Optima",
+      "anno": "2013 (acquisizione Toksöz) · 2020 (cessione)",
+      "descrizione": "Storica fabbrica di cioccolato fondata a Novi Ligure nel 1860. Acquisita dai turchi Toksöz nel 2013, annunciata la chiusura della produzione italiana nel 2018, salvata da Invitalia + JP Morgan nel 2020. Caso emblematico di delocalizzazione fallita.",
+      "fonti": [
+        "Reuters — Pernigotti closure news",
+        "Il Sole 24 Ore — Cronache Pernigotti"
+      ]
+    },
+    {
+      "id": "berco",
+      "nome": "Berco (Thyssenkrupp)",
+      "lat": 44.9019,
+      "lon": 11.5722,
+      "kind": "acquisizione_eu",
+      "eyebrow": "Acquisizione estera",
+      "sottotitolo": "Copparo (FE) · Emilia-Romagna",
+      "tipo": "Componenti per movimento terra (sottocarri)",
+      "paese_controllo": "Thyssenkrupp (Germania) 100%",
+      "anno": "1999",
+      "descrizione": "Leader europeo nei sottocarri per macchine movimento terra. Controllata Thyssenkrupp dal 1999. Stabilimento principale a Copparo (Ferrara) in continua ristrutturazione con cassa integrazione.",
+      "fonti": [
+        "Thyssenkrupp — Annual Report"
+      ]
+    }
+  ]
+}

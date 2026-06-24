@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Osservatorio del Racconto — Neutralia</title>
+<meta name="description" content="Mappa interattiva della sovranità culturale, informativa e accademica italiana: organizzazioni, fondazioni e istituti finanziati con capitali esteri o legati a entità non italiane. Centro Studi Neutralia.">
+<meta name="theme-color" content="#0a0a0a">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap">
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body class="page-osservatorio">
+
+<header class="site-header">
+  <nav class="nav">
+    <a href="index.html" class="logo">NEUTRALIA</a>
+    <ul class="nav-links">
+      <li><a href="index.html#libro">Libro</a></li>
+      <li><a href="index.html#manifesto">Manifesto</a></li>
+      <li><a href="index.html#approfondimenti">Approfondimenti</a></li>
+      <li><a href="osservatori.html" class="is-current">Osservatori</a></li>
+      <li><a href="index.html#comunita">Comunità</a></li>
+      <li><a href="index.html#negozio">Negozio</a></li>
+      <li class="nav-links-lang">
+        <a href="en/">EN</a>
+        <a href="fr/">FR</a>
+        <a href="es/">ES</a>
+        <a href="de/">DE</a>
+      </li>
+    </ul>
+    <a href="dona.html" class="nav-cta">Dona</a>
+    <button class="nav-toggle" aria-label="Apri menu">☰</button>
+  </nav>
+</header>
+
+<section class="osservatorio-intro">
+  <div class="container">
+    <h1>Osservatorio del Racconto</h1>
+    <p class="osservatorio-lead">
+      Sovranità culturale, informativa, accademica. La mappa di chi finanzia il pensiero italiano:
+      think tank, fondazioni, ONG, istituti culturali e centri studi che operano in Italia con
+      capitali o legami con Stati, governi, fondazioni estere.
+    </p>
+    <p class="osservatorio-sub">
+      Nessuna accusa. Solo collegamenti finanziari e organizzativi documentati da bilanci pubblici,
+      registri di trasparenza, comunicati ufficiali. Le valutazioni le lasciamo al lettore.
+    </p>
+  </div>
+</section>
+
+<section class="osservatorio-mappa-wrap">
+  <div id="mappa" role="application" aria-label="Mappa interattiva del racconto italiano">
+    <div class="mappa-loading" id="mappa-loading">
+      <p>Caricamento mappa…</p>
+    </div>
+  </div>
+
+  <aside class="legenda" aria-label="Legenda della mappa">
+    <h2>Legenda</h2>
+    <ul class="legenda-lista">
+      <li><span class="dot" style="background:#ff2a2a" aria-hidden="true"></span> Think tank / centro studi</li>
+      <li><span class="dot" style="background:#ff8a00" aria-hidden="true"></span> ONG / advocacy con finanziamenti esteri</li>
+      <li><span class="dot" style="background:#0066cc" aria-hidden="true"></span> Ente culturale estero ufficiale</li>
+      <li><span class="dot" style="background:#9333ea" aria-hidden="true"></span> Fondazione estera attiva in Italia</li>
+      <li><span class="dot" style="background:#ffe600" aria-hidden="true"></span> Università / centro accademico</li>
+      <li><span class="dot" style="background:#cb2b37" aria-hidden="true"></span> Istituzione religiosa con giurisdizione estera</li>
+      <li><span class="dot dot-verde" aria-hidden="true"></span> Media a controllo pubblico italiano</li>
+    </ul>
+    <p class="legenda-tip">Clicca un punto per fonti di finanziamento, attività e bilanci pubblici.</p>
+    <div class="legenda-filtri">
+      <h3>Mostra / Nascondi</h3>
+      <label><input type="checkbox" data-filter="think_tank" checked> Think tank</label>
+      <label><input type="checkbox" data-filter="ong" checked> ONG</label>
+      <label><input type="checkbox" data-filter="ente_estero_culturale" checked> Enti culturali</label>
+      <label><input type="checkbox" data-filter="fondazione_estera" checked> Fondazioni estere</label>
+      <label><input type="checkbox" data-filter="universita" checked> Università</label>
+      <label><input type="checkbox" data-filter="fondazione_religiosa" checked> Religiose</label>
+      <label><input type="checkbox" data-filter="media_pubblico" checked> Media pubblici</label>
+    </div>
+  </aside>
+</section>
+
+<section class="osservatorio-metodo">
+  <div class="container">
+    <div class="metodo-grid">
+      <article class="metodo-block">
+        <h2>Cosa state vedendo</h2>
+        <p>
+          Il pensiero pubblico italiano — analisi geopolitica, advocacy sui diritti, cultura
+          accademica — si nutre anche di capitali esteri. Open Society Foundations, National
+          Endowment for Democracy, German Marshall Fund, Atlantic Council pubblicano sui propri
+          siti le organizzazioni italiane che hanno finanziato. Non è segreto, è scritto nei
+          loro bilanci.
+        </p>
+        <p>
+          Questo non significa "agenti stranieri". Significa che parte della produzione culturale
+          e di policy in Italia è finanziata, in tutto o in parte, da soggetti esterni. Per una
+          posizione neutralista, conoscere queste relazioni è il primo passo per valutare quanto
+          il dibattito pubblico riflette davvero gli interessi italiani.
+        </p>
+      </article>
+
+      <article class="metodo-block">
+        <h2>Le cifre da tenere in mente</h2>
+        <ul class="metodo-stats">
+          <li><strong>~1 mld €/anno</strong> in 8x1000 alla CEI (Conferenza Episcopale Italiana, giurisdizione vaticana). <em>Fonte: CEI.</em></li>
+          <li><strong>12</strong> Istituti Confucio (RPC) ospitati da università italiane. <em>Fonte: convenzioni universitarie pubbliche.</em></li>
+          <li><strong>~300 mln $/anno</strong> bilancio totale di NED (USA, Congresso) — destinato anche all'Italia in piccola parte. <em>Fonte: NED.</em></li>
+          <li><strong>6 città</strong> italiane ospitano un Goethe-Institut (Repubblica Federale Tedesca). <em>Fonte: Goethe-Institut.</em></li>
+          <li><strong>1972</strong> fondazione del German Marshall Fund — finanziato originariamente dalla Germania al Piano Marshall USA. <em>Fonte: GMF.</em></li>
+        </ul>
+      </article>
+
+      <article class="metodo-block">
+        <h2>Atlantismo culturale: la rete invisibile</h2>
+        <p>
+          Aspen Institute Italia, IAI, ISPI, ECFR, German Marshall Fund operano in larga parte
+          dentro l'orbita atlantica: il loro mondo è Bruxelles-Washington-Berlino. Non è solo una
+          questione di finanziamenti — è la cornice mentale che producono. Posizioni come
+          "neutralità" o "non allineamento", che storicamente in Italia sono state difese da
+          figure come La Pira, Andreotti, Craxi, Moro, sono oggi marginali nel dibattito generato
+          da questi centri.
+        </p>
+        <p>
+          Per Neutralia documentare questa rete non è ostilità verso l'Occidente. È riconoscere
+          che il pensiero ha geografie, e che la neutralità — totale o con accordi bilaterali —
+          richiede prima un pensiero che non venga eteroprodotto.
+        </p>
+      </article>
+
+      <article class="metodo-block">
+        <h2>Metodologia & limiti</h2>
+        <ul>
+          <li><strong>Solo fonti pubbliche</strong>: bilanci, atti costitutivi, database grant pubblicati, 990 IRS forms, comunicati ufficiali.</li>
+          <li><strong>Nessuna insinuazione</strong>: il fatto che una organizzazione riceva fondi esteri non implica che operi contro l'Italia. Implica solo che quei fondi esistono e sono documentati.</li>
+          <li>Per i think tank, la presenza di un finanziatore estero è esplicitamente dichiarata sui rispettivi siti (sezione "Funders" o "Partners").</li>
+          <li>Per le ONG, i bilanci di rendicontazione sono spesso pubblici (5x1000, statuti, rendiconti annuali).</li>
+          <li>L'obiettivo è dare al lettore gli strumenti per <strong>seguire i soldi</strong> e farsi un'opinione informata, non per emettere un giudizio.</li>
+          <li>Segnalazioni di errori, fonti più recenti, integrazioni: <a href="mailto:neutralia.info@gmail.com">neutralia.info@gmail.com</a>.</li>
+        </ul>
+      </article>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <h3>NEUTRALIA</h3>
+        <p>Un'Italia neutrale, un'Italia mediatrice di pace, un'Italia che protegge il suo patrimonio.</p>
+      </div>
+      <div class="footer-contact">
+        <h4>Contattaci</h4>
+        <a href="mailto:neutralia.info@gmail.com">neutralia.info@gmail.com</a>
+      </div>
+      <div class="footer-nav">
+        <h4>Naviga</h4>
+        <ul>
+          <li><a href="index.html#libro">Libro</a></li>
+          <li><a href="index.html#manifesto">Manifesto</a></li>
+          <li><a href="index.html#approfondimenti">Approfondimenti</a></li>
+          <li><a href="osservatori.html">Osservatori</a></li>
+          <li><a href="index.html#comunita">Comunità</a></li>
+          <li><a href="index.html#negozio">Negozio</a></li>
+        </ul>
+      </div>
+      <div class="footer-social">
+        <h4>Seguici</h4>
+        <ul>
+          <li><a href="https://www.instagram.com/_neutralia_/" target="_blank" rel="noopener">Instagram</a></li>
+          <li><a href="https://t.me/NEUTRALIATELEGRAM" target="_blank" rel="noopener">Telegram</a></li>
+          <li><a href="dona.html">Dona</a></li>
+        </ul>
+        <h4 style="margin-top:1.2rem">Legale</h4>
+        <ul>
+          <li><a href="privacy.html">Privacy Policy</a></li>
+          <li><a href="cookie.html">Cookie Policy</a></li>
+          <li><a href="#" data-cookie-manage>Gestisci cookie</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© <span id="year"></span> Neutralia · Tutti i diritti riservati</p>
+    </div>
+  </div>
+</footer>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+<script src="assets/js/osservatorio-tema.js"></script>
+<script>
+  OsservatorioTema.init({
+    theme: 'racconto',
+    dataPath: 'assets/data/osservatorio-racconto.json',
+    center: [42.5, 12.5],
+    zoom: 6,
+    kinds: {
+      think_tank:            { color: '#ff2a2a', label: 'Think tank' },
+      ong:                   { color: '#ff8a00', label: 'ONG' },
+      ente_estero_culturale: { color: '#0066cc', label: 'Ente culturale estero' },
+      fondazione_estera:     { color: '#9333ea', label: 'Fondazione estera' },
+      universita:            { color: '#ffe600', label: 'Università' },
+      fondazione_religiosa:  { color: '#cb2b37', label: 'Religiosa' },
+      media_pubblico:        { color: '#16a34a', label: 'Media pubblico IT' }
+    }
+  });
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+</body>
+</html>

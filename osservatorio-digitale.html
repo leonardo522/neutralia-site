@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Osservatorio Digitale — Neutralia</title>
+<meta name="description" content="Mappa interattiva della sovranità digitale italiana: telecomunicazioni, data center, cloud, dipendenza tecnologica della PA da hyperscaler esteri. Centro Studi Neutralia.">
+<meta name="theme-color" content="#0a0a0a">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap">
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body class="page-osservatorio">
+
+<header class="site-header">
+  <nav class="nav">
+    <a href="index.html" class="logo">NEUTRALIA</a>
+    <ul class="nav-links">
+      <li><a href="index.html#libro">Libro</a></li>
+      <li><a href="index.html#manifesto">Manifesto</a></li>
+      <li><a href="index.html#approfondimenti">Approfondimenti</a></li>
+      <li><a href="osservatori.html" class="is-current">Osservatori</a></li>
+      <li><a href="index.html#comunita">Comunità</a></li>
+      <li><a href="index.html#negozio">Negozio</a></li>
+      <li class="nav-links-lang">
+        <a href="en/">EN</a>
+        <a href="fr/">FR</a>
+        <a href="es/">ES</a>
+        <a href="de/">DE</a>
+      </li>
+    </ul>
+    <a href="dona.html" class="nav-cta">Dona</a>
+    <button class="nav-toggle" aria-label="Apri menu">☰</button>
+  </nav>
+</header>
+
+<section class="osservatorio-intro">
+  <div class="container">
+    <h1>Osservatorio Digitale</h1>
+    <p class="osservatorio-lead">
+      La mappa della sovranità digitale italiana: operatori telco, data center, region cloud
+      degli hyperscaler stranieri, infrastrutture critiche della Pubblica Amministrazione.
+    </p>
+    <p class="osservatorio-sub">
+      Tutti i dati sono pubblici. Clicca per leggere chi controlla davvero i dati di cittadini
+      e Stato.
+    </p>
+  </div>
+</section>
+
+<section class="osservatorio-mappa-wrap">
+  <div id="mappa" role="application" aria-label="Mappa interattiva del digitale italiano">
+    <div class="mappa-loading" id="mappa-loading">
+      <p>Caricamento mappa…</p>
+    </div>
+  </div>
+
+  <aside class="legenda" aria-label="Legenda della mappa">
+    <h2>Legenda</h2>
+    <ul class="legenda-lista">
+      <li><span class="dot" style="background:#ff2a2a" aria-hidden="true"></span> Operatore telco</li>
+      <li><span class="dot" style="background:#0066cc" aria-hidden="true"></span> Data center estero (hyperscaler USA)</li>
+      <li><span class="dot dot-verde" aria-hidden="true"></span> Data center italiano</li>
+      <li><span class="dot" style="background:#ffe600" aria-hidden="true"></span> Asset strategico italiano (PSN, Leonardo, ACN, Sogei)</li>
+    </ul>
+    <p class="legenda-tip">Clicca un pallino per dettagli, quote di controllo e fonti.</p>
+    <div class="legenda-filtri">
+      <h3>Mostra / Nascondi</h3>
+      <label><input type="checkbox" data-filter="telco" checked> Telco</label>
+      <label><input type="checkbox" data-filter="datacenter_estero" checked> Datacenter esteri</label>
+      <label><input type="checkbox" data-filter="datacenter_italiano" checked> Datacenter italiani</label>
+      <label><input type="checkbox" data-filter="asset_italiano_strategico" checked> Asset strategici IT</label>
+    </div>
+  </aside>
+</section>
+
+<section class="osservatorio-metodo">
+  <div class="container">
+    <div class="metodo-grid">
+      <article class="metodo-block">
+        <h2>Cosa state vedendo</h2>
+        <p>
+          La rete fissa italiana, costruita dallo Stato a partire dagli anni '50, è oggi controllata
+          al 38% da KKR (fondo statunitense) dopo la vendita di NetCo da TIM nel 2024. Vodafone Italia
+          è stata acquistata da Swisscom (Stato svizzero, 51%). WindTre è interamente di CK Hutchison
+          (Hong Kong). Iliad è francese. Solo Sogei, Leonardo Cyber, PSN restano sotto controllo
+          pubblico italiano.
+        </p>
+        <p>
+          Per il cloud, AWS, Microsoft e Google hanno aperto region a Milano (2020-2023). I dati
+          sono fisicamente in Italia, ma la giurisdizione legale resta USA per via del CLOUD Act
+          2018: una società statunitense può essere obbligata da un tribunale americano a consegnare
+          dati anche se memorizzati all'estero. La sovranità digitale, per il diritto USA, non
+          coincide con il territorio.
+        </p>
+      </article>
+
+      <article class="metodo-block">
+        <h2>Le cifre da tenere in mente</h2>
+        <ul class="metodo-stats">
+          <li><strong>22 mld €</strong> il valore della vendita di NetCo TIM a KKR (USA) nel 2024. <em>Fonte: TIM, MEF.</em></li>
+          <li><strong>~25 mln</strong> clienti WindTre — interamente controllata da CK Hutchison (Hong Kong). <em>Fonte: AGCOM.</em></li>
+          <li><strong>4,3 mld $</strong> investimento dichiarato da Microsoft Azure in Italia (2024-2027). <em>Fonte: Microsoft.</em></li>
+          <li><strong>2 mld €</strong> investimento dichiarato da AWS in Italia (entro 2029). <em>Fonte: AWS.</em></li>
+          <li><strong>~90%</strong> dei domini .it gestiti da Aruba (controllo italiano). <em>Fonte: Aruba.</em></li>
+        </ul>
+      </article>
+
+      <article class="metodo-block">
+        <h2>Il CLOUD Act e la finzione della sovranità geografica</h2>
+        <p>
+          Il <em>Clarifying Lawful Overseas Use of Data Act</em>, approvato dal Congresso USA nel 2018,
+          consente alle autorità statunitensi di ottenere dati conservati da società USA ovunque nel
+          mondo, anche su territorio sovrano di un altro Stato. AWS, Microsoft, Google sono società USA.
+          I loro data center italiani sono soggetti al CLOUD Act.
+        </p>
+        <p>
+          Questo significa che gran parte dei dati delle PA italiane, delle banche, delle imprese
+          ospitati su questi cloud — anche se fisicamente in Italia — sono accessibili da un giudice
+          federale americano. Il Polo Strategico Nazionale (PSN, lanciato nel 2022) è la risposta
+          parziale italiana: dati strategici della PA su cloud sotto giurisdizione italiana. Ma copre
+          solo una parte del perimetro.
+        </p>
+      </article>
+
+      <article class="metodo-block">
+        <h2>Metodologia & limiti</h2>
+        <ul>
+          <li>I dati di controllo azionario sono fonti ufficiali (bilanci, comunicati Borsa Italiana, registri Camera di Commercio).</li>
+          <li>Le coordinate dei data center sono indicative (le posizioni esatte sono spesso riservate per sicurezza).</li>
+          <li>Le quote di mercato sono rilevate da AGCOM/Osservatorio delle Comunicazioni nell'ultimo trimestre disponibile.</li>
+          <li>Per "controllo USA" si intende società di diritto statunitense o controllata di società USA. Questo non implica giudizio sulla qualità tecnica del servizio.</li>
+          <li>Questo Osservatorio è un'opera in progress. Segnalazioni: <a href="mailto:neutralia.info@gmail.com">neutralia.info@gmail.com</a>.</li>
+        </ul>
+      </article>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <h3>NEUTRALIA</h3>
+        <p>Un'Italia neutrale, un'Italia mediatrice di pace, un'Italia che protegge il suo patrimonio.</p>
+      </div>
+      <div class="footer-contact">
+        <h4>Contattaci</h4>
+        <a href="mailto:neutralia.info@gmail.com">neutralia.info@gmail.com</a>
+      </div>
+      <div class="footer-nav">
+        <h4>Naviga</h4>
+        <ul>
+          <li><a href="index.html#libro">Libro</a></li>
+          <li><a href="index.html#manifesto">Manifesto</a></li>
+          <li><a href="index.html#approfondimenti">Approfondimenti</a></li>
+          <li><a href="osservatori.html">Osservatori</a></li>
+          <li><a href="index.html#comunita">Comunità</a></li>
+          <li><a href="index.html#negozio">Negozio</a></li>
+        </ul>
+      </div>
+      <div class="footer-social">
+        <h4>Seguici</h4>
+        <ul>
+          <li><a href="https://www.instagram.com/_neutralia_/" target="_blank" rel="noopener">Instagram</a></li>
+          <li><a href="https://t.me/NEUTRALIATELEGRAM" target="_blank" rel="noopener">Telegram</a></li>
+          <li><a href="dona.html">Dona</a></li>
+        </ul>
+        <h4 style="margin-top:1.2rem">Legale</h4>
+        <ul>
+          <li><a href="privacy.html">Privacy Policy</a></li>
+          <li><a href="cookie.html">Cookie Policy</a></li>
+          <li><a href="#" data-cookie-manage>Gestisci cookie</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© <span id="year"></span> Neutralia · Tutti i diritti riservati</p>
+    </div>
+  </div>
+</footer>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+<script src="assets/js/osservatorio-tema.js"></script>
+<script>
+  OsservatorioTema.init({
+    theme: 'digitale',
+    dataPath: 'assets/data/osservatorio-digitale.json',
+    center: [44.0, 11.0],
+    zoom: 6,
+    kinds: {
+      telco:                     { color: '#ff2a2a', label: 'Telco' },
+      datacenter_estero:         { color: '#0066cc', label: 'Datacenter estero' },
+      datacenter_italiano:       { color: '#16a34a', label: 'Datacenter italiano' },
+      asset_italiano_strategico: { color: '#ffe600', label: 'Asset strategico IT' }
+    }
+  });
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+</body>
+</html>

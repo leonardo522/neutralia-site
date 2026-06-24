@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Osservatorio Industriale — Neutralia</title>
+<meta name="description" content="Mappa interattiva della sovranità industriale italiana: aziende manifatturiere e marchi storici acquisiti da soggetti esteri, filiere strategiche, delocalizzazioni. Centro Studi Neutralia.">
+<meta name="theme-color" content="#0a0a0a">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap">
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body class="page-osservatorio">
+
+<header class="site-header">
+  <nav class="nav">
+    <a href="index.html" class="logo">NEUTRALIA</a>
+    <ul class="nav-links">
+      <li><a href="index.html#libro">Libro</a></li>
+      <li><a href="index.html#manifesto">Manifesto</a></li>
+      <li><a href="index.html#approfondimenti">Approfondimenti</a></li>
+      <li><a href="osservatori.html" class="is-current">Osservatori</a></li>
+      <li><a href="index.html#comunita">Comunità</a></li>
+      <li><a href="index.html#negozio">Negozio</a></li>
+      <li class="nav-links-lang">
+        <a href="en/">EN</a>
+        <a href="fr/">FR</a>
+        <a href="es/">ES</a>
+        <a href="de/">DE</a>
+      </li>
+    </ul>
+    <a href="dona.html" class="nav-cta">Dona</a>
+    <button class="nav-toggle" aria-label="Apri menu">☰</button>
+  </nav>
+</header>
+
+<section class="osservatorio-intro">
+  <div class="container">
+    <h1>Osservatorio Industriale</h1>
+    <p class="osservatorio-lead">
+      La mappa delle filiere produttive italiane finite sotto controllo estero: dai marchi del lusso
+      alle utility, dal cemento alla siderurgia, dall'automotive all'agroalimentare.
+    </p>
+    <p class="osservatorio-sub">
+      Ogni acquisizione documentata da bilanci, comunicati ufficiali, fonti finanziarie pubbliche.
+      Clicca per leggere chi controlla davvero il marchio.
+    </p>
+  </div>
+</section>
+
+<section class="osservatorio-mappa-wrap">
+  <div id="mappa" role="application" aria-label="Mappa interattiva dell'industria italiana">
+    <div class="mappa-loading" id="mappa-loading">
+      <p>Caricamento mappa…</p>
+    </div>
+  </div>
+
+  <aside class="legenda" aria-label="Legenda della mappa">
+    <h2>Legenda</h2>
+    <ul class="legenda-lista">
+      <li><span class="dot" style="background:#ff2a2a" aria-hidden="true"></span> Acquisizione UE (Francia, Germania, ecc.)</li>
+      <li><span class="dot" style="background:#ff8a00" aria-hidden="true"></span> Acquisizione asiatica (Cina, India, Giappone)</li>
+      <li><span class="dot" style="background:#0066cc" aria-hidden="true"></span> Acquisizione USA</li>
+      <li><span class="dot" style="background:#9333ea" aria-hidden="true"></span> Acquisizione extra-UE (Qatar, Turchia, ecc.)</li>
+      <li><span class="dot" style="background:#6b7280" aria-hidden="true"></span> Controllo misto / frammentato</li>
+    </ul>
+    <p class="legenda-tip">Clicca un pallino per dettagli, anno operazione e fonti.</p>
+    <div class="legenda-filtri">
+      <h3>Mostra / Nascondi</h3>
+      <label><input type="checkbox" data-filter="acquisizione_eu" checked> UE</label>
+      <label><input type="checkbox" data-filter="acquisizione_asia" checked> Asia</label>
+      <label><input type="checkbox" data-filter="acquisizione_usa" checked> USA</label>
+      <label><input type="checkbox" data-filter="acquisizione_extra" checked> Extra-UE</label>
+      <label><input type="checkbox" data-filter="acquisizione_misto" checked> Misto</label>
+    </div>
+  </aside>
+</section>
+
+<section class="osservatorio-metodo">
+  <div class="container">
+    <div class="metodo-grid">
+      <article class="metodo-block">
+        <h2>Cosa state vedendo</h2>
+        <p>
+          Negli ultimi 25 anni una parte significativa del capitalismo industriale italiano è passata
+          sotto controllo estero. Non per "complotto", ma per debiti, successioni, ridimensionamenti,
+          assenza di una politica industriale nazionale. I marchi restano italiani per il consumatore
+          (Bulgari, Gucci, Pirelli, Parmalat) ma le decisioni strategiche si prendono a Parigi,
+          Shanghai, Tokyo, Washington.
+        </p>
+        <p>
+          La conseguenza neutralista è chiara: senza controllo della produzione, della catena
+          alimentare, dei beni strumentali, non c'è sovranità reale. La neutralità — totale o
+          con accordi bilaterali — richiede prima di tutto autonomia industriale.
+        </p>
+      </article>
+
+      <article class="metodo-block">
+        <h2>Le cifre da tenere in mente</h2>
+        <ul class="metodo-stats">
+          <li><strong>~470.000</strong> auto prodotte da Stellantis in Italia nel 2024 (minimo storico). <em>Fonte: ANFIA.</em></li>
+          <li><strong>~1,3 milioni</strong> auto prodotte in Italia nel 2007 (picco Fiat). <em>Fonte: ANFIA.</em></li>
+          <li><strong>3,7 mld €</strong> per la vendita di Italcementi a HeidelbergCement (2016). <em>Fonte: Reuters.</em></li>
+          <li><strong>4,3 mld €</strong> per l'acquisizione di Bulgari da parte di LVMH (2011). <em>Fonte: LVMH.</em></li>
+          <li><strong>~37%</strong> di Pirelli in mano a Sinochem (Cina, Stato). <em>Fonte: Borsa Italiana.</em></li>
+        </ul>
+      </article>
+
+      <article class="metodo-block">
+        <h2>Il caso Stellantis: sede ad Amsterdam, decisioni a Parigi</h2>
+        <p>
+          La fusione FCA-PSA del 2021 ha creato Stellantis, gruppo nominalmente "europeo" con sede
+          legale ad Amsterdam e residenza fiscale Olanda. Gli stabilimenti italiani (Mirafiori,
+          Pomigliano, Cassino, Melfi) hanno visto una contrazione costante della produzione:
+          dall'1,3 milione di auto del 2007 ai ~470.000 del 2024.
+        </p>
+        <p>
+          Exor (Famiglia Agnelli, 14,9%) resta primo azionista, ma BPI France (Stato francese, 6,4%)
+          è il primo azionista statale del gruppo. La domanda è: <em>cosa resta dell'industria
+          automobilistica italiana se l'unico produttore taglia di anno in anno?</em>
+        </p>
+      </article>
+
+      <article class="metodo-block">
+        <h2>Metodologia & limiti</h2>
+        <ul>
+          <li>Tutte le acquisizioni sono fonti pubbliche: 10-K, prospetti CONSOB, comunicati ufficiali.</li>
+          <li>Le quote azionarie sono aggiornate al 2024/2025 dove possibile. Le percentuali possono variare nel tempo.</li>
+          <li>"Controllo estero" è qui definito come quota di maggioranza relativa o assoluta detenuta da soggetti con sede fuori dall'Italia.</li>
+          <li>Le sedi geografiche indicano lo stabilimento principale o la sede storica, non sempre la sede legale attuale.</li>
+          <li>Questo Osservatorio è un'opera in progress. Segnalazioni: <a href="mailto:neutralia.info@gmail.com">neutralia.info@gmail.com</a>.</li>
+        </ul>
+      </article>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <h3>NEUTRALIA</h3>
+        <p>Un'Italia neutrale, un'Italia mediatrice di pace, un'Italia che protegge il suo patrimonio.</p>
+      </div>
+      <div class="footer-contact">
+        <h4>Contattaci</h4>
+        <a href="mailto:neutralia.info@gmail.com">neutralia.info@gmail.com</a>
+      </div>
+      <div class="footer-nav">
+        <h4>Naviga</h4>
+        <ul>
+          <li><a href="index.html#libro">Libro</a></li>
+          <li><a href="index.html#manifesto">Manifesto</a></li>
+          <li><a href="index.html#approfondimenti">Approfondimenti</a></li>
+          <li><a href="osservatori.html">Osservatori</a></li>
+          <li><a href="index.html#comunita">Comunità</a></li>
+          <li><a href="index.html#negozio">Negozio</a></li>
+        </ul>
+      </div>
+      <div class="footer-social">
+        <h4>Seguici</h4>
+        <ul>
+          <li><a href="https://www.instagram.com/_neutralia_/" target="_blank" rel="noopener">Instagram</a></li>
+          <li><a href="https://t.me/NEUTRALIATELEGRAM" target="_blank" rel="noopener">Telegram</a></li>
+          <li><a href="dona.html">Dona</a></li>
+        </ul>
+        <h4 style="margin-top:1.2rem">Legale</h4>
+        <ul>
+          <li><a href="privacy.html">Privacy Policy</a></li>
+          <li><a href="cookie.html">Cookie Policy</a></li>
+          <li><a href="#" data-cookie-manage>Gestisci cookie</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© <span id="year"></span> Neutralia · Tutti i diritti riservati</p>
+    </div>
+  </div>
+</footer>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+<script src="assets/js/osservatorio-tema.js"></script>
+<script>
+  OsservatorioTema.init({
+    theme: 'industriale',
+    dataPath: 'assets/data/osservatorio-industriale.json',
+    center: [43.0, 12.5],
+    zoom: 6,
+    kinds: {
+      acquisizione_eu:    { color: '#ff2a2a', label: 'Acquisizione UE' },
+      acquisizione_asia:  { color: '#ff8a00', label: 'Acquisizione Asia' },
+      acquisizione_usa:   { color: '#0066cc', label: 'Acquisizione USA' },
+      acquisizione_extra: { color: '#9333ea', label: 'Acquisizione extra-UE' },
+      acquisizione_misto: { color: '#6b7280', label: 'Controllo misto' }
+    }
+  });
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+</body>
+</html>

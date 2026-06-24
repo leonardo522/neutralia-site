@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Osservatori — Neutralia</title>
+<meta name="description" content="Gli Osservatori Neutralia sulla sovranità italiana: bellica, energetica, industriale, digitale, del racconto. Mappe interattive e dati pubblici punto per punto.">
+<meta name="theme-color" content="#0a0a0a">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body class="page-osservatori">
+
+<header class="site-header">
+  <nav class="nav">
+    <a href="index.html" class="logo">NEUTRALIA</a>
+    <ul class="nav-links">
+      <li><a href="index.html#libro">Libro</a></li>
+      <li><a href="index.html#manifesto">Manifesto</a></li>
+      <li><a href="index.html#approfondimenti">Approfondimenti</a></li>
+      <li><a href="osservatori.html" class="is-current">Osservatori</a></li>
+      <li><a href="index.html#comunita">Comunità</a></li>
+      <li><a href="index.html#negozio">Negozio</a></li>
+      <li class="nav-links-lang">
+        <a href="en/">EN</a>
+        <a href="fr/">FR</a>
+        <a href="es/">ES</a>
+        <a href="de/">DE</a>
+      </li>
+    </ul>
+    <a href="dona.html" class="nav-cta">Dona</a>
+    <button class="nav-toggle" aria-label="Apri menu">☰</button>
+  </nav>
+</header>
+
+<section class="osservatori-intro">
+  <div class="container">
+    <h1>Osservatori Neutralia</h1>
+    <p class="lead">
+      Le mappe interattive della sovranità italiana — bellica, energetica, industriale, digitale,
+      culturale. Dati pubblici punto per punto, fonti citate, nessun numero inventato.
+      L'<em>unica via possibile per la neutralità bellica</em> passa dal riconoscere
+      chi controlla davvero il paese.
+    </p>
+  </div>
+</section>
+
+<section class="osservatori-grid-wrap">
+  <div class="osservatori-grid">
+
+    <!-- BELLICO — libero -->
+    <a href="osservatorio.html" class="oss-card oss-card-bellico">
+      <span class="oss-card-eyebrow">Osservatorio</span>
+      <h3>Bellico</h3>
+      <p>Basi NATO/USA in Italia, B61 nucleari, produzione armi, porti di export, conflitti collegati dal 1945, aree marine interdette, MUOS.</p>
+      <div class="oss-card-meta">
+        <span class="oss-card-tag tag-free">Accesso libero</span>
+        <span class="arrow">→</span>
+      </div>
+    </a>
+
+    <!-- ENERGETICO — bloccato -->
+    <a href="osservatorio-energetico.html" class="oss-card is-locked" data-locked-name="Energetico">
+      <span class="oss-card-eyebrow">Osservatorio</span>
+      <h3>Energetico</h3>
+      <p>Gasdotti di import, rigassificatori, centrali, asset energetici controllati da estero. State Grid of China dentro CDP Reti.</p>
+      <div class="oss-card-meta">
+        <span class="oss-card-tag tag-paid">Riservato sostenitori</span>
+        <span class="arrow">→</span>
+      </div>
+    </a>
+
+    <!-- INDUSTRIALE — bloccato -->
+    <a href="osservatorio-industriale.html" class="oss-card is-locked" data-locked-name="Industriale">
+      <span class="oss-card-eyebrow">Osservatorio</span>
+      <h3>Industriale</h3>
+      <p>Pirelli, Italcementi, Magneti Marelli, Parmalat, Bulgari, Versace: i marchi italiani sotto controllo francese, cinese, americano, qatariota.</p>
+      <div class="oss-card-meta">
+        <span class="oss-card-tag tag-paid">Riservato sostenitori</span>
+        <span class="arrow">→</span>
+      </div>
+    </a>
+
+    <!-- DIGITALE — bloccato -->
+    <a href="osservatorio-digitale.html" class="oss-card is-locked" data-locked-name="Digitale">
+      <span class="oss-card-eyebrow">Osservatorio</span>
+      <h3>Digitale</h3>
+      <p>Rete TIM venduta a KKR, Vodafone a Swisscom, AWS e Microsoft a Milano sotto CLOUD Act USA. PSN, Sogei, ACN: l'altra metà.</p>
+      <div class="oss-card-meta">
+        <span class="oss-card-tag tag-paid">Riservato sostenitori</span>
+        <span class="arrow">→</span>
+      </div>
+    </a>
+
+    <!-- RACCONTO — bloccato -->
+    <a href="osservatorio-racconto.html" class="oss-card is-locked" data-locked-name="del Racconto">
+      <span class="oss-card-eyebrow">Osservatorio</span>
+      <h3>del Racconto</h3>
+      <p>Think tank, ONG, fondazioni e istituti culturali italiani finanziati con capitali esteri. Aspen, IAI, ISPI, ECFR, OSF, NED, Istituti Confucio.</p>
+      <div class="oss-card-meta">
+        <span class="oss-card-tag tag-paid">Riservato sostenitori</span>
+        <span class="arrow">→</span>
+      </div>
+    </a>
+
+  </div>
+</section>
+
+<!-- PAYWALL MODAL -->
+<div class="paywall-backdrop" id="paywall" role="dialog" aria-modal="true" aria-labelledby="paywall-title">
+  <div class="paywall-modal">
+    <button class="paywall-close" type="button" aria-label="Chiudi">×</button>
+    <span class="paywall-icon" aria-hidden="true">🔒</span>
+    <h3 id="paywall-title">Osservatorio riservato</h3>
+    <p class="paywall-target">Stai accedendo all'<span id="paywall-target-name">Osservatorio</span></p>
+    <p>
+      Questo Osservatorio è <strong>esclusivo per chi sostiene Neutralia</strong>
+      con un abbonamento di <strong>5 € al mese</strong>.
+    </p>
+    <p>
+      Il tuo contributo finanzia la ricerca attiva del Centro Studi sulla sovranità italiana —
+      l'<em>unica via possibile</em> per ottenere una vera neutralità bellica.
+    </p>
+    <div class="paywall-price">
+      5 € <small>/ mese</small>
+    </div>
+    <div class="paywall-actions">
+      <a href="dona.html" class="paywall-btn paywall-btn-primary">Sostieni Neutralia →</a>
+      <button type="button" class="paywall-btn paywall-btn-secondary" data-paywall-close>Torna agli Osservatori</button>
+    </div>
+  </div>
+</div>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <h3>NEUTRALIA</h3>
+        <p>Un'Italia neutrale, un'Italia mediatrice di pace, un'Italia che protegge il suo patrimonio.</p>
+      </div>
+      <div class="footer-contact">
+        <h4>Contattaci</h4>
+        <a href="mailto:neutralia.info@gmail.com">neutralia.info@gmail.com</a>
+      </div>
+      <div class="footer-nav">
+        <h4>Naviga</h4>
+        <ul>
+          <li><a href="index.html#libro">Libro</a></li>
+          <li><a href="index.html#manifesto">Manifesto</a></li>
+          <li><a href="index.html#approfondimenti">Approfondimenti</a></li>
+          <li><a href="osservatori.html">Osservatori</a></li>
+          <li><a href="index.html#comunita">Comunità</a></li>
+          <li><a href="index.html#negozio">Negozio</a></li>
+        </ul>
+      </div>
+      <div class="footer-social">
+        <h4>Seguici</h4>
+        <ul>
+          <li><a href="https://www.instagram.com/_neutralia_/" target="_blank" rel="noopener">Instagram</a></li>
+          <li><a href="https://t.me/NEUTRALIATELEGRAM" target="_blank" rel="noopener">Telegram</a></li>
+          <li><a href="dona.html">Dona</a></li>
+        </ul>
+        <h4 style="margin-top:1.2rem">Legale</h4>
+        <ul>
+          <li><a href="privacy.html">Privacy Policy</a></li>
+          <li><a href="cookie.html">Cookie Policy</a></li>
+          <li><a href="#" data-cookie-manage>Gestisci cookie</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© <span id="year"></span> Neutralia · Tutti i diritti riservati</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  (function initPaywall() {
+    const backdrop = document.getElementById('paywall');
+    if (!backdrop) return;
+    const targetName = document.getElementById('paywall-target-name');
+
+    function openPaywall(name) {
+      if (name) targetName.textContent = 'Osservatorio ' + name;
+      backdrop.classList.add('is-open');
+      document.body.style.overflow = 'hidden';
+    }
+    function closePaywall() {
+      backdrop.classList.remove('is-open');
+      document.body.style.overflow = '';
+    }
+
+    document.querySelectorAll('.oss-card.is-locked').forEach(card => {
+      card.addEventListener('click', (e) => {
+        e.preventDefault();
+        openPaywall(card.dataset.lockedName || '');
+      });
+    });
+
+    backdrop.addEventListener('click', (e) => {
+      if (e.target === backdrop) closePaywall();
+    });
+    backdrop.querySelector('.paywall-close').addEventListener('click', closePaywall);
+    backdrop.querySelectorAll('[data-paywall-close]').forEach(b => b.addEventListener('click', closePaywall));
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && backdrop.classList.contains('is-open')) closePaywall();
+    });
+  })();
+</script>
+</body>
+</html>
