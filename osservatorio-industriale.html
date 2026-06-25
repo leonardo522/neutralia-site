@@ -22,7 +22,7 @@
       <li><a href="index.html#libro">Libro</a></li>
       <li><a href="index.html#manifesto">Manifesto</a></li>
       <li><a href="index.html#approfondimenti">Approfondimenti</a></li>
-      <li><a href="osservatori.html" class="is-current">Osservatori</a></li>
+      <li><a href="osservatorio.html" class="is-current">Osservatorio</a></li>
       <li><a href="index.html#comunita">Comunità</a></li>
       <li><a href="index.html#negozio">Negozio</a></li>
       <li class="nav-links-lang">
@@ -36,6 +36,17 @@
     <button class="nav-toggle" aria-label="Apri menu">☰</button>
   </nav>
 </header>
+
+<!-- SUBNAV OSSERVATORI -->
+<nav class="osservatorio-subnav" aria-label="Osservatori Neutralia">
+  <div class="osservatorio-subnav-inner">
+    <a href="osservatorio.html" class="subnav-item" data-key="bellico">Bellico</a>
+    <a href="osservatorio-energetico.html" class="subnav-item" data-key="energetico">Energetico <span class="subnav-lock" aria-hidden="true">🔒</span></a>
+    <a href="osservatorio-industriale.html" class="subnav-item is-active" data-key="industriale">Industriale <span class="subnav-lock" aria-hidden="true">🔒</span></a>
+    <a href="osservatorio-digitale.html" class="subnav-item" data-key="digitale">Digitale <span class="subnav-lock" aria-hidden="true">🔒</span></a>
+    <a href="osservatorio-racconto.html" class="subnav-item" data-key="racconto">del Racconto <span class="subnav-lock" aria-hidden="true">🔒</span></a>
+  </div>
+</nav>
 
 <section class="osservatorio-intro">
   <div class="container">
@@ -155,7 +166,7 @@
           <li><a href="index.html#libro">Libro</a></li>
           <li><a href="index.html#manifesto">Manifesto</a></li>
           <li><a href="index.html#approfondimenti">Approfondimenti</a></li>
-          <li><a href="osservatori.html">Osservatori</a></li>
+          <li><a href="osservatorio.html">Osservatorio</a></li>
           <li><a href="index.html#comunita">Comunità</a></li>
           <li><a href="index.html#negozio">Negozio</a></li>
         </ul>
@@ -199,5 +210,47 @@
   });
   document.getElementById('year').textContent = new Date().getFullYear();
 </script>
+
+<!-- PAYWALL GATE: blur + lucchetto + modale paywall -->
+<div class="paywall-gate" id="paywall-gate" aria-hidden="false">
+  <button class="paywall-lock-btn" type="button" id="paywall-lock-btn" aria-haspopup="dialog">
+    <span class="paywall-lock-icon" aria-hidden="true">🔒</span>
+    <span class="paywall-lock-title">Osservatorio riservato</span>
+    <span class="paywall-lock-sub">5 € / mese · Sostenitori Neutralia</span>
+    <span class="paywall-lock-hint">scorri o clicca per sapere di più</span>
+  </button>
+</div>
+
+<div class="paywall-backdrop" id="paywall" role="dialog" aria-modal="true" aria-labelledby="paywall-title">
+  <div class="paywall-modal">
+    <button class="paywall-close" type="button" aria-label="Chiudi">×</button>
+    <span class="paywall-icon" aria-hidden="true">🔒</span>
+    <h3 id="paywall-title">Osservatorio riservato</h3>
+    <p class="paywall-target">Stai accedendo all'<span id="paywall-target-name">Osservatorio Industriale</span></p>
+    <p>Questo Osservatorio è <strong>esclusivo per chi sostiene Neutralia</strong> con un abbonamento di <strong>5 € al mese</strong>.</p>
+    <p>Il tuo contributo finanzia la ricerca attiva del Centro Studi sulla sovranità italiana — l'<em>unica via possibile</em> per ottenere una vera neutralità bellica.</p>
+    <div class="paywall-price">5 € <small>/ mese</small></div>
+    <div class="paywall-actions">
+      <a href="https://buy.stripe.com/dRm4gt9R15q3aRg2eY8IU06" class="paywall-btn paywall-btn-primary" target="_blank" rel="noopener">Sostieni Neutralia →</a>
+      <button type="button" class="paywall-btn paywall-btn-secondary" data-paywall-close>Chiudi</button>
+    </div>
+  </div>
+</div>
+
+<script>
+(function initPaywallGate() {
+  const gate = document.getElementById('paywall-gate');
+  const backdrop = document.getElementById('paywall');
+  if (!gate || !backdrop) return;
+  function open() { backdrop.classList.add('is-open'); }
+  function close() { backdrop.classList.remove('is-open'); }
+  document.getElementById('paywall-lock-btn').addEventListener('click', open);
+  backdrop.addEventListener('click', e => { if (e.target === backdrop) close(); });
+  backdrop.querySelector('.paywall-close').addEventListener('click', close);
+  backdrop.querySelectorAll('[data-paywall-close]').forEach(b => b.addEventListener('click', close));
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') close(); });
+})();
+</script>
+
 </body>
 </html>

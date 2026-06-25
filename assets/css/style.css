@@ -3851,6 +3851,188 @@ body.mappa-popup-open::before {
 }
 
 /* ============================================
+   OSSERVATORIO SUBNAV — barra orizzontale sotto l'header
+   ============================================ */
+body.page-osservatorio {
+  padding-top: 60px; /* compensa l'header fixed */
+}
+@media (max-width: 700px) {
+  body.page-osservatorio { padding-top: 52px; }
+}
+
+.osservatorio-subnav {
+  position: sticky;
+  top: 60px; /* sotto l'header fixed */
+  background: rgba(8, 8, 8, 0.96);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(239, 232, 71, 0.25);
+  z-index: 90;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+}
+.osservatorio-subnav::-webkit-scrollbar { display: none; }
+
+.osservatorio-subnav-inner {
+  display: flex;
+  gap: 2rem;
+  padding: 0.85rem 1.5rem;
+  white-space: nowrap;
+  max-width: 1400px;
+  margin: 0 auto;
+  justify-content: center;
+}
+.subnav-item {
+  color: rgba(250, 250, 250, 0.62);
+  text-decoration: none;
+  font-family: var(--sans);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  padding: 0.3rem 0;
+  border-bottom: 2px solid transparent;
+  transition: color 0.18s ease, border-color 0.18s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+.subnav-item:hover { color: var(--bianco); }
+.subnav-item.is-active {
+  color: var(--giallo);
+  border-bottom-color: var(--giallo);
+}
+.subnav-item .subnav-lock {
+  display: inline-block;
+  font-size: 0.85rem;
+  filter: drop-shadow(0 0 4px rgba(239, 232, 71, 0.5));
+  opacity: 0.9;
+}
+@media (max-width: 700px) {
+  .osservatorio-subnav-inner {
+    justify-content: flex-start;
+    gap: 1.4rem;
+    padding: 0.7rem 1rem;
+  }
+  .subnav-item {
+    font-size: 0.72rem;
+    letter-spacing: 0.1em;
+  }
+}
+
+/* ============================================
+   PAYWALL GATE — blur full-page + lucchetto centrale
+   ============================================ */
+.paywall-gate {
+  position: fixed;
+  top: 110px; /* sotto header + subnav */
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 800;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* Stato iniziale: trasparente, mappa nitida, niente click bloccati */
+  opacity: 0;
+  pointer-events: none;
+  background: rgba(8, 8, 8, 0);
+  backdrop-filter: blur(0);
+  -webkit-backdrop-filter: blur(0);
+  /* Animazione: 1s di pausa (mappa visibile), poi 4s di blur graduale ease-in-out */
+  animation: paywall-blur-grow 4s cubic-bezier(0.42, 0, 0.58, 1) 1s forwards;
+}
+@keyframes paywall-blur-grow {
+  0% {
+    opacity: 1;
+    background: rgba(8, 8, 8, 0);
+    backdrop-filter: blur(0);
+    -webkit-backdrop-filter: blur(0);
+    pointer-events: none;
+  }
+  100% {
+    opacity: 1;
+    background: rgba(8, 8, 8, 0.55);
+    backdrop-filter: blur(18px) saturate(120%);
+    -webkit-backdrop-filter: blur(18px) saturate(120%);
+    pointer-events: auto;
+  }
+}
+/* il lucchetto centrale appare gradualmente nella seconda metà dell'animazione */
+.paywall-gate .paywall-lock-btn {
+  opacity: 0;
+  transform: scale(0.92);
+  animation: paywall-lock-appear 2.5s cubic-bezier(0.42, 0, 0.58, 1) 2.5s forwards;
+}
+@keyframes paywall-lock-appear {
+  from { opacity: 0; transform: scale(0.92); }
+  to   { opacity: 1; transform: scale(1); }
+}
+.paywall-lock-btn {
+  background: transparent;
+  border: 2px solid rgba(239, 232, 71, 0.5);
+  border-radius: 18px;
+  padding: 2.4rem 2.6rem;
+  color: var(--giallo);
+  cursor: pointer;
+  text-align: center;
+  font-family: var(--sans);
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  align-items: center;
+  max-width: 480px;
+  width: calc(100% - 2rem);
+  transition: transform 0.18s ease, border-color 0.18s ease, background 0.18s ease;
+}
+.paywall-lock-btn:hover {
+  transform: translateY(-3px);
+  border-color: var(--giallo);
+  background: rgba(239, 232, 71, 0.05);
+}
+.paywall-lock-icon {
+  font-size: 4.5rem;
+  line-height: 1;
+  filter: drop-shadow(0 0 22px rgba(239, 232, 71, 0.55));
+}
+.paywall-lock-title {
+  font-size: 1.4rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  color: var(--giallo);
+}
+.paywall-lock-sub {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: rgba(250, 250, 250, 0.78);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+.paywall-lock-hint {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 0.92rem;
+  color: rgba(250, 250, 250, 0.6);
+  margin-top: 0.4rem;
+  font-weight: normal;
+  letter-spacing: 0;
+  text-transform: none;
+}
+
+/* quando paywall è attivo, lock anche scroll del body (opzionale) */
+body.paywall-blocked {
+  /* lo scroll resta abilitato perché lo trigger del popup è proprio lo scroll */
+}
+
+@media (max-width: 600px) {
+  .paywall-lock-btn { padding: 1.8rem 1.4rem; }
+  .paywall-lock-icon { font-size: 3.5rem; }
+  .paywall-lock-title { font-size: 1.15rem; }
+  .paywall-lock-sub { font-size: 0.8rem; }
+}
+
+/* ============================================
    INDICE OSSERVATORI — card grid + paywall lock
    ============================================ */
 .osservatori-intro {
