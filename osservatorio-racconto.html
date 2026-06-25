@@ -32,6 +32,7 @@
         <a href="de/">DE</a>
       </li>
     </ul>
+    <a href="accedi.html" class="nav-login">Accedi</a>
     <a href="dona.html" class="nav-cta">Dona</a>
     <button class="nav-toggle" aria-label="Apri menu">☰</button>
   </nav>
@@ -204,22 +205,31 @@
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
 <script src="assets/js/osservatorio-tema.js"></script>
 <script>
-  OsservatorioTema.init({
-    theme: 'racconto',
-    dataPath: 'assets/data/osservatorio-racconto.json',
-    center: [42.5, 12.5],
-    zoom: 6,
-    kinds: {
-      think_tank:            { color: '#ff2a2a', label: 'Think tank' },
-      ong:                   { color: '#ff8a00', label: 'ONG' },
-      ente_estero_culturale: { color: '#0066cc', label: 'Ente culturale estero' },
-      fondazione_estera:     { color: '#9333ea', label: 'Fondazione estera' },
-      universita:            { color: '#ffe600', label: 'Università' },
-      fondazione_religiosa:  { color: '#cb2b37', label: 'Religiosa' },
-      media_pubblico:        { color: '#16a34a', label: 'Media pubblico IT' }
-    }
-  });
+  const NEUTRALIA_WORKER = 'https://neutralia-stripe-webhook.leonardo-rosi99.workers.dev';
   document.getElementById('year').textContent = new Date().getFullYear();
+  fetch(NEUTRALIA_WORKER + '/check-access', { credentials: 'include' })
+    .then(r => r.json())
+    .then(({ active }) => {
+      if (!active) return;
+      document.getElementById('paywall-gate')?.remove();
+      OsservatorioTema.init({
+        theme: 'racconto',
+        dataPath: NEUTRALIA_WORKER + '/api/protected/data/racconto.json',
+        fetchOpts: { credentials: 'include' },
+        center: [42.5, 12.5],
+        zoom: 6,
+        kinds: {
+          think_tank:            { color: '#ff2a2a', label: 'Think tank' },
+          ong:                   { color: '#ff8a00', label: 'ONG' },
+          ente_estero_culturale: { color: '#0066cc', label: 'Ente culturale estero' },
+          fondazione_estera:     { color: '#9333ea', label: 'Fondazione estera' },
+          universita:            { color: '#ffe600', label: 'Università' },
+          fondazione_religiosa:  { color: '#cb2b37', label: 'Religiosa' },
+          media_pubblico:        { color: '#16a34a', label: 'Media pubblico IT' }
+        }
+      });
+    })
+    .catch(() => { /* errore rete → resta paywall */ });
 </script>
 
 <!-- PAYWALL GATE: blur + lucchetto + modale paywall -->

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Accedi — Neutralia</title>
+<meta name="description" content="Accedi al tuo account Membro Fondatore per consultare gli Osservatori Neutralia riservati.">
+<meta name="theme-color" content="#0a0a0a">
+<meta name="robots" content="noindex, follow">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap">
+<link rel="stylesheet" href="assets/css/style.css">
+<style>
+  body.page-accedi { background: var(--nero); color: var(--bianco); min-height: 100vh; padding-top: 60px; }
+  .accedi-wrap { max-width: 480px; margin: 4rem auto; padding: 2.5rem 2rem; background: #131313; border: 1px solid rgba(239,232,71,0.18); border-radius: 14px; text-align: center; }
+  .accedi-wrap h1 { font-family: var(--sans); font-size: 1.8rem; color: var(--giallo); margin: 0 0 0.4rem; }
+  .accedi-wrap p { color: rgba(250,250,250,0.78); margin: 0 0 1.5rem; }
+  .accedi-form { display: flex; flex-direction: column; gap: 1rem; margin: 1.5rem 0; }
+  .accedi-form input[type=email] { background: #0d0d0d; border: 1px solid rgba(255,255,255,0.18); color: var(--bianco); padding: 0.85rem 1rem; border-radius: 6px; font-family: var(--serif); font-size: 1rem; }
+  .accedi-form input:focus { outline: none; border-color: var(--giallo); }
+  .accedi-form button { background: var(--giallo); color: var(--nero); border: none; padding: 0.95rem 1.4rem; font-family: var(--sans); font-weight: 800; font-size: 0.92rem; letter-spacing: 0.1em; text-transform: uppercase; border-radius: 6px; cursor: pointer; }
+  .accedi-form button:disabled { opacity: 0.6; cursor: not-allowed; }
+  .accedi-msg { padding: 1rem; border-radius: 6px; margin-top: 1rem; font-size: 0.95rem; }
+  .accedi-msg.ok { background: rgba(22,163,74,0.15); color: #4ade80; border: 1px solid rgba(22,163,74,0.4); }
+  .accedi-msg.err { background: rgba(220,38,38,0.15); color: #fca5a5; border: 1px solid rgba(220,38,38,0.4); }
+  .accedi-hint { font-family: var(--serif); font-style: italic; font-size: 0.88rem; color: rgba(250,250,250,0.5); margin-top: 1.5rem; line-height: 1.5; }
+  .accedi-hint a { color: var(--giallo); }
+</style>
+</head>
+<body class="page-accedi">
+
+<header class="site-header">
+  <nav class="nav">
+    <a href="index.html" class="logo">NEUTRALIA</a>
+    <ul class="nav-links">
+      <li><a href="index.html#libro">Libro</a></li>
+      <li><a href="index.html#manifesto">Manifesto</a></li>
+      <li><a href="index.html#approfondimenti">Approfondimenti</a></li>
+      <li><a href="osservatorio.html">Osservatorio</a></li>
+      <li><a href="index.html#comunita">Comunità</a></li>
+      <li><a href="index.html#negozio">Negozio</a></li>
+    </ul>
+    <a href="accedi.html" class="nav-login">Accedi</a>
+    <a href="dona.html" class="nav-cta">Dona</a>
+    <button class="nav-toggle" aria-label="Apri menu">☰</button>
+  </nav>
+</header>
+
+<div class="accedi-wrap">
+  <h1>Accedi</h1>
+  <p>Inserisci l'email con cui hai sottoscritto e ti mando un link di accesso.</p>
+
+  <form class="accedi-form" id="accedi-form">
+    <input type="email" name="email" required placeholder="la-tua-email@esempio.it" autocomplete="email">
+    <button type="submit" id="accedi-btn">Invia link di accesso</button>
+  </form>
+
+  <div class="accedi-msg" id="accedi-msg" hidden></div>
+
+  <p class="accedi-hint">
+    Non sei ancora Membro Fondatore? <a href="osservatorio.html">Vedi gli Osservatori →</a>
+  </p>
+</div>
+
+<script>
+const WORKER = 'https://neutralia-stripe-webhook.leonardo-rosi99.workers.dev';
+const form = document.getElementById('accedi-form');
+const btn = document.getElementById('accedi-btn');
+const msg = document.getElementById('accedi-msg');
+
+form.addEventListener('submit', async (e) => {
+  e.preventDefault();
+  const email = form.email.value.trim().toLowerCase();
+  btn.disabled = true;
+  btn.textContent = 'Invio in corso…';
+  msg.hidden = true;
+  try {
+    const r = await fetch(`${WORKER}/login-request`, {
+      method: 'POST',
+      headers: { 'content-type': 'application/json' },
+      body: JSON.stringify({ email }),
+    });
+    const j = await r.json();
+    if (r.ok && j.ok) {
+      msg.className = 'accedi-msg ok';
+      msg.textContent = `Fatto. Controlla l'email ${email} — ti ho mandato il link (scade fra 15 minuti).`;
+      msg.hidden = false;
+      form.email.value = '';
+    } else {
+      throw new Error(j.error || 'errore');
+    }
+  } catch (err) {
+    msg.className = 'accedi-msg err';
+    msg.textContent = `Errore: ${err.message}. Riprova o scrivi a neutralia.info@gmail.com.`;
+    msg.hidden = false;
+  } finally {
+    btn.disabled = false;
+    btn.textContent = 'Invia link di accesso';
+  }
+});
+</script>
+
+</body>
+</html>

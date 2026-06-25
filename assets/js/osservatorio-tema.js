@@ -118,8 +118,8 @@
       })
       .catch(() => { /* non bloccante */ });
 
-    // Carica dati tema
-    fetch(config.dataPath)
+    // Carica dati tema (supporta fetchOpts per endpoint protetti con credentials)
+    fetch(config.dataPath, config.fetchOpts || {})
       .then(r => r.json())
       .then(data => {
         const items = data.items || [];

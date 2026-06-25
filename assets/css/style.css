@@ -3851,6 +3851,35 @@ body.mappa-popup-open::before {
 }
 
 /* ============================================
+   NAV: link "Accedi" (sobrio, accanto al CTA Dona)
+   ============================================ */
+.nav-login {
+  display: inline-block;
+  margin-right: 0.6rem;
+  padding: 0.45rem 0.85rem;
+  color: rgba(255, 255, 255, 0.78);
+  font-family: var(--sans);
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  text-decoration: none;
+  border: 1px solid rgba(239, 232, 71, 0.35);
+  border-radius: 4px;
+  transition: color 0.15s ease, border-color 0.15s ease, background 0.15s ease;
+}
+.nav-login:hover {
+  color: var(--giallo);
+  border-color: var(--giallo);
+  background: rgba(239, 232, 71, 0.06);
+}
+@media (max-width: 700px) {
+  .nav-login {
+    display: none; /* su mobile usa l'hamburger menu o il link da osservatori.html */
+  }
+}
+
+/* ============================================
    OSSERVATORIO SUBNAV — barra orizzontale sotto l'header
    ============================================ */
 body.page-osservatorio {

@@ -32,6 +32,7 @@
         <a href="de/">DE</a>
       </li>
     </ul>
+    <a href="accedi.html" class="nav-login">Accedi</a>
     <a href="dona.html" class="nav-cta">Dona</a>
     <button class="nav-toggle" aria-label="Apri menu">☰</button>
   </nav>
@@ -195,20 +196,29 @@
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
 <script src="assets/js/osservatorio-tema.js"></script>
 <script>
-  OsservatorioTema.init({
-    theme: 'industriale',
-    dataPath: 'assets/data/osservatorio-industriale.json',
-    center: [43.0, 12.5],
-    zoom: 6,
-    kinds: {
-      acquisizione_eu:    { color: '#ff2a2a', label: 'Acquisizione UE' },
-      acquisizione_asia:  { color: '#ff8a00', label: 'Acquisizione Asia' },
-      acquisizione_usa:   { color: '#0066cc', label: 'Acquisizione USA' },
-      acquisizione_extra: { color: '#9333ea', label: 'Acquisizione extra-UE' },
-      acquisizione_misto: { color: '#6b7280', label: 'Controllo misto' }
-    }
-  });
+  const NEUTRALIA_WORKER = 'https://neutralia-stripe-webhook.leonardo-rosi99.workers.dev';
   document.getElementById('year').textContent = new Date().getFullYear();
+  fetch(NEUTRALIA_WORKER + '/check-access', { credentials: 'include' })
+    .then(r => r.json())
+    .then(({ active }) => {
+      if (!active) return;
+      document.getElementById('paywall-gate')?.remove();
+      OsservatorioTema.init({
+        theme: 'industriale',
+        dataPath: NEUTRALIA_WORKER + '/api/protected/data/industriale.json',
+        fetchOpts: { credentials: 'include' },
+        center: [43.0, 12.5],
+        zoom: 6,
+        kinds: {
+          acquisizione_eu:    { color: '#ff2a2a', label: 'Acquisizione UE' },
+          acquisizione_asia:  { color: '#ff8a00', label: 'Acquisizione Asia' },
+          acquisizione_usa:   { color: '#0066cc', label: 'Acquisizione USA' },
+          acquisizione_extra: { color: '#9333ea', label: 'Acquisizione extra-UE' },
+          acquisizione_misto: { color: '#6b7280', label: 'Controllo misto' }
+        }
+      });
+    })
+    .catch(() => { /* errore rete → resta paywall */ });
 </script>
 
 <!-- PAYWALL GATE: blur + lucchetto + modale paywall -->
