@@ -37,6 +37,11 @@ export default {
     if (request.method === 'OPTIONS') {
       return new Response(null, { status: 204, headers: corsHeaders() });
     }
+    // === GET pubblico: counter Membri Fondatori (per crowdfunding bar) ===
+    if (request.method === 'GET' && url.pathname === '/sostenitori-count') {
+      return handleSostenitoriCount(env);
+    }
+
     if (request.method !== 'POST') {
       return new Response('Method Not Allowed', { status: 405 });
     }
@@ -63,6 +68,31 @@ function corsHeaders() {
     'Access-Control-Allow-Headers': 'Content-Type',
     'Access-Control-Max-Age': '86400',
   };
+}
+
+// ---------- Counter Membri Fondatori (lista Brevo Sostenitori) ----------
+async function handleSostenitoriCount(env) {
+  const headers = { ...corsHeaders(), 'content-type': 'application/json', 'cache-control': 'public, max-age=30' };
+  if (!env.BREVO_API_KEY || !env.BREVO_SUBSCRIBERS_LIST_ID) {
+    return new Response(JSON.stringify({ count: 0, targets: [100, 500, 1000], error: 'env_missing' }), { headers });
+  }
+  try {
+    const r = await fetch(`https://api.brevo.com/v3/contacts/lists/${env.BREVO_SUBSCRIBERS_LIST_ID}`, {
+      headers: { 'api-key': env.BREVO_API_KEY, 'accept': 'application/json' },
+    });
+    const data = await r.json();
+    const count = data.uniqueSubscribers || data.totalSubscribers || 0;
+    return new Response(JSON.stringify({
+      count,
+      targets: [
+        { n: 100, label: 'Investigazione strutturata' },
+        { n: 500, label: 'Pressione politica e pressure group' },
+        { n: 1000, label: 'Piazza pubblica di dibattito' }
+      ],
+    }), { headers });
+  } catch (e) {
+    return new Response(JSON.stringify({ count: 0, targets: [100, 500, 1000], error: e.message }), { headers, status: 500 });
+  }
 }
 
 // ---------- Prenotazione → Brevo ----------

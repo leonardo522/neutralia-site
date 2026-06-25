@@ -222,8 +222,8 @@
 <div class="paywall-gate" id="paywall-gate" aria-hidden="false">
   <button class="paywall-lock-btn" type="button" id="paywall-lock-btn" aria-haspopup="dialog">
     <span class="paywall-lock-icon" aria-hidden="true">🔒</span>
-    <span class="paywall-lock-title">Osservatorio riservato</span>
-    <span class="paywall-lock-sub">5 € / mese · Sostenitori Neutralia</span>
+    <span class="paywall-lock-title">Osservatorio riservato ai Membri Fondatori</span>
+    <span class="paywall-lock-sub">5 € / mese · Diventa Membro Fondatore</span>
     <span class="paywall-lock-hint">scorri o clicca per sapere di più</span>
   </button>
 </div>
@@ -232,10 +232,38 @@
   <div class="paywall-modal">
     <button class="paywall-close" type="button" aria-label="Chiudi">×</button>
     <span class="paywall-icon" aria-hidden="true">🔒</span>
-    <h3 id="paywall-title">Osservatorio riservato</h3>
+    <h3 id="paywall-title">Osservatorio riservato ai Membri Fondatori</h3>
     <p class="paywall-target">Stai accedendo all'<span id="paywall-target-name">Osservatorio Energetico</span></p>
     <p>Questo Osservatorio è <strong>esclusivo per chi sostiene Neutralia</strong> con un abbonamento di <strong>5 € al mese</strong>.</p>
     <p>Il tuo contributo finanzia la ricerca attiva del Centro Studi sulla sovranità italiana — l'<em>unica via possibile</em> per ottenere una vera neutralità bellica.</p>
+    <div class="crowdfunding" id="crowdfunding">
+      <div class="crowdfunding-header">
+        <span>Membri Fondatori</span>
+        <strong><span id="cf-count">—</span> / 1000</strong>
+      </div>
+      <div class="crowdfunding-bar-wrap">
+        <div class="crowdfunding-bar-fill" id="cf-fill"></div>
+      </div>
+      <div class="crowdfunding-tiers" id="cf-tiers">
+        <div class="crowdfunding-tier" data-target="100" style="left:10%">
+          <span class="crowdfunding-tier-num">100</span>
+          <span class="crowdfunding-tier-label">Investigazione strutturata</span>
+        </div>
+        <div class="crowdfunding-tier" data-target="500" style="left:50%">
+          <span class="crowdfunding-tier-num">500</span>
+          <span class="crowdfunding-tier-label">Pressione politica · pressure group</span>
+        </div>
+        <div class="crowdfunding-tier" data-target="1000" style="left:100%">
+          <span class="crowdfunding-tier-num">1000</span>
+          <span class="crowdfunding-tier-label">Piazza pubblica di dibattito</span>
+        </div>
+      </div>
+      <p class="crowdfunding-pitch">
+        Con i tuoi 5 € al mese costruiamo un Centro Studi italiano <strong>libero</strong> da accademia e media
+        foraggiati da potenze estere. Investigazione documentata, pressione politica, piazza di dibattito
+        sulla neutralità bellica e la sovranità — senza limiti narrativi parziali.
+      </p>
+    </div>
     <div class="paywall-price">5 € <small>/ mese</small></div>
     <div class="paywall-actions">
       <a href="https://buy.stripe.com/dRm4gt9R15q3aRg2eY8IU06" class="paywall-btn paywall-btn-primary" target="_blank" rel="noopener">Sostieni Neutralia →</a>
@@ -259,5 +287,27 @@
 })();
 </script>
 
+
+<script>
+(function loadCrowdfunding() {
+  const el = document.getElementById('cf-count');
+  const fill = document.getElementById('cf-fill');
+  if (!el || !fill) return;
+  fetch('https://neutralia-stripe-webhook.leonardo-rosi99.workers.dev/sostenitori-count', { cache: 'no-cache' })
+    .then(r => r.json())
+    .then(d => {
+      const count = d.count || 0;
+      el.textContent = count;
+      const pct = Math.min(100, (count / 1000) * 100);
+      // anima dopo un breve delay per essere visibile all'apertura popup
+      setTimeout(() => { fill.style.width = pct + '%'; }, 220);
+      document.querySelectorAll('.crowdfunding-tier').forEach(t => {
+        const target = parseInt(t.dataset.target, 10);
+        if (count >= target) t.classList.add('reached');
+      });
+    })
+    .catch(() => { el.textContent = '0'; });
+})();
+</script>
 </body>
 </html>
