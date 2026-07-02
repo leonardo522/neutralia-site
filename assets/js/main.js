@@ -403,3 +403,69 @@ if (pdfForm) {
     }
   });
 }
+
+// ============================================
+// INTERVENTI — animazione entry destra→sinistra + modal video fullscreen
+// ============================================
+(function initInterventi() {
+  const track = document.querySelector('.interventi-track');
+  const modal = document.getElementById('video-modal');
+  if (!track || !modal) return;
+
+  const cards = Array.from(track.querySelectorAll('.intervento-card'));
+  const modalSlot = modal.querySelector('.video-modal-slot');
+  const modalClose = modal.querySelector('.video-modal-close');
+
+  // 1) IntersectionObserver: quando il track entra in viewport, aggiungi .is-in
+  //    a ogni card. Lo stagger è dato dal CSS via --i su ogni card.
+  if ('IntersectionObserver' in window) {
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          cards.forEach((c) => c.classList.add('is-in'));
+          io.disconnect();
+        }
+      });
+    }, { threshold: 0.15 });
+    io.observe(track);
+  } else {
+    cards.forEach((c) => c.classList.add('is-in'));
+  }
+
+  // 2) Modal: apertura al click sulla card, chiusura con X / Esc / click fuori
+  function openModal(card) {
+    const videoId = card.dataset.video;
+    const start = parseInt(card.dataset.start || '0', 10);
+    if (!videoId) return;
+    // TODO: quando le clip singole saranno mp4 in assets/videos/, sostituire
+    //       questo iframe YouTube con <video src="assets/videos/clip-{i}.mp4">.
+    const src = `https://www.youtube-nocookie.com/embed/${videoId}?autoplay=1&start=${start}&rel=0&modestbranding=1&playsinline=1`;
+    modalSlot.innerHTML = `<iframe src="${src}" title="Intervento" allow="autoplay; encrypted-media; picture-in-picture; fullscreen" allowfullscreen></iframe>`;
+    modal.classList.add('is-open');
+    modal.setAttribute('aria-hidden', 'false');
+    document.body.classList.add('video-modal-open');
+  }
+  function closeModal() {
+    modal.classList.remove('is-open');
+    modal.setAttribute('aria-hidden', 'true');
+    document.body.classList.remove('video-modal-open');
+    modalSlot.innerHTML = ''; // stop del video
+  }
+
+  cards.forEach((card) => {
+    card.addEventListener('click', () => openModal(card));
+    // accessibilità: il pulsante-hit trasparente supporta anche keyboard
+    const hit = card.querySelector('.intervento-hit');
+    if (hit) hit.addEventListener('click', (e) => {
+      e.stopPropagation();
+      openModal(card);
+    });
+  });
+  modalClose.addEventListener('click', closeModal);
+  modal.addEventListener('click', (e) => {
+    if (e.target === modal) closeModal();
+  });
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && modal.classList.contains('is-open')) closeModal();
+  });
+})();

@@ -4427,3 +4427,230 @@ body.paywall-blocked {
   font-style: normal;
 }
 
+
+/* =========================================================================
+ * INTERVENTI — sezione con card dei 5 relatori (evento MBT-hdg1bLU)
+ * Animazione: entry da destra a sinistra con stagger via IntersectionObserver
+ * ========================================================================= */
+.section-interventi {
+  background: var(--nero);
+  color: var(--bianco);
+  padding: 4rem 0 5rem;
+  overflow: hidden; /* così le card che partono translateX(80px) non fanno scroll orizzontale */
+}
+.section-interventi .container { position: relative; }
+.interventi-eyebrow {
+  font-family: var(--sans);
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--giallo);
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  margin: 0 0 0.5rem;
+}
+.section-interventi .section-title {
+  color: var(--bianco);
+  margin: 0 0 0.6rem;
+}
+.interventi-lead {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 1.05rem;
+  color: rgba(250, 250, 250, 0.72);
+  margin: 0 0 2.5rem;
+  max-width: 620px;
+}
+
+/* Track: 5 card in fila su desktop, scroll-snap swipe su mobile */
+.interventi-track {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 1.1rem;
+}
+@media (max-width: 900px) {
+  .interventi-track {
+    grid-template-columns: repeat(5, 78%);
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    padding-bottom: 0.8rem;
+    margin: 0 -1.2rem;
+    padding-left: 1.2rem;
+    padding-right: 1.2rem;
+    -webkit-overflow-scrolling: touch;
+  }
+  .intervento-card { scroll-snap-align: start; }
+}
+
+.intervento-card {
+  position: relative;
+  background: linear-gradient(135deg, #141414 0%, #1c1c1c 100%);
+  border: 1px solid rgba(239, 232, 71, 0.18);
+  border-radius: 12px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  min-height: 320px;
+  cursor: pointer;
+  transition:
+    transform 700ms cubic-bezier(0.22, 1, 0.36, 1),
+    opacity 700ms cubic-bezier(0.22, 1, 0.36, 1),
+    border-color 220ms ease,
+    box-shadow 220ms ease;
+
+  /* stato iniziale: fuori a destra */
+  transform: translateX(80px);
+  opacity: 0;
+  transition-delay: calc(var(--i, 0) * 120ms);
+}
+.intervento-card.is-in {
+  transform: translateX(0);
+  opacity: 1;
+}
+.intervento-card:hover,
+.intervento-card:focus-within {
+  border-color: var(--giallo);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(239, 232, 71, 0.3);
+}
+
+.intervento-cover {
+  aspect-ratio: 16 / 10;
+  position: relative;
+  background: radial-gradient(ellipse at center, #2a2a2a 0%, #0a0a0a 80%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 1px solid rgba(239, 232, 71, 0.14);
+}
+.intervento-num {
+  position: absolute;
+  top: 0.7rem;
+  left: 0.9rem;
+  font-family: var(--sans);
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  color: rgba(250, 250, 250, 0.5);
+}
+.intervento-play {
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  background: var(--giallo);
+  color: var(--nero);
+  font-size: 1.4rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding-left: 5px; /* ottica centratura del triangolo */
+  transition: transform 220ms ease;
+}
+.intervento-card:hover .intervento-play { transform: scale(1.08); }
+
+.intervento-body {
+  padding: 1.1rem 1.1rem 1.3rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+.intervento-name {
+  font-family: var(--sans);
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--bianco);
+  margin: 0;
+  letter-spacing: -0.01em;
+}
+.intervento-role {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 0.85rem;
+  color: rgba(250, 250, 250, 0.6);
+  margin: 0;
+}
+.intervento-topic {
+  font-family: var(--sans);
+  font-size: 0.75rem;
+  color: rgba(250, 250, 250, 0.82);
+  line-height: 1.45;
+  margin: 0.3rem 0 0;
+}
+.intervento-hit {
+  position: absolute;
+  inset: 0;
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+  z-index: 2;
+  text-indent: -9999px;
+}
+.intervento-hit:focus-visible {
+  outline: 2px solid var(--giallo);
+  outline-offset: -3px;
+}
+
+/* Rispetto delle preferenze reduced-motion */
+@media (prefers-reduced-motion: reduce) {
+  .intervento-card {
+    transform: none;
+    opacity: 1;
+    transition-delay: 0ms !important;
+  }
+}
+
+/* =========================================================================
+ * VIDEO MODAL — fullscreen per l'intervento
+ * ========================================================================= */
+.video-modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.94);
+  z-index: 1000;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+}
+.video-modal.is-open {
+  display: flex;
+  animation: video-modal-in 240ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+@keyframes video-modal-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+.video-modal-frame {
+  width: 100%;
+  max-width: 1280px;
+  aspect-ratio: 16 / 9;
+  background: #000;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.6);
+}
+.video-modal-slot { width: 100%; height: 100%; }
+.video-modal-slot iframe,
+.video-modal-slot video {
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+.video-modal-close {
+  position: fixed;
+  top: 1.2rem;
+  right: 1.4rem;
+  background: transparent;
+  color: var(--bianco);
+  border: 0;
+  font-size: 2.6rem;
+  line-height: 1;
+  cursor: pointer;
+  padding: 0.2rem 0.5rem;
+  transition: color 180ms ease;
+}
+.video-modal-close:hover,
+.video-modal-close:focus-visible {
+  color: var(--giallo);
+  outline: none;
+}
+body.video-modal-open { overflow: hidden; }

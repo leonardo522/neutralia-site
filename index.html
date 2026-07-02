@@ -42,20 +42,7 @@
   </nav>
 </header>
 
-<!-- VIDEO HERO — pieno schermo -->
-<section class="section-video-hero" aria-label="Video Neutralia">
-  <div class="video-hero-frame">
-    <iframe
-      src="https://www.youtube-nocookie.com/embed/MBT-hdg1bLU?autoplay=1&mute=1&controls=1&modestbranding=1&rel=0&playsinline=1&loop=1&playlist=MBT-hdg1bLU"
-      title="Neutralia — Video"
-      loading="eager"
-      frameborder="0"
-      allow="autoplay; encrypted-media; picture-in-picture; fullscreen"
-      allowfullscreen></iframe>
-  </div>
-</section>
-
-<!-- SEZIONE LIBRO — la nuova "hero" -->
+<!-- SEZIONE LIBRO — la prima cosa che si vede -->
 <section id="libro" class="section section-libro section-hero">
   <div class="container">
     <div class="libro-grid">
@@ -80,6 +67,85 @@
         </div>
         <p class="libro-note">Il PDF è e resterà gratuito. Sostieni il progetto comprando la versione cartacea.</p>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- INTERVENTI — dal primo evento pubblico Neutralia (YouTube MBT-hdg1bLU) -->
+<!-- NOTA: i data-start sono timestamp INDICATIVI. Quando le 5 clip singole sono
+     esportate come mp4 (in neutralia_clips/), sostituire l'apertura del modal
+     con <video src="..."> invece dell'iframe YouTube. -->
+<section id="interventi" class="section section-interventi" aria-labelledby="interventi-title">
+  <div class="container">
+    <p class="interventi-eyebrow">Il primo evento pubblico</p>
+    <h2 id="interventi-title" class="section-title">Gli interventi</h2>
+    <p class="interventi-lead">Cinque voci, cinque prospettive sulla neutralità italiana.</p>
+
+    <div class="interventi-track" role="list">
+      <article class="intervento-card" role="listitem" data-video="MBT-hdg1bLU" data-start="0" style="--i:0">
+        <div class="intervento-cover" aria-hidden="true">
+          <span class="intervento-num">01</span>
+          <span class="intervento-play">▶</span>
+        </div>
+        <div class="intervento-body">
+          <h3 class="intervento-name">Alberto Contri</h3>
+          <p class="intervento-role">Pubblicitario, mass media</p>
+          <p class="intervento-topic">Informazione · BlackRock · Senso critico</p>
+        </div>
+        <button class="intervento-hit" type="button" aria-label="Guarda l'intervento di Alberto Contri"></button>
+      </article>
+
+      <article class="intervento-card" role="listitem" data-video="MBT-hdg1bLU" data-start="1000" style="--i:1">
+        <div class="intervento-cover" aria-hidden="true">
+          <span class="intervento-num">02</span>
+          <span class="intervento-play">▶</span>
+        </div>
+        <div class="intervento-body">
+          <h3 class="intervento-name">Antonella De Ninno</h3>
+          <p class="intervento-role">Fisica</p>
+          <p class="intervento-topic">Perseguire l'impossibile · Neutralità · La Boétie</p>
+        </div>
+        <button class="intervento-hit" type="button" aria-label="Guarda l'intervento di Antonella De Ninno"></button>
+      </article>
+
+      <article class="intervento-card" role="listitem" data-video="MBT-hdg1bLU" data-start="1900" style="--i:2">
+        <div class="intervento-cover" aria-hidden="true">
+          <span class="intervento-num">03</span>
+          <span class="intervento-play">▶</span>
+        </div>
+        <div class="intervento-body">
+          <h3 class="intervento-name">Claudio Benigni</h3>
+          <p class="intervento-role">Mass-mediologo, RAI Int.</p>
+          <p class="intervento-topic">Riarmo · Sovranità · Art. 11 · Emendamento neutralità</p>
+        </div>
+        <button class="intervento-hit" type="button" aria-label="Guarda l'intervento di Claudio Benigni"></button>
+      </article>
+
+      <article class="intervento-card" role="listitem" data-video="MBT-hdg1bLU" data-start="2700" style="--i:3">
+        <div class="intervento-cover" aria-hidden="true">
+          <span class="intervento-num">04</span>
+          <span class="intervento-play">▶</span>
+        </div>
+        <div class="intervento-body">
+          <h3 class="intervento-name">Guido Grossi</h3>
+          <p class="intervento-role">Economista</p>
+          <p class="intervento-topic">Diritti · Leva · Obiezione di coscienza · Potere su di sé</p>
+        </div>
+        <button class="intervento-hit" type="button" aria-label="Guarda l'intervento di Guido Grossi"></button>
+      </article>
+
+      <article class="intervento-card" role="listitem" data-video="MBT-hdg1bLU" data-start="3500" style="--i:4">
+        <div class="intervento-cover" aria-hidden="true">
+          <span class="intervento-num">05</span>
+          <span class="intervento-play">▶</span>
+        </div>
+        <div class="intervento-body">
+          <h3 class="intervento-name">Francesco Neri</h3>
+          <p class="intervento-role">Scrittore, divulgatore</p>
+          <p class="intervento-topic">Universo frattale · Commuovere vs convincere</p>
+        </div>
+        <button class="intervento-hit" type="button" aria-label="Guarda l'intervento di Francesco Neri"></button>
+      </article>
     </div>
   </div>
 </section>
@@ -435,6 +501,14 @@
       <button type="button" class="btn btn-secondary" data-close-modal>Chiudi</button>
     </div>
 
+  </div>
+</div>
+
+<!-- MODAL: video intervento a schermo intero -->
+<div class="video-modal" id="video-modal" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Video intervento">
+  <button type="button" class="video-modal-close" aria-label="Chiudi video">×</button>
+  <div class="video-modal-frame">
+    <div class="video-modal-slot"></div>
   </div>
 </div>
 
