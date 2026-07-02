@@ -4528,13 +4528,15 @@ body.paywall-blocked {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  /* --focus-y è settato inline per ogni foto per centrare sul volto */
+  /* --focus-y = crop verticale · --zoom = zoom aggiuntivo (default 1 = no zoom) */
   object-position: center var(--focus-y, 22%);
+  transform: scale(var(--zoom, 1));
+  transform-origin: 50% var(--focus-y, 22%);
   filter: saturate(1.02) contrast(1.02);
   transition: transform 700ms cubic-bezier(0.22, 1, 0.36, 1);
   z-index: 0;
 }
-.intervento-card:hover .intervento-photo { transform: scale(1.04); }
+.intervento-card:hover .intervento-photo { transform: scale(calc(var(--zoom, 1) * 1.04)); }
 /* Gradient scuro dal basso: stacca la card dal body sotto e dà contrasto al numero */
 .intervento-cover::after {
   content: "";
