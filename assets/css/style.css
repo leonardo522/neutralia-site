@@ -4557,30 +4557,26 @@ body.paywall-blocked {
   color: rgba(255, 255, 255, 0.95);
   text-shadow: 0 1px 3px rgba(0, 0, 0, 0.7);
 }
-/* Hover: bordo giallo + label "GUARDA" nell'angolo alto-destro (non copre il volto) */
-.intervento-cover::before {
-  content: "GUARDA";
+/* Play button: -40% rispetto a prima (35px vs 58px), in basso a destra, non copre volti */
+.intervento-play {
   position: absolute;
-  top: 0.7rem;
-  right: 0.9rem;
   z-index: 2;
-  font-family: var(--sans);
-  font-size: 0.68rem;
-  font-weight: 800;
-  letter-spacing: 0.14em;
-  color: var(--nero);
+  bottom: 0.55rem;
+  right: 0.55rem;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
   background: var(--giallo);
-  padding: 0.2rem 0.55rem;
-  border-radius: 3px;
-  opacity: 0;
-  transform: translateY(-4px);
-  transition: opacity 220ms ease, transform 220ms ease;
+  color: var(--nero);
+  font-size: 0.82rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding-left: 3px; /* ottica centratura del triangolo */
+  transition: transform 220ms ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.45);
 }
-.intervento-card:hover .intervento-cover::before,
-.intervento-card:focus-within .intervento-cover::before {
-  opacity: 1;
-  transform: translateY(0);
-}
+.intervento-card:hover .intervento-play { transform: scale(1.12); }
 
 .intervento-body {
   padding: 1.1rem 1.1rem 1.3rem;
