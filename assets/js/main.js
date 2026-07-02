@@ -435,11 +435,8 @@ if (pdfForm) {
   // 2) Modal: apertura al click sulla card, chiusura con X / Esc / click fuori
   function openModal(card) {
     const videoId = card.dataset.video;
-    const start = parseInt(card.dataset.start || '0', 10);
     if (!videoId) return;
-    // TODO: quando le clip singole saranno mp4 in assets/videos/, sostituire
-    //       questo iframe YouTube con <video src="assets/videos/clip-{i}.mp4">.
-    const src = `https://www.youtube-nocookie.com/embed/${videoId}?autoplay=1&start=${start}&rel=0&modestbranding=1&playsinline=1`;
+    const src = `https://www.youtube-nocookie.com/embed/${videoId}?autoplay=1&rel=0&modestbranding=1&playsinline=1`;
     modalSlot.innerHTML = `<iframe src="${src}" title="Intervento" allow="autoplay; encrypted-media; picture-in-picture; fullscreen" allowfullscreen></iframe>`;
     modal.classList.add('is-open');
     modal.setAttribute('aria-hidden', 'false');

@@ -4528,19 +4528,20 @@ body.paywall-blocked {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center 22%; /* foto verticali → crop centrato sul volto (parte alta) */
+  /* --focus-y è settato inline per ogni foto per centrare sul volto */
+  object-position: center var(--focus-y, 22%);
   filter: saturate(1.02) contrast(1.02);
   transition: transform 700ms cubic-bezier(0.22, 1, 0.36, 1);
   z-index: 0;
 }
 .intervento-card:hover .intervento-photo { transform: scale(1.04); }
-/* Gradient scuro: staccare num+play dalla foto e mantenere leggibilità */
+/* Gradient scuro dal basso: stacca la card dal body sotto e dà contrasto al numero */
 .intervento-cover::after {
   content: "";
   position: absolute;
   inset: 0;
   background:
-    linear-gradient(180deg, rgba(0,0,0,0.55) 0%, rgba(0,0,0,0) 30%, rgba(0,0,0,0) 60%, rgba(0,0,0,0.65) 100%);
+    linear-gradient(180deg, rgba(0,0,0,0.35) 0%, rgba(0,0,0,0) 22%, rgba(0,0,0,0) 60%, rgba(0,0,0,0.55) 100%);
   pointer-events: none;
   z-index: 1;
 }
@@ -4553,26 +4554,33 @@ body.paywall-blocked {
   font-size: 0.72rem;
   font-weight: 800;
   letter-spacing: 0.12em;
-  color: rgba(255, 255, 255, 0.9);
-  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.6);
+  color: rgba(255, 255, 255, 0.95);
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.7);
 }
-.intervento-play {
-  position: relative;
+/* Hover: bordo giallo + label "GUARDA" nell'angolo alto-destro (non copre il volto) */
+.intervento-cover::before {
+  content: "GUARDA";
+  position: absolute;
+  top: 0.7rem;
+  right: 0.9rem;
   z-index: 2;
-  width: 58px;
-  height: 58px;
-  border-radius: 50%;
-  background: var(--giallo);
+  font-family: var(--sans);
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.14em;
   color: var(--nero);
-  font-size: 1.4rem;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding-left: 5px; /* ottica centratura del triangolo */
-  transition: transform 220ms ease;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+  background: var(--giallo);
+  padding: 0.2rem 0.55rem;
+  border-radius: 3px;
+  opacity: 0;
+  transform: translateY(-4px);
+  transition: opacity 220ms ease, transform 220ms ease;
 }
-.intervento-card:hover .intervento-play { transform: scale(1.08); }
+.intervento-card:hover .intervento-cover::before,
+.intervento-card:focus-within .intervento-cover::before {
+  opacity: 1;
+  transform: translateY(0);
+}
 
 .intervento-body {
   padding: 1.1rem 1.1rem 1.3rem;
