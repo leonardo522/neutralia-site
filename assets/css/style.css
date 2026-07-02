@@ -4595,19 +4595,13 @@ body.paywall-blocked {
   margin: 0;
   letter-spacing: -0.01em;
 }
-.intervento-role {
+.intervento-title {
   font-family: var(--serif);
   font-style: italic;
-  font-size: 0.85rem;
-  color: rgba(250, 250, 250, 0.6);
-  margin: 0;
-}
-.intervento-topic {
-  font-family: var(--sans);
-  font-size: 0.75rem;
-  color: rgba(250, 250, 250, 0.82);
-  line-height: 1.45;
-  margin: 0.3rem 0 0;
+  font-size: 0.95rem;
+  color: rgba(250, 250, 250, 0.78);
+  line-height: 1.4;
+  margin: 0.15rem 0 0;
 }
 .intervento-hit {
   position: absolute;
