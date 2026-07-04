@@ -295,14 +295,14 @@ async function sendBookWelcomeEmail(session, env) {
 
 <p>Non siamo in tanti, ti chiediamo di pazientare per l'arrivo della copia. Se per qualche motivo noti un errore nell'indirizzo di spedizione o nel tuo nome, <strong>rispondi a questa mail</strong> con il tuo NOME COGNOME e indirizzo completo per la spedizione della copia del libro.</p>
 
-<p style="font-style:italic;color:#555;margin-top:1.5rem">— Leonardo Rosi · Edizioni Rosi · Neutralia</p>
+<p style="font-style:italic;color:#555;margin-top:1.5rem">— Neutralia</p>
 </div></body></html>`;
 
   const r = await fetch('https://api.brevo.com/v3/smtp/email', {
     method: 'POST',
     headers: { 'api-key': env.BREVO_API_KEY, 'content-type': 'application/json', 'accept': 'application/json' },
     body: JSON.stringify({
-      sender: { name: 'Leonardo Rosi', email: 'neutralia.info@gmail.com' },
+      sender: { name: 'Neutralia', email: 'neutralia.info@gmail.com' },
       replyTo: { email: 'neutralia.info@gmail.com' },
       to: [{ email }],
       subject: "Grazie per l'ordine — libro Neutralia",
