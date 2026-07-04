@@ -1,0 +1,21 @@
+# Config del Worker neutralia-stripe-webhook.
+# Deploy: npx wrangler deploy   (da questa cartella)
+#
+# keep_vars = true preserva le env vars impostate via dashboard Cloudflare
+# (STRIPE_WEBHOOK_SECRET, TELEGRAM_BOT_TOKEN, TELEGRAM_CHAT_ID).
+# I secrets aggiunti con `wrangler secret put` sopravvivono ai deploy.
+
+name = "neutralia-stripe-webhook"
+main = "worker.js"
+compatibility_date = "2026-05-22"
+keep_vars = true
+workers_dev = true
+
+kv_namespaces = [
+  { binding = "NEUTRALIA_KV", id = "494db1ed5ee54e57bce9ff9e2d6bf6e3" }
+]
+
+[vars]
+SITE_URL = "https://neutralia.info"
+BREVO_EVENT_LIST_ID = "9"
+BREVO_SUBSCRIBERS_LIST_ID = "10"

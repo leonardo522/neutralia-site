@@ -231,7 +231,97 @@ async function handleStripeWebhook(request, env) {
     }).catch(() => {});
   }
 
+  // ── Ordine LIBRO (€15, payment link dedicato) → welcome email al cliente
+  //    Discriminata per payment_link (NON per importo: le donazioni Stripe
+  //    sono anch'esse mode=payment e un importo qualsiasi non basta).
+  if (type === 'checkout.session.completed' && obj.mode === 'payment' && obj.payment_link === BOOK_PAYMENT_LINK) {
+    await sendBookWelcomeEmail(obj, env).catch((e) => console.error('welcome libro failed:', e.message));
+  }
+
   return new Response('OK', { status: 200 });
+}
+
+// Payment Link del libro cartaceo Neutralia €15 (buy.stripe.com/4gM14h0gr05J7F4f1K8IU00)
+const BOOK_PAYMENT_LINK = 'plink_1TZZzB8wqCpL8THJYntW41wN';
+
+// ═══════════════════════════════════════════════════════════════════════
+// WELCOME EMAIL ordine libro — template identico a quello della dashboard
+// spedizioni locale (spedizioni_dashboard/app.py:send_welcome_email).
+// Idempotente via KV welcome:{session.id} (TTL 90 giorni).
+// ═══════════════════════════════════════════════════════════════════════
+async function sendBookWelcomeEmail(session, env) {
+  if (!env.BREVO_API_KEY) { console.error('welcome libro: BREVO_API_KEY mancante'); return; }
+
+  const email = (session.customer_details?.email || session.customer_email || '').trim();
+  if (!email) return;
+
+  // Idempotenza: una sola welcome per checkout session
+  if (env.NEUTRALIA_KV) {
+    const already = await env.NEUTRALIA_KV.get(`welcome:${session.id}`);
+    if (already) return;
+  }
+
+  // Shipping: API recenti la mettono in collected_information.shipping_details,
+  // versioni precedenti in shipping_details top-level. Fallback: billing address.
+  const ship = session.shipping_details || session.collected_information?.shipping_details || null;
+  const name = (ship?.name || session.customer_details?.name || '').trim();
+  const a = ship?.address || session.customer_details?.address || null;
+  const addrParts = [];
+  if (a?.line1) addrParts.push(a.line1);
+  if (a?.line2) addrParts.push(a.line2);
+  const capCity = `${a?.postal_code || ''} ${a?.city || ''}`.trim();
+  if (capCity) addrParts.push(capCity);
+  if (a?.state) addrParts.push(`(${a.state})`);
+  if (a?.country) addrParts.push(a.country);
+  const addrFormatted = addrParts.join(', ');
+
+  const nameHtml = name ? `<strong>${escapeHtml(name)}</strong>` : `<em style='color:#c84b31'>— nome mancante —</em>`;
+  const addrHtml = addrFormatted ? `<strong>${escapeHtml(addrFormatted)}</strong>` : `<em style='color:#c84b31'>— indirizzo mancante —</em>`;
+
+  const html = `<!DOCTYPE html>
+<html><body style="font-family:Georgia,serif;background:#fafaf7;color:#1a1a1a;padding:2rem;line-height:1.65">
+<div style="max-width:560px;margin:0 auto;background:#fff;padding:2rem;border-radius:6px">
+<h2 style="margin-top:0;color:#0a0a0a">Grazie per l'ordine.</h2>
+<p>Grazie per l'ordine del libro <em>Neutralia</em>. Con i tuoi soldi stai sostenendo un progetto di guerriglia culturale per un'Italia neutrale e mediatrice di pace.</p>
+
+<p>Visita <a href="https://neutralia.info" style="color:#0a0a0a"><strong>neutralia.info</strong></a> per rimanere aggiornato sugli sviluppi del progetto.</p>
+
+<hr style="border:none;border-top:1px solid #e0e0d8;margin:1.5rem 0">
+
+<p style="margin-bottom:0.4rem">Il tuo nome è:<br>${nameHtml}</p>
+<p style="margin-top:1rem;margin-bottom:0.4rem">L'indirizzo di spedizione per inviare il libro è:<br>${addrHtml}</p>
+
+<hr style="border:none;border-top:1px solid #e0e0d8;margin:1.5rem 0">
+
+<p>Non siamo in tanti, ti chiediamo di pazientare per l'arrivo della copia. Se per qualche motivo noti un errore nell'indirizzo di spedizione o nel tuo nome, <strong>rispondi a questa mail</strong> con il tuo NOME COGNOME e indirizzo completo per la spedizione della copia del libro.</p>
+
+<p style="font-style:italic;color:#555;margin-top:1.5rem">— Leonardo Rosi · Edizioni Rosi · Neutralia</p>
+</div></body></html>`;
+
+  const r = await fetch('https://api.brevo.com/v3/smtp/email', {
+    method: 'POST',
+    headers: { 'api-key': env.BREVO_API_KEY, 'content-type': 'application/json', 'accept': 'application/json' },
+    body: JSON.stringify({
+      sender: { name: 'Leonardo Rosi', email: 'neutralia.info@gmail.com' },
+      replyTo: { email: 'neutralia.info@gmail.com' },
+      to: [{ email }],
+      subject: "Grazie per l'ordine — libro Neutralia",
+      htmlContent: html,
+    }),
+  });
+  if (!r.ok) {
+    const body = await r.text().catch(() => '');
+    throw new Error(`Brevo ${r.status}: ${body.slice(0, 200)}`);
+  }
+
+  if (env.NEUTRALIA_KV) {
+    await env.NEUTRALIA_KV.put(`welcome:${session.id}`, new Date().toISOString(), { expirationTtl: 90 * 86400 });
+  }
+  console.log(`welcome libro inviata a ${email} (${session.id})`);
+}
+
+function escapeHtml(s) {
+  return String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
 }
 
 async function fetchCustomerEmail(customerId, env) {
