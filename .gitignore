@@ -17,3 +17,4 @@
 Thumbs.db
 
 # Build artifacts (none for static site)
+.wrangler/
