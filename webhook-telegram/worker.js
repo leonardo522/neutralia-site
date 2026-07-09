@@ -231,18 +231,23 @@ async function handleStripeWebhook(request, env) {
     }).catch(() => {});
   }
 
-  // ── Ordine LIBRO (€15, payment link dedicato) → welcome email al cliente
+  // ── Ordine LIBRO (payment link dedicati) → welcome email al cliente
   //    Discriminata per payment_link (NON per importo: le donazioni Stripe
   //    sono anch'esse mode=payment e un importo qualsiasi non basta).
-  if (type === 'checkout.session.completed' && obj.mode === 'payment' && obj.payment_link === BOOK_PAYMENT_LINK) {
+  if (type === 'checkout.session.completed' && obj.mode === 'payment' && BOOK_PAYMENT_LINKS.includes(obj.payment_link)) {
     await sendBookWelcomeEmail(obj, env).catch((e) => console.error('welcome libro failed:', e.message));
   }
 
   return new Response('OK', { status: 200 });
 }
 
-// Payment Link del libro cartaceo Neutralia €15 (buy.stripe.com/4gM14h0gr05J7F4f1K8IU00)
-const BOOK_PAYMENT_LINK = 'plink_1TZZzB8wqCpL8THJYntW41wN';
+// Payment Link del libro cartaceo Neutralia:
+//  - Italia €15 sped. inclusa   (buy.stripe.com/4gM14h0gr05J7F4f1K8IU00)
+//  - Internazionale €15 + €10   (buy.stripe.com/3cIbIV1kvg4H3oOdXG8IU07)
+const BOOK_PAYMENT_LINKS = [
+  'plink_1TZZzB8wqCpL8THJYntW41wN',
+  'plink_1TrEnm8wqCpL8THJV4tCAB8O',
+];
 
 // ═══════════════════════════════════════════════════════════════════════
 // WELCOME EMAIL ordine libro — template identico a quello della dashboard
