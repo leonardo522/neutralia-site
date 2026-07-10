@@ -4682,3 +4682,38 @@ body.paywall-blocked {
   outline: none;
 }
 body.video-modal-open { overflow: hidden; }
+
+/* =========================================================================
+ * LINK SPEDIZIONE INTERNAZIONALE — nero bold, no sottolineatura;
+ * hover: fondo nero + testo bianco (solo sull'area del link)
+ * ========================================================================= */
+.intl-link {
+  color: var(--nero);
+  font-weight: 700;
+  text-decoration: none;
+  padding: 0.08em 0.35em;
+  margin-left: -0.1em;
+  border-radius: 3px;
+  transition: background 150ms ease, color 150ms ease;
+}
+.intl-link:hover,
+.intl-link:focus-visible {
+  background: var(--nero);
+  color: #fff;
+  outline: none;
+}
+
+/* =========================================================================
+ * MODAL SCELTA SPEDIZIONE — due opzioni impilate a tutta larghezza
+ * ========================================================================= */
+.spedizione-options {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  margin-top: 1.6rem;
+}
+.spedizione-options .btn {
+  width: 100%;
+  text-align: center;
+  padding: 0.95rem 1.2rem;
+}
