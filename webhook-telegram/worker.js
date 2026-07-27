@@ -216,8 +216,27 @@ async function handleStripeWebhook(request, env) {
     }
   }
 
+  // ── MAGLIETTA (payment link dedicato) → Telegram con taglia + spedizione
+  if (type === 'checkout.session.completed' && obj.mode === 'payment' && obj.payment_link === SHIRT_PAYMENT_LINK && env.TELEGRAM_BOT_TOKEN && env.TELEGRAM_CHAT_ID) {
+    const amount = (obj.amount_total || 0) / 100;
+    const qty = Math.max(1, Math.round((obj.amount_subtotal || 2000) / 2000));
+    const taglia = ((obj.custom_fields || []).find((f) => f.key === 'taglia') || {}).dropdown?.value || 'n.d.';
+    // Indirizzo di SPEDIZIONE (non fatturazione); campo rinominato nelle API recenti
+    const ship = obj.shipping_details || obj.collected_information?.shipping_details || null;
+    const shipName = ship?.name || obj.customer_details?.name || '';
+    const a = ship?.address || obj.customer_details?.address || null;
+    const addr = a ? [a.line1, a.line2, `${a.postal_code || ''} ${a.city || ''}`.trim(), a.state, a.country].filter(Boolean).join(', ') : 'n.d.';
+    const email = obj.customer_details?.email || '';
+    const msg = `👕 *Maglietta venduta* — taglia *${taglia}*${qty > 1 ? ` × ${qty}` : ''}\n\n💶 ${amount.toFixed(2)} ${(obj.currency || 'eur').toUpperCase()}\n\n👤 ${shipName}\n📦 ${addr}\n📧 ${email}`;
+    fetch(`https://api.telegram.org/bot${env.TELEGRAM_BOT_TOKEN}/sendMessage`, {
+      method: 'POST',
+      headers: { 'content-type': 'application/json' },
+      body: JSON.stringify({ chat_id: env.TELEGRAM_CHAT_ID, text: msg, parse_mode: 'Markdown' }),
+    }).catch(() => {});
+  }
+
   // ── Payment ONE-TIME (libro/donazione) → Telegram opz.
-  if (type === 'checkout.session.completed' && obj.mode === 'payment' && env.TELEGRAM_BOT_TOKEN && env.TELEGRAM_CHAT_ID) {
+  if (type === 'checkout.session.completed' && obj.mode === 'payment' && obj.payment_link !== SHIRT_PAYMENT_LINK && env.TELEGRAM_BOT_TOKEN && env.TELEGRAM_CHAT_ID) {
     const amount = (obj.amount_total || 0) / 100;
     const email = obj.customer_details?.email || '';
     const name = obj.customer_details?.name || '';
@@ -248,6 +267,10 @@ const BOOK_PAYMENT_LINKS = [
   'plink_1TZZzB8wqCpL8THJYntW41wN',
   'plink_1TrEnm8wqCpL8THJV4tCAB8O',
 ];
+
+// Payment Link della maglietta Neutralia (€20 + €6,50 sped. tracciata,
+// taglia via custom field "taglia"): buy.stripe.com/6oUfZb0grcSv9NcbPy8IU09
+const SHIRT_PAYMENT_LINK = 'plink_1Txvav8wqCpL8THJ6THi9u7M';
 
 // ═══════════════════════════════════════════════════════════════════════
 // WELCOME EMAIL ordine libro — template identico a quello della dashboard

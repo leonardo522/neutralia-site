@@ -21,37 +21,28 @@
       <li><a href="#libro">Livre</a></li>
       <li><a href="#manifesto">Manifeste</a></li>
       <li><a href="#approfondimenti">Études</a></li>
+      <li><a href="osservatorio.html">Osservatorio</a></li>
       <li><a href="#comunita">Communauté</a></li>
       <li><a href="#negozio">Boutique</a></li>
       <li class="nav-links-lang">
-        <a href="../">IT</a>
-        <a href="../en/">EN</a>
-        <a href="../fr/" class="lang-current" aria-current="page">FR</a>
-        <a href="../es/">ES</a>
-        <a href="../de/">DE</a>
+        <a href="en/">EN</a>
+        <a href="fr/">FR</a>
+        <a href="es/">ES</a>
+        <a href="de/">DE</a>
       </li>
     </ul>
-    <div class="lang-switcher" aria-label="Change language">
-      <a href="../" title="Italiano" aria-label="Italiano">IT</a>
-      <a href="../en/" title="English" aria-label="English">EN</a>
-      <a href="../fr/" title="Français" aria-label="Français" aria-current="page" class="lang-current">FR</a>
-      <a href="../es/" title="Español" aria-label="Español">ES</a>
-      <a href="../de/" title="Deutsch" aria-label="Deutsch">DE</a>
+    <div class="lang-switcher" aria-label="Cambia lingua">
+      <a href="en/" title="English" aria-label="English">EN</a>
+      <a href="fr/" title="Français" aria-label="Français">FR</a>
+      <a href="es/" title="Español" aria-label="Español">ES</a>
+      <a href="de/" title="Deutsch" aria-label="Deutsch">DE</a>
     </div>
     <a href="dona.html" class="nav-cta">Faire un don</a>
     <button class="nav-toggle" aria-label="Apri menu">☰</button>
   </nav>
 </header>
 
-<!-- MARQUEE giallo sticky in cima -->
-<div class="marquee" aria-hidden="true">
-  <div class="marquee-track">
-    <span>NEUTRALIA · UNE ITALIE MÉDIATRICE DE PAIX · NEUTRALIA · UNE ITALIE QUI PROTÈGE SON PATRIMOINE · </span>
-    <span>NEUTRALIA · UNE ITALIE MÉDIATRICE DE PAIX · NEUTRALIA · UNE ITALIE QUI PROTÈGE SON PATRIMOINE · </span>
-  </div>
-</div>
-
-<!-- SEZIONE LIBRO — la nuova "hero" -->
+<!-- SEZIONE LIBRO — la prima cosa che si vede -->
 <section id="libro" class="section section-libro section-hero">
   <div class="container">
     <div class="libro-grid">
@@ -70,12 +61,92 @@
           <button type="button" class="btn btn-primary" data-open-modal="pdf-modal">
             Télécharger le PDF — gratuit
           </button>
-          <a href="https://buy.stripe.com/4gM14h0gr05J7F4f1K8IU00" class="btn btn-secondary" target="_blank" rel="noopener">
+          <button type="button" class="btn btn-secondary" data-open-modal="spedizione-modal">
             Acheter en papier — 15 €
-          </a>
+          </button>
         </div>
-        <p class="libro-note">Le PDF est et restera gratuit. Soutenez le projet en achetant la version papier.</p>
+        <p class="libro-note">Il PDF è e resterà gratuito. Sostieni il progetto comprando la versione cartacea.<br>
+        Spedizione in Italia inclusa nel prezzo. Dall'estero? <a class="intl-link" href="https://buy.stripe.com/3cIbIV1kvg4H3oOdXG8IU07" target="_blank" rel="noopener">Spedizione internazionale +€10 →</a></p>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- INTERVENTI — dal primo evento pubblico Neutralia (YouTube MBT-hdg1bLU) -->
+<!-- NOTA: i data-start sono timestamp INDICATIVI. Quando le 5 clip singole sono
+     esportate come mp4 (in neutralia_clips/), sostituire l'apertura del modal
+     con <video src="..."> invece dell'iframe YouTube. -->
+<section id="interventi" class="section section-interventi" aria-labelledby="interventi-title">
+  <div class="container">
+    <p class="interventi-eyebrow">Il primo evento pubblico</p>
+    <h2 id="interventi-title" class="section-title">Gli interventi</h2>
+    <p class="interventi-lead">Cinque voci, cinque prospettive sulla neutralità italiana.</p>
+
+    <div class="interventi-track" role="list">
+      <article class="intervento-card" role="listitem" data-video="ZBjpwzWZuwQ" style="--i:0">
+        <div class="intervento-cover">
+          <span class="intervento-num">01</span>
+          <img class="intervento-photo" src="assets/img/relatori/contri.jpg" alt="Alberto Contri" loading="lazy" decoding="async" style="--focus-y: 12%">
+          <span class="intervento-play" aria-hidden="true">▶</span>
+        </div>
+        <div class="intervento-body">
+          <h3 class="intervento-name">Alberto Contri</h3>
+          <p class="intervento-title">Come Blackrock decide cosa pensi</p>
+        </div>
+        <button class="intervento-hit" type="button" aria-label="Guarda l'intervento di Alberto Contri"></button>
+      </article>
+
+      <article class="intervento-card" role="listitem" data-video="wEoawQj_3u0" style="--i:1">
+        <div class="intervento-cover">
+          <span class="intervento-num">02</span>
+          <img class="intervento-photo" src="assets/img/relatori/de-ninno.jpg" alt="Antonella De Ninno" loading="lazy" decoding="async" style="--focus-y: 5%">
+          <span class="intervento-play" aria-hidden="true">▶</span>
+        </div>
+        <div class="intervento-body">
+          <h3 class="intervento-name">Antonella De Ninno</h3>
+          <p class="intervento-title">L'Italia può essere neutrale</p>
+        </div>
+        <button class="intervento-hit" type="button" aria-label="Guarda l'intervento di Antonella De Ninno"></button>
+      </article>
+
+      <article class="intervento-card" role="listitem" data-video="2zO9mUbblpo" style="--i:2">
+        <div class="intervento-cover">
+          <span class="intervento-num">03</span>
+          <img class="intervento-photo" src="assets/img/relatori/benigni.jpg" alt="Glauco Benigni" loading="lazy" decoding="async" style="--focus-y: 26%; --zoom: 1.15">
+          <span class="intervento-play" aria-hidden="true">▶</span>
+        </div>
+        <div class="intervento-body">
+          <h3 class="intervento-name">Glauco Benigni</h3>
+          <p class="intervento-title">La via d'uscita dalla guerra</p>
+        </div>
+        <button class="intervento-hit" type="button" aria-label="Guarda l'intervento di Claudio Benigni"></button>
+      </article>
+
+      <article class="intervento-card" role="listitem" data-video="4KxcK-xQxio" style="--i:3">
+        <div class="intervento-cover">
+          <span class="intervento-num">04</span>
+          <img class="intervento-photo" src="assets/img/relatori/grossi.jpg" alt="Guido Grossi" loading="lazy" decoding="async" style="--focus-y: 22%; --zoom: 1.15">
+          <span class="intervento-play" aria-hidden="true">▶</span>
+        </div>
+        <div class="intervento-body">
+          <h3 class="intervento-name">Guido Grossi</h3>
+          <p class="intervento-title">Non abbiamo più diritti, e per fortuna</p>
+        </div>
+        <button class="intervento-hit" type="button" aria-label="Guarda l'intervento di Guido Grossi"></button>
+      </article>
+
+      <article class="intervento-card" role="listitem" data-video="nuulvVQrFAs" style="--i:4">
+        <div class="intervento-cover">
+          <span class="intervento-num">05</span>
+          <img class="intervento-photo" src="assets/img/relatori/neri.jpg" alt="Francesco Neri" loading="lazy" decoding="async" style="--focus-y: 20%">
+          <span class="intervento-play" aria-hidden="true">▶</span>
+        </div>
+        <div class="intervento-body">
+          <h3 class="intervento-name">Francesco Neri</h3>
+          <p class="intervento-title">Non convincere, commuovi</p>
+        </div>
+        <button class="intervento-hit" type="button" aria-label="Guarda l'intervento di Francesco Neri"></button>
+      </article>
     </div>
   </div>
 </section>
@@ -85,8 +156,7 @@
   <div class="container">
     <h2 class="section-title">Le Manifeste</h2>
     <p class="manifesto-teaser">
-      Une Italie neutre, médiatrice de paix, gardienne de son patrimoine.<br>
-      Huit pages pour dire <em>pourquoi</em> et <em>comment</em>.
+      Un'Italia neutrale, mediatrice di pace, custode del proprio patrimonio.
     </p>
 
     <details class="manifesto-details">
@@ -200,6 +270,25 @@
   </div>
 </section>
 
+<!-- OSSERVATORIO: teaser verso la pagina mappa -->
+<section class="section section-osservatorio-teaser">
+  <div class="container">
+    <a href="osservatorio.html" class="osservatorio-teaser-card">
+      <div>
+        <p class="teaser-eyebrow">Osservatorio · Mappa interattiva</p>
+        <h3>L'Italia militarizzata, in un colpo d'occhio</h3>
+        <p>Basi NATO e USA, siti di produzione armi, porti di export, zone di mare interdette alla pesca, conflitti collegati. Tutti i dati pubblici, su un'unica mappa. Clicca un pallino, scopri da dove partono i caccia.</p>
+        <div class="osservatorio-teaser-dots" aria-hidden="true">
+          <span class="d-rosso"></span>
+          <span class="d-arancione"></span>
+          <span class="d-giallo"></span>
+        </div>
+      </div>
+      <span class="osservatorio-teaser-arrow" aria-hidden="true">→</span>
+    </a>
+  </div>
+</section>
+
 <!-- COMUNITÀ: Instagram + Telegram + Dona + Contatti -->
 <section id="comunita" class="section section-comunita">
   <div class="container">
@@ -272,9 +361,52 @@
   <div class="container">
     <h2 class="section-title">Boutique</h2>
     <p class="section-intro">Livres, t-shirts, matériel. Portez Neutralia, diffusez le message.</p>
-    <div class="merch-grid">
-      <div class="card-coming-soon">
-        <p>Bientôt disponible</p>
+    <div class="merch-card">
+      <div class="merch-gallery">
+        <img id="merch-main-img" src="../assets/img/merch/maglietta-01.jpg" alt="Maglietta Neutralia" loading="lazy" width="1067" height="1600">
+        <div class="merch-thumbs">
+          <button type="button" class="merch-thumb is-active" data-full="../assets/img/merch/maglietta-01.jpg"><img src="../assets/img/merch/maglietta-01-thumb.jpg" alt="Fronte con logo sul petto" loading="lazy"></button>
+          <button type="button" class="merch-thumb" data-full="../assets/img/merch/maglietta-02.jpg"><img src="../assets/img/merch/maglietta-02-thumb.jpg" alt="Retro con putto inciso" loading="lazy"></button>
+          <button type="button" class="merch-thumb" data-full="../assets/img/merch/maglietta-03.jpg"><img src="../assets/img/merch/maglietta-03-thumb.jpg" alt="Fronte e retro insieme" loading="lazy"></button>
+          <button type="button" class="merch-thumb" data-full="../assets/img/merch/maglietta-04.jpg"><img src="../assets/img/merch/maglietta-04-thumb.jpg" alt="Dettaglio logo" loading="lazy"></button>
+          <button type="button" class="merch-thumb" data-full="../assets/img/merch/maglietta-05.jpg"><img src="../assets/img/merch/maglietta-05-thumb.jpg" alt="Stampa retro intera" loading="lazy"></button>
+          <button type="button" class="merch-thumb" data-full="../assets/img/merch/maglietta-06.jpg"><img src="../assets/img/merch/maglietta-06-thumb.jpg" alt="Alla fontana di Piazza San Pietro" loading="lazy"></button>
+          <button type="button" class="merch-thumb" data-full="../assets/img/merch/maglietta-07.jpg"><img src="../assets/img/merch/maglietta-07-thumb.jpg" alt="Sotto il colonnato" loading="lazy"></button>
+          <button type="button" class="merch-thumb" data-full="../assets/img/merch/maglietta-08.jpg"><img src="../assets/img/merch/maglietta-08-thumb.jpg" alt="Alla fontana" loading="lazy"></button>
+        </div>
+      </div>
+      <div class="merch-info">
+        <h3 class="merch-title">Maglietta Neutralia</h3>
+        <p class="merch-desc">T-shirt blanc en coton. Logo NEUTRALIA sur la poitrine, putto gravé à la balance au dos. Photographié place Saint-Pierre, Rome.</p>
+        <p class="merch-price">€20 <span class="merch-ship">+ 6,50 &euro; expédition suivie</span></p>
+        <p class="merch-sizes">Tailles S &middot; M &middot; L &middot; XL &mdash; à choisir lors de l&rsquo;achat.</p>
+        <a href="https://buy.stripe.com/6oUfZb0grcSv9NcbPy8IU09" target="_blank" rel="noopener" class="btn btn-merch">Acheter</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- AI4PEACE — Sezione accademica/dialogo (no link in nav, è secondaria) -->
+<section class="ai4peace-band">
+  <div class="container">
+    <div class="ai4peace-grid">
+      <div class="ai4peace-text">
+        <p class="ai4peace-eyebrow">Centro Studi · Dialogo accademico</p>
+        <h2>Neutralia partecipa ad <em>AI4Peace</em></h2>
+        <p>Un paese che voglia essere neutrale non può limitarsi a non firmare alleanze militari. Deve costruire un'economia non dipendente da un singolo blocco, un sistema informativo che non sia branca operativa della propaganda di un campo, e — oggi — strumenti cognitivi che non riproducano i bias geopolitici del paese che li ha prodotti.</p>
+        <p>Negli ultimi anni l'intelligenza artificiale generativa è diventata la prima fonte di informazione consultata da centinaia di milioni di persone, e il sostegno cognitivo dietro a decisioni educative, sanitarie, giuridiche, giornalistiche e militari. È possibile che uno strumento così pervasivo sia esso stesso neutrale? E se non lo è, cosa significa per un paese che voglia esserlo dipendere da strumenti cognitivi prodotti da paesi che neutrali non sono e non intendono essere?</p>
+        <p>Neutralia ha aderito a <em>AI4Peace</em>, un'iniziativa di dialogo accademico sull'intelligenza artificiale, la pace e la mediazione. Il documento di lavoro — maggio 2026 — analizza la militarizzazione dei principali modelli generativi, i loro bias geopolitici, le alternative regionali possibili e le architetture cooperative immaginabili. È un contributo aperto al dibattito internazionale, non un punto di arrivo.</p>
+        <p>Neutralia è aperta al dialogo accademico: scrivici se hai contributi, critiche, controproposte, occasioni di confronto in università italiane o straniere.</p>
+        <a href="assets/docs/ai4peace-neutralia-v5.pdf" class="btn btn-secondary" download>Scarica il documento (PDF, 175 KB)</a>
+      </div>
+      <div class="ai4peace-icon" aria-hidden="true">
+        <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="50" cy="50" r="40" fill="none" stroke="#efe847" stroke-width="2"/>
+          <circle cx="50" cy="50" r="30" fill="none" stroke="#efe847" stroke-width="1.5" opacity="0.7"/>
+          <circle cx="50" cy="50" r="20" fill="none" stroke="#efe847" stroke-width="1" opacity="0.5"/>
+          <text x="50" y="55" text-anchor="middle" fill="#efe847" font-family="Poppins, sans-serif" font-weight="900" font-size="14">AI</text>
+          <text x="50" y="68" text-anchor="middle" fill="#efe847" font-family="EB Garamond, serif" font-style="italic" font-size="9">for peace</text>
+        </svg>
       </div>
     </div>
   </div>
@@ -318,6 +450,7 @@
           <li><a href="#libro">Livre</a></li>
           <li><a href="#manifesto">Manifeste</a></li>
           <li><a href="#approfondimenti">Études</a></li>
+          <li><a href="osservatorio.html">Osservatorio</a></li>
           <li><a href="#comunita">Communauté</a></li>
           <li><a href="#negozio">Boutique</a></li>
         </ul>
@@ -328,6 +461,12 @@
           <li><a href="https://www.instagram.com/_neutralia_/" target="_blank" rel="noopener">Instagram</a></li>
           <li><a href="https://t.me/NEUTRALIATELEGRAM" target="_blank" rel="noopener">Telegram</a></li>
           <li><a href="dona.html">Faire un don</a></li>
+        </ul>
+        <h4 style="margin-top:1.2rem">Legale</h4>
+        <ul>
+          <li><a href="privacy.html">Privacy Policy</a></li>
+          <li><a href="cookie.html">Cookie Policy</a></li>
+          <li><a href="#" data-cookie-manage>Gestisci cookie</a></li>
         </ul>
       </div>
     </div>
@@ -380,6 +519,35 @@
       <button type="button" class="btn btn-secondary" data-close-modal>Fermer</button>
     </div>
 
+  </div>
+</div>
+
+<!-- MODAL: scelta spedizione libro cartaceo (Italia €15 / estero €25) -->
+<div class="modal-overlay" id="spedizione-modal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="spedizione-modal-title">
+  <div class="modal-box">
+    <button type="button" class="modal-close" aria-label="Chiudi" data-close-modal>×</button>
+
+    <p class="modal-eyebrow">Il libro Neutralia — cartaceo</p>
+    <h3 id="spedizione-modal-title">Dove spediamo la tua copia?</h3>
+    <p class="modal-text"><strong>Attenzione:</strong> il prezzo di €15 include la spedizione <strong>solo in Italia</strong>. Il checkout da €15 accetta esclusivamente indirizzi italiani.</p>
+    <p class="modal-text">Se ti trovi all'estero puoi comunque usare il prezzo da €15 facendo spedire la copia a un <strong>famigliare o amico in Italia</strong>. Altrimenti scegli la spedizione internazionale (+€10).</p>
+
+    <div class="spedizione-options">
+      <a href="https://buy.stripe.com/4gM14h0gr05J7F4f1K8IU00" class="btn btn-primary" target="_blank" rel="noopener" data-close-modal>
+        🇮🇹 Spedizione in Italia — €15
+      </a>
+      <a href="https://buy.stripe.com/3cIbIV1kvg4H3oOdXG8IU07" class="btn btn-secondary" target="_blank" rel="noopener" data-close-modal>
+        🌍 Spedizione internazionale — €25
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- MODAL: video intervento a schermo intero -->
+<div class="video-modal" id="video-modal" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Video intervento">
+  <button type="button" class="video-modal-close" aria-label="Chiudi video">×</button>
+  <div class="video-modal-frame">
+    <div class="video-modal-slot"></div>
   </div>
 </div>
 

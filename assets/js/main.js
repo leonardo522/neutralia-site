@@ -466,3 +466,18 @@ if (pdfForm) {
     if (e.key === 'Escape' && modal.classList.contains('is-open')) closeModal();
   });
 })();
+
+// ── Galleria maglietta (Negozio) ──────────────────────────────────
+(() => {
+  const main = document.getElementById('merch-main-img');
+  if (!main) return;
+  document.querySelectorAll('.merch-thumb').forEach((btn) => {
+    btn.addEventListener('click', () => {
+      main.src = btn.dataset.full;
+      const alt = btn.querySelector('img')?.alt;
+      if (alt) main.alt = 'Maglietta Neutralia — ' + alt;
+      document.querySelectorAll('.merch-thumb.is-active').forEach((b) => b.classList.remove('is-active'));
+      btn.classList.add('is-active');
+    });
+  });
+})();
