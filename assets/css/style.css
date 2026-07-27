@@ -4817,3 +4817,99 @@ body.video-modal-open { overflow: hidden; }
   .merch-thumbs { grid-template-columns: repeat(4, 1fr); }
   #merch-main-img { height: min(52vh, 460px); }
 }
+
+/* ============================================
+   PAGINA NEGOZIO (negozio.html)
+   ============================================ */
+.negozio-intro {
+  padding: 8rem 0 2.5rem;
+  background: var(--giallo);
+  color: var(--nero);
+  text-align: center;
+}
+
+.negozio-eyebrow {
+  font-family: var(--sans);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  opacity: 0.7;
+}
+
+.negozio-intro h1 {
+  font-family: var(--sans);
+  font-weight: 900;
+  font-size: clamp(2.6rem, 6vw, 4.5rem);
+  text-transform: uppercase;
+  line-height: 1.05;
+}
+
+.pdp {
+  background: var(--bianco);
+  padding: 3.5rem 0 5.5rem;
+}
+
+.pdp-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 7fr) minmax(0, 5fr);
+  gap: 3.5rem;
+  align-items: start;
+}
+
+.page-negozio #merch-main-img { height: min(72vh, 780px); }
+
+.pdp-info {
+  position: sticky;
+  top: 96px;
+  padding-top: 0.5rem;
+}
+
+.pdp-title {
+  font-family: var(--sans);
+  font-weight: 900;
+  font-size: clamp(1.6rem, 2.6vw, 2.3rem);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  line-height: 1.1;
+}
+
+.pdp-credit {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 1.08rem;
+  margin-top: 0.55rem;
+  opacity: 0.75;
+}
+
+.pdp-desc {
+  font-family: var(--serif);
+  font-size: 1.18rem;
+  line-height: 1.6;
+  margin: 1.3rem 0 1.7rem;
+}
+
+.pdp-info .merch-price { font-size: 2.5rem; }
+
+.pdp-buy {
+  display: block;
+  width: 100%;
+  padding: 1.15rem 2rem;
+  font-size: 1rem;
+  margin-top: 0.5rem;
+}
+
+.pdp-note {
+  font-family: var(--sans);
+  font-size: 0.8rem;
+  opacity: 0.6;
+  margin-top: 0.85rem;
+  letter-spacing: 0.03em;
+  text-align: center;
+}
+
+@media (max-width: 900px) {
+  .pdp-grid { grid-template-columns: 1fr; gap: 2rem; }
+  .pdp-info { position: static; }
+  .page-negozio #merch-main-img { height: min(56vh, 520px); }
+}

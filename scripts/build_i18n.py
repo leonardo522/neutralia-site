@@ -492,7 +492,9 @@ def build_index_replacements(lang_code: str, t: dict) -> dict:
         '<li><a href="#manifesto">Manifesto</a></li>': f'<li><a href="#manifesto">{t["nav_manifesto"]}</a></li>',
         '<li><a href="#approfondimenti">Approfondimenti</a></li>': f'<li><a href="#approfondimenti">{t["nav_approfondimenti"]}</a></li>',
         '<li><a href="#comunita">Comunità</a></li>': f'<li><a href="#comunita">{t["nav_comunita"]}</a></li>',
-        '<li><a href="#negozio">Negozio</a></li>': f'<li><a href="#negozio">{t["nav_negozio"]}</a></li>',
+        '<li><a href="negozio.html">Negozio</a></li>': f'<li><a href="../negozio.html">{t["nav_negozio"]}</a></li>',
+        '<li><a href="osservatorio.html">Osservatorio</a></li>': '<li><a href="../osservatorio.html">Osservatorio</a></li>',
+        '<a href="osservatorio.html" class="osservatorio-teaser-card">': '<a href="../osservatorio.html" class="osservatorio-teaser-card">',
         # Lang switcher: cambia link IT ↔ altre, e il bottone della lingua corrente viene rimosso/segnato
         '<a href="#" data-lang="en" title="English" aria-label="English">EN</a>': '<a href="../en/" title="English" aria-label="English">EN</a>',
         '<a href="#" data-lang="fr" title="Français" aria-label="Français">FR</a>': '<a href="../fr/" title="Français" aria-label="Français">FR</a>',
@@ -587,7 +589,7 @@ def build_index_replacements(lang_code: str, t: dict) -> dict:
         '<li><a href="#manifesto">Manifesto</a></li>': f'<li><a href="#manifesto">{t["nav_manifesto"]}</a></li>',
         '<li><a href="#approfondimenti">Approfondimenti</a></li>': f'<li><a href="#approfondimenti">{t["nav_approfondimenti"]}</a></li>',
         '<li><a href="#comunita">Comunità</a></li>': f'<li><a href="#comunita">{t["nav_comunita"]}</a></li>',
-        '<li><a href="#negozio">Negozio</a></li>': f'<li><a href="#negozio">{t["nav_negozio"]}</a></li>',
+        '<li><a href="negozio.html">Negozio</a></li>': f'<li><a href="../negozio.html">{t["nav_negozio"]}</a></li>',
         '<li><a href="dona.html">Dona</a></li>': f'<li><a href="dona.html">{t["footer_dona"]}</a></li>',
         "<p>© <span id=\"year\"></span> Neutralia · Tutti i diritti riservati</p>": f'<p>{t["footer_copy"]}</p>',
         # Approfondimenti card subtitles - traduciamo solo i titoli card, sottotitoli rimangono in IT per ora
@@ -615,7 +617,7 @@ def build_dona_replacements(lang_code: str, t: dict) -> dict:
         '<li><a href="index.html#manifesto">Manifesto</a></li>': f'<li><a href="index.html#manifesto">{t["nav_manifesto"]}</a></li>',
         '<li><a href="index.html#approfondimenti">Approfondimenti</a></li>': f'<li><a href="index.html#approfondimenti">{t["nav_approfondimenti"]}</a></li>',
         '<li><a href="index.html#comunita">Comunità</a></li>': f'<li><a href="index.html#comunita">{t["nav_comunita"]}</a></li>',
-        '<li><a href="index.html#negozio">Negozio</a></li>': f'<li><a href="index.html#negozio">{t["nav_negozio"]}</a></li>',
+        '<li><a href="negozio.html">Negozio</a></li>': f'<li><a href="../negozio.html">{t["nav_negozio"]}</a></li>',
         '<a href="dona.html" class="nav-cta">Dona</a>': f'<a href="dona.html" class="nav-cta">{t["nav_dona"]}</a>',
         # Marquee
         "SOSTIENI NEUTRALIA · GRAZIE · SOSTIENI NEUTRALIA · GRAZIE · ": f"{t['nav_dona'].upper()} NEUTRALIA · {t['dona_thanks_h2'].upper().replace('.','')} · {t['nav_dona'].upper()} NEUTRALIA · {t['dona_thanks_h2'].upper().replace('.','')} · ",
