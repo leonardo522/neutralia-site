@@ -4733,11 +4733,10 @@ body.video-modal-open { overflow: hidden; }
 
 #merch-main-img {
   width: 100%;
-  aspect-ratio: 4 / 5;
-  object-fit: cover;
-  object-position: top;
+  height: min(62vh, 600px);
+  object-fit: contain;   /* foto intera, mai tagliata */
   display: block;
-  background: #e8e8e4;
+  background: #0f0f0e;   /* letterbox scuro, coerente con gli scatti notturni */
 }
 
 .merch-thumbs {
@@ -4815,4 +4814,5 @@ body.video-modal-open { overflow: hidden; }
 @media (max-width: 760px) {
   .merch-card { grid-template-columns: 1fr; padding: 1.25rem; gap: 1.5rem; }
   .merch-thumbs { grid-template-columns: repeat(4, 1fr); }
+  #merch-main-img { height: min(52vh, 460px); }
 }
