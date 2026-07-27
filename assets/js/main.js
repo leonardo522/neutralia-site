@@ -468,16 +468,43 @@ if (pdfForm) {
 })();
 
 // ── Galleria maglietta (Negozio) ──────────────────────────────────
+// Cambio foto con dissolvenza: mai un pannello a metà carica né scatti bruschi.
 (() => {
   const main = document.getElementById('merch-main-img');
   if (!main) return;
-  document.querySelectorAll('.merch-thumb').forEach((btn) => {
+  const thumbs = Array.from(document.querySelectorAll('.merch-thumb'));
+
+  // Prima apparizione in fade quando la foto iniziale è pronta
+  main.style.opacity = '0';
+  const reveal = () => { main.style.opacity = '1'; };
+  if (main.complete && main.naturalWidth > 0) requestAnimationFrame(reveal);
+  else main.addEventListener('load', reveal, { once: true });
+
+  // Precarica tutte le foto della galleria: i cambi diventano istantanei
+  window.addEventListener('load', () => {
+    thumbs.forEach((b) => { const im = new Image(); im.src = b.dataset.full; });
+  });
+
+  let switching = false;
+  thumbs.forEach((btn) => {
     btn.addEventListener('click', () => {
-      main.src = btn.dataset.full;
-      const alt = btn.querySelector('img')?.alt;
-      if (alt) main.alt = 'Maglietta Neutralia — ' + alt;
-      document.querySelectorAll('.merch-thumb.is-active').forEach((b) => b.classList.remove('is-active'));
+      if (switching || main.src.endsWith(btn.dataset.full)) return;
+      switching = true;
+      thumbs.forEach((b) => b.classList.remove('is-active'));
       btn.classList.add('is-active');
+      const alt = btn.querySelector('img')?.alt;
+      const next = new Image();
+      main.style.opacity = '0';
+      next.onload = () => {
+        // aspetta la fine della dissolvenza in uscita prima di sostituire
+        setTimeout(() => {
+          main.src = next.src;
+          if (alt) main.alt = 'Maglietta Neutralia — ' + alt;
+          setTimeout(() => { main.style.opacity = '1'; switching = false; }, 30);
+        }, 300);
+      };
+      next.onerror = () => { main.style.opacity = '1'; switching = false; };
+      next.src = btn.dataset.full;
     });
   });
 })();
