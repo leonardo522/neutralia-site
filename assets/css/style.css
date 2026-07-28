@@ -4989,3 +4989,9 @@ body.video-modal-open { overflow: hidden; }
   .lb-prev { left: 3vw; }
   .lb-next { right: 3vw; }
 }
+
+/* Avvertenza civico nel modal spedizione */
+.modal-warning {
+  border-left: 3px solid var(--giallo);
+  padding-left: 0.9rem;
+}

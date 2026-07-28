@@ -257,7 +257,58 @@ async function handleStripeWebhook(request, env) {
     await sendBookWelcomeEmail(obj, env).catch((e) => console.error('welcome libro failed:', e.message));
   }
 
+  // ── Rete di sicurezza: indirizzo senza numero civico → richiesta automatica
+  if (type === 'checkout.session.completed' && obj.mode === 'payment' &&
+      (BOOK_PAYMENT_LINKS.includes(obj.payment_link) || obj.payment_link === SHIRT_PAYMENT_LINK)) {
+    await requestCivicoIfMissing(obj, env).catch((e) => console.error('civico-check failed:', e.message));
+  }
+
   return new Response('OK', { status: 200 });
+}
+
+// ═══════════════════════════════════════════════════════════════════════
+// CIVICO MANCANTE — se la via non contiene alcun numero, chiedi il civico
+// via email (idempotente per sessione via KV civico:{id}, TTL 90 giorni).
+// Stripe obbliga l'indirizzo ma non può validare la presenza del civico.
+// ═══════════════════════════════════════════════════════════════════════
+async function requestCivicoIfMissing(session, env) {
+  if (!env.BREVO_API_KEY) return;
+  const ship = session.shipping_details || session.collected_information?.shipping_details || null;
+  const addr = (ship && ship.address) || session.customer_details?.address || null;
+  const email = (session.customer_details?.email || '').trim();
+  if (!email || !addr) return;
+  const street = `${addr.line1 || ''} ${addr.line2 || ''}`;
+  if (/\d/.test(street)) return; // c'è un numero: tutto ok
+
+  if (env.NEUTRALIA_KV) {
+    const k = `civico:${session.id}`;
+    if (await env.NEUTRALIA_KV.get(k)) return;
+    await env.NEUTRALIA_KV.put(k, '1', { expirationTtl: 60 * 60 * 24 * 90 });
+  }
+
+  const dove = [addr.line1, `${addr.postal_code || ''} ${addr.city || ''}`.trim()].filter(Boolean).join(', ');
+  const html = `<!DOCTYPE html>
+<html><body style="font-family:Georgia,serif;background:#fafaf7;color:#1a1a1a;padding:2rem;line-height:1.65">
+<div style="max-width:560px;margin:0 auto;background:#fff;padding:2rem;border-radius:6px">
+<h2 style="margin-top:0">Il suo ordine Neutralia &egrave; quasi pronto</h2>
+<p>Buongiorno,</p>
+<p>siamo del team di Neutralia: l'indirizzo che ci ha lasciato (<strong>${dove}</strong>) sembra privo del <strong>numero civico</strong>, e senza non possiamo consegnare.</p>
+<p>Ce lo pu&ograve; indicare rispondendo a questa email? La ringraziamo.</p>
+<p style="font-style:italic;color:#555">&mdash; Il team di Neutralia</p>
+</div></body></html>`;
+  const r = await fetch('https://api.brevo.com/v3/smtp/email', {
+    method: 'POST',
+    headers: { 'api-key': env.BREVO_API_KEY, 'content-type': 'application/json' },
+    body: JSON.stringify({
+      sender: { name: 'Neutralia', email: 'neutralia.info@gmail.com' },
+      replyTo: { email: 'neutralia.info@gmail.com' },
+      to: [{ email }],
+      subject: 'Il suo ordine Neutralia — ci manca il numero civico',
+      htmlContent: html,
+    }),
+  });
+  if (!r.ok) throw new Error(`Brevo ${r.status}`);
+  console.log(`[civico-check] richiesta civico inviata a ${email} (${dove})`);
 }
 
 // Payment Link del libro cartaceo Neutralia:
