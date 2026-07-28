@@ -468,11 +468,14 @@ if (pdfForm) {
 })();
 
 // ── Galleria maglietta (Negozio) ──────────────────────────────────
-// Cambio foto con dissolvenza: mai un pannello a metà carica né scatti bruschi.
+// Fade al cambio foto, lente d'ingrandimento al passaggio del mouse,
+// lightbox a tutto schermo con frecce al click sulla foto.
 (() => {
   const main = document.getElementById('merch-main-img');
   if (!main) return;
   const thumbs = Array.from(document.querySelectorAll('.merch-thumb'));
+  const items = thumbs.map((b) => ({ src: b.dataset.full, alt: b.querySelector('img')?.alt || '' }));
+  let current = 0;
 
   // Prima apparizione in fade quando la foto iniziale è pronta
   main.style.opacity = '0';
@@ -482,29 +485,122 @@ if (pdfForm) {
 
   // Precarica tutte le foto della galleria: i cambi diventano istantanei
   window.addEventListener('load', () => {
-    thumbs.forEach((b) => { const im = new Image(); im.src = b.dataset.full; });
+    items.forEach((it) => { const im = new Image(); im.src = it.src; });
   });
 
   let switching = false;
-  thumbs.forEach((btn) => {
-    btn.addEventListener('click', () => {
-      if (switching || main.src.endsWith(btn.dataset.full)) return;
-      switching = true;
-      thumbs.forEach((b) => b.classList.remove('is-active'));
-      btn.classList.add('is-active');
-      const alt = btn.querySelector('img')?.alt;
-      const next = new Image();
-      main.style.opacity = '0';
-      next.onload = () => {
-        // aspetta la fine della dissolvenza in uscita prima di sostituire
-        setTimeout(() => {
-          main.src = next.src;
-          if (alt) main.alt = 'Maglietta Neutralia — ' + alt;
-          setTimeout(() => { main.style.opacity = '1'; switching = false; }, 30);
-        }, 300);
-      };
-      next.onerror = () => { main.style.opacity = '1'; switching = false; };
-      next.src = btn.dataset.full;
+  const showIndex = (i) => {
+    if (switching || i === current) return;
+    switching = true;
+    current = i;
+    thumbs.forEach((b) => b.classList.remove('is-active'));
+    thumbs[i].classList.add('is-active');
+    const next = new Image();
+    main.style.opacity = '0';
+    next.onload = () => {
+      setTimeout(() => {
+        main.src = next.src;
+        if (items[i].alt) main.alt = 'Maglietta Neutralia — ' + items[i].alt;
+        setTimeout(() => { main.style.opacity = '1'; switching = false; }, 30);
+      }, 300);
+    };
+    next.onerror = () => { main.style.opacity = '1'; switching = false; };
+    next.src = items[i].src;
+  };
+  thumbs.forEach((btn, i) => btn.addEventListener('click', () => showIndex(i)));
+
+  // ── Lente d'ingrandimento quadrata (solo mouse/desktop) ──
+  const stage = document.getElementById('pdp-stage');
+  if (stage && window.matchMedia('(hover: hover) and (pointer: fine)').matches) {
+    const LENS = 190, ZOOM = 2.2;
+    const lens = document.createElement('div');
+    lens.className = 'pdp-lens';
+    stage.appendChild(lens);
+    stage.addEventListener('mousemove', (e) => {
+      if (!main.naturalWidth) return;
+      const r = main.getBoundingClientRect();
+      // area realmente disegnata dentro object-fit: contain
+      const scale = Math.min(r.width / main.naturalWidth, r.height / main.naturalHeight);
+      const dw = main.naturalWidth * scale, dh = main.naturalHeight * scale;
+      const dx = r.left + (r.width - dw) / 2, dy = r.top + (r.height - dh) / 2;
+      const x = e.clientX, y = e.clientY;
+      if (x < dx || x > dx + dw || y < dy || y > dy + dh) { lens.style.display = 'none'; return; }
+      const sr = stage.getBoundingClientRect();
+      const lx = Math.max(0, Math.min(x - sr.left - LENS / 2, sr.width - LENS));
+      const ly = Math.max(0, Math.min(y - sr.top - LENS / 2, sr.height - LENS));
+      const bgW = dw * ZOOM, bgH = dh * ZOOM;
+      const bx = Math.max(-(bgW - LENS), Math.min(0, -((x - dx) * ZOOM - LENS / 2)));
+      const by = Math.max(-(bgH - LENS), Math.min(0, -((y - dy) * ZOOM - LENS / 2)));
+      lens.style.display = 'block';
+      lens.style.left = lx + 'px';
+      lens.style.top = ly + 'px';
+      lens.style.backgroundImage = `url("${main.src}")`;
+      lens.style.backgroundSize = bgW + 'px ' + bgH + 'px';
+      lens.style.backgroundPosition = bx + 'px ' + by + 'px';
     });
-  });
+    stage.addEventListener('mouseleave', () => { lens.style.display = 'none'; });
+  }
+
+  // ── Lightbox a tutto schermo con frecce ──
+  const CHEV_L = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="square"><path d="M15 4 7 12l8 8"/></svg>';
+  const CHEV_R = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="square"><path d="M9 4l8 8-8 8"/></svg>';
+  const CROSS = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="square"><path d="M5 5l14 14M19 5 5 19"/></svg>';
+
+  let lb = null, lbImg = null, lbCount = null, lbIndex = 0;
+  const buildLightbox = () => {
+    lb = document.createElement('div');
+    lb.className = 'pdp-lightbox';
+    lb.setAttribute('role', 'dialog');
+    lb.setAttribute('aria-modal', 'true');
+    lb.setAttribute('aria-label', 'Galleria foto maglietta');
+    lb.innerHTML = `
+      <img class="lb-img" alt="">
+      <button type="button" class="lb-btn lb-prev" aria-label="Foto precedente">${CHEV_L}</button>
+      <button type="button" class="lb-btn lb-next" aria-label="Foto successiva">${CHEV_R}</button>
+      <button type="button" class="lb-btn lb-close" aria-label="Chiudi">${CROSS}</button>
+      <div class="lb-count"></div>`;
+    document.body.appendChild(lb);
+    lbImg = lb.querySelector('.lb-img');
+    lbCount = lb.querySelector('.lb-count');
+    lb.querySelector('.lb-prev').addEventListener('click', () => lbShow(lbIndex - 1));
+    lb.querySelector('.lb-next').addEventListener('click', () => lbShow(lbIndex + 1));
+    lb.querySelector('.lb-close').addEventListener('click', closeLightbox);
+    lb.addEventListener('click', (e) => { if (e.target === lb) closeLightbox(); });
+  };
+
+  const lbShow = (i) => {
+    lbIndex = (i + items.length) % items.length;
+    lbImg.style.opacity = '0';
+    const pre = new Image();
+    pre.onload = () => {
+      lbImg.src = pre.src;
+      lbImg.alt = items[lbIndex].alt ? 'Maglietta Neutralia — ' + items[lbIndex].alt : 'Maglietta Neutralia';
+      setTimeout(() => { lbImg.style.opacity = '1'; }, 20);
+    };
+    pre.src = items[lbIndex].src;
+    lbCount.textContent = (lbIndex + 1) + ' / ' + items.length;
+  };
+
+  const onKey = (e) => {
+    if (e.key === 'Escape') closeLightbox();
+    else if (e.key === 'ArrowLeft') lbShow(lbIndex - 1);
+    else if (e.key === 'ArrowRight') lbShow(lbIndex + 1);
+  };
+
+  const openLightbox = (i) => {
+    if (!lb) buildLightbox();
+    lb.classList.add('is-open');
+    document.body.style.overflow = 'hidden';
+    document.addEventListener('keydown', onKey);
+    lbShow(i);
+  };
+
+  const closeLightbox = () => {
+    lb.classList.remove('is-open');
+    document.body.style.overflow = '';
+    document.removeEventListener('keydown', onKey);
+    if (lbIndex !== current) showIndex(lbIndex); // riallinea la galleria all'ultima foto vista
+  };
+
+  main.addEventListener('click', () => openLightbox(current));
 })();
