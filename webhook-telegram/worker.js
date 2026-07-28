@@ -311,12 +311,16 @@ async function requestCivicoIfMissing(session, env) {
   console.log(`[civico-check] richiesta civico inviata a ${email} (${dove})`);
 }
 
-// Payment Link del libro cartaceo Neutralia:
-//  - Italia €15 sped. inclusa   (buy.stripe.com/4gM14h0gr05J7F4f1K8IU00)
-//  - Internazionale €15 + €10   (buy.stripe.com/3cIbIV1kvg4H3oOdXG8IU07)
+// Payment Link del libro cartaceo Neutralia.
+// Dal 28 lug 2026: libro €12 + spedizione a scelta nel checkout
+//  - Italia: ordinaria €3,50 o tracciata €6,50 (buy.stripe.com/eVq4gtbZ96u72kK7zi8IU0a)
+//  - Internazionale: tracciata €10            (buy.stripe.com/6oU5kxbZ9dWzbVkdXG8IU0b)
+// I primi due sono i vecchi link €15/€25 (disattivati, tenuti per sessioni residue).
 const BOOK_PAYMENT_LINKS = [
   'plink_1TZZzB8wqCpL8THJYntW41wN',
   'plink_1TrEnm8wqCpL8THJV4tCAB8O',
+  'plink_1TyCX08wqCpL8THJkgBpy8MD',
+  'plink_1TyCX18wqCpL8THJTZ0eSOd2',
 ];
 
 // Payment Link della maglietta Neutralia (€20 + €6,50 sped. tracciata,
