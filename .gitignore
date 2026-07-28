@@ -18,3 +18,8 @@ Thumbs.db
 
 # Build artifacts (none for static site)
 .wrangler/
+
+.dev.vars*
+!.dev.vars.example
+.env*
+!.env.example
