@@ -5038,3 +5038,7 @@ body.video-modal-open { overflow: hidden; }
   line-height: 1.6;
   margin-bottom: 0.8rem;
 }
+
+/* Descrizione maglietta a più paragrafi */
+.pdp-desc p { margin-bottom: 0.75rem; }
+.pdp-desc p:last-child { margin-bottom: 0; }
