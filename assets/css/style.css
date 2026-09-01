@@ -5042,3 +5042,11 @@ body.video-modal-open { overflow: hidden; }
 /* Descrizione maglietta a più paragrafi */
 .pdp-desc p { margin-bottom: 0.75rem; }
 .pdp-desc p:last-child { margin-bottom: 0; }
+
+/* Link artista nel credito */
+.pdp-credit a {
+  color: inherit;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+.pdp-credit a:hover { opacity: 0.7; }
