@@ -366,6 +366,7 @@ async function sendBookWelcomeEmail(session, env) {
 <div style="max-width:560px;margin:0 auto;background:#fff;padding:2rem;border-radius:6px">
 <h2 style="margin-top:0;color:#0a0a0a">Grazie per l'ordine.</h2>
 <p>Grazie per l'ordine del libro <em>Neutralia</em>. Con i tuoi soldi stai sostenendo un progetto di guerriglia culturale per un'Italia neutrale e mediatrice di pace.</p>
+<p>Le spedizioni partono in lotti: la tua copia viene affidata alle poste di norma <strong>entro 7&ndash;14 giorni</strong> dall'ordine, e riceverai una email il giorno della partenza.</p>
 
 <p>Visita <a href="https://neutralia.info" style="color:#0a0a0a"><strong>neutralia.info</strong></a> per rimanere aggiornato sugli sviluppi del progetto.</p>
 

@@ -4995,7 +4995,3 @@ body.video-modal-open { overflow: hidden; }
   border-left: 3px solid var(--giallo);
   padding-left: 0.9rem;
 }
-
-/* ── NEGOZIO NASCOSTO (temporaneo): per riattivarlo eliminare questo blocco
-   e il meta refresh in negozio.html, ripristinare la riga in sitemap.xml ── */
-li:has(> a[href$="negozio.html"]) { display: none !important; }
