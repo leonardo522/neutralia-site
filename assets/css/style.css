@@ -4995,3 +4995,46 @@ body.video-modal-open { overflow: hidden; }
   border-left: 3px solid var(--giallo);
   padding-left: 0.9rem;
 }
+
+/* ── Negozio: tenda biografia dell'artista ── */
+.pdp-bio {
+  margin-top: 1.8rem;
+  border-top: 2px solid var(--nero);
+  border-bottom: 2px solid var(--nero);
+}
+
+.pdp-bio summary {
+  list-style: none;
+  cursor: pointer;
+  font-family: var(--sans);
+  font-weight: 700;
+  font-size: 0.88rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  padding: 0.9rem 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.pdp-bio summary::-webkit-details-marker { display: none; }
+
+.pdp-bio summary::after {
+  content: '+';
+  font-size: 1.3rem;
+  font-weight: 400;
+  line-height: 1;
+}
+
+.pdp-bio[open] summary::after { content: '\2212'; }
+
+.pdp-bio-body {
+  padding: 0.2rem 0 1.2rem;
+}
+
+.pdp-bio-body p {
+  font-family: var(--serif);
+  font-size: 1.05rem;
+  line-height: 1.6;
+  margin-bottom: 0.8rem;
+}
