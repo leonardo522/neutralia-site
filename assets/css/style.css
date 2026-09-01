@@ -5050,3 +5050,8 @@ body.video-modal-open { overflow: hidden; }
   text-underline-offset: 2px;
 }
 .pdp-credit a:hover { opacity: 0.7; }
+
+/* Tende adiacenti: un solo filetto di separazione */
+.pdp-bio { margin-top: 0; }
+.pdp-bio:first-of-type { margin-top: 1.8rem; }
+.pdp-bio + .pdp-bio { border-top: none; }
