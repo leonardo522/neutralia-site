@@ -235,6 +235,29 @@ async function handleStripeWebhook(request, env) {
     }).catch(() => {});
   }
 
+  // ── MAGLIETTA: copia taglia e quantità nei metadata del pagamento, così
+  //    sono visibili direttamente sulla pagina Payments della dashboard Stripe
+  //    (i custom_fields vivono sulla Checkout Session e lì non compaiono).
+  if (type === 'checkout.session.completed' && obj.mode === 'payment' &&
+      obj.payment_link === SHIRT_PAYMENT_LINK && obj.payment_intent && env.STRIPE_SECRET_KEY) {
+    const taglia = ((obj.custom_fields || []).find((f) => f.key === 'taglia') || {}).dropdown?.value || 'n.d.';
+    const qty = Math.max(1, Math.round((obj.amount_subtotal || 2000) / 2000));
+    const body = new URLSearchParams({
+      'metadata[taglia]': taglia,
+      'metadata[quantita]': String(qty),
+      'metadata[prodotto]': 'Maglietta Putto della Giustizia',
+      description: `Maglietta Putto della Giustizia — taglia ${taglia}${qty > 1 ? ` ×${qty}` : ''}`,
+    });
+    await fetch(`https://api.stripe.com/v1/payment_intents/${obj.payment_intent}`, {
+      method: 'POST',
+      headers: {
+        Authorization: `Bearer ${env.STRIPE_SECRET_KEY}`,
+        'content-type': 'application/x-www-form-urlencoded',
+      },
+      body,
+    }).catch((e) => console.error('metadata taglia failed:', e.message));
+  }
+
   // ── Payment ONE-TIME (libro/donazione) → Telegram opz.
   if (type === 'checkout.session.completed' && obj.mode === 'payment' && obj.payment_link !== SHIRT_PAYMENT_LINK && env.TELEGRAM_BOT_TOKEN && env.TELEGRAM_CHAT_ID) {
     const amount = (obj.amount_total || 0) / 100;
