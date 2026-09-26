@@ -343,6 +343,9 @@ const BOOK_PAYMENT_LINKS = [
   'plink_1TZZzB8wqCpL8THJYntW41wN',
   'plink_1TrEnm8wqCpL8THJV4tCAB8O',
   'plink_1TyCX08wqCpL8THJkgBpy8MD',
+  // dal 26 set 2026: €15 tutto compreso (Italia) · €15 + €10 (estero)
+  'plink_1UJt4U8wqCpL8THJu7eQuKwG',
+  'plink_1UJt4V8wqCpL8THJwmPrFDQE',
   'plink_1TyCX18wqCpL8THJTZ0eSOd2',
 ];
 
@@ -389,7 +392,7 @@ async function sendBookWelcomeEmail(session, env) {
 <div style="max-width:560px;margin:0 auto;background:#fff;padding:2rem;border-radius:6px">
 <h2 style="margin-top:0;color:#0a0a0a">Grazie per l'ordine.</h2>
 <p>Grazie per l'ordine del libro <em>Neutralia</em>. Con i tuoi soldi stai sostenendo un progetto di guerriglia culturale per un'Italia neutrale e mediatrice di pace.</p>
-<p>Le spedizioni partono in lotti: la tua copia viene affidata alle poste di norma <strong>entro 7&ndash;14 giorni</strong> dall'ordine, e riceverai una email il giorno della partenza.</p>
+<p>Le spedizioni partono in lotti e viaggiano con posta ordinaria: la consegna richiede <strong>fino a 15 giorni lavorativi</strong>. Riceverai una email il giorno della partenza.</p>
 
 <p>Visita <a href="https://neutralia.info" style="color:#0a0a0a"><strong>neutralia.info</strong></a> per rimanere aggiornato sugli sviluppi del progetto.</p>
 
