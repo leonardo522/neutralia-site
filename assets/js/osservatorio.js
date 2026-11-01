@@ -73,12 +73,16 @@
     layers.linee.clearLayers();
     layers.conflitti.clearLayers();
     document.querySelectorAll('.osv-tempo-riga.is-attiva').forEach((r) => r.classList.remove('is-attiva'));
+    if (limiteLargo) mappa.once('moveend', () => limitiMappa(false));
     inquadraItalia();
   }
 
   document.querySelector('.osv-chiudi').addEventListener('click', chiudiScheda);
   schedaCorpo.addEventListener('click', (ev) => {
-    if (ev.target.closest('[data-rotte]') && rottePunti) mappa.fitBounds(rottePunti, { padding: [30, 30], maxZoom: 7, animate: true });
+    if (ev.target.closest('[data-rotte]') && rottePunti) {
+      limitiMappa(true);
+      mappa.fitBounds(rottePunti, { padding: [30, 30], maxZoom: 7, animate: true });
+    }
   });
   document.addEventListener('keydown', (ev) => {
     if (ev.key === 'Escape') chiudiScheda();
@@ -110,7 +114,17 @@
   window.NeutraliaMap = mappa;
 
   const inquadraItalia = () => mappa.fitBounds(ITALIA, { padding: [8, 8], animate: true });
+  /* Non si allontana oltre la vista con tutta l'Italia: solo le rotte verso
+     i conflitti lontani allargano il limite, finché la scheda resta aperta. */
+  let limiteLargo = false;
+  function limitiMappa(largo) {
+    limiteLargo = largo;
+    mappa.setMaxBounds(largo ? [[-5, -25], [62, 85]] : [[32, -2], [51, 27]]);
+    mappa.setMinZoom(largo ? 3 : mappa.getBoundsZoom(ITALIA, false, L.point(16, 16)));
+  }
+
   mappa.fitBounds(ITALIA, { padding: [8, 8] });
+  limitiMappa(false);
   let vistaIniziale = true;
   mappa.on('dragstart', () => { vistaIniziale = false; });
 
@@ -147,6 +161,7 @@
   }, { passive: false });
   new ResizeObserver(() => {
     mappa.invalidateSize({ pan: false });
+    if (!limiteLargo) limitiMappa(false);
     if (vistaIniziale && !schedaAperta) mappa.fitBounds(ITALIA, { padding: [8, 8], animate: false });
   }).observe(document.getElementById('mappa'));
 
@@ -520,6 +535,7 @@
       punti.push([b.lat, b.lon]);
     });
     L.circleMarker([c.lat, c.lon], { radius: 8, color: '#000', weight: 1.5, fillColor: COLORI.conflitti, fillOpacity: 1, interactive: false }).addTo(layers.conflitti);
+    limitiMappa(true);
     mappa.fitBounds(punti, { padding: [30, 30], maxZoom: 7, animate: true });
   }
 
