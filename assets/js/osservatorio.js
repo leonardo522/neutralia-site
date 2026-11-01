@@ -55,7 +55,8 @@
     schedaEl.scrollTop = 0;
     document.body.classList.add('osv-scheda-aperta');
     marcaScelto(o.marker);
-    if (modelli) modelli.mostra(o.modello);
+    document.querySelector('.osv-modello').hidden = !modelli || !o.modello;
+    if (modelli && o.modello) modelli.mostra(o.modello);
     if (!o.fermo && lat != null) mappa.setView([lat, lon], Math.max(mappa.getZoom(), 9), { animate: true });
     schedaEl.querySelector('.osv-chiudi').focus({ preventScroll: true });
   }
@@ -326,7 +327,7 @@
             <p class="popup-eyebrow popup-eyebrow-base">Mare interdetto</p>
             <h3>${escapeHTML(p.nome)}</h3>
             <p>${escapeHTML(p.descrizione)}</p>
-            <p class="popup-stat"><strong>${fmtNum(p.estensione_kmq)} km²</strong> di mare interdetto alla pesca durante le esercitazioni.</p>
+            ${p.estensione_kmq ? `<p class="popup-stat"><strong>${fmtNum(p.estensione_kmq)} km²</strong> di mare interdetto alla pesca durante le esercitazioni.</p>` : ''}
           </div>
         `;
         layer.on('click', (ev) => apriScheda(html, ev.latlng.lat, ev.latlng.lng, { modello: 'mare' }));
@@ -350,36 +351,6 @@
       dot.on('click', apri);
       voci.push({ nome: b.nome, dove: `${b.comune} · ${b.regione}`, regione: b.regione, tipo: 'basi', etichetta: 'Basi', apri });
       dot.addTo(layers.basi);
-
-      // Cerchi di rischio (es. MUOS Niscemi: danno acuto 20 km, interferenza aerea 67 km)
-      if (b.raggi_rischio_km) {
-        const r = b.raggi_rischio_km;
-        if (r.interferenza_aerea) {
-          L.circle([b.lat, b.lon], {
-            radius: r.interferenza_aerea * 1000,
-            color: '#ff2a2a',
-            weight: 1,
-            opacity: 0.55,
-            dashArray: '5 6',
-            fillColor: '#ff2a2a',
-            fillOpacity: 0.05,
-            interactive: false,
-            className: 'osv-circle-interferenza'
-          }).addTo(layers.basi);
-        }
-        if (r.danno_acuto) {
-          L.circle([b.lat, b.lon], {
-            radius: r.danno_acuto * 1000,
-            color: '#ff2a2a',
-            weight: 1.5,
-            opacity: 0.85,
-            fillColor: '#ff2a2a',
-            fillOpacity: 0.18,
-            interactive: false,
-            className: 'osv-circle-acuto'
-          }).addTo(layers.basi);
-        }
-      }
     });
 
     // PRODUZIONE — icona proiettile arancione
@@ -498,7 +469,7 @@
       riga.addEventListener('click', () => {
         document.querySelectorAll('.osv-tempo-riga.is-attiva').forEach((r) => r.classList.remove('is-attiva'));
         const coinvolte = basi.filter((b) => (b.conflitti || []).includes(c.id));
-        apriScheda(popupConflitto(c, coinvolte), c.lat, c.lon, { modello: 'mare', fermo: true });
+        apriScheda(popupConflitto(c, coinvolte), c.lat, c.lon, { fermo: true });
         riga.classList.add('is-attiva');
         disegnaRotte(c, coinvolte);
         document.getElementById('mappa').scrollIntoView({ behavior: 'smooth', block: 'center' });
@@ -510,7 +481,7 @@
   function disegnaRotte(c, coinvolte) {
     layers.linee.clearLayers();
     layers.conflitti.clearLayers();
-    const punti = [[c.lat, c.lon]];
+    const punti = [[c.lat, c.lon], [42, 12.5]];
     coinvolte.forEach((b) => {
       L.polyline([[b.lat, b.lon], [c.lat, c.lon]], { color: COLORI.basi, weight: 1.4, opacity: 0.7, dashArray: '6 5', className: 'osv-line', interactive: false }).addTo(layers.linee);
       punti.push([b.lat, b.lon]);
@@ -540,7 +511,7 @@
         fillOpacity: 1,
         className: 'osv-dot osv-dot-conflitto'
       });
-      dotConf.on('click', () => apriScheda(popupConflitto(c), c.lat, c.lon, { modello: 'mare', fermo: true }));
+      dotConf.on('click', () => apriScheda(popupConflitto(c), c.lat, c.lon, { fermo: true }));
       dotConf.addTo(layers.conflitti);
 
       // Linea tratteggiata base → conflitto
@@ -582,6 +553,7 @@
         ${b.mare_interdetto_kmq ? `<p class="popup-stat"><strong>${fmtNum(b.mare_interdetto_kmq)} km²</strong> di mare interdetto durante le esercitazioni</p>` : ''}
 
         ${b.armamento && b.armamento.length ? `<div class="popup-section"><h4>Armamento / capacità</h4>${listToHTML(b.armamento)}</div>` : ''}
+        ${b.fatti_storici && b.fatti_storici.length ? `<div class="popup-section"><h4>Fatti storici</h4>${listToHTML(b.fatti_storici)}</div>` : ''}
         ${b.problemi_ambientali && b.problemi_ambientali.length ? `<div class="popup-section popup-warning"><h4>Problemi ambientali</h4>${listToHTML(b.problemi_ambientali)}</div>` : ''}
         ${b.problemi_sanitari && b.problemi_sanitari.length ? `<div class="popup-section popup-warning"><h4>Problemi sanitari</h4>${listToHTML(b.problemi_sanitari)}</div>` : ''}
 

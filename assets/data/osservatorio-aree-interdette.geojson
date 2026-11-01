@@ -15,8 +15,8 @@
         "id": "salto-di-quirra-mare",
         "nome": "Zona di mare interdetta — Salto di Quirra (PISQ)",
         "base_id": "salto-di-quirra",
-        "estensione_kmq": 4000,
-        "descrizione": "Vasto specchio acqueo a sud-est della Sardegna, di fronte al poligono di Perdasdefogu, periodicamente interdetto alla navigazione e alla pesca per le esercitazioni missilistiche. Una delle più ampie aree marine sottratte all'uso civile in Europa."
+        "estensione_kmq": null,
+        "descrizione": "Specchio acqueo davanti alla costa sud-orientale della Sardegna, interdetto di volta in volta per le prove del poligono. Perimetro indicativo."
       },
       "geometry": {
         "type": "Polygon",
@@ -35,8 +35,8 @@
         "id": "teulada-mare",
         "nome": "Zona di mare interdetta — Capo Teulada",
         "base_id": "teulada",
-        "estensione_kmq": 1300,
-        "descrizione": "Tratto di mare a sud-ovest della Sardegna, davanti al poligono di Capo Teulada. Comprende parte del Golfo di Palmas. Interdetto alla pesca e alla navigazione durante le esercitazioni di tiro e gli sbarchi anfibi."
+        "estensione_kmq": null,
+        "descrizione": "Tratto di mare a sud-ovest della Sardegna, davanti al poligono di Capo Teulada. Comprende parte del Golfo di Palmas. Interdetto alla pesca e alla navigazione durante le esercitazioni di tiro e gli sbarchi anfibi. Perimetro indicativo."
       },
       "geometry": {
         "type": "Polygon",
@@ -55,15 +55,15 @@
         "id": "capo-frasca-mare",
         "nome": "Zona di mare interdetta — Capo Frasca",
         "base_id": "capo-frasca",
-        "estensione_kmq": 250,
-        "descrizione": "Specchio acqueo davanti alla costa occidentale della Sardegna (Costa Verde), interdetto durante le esercitazioni di tiro aria-suolo del poligono di Capo Frasca."
+        "estensione_kmq": null,
+        "descrizione": "Specchio acqueo davanti alla costa occidentale della Sardegna (Costa Verde), interdetto durante le esercitazioni di tiro aria-suolo del poligono di Capo Frasca. Perimetro indicativo."
       },
       "geometry": {
         "type": "Polygon",
         "coordinates": [[
           [8.27, 39.80],
-          [8.47, 39.80],
-          [8.47, 39.60],
+          [8.44, 39.80],
+          [8.44, 39.60],
           [8.27, 39.60],
           [8.27, 39.80]
         ]]
@@ -72,31 +72,11 @@
     {
       "type": "Feature",
       "properties": {
-        "id": "stretto-messina-sub",
-        "nome": "Stretto di Messina — addestramento sottomarini",
-        "base_id": null,
-        "estensione_kmq": 250,
-        "descrizione": "Porzione dello Stretto di Messina periodicamente interdetta alla navigazione civile per addestramento di sottomarini in immersione (Marina Militare e alleati NATO). Manovre documentate da quotidiani locali (Il Reggino, Cosenza Channel)."
-      },
-      "geometry": {
-        "type": "Polygon",
-        "coordinates": [[
-          [15.55, 38.30],
-          [15.80, 38.30],
-          [15.80, 38.05],
-          [15.55, 38.05],
-          [15.55, 38.30]
-        ]]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
         "id": "golfo-taranto",
         "nome": "Golfo di Taranto — esercitazioni navali",
-        "base_id": "taranto",
-        "estensione_kmq": 6000,
-        "descrizione": "Vasto specchio acqueo del Mar Ionio davanti alla base navale di Taranto, periodicamente interdetto per le esercitazioni della Squadra Navale della Marina Militare e per le esercitazioni Mare Aperto (annuali, 6.000 militari da 8 paesi NATO, oltre 120 mezzi)."
+        "base_id": null,
+        "estensione_kmq": null,
+        "descrizione": "Specchio acqueo del Mar Ionio davanti alla base navale di Taranto, interdetto di volta in volta per le esercitazioni della Marina Militare. Perimetro indicativo."
       },
       "geometry": {
         "type": "Polygon",
@@ -115,8 +95,8 @@
         "id": "mar-ligure-cmre",
         "nome": "Mar Ligure — test sonar CMRE NATO",
         "base_id": "cmre-la-spezia",
-        "estensione_kmq": 1500,
-        "descrizione": "Specchio acqueo davanti a La Spezia regolarmente utilizzato dal CMRE (NATO Centre for Maritime Research and Experimentation) e dalla Marina Militare per test di sonar attivi, veicoli autonomi sottomarini, esperimenti di guerra antisommergibile (ASW). Impatto documentato sui cetacei del Santuario Pelagos."
+        "estensione_kmq": null,
+        "descrizione": "Specchio acqueo davanti a La Spezia usato dal CMRE (NATO Centre for Maritime Research and Experimentation) per prove di sonar e veicoli autonomi sottomarini. Perimetro indicativo."
       },
       "geometry": {
         "type": "Polygon",

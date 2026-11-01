@@ -12,28 +12,24 @@
       "tipo": "Base aerea USA / NATO",
       "gestione": "31st Fighter Wing — United States Air Forces in Europe (USAFE)",
       "funzione": "Principale base da combattimento USA nel sud Europa. Ospita i caccia F-16C/D Fighting Falcon di stanza permanente. Hub operativo per missioni in area mediterranea, balcanica e medio-orientale.",
-      "estensione_ha": 770,
+      "estensione_ha": null,
       "nucleare": true,
       "armamento": [
         "Circa 42 caccia F-16C/D Fighting Falcon",
-        "Testate nucleari tattiche B61 (varianti Mod-3, Mod-4, in transizione verso B61-12) in deposito, potenza regolabile fino a 45-60 chilotoni. Stime: ~20 testate (Federation of American Scientists, Kristensen 2023) — fino a ~40-45 (Margelletti CESI / Batacchi RID via Sole 24 Ore, 2022; stime su capacità delle infrastrutture fino a 70-90 totali in Italia secondo Tuttogolfo.it 2026). Gestione interamente USA, a differenza di Ghedi."
+        "Bombe nucleari B61 in custodia USA secondo le stime di FAS: né il governo italiano né la NATO confermano presenza e numero, e ogni cifra è una stima. Stima FAS: 20-30 bombe ad Aviano (Nuclear Notebook, novembre 2023); il Notebook 2026 indica circa 100 B61 in Europa su sei basi, senza dettaglio per base. Secondo lo stesso Notebook la B61-12, potenza fino a 50 chilotoni, ha sostituito le versioni precedenti schierate in Europa."
       ],
       "problemi_ambientali": [
-        "Inquinamento da carburanti avio (JP-8) nelle falde acquifere documentato in più rapporti regionali ARPA FVG",
-        "Rumore aereo cronico nel raggio di 15 km",
-        "Concentrazione di metalli pesanti nel suolo limitrofo (esercitazioni, manutenzione velivoli)"
+        "Rumore aereo cronico nel raggio di 15 km"
       ],
-      "problemi_sanitari": [
-        "Studi locali su esposizione cronica a rumore aereo (effetti cardiovascolari, disturbi del sonno) in corso"
-      ],
-      "conflitti": ["bosnia-1995", "kosovo-1999", "iraq-2003", "libia-2011", "siria-2014"],
+      "problemi_sanitari": [],
+      "conflitti": ["bosnia-1995", "kosovo-1999", "afghanistan-2001", "iraq-2003", "libia-2011", "siria-2014"],
       "fonti": [
-        "Federation of American Scientists — Nuclear Notebook (Kristensen/Korda, 2023)",
+        {"titolo": "Kristensen et al., Nuclear weapons sharing, 2023, Bulletin of the Atomic Scientists", "url": "https://thebulletin.org/premium/2023-11/nuclear-weapons-sharing-2023/"},
         "SIPRI Yearbook — Nuclear Forces",
-        "Sole 24 Ore, «Nucleare in Italia: oltre 100 ordigni Usa. Ecco dove sono stati dislocati», 22 settembre 2022 (citando Andrea Margelletti — CESI Centro Studi Internazionali, e Piero Batacchi — direttore RID Rivista Italiana Difesa)",
-        "Tuttogolfo.it, «Armi nucleari in Italia: quante sono davvero, dove si trovano e ruolo della NATO», 6 marzo 2026",
-        "M. Dinucci, «Geografia del nuovo ordine mondiale», 2019",
-        "ICAN — International Campaign to Abolish Nuclear Weapons, country profile Italia"
+        {"titolo": "CESI, rassegna stampa (Sole 24 Ore, «oltre 100 ordigni»; RID: una sessantina)", "url": "https://cesi-italia.org/en/press-review/pag/34"},
+        "ICAN — International Campaign to Abolish Nuclear Weapons, country profile Italia",
+        {"titolo": "Kristensen et al., United States nuclear weapons, 2026, Bulletin of the Atomic Scientists", "url": "https://thebulletin.org/premium/2026-03/united-states-nuclear-weapons-2026/"},
+        {"titolo": "Sky TG24, Bombe atomiche in Italia", "url": "https://tg24.sky.it/cronaca/2022/03/25/bombe-atomiche-italia"}
       ]
     },
     {
@@ -43,29 +39,31 @@
       "lon": 10.2685,
       "regione": "Lombardia",
       "comune": "Ghedi (BS)",
-      "tipo": "Base aerea italiana — condivisione nucleare NATO",
-      "gestione": "6° Stormo Aeronautica Militare Italiana + custodia USA delle testate",
-      "funzione": "Base operativa dei Tornado IDS italiani con compito nucleare nell'ambito della Nuclear Sharing NATO. In transizione verso F-35A dual-capable.",
-      "estensione_ha": 470,
+      "tipo": "Base aerea italiana, condivisione nucleare NATO secondo FAS",
+      "gestione": "6° Stormo Aeronautica Militare Italiana; custodia USA delle bombe secondo FAS",
+      "funzione": "Base del 6° Stormo, con compito nucleare nel quadro della condivisione NATO secondo FAS. Il primo F-35A è arrivato nel giugno 2022 e i gruppi di volo stanno passando dal Tornado all'F-35A.",
+      "estensione_ha": null,
       "nucleare": true,
       "armamento": [
-        "Tornado IDS (in via di sostituzione)",
-        "Futuri F-35A dual-capable (certificati per il trasporto della bomba nucleare B61-12)",
-        "Testate nucleari tattiche B61 (Mod-3 e Mod-4, fino a 45-60 chilotoni, in transizione a B61-12). Stime: 20-30 (Federation of American Scientists, 2023; SIPRI) — fino a ~60 (Margelletti CESI / Batacchi RID via Sole 24 Ore, 2022). Totale Italia: 30-40 confermate da FAS+SIPRI, fino a 70-90 secondo stime giornalistiche (Tuttogolfo.it, marzo 2026). Nel quadro del NATO Nuclear Sharing: in caso di guerra l'impiego sarebbe deciso dal Presidente USA con il consenso del governo italiano, ma le bombe verrebbero materialmente sganciate da piloti italiani."
+        "Tornado (in uscita di servizio: dal 2026 solo col 6° Stormo)",
+        "F-35A a Ghedi dal giugno 2022, aereo a capacità duale destinato a sostituire il Tornado nel ruolo nucleare",
+        "Bombe nucleari B61 in custodia USA secondo le stime di FAS: né il governo italiano né la NATO confermano presenza e numero, e ogni cifra è una stima. Stima FAS: 10-15 bombe a Ghedi (Nuclear Notebook, novembre 2023); per l'Italia intera circa 35 secondo ICAN. Stime di stampa più alte, non verificabili: una sessantina secondo RID (2022). Secondo il Notebook 2026 la B61-12, potenza fino a 50 chilotoni, ha sostituito le versioni precedenti schierate in Europa. Nel nuclear sharing le bombe restano di proprietà e sotto autorità USA; il vettore a Ghedi è italiano."
       ],
       "problemi_ambientali": [
-        "Aumento traffico aereo militare nel piano di estensione per F-35",
-        "Contestazioni cittadine sull'ampliamento (Movimento No B61)"
+        "Aumento traffico aereo militare nel piano di estensione per F-35"
       ],
       "problemi_sanitari": [],
-      "conflitti": ["kosovo-1999", "libia-2011"],
+      "conflitti": ["kosovo-1999"],
       "fonti": [
-        "FAS Nuclear Notebook 2023 (Kristensen/Korda)",
+        {"titolo": "Kristensen et al., Nuclear weapons sharing, 2023, Bulletin of the Atomic Scientists", "url": "https://thebulletin.org/premium/2023-11/nuclear-weapons-sharing-2023/"},
         "SIPRI Yearbook — Nuclear Forces",
-        "Sole 24 Ore, «Nucleare in Italia: oltre 100 ordigni Usa. Ecco dove sono stati dislocati», 22 settembre 2022 (citando Andrea Margelletti — CESI, e Piero Batacchi — RID)",
-        "Tuttogolfo.it, «Armi nucleari in Italia: quante sono davvero, dove si trovano e ruolo della NATO», 6 marzo 2026",
+        {"titolo": "CESI, rassegna stampa (Sole 24 Ore, «oltre 100 ordigni»; RID: una sessantina)", "url": "https://cesi-italia.org/en/press-review/pag/34"},
         "Rete Italiana per il Disarmo — campagna «Italia Ripensaci»",
-        "ICAN International Campaign to Abolish Nuclear Weapons — country profile Italia"
+        "ICAN International Campaign to Abolish Nuclear Weapons — country profile Italia",
+        {"titolo": "Kristensen et al., United States nuclear weapons, 2026, Bulletin of the Atomic Scientists", "url": "https://thebulletin.org/premium/2026-03/united-states-nuclear-weapons-2026/"},
+        {"titolo": "ICAN, scheda Italia", "url": "https://www.icanw.org/italy"},
+        {"titolo": "Aeronautica Militare, 6° Stormo: transizione del 154° Gruppo su F-35", "url": "https://www.aeronautica.difesa.it/en/news/6-stormo-transizione-del-154-gruppo-volo-su-velivolo-f-35/"},
+        {"titolo": "The Aviationist, F-35A delivered to Ghedi, 16 giugno 2022", "url": "https://theaviationist.com/2022/06/16/f-35a-delivered-to-ghedi/"}
       ]
     },
     {
@@ -76,14 +74,18 @@
       "regione": "Veneto",
       "comune": "Vicenza",
       "tipo": "Base US Army",
-      "gestione": "SETAF-AF (Southern European Task Force — Africa) / US Army Africa",
-      "funzione": "Comando US Army per le operazioni in Africa. Quartier generale della 173rd Airborne Brigade Combat Team.",
-      "estensione_ha": 70,
+      "gestione": "US Army: SETAF-AF / US Army Garrison Italy",
+      "funzione": "Sede della US Army Southern European Task Force, Africa (SETAF-AF) e di US Army Garrison Italy. Il comando della 173rd Airborne è alla Caserma Del Din.",
+      "estensione_ha": null,
       "armamento": ["Personale paracadutista, mezzi leggeri"],
       "problemi_ambientali": ["Impatto urbano della base nel tessuto cittadino di Vicenza"],
       "problemi_sanitari": [],
-      "conflitti": ["iraq-2003", "afghanistan-2001", "libia-2011"],
-      "fonti": ["Sito ufficiale SETAF-AF", "Presidio Permanente No Dal Molin (archivio)"]
+      "conflitti": ["afghanistan-2001", "iraq-2003"],
+      "fonti": [
+        "Sito ufficiale SETAF-AF",
+        "Presidio Permanente No Dal Molin (archivio)",
+        {"titolo": "US Army, New installation opens in Italy, 2 luglio 2013", "url": "https://www.army.mil/article/106769/new_installation_opens_in_italy"}
+      ]
     },
     {
       "id": "vicenza-dalmolin",
@@ -94,16 +96,23 @@
       "comune": "Vicenza",
       "tipo": "Base US Army",
       "gestione": "173rd Airborne Brigade — US Army",
-      "funzione": "Nuova base costruita 2008-2013 nell'area dell'ex aeroporto Dal Molin. Sede del 173rd Airborne. Costruita nonostante la massiccia mobilitazione del movimento «No Dal Molin» e il referendum consultivo comunale 2008 (il Tar annullò la consultazione).",
-      "estensione_ha": 145,
+      "funzione": "Base inaugurata il 2 luglio 2013 nell'area dell'ex aeroporto Dal Molin, sede del comando della 173rd Airborne. Costruita fra le contestazioni del movimento «No Dal Molin». Nel luglio 2008 il Consiglio di Stato ribalta la sospensione disposta dal TAR Veneto; all'inizio di ottobre ferma anche la consultazione comunale, giudicandola superflua. Il 5 ottobre 2008 si tiene un voto autogestito, non ufficiale, con circa il 95% di no.",
+      "estensione_ha": 59,
       "armamento": [],
       "problemi_ambientali": [
-        "145 ettari di territorio agricolo e parco urbano sottratti alla città",
+        "Circa 59 ettari dell'ex aeroporto Dal Molin, proprietà militare italiana, in uso all'US Army",
         "Cementificazione di area di ricarica della falda acquifera della pianura vicentina"
       ],
       "problemi_sanitari": [],
-      "conflitti": ["afghanistan-2001", "iraq-2003"],
-      "fonti": ["Presidio Permanente No Dal Molin", "Comune di Vicenza — atti referendum 2008", "G. Cucchini, «Dal Molin», 2012"]
+      "conflitti": ["afghanistan-2001"],
+      "fonti": [
+        "Presidio Permanente No Dal Molin",
+        "Comune di Vicenza — atti referendum 2008",
+        {"titolo": "US Army, New installation opens in Italy, 2 luglio 2013", "url": "https://www.army.mil/article/106769/new_installation_opens_in_italy"},
+        {"titolo": "Blitz/ANSA, Consiglio di Stato, sì ad ampliamento base USA Vicenza, luglio 2008", "url": "https://archivio.blitzquotidiano.it/agenzie/consiglio-di-stato-si-ad-ampliamento-base-usa-vicenza-24274"},
+        {"titolo": "Italy Magazine, Vicenza base referendum stopped", "url": "https://italymagazine.com/featured-story/vicenza-base-referendum-stopped"},
+        {"titolo": "Dissident Voice, referendum non ufficiale di Vicenza, ottobre 2008", "url": "https://dissidentvoice.org/2008/10/unofficial-referendum-in-vicenza-italy-95-opposed-to-new-us-military-base"}
+      ]
     },
     {
       "id": "sigonella",
@@ -111,116 +120,134 @@
       "lat": 37.4017,
       "lon": 14.9220,
       "regione": "Sicilia",
-      "comune": "Sigonella (CT)",
+      "comune": "Lentini (SR), al confine con la provincia di Catania",
       "tipo": "Base navale aerea USA + Aeronautica Militare",
       "gestione": "US Navy + Aeronautica Militare Italiana (41° Stormo)",
       "funzione": "Hub operativo USA per droni MQ-9 Reaper in Africa e Medio Oriente. Centro logistico per la 6ª Flotta. Base di sorveglianza marittima e antisommergibile.",
       "estensione_ha": 600,
       "armamento": [
         "MQ-9 Reaper (droni armati USA)",
-        "Global Hawk (sorveglianza)",
+        "Global Hawk USA e RQ-4D Phoenix della NATO (Alliance Ground Surveillance, cinque velivoli)",
         "P-8A Poseidon (pattugliamento)"
       ],
       "problemi_ambientali": [
-        "Inquinamento acustico cronico nei comuni di Lentini, Carlentini, Catania",
-        "Sversamenti carburante documentati negli anni '90-2000",
-        "Antenna NRTF di Niscemi collegata logisticamente"
+        "Inquinamento acustico cronico nei comuni di Lentini, Carlentini, Catania"
       ],
       "problemi_sanitari": [],
-      "conflitti": ["libia-2011", "siria-2014", "afghanistan-2001", "yemen-2015"],
-      "fonti": ["Antonio Mazzeo — blog e libri sulle basi USA in Sicilia", "Pax Christi Italia"]
+      "conflitti": ["libia-2011"],
+      "fonti": [
+        "Antonio Mazzeo — blog e libri sulle basi USA in Sicilia",
+        "Pax Christi Italia",
+        {"titolo": "OpenStreetMap", "url": "https://www.openstreetmap.org/"},
+        {"titolo": "NATO, RQ-4D AGS a Sigonella", "url": "https://ac.nato.int/home/newsroom/news-2020/nato-alliance-ground-surveillance-controls-first-rq4d-flight.aspx"}
+      ]
     },
     {
       "id": "niscemi-muos",
       "nome": "NRTF Niscemi — MUOS",
-      "lat": 37.1414,
-      "lon": 14.4413,
+      "lat": 37.1172,
+      "lon": 14.4400,
       "regione": "Sicilia",
       "comune": "Niscemi (CL)",
       "tipo": "Stazione radio US Navy — sistema MUOS",
-      "gestione": "US Navy — Naval Computer and Telecommunications Area Master Station Atlantic",
-      "funzione": "Una delle 4 stazioni mondiali del MUOS (Mobile User Objective System), la rete satellitare ad altissima frequenza con cui la US Navy comunica con navi, sottomarini in immersione, droni armati e operazioni speciali in tutto l'emisfero orientale (Mediterraneo, Africa, Medio Oriente, Asia centrale). Realizzata fra 2009 e 2014 nonostante studi indipendenti che ne sconsigliavano l'installazione a ridosso dell'abitato.",
-      "estensione_ha": 134,
+      "gestione": "US Navy: Naval Computer and Telecommunications Station (NCTS) Sicily, sotto NCTAMS Atlantic",
+      "funzione": "Una delle 4 stazioni di terra del MUOS (Mobile User Objective System), la rete satellitare della US Navy per le comunicazioni con unità navali, sottomarini e forze in movimento. Costruita fra le contestazioni del comune e dei comitati No Muos. Il Consiglio di giustizia amministrativa nel 2016 ha giudicato corretti i controlli sanitari; i ricorsi successivi sono stati dichiarati inammissibili nel 2019.",
+      "estensione_ha": 243,
       "armamento": [
         "3 antenne paraboliche banda Ka (30-31 GHz), diametro 18,4 m, potenza 1600 W ciascuna, guadagno 71,4 dB, inclinazione minima fascio 17° sull'orizzonte",
         "2 antenne elicoidali UHF (240-315 MHz), 105 W, lunghezza 4 m",
-        "Stazione NRTF preesistente (dal 1991): 41 antenne radiatori verticali HF (3-30 MHz), 27 in funzione; 1 antenna LF (43 KHz, λ 7 km) per comunicazioni con sottomarini in immersione — trasmettitore VERDIN VLF, picco 500-2000 KW"
+        "Stazione NRTF preesistente (dal 1991): 41 antenne HF (3-30 MHz), 27 in funzione secondo il rapporto; antenna a bassa frequenza per i sottomarini in immersione (43 kHz nel rapporto, 45,9 kHz negli elenchi VLF)"
       ],
       "problemi_ambientali": [
         "Installazione DENTRO la Riserva Naturale Orientata Sughereta di Niscemi (SIC ITA050007 + ZPS, rete Natura 2000): disboscamento di area protetta per le 3 nuove parabole",
-        "Impatto su avifauna: il fascio principale Ka è potenzialmente fatale per gli uccelli (animali a sangue freddo, alta vulnerabilità termica)",
-        "Impatto su api e impollinatori: disturbati già da campi di 1 V/m → impossibilità di sciamare e nidificare, con ricadute a catena sulla flora",
-        "Spazio aereo: il fascio Ka inclinato a 17° interseca la rotta dei voli civili e militari nel raggio di decine di km (Comiso 19 km, Sigonella 52 km, Fontanarossa Catania 67 km) — rischio totalmente ignorato negli studi US Navy"
+        "Impatto su avifauna: secondo il rapporto Zucchetti-Coraddu il fascio principale in banda Ka può essere fatale per gli uccelli che lo attraversano. Stima teorica, senza misure sul campo.",
+        "Impatto su api e impollinatori: il rapporto Zucchetti-Coraddu ipotizza disturbi già a 1 V/m, citando studi del 1988 e 1991 sui campi magnetici. Nessuna misura sul sito.",
+        "Spazio aereo: secondo il rapporto, il fascio Ka con inclinazione minima di 17° resta a circa 10.000 m di quota a 30 km e potrebbe interferire con un aereo che lo attraversi. Gli aeroporti più vicini sono Comiso (circa 19 km), Sigonella (52 km) e Catania Fontanarossa (67 km). Scenario teorico.",
+        "Marzo 2026: frana segnalata al limite dell'area del MUOS. Nessun riscontro di legame con la frana del gennaio 2026 nel centro abitato."
       ],
       "problemi_sanitari": [
-        "Misure ARPA Sicilia 2008-2010, già PRIMA del MUOS: campo elettrico fino a 5,9 ± 0,6 V/m a contrada Ulmo, ovvero al pelo del limite legale di 6 V/m (DPCM 8/7/2003). La misura sottostima per limiti strumentali (non rileva la banda LF a 43 KHz dell'antenna VERDIN).",
-        "Esposizione cronica popolazione: il rapporto Zucchetti–Coraddu stima che il MUOS aggiungerà ~1 V/m al campo già illegale, su abitazioni a 1-2 km dalle sorgenti (centro Niscemi a 5 km, 26.000 abitanti)",
-        "Effetti acuti del fascio principale Ka (1600 W, guadagno 71,4 dB): limite legale per esposizione acuta (4 W/m²) viene superato entro un raggio di 20,96 km dall'antenna. In caso di errore di puntamento o malfunzionamento, l'INTERA popolazione di Niscemi è esposta a danni gravi e irreversibili (ipertermia, necrosi tissutale, cataratta indotta).",
-        "Rischio cancri emolinfatici da esposizione cronica a radiofrequenze: confermato da più studi epidemiologici su militari (US Navy 1990, Korean War Navy Technicians 2002, radaristi militari belgi 2009)"
+        "Misure ARPA Sicilia 2008-2010, prima del MUOS: campo elettrico fino a 5,9 ± 0,6 V/m a contrada Ulmo, vicino al valore di attenzione di 6 V/m (DPCM 8/7/2003). Secondo il rapporto Zucchetti-Coraddu la misura non rileva la banda a 43 kHz e può sottostimare.",
+        "Esposizione cronica: il rapporto Zucchetti-Coraddu stima che il MUOS aggiunga circa 1 V/m a qualche km dalle sorgenti, con le prime abitazioni a 1-2 km e il centro di Niscemi a circa 5 km. Le misure ARPA citate restano sotto il valore di attenzione.",
+        "Scenario di incidente: il rapporto calcola che, in caso di errore di puntamento, il limite di 4 W/m² sarebbe superato entro circa 20 km lungo il fascio principale. Gli autori avvertono che il calcolo è «affetto da forti incertezze», perché quella distanza è in campo vicino. In funzionamento normale il fascio punta al cielo con almeno 17° di inclinazione.",
+        "Radiofrequenze e cancro: la IARC classifica i campi a radiofrequenza come possibili cancerogeni (gruppo 2B). Per le esposizioni professionali alcuni studi danno deboli indicazioni su leucemie e linfomi, di difficile interpretazione; per sorgenti fisse ambientali non si possono trarre conclusioni. Nessuno studio riguarda Niscemi.",
+        "Studio ISS con ISPRA e OMS, settembre 2013: nessun rischio atteso per la salute, in base a valutazioni teoriche da verificare dopo l'attivazione. Il TAR di Palermo nel 2015 annulla le autorizzazioni; il CGA nel 2016 ribalta la sentenza e giudica corretti i controlli. I comitati contestano i verificatori."
       ],
       "conflitti": [],
       "fonti": [
-        "Prof. Massimo Zucchetti (cattedra Protezione dalle Radiazioni, Politecnico di Torino + Research Affiliate MIT) e Dott. Massimo Coraddu (Dip. Energetica, PoliTo), «Mobile User Objective System (MUOS) presso il Naval Radio Transmitter Facility (NRTF) di Niscemi: Analisi dei rischi», 4 novembre 2011 (staff.polito.it/massimo.zucchetti/RelazionRischiAssociatiRealizzazioneMUOS1.pdf)",
+        {"titolo": "Zucchetti, Coraddu, MUOS presso NRTF Niscemi: analisi dei rischi, 4 novembre 2011", "url": "https://staff.polito.it/massimo.zucchetti/RelazionRischiAssociatiRealizzazioneMUOS1.pdf"},
         "ARPA Sicilia — campagne di misurazione 2008-2010 (protocollo n.19496/2008 e n.0009079/2009)",
         "Prof. L. Zanforlin e P. Levrieri, Università di Palermo — relazione sul rischio per la popolazione di Niscemi (Ufficio Presidenza Regione Sicilia, prot. n.5515/2011)",
         "ISDE Sicilia (Medici per l'Ambiente)",
         "Movimento No Muos — documentazione tecnica e mobilitazione 2009-oggi",
-        "Sentenza TAR Sicilia n. 1827/2013 e successivi gradi (sequestro/dissequestro)",
-        "Legge 36 del 22 febbraio 2001 + DPCM 8 luglio 2003 (limiti italiani campi elettromagnetici)"
+        "TAR Sicilia, Palermo, sentenza 461/2015; Consiglio di giustizia amministrativa, decisione del 6 maggio 2016 (ribalta il TAR); Cassazione, terza sezione, 10 febbraio 2017 (conferma il dissequestro); CGA, gennaio 2019 (inammissibili i tre ricorsi)",
+        "Legge 36 del 22 febbraio 2001 + DPCM 8 luglio 2003 (limiti italiani campi elettromagnetici)",
+        {"titolo": "Wikipedia, Naval Radio Transmitter Facility Niscemi", "url": "https://en.wikipedia.org/wiki/Naval_Radio_Transmitter_Facility_Niscemi"},
+        {"titolo": "US Navy, NCTS Sicily, History", "url": "https://www.navifor.usff.navy.mil/Organization/Operational-Support/NCTAMS-LANT/Organization/NCTS-Sicily/History/"},
+        {"titolo": "greenMe, per il CGA il Muos non fa male alla salute, 10 maggio 2016", "url": "https://www.greenme.it/?p=533608"},
+        {"titolo": "LiveSicilia, inammissibili i ricorsi al CGA, 14 gennaio 2019", "url": "https://livesicilia.it/?p=396883"},
+        {"titolo": "Board scientifico Salto di Quirra (ISS-Regione), Relazione finale, pp. 1-80", "url": "https://www.sardiniapost.it/wp-content/uploads/2015/11/RELAZIONE_Salto-di-Quirra-IIS.1-80.pdf"},
+        {"titolo": "Blitz, Antenne Muos, Istituto Superiore di Sanità: no rischi per la salute", "url": "https://archivio.blitzquotidiano.it/cronaca-italia/antenne-muos-istituto-superiore-di-sanita-no-rischi-per-la-salute-1623804"},
+        {"titolo": "ANSA, Palermo TAR upholds appeal against Muos, 13 febbraio 2015", "url": "https://www.ansa.it/english/news/2015/02/13/palermo-tar-upholds-appeal-against-muos-update-2_e388624e-e4b5-4340-82f0-5711731ad29c.html"},
+        {"titolo": "L'Adige/ANSA, Frana al confine dell'area del Muos, 9 marzo 2026", "url": "https://www.ladige.it/attualita/frana-al-confine-dellarea-del-muos-a-niscemi-yl1psq4z"},
+        {"titolo": "LiveSicilia, il Muos resta dissequestrato, Cassazione 10 febbraio 2017", "url": "https://livesicilia.it/?p=333657"},
+        {"titolo": "Wikipedia, List of VLF transmitters", "url": "https://en.wikipedia.org/wiki/List_of_VLF_transmitters"}
       ],
       "raggi_rischio_km": {
-        "danno_acuto": 20.96,
-        "valore_attenzione": 132.5,
-        "interferenza_aerea": 67
+        "danno_acuto": 20
       }
     },
     {
       "id": "salto-di-quirra",
       "nome": "Poligono Sperimentale Interforze Salto di Quirra (PISQ)",
-      "lat": 39.5066,
-      "lon": 9.6453,
+      "lat": 39.4926,
+      "lon": 9.6427,
       "regione": "Sardegna",
-      "comune": "Perdasdefogu / Villaputzu (NU/SU)",
+      "comune": "Perdasdefogu (Ogliastra) / Villaputzu (Città metropolitana di Cagliari)",
       "tipo": "Poligono militare interforze",
       "gestione": "Ministero della Difesa italiano — uso anche NATO e industria armiera",
-      "funzione": "Più grande poligono militare d'Europa. Test di missili, droni, esplosivi, sistemi d'arma di nuova generazione. Affittato anche a industrie armiere straniere e a forze NATO.",
+      "funzione": "Tra i maggiori poligoni militari d'Europa, con un'area a terra a Perdasdefogu di circa 12.000 ettari e un poligono a mare a Capo San Lorenzo. Test di missili, droni, esplosivi e sistemi d'arma. Usato anche da industrie armiere e forze NATO.",
       "estensione_ha": 12000,
-      "mare_interdetto_kmq": 4000,
+      "mare_interdetto_kmq": null,
       "armamento": [
         "Test di vettori missilistici",
         "Sperimentazione droni e armi di nuova generazione",
-        "Sospetta sperimentazione di munizioni a uranio impoverito (anni '80-2000) — oggetto di inchiesta giudiziaria"
+        "Uso storico di missili Milan con torio 232 come tracciante, secondo la Commissione tecnica di esperti. La stessa commissione ritiene che le misure in aria indichino uranio naturale e «escluderebbe» quello impoverito."
       ],
       "problemi_ambientali": [
-        "Contaminazione del suolo da metalli pesanti (uranio impoverito, torio, piombo) rilevata da perizie disposte dalla Procura di Lanusei",
+        "Anomalie di metalli e altri elementi nei suoli delle aree a più alta attività del poligono (arsenico, cadmio, piombo, torio, tra gli altri), in parte sopra i limiti di legge. Il Board ISS-Regione segnala che non è possibile stabilire con certezza il legame con le attività militari, anche per la presenza di aree minerarie. Torio trovato anche in matrici alimentari.",
         "12.000 ettari di pascoli e macchia mediterranea sottratti all'uso civile",
-        "Circa 4.000 km² di mare interdetto alla pesca durante le esercitazioni (decreti NOTAM)"
+        "Specchio di mare interdetto alla pesca durante le esercitazioni. Estensione non verificata."
       ],
       "problemi_sanitari": [
-        "«Sindrome di Quirra»: cluster anomalo di malformazioni congenite negli agnelli e di tumori (leucemie, linfomi) tra pastori, civili e militari. Centinaia di casi documentati a partire dagli anni '90.",
-        "Inchiesta Procura di Lanusei aperta dal 2010 per disastro ambientale e omicidio colposo plurimo",
-        "Studi epidemiologici della Regione Sardegna e dell'Istituto Superiore di Sanità hanno confermato incidenze anomale di alcune patologie"
+        "«Sindrome di Quirra»: stampa e veterinari hanno segnalato malformazioni negli agnelli e tumori emolinfopoietici fra pastori e residenti. È un'ipotesi, non un cluster accertato: quattro indagini epidemiologiche indipendenti non hanno confermato l'eccesso.",
+        "Inchiesta della Procura di Lanusei. Nel 2021 il Tribunale di Lanusei ha assolto gli otto ex comandanti del poligono tra il 2002 e il 2010, accusati di omissione aggravata di cautele contro infortuni e disastri, per mancanza di idonea prova. Appello non risultante alle fonti consultate.",
+        "Relazione finale del Board ISS-Regione (2015): nei tre comuni più vicini (Escalaplano, Perdasdefogu, Villaputzu) la mortalità generale risulta inferiore alla media regionale, con un solo eccesso significativo per malattie non tumorali dell'apparato digerente. Eccessi limitati si osservano nei comuni della corona esterna, soprattutto fra le donne."
       ],
       "conflitti": [],
       "fonti": [
-        "Procura della Repubblica di Lanusei — fascicolo «Sindrome di Quirra»",
-        "ISS — relazioni epidemiologiche commissionate dalla Regione Sardegna",
+        {"titolo": "Il Fatto Quotidiano, Sardegna, record di servitù militari, 6 marzo 2024", "url": "https://www.ilfattoquotidiano.it/2024/03/06/in-sardegna-record-di-servitu-militari-sulla-difesa-non-ha-poteri-ma-in-todde-ripongo-aspettative/7468049/"},
+        {"titolo": "Board scientifico Salto di Quirra (ISS-Regione), Relazione finale, pp. 1-80", "url": "https://www.sardiniapost.it/wp-content/uploads/2015/11/RELAZIONE_Salto-di-Quirra-IIS.1-80.pdf"},
         "Commissione parlamentare di inchiesta sull'uranio impoverito (2006-2018)",
-        "Mauro Manca, «La sindrome di Quirra», 2012"
+        {"titolo": "O. Pirelli, «Veleni in paradiso. La sindrome di Quirra e le polveri di morte che minacciano la Sardegna», 2012", "url": "https://www.macrolibrarsi.it/libri/__veleni-in-paradiso.php"},
+        {"titolo": "OpenStreetMap", "url": "https://www.openstreetmap.org/"},
+        {"titolo": "Tuttitalia, Città metropolitana di Sassari e nuove province della Sardegna", "url": "https://www.tuttitalia.it/variazioni-amministrative/citta-metropolitana-di-sassari-e-nuove-province-della-sardegna/"},
+        {"titolo": "L'Unione Sarda, Blitz militare «immediato», Sardegna circondata", "url": "https://www.unionesarda.it/news-sardegna/blitz-militare-immediato-sardegna-circondata-sw98wxmz"},
+        {"titolo": "P.L. Cocco, Lezioni dalla «sindrome di Quirra». Epidemiologia? No, grazie, 2012", "url": "https://iris.unica.it/handle/11584/178429"},
+        {"titolo": "L'Unione Sarda, Veleni di Quirra, attesa la sentenza per gli otto comandanti", "url": "https://www.unionesarda.it/news-sardegna/ogliastra/veleni-di-quirra-attesa-la-sentenza-per-gli-otto-comandanti-del-poligono-yvs4eco9"}
       ]
     },
     {
       "id": "teulada",
       "nome": "Poligono Interforze di Capo Teulada",
-      "lat": 38.8728,
-      "lon": 8.6964,
+      "lat": 38.9318,
+      "lon": 8.6588,
       "regione": "Sardegna",
-      "comune": "Teulada (SU)",
+      "comune": "Teulada (Sulcis Iglesiente)",
       "tipo": "Poligono militare interforze",
       "gestione": "Ministero della Difesa italiano + uso NATO",
       "funzione": "Poligono di tiro terra-mare. Esercitazioni di sbarco anfibio, tiro d'artiglieria, bombardamento aereo. Uso intensivo da parte di forze NATO (USA, Germania, UK, Francia, Olanda).",
       "estensione_ha": 7200,
-      "mare_interdetto_kmq": 1300,
+      "mare_interdetto_kmq": null,
       "armamento": [
         "Tiri d'artiglieria pesante",
         "Bombardamento aereo (esercitazioni con bombe inerti e reali)",
@@ -229,31 +256,36 @@
       "problemi_ambientali": [
         "Contaminazione da metalli pesanti e residuati bellici",
         "Erosione del paesaggio costiero",
-        "7.200 ettari sottratti, gran parte della Penisola Delle Anime e Capo Teulada"
+        "Circa 7.200 ettari sottratti; la Penisola Delta, circa 3 km², è interdetta dagli anni Settanta",
+        "Secondo la Procura di Cagliari, sulla Penisola Delta fra il 2008 e il 2016 sono stati sparati circa 860.000 colpi di addestramento e 11.875 missili, pari a 556 tonnellate di materiale. Il 18 luglio 2024 il processo per disastro colposo a cinque ex capi di Stato maggiore si è chiuso con quattro assoluzioni e un proscioglimento."
       ],
       "problemi_sanitari": [
-        "Tumori e patologie linfopoietiche documentati tra militari di leva passati per Teulada (inchiesta giornalistica «Servizio Pubblico» e «Report»)",
+        "Esposti di residenti dal 2012 su patologie attribuite al poligono; l'ipotesi di omicidio colposo è stata archiviata per l'impossibilità di dimostrare il nesso causale.",
         "Cluster non confermati ufficialmente nei comuni limitrofi"
       ],
       "conflitti": [],
       "fonti": [
         "Commissione parlamentare uranio impoverito",
         "Rete Italiana per il Disarmo — dossier Sardegna",
-        "Inchieste Report RAI3"
+        {"titolo": "OpenStreetMap", "url": "https://www.openstreetmap.org/"},
+        {"titolo": "Tuttitalia, Città metropolitana di Sassari e nuove province della Sardegna", "url": "https://www.tuttitalia.it/variazioni-amministrative/citta-metropolitana-di-sassari-e-nuove-province-della-sardegna/"},
+        {"titolo": "A Foras, Dossier poligono Teulada", "url": "https://www.greenme.it/wp-content/uploads/2023/06/DOSSIER-POLIGONO-TEULADA.pdf"},
+        {"titolo": "L'Indipendente, Teulada: nessun colpevole al processo, 20 luglio 2024", "url": "https://www.lindipendente.online/2024/07/20/teulada-nessun-colpevole-al-processo-sui-disastri-ambientali-causati-dalle-basi-militari/?pdf=117426"},
+        {"titolo": "La Notizia Giornale, poligoni sardi", "url": "https://www.lanotiziagiornale.it/?p=427154"}
       ]
     },
     {
       "id": "capo-frasca",
       "nome": "Poligono di Capo Frasca",
-      "lat": 39.7625,
-      "lon": 8.4683,
+      "lat": 39.7500,
+      "lon": 8.4500,
       "regione": "Sardegna",
-      "comune": "Arbus (SU)",
+      "comune": "Arbus (Medio Campidano)",
       "tipo": "Poligono aria-terra",
       "gestione": "Aeronautica Militare Italiana — uso NATO",
-      "funzione": "Poligono di tiro aria-terra. Usato per esercitazioni di bombardamento da parte di velivoli italiani e NATO (Tornado, Eurofighter, F-16 stranieri, futuro F-35).",
-      "estensione_ha": 1400,
-      "mare_interdetto_kmq": 250,
+      "funzione": "Poligono di tiro aria-terra dell'Aeronautica Militare, usato da velivoli italiani e NATO. Ospita anche la 123ª Squadriglia Radar Remota.",
+      "estensione_ha": 1200,
+      "mare_interdetto_kmq": null,
       "armamento": [
         "Bersagli per esercitazioni di bombardamento aereo",
         "Bombe inerti e (in passato) reali"
@@ -264,7 +296,13 @@
       ],
       "problemi_sanitari": [],
       "conflitti": [],
-      "fonti": ["Comitato Sardo Gettiamo le Basi"]
+      "fonti": [
+        "Comitato Sardo Gettiamo le Basi",
+        {"titolo": "OpenStreetMap", "url": "https://www.openstreetmap.org/"},
+        {"titolo": "Tuttitalia, Città metropolitana di Sassari e nuove province della Sardegna", "url": "https://www.tuttitalia.it/variazioni-amministrative/citta-metropolitana-di-sassari-e-nuove-province-della-sardegna/"},
+        {"titolo": "L'Unione Sarda, Blitz militare «immediato», Sardegna circondata", "url": "https://www.unionesarda.it/news-sardegna/blitz-militare-immediato-sardegna-circondata-sw98wxmz"},
+        {"titolo": "Wikipedia, Structure of the Italian Air Force (stato al 1 gennaio 2018)", "url": "https://en.wikipedia.org/wiki/Structure_of_the_Italian_Air_Force"}
+      ]
     },
     {
       "id": "decimomannu",
@@ -275,83 +313,103 @@
       "comune": "Decimomannu (CA)",
       "tipo": "Base aerea — uso NATO",
       "gestione": "Aeronautica Militare Italiana",
-      "funzione": "Base di addestramento aria-aria e aria-suolo. Sede storica del Tactical Leadership Programme (TLP) NATO fino al 2009. Usata dalla Luftwaffe tedesca e dalla RAF britannica per decenni.",
+      "funzione": "Base di addestramento al combattimento aereo e al tiro aria-suolo, usata per decenni da Luftwaffe e RAF. Ospita il Reparto Sperimentale e di Standardizzazione al Tiro Aereo e l'80° Centro CSAR.",
       "estensione_ha": 580,
-      "armamento": ["Addestramento caccia (Eurofighter, Tornado, futuro F-35)"],
+      "armamento": ["Addestramento di reparti da caccia"],
       "problemi_ambientali": ["Rumore cronico nei comuni del Sud Sardegna"],
       "problemi_sanitari": [],
       "conflitti": ["libia-2011"],
-      "fonti": ["Aeronautica Militare — sito ufficiale", "Wikipedia voce «Aeroporto di Decimomannu»"]
+      "fonti": [
+        "Aeronautica Militare — sito ufficiale",
+        {"titolo": "Wikipedia, Tactical Leadership Programme", "url": "https://en.wikipedia.org/wiki/Tactical_Leadership_Programme"},
+        {"titolo": "Wikipedia, Structure of the Italian Air Force (stato al 1 gennaio 2018)", "url": "https://en.wikipedia.org/wiki/Structure_of_the_Italian_Air_Force"},
+        {"titolo": "Recce Reports, TLP 2004-4, storia del programma a Florennes", "url": "https://www.reccereports.com/florennes-ab-tlp-4/"}
+      ]
     },
     {
       "id": "camp-darby",
       "nome": "Camp Darby",
-      "lat": 43.6157,
-      "lon": 10.3658,
+      "lat": 43.6317,
+      "lon": 10.3328,
       "regione": "Toscana",
       "comune": "Pisa / Livorno (Tenuta di Tombolo)",
       "tipo": "Base logistica US Army",
       "gestione": "US Army Garrison Italy",
-      "funzione": "Più grande deposito di munizioni dell'US Army fuori dagli Stati Uniti. Hub logistico per le forze USA in Europa, Medio Oriente e Africa. Le munizioni partono da Camp Darby via Porto di Livorno verso le aree di operazione.",
+      "funzione": "Grande deposito di munizioni e base logistica dell'US Army, spesso descritto come il più grande fuori dagli Stati Uniti, senza conferma ufficiale. Hub logistico per le forze USA in Europa, Medio Oriente e Africa. Le munizioni raggiungono il porto di Livorno via canale e, dal 2025, con la nuova linea ferroviaria.",
       "estensione_ha": 1000,
       "armamento": [
-        "Decine di migliaia di tonnellate di munizioni, missili, esplosivi",
-        "Mezzi corazzati prepositionati",
-        "Equipaggiamenti chimico-biologici (oggetto di inchieste parlamentari)"
+        "Munizioni, missili ed esplosivi",
+        "Mezzi corazzati prepositionati"
       ],
       "problemi_ambientali": [
-        "1.000 ettari sottratti al Parco Migliarino-San Rossore-Massaciuccoli (area protetta regionale)",
+        "Circa 1.000 ettari all'interno del Parco di Migliarino-San Rossore-Massaciuccoli; circa 34 ettari restituiti all'Italia nel 2019",
         "Rischio di inquinamento delle falde acquifere",
-        "Disboscamento per ampliamento depositi (progetto contestato 2020-2022)"
+        "Nuovo raccordo ferroviario di circa 2,5 km e ponte sul canale dei Navicelli nell'area boscata di Tombolo, completati entro novembre 2025"
       ],
-      "problemi_sanitari": [
-        "Esposizione del personale italiano a sostanze pericolose denunciata in più procedimenti giudiziari"
-      ],
-      "conflitti": ["iraq-2003", "afghanistan-2001", "libia-2011", "siria-2014", "yemen-2015"],
+      "problemi_sanitari": [],
+      "conflitti": ["iraq-2003"],
       "fonti": [
         "Coordinamento No Base Coltano-Camp Darby",
         "WWF Toscana — denuncia ampliamento 2021",
-        "Atti consiglio regionale Toscana"
+        "Atti consiglio regionale Toscana",
+        {"titolo": "OpenStreetMap", "url": "https://www.openstreetmap.org/"},
+        {"titolo": "Wikipedia, Camp Darby", "url": "https://en.wikipedia.org/wiki/Camp_Darby"},
+        {"titolo": "Pressenza, potenziata la linea ferroviaria per Camp Darby, novembre 2025", "url": "https://www.pressenza.com/it/2025/11/potenziata-la-linea-ferroviaria-per-camp-darby-44-treni-carichi-di-armi-solo-negli-ultimi-7-mesi/"},
+        {"titolo": "Il Fatto Quotidiano, Camp Darby, ferrovia e trasporto armi, 19 giugno 2025", "url": "https://www.ilfattoquotidiano.it/2025/06/19/camp-darby-ferrovia-trasporto-armi-pisa-livorno-notizie/8031537/"},
+        {"titolo": "GlobalSecurity, Camp Darby", "url": "https://www.globalsecurity.org/military/facility/camp-darby.htm"},
+        {"titolo": "Stars and Stripes, New Army headquarters signals US return of Camp Darby land, luglio 2019", "url": "https://www.stripes.com/news/2019-07-17/new-army-headquarters-building-signals-us-return-of-camp-darby-land-to-italy-1491082.html1"}
       ]
     },
     {
       "id": "coltano",
-      "nome": "Centro Carabinieri Coltano (progetto contestato)",
-      "lat": 43.6447,
-      "lon": 10.3700,
+      "nome": "Coltano: base Carabinieri non realizzata (progetto 2022)",
+      "lat": 43.6387,
+      "lon": 10.3935,
       "regione": "Toscana",
       "comune": "Pisa",
-      "tipo": "Nuova caserma Carabinieri / GIS",
+      "tipo": "Caserma Carabinieri non realizzata (progetto 2022)",
       "gestione": "Arma dei Carabinieri (Ministero Difesa)",
-      "funzione": "Progetto 2022 per nuova grande caserma del GIS (Gruppo Intervento Speciale) dei Carabinieri a Coltano, su area di 73 ettari del Parco di San Rossore. Fortemente contestato dal movimento «No Base Coltano». Progetto ridimensionato nel 2023 dopo le proteste.",
-      "estensione_ha": 73,
+      "funzione": "Nel 2022 il governo progetta a Coltano una base per GIS, Tuscania e cinofili dei Carabinieri, fino a 73 ettari, in gran parte dentro il parco di Migliarino-San Rossore-Massaciuccoli. Il 13 maggio 2022 Difesa, Regione e Comune rinunciano al sito. Nel 2023 il progetto viene riproposto altrove: centro al CISAM di San Piero a Grado e aree a Pontedera, con il via libera dei sindaci del Comitato del Parco.",
+      "estensione_ha": null,
       "armamento": [],
       "problemi_ambientali": [
-        "73 ettari di pineta del Parco di San Rossore minacciati di disboscamento",
+        "Fino a 73 ettari previsti, classificati area agricola di recupero ambientale",
         "Area di pregio paesaggistico e archeologico"
       ],
       "problemi_sanitari": [],
       "conflitti": [],
-      "fonti": ["Movimento No Base Coltano", "WWF Toscana", "Atti consiglio comunale Pisa 2022"]
+      "fonti": [
+        "Movimento No Base Coltano",
+        "WWF Toscana",
+        "Atti consiglio comunale Pisa 2022",
+        {"titolo": "Il Post, A Coltano la base militare non si farà più, 13 maggio 2022", "url": "https://www.ilpost.it/2022/05/13/base-militare-coltano-rinuncia/"},
+        {"titolo": "OpenStreetMap", "url": "https://www.openstreetmap.org/"},
+        {"titolo": "L'Indipendente, Pisa, approvata la nuova base militare, 21 settembre 2023", "url": "https://lindipendente.online/2023/09/21/pisa-approvata-la-nuova-base-militare-annunciata-la-protesta-nazionale/?pdf=89430"},
+        {"titolo": "il manifesto global, Tuscany is mobilizing against military installations", "url": "https://global.ilmanifesto.it/tuscany-is-mobilizing-against-military-installations-in-the-region"}
+      ]
     },
     {
       "id": "napoli-jfc",
       "nome": "JFC Naples — Lago Patria",
-      "lat": 40.9359,
-      "lon": 14.0700,
+      "lat": 40.9301,
+      "lon": 14.0471,
       "regione": "Campania",
       "comune": "Giugliano in Campania (NA)",
       "tipo": "Quartier generale NATO",
       "gestione": "NATO — Joint Force Command Naples",
-      "funzione": "Uno dei tre comandi operativi della NATO (gli altri sono Brunssum e Norfolk). Responsabile delle operazioni nel Mediterraneo, Balcani, Mar Nero. Sede di comando per la KFOR in Kosovo.",
+      "funzione": "Uno dei tre comandi operativi della NATO (gli altri sono Brunssum e Norfolk). Responsabile delle operazioni nel Mediterraneo, Balcani e Mar Nero. Nel febbraio 2026 la NATO ha deciso di passarne la guida dagli USA all'Italia, in tempi non ancora indicati.",
       "estensione_ha": 150,
       "armamento": [],
       "problemi_ambientali": [
         "Insediamento nella «Terra dei Fuochi», già gravata da problemi ambientali strutturali"
       ],
       "problemi_sanitari": [],
-      "conflitti": ["kosovo-1999", "libia-2011", "afghanistan-2001"],
-      "fonti": ["NATO — sito ufficiale JFC Naples"]
+      "conflitti": ["libia-2011"],
+      "fonti": [
+        "NATO — sito ufficiale JFC Naples",
+        {"titolo": "OpenStreetMap", "url": "https://www.openstreetmap.org/"},
+        {"titolo": "Breaking Defense, NATO shake-up, febbraio 2026", "url": "https://breakingdefense.com/2026/02/nato-shake-up-sees-us-ousted-from-2-warfighting-level-commands/"}
+      ]
     },
     {
       "id": "capodichino-nsa",
@@ -367,15 +425,15 @@
       "armamento": [],
       "problemi_ambientali": [
         "Inquinamento atmosferico aggiuntivo nel quartiere Capodichino di Napoli",
-        "Inchiesta interna US Navy 2008 su contaminazione acque alloggi militari (sospetta «Terra dei Fuochi»)"
+        "Dal 2008 al 2011 la US Navy valuta acqua, suolo e aria nelle abitazioni del personale in Campania e riscontra contaminazione diffusa dell'acqua nei pozzi privati"
       ],
       "problemi_sanitari": [
-        "Studio US Navy 2011 («Public Health Evaluation») su contaminazione acqua e aria nelle abitazioni del personale USA in Campania — cluster di patologie tiroidee, autoimmuni, malformazioni"
+        "Naples Public Health Evaluation della US Navy (2008-2011), su abitazioni del personale USA nell'area di Napoli: contaminazione diffusa dell'acqua di pozzi privati e rischi inaccettabili in parte delle case. Tassi di malformazioni alla nascita nei limiti attesi e tumori coerenti con popolazioni della stessa età; debole associazione fra PM10 e asma."
       ],
-      "conflitti": ["libia-2011", "siria-2014", "yemen-2015"],
+      "conflitti": [],
       "fonti": [
-        "US Navy Public Health Evaluation Naples Italy, 2011",
-        "Pax Christi — dossier basi USA in Campania"
+        {"titolo": "US Navy, Naples Public Health Evaluation", "url": "https://cnreurafcent.cnic.navy.mil/installations/nsa-naples/naples-public-health-evaluation"},
+        {"titolo": "Navy and Marine Corps Public Health Center, Naples Public Health Evaluation, Public Health Summary, vol. III, maggio 2011 (copia)", "url": "https://www.slideshare.net/slideshow/terra-dei-fuochi-dossier-usa-sui-rischi-per-la-salute/30772858"}
       ]
     },
     {
@@ -397,15 +455,18 @@
         "120.000 litri di riserva idrica, cucine, infermeria, dormitori, sale operative"
       ],
       "problemi_ambientali": [
-        "Riconversione a museo della Guerra Fredda in corso: passaggio al Comune di Affi nel marzo 2018",
-        "Maggio 2026: 7 milioni di euro di fondi governativi assegnati per la realizzazione del museo (segno curioso del riemergere della Guerra Fredda come tema di interesse politico, nel pieno della nuova corsa al riarmo italiana)"
+        "Riconversione a museo della Guerra Fredda in corso: passaggio al Comune di Affi nel marzo 2018"
       ],
       "problemi_sanitari": [],
       "conflitti": [],
+      "fatti_storici": [
+        "Nel 2026 assegnati 7 milioni di euro per il museo della Guerra Fredda, con apertura completa prevista entro il 2029"
+      ],
       "fonti": [
-        "Wikipedia, «West Star» (it.wikipedia.org/wiki/West_Star)",
+        {"titolo": "Wikipedia, West Star", "url": "https://it.wikipedia.org/wiki/West_Star"},
         "Comune di Affi — atti del passaggio di proprietà (marzo 2018)",
-        "Decreto Ministero della Difesa, maggio 2026 — finanziamento museo Guerra Fredda 7M€"
+        {"titolo": "Time Out, Italy new museum in Cold War bunker West Star, 2026", "url": "https://www.timeout.com/news/italy-new-museum-cold-war-bunker-west-star-081226"},
+        {"titolo": "Initaly, Affi: sette milioni per il bunker West Star, 6 maggio 2026", "url": "https://www.initaly.it/en/articolo/affi-sette-milioni-per-trasformare-il-bunker-antiatomico-west-star-in-12759"}
       ]
     },
     {
@@ -414,72 +475,75 @@
       "lat": 41.2147,
       "lon": 9.4067,
       "regione": "Sardegna",
-      "comune": "La Maddalena (SS)",
+      "comune": "La Maddalena (Gallura Nord-Est Sardegna)",
       "tipo": "Ex base sottomarini nucleari USA (1972-2008) — oggi Marina Militare",
       "gestione": "Marina Militare Italiana (dopo chiusura USA nel 2008)",
       "scali_nucleari": true,
-      "funzione": "Per 36 anni base avanzata della US Navy per i sottomarini nucleari d'attacco (SSN) e i sottomarini lanciatori di missili balistici (SSBN) nel Mediterraneo. Le navi appoggio USS Simon Lake e USS Emory S. Land vi erano ormeggiate permanentemente per la manutenzione, riparazione e rifornimento dei sottomarini, compresi interventi sui reattori nucleari. Una delle 'facilities' italiane più frequentate del Mediterraneo. Ufficialmente chiusa nel 2008, ma il sito resta militare.",
+      "funzione": "Per 35 anni base avanzata della US Navy per i sottomarini nucleari d'attacco nel Mediterraneo. Dal 1972 le navi appoggio hanno assicurato manutenzione e riparazione. Chiusa all'inizio del 2008.",
       "estensione_ha": 100,
       "armamento": [
-        "Sub USA documentati in scalo: USS Skipjack (SSN-585, 1962), USS Scorpion (SSN-589, 1968 — poi affondato in Atlantico maggio 1968), USS Bergall (SSN-667, 1976-1994), USS Narwhal (SSN-671, 1978-1985), USS Cincinnati (SSN-693, 1979-1994), USS Batfish (SSN-681, 1995-1998), USS Hartford (SSN-768, 2003)",
+        "Sub USA documentati in scalo: USS Hartford (SSN-768, 2003)",
         "Sub UK documentati: HMS Splendid (1999), HMS Triumph (2000)",
         "Sub francesi documentati: S 605 Amethyste (1999)",
-        "Navi appoggio USA: USS Simon Lake (1981-1995), USS Emory S. Land (1995-2008)",
+        "Navi appoggio USA: USS Fulton (dal 1972), USS Orion, USS Simon Lake (1993-1999), USS Emory S. Land (1999-2007)",
         "Capacità di intervento sui reattori nucleari"
       ],
       "problemi_ambientali": [
-        "INCIDENTE USS HARTFORD, 25 ottobre 2003: il sottomarino nucleare SSN-768 sperona il fondale dell'arcipelago. Mezzo timone strappato, sonar e elettronica distrutti, scafo squarciato. Costo riparazione $9,4 milioni. Le autorità italiane informate giorni dopo. Il comandante e il commodoro di Submarine Squadron 22 rimossi dal comando; 6 ufficiali accusati di negligenza.",
-        "16 gennaio 2004: il laboratorio indipendente francese CRIIRAD rileva livelli anomali di Torio-234 nelle alghe dell'arcipelago. L'APAT (poi ISPRA, agenzia ministeriale italiana) attribuisce a «cause naturali». Il dato CRIIRAD resta pubblico, l'inchiesta italiana viene archiviata.",
+        "Incidente USS Hartford, 25 ottobre 2003: il sottomarino nucleare si incaglia presso l'arcipelago. Danni a timone e sonar per circa 9 milioni di dollari, sostituito il comando; sei militari accusati di negligenza. L'incidente viene reso pubblico solo il 12 novembre.",
+        "Gennaio 2004: il laboratorio francese CRIIRAD segnala valori elevati di torio-234 nelle alghe. Il rapporto APAT-ICRAM-ARPAS del giugno 2004 trova valori dello stesso ordine anche all'Asinara e a Porto Conte, li attribuisce ad accumulo naturale ed esclude rilasci dal sottomarino.",
         "Contaminazione da idrocarburi nei fondali del porto (bonifica in corso da decenni)",
-        "L'archipelago della Maddalena è dal 1996 Parco Nazionale — la presenza nucleare USA si sovrapponeva all'area protetta"
+        "L'arcipelago della Maddalena è Parco Nazionale dal 1996"
       ],
-      "problemi_sanitari": [
-        "5 gennaio 2004: il consigliere provinciale Giulio Giudice annuncia pubblicamente di essere malato di cancro e chiede formale indagine sulla base USA. Apertura inchieste mediatiche (Il Manifesto, PeaceLink), poi insabbiate.",
-        "Indagine della Commissione parlamentare uranio impoverito (2006-2018) su incidenza tumori nei militari italiani e nella popolazione locale: anomalie rilevate ma non attribuite con certezza."
-      ],
+      "problemi_sanitari": [],
       "conflitti": [],
       "fonti": [
         "Wikipedia, «USS Hartford (SSN-768)»",
-        "Il Manifesto, «Disastro nucleare vicino alla costa», 4 agosto 2003",
         "PeaceLink — dossier «La Maddalena, dall'incidente dell'Hartford all'incubo torio»",
-        "CRIIRAD (Commission de Recherche et d'Information Indépendantes sur la Radioactivité), rilevazioni 16 gennaio 2004",
+        {"titolo": "APAT-ICRAM-ARPAS, Indagini straordinarie di monitoraggio della radioattività ambientale nell'Arcipelago di La Maddalena, giugno 2004", "url": "https://www.isprambiente.gov.it/contentfiles/00005400/5404-rapporto-indagini-la-maddalena.pdf"},
         "Commissione parlamentare di inchiesta sull'uranio impoverito (2006-2018)",
-        "Atti causa civile cittadini La Maddalena vs Ministero Difesa",
-        "M. Dinucci, «La Maddalena base nucleare USA», 2008",
-        "Progetto Humus — Porti italiani a rischio nucleare"
+        "Progetto Humus — Porti italiani a rischio nucleare",
+        {"titolo": "Wikipedia, Santo Stefano (island)", "url": "https://en.wikipedia.org/wiki/Santo_Stefano_(island)"},
+        {"titolo": "Wikipedia, USS Emory S. Land", "url": "https://en.wikipedia.org/wiki/USS_Emory_S._Land"},
+        {"titolo": "Wikipedia, USS Simon Lake", "url": "https://en.wikipedia.org/wiki/USS_Simon_Lake"},
+        {"titolo": "Wikipedia, USS Hartford grounding", "url": "https://en.wikipedia.org/wiki/USS_Hartford_grounding"},
+        {"titolo": "Camera dei deputati, seduta del 27 gennaio 2004 (cita il rapporto CRIIRAD del 15 gennaio 2004)", "url": "https://documenti.camera.it/_dati/leg14/lavori/stenografici/sed413/pdfbt30.pdf"},
+        {"titolo": "Tuttitalia, Città metropolitana di Sassari e nuove province della Sardegna", "url": "https://www.tuttitalia.it/variazioni-amministrative/citta-metropolitana-di-sassari-e-nuove-province-della-sardegna/"},
+        {"titolo": "OpenStreetMap", "url": "https://www.openstreetmap.org/"}
       ]
     },
     {
       "id": "capo-marrargiu",
       "nome": "Base militare di Capo Marrargiu (ex centro Gladio)",
-      "lat": 40.2547,
-      "lon": 8.4253,
+      "lat": 40.5017,
+      "lon": 8.3558,
       "regione": "Sardegna",
-      "comune": "Bosa / Alghero (SS-OR)",
+      "comune": "Alghero (SS)",
       "tipo": "Centro Addestramento Guastatori (CAG) — base storica Gladio NATO",
       "gestione": "Ministero della Difesa italiano (storicamente con coinvolgimento Servizi segreti e NATO Stay-Behind)",
       "funzione": "Centro segreto di addestramento per Gladio, la rete clandestina italiana della Stay-Behind NATO, acquisito dal Ministero della Difesa nel 1954 e operativo a partire dal 1955-56. Per quasi quarant'anni vi sono stati addestrati i 'gladiatori' alla guerriglia, al sabotaggio e alla resistenza armata in caso di invasione sovietica. L'esistenza della rete fu rivelata pubblicamente dal Presidente del Consiglio Giulio Andreotti nel 1990. Il sito è ancora attivo come installazione militare.",
-      "estensione_ha": 100,
+      "estensione_ha": null,
       "armamento": [
-        "Storicamente: armi leggere, esplosivi, materiali per sabotaggio depositati nei NASCO (Nuclei di Armi Speciali di Communications Operations) sparsi sul territorio nazionale",
+        "Storicamente: armi ed esplosivi nei NASCO, i depositi nascosti di Gladio (da «nascondiglio»), 139 in tutto, smantellati fra il 1972 e il 1973",
         "Strutture per addestramento paracadutismo, esplosivi, comunicazioni"
       ],
       "problemi_ambientali": [
-        "100 ettari di costa nord-occidentale sarda di altissimo pregio paesaggistico interdetti all'uso civile",
-        "Inserimento nell'area UNESCO della costa sarda compromesso dalla presenza militare"
+        "Tratto di costa nord-occidentale sarda di pregio paesaggistico interdetto all'uso civile"
       ],
       "problemi_sanitari": [],
       "conflitti": [],
       "fatti_storici": [
-        "Secondo gli atti della Commissione parlamentare Stragi (presieduta da Giovanni Pellegrino), nel quadro del 'Piano Solo' del generale Giovanni De Lorenzo (1964), Capo Marrargiu sarebbe stato il luogo di deportazione di 731 oppositori politici da internare in un campo di prigionia",
-        "Coinvolgimenti emersi a inchieste sulla 'strategia della tensione' degli anni '70 (collegamenti con Freda e Ventura)",
+        "Il Piano Solo del 1964 prevedeva l'allontanamento di 731 persone considerate pericolose, da concentrare in un luogo isolato. Capo Marrargiu è indicato come destinazione da ricostruzioni giornalistiche e dall'interrogazione parlamentare del 2013. Il piano non fu attuato.",
         "Interrogazione parlamentare del 2013 chiede trasparenza sulle attività passate e attuali del centro"
       ],
       "fonti": [
-        "ITenovas — «Capo Marrargiu, la base segreta Gladio in Sardegna» (itenovas.com/in-italia/474-capo-marrargiu-sardegna-gladio.html)",
+        {"titolo": "IteNovas, Gladio, misteri e spie a Capo Marrargiu, 4 novembre 2013", "url": "https://www.itenovas.com/in-italia/474-capo-marrargiu-sardegna-gladio.html"},
         "Commissione parlamentare di inchiesta sulle Stragi (relazione Pellegrino, 1995-2001)",
         "Dichiarazioni del PdC Giulio Andreotti al Parlamento, 24 ottobre e 9 novembre 1990 — rivelazione esistenza Operazione Gladio",
-        "Daniele Ganser, «Gli eserciti segreti della NATO», 2005"
+        "Daniele Ganser, «Gli eserciti segreti della NATO», 2005",
+        {"titolo": "OpenStreetMap, Centro addestramento guastatori", "url": "https://www.openstreetmap.org/way/78698394"},
+        {"titolo": "Wikipedia, Organizzazione Gladio", "url": "https://it.wikipedia.org/wiki/Organizzazione_Gladio"},
+        {"titolo": "Commissione stragi, Il Piano Solo e la teoria del golpe negli anni Sessanta", "url": "https://legislature.camera.it/_dati/leg13/lavori/doc/xxiii/064v01t02_RS/00000001.pdf"},
+        {"titolo": "l'Unità, 10 gennaio 1991, p. 31", "url": "https://archivio.unita.news/assets/main/1991/01/10/page_031.pdf"}
       ]
     },
     {
@@ -496,7 +560,7 @@
       "armamento": ["Eurofighter Typhoon"],
       "problemi_ambientali": [],
       "problemi_sanitari": [],
-      "conflitti": ["libia-2011", "siria-2014"],
+      "conflitti": ["libia-2011"],
       "fonti": ["Aeronautica Militare — sito ufficiale"]
     },
     {
@@ -509,22 +573,22 @@
       "tipo": "Base navale USA — nave ammiraglia 6ª Flotta",
       "gestione": "US Navy — Commander, U.S. Sixth Fleet (COMSIXTHFLT)",
       "scali_nucleari": true,
-      "funzione": "Porto di base della USS Mount Whitney (LCC-20), nave da comando e controllo (command ship) della 6ª Flotta della US Navy. Dal 1967 Gaeta ospita stabilmente l'ammiraglia della flotta USA nel Mediterraneo: a bordo viene esercitato il comando delle operazioni navali statunitensi nel teatro mediterraneo, baltico e africano. Una porzione del porto cittadino è di fatto sottratta all'uso civile.",
+      "funzione": "Porto di base della USS Mount Whitney (LCC-20), nave comando della 6ª Flotta, arrivata nel 2005. Gaeta ospita un'ammiraglia USA dal 1967 circa.",
       "estensione_ha": 15,
       "armamento": [
         "USS Mount Whitney (LCC-20) — nave da comando, dotata di sistemi di comunicazione satellitare strategica, sistemi di guerra elettronica e centro operazioni della 6ª Flotta",
-        "Personale USA permanente a Gaeta: ~600 militari e famiglie"
+        "Personale USA permanente a Gaeta, con le famiglie"
       ],
       "problemi_ambientali": [
         "Trasformazione di una parte del porto storico in zona militare USA",
         "Episodi di inquinamento nelle acque portuali documentati nel tempo"
       ],
       "problemi_sanitari": [],
-      "conflitti": ["libia-2011", "siria-2014"],
+      "conflitti": [],
       "fonti": [
         "US Navy — sito ufficiale COMSIXTHFLT",
-        "Pax Christi Italia — dossier basi USA nel Lazio",
-        "Incidente USS Belknap (1975, collisione con USS John F. Kennedy nel Mediterraneo): 8 morti USA, alimenti narrativa controversa sulla 6ª Flotta"
+        {"titolo": "US Navy, Mount Whitney Deploys for U.S. 6th Fleet, gennaio 2005", "url": "https://www.globalsecurity.org/military/library/news/2005/01/mil-050121-nns01.htm"},
+        {"titolo": "US Navy, Mount Whitney (50 anni di ammiraglia a Gaeta), 2017", "url": "https://www.globalsecurity.org/military/library/news/2017/10/mil-171027-nns02.htm"}
       ]
     },
     {
@@ -536,7 +600,7 @@
       "comune": "Poggio Renatico (FE)",
       "tipo": "Comando aereo NATO + italiano (DACCC)",
       "gestione": "Aeronautica Militare Italiana + NATO — Deployable Air Command and Control Centre (DACCC)",
-      "funzione": "Una delle 2 sedi NATO di Deployable Air Command and Control Centre al mondo (l'altra è in Germania, Uedem). Da Poggio Renatico viene coordinato il comando e controllo delle operazioni aeree NATO nel teatro mediterraneo-balcanico-mediorientale. Ospita anche il Comando Operazioni Aeree (COA) dell'Aeronautica Militare Italiana.",
+      "funzione": "Sede del Deployable Air Command and Control Centre (DACCC), il comando aereo dispiegabile della NATO, e del Comando Operazioni Aeree dell'Aeronautica Militare.",
       "estensione_ha": 200,
       "armamento": [
         "Centri di comando, sale operative, sistemi di comunicazione e tracking",
@@ -544,10 +608,12 @@
       ],
       "problemi_ambientali": [],
       "problemi_sanitari": [],
-      "conflitti": ["libia-2011", "siria-2014"],
+      "conflitti": ["libia-2011"],
       "fonti": [
         "NATO — sito ufficiale Deployable Air Command and Control Centre",
-        "Aeronautica Militare — Comando Operazioni Aeree"
+        "Aeronautica Militare — Comando Operazioni Aeree",
+        {"titolo": "NATO Allied Air Command, DACCC", "url": "https://ac.nato.int/about/daccc"},
+        {"titolo": "Wikipedia, Structure of the Italian Air Force (stato al 1 gennaio 2018)", "url": "https://en.wikipedia.org/wiki/Structure_of_the_Italian_Air_Force"}
       ]
     },
     {
@@ -559,21 +625,20 @@
       "comune": "Gioia del Colle (BA)",
       "tipo": "Base aerea italiana — supporto NATO/USA",
       "gestione": "Aeronautica Militare Italiana (36° Stormo)",
-      "funzione": "Una delle principali basi caccia italiane. Sede del 36° Stormo «Helmuth Seidl» con Eurofighter Typhoon. Da qui partono le missioni di polizia aerea NATO (anche in Lituania ed Estonia), i pattugliamenti del Mediterraneo, i raid in Libia (2011), Iraq e Siria. Aperta agli aerei NATO in transito.",
+      "funzione": "Sede del 36° Stormo con Eurofighter Typhoon. Partecipa alla difesa aerea nazionale e alle missioni di polizia aerea NATO. Aerei italiani hanno operato da qui nel 2011 sulla Libia.",
       "estensione_ha": 400,
       "armamento": [
-        "Eurofighter Typhoon",
-        "F-35A in arrivo nel piano di transizione AM"
+        "Eurofighter Typhoon"
       ],
       "problemi_ambientali": [
-        "Inquinamento acustico nei comuni della Murgia",
-        "Bonifica residuati bellici in corso da anni"
+        "Inquinamento acustico nei comuni della Murgia"
       ],
       "problemi_sanitari": [],
-      "conflitti": ["libia-2011", "iraq-2003", "siria-2014"],
+      "conflitti": ["kosovo-1999", "libia-2011"],
       "fonti": [
         "Aeronautica Militare — 36° Stormo",
-        "Atti delle missioni italiane in Libia, Iraq e Siria"
+        "Atti delle missioni italiane in Libia, Iraq e Siria",
+        {"titolo": "Wikipedia, Structure of the Italian Air Force (stato al 1 gennaio 2018)", "url": "https://en.wikipedia.org/wiki/Structure_of_the_Italian_Air_Force"}
       ]
     },
     {
@@ -583,15 +648,14 @@
       "lon": 17.9460,
       "regione": "Puglia",
       "comune": "Brindisi",
-      "tipo": "Base navale + base aerea + hub logistico NATO/ONU",
-      "gestione": "Marina Militare Italiana + Aeronautica Militare + ONU (Brindisi UNLB) + NATO Support and Procurement Agency (NSPA)",
+      "tipo": "Base navale + base aerea + hub logistico ONU",
+      "gestione": "Marina Militare Italiana + Aeronautica Militare + ONU (UN Global Service Centre)",
       "scali_nucleari": true,
-      "funzione": "Hub logistico multiplo: 1) Base navale italiana storica (Stazione Navale Vittoria); 2) Aeroporto militare-civile Brindisi-Casale; 3) UN Logistics Base (UNLB), uno dei principali hub mondiali ONU per le operazioni di peacekeeping (depositi, formazione, dispacciamento personale); 4) Hub NSPA per la NATO. Da Brindisi sono passate le forniture per Kosovo 1999, Albania (operazione Alba), Libia 2011, Iraq, Afghanistan.",
+      "funzione": "Hub multiplo: base navale della Marina Militare; aeroporto civile-militare di Brindisi-Casale; base logistica dell'ONU (oggi UN Global Service Centre), uno dei principali centri di supporto alle missioni di pace.",
       "estensione_ha": 380,
       "armamento": [
         "Unità Marina Militare",
-        "Velivoli da trasporto strategico (C-130J)",
-        "Magazzini logistici NATO/ONU"
+        "Magazzini logistici ONU"
       ],
       "problemi_ambientali": [
         "Brindisi è un'area di Interesse Nazionale (SIN) per le bonifiche, contaminazione storica del petrolchimico — la base militare insiste su porzione del territorio inquinato"
@@ -599,11 +663,11 @@
       "problemi_sanitari": [
         "Cluster di malattie correlate al petrolchimico Brindisi (rapporti ISS — SENTIERI)"
       ],
-      "conflitti": ["kosovo-1999", "libia-2011", "iraq-2003", "afghanistan-2001"],
+      "conflitti": [],
       "fonti": [
         "UN Department of Operational Support — Logistics Base Brindisi (un.org)",
-        "Marina Militare — Stazione Navale Vittoria",
-        "ISS — Progetto SENTIERI, SIN Brindisi"
+        "ISS — Progetto SENTIERI, SIN Brindisi",
+        {"titolo": "UN Global Service Centre, NATO visit Brindisi", "url": "https://ungsc.org/news/nato-visit-brindisi"}
       ]
     },
     {
@@ -622,8 +686,7 @@
       "problemi_sanitari": [],
       "conflitti": [],
       "fonti": [
-        "NATO Defense College — sito ufficiale (ndc.nato.int)",
-        "Daniele Ganser — letteratura sulla formazione delle élite militari NATO"
+        "NATO Defense College: https://www.ndc.nato.int"
       ]
     },
     {
@@ -639,16 +702,15 @@
       "estensione_ha": 8,
       "armamento": [
         "Laboratori di ricerca subacquea",
-        "Nave da ricerca NRV Alliance"
+        "Nave da ricerca Alliance, di proprietà NATO, con bandiera ed equipaggio della Marina Militare dal 2016"
       ],
-      "problemi_ambientali": [
-        "Test di sonar attivi in Mediterraneo con impatto documentato su cetacei e fauna marina (letteratura biologia marina)"
-      ],
+      "problemi_ambientali": [],
       "problemi_sanitari": [],
       "conflitti": [],
       "fonti": [
-        "CMRE — sito ufficiale (cmre.nato.int)",
-        "NATO STO — Science and Technology Organization"
+        {"titolo": "CMRE, Annual report 2025, vessels", "url": "https://www.cmre.nato.int/ar25/vessels/"},
+        "NATO STO — Science and Technology Organization",
+        {"titolo": "Wikipedia, Italian ship Alliance", "url": "https://en.wikipedia.org/wiki/Italian_ship_Alliance"}
       ]
     },
     {
@@ -660,62 +722,66 @@
       "comune": "Motta di Livenza (TV)",
       "tipo": "Comando multinazionale NATO (CIMIC)",
       "gestione": "NATO — Multinational CIMIC Group, framework nation Italia",
-      "funzione": "Sede del Multinational CIMIC Group, uno dei tre CIMIC Group della NATO. CIMIC = Civil-Military Cooperation: coordina l'interazione tra forze armate alleate e popolazione civile nei teatri di operazioni (Afghanistan, Iraq, Kosovo, Mali). Personale italiano e da una dozzina di altre nazioni NATO. Strumento controverso perché istituzionalizza la commistione fra azione militare e umanitaria.",
+      "funzione": "Sede del Multinational CIMIC Group, alla caserma Mario Fiore. CIMIC = Civil-Military Cooperation: coordina i rapporti fra forze armate e popolazione civile nei teatri di operazioni. Sei nazioni: Italia, Grecia, Ungheria, Portogallo, Romania, Slovenia.",
       "estensione_ha": 25,
       "armamento": [],
       "problemi_ambientali": [],
       "problemi_sanitari": [],
-      "conflitti": ["afghanistan-2001", "iraq-2003", "kosovo-1999", "libia-2011"],
+      "conflitti": [],
       "fonti": [
-        "Multinational CIMIC Group — sito ufficiale (cimicgroup.org)",
+        {"titolo": "Multinational CIMIC Group, sito ufficiale", "url": "https://cimicgroup.org/"},
         "NATO — CIMIC doctrine AJP-3.4.9"
       ]
     },
     {
       "id": "crotone-radar",
-      "nome": "Stazione radar di Crotone",
-      "lat": 39.0967,
-      "lon": 17.0817,
+      "nome": "Stazione radar di Capo Rizzuto",
+      "lat": 38.9881,
+      "lon": 17.0792,
       "regione": "Calabria",
-      "comune": "Crotone",
+      "comune": "Isola di Capo Rizzuto (KR)",
       "tipo": "Stazione radar — copertura Mediterraneo centrale",
       "gestione": "Aeronautica Militare Italiana — uso NATO",
-      "funzione": "Sito radar di sorveglianza dello spazio aereo del Mediterraneo centrale, inserito nel sistema di difesa aerea NATO (NATINAMDS). Contribuisce alla copertura del Canale d'Otranto e del Mar Ionio. Personale e gestione italiani.",
+      "funzione": "Sito radar dell'Aeronautica Militare (132ª Squadriglia Radar Remota) inserito nella difesa aerea NATO.",
       "estensione_ha": 10,
       "armamento": ["Radar a lungo raggio per sorveglianza aerea"],
       "problemi_ambientali": [],
       "problemi_sanitari": [],
       "conflitti": [],
-      "fonti": ["Aeronautica Militare — Comando Aeronautico"]
+      "fonti": [
+        "Aeronautica Militare — Comando Aeronautico",
+        {"titolo": "Wikipedia, Structure of the Italian Air Force (stato al 1 gennaio 2018)", "url": "https://en.wikipedia.org/wiki/Structure_of_the_Italian_Air_Force"},
+        {"titolo": "OpenStreetMap", "url": "https://www.openstreetmap.org/"}
+      ]
     },
     {
       "id": "tavolara",
       "nome": "Stazione VLF di Tavolara — comunicazione sottomarini",
-      "lat": 40.8983,
-      "lon": 9.7150,
+      "lat": 40.9228,
+      "lon": 9.7319,
       "regione": "Sardegna",
-      "comune": "Olbia (SS) — Isola di Tavolara",
-      "tipo": "Stazione radio VLF (ex US Navy, oggi Marina Militare con uso NATO)",
-      "gestione": "Marina Militare Italiana (Comlogcen Tavolara) — gestita dalla US Navy fino al 2009",
-      "funzione": "Stazione di trasmissione a frequenza molto bassa (VLF, 20 KHz) per le comunicazioni con i sottomarini in immersione. Attiva dal 1962, è una delle 14 stazioni VLF al mondo. L'antenna è alta 250 metri ed emette su un'area di 75 ettari. Funzione analoga a Niscemi MUOS ma per la rete VLF/LF preesistente — comunica con sottomarini americani, britannici e NATO in tutto il Mediterraneo.",
+      "comune": "Olbia (Gallura Nord-Est Sardegna), Isola di Tavolara",
+      "tipo": "Stazione radio VLF, Marina Militare in ambito NATO",
+      "gestione": "Marina Militare Italiana, stazione VLF in ambito NATO",
+      "funzione": "Stazione a frequenza molto bassa (20,27 e 20,76 kHz) per le comunicazioni con i sottomarini in immersione, costruita nel 1962 in ambito NATO. La Difesa la definisce uno dei più importanti centri di comunicazione per i sommergibili nel Mediterraneo. Un avviso europeo del 2026 riguarda il suo ammodernamento.",
       "estensione_ha": 75,
       "armamento": [
-        "Antenna trasmittente VLF (Very Low Frequency) alta 250 m",
-        "Trasmettitore di 1 MW di potenza",
+        "Antenna VLF sospesa fra tralicci di 133 e 114 metri",
         "Sistema di rete con la rete VLF/LF globale USA/NATO"
       ],
       "problemi_ambientali": [
         "75 ettari dell'isola di Tavolara — area marina protetta — sottratti all'uso civile",
         "Possibili effetti elettromagnetici sulla fauna marina del SIC Tavolara-Punta Coda Cavallo"
       ],
-      "problemi_sanitari": [
-        "Studi su effetti dei campi VLF su fauna marina e ricaduta indiretta su attività di pesca"
-      ],
+      "problemi_sanitari": [],
       "conflitti": [],
       "fonti": [
-        "Marina Militare — Comlogcen Tavolara",
-        "Movimento per il disarmo Sardegna",
-        "Federation of American Scientists — global VLF network"
+        {"titolo": "Sottosegretario alla Difesa, comunicato del 9 maggio 2022 su Tavolara", "url": "https://www.marinaiditalia.com/wp-content/uploads/2022/05/ComunicatoSSSD_2022_05_09_Sottosegretario-Pucciarelli-Scuola-Sottufficiali-La-Maddalena-e-Stazione-Tavolara-importanti-realta-professionali-e-contributori-di-sviluppo-territoriale..pdf"},
+        "Federation of American Scientists — global VLF network",
+        {"titolo": "Wikipedia, List of VLF transmitters", "url": "https://en.wikipedia.org/wiki/List_of_VLF_transmitters"},
+        {"titolo": "TED, avviso 258028-2026, stazione radio VLF NATO di Tavolara", "url": "https://ted.europa.eu/en/notice/258028-2026/pdf"},
+        {"titolo": "Tuttitalia, Città metropolitana di Sassari e nuove province della Sardegna", "url": "https://www.tuttitalia.it/variazioni-amministrative/citta-metropolitana-di-sassari-e-nuove-province-della-sardegna/"},
+        {"titolo": "OpenStreetMap", "url": "https://www.openstreetmap.org/"}
       ]
     },
     {
@@ -724,26 +790,33 @@
       "lat": 35.5050,
       "lon": 12.6150,
       "regione": "Sicilia",
-      "comune": "Lampedusa (AG)",
-      "tipo": "Base AM + ex stazione di navigazione satellitare USA",
+      "comune": "Lampedusa e Linosa (AG)",
+      "tipo": "Radar AM + ex stazione di radionavigazione Loran-C USA",
       "gestione": "Aeronautica Militare Italiana + storica gestione US Coast Guard (1972-1994)",
-      "funzione": "Dal 1972 al 1994 ha ospitato una stazione Loran-C della US Coast Guard, parte del sistema globale di radionavigazione USA per sottomarini, navi e aerei (predecessore del GPS). Oggi sull'isola sono attivi: aeroporto militare AM con radar, distaccamento del Corpo della Guardia di Finanza, base operativa per missioni di soccorso e controllo migratorio nel Canale di Sicilia. Punto più meridionale dell'Italia, a soli 130 km dalla Tunisia.",
+      "funzione": "Dal 1972 al 1994 ha ospitato a Capo Ponente una stazione Loran-C della US Coast Guard, passata all'Italia alla fine del 1994. Oggi sull'isola opera la 134ª Squadriglia Radar Remota dell'Aeronautica Militare, oltre alla Guardia di Finanza e ai dispositivi di controllo migratorio. A circa 130 km dalla Tunisia.",
       "estensione_ha": 50,
       "armamento": [
         "Radar di sorveglianza aerea e navale",
-        "Aerei di pattugliamento e ricognizione",
         "In passato: trasmettitore Loran-C da 250 KW (US Coast Guard)"
       ],
       "problemi_ambientali": [
-        "Una parte significativa dell'isola interessata da servitù militari",
-        "Inquinamento da carburanti documentato dell'aeroporto militare"
+        "Una parte significativa dell'isola interessata da servitù militari"
       ],
       "problemi_sanitari": [],
       "conflitti": [],
+      "fatti_storici": [
+        "15 aprile 1986: dopo il raid USA su Tripoli e Bengasi (operazione El Dorado Canyon), la Libia lancia due missili Scud contro la stazione Loran della Guardia Costiera USA a Capo Ponente. I missili cadono in mare a circa 2 km dall'isola, senza danni. Autorità libiche hanno poi negato il lancio, e un generale italiano ha dichiarato di non credere che abbiano colpito il territorio italiano."
+      ],
       "fonti": [
         "US Coast Guard — Loran-C station historical archive",
         "Aeronautica Militare — sito ufficiale base Lampedusa",
-        "Inchieste giornalistiche su servitù militari Pelagie"
+        "Inchieste giornalistiche su servitù militari Pelagie",
+        {"titolo": "Wikipedia, Libyan missile attack against Lampedusa", "url": "https://en.wikipedia.org/wiki/Libyan_missile_attack_against_Lampedusa"},
+        {"titolo": "il Giornale, Libia, missile contro fregata italiana (ricostruzione del 1986)", "url": "https://www.ilgiornale.it/news/libia-missile-contro-fregata-italiana-cade-acqua-bersaglio.html"},
+        {"titolo": "Blitz, generale Cottone: missili su Lampedusa mai trovati", "url": "https://archivio.blitzquotidiano.it/cronaca-mondo/libia-generale-cottone-missili-su-lampedusa-mai-trovati-2471155"},
+        {"titolo": "Loran History, Lampedusa", "url": "https://www.loran-history.info/stations/lampedusa/lampedusa.htm"},
+        {"titolo": "Wikipedia, Structure of the Italian Air Force (stato al 1 gennaio 2018)", "url": "https://en.wikipedia.org/wiki/Structure_of_the_Italian_Air_Force"},
+        {"titolo": "OpenStreetMap", "url": "https://www.openstreetmap.org/"}
       ]
     },
     {
@@ -755,46 +828,21 @@
       "comune": "Pantelleria (TP)",
       "tipo": "Base aerea italiana (duale civile-militare) — uso NATO",
       "gestione": "Aeronautica Militare Italiana + uso NATO",
-      "funzione": "Aeroporto militare-civile, snodo strategico al centro del Canale di Sicilia (140 km dalle coste libiche). Già fortezza italiana nel periodo fascista, bombardata pesantemente nel 1943. Oggi è base operativa AM e punto di appoggio per le esercitazioni NATO nel Mediterraneo centrale.",
+      "funzione": "Aeroporto militare-civile, snodo al centro del Canale di Sicilia: 68 km dalla Tunisia e 106 km dalla Sicilia. Fortificata in epoca fascista, bombardata nel 1943. Oggi scalo civile con presenza dell'Aeronautica Militare.",
       "estensione_ha": 120,
       "armamento": [
-        "Velivoli da pattugliamento e ricognizione",
         "Radar di sorveglianza"
       ],
       "problemi_ambientali": [
         "Servitù militari estese su isola di pregio naturalistico (Parco Nazionale dell'Isola di Pantelleria, istituito 2016)"
       ],
       "problemi_sanitari": [],
-      "conflitti": [],
-      "fatti_storici": [
-        "13 aprile 1986: il leader libico Mu'ammar Gheddafi lancia 2 missili Scud-B contro Pantelleria in risposta al raid USA della notte del 15 aprile su Tripoli e Bengasi (operazione «El Dorado Canyon»). I missili cadono in mare a circa 4 km dalla costa pantesca. Caso simbolo della servitù italiana al teatro di guerra USA-Libia."
-      ],
+      "conflitti": ["libia-2011"],
+      "fatti_storici": [],
       "fonti": [
         "Aeronautica Militare — sito ufficiale base Pantelleria",
-        "Atti parlamentari italiani sui fatti del 15 aprile 1986",
-        "M. Dinucci — analisi geopolitica del Canale di Sicilia"
-      ]
-    },
-    {
-      "id": "ponza-radar",
-      "nome": "Stazione radar di Ponza",
-      "lat": 40.9000,
-      "lon": 12.9583,
-      "regione": "Lazio",
-      "comune": "Ponza (LT)",
-      "tipo": "Stazione radar AM — controllo Tirreno meridionale",
-      "gestione": "Aeronautica Militare Italiana — 113° Gruppo Radar — uso NATO",
-      "funzione": "Stazione radar di sorveglianza dello spazio aereo del Tirreno centro-meridionale, integrata nel sistema NATO di difesa aerea NATINAMDS. Posizione strategica per il controllo dell'approccio aereo a Roma e all'Italia centrale dal mare. Coinvolta — almeno indirettamente — nel sistema di tracciamento radar la sera del 27 giugno 1980 (strage di Ustica).",
-      "estensione_ha": 25,
-      "armamento": ["Radar a lungo raggio, sistemi di telecomunicazione militare"],
-      "problemi_ambientali": [
-        "Servitù militare su una porzione importante dell'isola di Ponza"
-      ],
-      "problemi_sanitari": [],
-      "conflitti": [],
-      "fonti": [
-        "Aeronautica Militare — 113° Gruppo Radar Ponza",
-        "Atti istruttori della Strage di Ustica (1980) — tracciati radar"
+        "M. Dinucci — analisi geopolitica del Canale di Sicilia",
+        {"titolo": "Wikipedia, Pantelleria", "url": "https://en.wikipedia.org/wiki/Pantelleria"}
       ]
     },
     {
@@ -806,18 +854,19 @@
       "comune": "Porto Venere (SP)",
       "tipo": "Isola militare — Marina Militare + ex polveriera",
       "gestione": "Marina Militare Italiana",
-      "funzione": "Isola di fronte alla base navale di La Spezia. Storicamente sede della Polveriera della Marina Militare, di postazioni d'artiglieria costiera e fortificazioni. Oggi gran parte dell'isola è ancora militare e ad accesso limitato. Parte del territorio compreso nel Parco Naturale Regionale di Porto Venere. Ospita anche la batteria Umberto I, le batterie Cavour e Semaforo.",
-      "estensione_ha": 280,
+      "funzione": "Isola di fronte alla base navale di La Spezia, sede storica di polveriera e fortificazioni della Marina Militare (Forte Cavour, torre Umberto I). Il masterplan approvato da Regione, Comune, Ministero della Cultura e Marina prevede il passaggio di immobili militari al Comune. Parte del patrimonio UNESCO dal 1997.",
+      "estensione_ha": null,
       "armamento": [],
       "problemi_ambientali": [
-        "Vasta porzione di isola di pregio paesaggistico (Patrimonio UNESCO con Porto Venere e Cinque Terre) interessata da servitù militari",
-        "Bonifica dei residuati bellici e degli esplosivi storicamente immagazzinati in corso"
+        "Isola di pregio paesaggistico (Patrimonio UNESCO con Porto Venere e Cinque Terre) interessata da servitù militari"
       ],
       "problemi_sanitari": [],
       "conflitti": [],
       "fonti": [
         "Marina Militare — installazioni Golfo della Spezia",
-        "Atti del Parco Naturale Regionale di Porto Venere"
+        "Atti del Parco Naturale Regionale di Porto Venere",
+        {"titolo": "Wikipedia, Palmaria", "url": "https://it.wikipedia.org/wiki/Palmaria"},
+        {"titolo": "Mentelocale, Isola Palmaria, approvato il masterplan", "url": "https://www.mentelocale.it/la-spezia/5640-isola-palmaria-approvato-masterplan-riqualificazione-rilancio-progetto.htm"}
       ]
     },
     {
@@ -828,18 +877,21 @@
       "regione": "Lazio",
       "comune": "Pomezia (RM)",
       "tipo": "Base aerea italiana — comando + intelligence aerea",
-      "gestione": "Aeronautica Militare Italiana — Comando della Squadra Aerea (CSA)",
-      "funzione": "Una delle basi aeree più importanti d'Italia. Sede del Comando della Squadra Aerea (CSA), del 14° Stormo Radio Misure (guerra elettronica e ricognizione strategica), del Centro Sperimentale Volo, del 9° Stormo Caccia, del Reparto Stato Maggiore Difesa Volo. Aeroporto di rappresentanza per i voli di Stato. Sede del summit NATO-Russia del 28 maggio 2002 («Spirito di Pratica di Mare»), che istituì il Consiglio NATO-Russia.",
+      "gestione": "Aeronautica Militare Italiana: 14° Stormo, 9ª Brigata Aerea ISTAR-EW",
+      "funzione": "Una delle basi aeree più importanti d'Italia. Sede della 9ª Brigata Aerea ISTAR-EW, del 14° Stormo (rifornimento in volo e guerra elettronica) e del Reparto Sperimentale Volo. Sede del vertice NATO-Russia del 28 maggio 2002, che istituì il Consiglio NATO-Russia.",
       "estensione_ha": 800,
       "armamento": [
-        "Aerei da guerra elettronica e ricognizione strategica del 14° Stormo (G550 CAEW)",
-        "AWACS NATO in transito",
-        "Voli di Stato e voli di intelligence presidenziale"
+        "G550 CAEW e KC-767 del 14° Stormo"
       ],
       "problemi_ambientali": [],
       "problemi_sanitari": [],
-      "conflitti": ["libia-2011", "siria-2014"],
-      "fonti": ["Aeronautica Militare — Comando Squadra Aerea", "NATO — Pratica di Mare Summit 28 maggio 2002"]
+      "conflitti": [],
+      "fonti": [
+        "Aeronautica Militare — Comando Squadra Aerea",
+        "NATO — Pratica di Mare Summit 28 maggio 2002",
+        {"titolo": "Wikipedia, Structure of the Italian Air Force (stato al 1 gennaio 2018)", "url": "https://en.wikipedia.org/wiki/Structure_of_the_Italian_Air_Force"},
+        {"titolo": "Difesa, 14° Stormo, scheda di reparto, 28 ottobre 2024", "url": "https://www.difesa.it/assets/allegati/58082/14_stormo_-_scheda_di_reparto_28-10-2024.pdf"}
+      ]
     },
     {
       "id": "amendola",
@@ -850,19 +902,23 @@
       "comune": "Foggia",
       "tipo": "Base aerea italiana — hub droni armati + F-35",
       "gestione": "Aeronautica Militare Italiana — 32° Stormo",
-      "funzione": "Hub principale dei velivoli a pilotaggio remoto (UAV/droni) dell'Aeronautica Militare Italiana. Da Amendola operano i droni MQ-1 Predator e MQ-9 Reaper italiani, usati per missioni di sorveglianza e (con armamento USA) potenzialmente per missioni armate in Afghanistan, Iraq, Libia, Mediterraneo centrale. Amendola è anche la prima base italiana operativa con i caccia F-35A (Joint Strike Fighter), in arrivo dal 2018.",
+      "funzione": "Sede del 32° Stormo. Da qui opera il 28° Gruppo con i droni MQ-9A Reaper, con distaccamento in Kuwait dal 2014. Prima base italiana degli F-35A, dal 2018, ospita anche F-35B con il 101° Gruppo, ricostituito il 1 luglio 2025.",
       "estensione_ha": 600,
       "armamento": [
         "MQ-9 Reaper (drone armato, capace di portare missili Hellfire e bombe a guida laser)",
-        "MQ-1 Predator (sorveglianza, in via di dismissione)",
         "F-35A Lightning II (prima base operativa italiana dal 2018)"
       ],
       "problemi_ambientali": [
         "Inquinamento acustico per voli continuativi"
       ],
       "problemi_sanitari": [],
-      "conflitti": ["afghanistan-2001", "iraq-2003", "libia-2011", "siria-2014"],
-      "fonti": ["Aeronautica Militare — 32° Stormo", "Rete Italiana per il Disarmo — campagna contro i droni armati"]
+      "conflitti": ["kosovo-1999", "libia-2011"],
+      "fonti": [
+        "Aeronautica Militare — 32° Stormo",
+        "Rete Italiana per il Disarmo — campagna contro i droni armati",
+        {"titolo": "MiGFlug, Amendola Air Base", "url": "https://migflug.com/air-bases/amendola/"},
+        {"titolo": "Wikipedia, Structure of the Italian Air Force (stato al 1 gennaio 2018)", "url": "https://en.wikipedia.org/wiki/Structure_of_the_Italian_Air_Force"}
+      ]
     },
     {
       "id": "cervia",
@@ -871,18 +927,22 @@
       "lon": 12.3072,
       "regione": "Emilia-Romagna",
       "comune": "Cervia (RA)",
-      "tipo": "Base aerea italiana — caccia adriatica",
-      "gestione": "Aeronautica Militare Italiana — 5° Stormo Caccia «Giuseppe Cenni»",
-      "funzione": "Base caccia sul versante adriatico. Storicamente sede del 50° Stormo (dal 2019 trasformato in 5° Stormo). Da Cervia partirono missioni nella guerra del Kosovo 1999 (Allied Force), in Bosnia, in Libia 2011. Oggi base operativa per Eurofighter Typhoon e in transizione verso F-35.",
+      "tipo": "Base aerea italiana, elicotteri ricerca e soccorso",
+      "gestione": "Aeronautica Militare Italiana: 15° Stormo (ricerca e soccorso)",
+      "funzione": "Sede del 15° Stormo con elicotteri AW-101A e AW-139A. Fino al 2010 base del 5° Stormo, con F-104 e poi F-16.",
       "estensione_ha": 500,
       "armamento": [
-        "Eurofighter Typhoon",
-        "F-35A in arrivo"
+        "Elicotteri AW-101A e AW-139A per ricerca e soccorso"
       ],
       "problemi_ambientali": [],
       "problemi_sanitari": [],
-      "conflitti": ["bosnia-1995", "kosovo-1999", "libia-2011"],
-      "fonti": ["Aeronautica Militare — 5° Stormo"]
+      "conflitti": ["kosovo-1999"],
+      "fonti": [
+        "Aeronautica Militare — 5° Stormo",
+        {"titolo": "Wikipedia, Aeroporto di Cervia-Pisignano", "url": "https://it.wikipedia.org/wiki/Aeroporto_di_Cervia-Pisignano"},
+        {"titolo": "Wikipedia, Structure of the Italian Air Force (stato al 1 gennaio 2018)", "url": "https://en.wikipedia.org/wiki/Structure_of_the_Italian_Air_Force"},
+        {"titolo": "The Aviationist, Italian Vipers", "url": "https://theaviationist.com/2024/05/02/italian-vipers-the-story-of-the-f-16-fighting-falcon-in-italian-air-force-service/"}
+      ]
     },
     {
       "id": "grosseto",
@@ -893,30 +953,33 @@
       "comune": "Grosseto",
       "tipo": "Base aerea italiana — difesa aerea",
       "gestione": "Aeronautica Militare Italiana — 4° Stormo Caccia",
-      "funzione": "Sede del 4° Stormo, primo reparto italiano ad aver ricevuto gli Eurofighter Typhoon nel 2003. Difesa dello spazio aereo tirrenico e del centro Italia. Partecipa alle missioni di polizia aerea NATO nei Paesi Baltici e in Islanda.",
+      "funzione": "Sede del 4° Stormo, primo reparto italiano ad aver ricevuto gli Eurofighter Typhoon. Difesa dello spazio aereo tirrenico e del centro Italia. Partecipa alle missioni di polizia aerea NATO nei Paesi Baltici.",
       "estensione_ha": 350,
       "armamento": ["Eurofighter Typhoon"],
       "problemi_ambientali": [],
       "problemi_sanitari": [],
-      "conflitti": ["libia-2011"],
+      "conflitti": [],
       "fonti": ["Aeronautica Militare — 4° Stormo"]
     },
     {
       "id": "sellia-marina-radar",
-      "nome": "Stazione radar di Sellia Marina",
-      "lat": 38.8533,
-      "lon": 16.7300,
+      "nome": "Ex stazione Loran-C USA di Sellia Marina",
+      "lat": 38.8725,
+      "lon": 16.7183,
       "regione": "Calabria",
       "comune": "Sellia Marina (CZ)",
-      "tipo": "Stazione radar — copertura Adriatico meridionale e Ionio",
-      "gestione": "Aeronautica Militare Italiana — uso NATO",
-      "funzione": "Sito radar dell'Aeronautica Militare per la sorveglianza dello spazio aereo del basso Adriatico e del Mar Ionio, integrato nel sistema NATO di difesa aerea (NATINAMDS).",
-      "estensione_ha": 8,
-      "armamento": ["Radar a lungo raggio per sorveglianza aerea"],
+      "tipo": "Ex stazione di radionavigazione USA (1959-1994)",
+      "gestione": "Storicamente US Coast Guard; dismessa nel 1994",
+      "funzione": "Stazione della catena Loran-C del Mediterraneo, la prima operativa al mondo, attiva dal 1959 al 1994. Radionavigazione a lungo raggio al servizio delle forze USA. Il traliccio è stato smantellato.",
+      "estensione_ha": null,
+      "armamento": [],
       "problemi_ambientali": [],
       "problemi_sanitari": [],
       "conflitti": [],
-      "fonti": ["Aeronautica Militare — Comando Aeronautico"]
+      "fonti": [
+        {"titolo": "Loran History, Mediterranean Sea Chain", "url": "https://loran-history.info/chains/Loran-C/Mediterranean_Sea/Mediterranean_Sea.html"},
+        {"titolo": "time-nuts, European LORAN-C (coordinate e chiusura Sellia Marina)", "url": "https://www.febo.com/pipermail/time-nuts/2011-July/058295.html"}
+      ]
     }
   ]
 }
