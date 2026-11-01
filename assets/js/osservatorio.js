@@ -91,8 +91,7 @@
     zoom: 6,
     zoomSnap: 0.25,
     zoomDelta: 1,
-    wheelPxPerZoomLevel: 50,
-    wheelDebounceTime: 20,
+    scrollWheelZoom: false,
     fadeAnimation: false,
     minZoom: 3,
     maxZoom: 10,
@@ -114,7 +113,38 @@
   mappa.fitBounds(ITALIA, { padding: [8, 8] });
   let vistaIniziale = true;
   mappa.on('dragstart', () => { vistaIniziale = false; });
-  mappa.getContainer().addEventListener('wheel', () => { vistaIniziale = false; }, { passive: true });
+
+  /* Rotellina e trackpad: zoom continuo verso il puntatore, un passo per fotogramma. */
+  let zoomMeta = null;
+  let puntoZoom = null;
+  function passoZoom() {
+    const ora = mappa.getZoom();
+    const fine = Math.abs(zoomMeta - ora) < 0.004;
+    const z = fine ? zoomMeta : ora + (zoomMeta - ora) * 0.32;
+    const meta = mappa.getSize().divideBy(2);
+    const scarto = puntoZoom.subtract(meta).multiplyBy(1 - 1 / mappa.getZoomScale(z));
+    mappa._move(mappa.containerPointToLatLng(meta.add(scarto)), z, { flyTo: true });
+    if (fine) {
+      zoomMeta = null;
+      mappa._moveEnd(true);
+    } else {
+      requestAnimationFrame(passoZoom);
+    }
+  }
+  mappa.getContainer().addEventListener('wheel', (e) => {
+    e.preventDefault();
+    vistaIniziale = false;
+    const passo = e.deltaMode === 1 ? e.deltaY * 16 : e.deltaY;
+    const partenza = zoomMeta === null;
+    const base = partenza ? mappa.getZoom() : zoomMeta;
+    zoomMeta = Math.max(mappa.getMinZoom(), Math.min(mappa.getMaxZoom(), base - passo * 0.0045));
+    puntoZoom = mappa.mouseEventToContainerPoint(e);
+    if (partenza) {
+      mappa._stop();
+      mappa._moveStart(true, false);
+      requestAnimationFrame(passoZoom);
+    }
+  }, { passive: false });
   new ResizeObserver(() => {
     mappa.invalidateSize({ pan: false });
     if (vistaIniziale && !schedaAperta) mappa.fitBounds(ITALIA, { padding: [8, 8], animate: false });
@@ -233,6 +263,7 @@
     voci.forEach((v) => { v.m.scosto = [v.x - v.x0, v.y - v.y0]; });
     applicaScosti(zoomBase);
     mappa.on('zoomanim', (e) => applicaScosti(e.zoom));
+    mappa.on('zoom', () => { if (zoomMeta !== null) applicaScosti(mappa.getZoom()); });
     mappa.on('zoomend', () => applicaScosti(mappa.getZoom()));
   }
 
