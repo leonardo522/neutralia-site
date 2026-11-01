@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Parlamento — Neutralia</title>
+<meta name="description" content="Camera e Senato gruppo per gruppo: cosa hanno scritto i partiti sui temi principali e come hanno votato. Citazioni testuali e voti d'aula, con le fonti.">
+<meta name="theme-color" content="#0a0a0a">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body class="page-parlamento">
+
+<header class="site-header">
+  <nav class="nav">
+    <a href="index.html" class="logo">NEUTRALIA</a>
+    <ul class="nav-links">
+      <li><a href="index.html#libro">Libro</a></li>
+      <li><a href="index.html#manifesto">Manifesto</a></li>
+      <li><a href="index.html#approfondimenti">Approfondimenti</a></li>
+      <li><a href="osservatorio.html">Osservatorio</a></li>
+      <li><a href="index.html#comunita">Comunità</a></li>
+      <li><a href="negozio.html">Negozio</a></li>
+      <li class="nav-links-lang">
+        <a href="en/">EN</a>
+        <a href="fr/">FR</a>
+        <a href="es/">ES</a>
+        <a href="de/">DE</a>
+      </li>
+    </ul>
+    <a href="dona.html" class="nav-cta">Dona</a>
+    <button class="nav-toggle" aria-label="Apri menu">☰</button>
+  </nav>
+</header>
+
+<main>
+
+<section class="parl-intro">
+  <div class="container">
+    <h1>Parlamento</h1>
+    <p class="parl-lead">Cosa hanno scritto i partiti e come hanno votato, tema per tema.</p>
+    <p class="parl-sub">Citazioni testuali e voti d'aula, ognuno con la sua fonte, con un sommario che li riassume. Neutralia non assegna punteggi e non dà indicazioni di voto.</p>
+  </div>
+</section>
+
+<section class="parl-aula" aria-labelledby="parl-aula-title">
+  <div class="container">
+    <h2 id="parl-aula-title" class="visually-hidden">Le due aule</h2>
+    <div class="parl-tabs" role="tablist" aria-label="Scegli l'aula">
+      <button type="button" role="tab" id="tab-camera" aria-controls="parl-emiciclo" aria-selected="true" data-aula="camera">Camera</button>
+      <button type="button" role="tab" id="tab-senato" aria-controls="parl-emiciclo" aria-selected="false" data-aula="senato" tabindex="-1">Senato</button>
+    </div>
+    <div class="parl-aula-grid">
+      <div id="parl-emiciclo" role="tabpanel" aria-labelledby="tab-camera"></div>
+      <div class="parl-legenda" id="parl-legenda" aria-label="Gruppi parlamentari"></div>
+      <p class="parl-nota" id="parl-nota-aula"></p>
+    </div>
+  </div>
+</section>
+
+<section class="parl-confronto" aria-labelledby="parl-confronto-title">
+  <div class="container">
+    <h2 id="parl-confronto-title">Il confronto</h2>
+    <div class="parl-filtri">
+      <p class="parl-etichetta" id="parl-etichetta-temi">Tema</p>
+      <div class="parl-chips parl-chips-temi" id="parl-temi" role="group" aria-labelledby="parl-etichetta-temi"></div>
+    </div>
+    <p class="parl-etichetta" id="parl-etichetta-partiti">Partiti: scegline fino a tre per confrontarli</p>
+    <div class="parl-chips" id="parl-partiti" role="group" aria-labelledby="parl-etichetta-partiti"></div>
+    <div class="parl-risultati" id="parl-risultati" aria-live="polite"></div>
+  </div>
+</section>
+
+<section class="parl-metodo" aria-labelledby="parl-metodo-title">
+  <div class="container">
+    <h2 id="parl-metodo-title">Il metodo</h2>
+    <div id="parl-metodo"></div>
+  </div>
+</section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <h3>NEUTRALIA</h3>
+        <p>Un'Italia neutrale, un'Italia mediatrice di pace, un'Italia che protegge il suo patrimonio.</p>
+      </div>
+      <div class="footer-contact">
+        <h4>Contattaci</h4>
+        <a href="mailto:neutralia.info@gmail.com">neutralia.info@gmail.com</a>
+      </div>
+      <div class="footer-nav">
+        <h4>Naviga</h4>
+        <ul>
+          <li><a href="index.html#libro">Libro</a></li>
+          <li><a href="index.html#manifesto">Manifesto</a></li>
+          <li><a href="index.html#approfondimenti">Approfondimenti</a></li>
+          <li><a href="osservatorio.html">Osservatorio</a></li>
+          <li><a href="index.html#comunita">Comunità</a></li>
+          <li><a href="negozio.html">Negozio</a></li>
+        </ul>
+      </div>
+      <div class="footer-social">
+        <h4>Seguici</h4>
+        <ul>
+          <li><a href="https://www.instagram.com/_neutralia_/" target="_blank" rel="noopener">Instagram</a></li>
+          <li><a href="https://t.me/NEUTRALIATELEGRAM" target="_blank" rel="noopener">Telegram</a></li>
+          <li><a href="dona.html">Dona</a></li>
+        </ul>
+        <h4 style="margin-top:1.2rem">Legale</h4>
+        <ul>
+          <li><a href="privacy.html">Privacy Policy</a></li>
+          <li><a href="cookie.html">Cookie Policy</a></li>
+          <li><a href="#" data-cookie-manage>Gestisci cookie</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© <span id="year"></span> Neutralia · Tutti i diritti riservati</p>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/js/main.js"></script>
+<script src="assets/js/parlamento-aula.js"></script>
+<script src="assets/js/parlamento.js"></script>
+<script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>
