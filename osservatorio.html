@@ -37,6 +37,8 @@
   </nav>
 </header>
 
+<main>
+
 <!-- INTRO -->
 <section class="osservatorio-intro">
   <div class="container">
@@ -45,26 +47,67 @@
       La mappa delle basi militari NATO e statunitensi sul suolo italiano, dei siti di produzione di armi,
       dei porti di esportazione, e dei conflitti dal 1945 a cui basi italiane o armi italiane hanno preso parte.
     </p>
-    <p class="osservatorio-sub">
-      Tutti i dati sono pubblici. Le fonti sono indicate punto per punto.
-      Clicca sui pallini per leggere ciò che lo Stato italiano non vi racconta volentieri.
-    </p>
+    <p class="osservatorio-sub">Tutti i dati sono pubblici. Scegli un punto sulla mappa o nell'elenco per aprire la scheda con le fonti.</p>
+  </div>
+</section>
+
+<!-- CIFRE -->
+<section class="osv-cifre" aria-labelledby="osv-cifre-titolo">
+  <div class="container">
+    <h2 id="osv-cifre-titolo">Le 5 cifre da tenere in mente</h2>
+    <ul class="osv-cifre-lista" id="osv-cifre">
+      <li><strong>~40</strong><span>bombe nucleari tattiche B61 USA stoccate in Italia (Aviano + Ghedi).</span><small>Fonte: FAS 2023</small></li>
+      <li><strong>~12.000 ha</strong><span>di terra militarizzata solo nel poligono di Salto di Quirra.</span><small>Fonte: Difesa</small></li>
+      <li><strong>~4.000 km²</strong><span>di mare interdetto alla pesca davanti alla Sardegna sud-orientale durante le esercitazioni.</span><small>Fonte: NOTAMAR</small></li>
+      <li><strong>~377.000</strong><span>morti nella guerra in Yemen 2015-2024 (combattenti e civili, dirette+indirette). Bombe italiane RWM Domusnovas documentate.</span><small>Fonte: UNDP 2021</small></li>
+      <li><strong>~176.000</strong><span>morti diretti in Afghanistan 2001-2021. Basi italiane (Aviano, Sigonella, Camp Darby) usate per logistica e operazioni.</span><small>Fonte: Brown Univ. Costs of War</small></li>
+    </ul>
   </div>
 </section>
 
 <!-- MAPPA -->
-<section class="osservatorio-mappa-wrap">
-  <div id="mappa" role="application" aria-label="Mappa interattiva dell'Italia militarizzata">
-    <div class="mappa-loading" id="mappa-loading">
-      <p>Caricamento mappa…</p>
-    </div>
+<section class="osv-mappa-sezione" aria-label="Mappa e schede">
+  <div class="osv-filtri" role="group" aria-label="Mostra o nascondi sulla mappa">
+    <label class="osv-filtro osv-f-basi"><input type="checkbox" data-filter="basi" checked><span>Basi <b data-conta="basi"></b></span></label>
+    <label class="osv-filtro osv-f-produzione"><input type="checkbox" data-filter="produzione" checked><span>Produzione <b data-conta="produzione"></b></span></label>
+    <label class="osv-filtro osv-f-porti"><input type="checkbox" data-filter="porti" checked><span>Porti <b data-conta="porti"></b></span></label>
+    <label class="osv-filtro osv-f-incidenti"><input type="checkbox" data-filter="incidenti" checked><span>Incidenti <b data-conta="incidenti"></b></span></label>
+    <label class="osv-filtro osv-f-aree"><input type="checkbox" data-filter="aree" checked><span>Mare interdetto <b data-conta="aree"></b></span></label>
   </div>
 
-  <!-- LEGENDA -->
-  <aside class="legenda" aria-label="Legenda della mappa">
-    <h2>Legenda</h2>
+  <div class="osv-griglia">
+    <div id="mappa" role="application" aria-label="Mappa interattiva dell'Italia militarizzata">
+      <div class="mappa-loading" id="mappa-loading">
+        <p>Caricamento mappa…</p>
+      </div>
+    </div>
+
+    <aside class="osv-pannello" id="osv-pannello" aria-label="Elenco dei punti e schede">
+      <div id="osv-elenco">
+        <div class="osv-cerca">
+          <label class="visually-hidden" for="osv-cerca">Cerca un luogo</label>
+          <input type="search" id="osv-cerca" placeholder="Cerca una base, un comune, un porto">
+          <label class="visually-hidden" for="osv-regione">Regione</label>
+          <select id="osv-regione"><option value="">Tutte le regioni</option></select>
+        </div>
+        <p class="osv-quanti" id="osv-quanti" aria-live="polite"></p>
+        <ul class="osv-lista" id="osv-lista"></ul>
+      </div>
+      <div id="osv-scheda" hidden>
+        <button type="button" class="osv-chiudi">← Torna all'elenco</button>
+        <figure class="osv-modello">
+          <canvas id="osv-modello" aria-label="Modellino illustrativo del luogo"></canvas>
+          <figcaption>Modello illustrativo, non in scala. Trascina per ruotare.</figcaption>
+        </figure>
+        <div id="osv-scheda-corpo" aria-live="polite"></div>
+      </div>
+    </aside>
+  </div>
+
+  <details class="osv-legenda">
+    <summary>Legenda</summary>
+    <ul class="osv-legenda-tipi" id="osv-legenda-tipi"></ul>
     <ul class="legenda-lista">
-      <li><span class="dot dot-rosso" aria-hidden="true"></span> Base militare NATO / USA / italiana di rilevanza atlantica</li>
       <li>
         <span class="legenda-svg legenda-svg-nuke" aria-hidden="true">
           <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="11.5" fill="#ffe600" stroke="#000" stroke-width="0.7"/><circle cx="12" cy="12" r="2.4" fill="#000"/><path d="M 12 12 L 22.4 12 A 10.4 10.4 0 0 0 17.2 3 Z" fill="#000"/><path d="M 12 12 L 6.8 3 A 10.4 10.4 0 0 0 1.6 12 Z" fill="#000"/><path d="M 12 12 L 17.2 21 A 10.4 10.4 0 0 1 6.8 21 Z" fill="#000"/></svg>
@@ -77,40 +120,22 @@
         </span>
         Porto autorizzato per scali di sub/navi a propulsione nucleare USA/UK/FR <small>(12 porti italiani)</small>
       </li>
-      <li>
-        <span class="legenda-svg legenda-svg-prod" aria-hidden="true">
-          <svg viewBox="0 0 24 24"><path d="M 7 8 Q 7 2 12 1 Q 17 2 17 8 Z" fill="currentColor"/><rect x="6.7" y="8" width="10.6" height="0.9" fill="currentColor"/><rect x="7" y="8.9" width="10" height="11.2" fill="currentColor" opacity="0.82"/><rect x="8.4" y="8.9" width="0.45" height="11.2" fill="#000" opacity="0.22"/><rect x="10.5" y="8.9" width="0.45" height="11.2" fill="#000" opacity="0.22"/><rect x="13" y="8.9" width="0.45" height="11.2" fill="#000" opacity="0.22"/><rect x="15" y="8.9" width="0.45" height="11.2" fill="#000" opacity="0.22"/><rect x="6.4" y="20.1" width="11.2" height="1.2" fill="currentColor"/><rect x="6.4" y="21.3" width="11.2" height="1.8" rx="0.3" fill="currentColor" opacity="0.55"/></svg>
-        </span>
-        Sito di produzione di armi
-      </li>
-      <li>
-        <span class="legenda-svg legenda-svg-porto" aria-hidden="true">
-          <svg viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="4.5" r="2.5"/><line x1="12" y1="7" x2="12" y2="22"/><line x1="8" y1="12" x2="16" y2="12"/><path d="M3 13c0 5 4 9 9 9s9-4 9-9"/></svg>
-        </span>
-        Porto di export armi o transito militare
-      </li>
-      <li>
-        <span class="legenda-svg legenda-svg-inc" aria-hidden="true">
-          <svg viewBox="0 0 24 24"><path d="M12 2 L22 21 L2 21 Z" fill="currentColor" stroke="#000" stroke-width="0.8" stroke-linejoin="round"/><rect x="11" y="9" width="2" height="6" fill="#000"/><rect x="11" y="17" width="2" height="2" fill="#000"/></svg>
-        </span>
-        Incidente / caso documentato (Cermis, Vicenza...)
-      </li>
       <li><span class="dot dot-grigio" aria-hidden="true"></span> Conflitto in cui basi o armi italiane sono coinvolte <small>(al click di una base)</small></li>
       <li><span class="dot-line" aria-hidden="true"></span> Rotta da una base al conflitto <small>(al click di una base)</small></li>
       <li><span class="dot-area" aria-hidden="true"></span> Zona di mare interdetta alla pesca</li>
       <li><span class="dot-circle dot-circle-acuto" aria-hidden="true"></span> Raggio danno acuto MUOS (20 km, Niscemi) <small>fonte: Zucchetti PoliTo 2011</small></li>
       <li><span class="dot-circle dot-circle-interf" aria-hidden="true"></span> Raggio interferenza aerea MUOS (67 km) <small>fonte: Zucchetti PoliTo 2011</small></li>
     </ul>
-    <p class="legenda-tip">Clicca un pallino per i dettagli e le fonti.<br>Clicca una base militare (pallino rosso) per disegnare le rotte verso i conflitti collegati.</p>
-    <div class="legenda-filtri">
-      <h3>Mostra / Nascondi</h3>
-      <label><input type="checkbox" data-filter="basi" checked> Basi</label>
-      <label><input type="checkbox" data-filter="produzione" checked> Produzione</label>
-      <label><input type="checkbox" data-filter="porti" checked> Porti</label>
-      <label><input type="checkbox" data-filter="incidenti" checked> Incidenti</label>
-      <label><input type="checkbox" data-filter="aree" checked> Mare interdetto</label>
-    </div>
-  </aside>
+  </details>
+</section>
+
+<!-- TEMPO -->
+<section class="osv-tempo-sezione" aria-labelledby="osv-tempo-titolo">
+  <div class="container">
+    <h2 id="osv-tempo-titolo">I conflitti nel tempo</h2>
+    <p>Scegli un conflitto: la mappa disegna le rotte dalle basi italiane collegate.</p>
+    <div class="osv-tempo" id="osv-tempo"></div>
+  </div>
 </section>
 
 <!-- TESTO METODOLOGICO -->
@@ -131,17 +156,6 @@
           atti parlamentari, rapporti di organizzazioni indipendenti, inchieste giornalistiche.
           L'Osservatorio Neutralia mette questi frammenti su una mappa, in un unico colpo d'occhio.
         </p>
-      </article>
-
-      <article class="metodo-block">
-        <h2>Le 5 cifre da tenere in mente</h2>
-        <ul class="metodo-stats">
-          <li><strong>~40</strong> bombe nucleari tattiche B61 USA stoccate in Italia (Aviano + Ghedi). <em>Fonte: FAS 2023.</em></li>
-          <li><strong>~12.000 ha</strong> di terra militarizzata solo nel poligono di Salto di Quirra. <em>Fonte: Difesa.</em></li>
-          <li><strong>~4.000 km²</strong> di mare interdetto alla pesca davanti alla Sardegna sud-orientale durante le esercitazioni. <em>Fonte: NOTAMAR.</em></li>
-          <li><strong>~377.000</strong> morti nella guerra in Yemen 2015-2024 (combattenti e civili, dirette+indirette). Bombe italiane RWM Domusnovas documentate. <em>Fonte: UNDP 2021.</em></li>
-          <li><strong>~176.000</strong> morti diretti in Afghanistan 2001-2021. Basi italiane (Aviano, Sigonella, Camp Darby) usate per logistica e operazioni. <em>Fonte: Brown Univ. Costs of War.</em></li>
-        </ul>
       </article>
 
       <article class="metodo-block">
@@ -178,6 +192,8 @@
     </div>
   </div>
 </section>
+
+</main>
 
 <!-- FOOTER -->
 <footer class="site-footer">
@@ -224,6 +240,7 @@
 </footer>
 
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+<script src="assets/js/osservatorio-modelli.js"></script>
 <script src="assets/js/osservatorio.js"></script>
 <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
 </body>

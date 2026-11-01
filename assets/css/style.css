@@ -5055,3 +5055,260 @@ body.video-modal-open { overflow: hidden; }
 .pdp-bio { margin-top: 0; }
 .pdp-bio:first-of-type { margin-top: 1.8rem; }
 .pdp-bio + .pdp-bio { border-top: none; }
+
+/* ============================================
+   OSSERVATORIO — mappa con pannello, cifre, tempo
+   ============================================ */
+
+.page-osservatorio main { font-family: var(--sans); font-size: 1rem; line-height: 1.65; }
+.page-osservatorio main em { font-style: normal; }
+
+.page-osservatorio .osservatorio-intro { padding: 3.5rem 0 2rem; text-align: left; }
+.page-osservatorio .osservatorio-lead { font-family: var(--sans); font-size: 1.1rem; font-style: normal; max-width: 760px; margin-left: 0; text-align: left; }
+.page-osservatorio .osservatorio-sub { font-family: var(--sans); font-size: 0.95rem; font-style: normal; max-width: 760px; margin-left: 0; text-align: left; }
+
+.osv-cifre { padding: 1rem 0 3rem; }
+
+.osv-cifre h2,
+.osv-tempo-sezione h2 {
+  font-family: var(--sans);
+  font-weight: 800;
+  font-size: 0.8rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--giallo);
+  margin-bottom: 1rem;
+}
+
+.osv-cifre-lista {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.2rem;
+}
+
+.osv-cifre-lista li { padding-left: 0.9rem; border-left: 3px solid var(--giallo); }
+.osv-cifre-lista strong { display: block; font-weight: 900; font-size: clamp(1.7rem, 3vw, 2.3rem); line-height: 1.1; color: var(--bianco); }
+.osv-cifre-lista span { display: block; margin-top: 0.3rem; font-size: 0.9rem; color: rgba(250, 250, 250, 0.85); }
+.osv-cifre-lista small { display: block; margin-top: 0.25rem; font-size: 0.72rem; color: rgba(250, 250, 250, 0.55); }
+
+.osv-mappa-sezione { max-width: 1400px; margin: 0 auto; padding: 0 1.5rem 3rem; }
+
+.osv-filtri { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 0.8rem; }
+.osv-filtro { cursor: pointer; }
+.osv-filtro input { position: absolute; opacity: 0; width: 1px; height: 1px; }
+
+.osv-filtro span {
+  display: inline-block;
+  padding: 0.4rem 0.9rem;
+  border-radius: 999px;
+  border: 1px solid var(--tono, var(--giallo));
+  color: var(--bianco);
+  font-size: 0.8rem;
+  font-weight: 600;
+  opacity: 0.45;
+}
+
+.osv-filtro input:checked + span { opacity: 1; background: color-mix(in srgb, var(--tono, var(--giallo)) 18%, transparent); }
+.osv-filtro input:focus-visible + span { outline: 2px solid var(--giallo); outline-offset: 2px; }
+.osv-f-basi { --tono: #ff2a2a; }
+.osv-f-produzione { --tono: #ff8a00; }
+.osv-f-porti { --tono: #efe847; }
+.osv-f-incidenti { --tono: #ffffff; }
+.osv-f-aree { --tono: #ff6a6a; }
+
+.osv-griglia {
+  display: grid;
+  grid-template-columns: minmax(0, 1.5fr) minmax(320px, 1fr);
+  gap: 1rem;
+  height: min(82vh, 820px);
+  min-height: 560px;
+}
+
+.page-osservatorio #mappa { height: 100%; min-height: 0; border: 1px solid rgba(239, 232, 71, 0.18); }
+
+.osv-pannello {
+  min-height: 0;
+  overflow-y: auto;
+  padding: 1rem;
+  background: #0d0d0d;
+  border: 1px solid rgba(239, 232, 71, 0.18);
+}
+
+.osv-cerca { display: grid; gap: 0.5rem; }
+
+.osv-cerca input,
+.osv-cerca select {
+  width: 100%;
+  padding: 0.6rem 0.75rem;
+  font-family: var(--sans);
+  font-size: 0.9rem;
+  color: var(--bianco);
+  background: rgba(250, 250, 250, 0.05);
+  border: 1px solid rgba(239, 232, 71, 0.3);
+  border-radius: 4px;
+}
+
+.osv-cerca input:focus,
+.osv-cerca select:focus { outline: none; border-color: var(--giallo); }
+.osv-cerca select option { color: var(--nero); }
+
+.osv-quanti { margin: 0.7rem 0 0.3rem; font-size: 0.75rem; color: rgba(250, 250, 250, 0.6); }
+.osv-lista { list-style: none; }
+
+.osv-voce {
+  display: block;
+  width: 100%;
+  padding: 0.6rem 0.5rem 0.6rem 0.8rem;
+  text-align: left;
+  font-family: var(--sans);
+  color: var(--bianco);
+  background: none;
+  border: none;
+  border-bottom: 1px solid rgba(250, 250, 250, 0.08);
+  border-left: 3px solid var(--tono, #ff2a2a);
+  cursor: pointer;
+}
+
+.osv-voce:hover { background: rgba(239, 232, 71, 0.07); }
+.osv-voce strong { display: block; font-size: 0.9rem; font-weight: 600; line-height: 1.35; }
+.osv-voce small { display: block; font-size: 0.75rem; color: rgba(250, 250, 250, 0.6); }
+.osv-voce-tipo { display: block; font-size: 0.62rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--tono); }
+.osv-voce-basi { --tono: #ff6a6a; }
+.osv-voce-produzione { --tono: #ff8a00; }
+.osv-voce-porti { --tono: #efe847; }
+.osv-voce-incidenti { --tono: #ffffff; }
+
+.osv-chiudi {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  width: 100%;
+  margin-bottom: 0.7rem;
+  padding: 0.5rem 0;
+  text-align: left;
+  font-family: var(--sans);
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--giallo);
+  background: #0d0d0d;
+  border: none;
+  cursor: pointer;
+}
+
+.osv-pannello .popup { font-family: var(--sans); font-size: 0.92rem; line-height: 1.6; color: var(--bianco); }
+.osv-pannello .popup p,
+.osv-pannello .popup li { font-family: var(--sans); font-style: normal; }
+.osv-pannello .popup-loc,
+.osv-pannello .popup-tipo { font-style: normal; color: rgba(250, 250, 250, 0.72); }
+.osv-pannello .popup-fonti a { color: var(--giallo); word-break: break-word; }
+
+.osv-legenda { margin-top: 0.8rem; padding: 0.6rem 1rem; background: #0d0d0d; border: 1px solid rgba(239, 232, 71, 0.18); }
+.osv-legenda summary { font-size: 0.85rem; font-weight: 700; cursor: pointer; }
+.osv-legenda .legenda-lista { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 0.4rem 1.5rem; margin-top: 0.7rem; list-style: none; font-size: 0.82rem; }
+.osv-legenda .legenda-lista li { display: flex; align-items: center; gap: 0.5rem; }
+
+.osv-tempo-sezione { padding: 1rem 0 4rem; }
+.osv-tempo-sezione p { margin-bottom: 1rem; color: rgba(250, 250, 250, 0.8); }
+
+.osv-tempo-riga {
+  display: grid;
+  grid-template-columns: minmax(0, 2fr) 5.5rem minmax(0, 3fr);
+  gap: 0.8rem;
+  align-items: center;
+  width: 100%;
+  padding: 0.55rem 0.4rem;
+  text-align: left;
+  font-family: var(--sans);
+  color: var(--bianco);
+  background: none;
+  border: none;
+  border-bottom: 1px solid rgba(250, 250, 250, 0.1);
+  cursor: pointer;
+}
+
+.osv-tempo-riga:hover,
+.osv-tempo-riga.is-attiva { background: rgba(239, 232, 71, 0.08); }
+.osv-tempo-nome { font-size: 0.88rem; font-weight: 600; }
+.osv-tempo-anni { font-size: 0.78rem; color: rgba(250, 250, 250, 0.65); font-variant-numeric: tabular-nums; }
+.osv-tempo-pista { position: relative; display: block; height: 0.6rem; background: rgba(250, 250, 250, 0.08); }
+.osv-tempo-barra { position: absolute; top: 0; bottom: 0; min-width: 4px; background: #ff6a6a; }
+
+.page-osservatorio .metodo-block p,
+.page-osservatorio .metodo-block li { font-family: var(--sans); font-style: normal; font-size: 0.95rem; }
+
+.page-osservatorio #mappa { background: #0c0e11; }
+.page-osservatorio #mappa.leaflet-container { background: #0c0e11; }
+
+/* Icone: tondo colorato, segno scuro, grandezza legata allo zoom. */
+.osv-marker { background: none; border: none; }
+
+.osv-b {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: var(--c);
+  color: #0a0a0a;
+  border: 2px solid #0a0a0a;
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.35), 0 2px 6px rgba(0, 0, 0, 0.7);
+  transition: translate 0.25s cubic-bezier(0, 0, 0.25, 1);
+}
+
+.osv-b-nucleare { width: 34px; height: 34px; margin: -4px; background: #ffe600; box-shadow: 0 0 0 2px #ff2a2a, 0 2px 8px rgba(0, 0, 0, 0.8); }
+.osv-b-nucleare > svg { width: 100%; height: 100%; }
+.osv-bollo { position: absolute; top: -9px; right: -9px; width: 19px; height: 19px; border-radius: 50%; background: #0a0a0a; box-shadow: 0 0 0 1px #0a0a0a; }
+.osv-bollo svg { width: 100%; height: 100%; }
+
+.osv-b svg { width: 70%; height: 70%; display: block; }
+#mappa .osv-b.is-scelto { transform: scale(1.5); box-shadow: 0 0 0 3px var(--giallo), 0 0 22px rgba(239, 232, 71, 0.75); z-index: 5; }
+#mappa .leaflet-marker-icon:has(.is-scelto) { z-index: 9000 !important; }
+
+.osv-b-fermo { flex: none; width: 24px; height: 24px; }
+
+.osv-modello { margin-bottom: 0.9rem; background: radial-gradient(circle at 50% 40%, #2a2c30, #101114 75%); border: 1px solid rgba(239, 232, 71, 0.18); }
+.osv-modello[hidden] { display: none; }
+.osv-modello canvas { display: block; width: 100%; height: 240px; touch-action: none; cursor: grab; }
+.osv-modello figcaption { padding: 0.3rem 0.6rem; font-size: 0.68rem; color: rgba(250, 250, 250, 0.6); }
+
+.osv-rotte {
+  margin-top: 0.6rem;
+  padding: 0.45rem 0.8rem;
+  font-family: var(--sans);
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--nero);
+  background: var(--giallo);
+  border: none;
+  cursor: pointer;
+}
+
+.osv-legenda-tipi { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 0.4rem 1.5rem; margin-top: 0.7rem; list-style: none; font-size: 0.82rem; }
+.osv-legenda-tipi li { display: flex; align-items: center; gap: 0.5rem; }
+
+@media (max-width: 900px) {
+  .osv-griglia { display: block; height: auto; min-height: 0; }
+  .page-osservatorio #mappa { height: 62vh; min-height: 400px; }
+  .osv-pannello { margin-top: 0.8rem; max-height: 60vh; }
+
+  /* Sul telefono la scheda sale dal basso e copre la pagina. */
+  .osv-scheda-aperta .osv-pannello {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1000;
+    max-height: 72vh;
+    margin: 0;
+    border-width: 2px 0 0;
+    border-color: var(--giallo);
+    box-shadow: 0 -12px 40px rgba(0, 0, 0, 0.7);
+  }
+
+  .osv-modello canvas { height: 170px; }
+  .osv-tempo-riga { grid-template-columns: minmax(0, 1fr) auto; }
+  .osv-tempo-pista { grid-column: 1 / -1; }
+}
