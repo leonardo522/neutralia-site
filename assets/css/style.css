@@ -5324,8 +5324,6 @@ body.page-parlamento {
 
 .parl-citazione { margin: 0 0 1.1rem; padding-bottom: 0.9rem; border-bottom: 1px solid rgba(250, 250, 250, 0.08); }
 .parl-citazione:last-child { margin-bottom: 0; padding-bottom: 0; border-bottom: none; }
-.parl-citazione-testa { margin-bottom: 0.35rem; }
-
 .parl-anno {
   display: inline-block;
   padding: 0.05rem 0.5rem;
@@ -5335,6 +5333,8 @@ body.page-parlamento {
   font-family: var(--sans);
   font-size: 0.68rem;
   font-weight: 700;
+  text-decoration: none;
+  margin-bottom: 0.35rem;
 }
 
 .parl-citazione blockquote { font-size: 1rem; line-height: 1.65; color: var(--bianco); }
@@ -5364,13 +5364,6 @@ body.page-parlamento {
 
 .parl-traduzione { margin-top: 0.4rem; font-size: 0.95rem; color: rgba(250, 250, 250, 0.75); }
 
-.parl-citazione figcaption {
-  margin-top: 0.45rem;
-  font-size: 0.82rem;
-  color: rgba(250, 250, 250, 0.6);
-}
-
-.parl-citazione a,
 .parl-voti a,
 .parl-documenti a { color: var(--giallo); }
 

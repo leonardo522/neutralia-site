@@ -198,18 +198,14 @@
     const fig = crea('figure', { class: 'parl-citazione' });
     const doc = dati.documenti[c.documento];
     const paginaWeb = doc && doc.data === dati.composizione.rilevato_il;
-    const testa = crea('div', { class: 'parl-citazione-testa' });
-    testa.appendChild(crea('span', { class: 'parl-anno' }, paginaWeb ? 'Sito' : (doc && doc.data ? doc.data.slice(0, 4) : '')));
-    fig.appendChild(testa);
+    const url = doc ? (doc.url_originale || doc.url_archivio) : null;
+    const nomeDoc = doc ? `${doc.titolo}${c.pagina ? `, p. ${c.pagina}` : ''}` : '';
+    const anno = paginaWeb ? 'Sito' : (doc && doc.data ? doc.data.slice(0, 4) : '');
+    fig.appendChild(url
+      ? crea('a', { class: 'parl-anno', href: url, target: '_blank', rel: 'noopener', title: nomeDoc }, anno)
+      : crea('span', { class: 'parl-anno', title: nomeDoc }, anno));
     fig.appendChild(crea('blockquote', { lang: c.traduzione ? 'de' : null }, c.citazione));
     if (c.traduzione) fig.appendChild(crea('p', { class: 'parl-traduzione' }, `Traduzione: ${c.traduzione}`));
-    const cap = crea('figcaption', {});
-    const url = doc ? (doc.url_originale || doc.url_archivio) : null;
-    const etichetta = doc ? doc.titolo : c.documento;
-    if (url) cap.appendChild(crea('a', { href: url, target: '_blank', rel: 'noopener' }, etichetta));
-    else cap.appendChild(document.createTextNode(etichetta));
-    if (c.pagina) cap.appendChild(document.createTextNode(`, p. ${c.pagina}`));
-    fig.appendChild(cap);
     return fig;
   }
 
@@ -289,8 +285,9 @@
       det.appendChild(crea('summary', {}, v.titolo_neutro));
       det.appendChild(crea('p', {}, v.cosa_si_votava));
       th.appendChild(det);
-      const piede = crea('small', {}, `${v.ramo === 'camera' ? 'Camera' : 'Senato'}, ${dataEstesa(v.data)} · ${v.esito} · `);
-      piede.appendChild(crea('a', { href: v.url_fonte, target: '_blank', rel: 'noopener' }, 'fonte'));
+      const piede = crea('small', {});
+      piede.appendChild(crea('a', { href: v.url_fonte, target: '_blank', rel: 'noopener' }, `${v.ramo === 'camera' ? 'Camera' : 'Senato'}, ${dataEstesa(v.data)}`));
+      piede.appendChild(document.createTextNode(` · ${v.esito}`));
       th.appendChild(piede);
       tr.appendChild(th);
       colonne.forEach((p) => {
