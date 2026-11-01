@@ -239,20 +239,10 @@
     return m;
   }
 
-  /* Le icone troppo vicine si scostano solo nella vista d'insieme. Lo scostamento
-     si dimezza a ogni livello di zoom: da vicino ogni icona sta esattamente sul posto. */
-  let zoomBase = null;
-  function applicaScosti(zoom) {
-    const k = Math.pow(2, zoomBase - zoom);
-    icone.forEach((m) => {
-      const el = m.getElement();
-      if (el && m.scosto) el.querySelector('.osv-b').style.translate = `${(m.scosto[0] * k).toFixed(1)}px ${(m.scosto[1] * k).toFixed(1)}px`;
-    });
-  }
-
+  /* Le icone troppo vicine si scostano una volta sola, nella vista iniziale:
+     lo scostamento resta identico a ogni zoom, così le icone non cambiano mai posto. */
   function separaIcone() {
-    zoomBase = mappa.getZoom();
-    const piccole = zoomBase < 5.4;
+    const piccole = mappa.getZoom() < 5.4;
     mappa.getContainer().classList.toggle('osv-piccole', piccole);
     const lato = piccole ? 21 : 29;
     const voci = icone
@@ -275,11 +265,9 @@
         }
       }
     }
-    voci.forEach((v) => { v.m.scosto = [v.x - v.x0, v.y - v.y0]; });
-    applicaScosti(zoomBase);
-    mappa.on('zoomanim', (e) => applicaScosti(e.zoom));
-    mappa.on('zoom', () => { if (zoomMeta !== null) applicaScosti(mappa.getZoom()); });
-    mappa.on('zoomend', () => applicaScosti(mappa.getZoom()));
+    voci.forEach((v) => {
+      v.m.getElement().querySelector('.osv-b').style.translate = `${(v.x - v.x0).toFixed(1)}px ${(v.y - v.y0).toFixed(1)}px`;
+    });
   }
 
   function tipoBase(b) {
