@@ -9,6 +9,7 @@
 
   const DATA = {
     italia:     'assets/data/italia.geojson',
+    regioni:    'assets/data/italia-regioni.geojson',
     aree:       'assets/data/osservatorio-aree-interdette.geojson',
     basi:       'assets/data/osservatorio-basi.json',
     produzione: 'assets/data/osservatorio-produzione.json',
@@ -27,28 +28,82 @@
     aree:       '#ff2a2a'
   };
 
-  // Popup come modale centrato a schermo (gestito dal CSS).
-  // Disattivo autoPan perché non ha senso panare la mappa: il popup è fisso.
-  const POPUP_OPTS = {
-    maxWidth: 1000,            // largo: il CSS lo limiterà a min(540px, 92vw)
-    minWidth: 0,
-    autoPan: false,
-    keepInView: false,
-    closeOnEscapeKey: true,
-    className: 'osv-popup'
-  };
+  // La scheda si apre nel pannello accanto alla mappa (sul telefono sale dal basso).
+  const pannello = document.getElementById('osv-pannello');
+  const elencoEl = document.getElementById('osv-elenco');
+  const schedaEl = document.getElementById('osv-scheda');
+  const schedaCorpo = document.getElementById('osv-scheda-corpo');
+  let schedaAperta = false;
+  let scelto = null;
+  let rottePunti = null;
+  const modelli = window.OsvModelli ? OsvModelli.crea(document.getElementById('osv-modello')) : null;
+  if (!modelli) document.querySelector('.osv-modello').hidden = true;
+
+  function marcaScelto(marker) {
+    if (scelto) scelto.classList.remove('is-scelto');
+    scelto = marker && marker.getElement() ? marker.getElement().querySelector('.osv-b') : null;
+    if (scelto) scelto.classList.add('is-scelto');
+  }
+
+  function apriScheda(html, lat, lon, opz) {
+    const o = opz || {};
+    schedaCorpo.innerHTML = html;
+    schedaEl.hidden = false;
+    elencoEl.hidden = true;
+    schedaAperta = true;
+    pannello.scrollTop = 0;
+    schedaEl.scrollTop = 0;
+    document.body.classList.add('osv-scheda-aperta');
+    marcaScelto(o.marker);
+    document.querySelector('.osv-modello').hidden = !modelli || !o.modello;
+    if (modelli && o.modello) modelli.mostra(o.modello);
+    if (!o.fermo && lat != null) mappa.setView([lat, lon], Math.max(mappa.getZoom(), 9), { animate: true });
+    schedaEl.querySelector('.osv-chiudi').focus({ preventScroll: true });
+  }
+
+  function chiudiScheda() {
+    if (!schedaAperta) return;
+    schedaEl.hidden = true;
+    elencoEl.hidden = false;
+    schedaAperta = false;
+    document.body.classList.remove('osv-scheda-aperta');
+    marcaScelto(null);
+    if (modelli) modelli.ferma();
+    rottePunti = null;
+    layers.linee.clearLayers();
+    layers.conflitti.clearLayers();
+    document.querySelectorAll('.osv-tempo-riga.is-attiva').forEach((r) => r.classList.remove('is-attiva'));
+    if (limiteLargo) mappa.once('moveend', () => limitiMappa(false));
+    inquadraItalia();
+  }
+
+  document.querySelector('.osv-chiudi').addEventListener('click', chiudiScheda);
+  schedaCorpo.addEventListener('click', (ev) => {
+    if (ev.target.closest('[data-rotte]') && rottePunti) {
+      limitiMappa(true);
+      mappa.fitBounds(rottePunti, { padding: [30, 30], maxZoom: 7, animate: true });
+    }
+  });
+  document.addEventListener('keydown', (ev) => {
+    if (ev.key === 'Escape') chiudiScheda();
+  });
 
   // ---------- INIT MAPPA ----------
+  const ITALIA = [[36.4, 6.6], [47.2, 18.6]];
   const mappa = L.map('mappa', {
     center: [42.3, 12.5],
     zoom: 6,
-    minZoom: 5,
-    maxZoom: 11,
+    zoomSnap: 0.25,
+    zoomDelta: 1,
+    scrollWheelZoom: false,
+    fadeAnimation: false,
+    minZoom: 3,
+    maxZoom: 10,
     zoomControl: true,
     attributionControl: false,
     worldCopyJump: false,
     preferCanvas: false,
-    maxBounds: [[33.5, 2.0], [50.0, 25.0]],
+    maxBounds: [[-5, -25], [62, 85]],
     maxBoundsViscosity: 0.8,
     renderer: L.svg({ padding: 0.5 })
   });
@@ -57,6 +112,58 @@
 
   // Esponi la mappa per debug/console
   window.NeutraliaMap = mappa;
+
+  const inquadraItalia = () => mappa.fitBounds(ITALIA, { padding: [8, 8], animate: true });
+  /* Non si allontana oltre la vista con tutta l'Italia: solo le rotte verso
+     i conflitti lontani allargano il limite, finché la scheda resta aperta. */
+  let limiteLargo = false;
+  function limitiMappa(largo) {
+    limiteLargo = largo;
+    mappa.setMaxBounds(largo ? [[-5, -25], [62, 85]] : [[32, -2], [51, 27]]);
+    mappa.setMinZoom(largo ? 3 : mappa.getBoundsZoom(ITALIA, false, L.point(16, 16)));
+  }
+
+  mappa.fitBounds(ITALIA, { padding: [8, 8] });
+  limitiMappa(false);
+  let vistaIniziale = true;
+  mappa.on('dragstart', () => { vistaIniziale = false; });
+
+  /* Rotellina e trackpad: zoom continuo verso il puntatore, un passo per fotogramma. */
+  let zoomMeta = null;
+  let puntoZoom = null;
+  function passoZoom() {
+    const ora = mappa.getZoom();
+    const fine = Math.abs(zoomMeta - ora) < 0.004;
+    const z = fine ? zoomMeta : ora + (zoomMeta - ora) * 0.32;
+    const meta = mappa.getSize().divideBy(2);
+    const scarto = puntoZoom.subtract(meta).multiplyBy(1 - 1 / mappa.getZoomScale(z));
+    mappa._move(mappa.containerPointToLatLng(meta.add(scarto)), z, { flyTo: true });
+    if (fine) {
+      zoomMeta = null;
+      mappa._moveEnd(true);
+    } else {
+      requestAnimationFrame(passoZoom);
+    }
+  }
+  mappa.getContainer().addEventListener('wheel', (e) => {
+    e.preventDefault();
+    vistaIniziale = false;
+    const passo = e.deltaMode === 1 ? e.deltaY * 16 : e.deltaY;
+    const partenza = zoomMeta === null;
+    const base = partenza ? mappa.getZoom() : zoomMeta;
+    zoomMeta = Math.max(mappa.getMinZoom(), Math.min(mappa.getMaxZoom(), base - passo * 0.0045));
+    puntoZoom = mappa.mouseEventToContainerPoint(e);
+    if (partenza) {
+      mappa._stop();
+      mappa._moveStart(true, false);
+      requestAnimationFrame(passoZoom);
+    }
+  }, { passive: false });
+  new ResizeObserver(() => {
+    mappa.invalidateSize({ pan: false });
+    if (!limiteLargo) limitiMappa(false);
+    if (vistaIniziale && !schedaAperta) mappa.fitBounds(ITALIA, { padding: [8, 8], animate: false });
+  }).observe(document.getElementById('mappa'));
 
   // ---------- LAYER GROUPS ----------
   const layers = {
@@ -70,31 +177,6 @@
   };
 
   // ---------- HELPERS ----------
-  function makePulseMarker(lat, lon, color, className) {
-    // Cerchio "alone" che pulsa via CSS animation su r/opacity
-    return L.circleMarker([lat, lon], {
-      radius: 8,
-      color: color,
-      weight: 0,
-      fillColor: color,
-      fillOpacity: 0.55,
-      className: 'osv-pulse ' + (className || ''),
-      interactive: false
-    });
-  }
-
-  function makeDotMarker(lat, lon, color, className) {
-    return L.circleMarker([lat, lon], {
-      radius: 7,
-      color: '#000',
-      weight: 1.5,
-      fillColor: color,
-      fillOpacity: 1,
-      className: 'osv-dot ' + (className || ''),
-      bubblingMouseEvents: false
-    });
-  }
-
   // Icone SVG tematiche per produzione, porti, incidenti
   const ICONE = {
     porto: {
@@ -127,33 +209,103 @@
     }
   };
 
-  function makeNukeOverlay(lat, lon, kind) {
-    const ic = ICONE[kind];
-    const size = kind === 'nucleare_scalo' ? 16 : 25;
+  // Pittogrammi delle icone: stessa griglia 24×24, tondo colorato e segno scuro.
+  const SEGNI = {
+    aerea: '<path d="M12 1.8l1.5 6.9 7.5 4.3v2.1l-7.5-2.3-.6 5.1 2.5 1.9v1.5L12 20.2l-3.4 1.1v-1.5l2.5-1.9-.6-5.1L3 15.1V13l7.5-4.3z"/>',
+    navale: '<path d="M2.5 14.5h19l-2.6 5.3H5.1z"/><path d="M6 13.6l1-3.8h3.6V6.7h3v3.1H17l1 3.8z"/><rect x="11.5" y="3" width="1.2" height="3.7"/>',
+    radar: '<path d="M3.6 6.2a12 12 0 0 0 14.6 14.6z"/><path d="M12 12l5.2-5.2" stroke="currentColor" stroke-width="1.9" fill="none"/><circle cx="18" cy="6" r="1.9"/>',
+    poligono: '<circle cx="12" cy="12" r="9.4" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="5.2" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="1.9"/>',
+    logistica: '<path d="M12 2.5l8.6 4.6v9.8L12 21.5l-8.6-4.6V7.1z"/><path d="M3.8 7.2L12 11.7l8.2-4.5M12 11.7v9.6" stroke="var(--c)" stroke-width="1.5" fill="none"/>',
+    comando: '<path d="M3 21V9.4l9-5.2 9 5.2V21h-6v-6H9v6z"/>',
+    esercito: '<path d="M12 2l2.9 6.4 7 .7-5.3 4.7 1.6 6.9L12 17.1l-6.2 3.6 1.6-6.9L2.1 9.1l7-.7z"/>',
+    fabbrica: '<path d="M2.5 21V11l6 3.6V11l6 3.6V3.5h7V21z"/>',
+    porto: '<circle cx="12" cy="4.4" r="2.2" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 6.6V21M7.8 11h8.4M3.4 13.4c.4 4.6 4 7.6 8.6 7.6s8.2-3 8.6-7.6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/>',
+    incidente: '<path d="M12 2.5l10 18.2H2z"/><rect x="11" y="9.3" width="2" height="6" fill="var(--c)"/><rect x="11" y="16.6" width="2" height="2" fill="var(--c)"/>'
+  };
+
+  const icone = [];
+
+  function makeBadge(lat, lon, tipo, colore, nucleare) {
+    const bollo = nucleare === 'scalo' ? `<span class="osv-bollo">${ICONE.nucleare_scalo.svg}</span>` : '';
+    const segno = nucleare === 'bomba' ? ICONE.nucleare.svg : `<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">${SEGNI[tipo]}</svg>`;
     const icon = L.divIcon({
-      className: 'osv-nuke-marker',
-      html: `<span class="osv-nuke-svg osv-nuke-${kind}">${ic.svg}</span>`,
-      iconSize: [size, size],
-      iconAnchor: kind === 'nucleare_scalo' ? [-4, 20] : [-3, 28]
+      className: 'osv-marker',
+      html: `<span class="osv-b${nucleare === 'bomba' ? ' osv-b-nucleare' : ''}" style="--c:${colore}">${segno}${bollo}</span>`,
+      iconSize: [32, 32],
+      iconAnchor: [16, 16]
     });
-    return L.marker([lat, lon], { icon, interactive: false, keyboard: false, zIndexOffset: 1000 });
+    const m = L.marker([lat, lon], { icon, bubblingMouseEvents: false, riseOnHover: true });
+    icone.push(m);
+    return m;
   }
 
-  function makeIconMarker(lat, lon, kind, className) {
-    const ic = ICONE[kind];
-    const icon = L.divIcon({
-      className: 'osv-icon-marker ' + (className || ''),
-      html: `<span class="osv-icon-svg" style="color:${ic.color}">${ic.svg}</span>`,
-      iconSize: [32, 32],
-      iconAnchor: [16, 16],
-      popupAnchor: [0, -16]
+  /* Le icone troppo vicine si scostano una volta sola, nella vista iniziale:
+     lo scostamento resta identico a ogni zoom, così le icone non cambiano mai posto. */
+  function separaIcone() {
+    const piccole = mappa.getZoom() < 5.4;
+    mappa.getContainer().classList.toggle('osv-piccole', piccole);
+    const lato = piccole ? 21 : 29;
+    const voci = icone
+      .filter((m) => m._map && m.getElement())
+      .map((m) => {
+        const p = mappa.latLngToLayerPoint(m.getLatLng());
+        return { m, x: p.x, y: p.y, x0: p.x, y0: p.y };
+      });
+    for (let giro = 0; giro < 40; giro++) {
+      for (let i = 0; i < voci.length; i++) {
+        for (let j = i + 1; j < voci.length; j++) {
+          const a = voci[i], b = voci[j];
+          let dx = b.x - a.x, dy = b.y - a.y;
+          let d = Math.hypot(dx, dy);
+          if (d >= lato) continue;
+          if (d < 0.01) { dx = 1; dy = (i % 2) - 0.5; d = Math.hypot(dx, dy); }
+          const k = (lato - d) / 2 / d;
+          a.x -= dx * k; a.y -= dy * k;
+          b.x += dx * k; b.y += dy * k;
+        }
+      }
+    }
+    voci.forEach((v) => {
+      v.m.getElement().querySelector('.osv-b').style.translate = `${(v.x - v.x0).toFixed(1)}px ${(v.y - v.y0).toFixed(1)}px`;
     });
-    return L.marker([lat, lon], { icon, bubblingMouseEvents: false });
   }
+
+  function tipoBase(b) {
+    const t = b.tipo;
+    if (/radar|radio|satellit|muos/i.test(t)) return 'radar';
+    if (/poligono/i.test(t)) return 'poligono';
+    if (/aerea|aeroport/i.test(t)) return 'aerea';
+    if (/navale|navy|sottomarin|marina/i.test(t)) return 'navale';
+    if (/logistica/i.test(t)) return 'logistica';
+    if (/army/i.test(t)) return 'esercito';
+    return 'comando';
+  }
+
+  function disegnaLegenda() {
+    const voci = [
+      ['aerea', COLORI.basi, 'Base aerea'], ['navale', COLORI.basi, 'Base navale'], ['esercito', COLORI.basi, 'Base dell\'esercito'],
+      ['radar', COLORI.basi, 'Stazione radar o radio'], ['poligono', COLORI.basi, 'Poligono'], ['logistica', COLORI.basi, 'Base logistica'],
+      ['comando', COLORI.basi, 'Comando, centro o istituto'], ['fabbrica', COLORI.produzione, 'Produzione di armi'],
+      ['porto', COLORI.porti, 'Porto'], ['incidente', COLORI.incidenti, 'Incidente o caso documentato']
+    ];
+    document.getElementById('osv-legenda-tipi').innerHTML = voci.map(([t, c, nome]) => `<li><span class="osv-b osv-b-fermo" style="--c:${c}"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">${SEGNI[t]}</svg></span>${nome}</li>`).join('');
+  }
+  disegnaLegenda();
 
   function listToHTML(arr) {
     if (!arr || !arr.length) return '<em>—</em>';
     return '<ul>' + arr.map(x => `<li>${escapeHTML(x)}</li>`).join('') + '</ul>';
+  }
+
+  function fontiHTML(fonti) {
+    if (!fonti || !fonti.length) return '';
+    const voce = (f) => {
+      if (f && f.url) return `<li><a href="${escapeHTML(f.url)}" target="_blank" rel="noopener">${escapeHTML(f.titolo || f.url)}</a></li>`;
+      const testo = String(f);
+      const m = testo.match(/https?:\/\/\S+/);
+      return m ? `<li><a href="${escapeHTML(m[0])}" target="_blank" rel="noopener">${escapeHTML(testo)}</a></li>` : `<li>${escapeHTML(testo)}</li>`;
+    };
+    return `<details class="popup-fonti"><summary>Fonti (${fonti.length})</summary><ul>${fonti.map(voce).join('')}</ul></details>`;
   }
 
   function escapeHTML(s) {
@@ -174,23 +326,23 @@
   // ---------- FETCH TUTTI I DATI ----------
   Promise.all([
     fetch(DATA.italia).then(r => r.json()),
+    fetch(DATA.regioni).then(r => r.json()),
     fetch(DATA.aree).then(r => r.json()),
     fetch(DATA.basi).then(r => r.json()),
     fetch(DATA.produzione).then(r => r.json()),
     fetch(DATA.porti).then(r => r.json()),
     fetch(DATA.conflitti).then(r => r.json()),
     fetch(DATA.incidenti).then(r => r.json())
-  ]).then(([italia, aree, basi, produzione, porti, conflitti, incidenti]) => {
+  ]).then(([italia, regioni, aree, basi, produzione, porti, conflitti, incidenti]) => {
 
-    // CONFINE ITALIA
+    // RILIEVO, REGIONI, CONFINE
+    L.tileLayer('assets/img/osservatorio/tessere/{z}/{x}/{y}.jpg', {
+      minZoom: 3, maxZoom: 10, minNativeZoom: 5, maxNativeZoom: 8,
+      bounds: [[33.5, 1], [49.5, 24]], updateWhenZooming: false, keepBuffer: 4
+    }).addTo(mappa);
+    L.geoJSON(regioni, { style: { color: '#ffffff', weight: 0.7, opacity: 0.22 }, interactive: false }).addTo(mappa);
     L.geoJSON(italia, {
-      style: {
-        color: COLORI.confine,
-        weight: 1.2,
-        opacity: 0.95,
-        fillColor: '#111',
-        fillOpacity: 0.55
-      },
+      style: { color: COLORI.confine, weight: 1.3, opacity: 0.85, fill: false },
       interactive: false
     }).addTo(mappa);
 
@@ -211,12 +363,14 @@
             <p class="popup-eyebrow popup-eyebrow-base">Mare interdetto</p>
             <h3>${escapeHTML(p.nome)}</h3>
             <p>${escapeHTML(p.descrizione)}</p>
-            <p class="popup-stat"><strong>${fmtNum(p.estensione_kmq)} km²</strong> di mare interdetto alla pesca durante le esercitazioni.</p>
+            ${p.estensione_kmq ? `<p class="popup-stat"><strong>${fmtNum(p.estensione_kmq)} km²</strong> di mare interdetto alla pesca durante le esercitazioni.</p>` : ''}
           </div>
         `;
-        layer.bindPopup(html, POPUP_OPTS);
+        layer.on('click', (ev) => apriScheda(html, ev.latlng.lat, ev.latlng.lng, { modello: 'mare' }));
       }
     }).addTo(layers.aree);
+
+    const voci = [];
 
     // Indice conflitti per ID
     const conflittiPerId = {};
@@ -224,117 +378,43 @@
 
     // BASI
     basi.items.forEach(b => {
-      const pulse = makePulseMarker(b.lat, b.lon, COLORI.basi);
-      const dot = makeDotMarker(b.lat, b.lon, COLORI.basi, 'osv-dot-base');
-      dot.bindPopup(popupBase(b, conflittiPerId), POPUP_OPTS);
-      dot.on('click', () => disegnaLineeEConflitti(b, conflittiPerId));
-      pulse.addTo(layers.basi);
+      const tipo = tipoBase(b);
+      const dot = makeBadge(b.lat, b.lon, tipo, COLORI.basi, b.nucleare ? 'bomba' : b.scali_nucleari ? 'scalo' : null);
+      const apri = () => {
+        disegnaLineeEConflitti(b, conflittiPerId);
+        apriScheda(popupBase(b, conflittiPerId), b.lat, b.lon, { marker: dot, modello: b.nucleare ? 'aereaNucleare' : tipo === 'radar' && b.raggi_rischio_km ? 'muos' : tipo });
+      };
+      dot.on('click', apri);
+      voci.push({ nome: b.nome, dove: `${b.comune} · ${b.regione}`, regione: b.regione, tipo: 'basi', etichetta: 'Basi', apri });
       dot.addTo(layers.basi);
-
-      // Icona ☢ NUCLEARE per basi con testate B61 (Aviano, Ghedi)
-      if (b.nucleare) {
-        makeNukeOverlay(b.lat, b.lon, 'nucleare').addTo(layers.basi);
-      }
-      // Icona ☢ BIANCA piccola per basi autorizzate a scali di sub nucleari (La Maddalena, Gaeta, Brindisi)
-      if (b.scali_nucleari) {
-        makeNukeOverlay(b.lat, b.lon, 'nucleare_scalo').addTo(layers.basi);
-      }
-
-      // Cerchi di rischio (es. MUOS Niscemi: danno acuto 20 km, interferenza aerea 67 km)
-      if (b.raggi_rischio_km) {
-        const r = b.raggi_rischio_km;
-        if (r.interferenza_aerea) {
-          L.circle([b.lat, b.lon], {
-            radius: r.interferenza_aerea * 1000,
-            color: '#ff2a2a',
-            weight: 1,
-            opacity: 0.55,
-            dashArray: '5 6',
-            fillColor: '#ff2a2a',
-            fillOpacity: 0.05,
-            interactive: false,
-            className: 'osv-circle-interferenza'
-          }).addTo(layers.basi);
-        }
-        if (r.danno_acuto) {
-          L.circle([b.lat, b.lon], {
-            radius: r.danno_acuto * 1000,
-            color: '#ff2a2a',
-            weight: 1.5,
-            opacity: 0.85,
-            fillColor: '#ff2a2a',
-            fillOpacity: 0.18,
-            interactive: false,
-            className: 'osv-circle-acuto'
-          }).addTo(layers.basi);
-        }
-      }
     });
 
     // PRODUZIONE — icona proiettile arancione
     produzione.items.forEach(p => {
-      const marker = makeIconMarker(p.lat, p.lon, 'produzione', 'osv-icon-produzione');
-      marker.bindPopup(popupProduzione(p), POPUP_OPTS);
+      const marker = makeBadge(p.lat, p.lon, 'fabbrica', COLORI.produzione);
+      const apri = () => apriScheda(popupProduzione(p), p.lat, p.lon, { marker, modello: /navi/i.test(p.tipo) ? 'cantiere' : /holding/i.test(p.tipo) ? 'comando' : 'fabbrica' });
+      marker.on('click', apri);
+      voci.push({ nome: p.nome, dove: `${p.comune} · ${p.regione}`, regione: p.regione, tipo: 'produzione', etichetta: 'Produzione', apri });
       marker.addTo(layers.produzione);
     });
 
     // PORTI — icona ancora gialla, + ☢ bianca se autorizzato scali nucleari
     porti.items.forEach(p => {
-      const marker = makeIconMarker(p.lat, p.lon, 'porto', 'osv-icon-porto');
-      marker.bindPopup(popupPorto(p), POPUP_OPTS);
+      const marker = makeBadge(p.lat, p.lon, 'porto', COLORI.porti, p.scali_nucleari ? 'scalo' : null);
+      const apri = () => apriScheda(popupPorto(p), p.lat, p.lon, { marker, modello: 'porto' });
+      marker.on('click', apri);
+      voci.push({ nome: p.nome, dove: p.regione, regione: p.regione, tipo: 'porti', etichetta: 'Porti', apri });
       marker.addTo(layers.porti);
-      if (p.scali_nucleari) {
-        makeNukeOverlay(p.lat, p.lon, 'nucleare_scalo').addTo(layers.porti);
-      }
     });
 
 
     // INCIDENTI — triangolo warning bianco
     incidenti.items.forEach(inc => {
-      const marker = makeIconMarker(inc.lat, inc.lon, 'incidente', 'osv-icon-incidente');
-      marker.bindPopup(popupIncidente(inc), POPUP_OPTS);
+      const marker = makeBadge(inc.lat, inc.lon, 'incidente', COLORI.incidenti);
+      const apri = () => apriScheda(popupIncidente(inc), inc.lat, inc.lon, { marker, modello: { 'ustica-1980': 'aereo', 'cermis-1998': 'funivia' }[inc.id] || 'esercito' });
+      marker.on('click', apri);
+      voci.push({ nome: inc.nome, dove: `${inc.comune} · ${inc.regione}`, regione: inc.regione, tipo: 'incidenti', etichetta: 'Incidenti', apri });
       marker.addTo(layers.incidenti);
-    });
-
-    // Apertura popup → sposta in body (per liberarlo dal transform del pane)
-    mappa.on('popupopen', (e) => {
-      document.body.classList.add('mappa-popup-open');
-      const el = e.popup.getElement();
-      if (el && el.parentElement && el.parentElement !== document.body) {
-        el._osvOriginalParent = el.parentElement;
-        document.body.appendChild(el);
-      }
-    });
-
-    // Chiusura popup → pulisci rotte/conflitti se era una base + rimetti popup nel pane
-    mappa.on('popupclose', (e) => {
-      document.body.classList.remove('mappa-popup-open');
-      const el = e.popup.getElement();
-      if (el && el._osvOriginalParent) {
-        el._osvOriginalParent.appendChild(el);
-        delete el._osvOriginalParent;
-      }
-      const html = e.popup && e.popup.getContent && e.popup.getContent();
-      if (typeof html === 'string' && html.includes('popup-base')) {
-        layers.linee.clearLayers();
-        layers.conflitti.clearLayers();
-      }
-    });
-
-    // Click sul backdrop chiude il popup.
-    // Ignora i click dentro la mappa (Leaflet gestisce già) e dentro un popup.
-    document.body.addEventListener('click', (ev) => {
-      if (!document.body.classList.contains('mappa-popup-open')) return;
-      if (ev.target.closest('#mappa')) return;          // click su marker/mappa: lascia fare a Leaflet
-      if (ev.target.closest('.leaflet-popup')) return;  // click dentro popup: niente
-      mappa.closePopup();
-    });
-
-    // ESC chiude (oltre al default Leaflet, per sicurezza)
-    document.addEventListener('keydown', (ev) => {
-      if (ev.key === 'Escape' && document.body.classList.contains('mappa-popup-open')) {
-        mappa.closePopup();
-      }
     });
 
     // FILTRI
@@ -349,28 +429,19 @@
       });
     });
 
+    preparaElenco(voci);
+    preparaTempo(conflitti.items, basi.items, conflittiPerId);
+
+    // Quante voci ha ogni filtro
+    document.querySelectorAll('[data-conta]').forEach((el) => {
+      el.textContent = el.dataset.conta === 'aree' ? aree.features.length : voci.filter((v) => v.tipo === el.dataset.conta).length;
+    });
+
     // Loading off
     const loading = document.getElementById('mappa-loading');
     if (loading) loading.remove();
 
-    // SCALING ICONE in base al zoom — evita sovrapposizioni su vista panoramica
-    const mappaEl = document.getElementById('mappa');
-    function aggiornaScalaZoom() {
-      const z = mappa.getZoom();
-      let tier, baseR;
-      if (z <= 6)      { tier = 'low';  baseR = 3.5; }
-      else if (z <= 7) { tier = 'med';  baseR = 5.2; }
-      else if (z <= 8) { tier = 'high'; baseR = 7;   }
-      else             { tier = 'max';  baseR = 9.5; }
-      mappaEl.setAttribute('data-zoom-tier', tier);
-      layers.basi.eachLayer(l => {
-        if (l instanceof L.CircleMarker && l.options.className && l.options.className.includes('osv-dot-base')) {
-          l.setRadius(baseR);
-        }
-      });
-    }
-    mappa.on('zoomend', aggiornaScalaZoom);
-    aggiornaScalaZoom();
+    separaIcone();
 
   }).catch(err => {
     console.error('Errore caricamento dati osservatorio:', err);
@@ -380,18 +451,95 @@
     }
   });
 
+  // ---------- ELENCO E RICERCA ----------
+  function preparaElenco(voci) {
+    const campo = document.getElementById('osv-cerca');
+    const regione = document.getElementById('osv-regione');
+    const lista = document.getElementById('osv-lista');
+    const quanti = document.getElementById('osv-quanti');
+    [...new Set(voci.map((v) => v.regione))].sort((a, b) => a.localeCompare(b, 'it')).forEach((r) => {
+      const o = document.createElement('option');
+      o.value = r;
+      o.textContent = r;
+      regione.appendChild(o);
+    });
+    const piega = (t) => String(t).normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase();
+    function mostra() {
+      const q = piega(campo.value.trim());
+      const trovate = voci
+        .filter((v) => (!regione.value || v.regione === regione.value) && (!q || piega(`${v.nome} ${v.dove}`).includes(q)))
+        .sort((a, b) => a.nome.localeCompare(b.nome, 'it'));
+      quanti.textContent = trovate.length === 1 ? '1 punto' : `${trovate.length} punti`;
+      lista.innerHTML = '';
+      trovate.forEach((v) => {
+        const li = document.createElement('li');
+        const b = document.createElement('button');
+        b.type = 'button';
+        b.className = `osv-voce osv-voce-${v.tipo}`;
+        b.innerHTML = `<span class="osv-voce-tipo">${escapeHTML(v.etichetta)}</span><strong>${escapeHTML(v.nome)}</strong><small>${escapeHTML(v.dove)}</small>`;
+        b.addEventListener('click', v.apri);
+        li.appendChild(b);
+        lista.appendChild(li);
+      });
+    }
+    campo.addEventListener('input', mostra);
+    regione.addEventListener('change', mostra);
+    mostra();
+  }
+
+  // ---------- CONFLITTI NEL TEMPO ----------
+  function preparaTempo(conflitti, basi, conflittiPerId) {
+    const box = document.getElementById('osv-tempo');
+    const oggi = new Date().getFullYear();
+    const fine = (c) => (c.anno_fine ? Number(c.anno_fine) : oggi);
+    const ordinati = conflitti.slice().sort((a, b) => Number(a.anno_inizio) - Number(b.anno_inizio));
+    const da = Math.min(...ordinati.map((c) => Number(c.anno_inizio))) - 1;
+    const a = oggi + 1;
+    const pos = (anno) => (anno - da) / (a - da) * 100;
+    ordinati.forEach((c) => {
+      const riga = document.createElement('button');
+      riga.type = 'button';
+      riga.className = 'osv-tempo-riga';
+      const periodo = c.anno_fine === c.anno_inizio ? c.anno_inizio : `${c.anno_inizio}–${c.anno_fine || 'oggi'}`;
+      riga.innerHTML = `<span class="osv-tempo-nome">${escapeHTML(c.nome)}</span><span class="osv-tempo-anni">${escapeHTML(periodo)}</span><span class="osv-tempo-pista"><span class="osv-tempo-barra" style="left:${pos(Number(c.anno_inizio))}%;width:${Math.max(pos(fine(c) + 1) - pos(Number(c.anno_inizio)), 1)}%"></span></span>`;
+      riga.addEventListener('click', () => {
+        document.querySelectorAll('.osv-tempo-riga.is-attiva').forEach((r) => r.classList.remove('is-attiva'));
+        const coinvolte = basi.filter((b) => (b.conflitti || []).includes(c.id));
+        apriScheda(popupConflitto(c, coinvolte), c.lat, c.lon, { fermo: true });
+        riga.classList.add('is-attiva');
+        disegnaRotte(c, coinvolte);
+        document.getElementById('mappa').scrollIntoView({ behavior: 'smooth', block: 'center' });
+      });
+      box.appendChild(riga);
+    });
+  }
+
+  function disegnaRotte(c, coinvolte) {
+    layers.linee.clearLayers();
+    layers.conflitti.clearLayers();
+    const punti = [[c.lat, c.lon], [42, 12.5]];
+    coinvolte.forEach((b) => {
+      L.polyline([[b.lat, b.lon], [c.lat, c.lon]], { color: COLORI.basi, weight: 1.4, opacity: 0.7, dashArray: '6 5', className: 'osv-line', interactive: false }).addTo(layers.linee);
+      punti.push([b.lat, b.lon]);
+    });
+    L.circleMarker([c.lat, c.lon], { radius: 8, color: '#000', weight: 1.5, fillColor: COLORI.conflitti, fillOpacity: 1, interactive: false }).addTo(layers.conflitti);
+    limitiMappa(true);
+    mappa.fitBounds(punti, { padding: [30, 30], maxZoom: 7, animate: true });
+  }
+
   // ---------- LINEE BASE → CONFLITTI (al click) ----------
   function disegnaLineeEConflitti(base, conflittiPerId) {
     layers.linee.clearLayers();
     layers.conflitti.clearLayers();
-    if (!base.conflitti) return;
+    rottePunti = null;
+    if (!base.conflitti || !base.conflitti.length) return;
+    const punti = [[base.lat, base.lon]];
 
     base.conflitti.forEach(cid => {
       const c = conflittiPerId[cid];
       if (!c) return;
 
       // Pallino grigio sul conflitto
-      const pulse = makePulseMarker(c.lat, c.lon, COLORI.conflitti);
       const dotConf = L.circleMarker([c.lat, c.lon], {
         radius: 8,
         color: '#000',
@@ -400,8 +548,7 @@
         fillOpacity: 1,
         className: 'osv-dot osv-dot-conflitto'
       });
-      dotConf.bindPopup(popupConflitto(c), POPUP_OPTS);
-      pulse.addTo(layers.conflitti);
+      dotConf.on('click', () => apriScheda(popupConflitto(c), c.lat, c.lon, { fermo: true }));
       dotConf.addTo(layers.conflitti);
 
       // Linea tratteggiata base → conflitto
@@ -414,7 +561,9 @@
         interactive: false
       });
       linea.addTo(layers.linee);
+      punti.push([c.lat, c.lon]);
     });
+    rottePunti = punti;
   }
 
   // ---------- POPUP TEMPLATES ----------
@@ -441,12 +590,13 @@
         ${b.mare_interdetto_kmq ? `<p class="popup-stat"><strong>${fmtNum(b.mare_interdetto_kmq)} km²</strong> di mare interdetto durante le esercitazioni</p>` : ''}
 
         ${b.armamento && b.armamento.length ? `<div class="popup-section"><h4>Armamento / capacità</h4>${listToHTML(b.armamento)}</div>` : ''}
+        ${b.fatti_storici && b.fatti_storici.length ? `<div class="popup-section"><h4>Fatti storici</h4>${listToHTML(b.fatti_storici)}</div>` : ''}
         ${b.problemi_ambientali && b.problemi_ambientali.length ? `<div class="popup-section popup-warning"><h4>Problemi ambientali</h4>${listToHTML(b.problemi_ambientali)}</div>` : ''}
         ${b.problemi_sanitari && b.problemi_sanitari.length ? `<div class="popup-section popup-warning"><h4>Problemi sanitari</h4>${listToHTML(b.problemi_sanitari)}</div>` : ''}
 
-        ${conflittiHTML ? `<div class="popup-section"><h4>Conflitti collegati</h4>${conflittiHTML}</div>` : ''}
+        ${conflittiHTML ? `<div class="popup-section"><h4>Conflitti collegati</h4>${conflittiHTML}<button type="button" class="osv-rotte" data-rotte>Mostra le rotte sulla mappa</button></div>` : ''}
 
-        ${b.fonti && b.fonti.length ? `<details class="popup-fonti"><summary>Fonti (${b.fonti.length})</summary>${listToHTML(b.fonti)}</details>` : ''}
+        ${fontiHTML(b.fonti)}
       </div>
     `;
   }
@@ -466,7 +616,7 @@
         ${p.casi_documentati && p.casi_documentati.length ? `<div class="popup-section popup-warning"><h4>Casi documentati</h4>${listToHTML(p.casi_documentati)}</div>` : ''}
         ${p.occupazione ? `<p class="popup-stat">${escapeHTML(p.occupazione)}</p>` : ''}
 
-        ${p.fonti && p.fonti.length ? `<details class="popup-fonti"><summary>Fonti (${p.fonti.length})</summary>${listToHTML(p.fonti)}</details>` : ''}
+        ${fontiHTML(p.fonti)}
       </div>
     `;
   }
@@ -486,12 +636,15 @@
         ${p.questione_sovranita ? `<div class="popup-section popup-warning"><h4>Questione sovranità</h4><p>${escapeHTML(p.questione_sovranita)}</p></div>` : ''}
         ${p.casi_documentati && p.casi_documentati.length ? `<div class="popup-section"><h4>Casi documentati</h4>${listToHTML(p.casi_documentati)}</div>` : ''}
 
-        ${p.fonti && p.fonti.length ? `<details class="popup-fonti"><summary>Fonti (${p.fonti.length})</summary>${listToHTML(p.fonti)}</details>` : ''}
+        ${fontiHTML(p.fonti)}
       </div>
     `;
   }
 
-  function popupConflitto(c) {
+  function popupConflitto(c, coinvolte) {
+    const basiHTML = coinvolte && coinvolte.length
+      ? `<div class="popup-section"><h4>Basi collegate</h4>${listToHTML(coinvolte.map((b) => b.nome))}</div>`
+      : '';
     return `
       <div class="popup popup-conflitto">
         <p class="popup-eyebrow popup-eyebrow-conflitto">Conflitto</p>
@@ -505,6 +658,8 @@
           <h4>Ruolo dell'Italia</h4>
           <p>${escapeHTML(c.ruolo_italia)}</p>
         </div>
+        ${basiHTML}
+        ${fontiHTML(c.fonti)}
       </div>
     `;
   }
@@ -524,7 +679,7 @@
         ${i.risarcimenti ? `<div class="popup-section"><h4>Risarcimenti</h4><p>${escapeHTML(i.risarcimenti)}</p></div>` : ''}
         ${i.rilevanza ? `<div class="popup-section"><h4>Perché è significativo</h4><p>${escapeHTML(i.rilevanza)}</p></div>` : ''}
 
-        ${i.fonti && i.fonti.length ? `<details class="popup-fonti"><summary>Fonti (${i.fonti.length})</summary>${listToHTML(i.fonti)}</details>` : ''}
+        ${fontiHTML(i.fonti)}
       </div>
     `;
   }

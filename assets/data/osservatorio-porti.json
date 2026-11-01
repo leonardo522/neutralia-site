@@ -10,17 +10,18 @@
       "regione": "Liguria",
       "tipo": "Porto commerciale — export armi documentato",
       "gestione": "Autorità di Sistema Portuale del Mar Ligure Occidentale (ente pubblico — Stato italiano)",
-      "ruolo_militare": "Principale porto italiano per l'export di armamenti per anni. Snodo storico della rotta della saudita Bahri Yanbu verso il Medio Oriente (Yemen). I lavoratori portuali del Collettivo Autonomo Lavoratori Portuali (CALP) hanno organizzato dal 2019 ripetuti blocchi delle navi armi dirette in Arabia Saudita.",
-      "flussi_stimati": "Centinaia di tonnellate di armamenti italiani (RWM Domusnovas, Leonardo) e statunitensi (in transito) caricati ogni anno fino al 2021. Le quantità precise sono coperte da segreto commerciale, ma documentate dalle UAMA (Unità Autorizzazioni Materiali di Armamento).",
+      "ruolo_militare": "Scalo regolare delle navi saudite Bahri, che collegano Nord America, Nord Europa, Mediterraneo e Mar Rosso. I lavoratori del Collettivo Autonomo Lavoratori Portuali (CALP) organizzano dal 2019 ripetute proteste contro i carichi militari diretti in Arabia Saudita.",
+      "flussi_stimati": "Quantità non pubbliche: l'accesso agli atti chiesto nel febbraio 2020 non ha avuto risposta dall'Autorità portuale, secondo Weapon Watch.",
       "casi_documentati": [
-        "20 maggio 2019: il CALP blocca per la prima volta la nave Bahri Yanbu, che trasportava 8 generatori per elicotteri Caesar verso l'Arabia Saudita",
-        "Aprile 2021: nuovo blocco contro container di esplosivi RWM Italia",
-        "2019-2021: la rotta Bahri Yanbu-Genova è documentata da OPAL Brescia e Weapon Watch"
+        "20 maggio 2019: lavoratori portuali e CALP bloccano l'imbarco sulla nave saudita Bahri Yanbu di generatori e shelter Teknel destinati, secondo OPAL, alla Guardia nazionale saudita. La nave riparte senza quel carico.",
+        "2019-2021: gli scali delle navi Bahri a Genova, circa ogni venti giorni, sono documentati da OPAL Brescia, Weapon Watch e dalla stampa."
       ],
       "fonti": [
-        "Weapon Watch — Osservatorio sulle armi nei porti europei e mediterranei",
-        "Collettivo Autonomo Lavoratori Portuali Genova (CALP-USB)",
-        "Relazione governativa annuale L.185/90"
+        {"titolo": "The Weapon Watch, osservatorio sulle armi nei porti europei e mediterranei", "url": "https://www.weaponwatch.net/"},
+        {"titolo": "OPAL Brescia, 17 giugno 2019: i gruppi elettrogeni Teknel a Genova, nota di documentazione", "url": "https://www.disarmo.org/rete/docs/5302.pdf"},
+        {"titolo": "Shipping Italy, 29 aprile 2021: Weapon Watch chiede risposte ad AdSP e Guardia Costiera", "url": "https://www.shippingitaly.it/2021/04/29/weapon-watch-chiede-ad-adsp-e-guardia-costiera-di-genova-risposte-su-armamenti-e-munizioni-in-transito-sotto-la-lanterna/"},
+        {"titolo": "Domani, 21 luglio 2021: le armi per la guerra dei sauditi sono in arrivo a Genova", "url": "https://www.editorialedomani.it/politica/italia/le-armi-per-la-guerra-dei-sauditi-sono-in-arrivo-nel-porto-di-genova-pynq5kfi"},
+        {"titolo": "ANSA Liguria, 20 maggio 2019: la Bahri Yanbu attracca a Genova", "url": "https://www.ansa.it/liguria/notizie/2019/05/20/bahri-yambu-attracca-in-porto-genova_f8771df5-8dc3-4cc0-943f-323ba3d81671.html"}
       ]
     },
     {
@@ -32,17 +33,22 @@
       "tipo": "Porto commerciale — uscita armi US Army (Camp Darby)",
       "gestione": "Autorità di Sistema Portuale del Mar Tirreno Settentrionale",
       "scali_nucleari": true,
-      "ruolo_militare": "Porto di uscita dei materiali militari USA depositati a Camp Darby. Tutto l'armamento US Army diretto a Medio Oriente, Africa, Europa orientale passa da qui. Banchine dedicate e protocolli speciali per il transito di munizioni ed esplosivi. Tra i 12 porti italiani autorizzati per scali di navi a propulsione nucleare (USA/UK/FR).",
-      "flussi_stimati": "Stime non pubbliche. In occasione della guerra in Iraq (2003) e Afghanistan (2001-2021) il flusso annuale è stato documentato da inchieste in decine di migliaia di tonnellate.",
+      "ruolo_militare": "Porto di riferimento per i materiali militari USA di Camp Darby, collegato alla base dal Canale dei Navicelli, con la banchina Tombolo Dock del 2024 finanziata dagli Stati Uniti. Compreso nell'elenco di dodici porti per la sosta di unità militari a propulsione nucleare riportato dal Piano di emergenza della Protezione civile del luglio 1996. Il piano nazionale non è pubblico: l'elenco si conosce da fonti secondarie.",
+      "flussi_stimati": "Dati non pubblici: la Capitaneria non ha fornito i registri delle merci pericolose. Fra gennaio 2023 e agosto 2025 sono passati 44 treni da e per Camp Darby, secondo RFI.",
       "casi_documentati": [
-        "Aprile 2003: blocco dei portuali livornesi contro le navi cariche di armi per la guerra in Iraq",
-        "Ottobre 2023 in poi: monitoraggio inviato a Israele documentato dal Movimento No Base",
-        "2014: incidente sulla nave Lyme Bay (carico armi UK in transito) con sversamento"
+        "Febbraio-marzo 2003: blocchi dei treni militari USA diretti a Camp Darby e Livorno per la guerra in Iraq; i portuali livornesi annunciano il rifiuto di lavorare i carichi.",
+        "14 maggio 2021: protesta di USB contro la Asiatic Island, portacontainer su rotta per Israele. Settembre 2025: il presidio dei portuali USB induce la Slnc Severn, con mezzi per Camp Darby, a non attraccare."
       ],
       "fonti": [
-        "Weapon Watch",
-        "USB Porto Livorno",
-        "Comitato No Base Coltano"
+        {"titolo": "L'Indipendente, 11 febbraio 2026: porto, basi e stazioni, così la Toscana si prepara alla guerra", "url": "https://www.lindipendente.online/2026/02/11/porto-basi-e-stazioni-cosi-la-toscana-si-prepara-alla-guerra/"},
+        {"titolo": "Open, 24 settembre 2025: i portuali di Livorno e la Slnc Severn", "url": "https://www.open.online/2025/09/24/livorno-slnc-severn-nave-blocco-lavoratori-portuali/"},
+        {"titolo": "Shipping Italy, 19 maggio 2021: armi in transito nei porti italiani, interrogazione al ministro", "url": "https://shippingitaly.it/2021/05/19/armi-in-transito-nei-porti-italiani-presentata-uninterrogazione-al-ministro-delle-infrastrutture"},
+        {"titolo": "The Weapon Watch, osservatorio sulle armi nei porti europei e mediterranei", "url": "https://www.weaponwatch.net/"},
+        {"titolo": "USB, 14 maggio 2021: il porto di Livorno non sia complice (Asiatic Island)", "url": "https://www.usb.it/leggi-notizia/il-porto-di-livorno-non-sia-complice-del-massacro-ai-danni-della-popolazione-palestinese-no-al-transito-della-nave-delle-armi-nel-nostro-scalo-1329.pdf"},
+        {"titolo": "WSWS, 28 febbraio 2003: treni militari bloccati in Italia", "url": "https://www.wsws.org/en/articles/2003/02/tran-f28.html"},
+        {"titolo": "GrIG, 8 ottobre 2016: dodici porti e i piani di emergenza (cita il Piano della Protezione civile del luglio 1996)", "url": "https://gruppodinterventogiuridicoweb.com/2016/10/08/dodici-porti-italiani-possono-accogliere-naviglio-a-propulsione-nucleare-ma-i-piani-di-emergenza-dove-sono/"},
+        {"titolo": "PeaceLink, 21 giugno 2005: la risposta del ministro della Difesa su Cagliari e gli 11 porti", "url": "https://www.peacelink.it/disarmo/cagliari-porto-nucleare-no-anzi-s"},
+        {"titolo": "D.P.C.M. 10 febbraio 2006, linee guida per le aree portuali con naviglio a propulsione nucleare (art. 124 D.Lgs. 230/1995), copia ISIN", "url": "https://www.isinucleare.it/sites/default/files/contenuto_redazione_isin/dpcm_10_02_2006_aeroportuali.pdf"}
       ]
     },
     {
@@ -54,10 +60,17 @@
       "tipo": "Porto commerciale + Arsenale Militare Marittimo",
       "gestione": "Autorità di Sistema Portuale del Mar Ligure Orientale + Marina Militare",
       "scali_nucleari": true,
-      "ruolo_militare": "Sede dell'Arsenale Militare Marittimo della Marina Militare (uno dei più antichi e attivi d'Italia). Cantieri Fincantieri-Muggiano (sottomarini convenzionali italiani U212NFS). Porto di transito per armamenti prodotti localmente (Leonardo-OTO Melara). Tra i 12 porti italiani autorizzati per scali di navi a propulsione nucleare (USA/UK/FR).",
+      "ruolo_militare": "Sede dell'Arsenale Militare Marittimo e del comando territoriale Marina Nord. Cantiere Fincantieri del Muggiano (sottomarini convenzionali U212NFS). Compreso nell'elenco di dodici porti per la sosta di unità militari a propulsione nucleare riportato dal Piano di emergenza della Protezione civile del luglio 1996. Il piano nazionale non è pubblico: l'elenco si conosce da fonti secondarie.",
       "flussi_stimati": "Difficile da quantificare per la mescolanza commerciale-militare. L'export navale Fincantieri (fregate, sottomarini, corvette) passa anche da qui.",
       "casi_documentati": [],
-      "fonti": ["Marina Militare — sito ufficiale Arsenale La Spezia", "Fincantieri"]
+      "fonti": [
+        {"titolo": "Marina Militare, Articolazione degli Uffici 2025", "url": "https://www.marina.difesa.it/documentazione/trasparente/Documents/Organizzazione/Articolazione%20degli%20Uffici/Articolazione_degli_Uffici_2025.pdf"},
+        {"titolo": "Fincantieri, 2026: cantiere integrato di Riva Trigoso e Muggiano", "url": "https://www.fincantieri.com/it/newsroom/news-e-comunicati-stampa/2026/fondazione-fincantieri-e-societa-al-cantieri-integrato-di-riva-trigoso-e-muggiano-la-consegna-degli-attestati-dei-corsi-di-lingua-italiana-per-lavoratori-stranieri"},
+        {"titolo": "GrIG, 8 ottobre 2016: dodici porti e i piani di emergenza (cita il Piano della Protezione civile del luglio 1996)", "url": "https://gruppodinterventogiuridicoweb.com/2016/10/08/dodici-porti-italiani-possono-accogliere-naviglio-a-propulsione-nucleare-ma-i-piani-di-emergenza-dove-sono/"},
+        {"titolo": "PeaceLink, 21 giugno 2005: la risposta del ministro della Difesa su Cagliari e gli 11 porti", "url": "https://www.peacelink.it/disarmo/cagliari-porto-nucleare-no-anzi-s"},
+        {"titolo": "D.P.C.M. 10 febbraio 2006, linee guida per le aree portuali con naviglio a propulsione nucleare (art. 124 D.Lgs. 230/1995), copia ISIN", "url": "https://www.isinucleare.it/sites/default/files/contenuto_redazione_isin/dpcm_10_02_2006_aeroportuali.pdf"},
+        {"titolo": "Wikipedia: Comando logistico della Marina Militare (riconfigurazione dei comandi di La Spezia, Taranto e Augusta)", "url": "https://it.wikipedia.org/wiki/Comando_logistico_della_Marina_Militare"}
+      ]
     },
     {
       "id": "trieste",
@@ -65,23 +78,35 @@
       "lat": 45.6495,
       "lon": 13.7768,
       "regione": "Friuli-Venezia Giulia",
-      "tipo": "Porto Franco internazionale — statuto sui generis",
-      "gestione": "Autorità di Sistema Portuale del Mare Adriatico Orientale. I Punti Franchi sono giuridicamente extraterritoriali, regolati dall'Allegato VIII del Trattato di Pace del 1947 e dal Memorandum di Londra del 1954.",
+      "tipo": "Porto commerciale con Punti Franchi, a regime doganale speciale",
+      "gestione": "Autorità di Sistema Portuale del Mare Adriatico Orientale. I Punti Franchi sono territorio italiano, entro il confine politico ma fuori dalla linea doganale, in base all'Allegato VIII del Trattato di Pace del 1947, reso esecutivo dal D.Lgs. 1430/1947.",
       "scali_nucleari": true,
-      "ruolo_militare": "Porto di transito per armamenti e dual-use verso Europa orientale, Balcani, Asia centrale. Lo statuto di Porto Franco internazionale crea un'anomalia di sovranità: le merci in transito sono soggette a un regime giuridico misto, non puramente italiano. Tra i 12 porti italiani autorizzati per scali di navi a propulsione nucleare (USA/UK/FR).",
-      "flussi_stimati": "Trieste è il principale porto italiano per volumi (oltre 60 milioni di tonnellate/anno totali). La quota armi non è pubblica.",
+      "ruolo_militare": "Nell'aprile 2026 USB ha denunciato l'imbarco di materiale NATO sulla Dardanelles Seaways al terminal HHLA PLT. Compreso nell'elenco dei dodici porti del Piano del 1996 per la sosta di unità a propulsione nucleare; il piano della Prefettura prevede la sosta in rada, non l'ormeggio in banchina.",
+      "flussi_stimati": "Circa 60 milioni di tonnellate totali nel 2025 (oltre 64 con Monfalcone). La quota armi non è pubblica.",
       "casi_documentati": [
-        "Ottobre 2021: nel pieno delle proteste No Green Pass dei portuali triestini (CLPT — Coordinamento Lavoratori Portuali Triestini), la Ministra dell'Interno Luciana Lamorgese dichiara in audizione che il Porto di Trieste «ha una giurisdizione internazionale e particolare»: i Punti Franchi sono giuridicamente extra-doganali e la sovranità italiana è limitata da norme internazionali (Allegato VIII Trattato di Pace 1947).",
-        "Il Porto di Trieste è in larga parte controllato dal capitale tedesco (HHLA — Hamburger Hafen und Logistik AG ha acquisito Piattaforma Logistica Trieste e Servola nel 2020) e ungherese (Adria Port). Concessioni a Cina (COSCO, accordo del 2019 nell'ambito della Via della Seta, poi parzialmente sospeso) tornate al centro del dibattito.",
-        "Decreto Legislativo Luogotenenziale 6/9/1947 n.1014 e successive convenzioni internazionali regolano un regime sovrano anomalo."
+        "HHLA di Amburgo detiene dal 2020 il 50,01% di Piattaforma Logistica Trieste. MSC controlla l'80% del Trieste Marine Terminal dal novembre 2022. L'intesa del novembre 2019 è con la cinese CCCC, non con COSCO: una dichiarazione d'intenti, di cui non risulta lo stato di attuazione.",
+        "Decreto del Commissario generale n. 29 del 19 gennaio 1955 e decreto del 13 luglio 2017 regolano i Punti Franchi."
       ],
-      "questione_sovranita": "I Punti Franchi di Trieste (Punto Franco Vecchio, Nuovo, Scalo Legnami, Oli Minerali, Industriale) sono extraterritoriali per le merci in transito. Su queste banchine: forze dell'ordine italiane operano in regime di cooperazione con l'autorità portuale, non in piena sovranità. Le concessioni a società straniere (HHLA tedesca, MSC svizzera/italiana, ECT olandese in passato) consolidano un controllo non-italiano sull'infrastruttura strategica.",
+      "questione_sovranita": "I Punti Franchi hanno un regime doganale speciale per le merci, regolato dall'Allegato VIII, dal decreto del Commissario generale n. 29 del 1955 e dal decreto del 13 luglio 2017. Nel novembre 2021 la Commissione europea non ha accolto la richiesta di escluderli dal territorio doganale dell'Unione. Le Sezioni Unite della Cassazione hanno affermato nel 2022 che il Territorio Libero di Trieste giuridicamente non è mai esistito; nell'aprile 2026 la Cassazione ha confermato il difetto assoluto di giurisdizione sulle tesi contrarie (ordinanza n. 8671/2026).",
       "fonti": [
-        "Trattato di Pace con l'Italia, Parigi 10 febbraio 1947, Allegato VIII",
-        "Memorandum d'intesa di Londra, 5 ottobre 1954",
-        "Audizione Min. Lamorgese, Senato della Repubblica, 21 ottobre 2021",
-        "Movimento Trieste Libera — documentazione storica e giuridica",
-        "Weapon Watch — dossier porto di Trieste"
+        {"titolo": "Camera dei deputati, XVIII legislatura, proposta di legge n. 2195 (regime del porto franco)", "url": "https://documenti.camera.it/leg18/pdl/xhtml/leg.18.pdl.camera.2195.18PDL0079171.html"},
+        {"titolo": "Gazzetta Ufficiale n. 177 del 31 luglio 2017, decreto 13 luglio 2017 sui punti franchi di Trieste", "url": "https://www.gazzettaufficiale.it/atto/serie_generale/caricaArticoloDefault/originario?atto.codiceRedazionale=17A05237&atto.dataPubblicazioneGazzetta=2017-07-31&atto.tipoProvvedimento=DECRETO"},
+        {"titolo": "AdriaPorts, 25 novembre 2021: la Commissione UE sul Porto Franco di Trieste", "url": "https://www.adriaports.com/it/politica-associazioni/trieste-commissione-ue-nega-extradoganalita-al-porto-franco-internazionale/"},
+        {"titolo": "Università di Udine, Diritto dei trasporti 2-3/2020: Il Porto franco di Trieste", "url": "https://air.uniud.it/bitstream/11390/1200780/4/Il%20Porto%20franco%20di%20Trieste%20-%20Diritto%20dei%20trasporti%202-3%202020.pdf"},
+        {"titolo": "Il Giornale Popolare, 2026: Cassazione, ordinanza n. 8671/2026 e ricorso per revocazione", "url": "https://ilgiornalepopolare.it/porto-franco-di-trieste-i-sostenitori-del-territorio-libero-sfidano-la-cassazione/"},
+        {"titolo": "Fog.it: il regime del porto franco di Trieste e la giurisprudenza", "url": "https://www.fog.it/articoli/98-0047.htm"},
+        {"titolo": "Gazzetta Ufficiale: Corte costituzionale, sentenza n. 53 del 1964", "url": "https://www.gazzettaufficiale.it/eli/id/1964/06/22/064C0053/s1"},
+        {"titolo": "USB, 2 aprile 2026: imbarco di materiale NATO sulla Dardanelles Seaways al terminal HHLA PLT", "url": "https://www.usb.it/leggi-notizia/trieste-autorizzato-imbarco-di-materiale-nato-sulla-dardanelles-seaways-proclamato-sciopero-al-terminal-hhla-plt-1429.pdf"},
+        {"titolo": "Prefettura di Trieste: Piano di emergenza per la sosta di navi militari a propulsione nucleare", "url": "https://prefettura.interno.gov.it/it/prefetture/trieste/piano-emergenza-sosta-navi-militari-propulsione-nucleare"},
+        {"titolo": "Prefettura di Trieste, testo del piano (.doc)", "url": "https://prefettura.interno.gov.it/sites/default/files/99/2023-10/piano_navi_nucleari_in_porto_0.doc"},
+        {"titolo": "TriestePrima, 19 aprile 2024: dopo 17 anni sarà aggiornato il piano di emergenza", "url": "https://www.triesteprima.it/cronaca/portaerei-nucleari-piano-emergenza-aggiornamento.html"},
+        {"titolo": "GrIG, 8 ottobre 2016: dodici porti e i piani di emergenza (cita il Piano della Protezione civile del luglio 1996)", "url": "https://gruppodinterventogiuridicoweb.com/2016/10/08/dodici-porti-italiani-possono-accogliere-naviglio-a-propulsione-nucleare-ma-i-piani-di-emergenza-dove-sono/"},
+        {"titolo": "D.P.C.M. 10 febbraio 2006, linee guida per le aree portuali con naviglio a propulsione nucleare (art. 124 D.Lgs. 230/1995), copia ISIN", "url": "https://www.isinucleare.it/sites/default/files/contenuto_redazione_isin/dpcm_10_02_2006_aeroportuali.pdf"},
+        {"titolo": "Economia del Mare: nel 2025 Trieste e Monfalcone oltre 64 milioni di tonnellate", "url": "https://www.economiadelmare.org/sistema-portuale-2025-trieste-monfalcone-oltre-64-milioni"},
+        {"titolo": "IAI Papers 21/17: The Belt and Road Initiative in Italy, the Ports of Genoa and Trieste", "url": "https://www.iai.it/sites/default/files/iaip2117.pdf"},
+        {"titolo": "ANSA Mare, 5 novembre 2019: intesa Trieste con CCCC", "url": "https://www.ansa.it/mare/notizie/portielogistica/news/2019/11/05/porti-intesa-trieste-con-cccc-per-aree-industriali-cina_d5bcb74d-b262-43ac-bc92-42c5dbccee94.html"},
+        {"titolo": "Ports Europe: Trieste Marine Terminal, MSC all'80% da novembre 2022", "url": "https://portseurope.com/category/company/trieste-marine-terminal-s-p-a"},
+        {"titolo": "Corte di cassazione, Sezioni Unite civili, sentenza n. 8600 del 16 marzo 2022", "url": "https://www.studiomansi.com/wp-content/uploads/2022/03/Cassazione-Sezioni-Unite-16.3.22-n.-8600-su-TLT.pdf"}
       ]
     },
     {
@@ -91,17 +116,23 @@
       "lon": 15.2200,
       "regione": "Sicilia",
       "tipo": "Porto militare + commerciale petrolifero",
-      "gestione": "Autorità di Sistema Portuale del Mare di Sicilia Orientale + Marina Militare (Comando Marittimo Sud)",
+      "gestione": "Autorità di Sistema Portuale del Mare di Sicilia Orientale + Marina Militare (Comando Marittimo Sicilia)",
       "scali_nucleari": true,
-      "ruolo_militare": "Sede del Comando Marittimo Sud della Marina Militare Italiana. Base navale strategica per il controllo del Canale di Sicilia e del Mediterraneo centrale. Punto di rifornimento delle navi NATO che operano nel Mediterraneo. Tra i 12 porti italiani autorizzati per scali di navi a propulsione nucleare (USA/UK/FR).",
+      "ruolo_militare": "Sede del Comando Marittimo Sicilia. Base navale per il Canale di Sicilia e il Mediterraneo centrale. Compreso nell'elenco di dodici porti per la sosta di unità militari a propulsione nucleare riportato dal Piano di emergenza della Protezione civile del luglio 1996. Il piano nazionale non è pubblico: l'elenco si conosce da fonti secondarie. Il piano di emergenza esterna per rada e porto è stato approvato dalla Prefettura di Siracusa nel 2018.",
       "flussi_stimati": "Quota militare difficile da scorporare dalla movimentazione petrolifera (Augusta è anche il principale polo petrolchimico siciliano — area SIN ad alto rischio ambientale).",
       "casi_documentati": [
         "Augusta è inserita nel SIN (Sito di Interesse Nazionale) per le bonifiche — Priolo, una delle aree più inquinate d'Italia",
-        "Cluster anomalo di tumori e malformazioni nell'area Priolo-Augusta-Melilli da decenni (rapporti ISS — progetto SENTIERI)"
+        "Eccessi di mortalità e malformazioni congenite nell'area Priolo-Augusta-Melilli, rilevati dai rapporti SENTIERI."
       ],
       "fonti": [
-        "Marina Militare — Comando Marittimo Sud",
-        "ISS — Studio SENTIERI sui Siti di Interesse Nazionale"
+        {"titolo": "Marina Militare, Articolazione degli Uffici 2025", "url": "https://www.marina.difesa.it/documentazione/trasparente/Documents/Organizzazione/Articolazione%20degli%20Uffici/Articolazione_degli_Uffici_2025.pdf"},
+        {"titolo": "Ministero dell'Interno, 6 dicembre 2018: varato il piano per la sicurezza nucleare del porto di Augusta", "url": "https://www.interno.gov.it/it/notizie/varato-piano-sicurezza-nucleare-porto-augusta"},
+        {"titolo": "Epidemiologia & Prevenzione, 2023, 47 (1-2) Suppl. 1: Sesto Rapporto SENTIERI", "url": "https://epiprev.it/newsletter/epidemiologia-prevenzione-2023-47-1-2-gennaio-aprile-suppl-1"},
+        {"titolo": "GrIG, 8 ottobre 2016: dodici porti e i piani di emergenza (cita il Piano della Protezione civile del luglio 1996)", "url": "https://gruppodinterventogiuridicoweb.com/2016/10/08/dodici-porti-italiani-possono-accogliere-naviglio-a-propulsione-nucleare-ma-i-piani-di-emergenza-dove-sono/"},
+        {"titolo": "PeaceLink, 21 giugno 2005: la risposta del ministro della Difesa su Cagliari e gli 11 porti", "url": "https://www.peacelink.it/disarmo/cagliari-porto-nucleare-no-anzi-s"},
+        {"titolo": "D.P.C.M. 10 febbraio 2006, linee guida per le aree portuali con naviglio a propulsione nucleare (art. 124 D.Lgs. 230/1995), copia ISIN", "url": "https://www.isinucleare.it/sites/default/files/contenuto_redazione_isin/dpcm_10_02_2006_aeroportuali.pdf"},
+        {"titolo": "Quotidiano di Sicilia: lo studio SENTIERI sui SIN siciliani", "url": "https://qds.it/aria-irrespirabile-eccesso-di-malformazioni-e-tumori-lo-studio-sentieri-conferma-i-mali-dei-nostri-sin/"},
+        {"titolo": "Wikipedia: Arsenale militare marittimo di Augusta (MARISICILIA ad Augusta dal 2002)", "url": "https://it.wikipedia.org/wiki/Arsenale_militare_marittimo_di_Augusta"}
       ]
     },
     {
@@ -113,10 +144,16 @@
       "tipo": "Porto commerciale + supporto US Navy",
       "gestione": "Autorità di Sistema Portuale del Mar Tirreno Centrale",
       "scali_nucleari": true,
-      "ruolo_militare": "Porto di appoggio alla Naval Support Activity Naples (Capodichino). Le unità della 6ª Flotta USA fanno scalo qui per rifornimenti e licenze. Snodo di transito per materiali militari verso il Medio Oriente. Uno dei due porti italiani (con La Maddalena) più visitati da sottomarini nucleari USA. Tra i 12 porti italiani autorizzati per scali di navi a propulsione nucleare (USA/UK/FR).",
+      "ruolo_militare": "Porto di appoggio alla Naval Support Activity Naples (Capodichino). Le unità della 6ª Flotta USA fanno scalo qui. Compreso nell'elenco di dodici porti per la sosta di unità militari a propulsione nucleare riportato dal Piano di emergenza della Protezione civile del luglio 1996. Il piano nazionale non è pubblico: l'elenco si conosce da fonti secondarie.",
       "flussi_stimati": "Difficile da scorporare dal traffico commerciale ordinario.",
       "casi_documentati": [],
-      "fonti": ["Autorità Portuale Napoli", "US Navy — NSA Naples"]
+      "fonti": [
+        {"titolo": "GrIG, 8 ottobre 2016: dodici porti e i piani di emergenza (cita il Piano della Protezione civile del luglio 1996)", "url": "https://gruppodinterventogiuridicoweb.com/2016/10/08/dodici-porti-italiani-possono-accogliere-naviglio-a-propulsione-nucleare-ma-i-piani-di-emergenza-dove-sono/"},
+        {"titolo": "PeaceLink, 21 giugno 2005: la risposta del ministro della Difesa su Cagliari e gli 11 porti", "url": "https://www.peacelink.it/disarmo/cagliari-porto-nucleare-no-anzi-s"},
+        {"titolo": "AGI, 5 dicembre 2008: abbandonata La Maddalena", "url": "https://www.agi.it/archivio/storico/news/2008-12-05/abbandonata_la_maddalena_ne_restano_112-8434"},
+        {"titolo": "D.P.C.M. 10 febbraio 2006, linee guida per le aree portuali con naviglio a propulsione nucleare (art. 124 D.Lgs. 230/1995), copia ISIN", "url": "https://www.isinucleare.it/sites/default/files/contenuto_redazione_isin/dpcm_10_02_2006_aeroportuali.pdf"},
+        {"titolo": "Wikipedia: Santo Stefano (fine della presenza navale USA a La Maddalena, 2008)", "url": "https://en.wikipedia.org/wiki/Santo_Stefano_(island)"}
+      ]
     },
     {
       "id": "ravenna",
@@ -126,13 +163,18 @@
       "regione": "Emilia-Romagna",
       "tipo": "Porto commerciale — export armi documentato",
       "gestione": "Autorità di Sistema Portuale del Mare Adriatico Centro-Settentrionale",
-      "ruolo_militare": "Punto di imbarco per armamenti diretti a paesi del Mediterraneo orientale e Mar Nero. Storicamente legato all'export Beretta (Val Trompia → Ravenna → cliente finale).",
-      "flussi_stimati": "Documentati transiti annuali di munizioni leggere e cartucce da caccia/militari verso paesi MENA. Cifre puntuali non pubbliche.",
+      "ruolo_militare": "Punto di imbarco di armi e componenti militari sdoganati altrove, in larga parte da paesi dell'Europa centrale, verso paesi extra UE.",
+      "flussi_stimati": "225.160 kg di armi e componenti militari partiti nel 2025, destinazioni non comunicate (Agenzia delle Dogane, dopo sentenza del Consiglio di Stato).",
       "casi_documentati": [
-        "2018-2019: documentato il transito di munizioni Cheddite verso il Maghreb",
-        "Inchieste OPAL su cargo container con munizioni leggere"
+        "Settembre 2025: il Comune, la Provincia e la Regione, soci di Sapir, ottengono il blocco di due container di esplosivi diretti a Haifa, probabilmente di produzione ceca. Un container analogo era partito a fine giugno.",
+        "30 ottobre 2026: un corteo blocca per alcune ore il canale Candiano contro la nave MSC Eagle III, diretta a Haifa."
       ],
-      "fonti": ["OPAL Brescia", "Weapon Watch"]
+      "fonti": [
+        {"titolo": "Altreconomia, 23 ottobre 2026: da Ravenna nel 2025 partite 225 tonnellate tra armi e componenti militari", "url": "https://altreconomia.it/dal-porto-di-ravenna-nel-2025-sono-partite-225-tonnellate-tra-armi-e-componenti-militari/"},
+        {"titolo": "Il Post, 19 settembre 2025: i due container di esplosivi a Ravenna", "url": "https://www.ilpost.it/2025/09/19/carico-esplosivi-bloccato-porto-ravenna/"},
+        {"titolo": "Ravenna Notizie, 31 ottobre 2026: canale Candiano bloccato", "url": "https://ravennanotizie.it/2026/10/31/canale-candiano-bloccato-a-marina-per-non-far-uscire-una-nave-diretta-ad-israele/627248"},
+        {"titolo": "The Weapon Watch, osservatorio sulle armi nei porti europei e mediterranei", "url": "https://www.weaponwatch.net/"}
+      ]
     },
     {
       "id": "cagliari",
@@ -140,13 +182,27 @@
       "lat": 39.2138,
       "lon": 9.1167,
       "regione": "Sardegna",
-      "tipo": "Porto commerciale + Marina Militare + autorizzato nucleare",
-      "gestione": "Autorità di Sistema Portuale del Mare di Sardegna + Marina Militare (Comando Marittimo Sardegna)",
+      "tipo": "Porto commerciale + Marina Militare",
+      "gestione": "Autorità di Sistema Portuale del Mare di Sardegna + Marina Militare (Comando Marittimo Autonomo Ovest, Marina Ovest)",
       "scali_nucleari": true,
-      "ruolo_militare": "Sede del Comando Marittimo della Sardegna. Tra i 12 porti italiani autorizzati per scali di navi a propulsione nucleare (USA/UK/FR). Snodo logistico militare per le operazioni nel Mediterraneo centrale.",
+      "ruolo_militare": "Sede del Comando Marittimo Autonomo Ovest, competente su tutta la Sardegna. Compreso nell'elenco di dodici porti per la sosta di unità militari a propulsione nucleare riportato dal Piano di emergenza della Protezione civile del luglio 1996. Il piano nazionale non è pubblico: l'elenco si conosce da fonti secondarie. Nel 2016 GrIG segnalava che il piano di emergenza non risultava ancora predisposto.",
       "flussi_stimati": "Difficile da scorporare dal traffico commerciale.",
-      "casi_documentati": [],
-      "fonti": ["Progetto Humus — Porti italiani a rischio nucleare", "Marina Militare — Comando Marittimo Sardegna"]
+      "casi_documentati": [
+        "Maggio 2019: sosta della Bahri Tabuk al Porto Canale, con il sospetto, non accertato, di un carico RWM.",
+        "24 giugno 2024: la Bahri Yanbu carica bombe al Porto Canale per Gedda, secondo L'Unione Sarda.",
+        "Febbraio 2026: il Consiglio comunale approva un ordine del giorno contro il transito di esplosivi, atto di indirizzo non vincolante."
+      ],
+      "fonti": [
+        {"titolo": "Copia d'archivio Wayback di Progetto Humus, I porti italiani a rischio nucleare", "url": "https://web.archive.org/web/2024/https://www.progettohumus.it/porti/"},
+        {"titolo": "GrIG, 8 ottobre 2016: dodici porti e i piani di emergenza (cita il Piano della Protezione civile del luglio 1996)", "url": "https://gruppodinterventogiuridicoweb.com/2016/10/08/dodici-porti-italiani-possono-accogliere-naviglio-a-propulsione-nucleare-ma-i-piani-di-emergenza-dove-sono/"},
+        {"titolo": "PeaceLink, 21 giugno 2005: la risposta del ministro della Difesa su Cagliari e gli 11 porti", "url": "https://www.peacelink.it/disarmo/cagliari-porto-nucleare-no-anzi-s"},
+        {"titolo": "ANSA Sardegna, 22 settembre 2022: Cagliari diventa comando marittimo autonomo", "url": "https://www.ansa.it/sardegna/notizie/2022/09/22/marina-militare-cagliari-diventa-comando-marittimo-autonomo_239987e3-fb47-4a92-83ac-07f3c6067a04.html"},
+        {"titolo": "Marina Militare, Articolazione degli Uffici 2025", "url": "https://www.marina.difesa.it/documentazione/trasparente/Documents/Organizzazione/Articolazione%20degli%20Uffici/Articolazione_degli_Uffici_2025.pdf"},
+        {"titolo": "D.P.C.M. 10 febbraio 2006, linee guida per le aree portuali con naviglio a propulsione nucleare (art. 124 D.Lgs. 230/1995), copia ISIN", "url": "https://www.isinucleare.it/sites/default/files/contenuto_redazione_isin/dpcm_10_02_2006_aeroportuali.pdf"},
+        {"titolo": "Avvenire, maggio 2019: Cagliari, il cargo saudita Bahri Tabuk", "url": "https://www.avvenire.it/attualita/cagliari-blitz-allalba-del-cargo-saudita-ong-e-sindacati-un-carico-di-bombe_39292"},
+        {"titolo": "L'Unione Sarda, 24 giugno 2024: la Bahri Yanbu al Porto Canale di Cagliari", "url": "https://www.unionesarda.it/en/sardinia/the-saudi-ship-bahri-yanbu-arrives-loaded-with-bombs-in-the-canal-port-of-cagliari-yowi3k2u"},
+        {"titolo": "L'Indipendente, 5 febbraio 2026: l'ordine del giorno di Cagliari sul transito di armi", "url": "https://www.lindipendente.online/2026/02/05/cagliari-citta-di-pace-il-consiglio-comunale-approva-il-divieto-al-transito-di-armi-dal-porto/"}
+      ]
     },
     {
       "id": "castellammare-di-stabia",
@@ -154,27 +210,42 @@
       "lat": 40.7026,
       "lon": 14.4815,
       "regione": "Campania",
-      "tipo": "Porto cantieristico + autorizzato nucleare",
-      "gestione": "Autorità di Sistema Portuale del Mar Tirreno Centrale + Fincantieri Castellammare",
+      "tipo": "Porto cantieristico",
+      "gestione": "Autorità di Sistema Portuale del Mar Tirreno Centrale",
       "scali_nucleari": true,
-      "ruolo_militare": "Storico cantiere navale Fincantieri (ex Cantiere Navale di Castellammare), uno dei più antichi d'Italia (fondato nel 1783). Costruzione di unità navali militari (pattugliatori d'altura PPA, fregate). Tra i 12 porti italiani autorizzati per scali di navi a propulsione nucleare (USA/UK/FR).",
+      "ruolo_militare": "Storico cantiere navale Fincantieri. Vi sono state costruite unità militari come la LHD Trieste, varata nel 2019, e le navi logistiche Vulcano (sezione prodiera) e Atlante. Compreso nell'elenco di dodici porti per la sosta di unità militari a propulsione nucleare riportato dal Piano di emergenza della Protezione civile del luglio 1996. Il piano nazionale non è pubblico: l'elenco si conosce da fonti secondarie.",
       "flussi_stimati": "Principalmente costruzione navale Fincantieri.",
       "casi_documentati": [],
-      "fonti": ["Progetto Humus — Porti italiani a rischio nucleare", "Fincantieri — Cantiere di Castellammare di Stabia"]
+      "fonti": [
+        {"titolo": "Copia d'archivio Wayback di Progetto Humus, I porti italiani a rischio nucleare", "url": "https://web.archive.org/web/2024/https://www.progettohumus.it/porti/"},
+        {"titolo": "GrIG, 8 ottobre 2016: dodici porti e i piani di emergenza (cita il Piano della Protezione civile del luglio 1996)", "url": "https://gruppodinterventogiuridicoweb.com/2016/10/08/dodici-porti-italiani-possono-accogliere-naviglio-a-propulsione-nucleare-ma-i-piani-di-emergenza-dove-sono/"},
+        {"titolo": "Ministero della Difesa: a Castellammare di Stabia il varo di Nave Trieste", "url": "https://www.difesa.it/primopiano/marina-militare-a-castellammare-di-stabia-il-varo-di-nave-trieste/60587.html"},
+        {"titolo": "Fincantieri, giugno 2023: impostazione a Castellammare di Atlante, seconda LSS", "url": "https://www.fincantieri.com/en/newsroom/press-releases/2023/fincantieri-keel-laying-in-castellammare-of-atlante-the-second-lss-unit-for-the-italian-navy"},
+        {"titolo": "PeaceLink, 21 giugno 2005: la risposta del ministro della Difesa su Cagliari e gli 11 porti", "url": "https://www.peacelink.it/disarmo/cagliari-porto-nucleare-no-anzi-s"},
+        {"titolo": "D.P.C.M. 10 febbraio 2006, linee guida per le aree portuali con naviglio a propulsione nucleare (art. 124 D.Lgs. 230/1995), copia ISIN", "url": "https://www.isinucleare.it/sites/default/files/contenuto_redazione_isin/dpcm_10_02_2006_aeroportuali.pdf"}
+      ]
     },
     {
       "id": "venezia",
       "nome": "Porto di Venezia + Arsenale Marina Militare",
-      "lat": 45.4333,
-      "lon": 12.3333,
+      "lat": 45.4354,
+      "lon": 12.3533,
       "regione": "Veneto",
-      "tipo": "Porto commerciale + Arsenale storico Marina Militare + autorizzato nucleare",
-      "gestione": "Autorità di Sistema Portuale del Mare Adriatico Settentrionale + Marina Militare (Arsenale di Venezia)",
+      "tipo": "Porto commerciale + Arsenale storico Marina Militare",
+      "gestione": "Autorità di Sistema Portuale del Mare Adriatico Settentrionale + Marina Militare (Istituto di Studi Militari Marittimi)",
       "scali_nucleari": true,
-      "ruolo_militare": "Sede dell'Arsenale di Venezia, una delle strutture militari più antiche al mondo (1104), oggi sede del Comando Marittimo Nord della Marina Militare e del Reggimento San Marco (fanteria di marina). Tra i 12 porti italiani autorizzati per scali di navi a propulsione nucleare (USA/UK/FR). Posizione strategica per l'accesso all'Adriatico settentrionale.",
+      "ruolo_militare": "L'Arsenale di Venezia, in parte della Marina Militare, ospita l'Istituto di Studi Militari Marittimi; a Venezia ha sede anche la Scuola Navale Militare Morosini. Compreso nell'elenco di dodici porti per la sosta di unità militari a propulsione nucleare riportato dal Piano di emergenza della Protezione civile del luglio 1996. Il piano nazionale non è pubblico: l'elenco si conosce da fonti secondarie.",
       "flussi_stimati": "Quota militare difficile da scorporare dal traffico crocieristico/commerciale, decisamente prevalente.",
       "casi_documentati": [],
-      "fonti": ["Progetto Humus — Porti italiani a rischio nucleare", "Marina Militare — Arsenale di Venezia"]
+      "fonti": [
+        {"titolo": "Copia d'archivio Wayback di Progetto Humus, I porti italiani a rischio nucleare", "url": "https://web.archive.org/web/2024/https://www.progettohumus.it/porti/"},
+        {"titolo": "GrIG, 8 ottobre 2016: dodici porti e i piani di emergenza (cita il Piano della Protezione civile del luglio 1996)", "url": "https://gruppodinterventogiuridicoweb.com/2016/10/08/dodici-porti-italiani-possono-accogliere-naviglio-a-propulsione-nucleare-ma-i-piani-di-emergenza-dove-sono/"},
+        {"titolo": "Marina Militare, Articolazione degli Uffici 2025", "url": "https://www.marina.difesa.it/documentazione/trasparente/Documents/Organizzazione/Articolazione%20degli%20Uffici/Articolazione_degli_Uffici_2025.pdf"},
+        {"titolo": "MuseiOnline: Arsenale di Venezia, proprietà e presenza della Marina", "url": "https://www.museionline.info/tipologie-museo/arsenale-di-venezia"},
+        {"titolo": "D.P.C.M. 10 febbraio 2006, linee guida per le aree portuali con naviglio a propulsione nucleare (art. 124 D.Lgs. 230/1995), copia ISIN", "url": "https://www.isinucleare.it/sites/default/files/contenuto_redazione_isin/dpcm_10_02_2006_aeroportuali.pdf"},
+        {"titolo": "Wikipedia: Comando logistico della Marina Militare (riconfigurazione dei comandi di La Spezia, Taranto e Augusta)", "url": "https://it.wikipedia.org/wiki/Comando_logistico_della_Marina_Militare"},
+        {"titolo": "Wikipedia: Brigata marina San Marco", "url": "https://it.wikipedia.org/wiki/Brigata_marina_%22San_Marco%22"}
+      ]
     },
     {
       "id": "taranto",
@@ -183,18 +254,27 @@
       "lon": 17.2306,
       "regione": "Puglia",
       "tipo": "Base navale Marina Militare + porto commerciale",
-      "gestione": "Marina Militare (Comando Marittimo Sud II) + Autorità di Sistema Portuale del Mar Ionio",
+      "gestione": "Marina Militare (Comando Marittimo Sud) + Autorità di Sistema Portuale del Mar Ionio",
       "scali_nucleari": true,
-      "ruolo_militare": "Principale base navale della Marina Militare Italiana. Sede della Squadra Navale e della Forza Anfibia. Ormeggio della portaerei Cavour e della nave-portaerei Trieste. Arsenale storico in via di ridimensionamento. Tra i 12 porti italiani autorizzati per scali di navi a propulsione nucleare (USA/UK/FR).",
-      "flussi_stimati": "Movimentazione prevalentemente militare interna (no export commerciale armi).",
+      "ruolo_militare": "Base navale della Marina Militare e sede del Comando Marittimo Sud e dell'Arsenale. Base della portaerei Cavour. Compreso nell'elenco di dodici porti per la sosta di unità militari a propulsione nucleare riportato dal Piano di emergenza della Protezione civile del luglio 1996. Il piano nazionale non è pubblico: l'elenco si conosce da fonti secondarie.",
+      "flussi_stimati": "Dato non disponibile.",
       "casi_documentati": [
-        "Mar Piccolo: gravissima contaminazione da PCB e diossine attribuita anche alle attività dell'Arsenale Militare e dell'Ilva — area SIN",
-        "Mitili contaminati: divieto di pesca e vendita dei mitili tarantini dal 2011"
+        "Mar Piccolo: contaminazione da PCB, diossine e metalli nel Primo Seno, attribuita da più studi a scarichi storici dell'industria e dell'Arsenale, senza una ripartizione delle quote.",
+        "Mitili del Primo Seno: movimentazione bloccata dal 2011; divieto di prelievo e vendita prorogato di 36 mesi nel settembre 2024."
       ],
       "fonti": [
-        "Marina Militare — Arsenale di Taranto",
-        "Procura di Taranto — fascicoli contaminazione Mar Piccolo",
-        "ISS — progetto SENTIERI"
+        {"titolo": "Marina Militare, Comando Interregionale Marittimo Sud", "url": "https://www.marina.difesa.it/documentazione/trasparente/Pagine/AU%20-%20MARINASUD.aspx"},
+        {"titolo": "ANSA Puglia, 5 settembre 2024: prorogate le misure sanitarie per le cozze di Taranto", "url": "https://www.ansa.it/puglia/notizie/2024/09/05/prorogate-misure-sanitarie-straordinarie-per-cozze-taranto_465a6b16-2fd4-47c5-983b-8d7d15fd42ab.html"},
+        {"titolo": "CNR: Cardellicchio e altri, PAHs e PCBs nei sedimenti del Mar Piccolo (2007)", "url": "https://iris.cnr.it/handle/20.500.14243/157513"},
+        {"titolo": "Epidemiologia & Prevenzione, 2023, 47 (1-2) Suppl. 1: Sesto Rapporto SENTIERI", "url": "https://epiprev.it/newsletter/epidemiologia-prevenzione-2023-47-1-2-gennaio-aprile-suppl-1"},
+        {"titolo": "Marina Militare, Articolazione degli Uffici 2025", "url": "https://www.marina.difesa.it/documentazione/trasparente/Documents/Organizzazione/Articolazione%20degli%20Uffici/Articolazione_degli_Uffici_2025.pdf"},
+        {"titolo": "Marina Militare, comunicato del 15 gennaio 2022 sui 70 anni del Comando in Capo della Squadra Navale", "url": "https://www.marinaiditalia.com/wp-content/uploads/2022/01/ComunicatoSSSD_2022_01_15_Marina-Militare-con-70-anni-di-evoluzione-il-Comando-in-Capo-Squadra-Navale-e-saldo-fulcro-nazionale-per-operazioni-sul-mare-e-dal-m.pdf"},
+        {"titolo": "Naval News, dicembre 2024: Italy's New Trieste LHD, Technical Overview", "url": "https://www.navalnews.com/naval-news/2024/12/italys-new-trieste-lhd-technical-overview/"},
+        {"titolo": "GrIG, 8 ottobre 2016: dodici porti e i piani di emergenza (cita il Piano della Protezione civile del luglio 1996)", "url": "https://gruppodinterventogiuridicoweb.com/2016/10/08/dodici-porti-italiani-possono-accogliere-naviglio-a-propulsione-nucleare-ma-i-piani-di-emergenza-dove-sono/"},
+        {"titolo": "PeaceLink, 21 giugno 2005: la risposta del ministro della Difesa su Cagliari e gli 11 porti", "url": "https://www.peacelink.it/disarmo/cagliari-porto-nucleare-no-anzi-s"},
+        {"titolo": "D.P.C.M. 10 febbraio 2006, linee guida per le aree portuali con naviglio a propulsione nucleare (art. 124 D.Lgs. 230/1995), copia ISIN", "url": "https://www.isinucleare.it/sites/default/files/contenuto_redazione_isin/dpcm_10_02_2006_aeroportuali.pdf"},
+        {"titolo": "ISPRA: materiali sul Mar Piccolo di Taranto", "url": "https://www.isprambiente.gov.it/contentfiles/00003900/3989-c2738-m2-u6.pdf"},
+        {"titolo": "Wikipedia: Brigata marina San Marco", "url": "https://it.wikipedia.org/wiki/Brigata_marina_%22San_Marco%22"}
       ]
     }
   ]
