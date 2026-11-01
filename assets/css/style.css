@@ -5267,6 +5267,10 @@ body.video-modal-open { overflow: hidden; }
 #mappa .osv-b.is-scelto { transform: scale(1.5); box-shadow: 0 0 0 3px var(--giallo), 0 0 22px rgba(239, 232, 71, 0.75); z-index: 5; }
 #mappa .leaflet-marker-icon:has(.is-scelto) { z-index: 9000 !important; }
 
+#mappa.osv-piccole .osv-b { width: 19px; height: 19px; border-width: 1px; }
+#mappa.osv-piccole .osv-b-nucleare { width: 24px; height: 24px; margin: -2px; }
+#mappa.osv-piccole .osv-bollo { top: -6px; right: -6px; width: 13px; height: 13px; }
+
 .osv-b-fermo { flex: none; width: 24px; height: 24px; }
 
 .osv-modello { margin-bottom: 0.9rem; background: radial-gradient(circle at 50% 40%, #2a2c30, #101114 75%); border: 1px solid rgba(239, 232, 71, 0.18); }
@@ -5291,7 +5295,7 @@ body.video-modal-open { overflow: hidden; }
 
 @media (max-width: 900px) {
   .osv-griglia { display: block; height: auto; min-height: 0; }
-  .page-osservatorio #mappa { height: 62vh; min-height: 400px; }
+  .page-osservatorio #mappa { height: 70vh; min-height: 460px; }
   .osv-pannello { margin-top: 0.8rem; max-height: 60vh; }
 
   /* Sul telefono la scheda sale dal basso e copre la pagina. */

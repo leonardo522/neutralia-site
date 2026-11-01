@@ -206,15 +206,17 @@
   }
 
   function separaIcone() {
-    const lato = 29;
     zoomBase = mappa.getZoom();
+    const piccole = zoomBase < 5.4;
+    mappa.getContainer().classList.toggle('osv-piccole', piccole);
+    const lato = piccole ? 21 : 29;
     const voci = icone
       .filter((m) => m._map && m.getElement())
       .map((m) => {
         const p = mappa.latLngToLayerPoint(m.getLatLng());
         return { m, x: p.x, y: p.y, x0: p.x, y0: p.y };
       });
-    for (let giro = 0; giro < 12; giro++) {
+    for (let giro = 0; giro < 40; giro++) {
       for (let i = 0; i < voci.length; i++) {
         for (let j = i + 1; j < voci.length; j++) {
           const a = voci[i], b = voci[j];
