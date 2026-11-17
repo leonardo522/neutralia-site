@@ -97,6 +97,17 @@
 .mito .etichetta:first-child { margin-top: 0; }
 .mito .fonti-mito { font-family: var(--sans); font-size: .82rem; margin-top: 1rem; }
 .mito .fonti-mito a { margin-right: .8rem; }
+/* Leggibili su qualsiasi sfondo e su iPhone (Safari dà colori di sistema a input e bottoni) */
+.miti-cerca { color: var(--nero); -webkit-appearance: none; appearance: none; border-radius: 0; }
+.miti-cerca::placeholder { color: #666; opacity: 1; }
+.miti-filtri button { color: var(--nero); -webkit-appearance: none; appearance: none; border-radius: 0; }
+.mito { color: var(--nero); }
+.mito summary q, .mito .corpo p { color: var(--nero); }
+.ars-sez.is-dark .mito a { color: #1a4d8f; }
+.ars-sez.is-dark .miti-cerca { border-color: var(--giallo); }
+.ars-sez.is-dark .miti-filtri button { color: var(--bianco); border-color: #666; }
+.ars-sez.is-dark .miti-filtri button.is-on { background: var(--giallo); color: var(--nero); border-color: var(--giallo); }
+.ars-sez.is-dark .mito { border-color: #333; }
 .miti-vuoto { display: none; font-family: var(--sans); color: #777; }
 
 /* Arsenale: libri, film */
@@ -116,6 +127,7 @@
 .volantino-anteprima img { width: 34%; background: #fff; padding: 3%; }
 .ars-sez .ars-btn { color: var(--nero) !important; text-decoration: none; }
 .ars-sez .ars-btn.is-ghost { color: var(--giallo) !important; }
+.ars-sez:not(.is-dark) .ars-btn.is-ghost { color: var(--nero) !important; border-color: var(--nero); }
 .volantino-anteprima { max-width: 380px; width: 100%; justify-self: center; }
 @media (max-width: 760px) { .volantino-wrap { grid-template-columns: 1fr; } .ars-sez { padding: 3.5rem 0; } .discorso { padding: 1.3rem; } }
 
