@@ -118,6 +118,49 @@
 .ars-sez .ars-btn.is-ghost { color: var(--giallo) !important; }
 .volantino-anteprima { max-width: 380px; width: 100%; justify-self: center; }
 @media (max-width: 760px) { .volantino-wrap { grid-template-columns: 1fr; } .ars-sez { padding: 3.5rem 0; } .discorso { padding: 1.3rem; } }
+
+/* Hero con anteprima del volantino */
+.ars-hero-grid { display: grid; grid-template-columns: minmax(0, 1fr) 250px; gap: 3rem; align-items: center; }
+.volantino-link { display: block; text-decoration: none; color: var(--giallo); max-width: 250px; }
+.volantino-link img { width: 100%; height: auto; transform: rotate(2.5deg); box-shadow: 0 18px 40px rgba(0,0,0,.45); transition: transform .2s; }
+.volantino-link:hover img, .volantino-link:focus-visible img { transform: rotate(0) scale(1.02); }
+.volantino-link span { display: flex; align-items: center; justify-content: center; gap: .5rem; margin-top: 1.1rem; font: 700 .78rem var(--sans); letter-spacing: .12em; text-transform: uppercase; color: var(--giallo); }
+.volantino-link svg { width: 1.1em; height: 1.1em; }
+.ars-sez:not(.is-dark) .volantino-link span { color: var(--nero); }
+.volantino-wrap .volantino-link { justify-self: center; }
+@media (max-width: 860px) { .ars-hero-grid { grid-template-columns: 1fr; } .ars-hero-vol { justify-self: start; } .volantino-link { max-width: 200px; } }
+
+/* Capitoli comprimibili */
+.ars-toggle { all: unset; box-sizing: border-box; cursor: pointer; display: flex; align-items: center; justify-content: space-between; gap: 1.2rem; width: 100%; }
+.ars-toggle:focus-visible { outline: 2px solid var(--giallo); outline-offset: 6px; }
+.ars-piu { flex: none; width: 2.4rem; height: 2.4rem; border: 2px solid currentColor; position: relative; }
+.ars-piu::before, .ars-piu::after { content: ""; position: absolute; left: 50%; top: 50%; width: 1rem; height: 2px; background: currentColor; transform: translate(-50%, -50%); transition: transform .2s; }
+.ars-piu::after { transform: translate(-50%, -50%) rotate(90deg); }
+.ars-sez.is-aperta .ars-piu::after { transform: translate(-50%, -50%) rotate(0); }
+.ars-sez.is-chiusa { padding: 2.2rem 0; }
+.ars-sez.is-chiusa h2 { margin-bottom: 0; }
+.ars-sez.is-chiusa .ars-toggle:hover .ars-piu { background: var(--giallo); color: var(--nero); border-color: var(--giallo); }
+
+/* Gabbia UE */
+.ars-sottotitolo { font-size: 1.15rem; margin-top: 1rem; max-width: 46rem; }
+.ars-etichetta { font: 700 .72rem var(--sans); letter-spacing: .16em; text-transform: uppercase; margin-left: .6rem; opacity: .75; }
+.pal { width: 44px; height: 44px; flex: none; --pal-finestre: var(--nero); }
+.pal.is-ue { color: var(--giallo); }
+.pal.is-it { color: #f4f4f4; --pal-finestre: var(--nero); }
+.ars-sez:not(.is-dark) .pal.is-it { color: #3a3a3a; --pal-finestre: #fff; }
+.ars-sez:not(.is-dark) .pal.is-ue { color: #b9a800; }
+.gabbia-legenda { list-style: none; display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: .9rem 1.2rem; margin: 2rem 0 1.6rem; padding: 1.1rem; border: 1px solid #333; }
+.gabbia-legenda li { display: flex; gap: .7rem; align-items: center; font-family: var(--sans); font-size: .78rem !important; line-height: 1.3; }
+.gabbia-legenda b { display: block; font-size: .82rem; }
+.gabbia-legenda .pal { width: 34px; height: 34px; }
+.gabbia { list-style: none; position: relative; border-top: 6px solid var(--giallo); border-bottom: 6px solid var(--giallo);
+  background: repeating-linear-gradient(90deg, transparent 0 58px, rgba(239,232,71,.13) 58px 62px); padding: .6rem 0; }
+.sbarra { display: flex; gap: 1rem; align-items: flex-start; padding: 1rem 1rem; border-bottom: 1px solid rgba(239,232,71,.18); background: rgba(10,10,10,.82); margin: .5rem 0; }
+.sbarra:last-child { border-bottom: 0; }
+.sbarra .anno { display: inline-block; font: 800 .8rem var(--sans); background: var(--giallo); color: var(--nero); padding: .1rem .45rem; margin-right: .5rem; }
+.sbarra b { font-family: var(--sans); font-size: .95rem; }
+.sbarra p { font-size: 1.05rem !important; margin-top: .35rem; color: #e2e2e2; }
+@media (max-width: 560px) { .sbarra { padding: .9rem .7rem; } .pal { width: 34px; height: 34px; } }
 </style>
 </head>
 <body class="page-arsenale">
@@ -142,14 +185,20 @@
 <main>
 
 <section class="ars-hero">
-  <div class="container">
+  <div class="container ars-hero-grid">
+    <div>
     <span class="ars-kicker">Guerriglia Neutralia · L'Arsenale</span>
     <h1>Ogni frase che ripeti <em>l'ha scritta qualcun altro.</em></h1>
     <p class="ars-lead">«Ce lo chiede l'Europa.» «Senza euro finiremmo come l'Argentina.» «La NATO ci protegge.» «Noi italiani da soli non ce la facciamo.» Le hai sentite mille volte. Forse le hai anche dette. Questa pagina ti mostra chi le ha scritte, quando e perché. Con le fonti, una per una.</p>
     <div class="ars-cta">
-      <a class="ars-btn" href="#da-zero">Parti da zero</a>
-      <a class="ars-btn is-ghost" href="#vademecum">Vai alle risposte</a>
-      <a class="ars-btn is-ghost" href="#volantino">Scarica il volantino</a>
+      <a class="ars-btn" href="#vademecum">I miti comuni</a>
+    </div>
+    </div>
+    <div class="ars-hero-vol">
+      <a class="volantino-link" href="assets/pdf/guerriglia-neutralia-volantino-a4.pdf" download aria-label="Scarica il volantino A4 in PDF">
+        <img src="assets/img/arsenale-volantino.jpg" width="636" height="900" alt="Il volantino: Ogni frase che ripeti l'ha scritta qualcun altro.">
+        <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M12 3v12m0 0l-5-5m5 5l5-5M4 21h16"/></svg>Scarica il volantino A4</span>
+      </a>
     </div>
   </div>
 </section>
@@ -157,14 +206,14 @@
 <nav class="ars-indice" aria-label="Capitoli">
   <ol>
     <li><a href="#da-zero"><span>01</span>Da zero</a></li>
-    <li><a href="#debito"><span>02</span>Debito ed euro</a></li>
-    <li><a href="#nato"><span>03</span>NATO</a></li>
-    <li><a href="#ue"><span>04</span>Unione europea</a></li>
-    <li><a href="#britannia"><span>05</span>Il Britannia</a></li>
-    <li><a href="#vincolo"><span>06</span>Il vincolo esterno</a></li>
-    <li><a href="#onesta"><span>07</span>La parte onesta</a></li>
-    <li><a href="#prima-tu"><span>08</span>Prima cambia tu</a></li>
-    <li><a href="#vademecum"><span>09</span>Vademecum</a></li>
+    <li><a href="#onesta"><span>02</span>La parte onesta</a></li>
+    <li><a href="#prima-tu"><span>03</span>Prima cambia tu</a></li>
+    <li><a href="#vademecum"><span>04</span>I miti comuni</a></li>
+    <li><a href="#debito"><span>05</span>Debito ed euro</a></li>
+    <li><a href="#ue"><span>06</span>Unione europea</a></li>
+    <li><a href="#britannia"><span>07</span>Il Britannia</a></li>
+    <li><a href="#nato"><span>08</span>NATO</a></li>
+    <li><a href="#vincolo"><span>09</span>Il vincolo esterno</a></li>
     <li><a href="#arsenale"><span>10</span>L'Arsenale</a></li>
     <li><a href="#volantino"><span>11</span>Volantino</a></li>
   </ol>
@@ -173,245 +222,23 @@
 <!-- 01 DA ZERO -->
 <section class="ars-sez" id="da-zero">
   <div class="container">
-    <span class="ars-num">01</span>
-    <h2>Se non ne sai niente, comincia da qui</h2>
+    <span class="ars-num">01</span> <span class="ars-etichetta">Se non sai niente, comincia da qui</span>
+    <h2>Cosa vuol dire sovranità e neutralità?</h2>
     <p>Sovranità vuol dire una cosa semplice: <span class="ars-sottolinea">chi decide della tua vita lo hai scelto tu</span>, e se sbaglia lo puoi mandare a casa. Quanto si spende per gli ospedali, quanto costa il pane, se l'Italia va in guerra o no.</p>
     <p>Oggi molte di queste decisioni non si prendono più a Roma. La moneta la governa la Banca centrale europea, a Francoforte. I limiti di spesa li fissano i trattati europei e la Commissione, a Bruxelles. Le basi militari e le guerre a cui partecipiamo si decidono dentro la NATO, dove pesa soprattutto Washington. Nessuna di queste persone la puoi votare o mandare a casa.</p>
     <p>Neutralità vuol dire non stare in un blocco militare contro un altro. Non è debolezza: è la scelta di Svizzera e Austria, e l'Italia ha già scritto nella sua Costituzione che «ripudia la guerra» (articolo 11).</p>
     <p>Neutralia pensa che l'Italia debba riprendersi queste decisioni. Per farlo serve uscire dall'euro, dall'Unione europea e dalla NATO. Lo diciamo chiaro, è la nostra posizione politica. Ma non ti chiediamo di crederci sulla parola: in questa pagina trovi i fatti, e ogni fatto ha un link alla fonte. <b>Controlla tutto.</b></p>
     <div class="ars-box">
       <span class="ars-kicker">Come si usa questa pagina</span>
-      <p>Leggila dall'inizio se parti da zero. Se ti serve una risposta veloce in una discussione, vai al <a href="#vademecum">Vademecum</a>: ci sono le frasi che sentirai più spesso, la risposta in venti secondi e le fonti da mostrare. I bollini gialli <a class="fonte" href="#da-zero">fonte</a> portano al documento originale.</p>
+      <p>Leggila dall'inizio se parti da zero, aprendo un capitolo alla volta. Se ti serve una risposta veloce in una discussione, vai al <a href="#vademecum">Vademecum</a>: ci sono le frasi che sentirai più spesso, la risposta in venti secondi e le fonti da mostrare. I bollini gialli <a class="fonte" href="#da-zero">fonte</a> portano al documento originale.</p>
     </div>
   </div>
 </section>
 
-<!-- 02 DEBITO ED EURO -->
-<section class="ars-sez is-dark" id="debito">
+<!-- LA PARTE ONESTA -->
+<section class="ars-sez is-dark" id="onesta">
   <div class="container">
     <span class="ars-num">02</span>
-    <h2>Non hai vissuto sopra le tue possibilità</h2>
-    <p>È la prima frase che ti diranno: «Abbiamo fatto debiti, ora dobbiamo pagare.» Come se l'Italia fosse una famiglia spendacciona. Guardiamo i conti dello Stato, quelli ufficiali.</p>
-
-    <h3>Lo Stato ti restituisce meno di quanto ti prende</h3>
-    <p>Esiste un numero che si chiama <b>avanzo primario</b>. È la differenza tra quello che lo Stato incassa con le tasse e quello che spende per te: scuole, ospedali, pensioni, strade, stipendi pubblici. Gli interessi sul debito restano fuori dal conto.</p>
-    <p>Dal 1992 al 2025 l'Italia ha chiuso in avanzo primario <span class="ars-sottolinea">29 anni su 34</span>. Gli unici anni in rosso sono il 2009 (crisi finanziaria) e il 2020-2023 (Covid). In tutto, circa 492 miliardi che gli italiani hanno dato allo Stato in più di quanto hanno ricevuto in servizi.<a class="fonte" href="https://osservatoriocpi.unicatt.it/ocpi-servizi-serie-storiche" target="_blank" rel="noopener">OCPI su dati Banca d'Italia e Istat</a><a class="fonte" href="https://www.istat.it/wp-content/uploads/2026/10/Notifica_21_10_2026.pdf" target="_blank" rel="noopener">Istat 2026</a> Nessun altro Paese europeo ha fatto altrettanto.<a class="fonte" href="https://pagellapolitica.it/articoli/conte-ha-ragione-sul-record-positivo-in-ue-dei-conti-dellitalia" target="_blank" rel="noopener">fonte</a> E la spesa pubblica italiana, interessi esclusi, è sotto la media dell'area euro: 47,3% del PIL contro 47,9%.<a class="fonte" href="https://ec.europa.eu/eurostat/databrowser/view/gov_10a_main/default/table" target="_blank" rel="noopener">Eurostat</a></p>
-    <p>E allora perché il debito è passato da 775 a 3.097 miliardi? Per gli interessi.</p>
-
-    <div class="ars-cifre">
-      <div class="ars-cifra"><b>2.675 mld</b><span>di interessi pagati dal 1992 al 2025. Nello stesso periodo il debito è salito di 2.322 miliardi.</span><a href="https://osservatoriocpi.unicatt.it/ocpi-servizi-serie-storiche" target="_blank" rel="noopener">OCPI, Istat</a></div>
-      <div class="ars-cifra"><b>85 mld</b><span>di interessi nel solo 2024. Per tutta la scuola e l'università lo Stato ha speso 89 miliardi.</span><a href="https://ec.europa.eu/eurostat/databrowser/view/gov_10a_exp/default/table" target="_blank" rel="noopener">Eurostat 2024</a></div>
-      <div class="ars-cifra"><b>3,8%</b><span>del PIL in interessi nel 2025. La media dell'area euro è 1,9%, la Germania 1,1%.</span><a href="https://ec.europa.eu/eurostat/databrowser/view/gov_10a_main/default/table" target="_blank" rel="noopener">Eurostat</a></div>
-    </div>
-
-    <h3>Il divorzio che nessuno ha votato</h3>
-    <p>Il 12 febbraio 1981 il ministro del Tesoro Beniamino Andreatta scrive una lettera al governatore della Banca d'Italia Carlo Azeglio Ciampi. Da luglio la Banca d'Italia non è più obbligata a comprare i titoli di Stato rimasti invenduti. Lo Stato, da quel momento, deve chiedere i soldi ai mercati, al prezzo che decidono loro. Non c'è un voto del Parlamento: è uno scambio di lettere tra due persone.<a class="fonte" href="https://www.centrostudimalfatti.eu/wp-content/uploads/2009/08/arel_150211.pdf" target="_blank" rel="noopener">Arel 2011</a> Anni dopo Andreatta lo chiamerà una «congiura aperta» tra ministro e governatore.<a class="fonte" href="https://osservatoriocpi.unicatt.it/cpi-archivio-studi-e-analisi-il-divorzio-fra-banca-d-italia-e-tesoro-teorie-sovraniste-e-realta" target="_blank" rel="noopener">fonte</a></p>
-    <p>Prima, lo Stato si finanziava a tassi più bassi dell'inflazione. Dopo, i tassi reali diventano positivi e alti. In tredici anni il debito passa dal 56% al 120% del PIL.<a class="fonte" href="https://osservatoriocpi.unicatt.it/ocpi-servizi-serie-storiche" target="_blank" rel="noopener">OCPI</a> Dal 1999 non abbiamo più nemmeno una banca centrale nostra: i trattati europei vietano alla BCE di finanziare gli Stati (articolo 123 del Trattato sul funzionamento dell'UE).</p>
-
-    <h3>Per le banche i soldi si trovano</h3>
-    <p>Quando c'è da tagliare ospedali, «non ci sono soldi». Quando c'è da salvare una banca, si trovano in un fine settimana: 5,4 miliardi per il Monte dei Paschi nel 2017<a class="fonte" href="https://temi.camera.it/leg19/temi/le-dismissioni-di-partecipazioni-societarie.html" target="_blank" rel="noopener">Camera</a>, quasi 5 miliardi in contanti più garanzie per le banche venete, decise per decreto il 25 giugno 2017.<a class="fonte" href="https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto.legge:2017-06-25;99" target="_blank" rel="noopener">DL 99/2017</a></p>
-    <p>Intanto i libretti e i buoni postali di milioni di famiglie, 297 miliardi di euro, sono gestiti dalla Cassa Depositi e Prestiti.<a class="fonte" href="https://www.cdp.it/internet/public/cms/documents/Comunicato_stampa_n.21_del_09_04_2026_Bilancio_CDP_2025_ITA.pdf" target="_blank" rel="noopener">CDP 2026</a> Per 150 anni servivano a prestare a tassi bassi ai Comuni per le opere pubbliche. Nel 2003 la CDP è stata trasformata in società per azioni e aperta alle fondazioni bancarie.<a class="fonte" href="https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto.legge:2003-09-30;269" target="_blank" rel="noopener">DL 269/2003</a> Quei soldi potrebbero tornare a finanziare i territori. È una scelta politica.</p>
-
-    <h3>L'euro: ventisei anni dopo</h3>
-    <div class="ars-cifre">
-      <div class="ars-cifra"><b>+12,8%</b><span>la crescita del reddito reale per abitante in Italia dal 1999 al 2025. Germania +29,7%, Francia +23,9%, Spagna +29,1%.</span><a href="https://ec.europa.eu/eurostat/databrowser/view/nama_10_pc/default/table" target="_blank" rel="noopener">Eurostat</a></div>
-      <div class="ars-cifra"><b>-2,1%</b><span>i salari reali italiani dal 1990 al 2025. In Germania e Francia sono saliti del 35%. Siamo gli unici tra i grandi Paesi OCSE.</span><a href="https://data-explorer.oecd.org/vis?df[ds]=dsDisseminateFinalDMZ&amp;df[id]=DSD_EARNINGS%40AV_AN_WAGE&amp;df[ag]=OECD.ELS.SAE" target="_blank" rel="noopener">OCSE</a></div>
-      <div class="ars-cifra"><b>2/3</b><span>del debito italiano è in mano a italiani. E l'Italia possiede all'estero 335 miliardi più di quanto gli stranieri possiedano qui.</span><a href="https://www.bancaditalia.it/pubblicazioni/bilancia-pagamenti/2026-bilancia-pagamenti/statistiche_BDP_20261020.pdf" target="_blank" rel="noopener">Banca d'Italia</a></div>
-    </div>
-    <p>Negli anni Novanta, con la lira, il reddito per abitante italiano cresceva come quello tedesco. Con l'euro, un italiano medio si è arricchito di circa un decimo in ventisei anni; un tedesco o un francese di un quarto.<a class="fonte" href="https://economy-finance.ec.europa.eu/economic-research-and-databases/economic-databases/ameco-database_en" target="_blank" rel="noopener">AMECO, Commissione europea</a></p>
-
-    <div class="ars-box">
-      <span class="ars-kicker">Onestà prima di tutto</span>
-      <p>Negli anni Ottanta lo Stato aveva davvero deficit anche al netto degli interessi, e in parte il debito nasce lì. I salari italiani erano già fermi prima dell'euro e dopo la svalutazione del 1992 sono anche scesi. E l'obiezione più seria all'uscita è questa: il debito oggi è in euro, e convertirlo in lire potrebbe essere considerato un default dalle agenzie di rating. Non è un motivo per non uscire: è un motivo per prepararsi bene. Chi ti dice che è facile, ti mente.</p>
-    </div>
-  </div>
-</section>
-
-<!-- 03 NATO -->
-<section class="ars-sez" id="nato">
-  <div class="container">
-    <span class="ars-num">03</span>
-    <h2>La NATO non ti protegge. Ti espone.</h2>
-    <p>Ti hanno detto che la NATO è un ombrello: se qualcuno ci attacca, tutti gli alleati corrono a difenderci. Leggiamo cosa c'è scritto davvero.</p>
-
-    <h3>L'articolo 5 non obbliga nessuno</h3>
-    <p>L'articolo 5 del Trattato dice che un attacco a un alleato è un attacco a tutti. Ma subito dopo dice che ogni alleato prenderà «l'azione che giudica necessaria». Può mandare soldati, oppure una lettera di solidarietà. Lo scrive la NATO stessa: l'azione «può comportare o no l'uso della forza armata».<a class="fonte" href="https://www.nato.int/cps/en/natohq/topics_110496.htm" target="_blank" rel="noopener">fonte</a></p>
-    <p>In 77 anni l'articolo 5 è scattato <span class="ars-sottolinea">una volta sola: il 12 settembre 2001, per difendere gli Stati Uniti</span>.<a class="fonte" href="https://www.nato.int/cps/en/natohq/topics_110496.htm" target="_blank" rel="noopener">fonte</a> Per l'Italia ha voluto dire vent'anni in Afghanistan, 53 soldati morti, 723 feriti e oltre 7 miliardi di euro spesi. Nell'agosto 2021 i talebani sono tornati al potere.<a class="fonte" href="https://pagellapolitica.it/fact-checking/quanto-e-costata-la-guerra-in-afghanistan" target="_blank" rel="noopener">fonte</a></p>
-
-    <h3>Un'alleanza si giudica da quello che fa</h3>
-    <p>Dal 1990 la NATO non ha mai combattuto per difendere un Paese europeo attaccato. Ha combattuto altrove.</p>
-    <ul class="timeline">
-      <li><span class="anno">1999 · Jugoslavia</span>78 giorni di bombardamenti contro un Paese che non aveva attaccato nessun alleato, senza l'autorizzazione dell'ONU. In gran parte partiti dall'Italia, da Aviano.<a class="fonte" href="https://www.nato.int/cps/en/natohq/topics_49602.htm" target="_blank" rel="noopener">fonte</a></li>
-      <li><span class="anno">2011 · Libia</span>Un mandato ONU per proteggere i civili diventa, scrive la Commissione Esteri del Parlamento britannico, una «politica opportunistica di cambio di regime».<a class="fonte" href="https://publications.parliament.uk/pa/cm201617/cmselect/cmfaff/119/119.pdf" target="_blank" rel="noopener">fonte</a> Il comando era a Napoli. Pochi anni prima l'Italia aveva firmato con la Libia un trattato di amicizia (2008). La produzione dell'ENI in Libia crolla da 273.000 a 110.000 barili al giorno.<a class="fonte" href="https://www.eni.com/assets/documents/documents-en/letter-to-shareholders-eni-2011.pdf" target="_blank" rel="noopener">fonte</a> Dopo la caduta dello Stato libico, gli sbarchi in Italia salgono fino a 181.436 nel 2016.<a class="fonte" href="https://webarchive.archive.unhcr.org/20200724093306mp_/https://data2.unhcr.org/en/situations/mediterranean/location/5205" target="_blank" rel="noopener">fonte</a> Chi ci ha guadagnato? Non l'Italia.</li>
-    </ul>
-
-    <h3>Quando l'alleato ha agito contro di noi</h3>
-    <ul class="ars-lista">
-      <li><b>Sigonella, 1985.</b> In una base sul nostro territorio, soldati americani della Delta Force circondano carabinieri e avieri italiani per prendersi i dirottatori dell'Achille Lauro. Il governo Craxi dice no: il reato è avvenuto su una nave italiana, li giudica l'Italia. Gli americani si ritirano.<a class="fonte" href="https://www.agi.it/cronaca/news/2024-10-11/dirottamento-nave-achille-lauro-39-anni-fa-notte-sigonella-28221739/" target="_blank" rel="noopener">fonte</a></li>
-      <li><b>Cermis, 1998.</b> Un aereo dei Marines partito da Aviano vola troppo basso e trancia il cavo della funivia: 20 morti. Per le regole NATO il processo si fa negli Stati Uniti. Il pilota viene assolto per le morti e condannato a sei mesi solo per aver distrutto il video del volo.<a class="fonte" href="https://www.cbsnews.com/news/cable-car-marine-acquitted/" target="_blank" rel="noopener">fonte</a><a class="fonte" href="https://www.cbsnews.com/news/marine-pilot-gets-6-months/" target="_blank" rel="noopener">fonte</a></li>
-      <li><b>Ustica, 1980.</b> 81 morti. Per la Cassazione civile (sentenza 1871 del 2013) è «abbondantemente e congruamente motivata la tesi del missile», e lo Stato è condannato a risarcire perché non ha protetto i cieli. Chi abbia sparato, nessuna sentenza lo ha mai accertato.<a class="fonte" href="https://miolegale.it/sentenze/cassazione-civile-iii-1871-2013/" target="_blank" rel="noopener">fonte</a></li>
-      <li><b>Gladio.</b> Nel 1990 il governo Andreotti ammette che dal 1956 esisteva una struttura armata segreta, creata con la CIA e legata alla NATO, sconosciuta al Parlamento. Il Parlamento europeo chiede di sciogliere tutte le reti di questo tipo.<a class="fonte" href="https://www.ilpost.it/2020/10/24/gladio-stay-behind/" target="_blank" rel="noopener">fonte</a><a class="fonte" href="https://www.statewatch.org/statewatch-database/gladio-resolution-of-the-european-parliament" target="_blank" rel="noopener">fonte</a></li>
-    </ul>
-
-    <h3>Le regole sono segrete</h3>
-    <p>L'accordo che regola le basi americane in Italia è del 20 ottobre 1954. Si chiama BIA ed è <span class="ars-sottolinea">ancora coperto da segreto, più di settant'anni dopo</span>.<a class="fonte" href="https://ilpost.it/2026/06/21/accordi-basi-militari-americane-italia/" target="_blank" rel="noopener">fonte</a> Gli accordi tecnici sulle singole basi sono quasi tutti riservati. L'unico che possiamo leggere, quello su Sigonella del 2006, l'ha pubblicato il governo americano, non quello italiano.<a class="fonte" href="https://www.govinfo.gov/app/details/GOVPUB-S-PURL-gpo14799" target="_blank" rel="noopener">fonte</a></p>
-    <p>In Italia ci sono circa 13.000 militari americani<a class="fonte" href="https://ilpost.it/2026/06/21/accordi-basi-militari-americane-italia/" target="_blank" rel="noopener">fonte</a> e, secondo le stime degli esperti indipendenti, decine di bombe atomiche americane B61 ad Aviano e Ghedi. Nessun governo lo conferma ufficialmente.<a class="fonte" href="https://www.sipri.org/sites/default/files/YB26%2008%20World%20Nuclear%20Forces.pdf" target="_blank" rel="noopener">fonte</a> In caso di guerra, quelle basi sono i primi bersagli.</p>
-
-    <h3>Il conto: dal 2% al 5%</h3>
-    <div class="ars-cifre">
-      <div class="ars-cifra"><b>45,3 mld</b><span>di euro: la spesa militare italiana nel 2025 secondo la NATO, il 2,01% del PIL. Un anno prima erano 32,7.</span><a href="https://www.nato.int/content/dam/nato/webready/documents/finance/def-exp-2025-en.pdf" target="_blank" rel="noopener">NATO 2025</a></div>
-      <div class="ars-cifra"><b>5%</b><span>del PIL entro il 2035: l'impegno preso al vertice dell'Aia il 25 giugno 2025.</span><a href="https://www.nato.int/cps/en/natohq/official_texts_236705.htm" target="_blank" rel="noopener">Dichiarazione dell'Aia</a></div>
-      <div class="ars-cifra"><b>~113 mld</b><span>l'anno: quanto vale il 5% sul PIL di oggi (nostro calcolo sui dati NATO). Più di tutta la spesa per la scuola, che è 89,2 miliardi.</span><a href="https://ec.europa.eu/eurostat/databrowser/view/gov_10a_exp/default/table?lang=en" target="_blank" rel="noopener">Eurostat 2024</a></div>
-    </div>
-
-    <h3>Uscire si può. È scritto nel Trattato.</h3>
-    <p>L'articolo 13 del Trattato del Nord Atlantico prevede che ogni Paese possa uscire: basta una notifica al governo degli Stati Uniti, e dopo un anno si è fuori.<a class="fonte" href="https://www.nato.int/cps/en/natohq/official_texts_17120.htm" target="_blank" rel="noopener">fonte</a> Nel 1966 la Francia di De Gaulle è uscita dal comando militare integrato e ha fatto sloggiare i comandi alleati dal suo territorio. Non è stata invasa, non è stata cacciata dall'Occidente.<a class="fonte" href="https://www.nato.int/cps/en/natohq/declassified_160672.htm" target="_blank" rel="noopener">fonte</a></p>
-    <p>I Paesi neutrali d'Europa spendono in armi molto meno di noi, in rapporto alla loro ricchezza: Irlanda 0,22% del PIL, Svizzera 0,76%, Austria 1,10%. L'Italia oggi l'1,89%.<a class="fonte" href="https://www.sipri.org/sites/default/files/SIPRI-Milex-data-1949-2025.xlsx" target="_blank" rel="noopener">fonte</a> L'Austria è neutrale per legge costituzionale dal 1955: niente alleanze militari, niente basi straniere.<a class="fonte" href="https://www.ris.bka.gv.at/GeltendeFassung.wxe?Abfrage=Bundesnormen&amp;Gesetzesnummer=10000267" target="_blank" rel="noopener">fonte</a></p>
-    <div class="ars-box">
-      <span class="ars-kicker">Onestà prima di tutto</span>
-      <p>Uscire dalla NATO non chiude da solo le basi americane: stanno qui anche per accordi bilaterali Italia-USA, che vanno disdetti a parte. E la Francia nel 1966 non uscì dall'Alleanza, solo dal comando militare. Per questo il primo passo concreto è chiedere che quegli accordi vengano resi pubblici: un Parlamento che non sa cosa c'è scritto non può decidere niente. E neutralità non vuol dire disarmo: vuol dire una difesa dei nostri confini, non un esercito per le guerre degli altri.</p>
-    </div>
-  </div>
-</section>
-
-<!-- 04 UNIONE EUROPEA -->
-<section class="ars-sez is-dark" id="ue">
-  <div class="container">
-    <span class="ars-num">04</span>
-    <h2>«Ce lo chiede l'Europa.» Ecco come fa a chiedercelo.</h2>
-    <p>L'Unione europea non comanda con i carri armati. Comanda con le sentenze, i trattati e le regole di bilancio. Seguiamo il filo, una tappa alla volta.</p>
-
-    <h3>1. Le loro regole valgono più delle nostre leggi</h3>
-    <p>Nel 1964 un cittadino milanese, Flaminio Costa, contesta la nazionalizzazione dell'energia elettrica. La Corte di giustizia europea ne approfitta per stabilire un principio che nei trattati non c'era: entrando nella Comunità, gli Stati hanno accettato «una limitazione definitiva dei loro diritti sovrani».<a class="fonte" href="https://giurcost.org/casi_scelti/CJCE/C-6-64.htm" target="_blank" rel="noopener">Costa/ENEL 1964</a> Se una legge italiana contrasta con una norma europea, vince quella europea. Anche se la legge italiana è più recente.</p>
-    <p>Nel 1978 la stessa Corte aggiunge che qualunque giudice italiano deve mettere da parte da solo una legge del Parlamento contraria al diritto europeo, senza aspettare la Corte costituzionale.<a class="fonte" href="https://giurcost.org/casi_scelti/CJCE/C-106-77.htm" target="_blank" rel="noopener">Simmenthal 1978</a> Nel 1984 la Corte costituzionale italiana si arrende: il regolamento europeo «va, dunque, sempre applicato».<a class="fonte" href="https://giurcost.org/decisioni/1984/0170s-84.html" target="_blank" rel="noopener">Granital 1984</a> Resta solo un nucleo di principi fondamentali, i «controlimiti», che l'Europa non può toccare. Per difenderne uno, il diritto a non essere puniti con regole decise dopo, ci sono voluti tre anni di scontro tra le due Corti (caso Taricco, 2015-2018).<a class="fonte" href="https://giurcost.org/decisioni/2018/0115s-18.html" target="_blank" rel="noopener">Corte cost. 115/2018</a></p>
-
-    <h3>2. Il vincolo è entrato nella Costituzione</h3>
-    <ul class="timeline">
-      <li><span class="anno">1957</span>L'Italia entra nella Comunità europea con una legge ordinaria, senza cambiare la Costituzione e senza un voto popolare. La porta è l'articolo 11, che consente limitazioni di sovranità «in condizioni di parità con gli altri Stati».<a class="fonte" href="https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:1957-10-14;1203" target="_blank" rel="noopener">legge 1203/1957</a></li>
-      <li><span class="anno">2001</span>Riforma dell'articolo 117: ogni legge, dello Stato o delle Regioni, deve rispettare «i vincoli derivanti dall'ordinamento comunitario».<a class="fonte" href="https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:costituzione~art117" target="_blank" rel="noopener">art. 117</a></li>
-      <li><span class="anno">5 agosto 2011</span>Una lettera riservata firmata da Trichet e Draghi per la Banca centrale europea detta al governo italiano cosa fare: privatizzazioni su larga scala, contratti di lavoro aziendali, regole su assunzioni e licenziamenti, pensioni, e una riforma costituzionale sul bilancio.<a class="fonte" href="https://www.ilpost.it/2011/09/29/la-lettera-della-bce-al-governo/" target="_blank" rel="noopener">testo della lettera</a></li>
-      <li><span class="anno">20 aprile 2012</span>Otto mesi dopo, il pareggio di bilancio entra nella Costituzione (articoli 81 e 97). Un vincolo di politica economica diventa legge suprema.<a class="fonte" href="https://www.normattiva.it/eli/id/2012/04/23/012G0064/ORIGINAL" target="_blank" rel="noopener">legge cost. 1/2012</a></li>
-    </ul>
-
-    <h3>3. Il bilancio si scrive a Bruxelles</h3>
-    <p>Il Trattato di Maastricht fissa due numeri uguali per tutti: deficit sotto il 3% del PIL, debito sotto il 60%.<a class="fonte" href="https://www.ecb.europa.eu/ecb/access_to_documents/document/legal_act/shared/data/ecb.dr.leg2012_C326_279.it.pdf" target="_blank" rel="noopener">Protocollo 12</a> Il funzionario francese Guy Abeille ha raccontato che il 3% fu inventato nel 1981 per Mitterrand, in meno di un'ora, senza alcuna base teorica.<a class="fonte" href="https://www.politis.fr/articles/2012/10/3-au-doigt-mouille-19617" target="_blank" rel="noopener">Politis 2012</a></p>
-    <p>Dal 2013 la legge di bilancio italiana va mandata alla Commissione entro il 15 ottobre, prima che il Parlamento la voti.<a class="fonte" href="https://eur-lex.europa.eu/eli/reg/2013/473/oj" target="_blank" rel="noopener">Reg. 473/2013</a> Ogni anno arrivano le «raccomandazioni». Nel 2019, per esempio: riformare il catasto, ridurre il peso delle pensioni, nuove leggi sulla concorrenza, e una critica a «quota 100».<a class="fonte" href="https://www.sipotra.it/wp-content/uploads/2019/06/RACCOMANDAZIONE-DEL-CONSIGLIO-sul-programma-nazionale-di-riforma-2019-dellItalia-e-che-formula-un-parere-del-Consiglio-sul-programma-di-stabilità-2019-dellIta.pdf" target="_blank" rel="noopener">raccomandazione 2019</a> Dal 2021 queste riforme sono diventate le condizioni per avere le rate del PNRR. Dal 2012 l'Italia ha pagato circa 1,2 miliardi di multe europee.<a class="fonte" href="https://www.eunews.it/2026/01/09/dal-2012-a-oggi-litalia-ha-pagato-12-miliardi-di-euro-di-multe-allue/" target="_blank" rel="noopener">Eunews 2026</a></p>
-    <p>Nella scorsa legislatura, tre decreti legislativi su quattro servivano a recepire direttive europee: 127 su 164.<a class="fonte" href="https://www.camera.it/temiap/2023/07/13/OCD177-6539.pdf" target="_blank" rel="noopener">Camera dei deputati</a></p>
-
-    <h3>4. Chi decide, e chi puoi votare</h3>
-    <p>Voti solo il Parlamento europeo. Ma il Parlamento europeo non può proporre una legge: lo può fare solo la Commissione (articolo 17 del Trattato sull'UE). Se il Parlamento chiede una proposta, la Commissione può rifiutare e deve solo spiegare perché (articolo 225 del Trattato sul funzionamento).<a class="fonte" href="https://www.unife.it/economia/lm.economia/insegnamenti/diritto-delle-relazioni-di-lavoro/materiale-didattico-a-a-2017-2018/TFUE.pdf" target="_blank" rel="noopener">testo dei trattati</a> La Banca centrale europea, per trattato, non può ricevere istruzioni da nessun governo (articolo 130). Nessuno di loro risponde a te.</p>
-
-    <h3>5. E se un popolo vota no?</h3>
-    <p>Grecia, 2015. Il governo indice un referendum sulle condizioni dei creditori. Il 28 giugno la BCE decide di non alzare la liquidità d'emergenza alle banche greche: le banche chiudono, si possono prelevare 60 euro al giorno.<a class="fonte" href="https://www.ecb.europa.eu/press/pr/date/2015/html/pr150628.en.html" target="_blank" rel="noopener">BCE, 28 giugno 2015</a> Il 5 luglio vince il No con circa il 61%. Il 12 luglio il vertice dell'euro impone condizioni più dure di quelle respinte.<a class="fonte" href="https://www.esm.europa.eu/sites/default/files/2015-07-12_euro_summit_statement_on_greece.pdf" target="_blank" rel="noopener">Vertice euro</a> Un popolo vota, e una settimana dopo il suo governo firma il contrario.</p>
-    <p>Francia e Paesi Bassi bocciano la Costituzione europea nel 2005. Il suo contenuto torna, quasi identico, nel Trattato di Lisbona. L'Irlanda boccia Lisbona nel 2008 e viene fatta rivotare.<a class="fonte" href="https://www.robert-schuman.eu/en/observatoire/854" target="_blank" rel="noopener">fonte</a> Cambiare i trattati da dentro richiede l'unanimità di 27 Paesi (articolo 48).</p>
-
-    <h3>6. Uscire è legale</h3>
-    <p>L'articolo 50 del Trattato sull'Unione europea dice che «ogni Stato membro può decidere, conformemente alle proprie norme costituzionali, di recedere dall'Unione».<a class="fonte" href="https://eur-lex.europa.eu/IT/legal-content/summary/article-50-negotiations-with-the-united-kingdom.html" target="_blank" rel="noopener">art. 50 TUE</a> Il Regno Unito l'ha fatto. In Italia non si può fare un referendum abrogativo sui trattati (articolo 75 della Costituzione), ma nel 1989 il Parlamento ha approvato una legge costituzionale apposta per chiedere agli italiani un parere sull'Europa. Votò l'80,68%.<a class="fonte" href="https://www.normattiva.it/eli/id/1989/04/06/089G0146/ORIGINAL" target="_blank" rel="noopener">legge cost. 2/1989</a><a class="fonte" href="https://dait.interno.gov.it/documenti/referendum_risultati_complessivi_1946_2016_0.pdf" target="_blank" rel="noopener">risultati</a> Allora servì a dare più poteri all'Europa. Lo stesso strumento può servire a chiedere se vogliamo restare.</p>
-
-    <div class="ars-box">
-      <span class="ars-kicker">Onestà prima di tutto</span>
-      <p>Non dire mai che «l'80% delle nostre leggi viene da Bruxelles»: è un numero senza prova, e chi lo sa ti smonta in dieci secondi. Usa il dato vero della Camera sui decreti legislativi. E ammetti quello che è vero: uscire ha dei costi, il Regno Unito li sta pagando, e con il PNRR l'Italia per qualche anno riceve più di quanto versa. Ma 122,6 miliardi su 194,4 del PNRR sono prestiti da restituire, e ogni rata è legata a riforme decise con Bruxelles.<a class="fonte" href="https://temi.camera.it/leg19/pnrr/pnrrItalia/OCD57-2/il-pnrr-italiano-quadro-sintesi.html" target="_blank" rel="noopener">Camera</a> Tra il 2016 e il 2022, prima del PNRR, l'Italia ha versato all'UE 31,7 miliardi più di quanto ha ricevuto.<a class="fonte" href="https://www.corteconti.it/Download?id=1694c03c-1425-434a-8867-f256830fbbe7" target="_blank" rel="noopener">Corte dei conti</a></p>
-    </div>
-  </div>
-</section>
-
-<!-- 05 BRITANNIA -->
-<section class="ars-sez" id="britannia">
-  <div class="container">
-    <span class="ars-num">05</span>
-    <h2>Il discorso sul Britannia, spiegato a chi non c'era</h2>
-    <p>2 giugno 1992, porto di Civitavecchia. Dieci giorni prima la mafia ha ucciso Giovanni Falcone a Capaci. L'Italia non ha un governo nel pieno dei poteri: le elezioni ci sono state ad aprile, il governo Amato giurerà solo il 28 giugno. I partiti stanno crollando sotto Mani Pulite.</p>
-    <p>Sul panfilo della regina d'Inghilterra, il Britannia, salgono circa cento invitati: i vertici di ENI, IRI, delle banche pubbliche, dell'INA, della Consob e dell'Antitrust, insieme alle banche d'affari della City di Londra, Warburg, Barings e Barclays de Zoete Wedd. L'incontro lo organizzano i British Invisibles, la lobby della finanza londinese.<a class="fonte" href="https://web.archive.org/web/20090625073310/http://archiviostorico.corriere.it/1992/giugno/02/convegno_sul_Britannia_sponsor_Regina_co_0_92060218751.shtml" target="_blank" rel="noopener">Corriere 1992</a><a class="fonte" href="https://archivio.unita.news/assets/main/1992/06/03/page_011.pdf" target="_blank" rel="noopener">l'Unità 1992</a> Il tema: vendere le aziende dello Stato italiano. Il discorso di apertura lo tiene il direttore generale del Tesoro, <b>Mario Draghi</b>.</p>
-
-    <p><b>Come si legge.</b> Qui sotto c'è il discorso integrale. Le parti evidenziate in giallo si aprono: cliccale e leggi cosa volevano dire per l'Italia. L'originale inglese del 1992 non è mai stato pubblicato. Questa è la nostra traduzione del testo inglese che circola; per un riscontro c'è la traduzione italiana pubblicata dal Fatto Quotidiano nel 2020, <a href="https://www.ilfattoquotidiano.it/in-edicola/articoli/2020/01/22/britannia-la-vera-storia/5681308/" target="_blank" rel="noopener">qui</a>.</p>
-
-    <div class="discorso">
-      <p>Signore e signori, cari amici, desidero innanzitutto congratularmi con l'Ambasciata britannica e con <mark data-nota="n1">i British Invisibles per la loro splendida ospitalità</mark><sup>1</sup>. Tenere questo incontro su questa nave è già di per sé un esempio di privatizzazione di un fantastico bene pubblico. Negli ultimi quindici mesi si è parlato molto di privatizzazione dell'economia italiana. Qualche progresso è stato fatto nel promuovere la vendita di alcune banche pubbliche ad altre istituzioni semipubbliche, e gran parte del merito va a Guido Carli, ministro del Tesoro. Ma quanto alla vendita vera e propria delle grandi aziende pubbliche al settore privato, si è fatto poco.</p>
-      <p>Non deve sorprendere, perché una privatizzazione su larga scala è <mark data-nota="n2">una decisione politica importante, direi straordinaria</mark><sup>2</sup>: scuote le fondamenta dell'ordine socio-economico, ridisegna i confini tra pubblico e privato che non sono stati messi in discussione per quasi cinquant'anni, avvia un ampio processo di deregolamentazione e indebolisce un sistema economico in cui i sussidi alle famiglie e alle imprese hanno ancora un ruolo importante. In altre parole, la decisione di privatizzare è una decisione politica importante, che va oltre le decisioni sui singoli enti da privatizzare. Può quindi essere presa solo da un esecutivo che abbia ricevuto un mandato preciso e stabile.</p>
-      <p>Altri relatori parleranno dello stato dell'arte: a che punto siamo dal punto di vista normativo e quali potrebbero essere i prossimi passi. Una breve panoramica di come il Tesoro vede i principali effetti della privatizzazione può aiutare a comunicare la nostra strategia per i prossimi mesi. Primo: privatizzazione e bilancio. La privatizzazione è nata come un modo per ridurre il deficit. Poi abbiamo capito, e lo abbiamo scritto nella nostra ultima relazione quadrimestrale, che la privatizzazione non può essere considerata un sostituto del risanamento dei conti, così come la vendita di beni da parte di un'impresa privata non può essere considerata un modo per ridurre le perdite annuali. <mark data-nota="n3">I proventi delle privatizzazioni devono andare a ridurre il debito, non il deficit.</mark><sup>3</sup></p>
-      <p>Quando un governo vende un bene redditizio, perde tutti i dividendi futuri, ma può ridurre il debito complessivo e il suo servizio. La privatizzazione cambia quindi il profilo temporale di attività e passività, ma non può essere presentata come una riduzione del deficit, solo come il suo finanziamento. (Questo fatto, secondo il Tesoro, ha alcune implicazioni che vedremo più avanti.) Le conseguenze politiche di questa impostazione sono due. Dal punto di vista della finanza pubblica, il risanamento da mettere in bilancio per il 1993 e gli anni seguenti non dovrebbe includere direttamente alcuna entrata da privatizzazioni. Allo stesso tempo, dovremmo avviare un piano di riduzione del debito che usi i proventi delle privatizzazioni. Questo comporterà da parte del Tesoro una maggiore attenzione alle implicazioni economiche complessive della privatizzazione e all'obiettivo finale di ricostruire gli incentivi per il settore privato.</p>
-      <p>Secondo: privatizzazione e mercati finanziari. La privatizzazione comporta <mark data-nota="n4">un cambiamento nella composizione della ricchezza finanziaria privata, dal debito pubblico alle azioni</mark><sup>4</sup>. La riduzione del debito pubblico può comportare un calo dei tassi d'interesse. Ma l'impatto sui mercati finanziari può essere molto più importante se si considera che la ricchezza privata detenuta in azioni è piccola rispetto alla ricchezza privata totale e che, con le privatizzazioni, può crescere in modo significativo. In altre parole, i mercati finanziari italiani sono piccoli perché sono istituzionalmente piccoli, ma anche perché, forse in modo collegato, gli investitori italiani vogliono che siano piccoli. Le privatizzazioni porteranno su questi mercati molte nuove azioni. L'implicazione politica è che dovremmo vedere le privatizzazioni come un'occasione per approvare leggi e produrre cambiamenti istituzionali che accrescano l'efficienza e le dimensioni dei nostri mercati finanziari.</p>
-      <p>Terzo: privatizzazione e crescita. (In molti casi) vediamo le privatizzazioni come uno strumento per aumentare la crescita. Nella maggior parte dei casi la privatizzazione porterà a un aumento della produttività, grazie a una gestione migliore o più indipendente, e a una struttura di mercato più concorrenziale. La privatizzazione potrebbe quindi compensare in parte i possibili, ma non certi, effetti di breve periodo della stretta fiscale necessaria per un bilancio più equilibrato. In alcuni casi, per godere dei vantaggi della maggiore concorrenza prodotta dalla privatizzazione, può essere necessaria un'ampia deregolamentazione. Questo processo, se da un lato riduce le inefficienze e le rendite delle imprese pubbliche, dall'altro <mark data-nota="n5">indebolisce la capacità del governo di perseguire alcuni obiettivi non di mercato, come la riduzione della disoccupazione e la promozione dello sviluppo regionale</mark><sup>5</sup>. Tuttavia consideriamo questo processo, la privatizzazione accompagnata dalla deregolamentazione, <mark data-nota="n6">inevitabile, perché è innescato dalla crescente integrazione europea. L'Italia può promuoverlo da sé, oppure esservi costretta dalla legislazione europea. Noi preferiamo la prima strada.</mark><sup>6</sup></p>
-      <p>Le implicazioni politiche sono che: a) si darà grande importanza all'analisi della struttura industriale che emergerà dopo le privatizzazioni, e soprattutto a capire se garantiscono prezzi più bassi e una migliore qualità dei servizi; b) nei casi rilevanti, la deregolamentazione dovrà accompagnare la decisione di privatizzare, con particolare attenzione ai requisiti delle norme comunitarie; c) si dovranno trovare mezzi alternativi per perseguire gli obiettivi non di mercato, quando siano considerati essenziali. Quarto: privatizzazione e depoliticizzazione. Un ultimo aspetto attraente della privatizzazione è che viene percepita come uno strumento per limitare le interferenze della politica nella gestione quotidiana delle aziende pubbliche. Questo è certamente vero, e liberarsi di questo fenomeno è un obiettivo lodevole. Tuttavia dobbiamo essere certi che dopo la privatizzazione non ci troveremo davanti allo stesso problema, <mark data-nota="n7">con il proprietario privato che interferisce nella gestione ordinaria dell'azienda</mark><sup>7</sup>. Qui l'implicazione politica immediata è la necessità di accompagnare la privatizzazione con una legislazione capace di tutelare gli azionisti di minoranza e di tracciare linee di separazione chiare tra azionisti di controllo e management, tra decisioni aziendali ordinarie e straordinarie.</p>
-      <p>A cosa dovremmo guardare per valutare la forza del mandato politico di un governo che voglia davvero privatizzare? Primo, serve una chiara decisione politica su cosa debba considerarsi settore strategico. Per quanto sfuggente possa essere questo concetto, è comunque la condizione per andare avanti senza incertezze. Secondo, poiché <mark data-nota="n8">in Italia non c'è nessuna Thatcher all'orizzonte</mark><sup>8</sup>, dobbiamo prevedere un insieme di norme sui possibili effetti delle privatizzazioni sulla disoccupazione (se dovesse aumentare per effetto della ricerca di efficienza), sulla possibile concentrazione del mercato e sulla discriminazione dei prezzi (quest'ultima in particolare per la privatizzazione dei servizi di pubblica utilità). Terzo, vanno superati i problemi normativi. Un esempio importante: le banche, che secondo la legge antitrust (legge 287/91) non possono essere acquistate da imprese industriali, ma solo da altre banche, da istituzioni finanziarie non bancarie (SIM, fondi pensione, fondi comuni, società finanziarie), da compagnie di assicurazione e da persone fisiche che non siano imprenditori professionali. In pratica, poiché in Italia non esistono quasi grandi banche private, gli unici possibili acquirenti nazionali sono le compagnie di assicurazione o le persone fisiche. Un limite molto stringente.</p>
-      <p>In ordine logico, non necessariamente cronologico, tutti questi passi dovrebbero avvenire prima del collocamento. In quel momento affronteremo la sfida più importante: considerato che gran parte delle azioni sarà offerta, almeno all'inizio, agli investitori nazionali, come facciamo spazio a questi titoli nei loro portafogli? Qui diventa pienamente importante che le privatizzazioni completino un piano credibile di riduzione del deficit, soprattutto per ridurre la creazione di nuovo debito pubblico. Solo se riusciremo a ridurre «in modo continuo e sostanziale» il nostro rapporto debito/PIL, come richiede il Trattato di Maastricht, troveremo spazio nei portafogli degli investitori. Allo stesso tempo, l'assorbimento di queste nuove azioni può essere accelerato rendendo più efficiente la nostra Borsa e ampliando la gamma degli intermediari finanziari. Qui si pensa subito alla creazione dei fondi pensione ma, di nuovo, i fondi pensione sono alimentati da risparmio privato che deve in ultima analisi essere accompagnato dal sistema previdenziale nazionale verso i fondi pensione. Ma un ammanco di contributi al sistema nazionale comporterebbe di per sé un deficit più alto. Questo ci porta a una conclusione politica sui fondi pensione: <mark data-nota="n9">potranno essere creati su base davvero ampia solo se il sistema previdenziale nazionale sarà riformato</mark><sup>9</sup> nella direzione di un sistema meglio finanziato o più equilibrato di quello attuale.</p>
-      <p>Questa presentazione non voleva rispondere alla domanda su quanto possa essere rapido il processo di privatizzazione: non è il momento giusto per affrontarla. Lo scopo era darvi un elenco di cose da considerare per valutare la solidità del processo. La conclusione generale è che la privatizzazione è una delle poche riforme nella vita di un Paese che ha assolutamente bisogno del giusto contesto macroeconomico per riuscire. Lasciatemi sottolineare ancora una volta che non dobbiamo fare prima le riforme principali e poi le privatizzazioni. Dovremmo farle insieme. Certo, non possiamo avere privatizzazioni senza una politica di bilancio credibile, che, ne siamo certi, farà parte di ogni futuro programma di governo, perché <mark data-nota="n10">l'adesione al Trattato di Maastricht farà parte di ogni programma di governo</mark><sup>10</sup>.</p>
-      <p>Lasciatemi concludere spiegando, secondo il Tesoro, la principale ragione tecnica (ce ne possono essere altre, legate alla visione personale di chi parla, che vi risparmio) per cui questo processo decollerà. La ragione è questa: <mark data-nota="n11">i mercati vedono le privatizzazioni in Italia come la cartina di tornasole della dipendenza del nostro governo dai mercati stessi</mark><sup>11</sup>, dal loro buon funzionamento come via maestra per ritrovare la crescita. Poiché le privatizzazioni sono così cruciali nello sforzo di riforma del Paese, i mercati le vedono come la prova di credibilità del nostro sforzo di risanamento. E i mercati sono pronti a premiare l'Italia, come hanno fatto in altre occasioni, per un'azione in questa direzione. I benefici indiretti delle privatizzazioni, in termini di maggiore credibilità delle nostre politiche, sono a nostro avviso così significativi da avere un ruolo fondamentale nel ridurre considerevolmente il costo dell'aggiustamento dei conti che ci aspetta nei prossimi cinque anni.</p>
-    </div>
-
-    <div class="nota-draghi" id="n1"><b>1 · Chi organizzava</b>Non il governo italiano, ma la lobby della City: un'associazione nata da un comitato della Banca d'Inghilterra, la «Confindustria» della finanza britannica.<a class="fonte" href="https://www.corriere.it/romano/09-06-16/01.spm" target="_blank" rel="noopener">Corriere 2009</a> Si parlava di vendere aziende italiane davanti a chi le avrebbe aiutate a vendere, incassando commissioni. Il Tesoro, tra il 1994 e il 2004, ha pagato 1,65 miliardi di euro di commissioni e consulenze.<a class="fonte" href="https://documenti.camera.it/_dati/leg14/lavori/documentiparlamentari/indiceetesti/099/006/INTERO.pdf" target="_blank" rel="noopener">Tesoro, relazione al Parlamento</a></div>
-    <div class="nota-draghi" id="n2"><b>2 · Chi diede il mandato?</b>Draghi stesso dice che serve un governo forte con un mandato chiaro. Quel giorno l'Italia non aveva un governo nel pieno dei poteri. Trentanove giorni dopo, l'11 luglio 1992, un decreto-legge trasforma IRI, ENI, ENEL e INA in società per azioni: il primo passo per venderle.<a class="fonte" href="https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto.legge:1992-07-11;333" target="_blank" rel="noopener">DL 333/1992</a> Le vendite le hanno fatte governi tecnici o deboli (Amato, Ciampi, Dini). Nessun italiano ha mai votato su quel programma.</div>
-    <div class="nota-draghi" id="n3"><b>3 · Vendere la casa per pagare il mutuo</b>Dal 1992 lo Stato ha incassato circa 119 miliardi di euro con 93 operazioni: l'Italia è seconda al mondo dopo il Giappone.<a class="fonte" href="https://www1.adnkronos.com/Archivio/AdnAgenzia/2010/02/26/Economia/Privatizzazioni-Corte-Conti-119-mld-nelle-casse-dello-Stato-dal-92_171018.php" target="_blank" rel="noopener">Corte dei conti 2010</a> Aziende come ENI ed ENEL davano utili ogni anno. Lo ammette Draghi: vendendole si perdono quei soldi per sempre. Il debito, intanto, è salito ancora fino al 1994.</div>
-    <div class="nota-draghi" id="n4"><b>4 · I risparmiatori in Borsa</b>Milioni di famiglie comprano azioni delle ex aziende di Stato. Nel novembre 1999 il Tesoro vende il 31,7% dell'ENEL in Borsa per 16,55 miliardi di euro.<a class="fonte" href="https://www.borsaitaliana.it/borsaitaliana/ufficio-stampa/dati-storici/privatizzazioniluglio2010.pdf" target="_blank" rel="noopener">Borsa Italiana</a> Il rischio passa dallo Stato alle famiglie.</div>
-    <div class="nota-draghi" id="n5"><b>5 · L'ammissione più importante</b>A dirlo è lui. L'IRI, l'ENI, le banche pubbliche erano anche lo strumento con cui lo Stato creava lavoro e industria al Sud. Venderle voleva dire rinunciare a quello strumento. Draghi promette che si troveranno «mezzi alternativi». Chiediti quali sono stati.</div>
-    <div class="nota-draghi" id="n6"><b>6 · Il vincolo esterno, in diretta</b>Una scelta politica viene presentata come inevitabile perché «lo chiede l'Europa». È esattamente il meccanismo che raccontiamo nel <a href="#vincolo">capitolo 06</a>. Questa è la nostra lettura: Draghi dice che, se non lo facciamo noi, ce lo imporranno.</div>
-    <div class="nota-draghi" id="n7"><b>7 · Telecom, il caso più grande</b>Telecom è venduta nel 1997. Nel 1999 viene scalata da una cordata che si indebita per comprarla e poi carica quel debito sulla società. Il governo non usa i poteri speciali che aveva.<a class="fonte" href="https://www.corriere.it/dataroom-milena-gabanelli/telecom-come-si-uccide-un-azienda-strategica-soldi/574c7106-7c70-11ec-8a2d-4c61d1a6b1fa-va.shtml" target="_blank" rel="noopener">Corriere, Gabanelli 2022</a> Il rischio che Draghi indicava nel 1992 si è avverato.</div>
-    <div class="nota-draghi" id="n8"><b>8 · Bollette più care</b>Draghi chiede di controllare che dopo le vendite i prezzi scendano. Nel 2010 la Corte dei conti scrive che i profitti delle aziende privatizzate di luce, gas e servizi sono cresciuti soprattutto grazie a tariffe più alte, più care che nel resto d'Europa.<a class="fonte" href="https://archivio.blitzquotidiano.it/politica-italiana/corte-dei-conti-le-ex-aziende-pubbliche-guadagnano-grazie-a-tariffe-piu-care-261968" target="_blank" rel="noopener">Corte dei conti 2010</a> Lo hai pagato tu, ogni mese.</div>
-    <div class="nota-draghi" id="n9"><b>9 · Un pacchetto unico</b>Già nel 1992 il Tesoro lega la vendita delle aziende pubbliche alla riforma delle pensioni e ai vincoli di Maastricht. Le riforme arrivano: Amato nel 1992, Dini nel 1995. Non sono scelte separate prese per caso.</div>
-    <div class="nota-draghi" id="n10"><b>10 · Il voto non conta più</b>Il più alto tecnico del Tesoro dà per scontato che qualunque governo, di qualunque colore, seguirà la stessa linea, perché vincolato da un trattato firmato quattro mesi prima. Tradotto: la politica economica è già decisa, chiunque tu voti.</div>
-    <div class="nota-draghi" id="n11"><b>11 · Il nuovo padrone</b>Il giudizio dei mercati diventa il metro della politica economica italiana. Nel 1997 l'Italia è prima al mondo per incassi annui da privatizzazioni.<a class="fonte" href="https://web.archive.org/web/2009/http://archiviostorico.corriere.it/1997/ottobre/26/SCOMMESSA_DEL_BRITANNIA_co_0_9710261233.shtml" target="_blank" rel="noopener">Corriere 1997</a> Dal 2002 al 2005 Draghi è vicepresidente di Goldman Sachs International.<a class="fonte" href="https://www.bancaditalia.it/chi-siamo/storia/governatori-direttori-generali/governatori/mario-draghi/index.html" target="_blank" rel="noopener">Banca d'Italia</a> Nel 2004 Goldman Sachs è tra le banche che collocano le azioni ENEL per il Tesoro.<a class="fonte" href="https://documenti.camera.it/_dati/leg14/lavori/documentiparlamentari/indiceetesti/099/006/INTERO.pdf" target="_blank" rel="noopener">Tesoro 2005</a> Non risulta un suo ruolo personale in quell'operazione. Ma le porte tra Tesoro e banche d'affari girano.</div>
-
-    <div class="ars-box">
-      <span class="ars-kicker">Onestà prima di tutto</span>
-      <p>Draghi ha dichiarato in Parlamento di essere sceso prima che la nave salpasse, proprio per evitare sospetti; lo confermano le cronache del Corriere.<a class="fonte" href="https://www.ilfattoquotidiano.it/2021/10/15/mario-draghi-la-biografia-non-autorizzata-su-fq-millennium-in-edicola-da-sabato-16-ottobre-2-il-britannia-e-le-privatizzazioni-contestate/6354972/" target="_blank" rel="noopener">fonte</a> Non c'è nessuna prova che sul Britannia sia stato deciso l'attacco alla lira di settembre, e Ciampi, Prodi o Soros a bordo non risultano da nessuna fonte dell'epoca. Chi te lo racconta ti fa perdere il dibattito. Non serve il complotto: basta leggere quello che Draghi ha detto, e guardare cosa è successo dopo.</p>
-    </div>
-  </div>
-</section>
-
-<!-- 06 IL VINCOLO ESTERNO -->
-<section class="ars-sez is-dark" id="vincolo">
-  <div class="container">
-    <span class="ars-num">06</span>
-    <h2>«Noi italiani da soli non ce la facciamo.» Chi te l'ha insegnato?</h2>
-    <p>È la frase che regge tutte le altre. Se sei convinto che gli italiani siano un popolo di furbi, mafiosi e incapaci, allora è giusto che qualcuno da fuori ci tenga a bada: Bruxelles, Francoforte, Washington. Gli economisti la chiamano <b>vincolo esterno</b>. Qui ti mostriamo che non è nata da sola: l'hanno scritta, studiata e diffusa persone con nome e cognome.</p>
-
-    <h3>Lo hanno detto loro</h3>
-    <p>Guido Carli è stato governatore della Banca d'Italia e il ministro del Tesoro che ha firmato il Trattato di Maastricht. Nelle sue memorie, uscite nel 1993, racconta perché voleva l'Europa: senza «un forte vincolo esterno», scrive, in Italia avrebbero prevalso «le forze involutive».<a class="fonte" href="https://ricerca.unistrapg.it/retrieve/31751479-1369-4733-92ae-b3638ad3e46b/13%20Articolo%20riv.%20Storia%20economica%20su%20Carli%2c%20con%20ISSN.pdf" target="_blank" rel="noopener">fonte</a> Tradotto: gli italiani, se votano liberamente, scelgono male, quindi serve un guinzaglio.</p>
-    <p>Nel 1996 due studiosi britannici, Kenneth Dyson e Kevin Featherstone, pubblicano uno studio dal titolo esplicito: «L'Italia e l'euro come vincolo esterno». La loro conclusione: una piccola élite di tecnici della Banca d'Italia e del Tesoro ha usato il negoziato sull'euro per togliere potere ai partiti, cioè a chi gli italiani votavano.<a class="fonte" href="https://eprints.lse.ac.uk/22076" target="_blank" rel="noopener">fonte</a></p>
-    <div class="ars-box">
-      <span class="ars-kicker">Il punto</span>
-      <p>Il vincolo esterno non è un complotto inventato da noi. È una strategia dichiarata da chi l'ha messa in atto e studiata all'università. La sua premessa è proprio il mito: gli italiani da soli non ce la fanno.</p>
-    </div>
-
-    <h3>Il libro che ha dato un nome al pregiudizio</h3>
-    <p>Nel 1958 un politologo americano, Edward Banfield, pubblica «The Moral Basis of a Backward Society», «Le basi morali di una società arretrata». Ha passato circa nove mesi in un paese della Basilicata, Chiaromonte, parlando poco l'italiano. Ne ricava una formula che sentirai ripetere per tutta la vita: <span class="ars-sottolinea">«familismo amorale»</span>. Gli italiani del Sud penserebbero solo al vantaggio della propria famiglia, incapaci di agire per il bene comune.<a class="fonte" href="https://ora.ox.ac.uk/objects/uuid:e2d13816-48c4-480f-8211-1998e05f511c/files/rn009w371z" target="_blank" rel="noopener">fonte</a></p>
-    <p>Il libro è stato smontato dagli studiosi italiani già negli anni Sessanta. Alessandro Pizzorno mostra che il familismo non è la causa della povertà, ma il suo effetto: è quello che succede a un paese abbandonato dallo Stato. Uno studio di Oxford del 2009 conclude che Banfield ha descritto «una fotografia di Chiaromonte nel 1955», non il Sud e tanto meno l'Italia.<a class="fonte" href="https://ora.ox.ac.uk/objects/uuid:e2d13816-48c4-480f-8211-1998e05f511c/files/rn009w371z" target="_blank" rel="noopener">fonte</a> Con i dati alla mano, lo stesso autore mostra nel 2011 che il familismo non spiega la scarsa partecipazione al Sud.<a class="fonte" href="https://ideas.repec.org/a/mul/jl9ury/doi10.1425-35233y2011i2p283-312.html" target="_blank" rel="noopener">fonte</a> Eppure la formula è sopravvissuta, e nel 1993 il politologo americano Robert Putnam la rilancia nelle università di tutto il mondo, proprio negli anni di Maastricht.</p>
-    <p>Nel 1964 è un giornalista italiano, Luigi Barzini, a spiegare gli italiani agli americani, in inglese, in un libro che ancora oggi viene citato come «il classico» sul nostro carattere: «The Italians».<a class="fonte" href="https://www.kirkusreviews.com/book-reviews/a/luigi-barzini-2/the-italians1" target="_blank" rel="noopener">fonte</a> La storica Silvana Patriarca ha ricostruito come l'immagine degli italiani «viziosi» sia stata prodotta, fin dal Risorgimento, anche da politici e intellettuali italiani.<a class="fonte" href="https://muse.jhu.edu/article/456253/pdf" target="_blank" rel="noopener">fonte</a></p>
-
-    <h3>Gli apparati</h3>
-    <p>Negli stessi anni gli Stati Uniti fanno in Italia una propaganda politica e culturale organizzata. Non è una teoria: sono documenti del governo americano oggi pubblici.</p>
-    <ul class="timeline">
-      <li><span class="anno">1947</span>Il Consiglio di sicurezza nazionale USA dedica all'Italia il documento numero uno della sua serie, NSC 1/1: l'Italia è un interesse di sicurezza primario degli Stati Uniti.<a class="fonte" href="https://history.state.gov/historicaldocuments/frus1948v03/d440" target="_blank" rel="noopener">fonte</a></li>
-      <li><span class="anno">1948</span>NSC 1/2, approvato da Truman il 15 marzo: un «programma di informazione» americano in Italia e grano per tenere bassa la razione del pane fino alle elezioni.<a class="fonte" href="https://history.state.gov/historicaldocuments/frus1948v03/d469" target="_blank" rel="noopener">fonte</a> Alle elezioni di aprile la CIA finanzia in segreto i partiti di centro.<a class="fonte" href="https://psi329.cankaya.edu.tr/uploads/files/MILLER-TakingGlovesUnited-1983.pdf" target="_blank" rel="noopener">fonte</a></li>
-      <li><span class="anno">1950</span>Nasce il Congresso per la Libertà della Cultura, finanziato in segreto dalla CIA. In Italia pagherà la rivista «Tempo Presente», che chiude dopo che i fondi vengono scoperti, nel 1966-67.<a class="fonte" href="https://en.wikipedia.org/wiki/Tempo_Presente" target="_blank" rel="noopener">fonte</a></li>
-      <li><span class="anno">1952</span>Piano «Demagnetize» dello Psychological Strategy Board: un'operazione psicologica per ridurre il peso dei comunisti in Italia.<a class="fonte" href="https://history.state.gov/historicaldocuments/frus1950-55Intel/d143" target="_blank" rel="noopener">fonte</a></li>
-      <li><span class="anno">1976</span>Il rapporto della commissione Pike del Congresso USA, filtrato alla stampa, conferma decenni di finanziamenti CIA a partiti e politici italiani.<a class="fonte" href="https://www.cia.gov/resources/csi/studies-in-intelligence/studies-in-intelligence-winter-1998-1999/the-pike-committee-investigations-and-the-cia" target="_blank" rel="noopener">fonte</a></li>
-      <li><span class="anno">1977</span>Der Spiegel mette in copertina una pistola su un piatto di spaghetti: «Italia, paese delle vacanze: sequestri, ricatti, rapine».<a class="fonte" href="https://archivio.unita.news/assets/main/1977/08/09/page_004.pdf" target="_blank" rel="noopener">fonte</a></li>
-      <li><span class="anno">2008-2010</span>La stampa finanziaria ci chiama «PIGS», maiali, insieme a Portogallo, Grecia e Spagna. Nel 2010 la banca Barclays vieta la sigla ai suoi analisti perché offensiva.<a class="fonte" href="https://www.irishtimes.com/business/piigs-label-too-ham-fisted-for-barclays-1.618473" target="_blank" rel="noopener">fonte</a></li>
-      <li><span class="anno">2012</span>Dopo il naufragio della Costa Concordia, un editorialista di Spiegel Online si chiede se qualcuno sia sorpreso che il comandante fosse italiano. L'ambasciatore italiano protesta per iscritto.<a class="fonte" href="https://www.irishtimes.com/news/concordia-disaster-brings-national-prejudices-floating-to-the-top-1.454572" target="_blank" rel="noopener">fonte</a></li>
-      <li><span class="anno">2025</span>Il risultato: gli italiani si fidano più dell'Unione europea (49%) che del proprio governo (34%).<a class="fonte" href="https://www.eunews.it/en/2025/05/28/italians-trust-eu-institutions-more-than-their-own-government/" target="_blank" rel="noopener">fonte</a></li>
-    </ul>
-    <div class="ars-box">
-      <span class="ars-kicker">Onestà prima di tutto</span>
-      <p>I documenti americani dicono che lo scopo era combattere il comunismo, non convincerci di essere inferiori. Non esiste un ordine scritto che dica «fate sentire gli italiani incapaci». Il filo rosso che lega questi fatti è la nostra lettura: decenni di propaganda guidata da fuori, élite che dichiarano di volere un guinzaglio esterno, stampa straniera che ci dipinge come un popolo da sorvegliare. Messi in fila, il risultato è un Paese che si fida più di chi non può votare che di chi elegge. Giudica tu.</p>
-    </div>
-
-    <h3>I numeri che il pregiudizio non ti dice</h3>
-    <div class="ars-cifre">
-      <div class="ars-cifra"><b>1°</b><span>Paese al mondo per siti UNESCO.</span><a href="https://www.guinnessworldrecords.com/world-records/681677-most-world-heritage-sites-country" target="_blank" rel="noopener">Guinness World Records</a></div>
-      <div class="ars-cifra"><b>2ª</b><span>manifattura d'Europa dopo la Germania: il 14% della produzione industriale UE.</span><a href="https://ec.europa.eu/eurostat/statistics-explained/index.php/Industrial_production_statistics" target="_blank" rel="noopener">Eurostat 2024</a></div>
-      <div class="ars-cifra"><b>29 su 34</b><span>anni di avanzo primario dal 1992 al 2025: lo Stato ha speso per noi meno di quanto incassava.</span><a href="https://osservatoriocpi.unicatt.it/ocpi-servizi-serie-storiche" target="_blank" rel="noopener">OCPI su dati Banca d'Italia e Istat</a></div>
-      <div class="ars-cifra"><b>0,55</b><span>omicidi ogni 100.000 abitanti (2024). La media UE è 0,91. Il «popolo di mafiosi» è tra i più sicuri d'Europa.</span><a href="https://www.istat.it/wp-content/uploads/2026/02/HOMICIDES_VICTIMS-AND-PERPETRATORS.pdf" target="_blank" rel="noopener">Istat</a></div>
-      <div class="ars-cifra"><b>11.732 mld</b><span>di euro: la ricchezza netta delle famiglie italiane a fine 2024, 8,2 volte il reddito.</span><a href="https://www.istat.it/comunicato-stampa/la-ricchezza-dei-settori-istituzionali-in-italia-anni-2005-2024/" target="_blank" rel="noopener">Banca d'Italia e Istat</a></div>
-    </div>
-  </div>
-</section>
-
-
-<!-- 07 LA PARTE ONESTA -->
-<section class="ars-sez" id="onesta">
-  <div class="container">
-    <span class="ars-num">07</span>
     <h2>La parte onesta</h2>
     <p>Ti diciamo una cosa che nessun partito ti dice: <span class="ars-sottolinea">non sappiamo se, uscendo, staremo meglio o peggio</span>. Nessuno lo sa. Chi ti promette il paradiso fuori dall'euro mente, e mente chi ti promette l'apocalisse.</p>
     <p>Quello che sappiamo è un'altra cosa. Dentro questi vincoli abbiamo già visto come va: salari fermi da trent'anni, industrie vendute, giovani che partono, guerre decise altrove. E sappiamo che un Paese che non può scegliere non può nemmeno correggere i propri errori.</p>
@@ -419,12 +246,12 @@
   </div>
 </section>
 
-<!-- 08 PRIMA CAMBIA TU -->
-<section class="ars-sez is-dark" id="prima-tu">
+<!-- PRIMA CAMBIA TU -->
+<section class="ars-sez" id="prima-tu">
   <div class="container">
-    <span class="ars-num">08</span>
+    <span class="ars-num">03</span>
     <h2>Prima di convincere gli altri, cambia tu</h2>
-    <p>Arrivato fin qui, potresti pensare: bene, adesso so, da domani combatto. Non funziona così. Se niente di quello che hai letto ti è sembrato nuovo, se aspettavi da tempo di trovare qualcuno che la pensasse come te, allora sei pronto. Altrimenti, rileggi e controlla le fonti. La convinzione presa in prestito non regge alla prima obiezione.</p>
+    <p>Quando avrai letto questa pagina, potresti pensare: bene, adesso so, da domani combatto. Non funziona così. Se niente di quello che leggerai ti sembrerà nuovo, se aspettavi da tempo di trovare qualcuno che la pensasse come te, allora sei pronto. Altrimenti, rileggi e controlla le fonti. La convinzione presa in prestito non regge alla prima obiezione.</p>
     <p>Il vincolo esterno non è solo nei trattati. È dentro di noi: è la voce che dice «tanto non cambia niente», «chi sono io per parlare di economia», «noi italiani siamo fatti così». Quella voce l'hanno messa lì. Il primo lavoro è spegnerla.</p>
     <h3>Tre regole per chi scende in campo</h3>
     <ul class="ars-lista">
@@ -436,9 +263,9 @@
 </section>
 
 <!-- 09 VADEMECUM -->
-<section class="ars-sez" id="vademecum">
+<section class="ars-sez is-dark" id="vademecum">
   <div class="container">
-    <span class="ars-num">09</span>
+    <span class="ars-num">04</span>
     <h2>Il Vademecum: cosa rispondere</h2>
     <p>Le frasi che sentirai più spesso, al bar, a cena, all'università, in televisione. Per ognuna: la risposta in venti secondi, l'obiezione più forte che ti faranno e come rispondere senza barare. Cerca una parola o scegli un tema.</p>
     <input type="search" id="miti-cerca" class="miti-cerca" placeholder="Cerca: Argentina, NATO, debito, mafia…" aria-label="Cerca tra le frasi">
@@ -559,7 +386,7 @@
 
     <details class="mito" data-tema="italiani"><summary><span class="tema">Noi italiani</span><q>Gli italiani non sanno governarsi, ci vuole qualcuno da fuori</q></summary><div class="corpo">
       <span class="etichetta">In venti secondi</span><p>Questa idea non nasce dal popolo. L'ha scritta Guido Carli, il ministro che firmò Maastricht: senza «un forte vincolo esterno» avrebbero vinto «le forze involutive». Due studiosi britannici l'hanno descritta come la strategia di una piccola élite di tecnici per togliere potere a chi gli italiani votavano.</p>
-      <p class="fonti-mito"><a href="https://eprints.lse.ac.uk/22076" target="_blank" rel="noopener">Dyson e Featherstone 1996</a><a href="#vincolo">capitolo 06</a></p>
+      <p class="fonti-mito"><a href="https://eprints.lse.ac.uk/22076" target="_blank" rel="noopener">Dyson e Featherstone 1996</a><a href="#vincolo">capitolo 09</a></p>
     </div></details>
 
     <details class="mito" data-tema="italiani"><summary><span class="tema">Noi italiani</span><q>Il Sud è arretrato perché la gente pensa solo alla famiglia</q></summary><div class="corpo">
@@ -580,53 +407,258 @@
   </div>
 </section>
 
-
-<!-- 10 L'ARSENALE -->
-<section class="ars-sez" id="arsenale">
+<!-- 02 DEBITO ED EURO -->
+<section class="ars-sez" id="debito">
   <div class="container">
-    <span class="ars-num">10</span>
-    <h2>L'Arsenale: cosa leggere, guardare, raccontare</h2>
-    <p>Non serve leggere tutto. Scegli un libro e un film, e consigliali a una persona. Per ogni titolo ti diciamo perché conta. Ci sono anche autori lontani da noi: chi vuole vincere un dibattito deve conoscere anche le prove che vengono dall'altra parte.</p>
+    <span class="ars-num">05</span>
+    <h2>Non hai vissuto sopra le tue possibilità</h2>
+    <p>È la prima frase che ti diranno: «Abbiamo fatto debiti, ora dobbiamo pagare.» Come se l'Italia fosse una famiglia spendacciona. Guardiamo i conti dello Stato, quelli ufficiali.</p>
 
-    <h3>Libri</h3>
-    <div class="scaffale">
-      <div class="scheda"><span class="tipo">Libro · da qui si parte</span><h4>Neutralia</h4><p class="chi">Il manifesto</p><p>La nostra proposta per un'Italia neutrale e sovrana. Si compra o si scarica gratis.</p><p><a href="index.html#libro">Vai al libro</a></p></div>
-      <div class="scheda"><span class="tipo">Libro · debito</span><h4>Dacci oggi il nostro debito quotidiano</h4><p class="chi">Marco Bersani, DeriveApprodi, 2017</p><p>Come il debito è diventato lo strumento per smontare lo Stato sociale. Da sinistra, senza giri di parole.</p></div>
-      <div class="scheda"><span class="tipo">Libro · euro</span><h4>Il tramonto dell'euro</h4><p class="chi">Alberto Bagnai, Imprimatur, 2012</p><p>L'economista che ha portato la critica all'euro fuori dalle università. Grafici e dati, scritto per tutti.</p></div>
-      <div class="scheda"><span class="tipo">Libro · euro</span><h4>L'euro</h4><p class="chi">Joseph Stiglitz, Einaudi, 2017</p><p>Un premio Nobel americano, non certo sovranista, spiega perché la moneta unica ha diviso l'Europa invece di unirla. Utile per chi ti dice che «lo dicono solo i populisti».</p></div>
-      <div class="scheda"><span class="tipo">Libro · sovranità</span><h4>Sovranità o barbarie</h4><p class="chi">Thomas Fazi e William Mitchell, Meltemi, 2018</p><p>Perché la sinistra ha abbandonato lo Stato nazionale, e perché senza Stato non c'è difesa dei più deboli.</p></div>
-      <div class="scheda"><span class="tipo">Libro · trattati</span><h4>Euro e(o?) democrazia costituzionale</h4><p class="chi">Luciano Barra Caracciolo, Dike, 2013</p><p>Un magistrato mette a confronto la Costituzione del 1948 e i trattati europei, articolo per articolo.</p></div>
-      <div class="scheda"><span class="tipo">Libro · NATO</span><h4>Gli eserciti segreti della NATO</h4><p class="chi">Daniele Ganser, Fazi, 2005</p><p>La ricerca di uno storico svizzero sulle reti stay-behind come Gladio in tutta Europa.</p></div>
-      <div class="scheda"><span class="tipo">Libro · storia</span><h4>Il golpe inglese</h4><p class="chi">Giovanni Fasanella e Mario José Cereghino, Chiarelettere, 2011</p><p>Documenti degli archivi britannici sulle ingerenze di Londra nella politica italiana.</p></div>
-      <div class="scheda"><span class="tipo">Libro · propaganda</span><h4>La guerra fredda culturale</h4><p class="chi">Frances Stonor Saunders, Fazi, 2004</p><p>Come la CIA ha finanziato riviste, intellettuali e convegni in Europa. Il libro di riferimento sul tema.</p></div>
-      <div class="scheda"><span class="tipo">Libro · vincolo esterno</span><h4>Cinquant'anni di vita italiana</h4><p class="chi">Guido Carli, Laterza, 1993</p><p>Le memorie del ministro che firmò Maastricht. Leggilo per sentire il vincolo esterno spiegato da chi l'ha voluto.</p></div>
-      <div class="scheda"><span class="tipo">Libro · autorazzismo</span><h4>Italian Vices</h4><p class="chi">Silvana Patriarca, Cambridge University Press, 2010</p><p>Come è nata, dal Risorgimento in poi, l'idea che gli italiani abbiano un «carattere» difettoso.</p></div>
-      <div class="scheda"><span class="tipo">Libro · cultura</span><h4>Scritti corsari</h4><p class="chi">Pier Paolo Pasolini, Garzanti, 1975</p><p>Gli articoli sul «nuovo fascismo» del consumo che cancella le culture popolari italiane. Profetico.</p></div>
+    <h3>Lo Stato ti restituisce meno di quanto ti prende</h3>
+    <p>Esiste un numero che si chiama <b>avanzo primario</b>. È la differenza tra quello che lo Stato incassa con le tasse e quello che spende per te: scuole, ospedali, pensioni, strade, stipendi pubblici. Gli interessi sul debito restano fuori dal conto.</p>
+    <p>Dal 1992 al 2025 l'Italia ha chiuso in avanzo primario <span class="ars-sottolinea">29 anni su 34</span>. Gli unici anni in rosso sono il 2009 (crisi finanziaria) e il 2020-2023 (Covid). In tutto, circa 492 miliardi che gli italiani hanno dato allo Stato in più di quanto hanno ricevuto in servizi.<a class="fonte" href="https://osservatoriocpi.unicatt.it/ocpi-servizi-serie-storiche" target="_blank" rel="noopener">OCPI su dati Banca d'Italia e Istat</a><a class="fonte" href="https://www.istat.it/wp-content/uploads/2026/10/Notifica_21_10_2026.pdf" target="_blank" rel="noopener">Istat 2026</a> Nessun altro Paese europeo ha fatto altrettanto.<a class="fonte" href="https://pagellapolitica.it/articoli/conte-ha-ragione-sul-record-positivo-in-ue-dei-conti-dellitalia" target="_blank" rel="noopener">fonte</a> E la spesa pubblica italiana, interessi esclusi, è sotto la media dell'area euro: 47,3% del PIL contro 47,9%.<a class="fonte" href="https://ec.europa.eu/eurostat/databrowser/view/gov_10a_main/default/table" target="_blank" rel="noopener">Eurostat</a></p>
+    <p>E allora perché il debito è passato da 775 a 3.097 miliardi? Per gli interessi.</p>
+
+    <div class="ars-cifre">
+      <div class="ars-cifra"><b>2.675 mld</b><span>di interessi pagati dal 1992 al 2025. Nello stesso periodo il debito è salito di 2.322 miliardi.</span><a href="https://osservatoriocpi.unicatt.it/ocpi-servizi-serie-storiche" target="_blank" rel="noopener">OCPI, Istat</a></div>
+      <div class="ars-cifra"><b>85 mld</b><span>di interessi nel solo 2024. Per tutta la scuola e l'università lo Stato ha speso 89 miliardi.</span><a href="https://ec.europa.eu/eurostat/databrowser/view/gov_10a_exp/default/table" target="_blank" rel="noopener">Eurostat 2024</a></div>
+      <div class="ars-cifra"><b>3,8%</b><span>del PIL in interessi nel 2025. La media dell'area euro è 1,9%, la Germania 1,1%.</span><a href="https://ec.europa.eu/eurostat/databrowser/view/gov_10a_main/default/table" target="_blank" rel="noopener">Eurostat</a></div>
     </div>
 
-    <h3>Film e documentari</h3>
-    <div class="scaffale">
-      <div class="scheda"><span class="tipo">Film · energia</span><h4>Il caso Mattei</h4><p class="chi">Francesco Rosi, 1972</p><p>L'uomo che voleva un'Italia indipendente dal petrolio delle grandi compagnie anglo-americane, e la sua morte in un aereo caduto nel 1962. Palma d'oro a Cannes.</p></div>
-      <div class="scheda"><span class="tipo">Film · Ustica</span><h4>Il muro di gomma</h4><p class="chi">Marco Risi, 1991</p><p>La storia del giornalista che per anni ha cercato la verità sul DC-9 caduto a Ustica, contro i silenzi dello Stato.</p></div>
-      <div class="scheda"><span class="tipo">Documentario · Gladio</span><h4>Operation Gladio</h4><p class="chi">Allan Francovich, BBC Timewatch, 1992</p><p>Interviste ai protagonisti della rete segreta stay-behind in Italia e in Europa.</p></div>
-      <div class="scheda"><span class="tipo">Documentario · finanza</span><h4>Inside Job</h4><p class="chi">Charles Ferguson, 2010</p><p>Come la finanza ha provocato la crisi del 2008 e nessuno ha pagato. Premio Oscar come miglior documentario.</p></div>
-      <div class="scheda"><span class="tipo">Documentario · debito</span><h4>Debtocracy</h4><p class="chi">Katerina Kitidi e Aris Hatzistefanou, 2011</p><p>La crisi greca raccontata dai greci, e la proposta di verificare quale parte del debito sia davvero dovuta. Gratuito online.</p></div>
-    </div>
+    <h3>Il divorzio che nessuno ha votato</h3>
+    <p>Il 12 febbraio 1981 il ministro del Tesoro Beniamino Andreatta scrive una lettera al governatore della Banca d'Italia Carlo Azeglio Ciampi. Da luglio la Banca d'Italia non è più obbligata a comprare i titoli di Stato rimasti invenduti. Lo Stato, da quel momento, deve chiedere i soldi ai mercati, al prezzo che decidono loro. Non c'è un voto del Parlamento: è uno scambio di lettere tra due persone.<a class="fonte" href="https://www.centrostudimalfatti.eu/wp-content/uploads/2009/08/arel_150211.pdf" target="_blank" rel="noopener">Arel 2011</a> Anni dopo Andreatta lo chiamerà una «congiura aperta» tra ministro e governatore.<a class="fonte" href="https://osservatoriocpi.unicatt.it/cpi-archivio-studi-e-analisi-il-divorzio-fra-banca-d-italia-e-tesoro-teorie-sovraniste-e-realta" target="_blank" rel="noopener">fonte</a></p>
+    <p>Prima, lo Stato si finanziava a tassi più bassi dell'inflazione. Dopo, i tassi reali diventano positivi e alti. In tredici anni il debito passa dal 56% al 120% del PIL.<a class="fonte" href="https://osservatoriocpi.unicatt.it/ocpi-servizi-serie-storiche" target="_blank" rel="noopener">OCPI</a> Dal 1999 non abbiamo più nemmeno una banca centrale nostra: i trattati europei vietano alla BCE di finanziare gli Stati (articolo 123 del Trattato sul funzionamento dell'UE).</p>
 
-    <h3>Nomi e storie da far conoscere</h3>
-    <ul class="ars-lista">
-      <li><b>Enrico Mattei</b>: costruì l'ENI e trattò direttamente con i Paesi produttori di petrolio, scavalcando le grandi compagnie. Gli Stati Uniti seguivano con preoccupazione la sua politica.</li>
-      <li><b>Sigonella, 1985</b>: la notte in cui un governo italiano disse no agli Stati Uniti, e vinse. Raccontala a chi pensa che non si possa.</li>
-      <li><b>Federico Caffè</b>: l'economista che insegnava che l'economia deve servire la piena occupazione, non i mercati. Maestro di una generazione, scomparso nel 1987.</li>
-      <li><b>Giorgio La Pira</b>: sindaco di Firenze, organizzò negli anni Cinquanta i Colloqui per la pace nel Mediterraneo. L'Italia come ponte, non come base.</li>
-      <li><b>Adriano Olivetti</b>: la fabbrica italiana che negli anni Cinquanta era all'avanguardia nel mondo dell'elettronica, e il modello di comunità che voleva costruire intorno.</li>
-    </ul>
+    <h3>Per le banche i soldi si trovano</h3>
+    <p>Quando c'è da tagliare ospedali, «non ci sono soldi». Quando c'è da salvare una banca, si trovano in un fine settimana: 5,4 miliardi per il Monte dei Paschi nel 2017<a class="fonte" href="https://temi.camera.it/leg19/temi/le-dismissioni-di-partecipazioni-societarie.html" target="_blank" rel="noopener">Camera</a>, quasi 5 miliardi in contanti più garanzie per le banche venete, decise per decreto il 25 giugno 2017.<a class="fonte" href="https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto.legge:2017-06-25;99" target="_blank" rel="noopener">DL 99/2017</a></p>
+    <p>Intanto i libretti e i buoni postali di milioni di famiglie, 297 miliardi di euro, sono gestiti dalla Cassa Depositi e Prestiti.<a class="fonte" href="https://www.cdp.it/internet/public/cms/documents/Comunicato_stampa_n.21_del_09_04_2026_Bilancio_CDP_2025_ITA.pdf" target="_blank" rel="noopener">CDP 2026</a> Per 150 anni servivano a prestare a tassi bassi ai Comuni per le opere pubbliche. Nel 2003 la CDP è stata trasformata in società per azioni e aperta alle fondazioni bancarie.<a class="fonte" href="https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto.legge:2003-09-30;269" target="_blank" rel="noopener">DL 269/2003</a> Quei soldi potrebbero tornare a finanziare i territori. È una scelta politica.</p>
+
+    <h3>L'euro: ventisei anni dopo</h3>
+    <div class="ars-cifre">
+      <div class="ars-cifra"><b>+12,8%</b><span>la crescita del reddito reale per abitante in Italia dal 1999 al 2025. Germania +29,7%, Francia +23,9%, Spagna +29,1%.</span><a href="https://ec.europa.eu/eurostat/databrowser/view/nama_10_pc/default/table" target="_blank" rel="noopener">Eurostat</a></div>
+      <div class="ars-cifra"><b>-2,1%</b><span>i salari reali italiani dal 1990 al 2025. In Germania e Francia sono saliti del 35%. Siamo gli unici tra i grandi Paesi OCSE.</span><a href="https://data-explorer.oecd.org/vis?df[ds]=dsDisseminateFinalDMZ&amp;df[id]=DSD_EARNINGS%40AV_AN_WAGE&amp;df[ag]=OECD.ELS.SAE" target="_blank" rel="noopener">OCSE</a></div>
+      <div class="ars-cifra"><b>2/3</b><span>del debito italiano è in mano a italiani. E l'Italia possiede all'estero 335 miliardi più di quanto gli stranieri possiedano qui.</span><a href="https://www.bancaditalia.it/pubblicazioni/bilancia-pagamenti/2026-bilancia-pagamenti/statistiche_BDP_20261020.pdf" target="_blank" rel="noopener">Banca d'Italia</a></div>
+    </div>
+    <p>Negli anni Novanta, con la lira, il reddito per abitante italiano cresceva come quello tedesco. Con l'euro, un italiano medio si è arricchito di circa un decimo in ventisei anni; un tedesco o un francese di un quarto.<a class="fonte" href="https://economy-finance.ec.europa.eu/economic-research-and-databases/economic-databases/ameco-database_en" target="_blank" rel="noopener">AMECO, Commissione europea</a></p>
+
+    <div class="ars-box">
+      <span class="ars-kicker">Onestà prima di tutto</span>
+      <p>Negli anni Ottanta lo Stato aveva davvero deficit anche al netto degli interessi, e in parte il debito nasce lì. I salari italiani erano già fermi prima dell'euro e dopo la svalutazione del 1992 sono anche scesi. E l'obiezione più seria all'uscita è questa: il debito oggi è in euro, e convertirlo in lire potrebbe essere considerato un default dalle agenzie di rating. Non è un motivo per non uscire: è un motivo per prepararsi bene. Chi ti dice che è facile, ti mente.</p>
+    </div>
   </div>
 </section>
 
+<!-- 04 UNIONE EUROPEA -->
+<section class="ars-sez is-dark" id="ue">
+  <div class="container">
+    <span class="ars-num">06</span>
+    <h2>«Ce lo chiede l'Europa.» Ecco come fa a chiedercelo.</h2>
+    <p>L'Unione europea non comanda con i carri armati. Comanda con sentenze, trattati e regole di bilancio, decise in cinque palazzi diversi. Ogni decisione è una sbarra. Messe in fila, fanno una gabbia.</p>
+
+    <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+      <symbol id="pal-corte" viewBox="0 0 48 48"><path d="M24 4 4 14h40z" fill="currentColor"/><rect x="6" y="16" width="36" height="3" fill="currentColor"/><rect x="9" y="21" width="4" height="17" fill="currentColor"/><rect x="17" y="21" width="4" height="17" fill="currentColor"/><rect x="27" y="21" width="4" height="17" fill="currentColor"/><rect x="35" y="21" width="4" height="17" fill="currentColor"/><rect x="4" y="40" width="40" height="4" fill="currentColor"/></symbol>
+      <symbol id="pal-commissione" viewBox="0 0 48 48"><path d="M4 44V14l20-8 20 8v30z" fill="currentColor"/><g fill="var(--pal-finestre)"><rect x="10" y="18" width="5" height="4"/><rect x="21.5" y="18" width="5" height="4"/><rect x="33" y="18" width="5" height="4"/><rect x="10" y="26" width="5" height="4"/><rect x="21.5" y="26" width="5" height="4"/><rect x="33" y="26" width="5" height="4"/><rect x="10" y="34" width="5" height="4"/><rect x="33" y="34" width="5" height="4"/><rect x="20" y="34" width="8" height="10"/></g></symbol>
+      <symbol id="pal-bce" viewBox="0 0 48 48"><path d="M14 44V8l10-6 10 6v36z" fill="currentColor"/><g fill="var(--pal-finestre)"><rect x="18" y="11" width="12" height="2"/><rect x="18" y="17" width="12" height="2"/><rect x="18" y="23" width="12" height="2"/><rect x="18" y="29" width="12" height="2"/><rect x="18" y="35" width="12" height="2"/></g><rect x="6" y="40" width="36" height="4" fill="currentColor"/><text x="24" y="7.5" text-anchor="middle" font-size="5" font-family="sans-serif" font-weight="700" fill="var(--pal-finestre)">€</text></symbol>
+      <symbol id="pal-governi" viewBox="0 0 48 48"><rect x="6" y="20" width="36" height="24" fill="currentColor"/><rect x="10" y="4" width="2" height="16" fill="currentColor"/><path d="M12 4h10v6H12z" fill="currentColor"/><rect x="36" y="4" width="2" height="16" fill="currentColor"/><path d="M38 4h-10v6h10z" fill="currentColor"/><g fill="var(--pal-finestre)"><rect x="11" y="25" width="6" height="6"/><rect x="21" y="25" width="6" height="6"/><rect x="31" y="25" width="6" height="6"/><rect x="20" y="35" width="8" height="9"/></g></symbol>
+      <symbol id="pal-roma" viewBox="0 0 48 48"><path d="M14 18a10 10 0 0 1 20 0z" fill="currentColor"/><rect x="23" y="2" width="2" height="6" fill="currentColor"/><rect x="6" y="18" width="36" height="3" fill="currentColor"/><path d="M6 21h36v19H6z" fill="none" stroke="currentColor" stroke-width="3"/><g fill="currentColor"><rect x="12" y="25" width="4" height="15"/><rect x="22" y="25" width="4" height="15"/><rect x="32" y="25" width="4" height="15"/></g><rect x="3" y="40" width="42" height="4" fill="currentColor"/></symbol>
+    </svg>
+
+    <ul class="gabbia-legenda" aria-label="I palazzi">
+      <li><svg class="pal is-ue"><use href="#pal-corte"/></svg><span><b>Corte di giustizia UE</b>Lussemburgo</span></li>
+      <li><svg class="pal is-ue"><use href="#pal-commissione"/></svg><span><b>Commissione europea</b>Bruxelles</span></li>
+      <li><svg class="pal is-ue"><use href="#pal-bce"/></svg><span><b>Banca centrale europea</b>Francoforte</span></li>
+      <li><svg class="pal is-ue"><use href="#pal-governi"/></svg><span><b>Governi UE e trattati</b>Consiglio e vertici</span></li>
+      <li><svg class="pal is-it"><use href="#pal-roma"/></svg><span><b>Parlamento e Corte costituzionale</b>Roma, che recepisce</span></li>
+    </ul>
+
+    <ol class="gabbia">
+      <li class="sbarra"><svg class="pal is-it"><use href="#pal-roma"/></svg><div><span class="anno">1957</span><b>Parlamento italiano</b><p>Entriamo nella Comunità europea con una legge ordinaria: nessuna modifica della Costituzione, nessun voto popolare.<a class="fonte" href="https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:1957-10-14;1203" target="_blank" rel="noopener">fonte</a></p></div></li>
+      <li class="sbarra"><svg class="pal is-ue"><use href="#pal-corte"/></svg><div><span class="anno">1963</span><b>Corte di giustizia UE</b><p>Le regole europee valgono direttamente in Italia, senza passare dal Parlamento. Nei trattati non c'era scritto: lo decide la Corte.<a class="fonte" href="https://giurcost.org/casi_scelti/CJCE/C-26-62.htm" target="_blank" rel="noopener">fonte</a></p></div></li>
+      <li class="sbarra"><svg class="pal is-ue"><use href="#pal-corte"/></svg><div><span class="anno">1964</span><b>Corte di giustizia UE</b><p>Il diritto europeo vince sulle leggi italiane, anche su quelle più recenti. Gli Stati hanno accettato «una limitazione definitiva dei loro diritti sovrani».<a class="fonte" href="https://giurcost.org/casi_scelti/CJCE/C-6-64.htm" target="_blank" rel="noopener">fonte</a></p></div></li>
+      <li class="sbarra"><svg class="pal is-ue"><use href="#pal-corte"/></svg><div><span class="anno">1978</span><b>Corte di giustizia UE</b><p>Qualunque giudice italiano deve mettere da parte da solo una legge del Parlamento contraria al diritto europeo.<a class="fonte" href="https://giurcost.org/casi_scelti/CJCE/C-106-77.htm" target="_blank" rel="noopener">fonte</a></p></div></li>
+      <li class="sbarra"><svg class="pal is-it"><use href="#pal-roma"/></svg><div><span class="anno">1984</span><b>Corte costituzionale</b><p>Roma si arrende: il regolamento europeo «va, dunque, sempre applicato». Resta solo un nucleo di principi che l'Europa non può toccare.<a class="fonte" href="https://giurcost.org/decisioni/1984/0170s-84.html" target="_blank" rel="noopener">fonte</a></p></div></li>
+      <li class="sbarra"><svg class="pal is-ue"><use href="#pal-governi"/></svg><div><span class="anno">1992</span><b>Governi UE, Trattato di Maastricht</b><p>Due numeri uguali per tutti: deficit sotto il 3% del PIL, debito sotto il 60%. Il 3%, ha raccontato chi lo calcolò, fu inventato in Francia nel 1981 in meno di un'ora.<a class="fonte" href="https://www.ecb.europa.eu/ecb/access_to_documents/document/legal_act/shared/data/ecb.dr.leg2012_C326_279.it.pdf" target="_blank" rel="noopener">fonte</a><a class="fonte" href="https://www.politis.fr/articles/2012/10/3-au-doigt-mouille-19617" target="_blank" rel="noopener">fonte</a></p></div></li>
+      <li class="sbarra"><svg class="pal is-ue"><use href="#pal-bce"/></svg><div><span class="anno">1999</span><b>Banca centrale europea</b><p>Arriva l'euro. La BCE non può prendere ordini da nessun governo e non può finanziare gli Stati (articoli 123 e 130 del Trattato). Lo Stato deve chiedere i soldi ai mercati.<a class="fonte" href="https://www.unife.it/economia/lm.economia/insegnamenti/diritto-delle-relazioni-di-lavoro/materiale-didattico-a-a-2017-2018/TFUE.pdf" target="_blank" rel="noopener">fonte</a></p></div></li>
+      <li class="sbarra"><svg class="pal is-it"><use href="#pal-roma"/></svg><div><span class="anno">2001</span><b>Parlamento italiano</b><p>Riforma dell'articolo 117: ogni legge, dello Stato o delle Regioni, deve rispettare «i vincoli derivanti dall'ordinamento comunitario».<a class="fonte" href="https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:costituzione~art117" target="_blank" rel="noopener">fonte</a></p></div></li>
+      <li class="sbarra"><svg class="pal is-ue"><use href="#pal-bce"/></svg><div><span class="anno">5 agosto 2011</span><b>Banca centrale europea</b><p>Lettera riservata di Trichet e Draghi al governo: privatizzazioni su larga scala, contratti aziendali, licenziamenti, pensioni, e una riforma costituzionale sul bilancio.<a class="fonte" href="https://www.ilpost.it/2011/09/29/la-lettera-della-bce-al-governo/" target="_blank" rel="noopener">fonte</a></p></div></li>
+      <li class="sbarra"><svg class="pal is-it"><use href="#pal-roma"/></svg><div><span class="anno">20 aprile 2012</span><b>Parlamento italiano</b><p>Otto mesi dopo la lettera, il pareggio di bilancio entra nella Costituzione (articoli 81 e 97).<a class="fonte" href="https://www.normattiva.it/eli/id/2012/04/23/012G0064/ORIGINAL" target="_blank" rel="noopener">fonte</a></p></div></li>
+      <li class="sbarra"><svg class="pal is-ue"><use href="#pal-governi"/></svg><div><span class="anno">2012</span><b>Governi UE, Fiscal Compact</b><p>Un trattato tra governi, fuori dai trattati UE, chiede di scrivere il pareggio di bilancio in Costituzione. L'Italia lo aveva già fatto.<a class="fonte" href="https://www.normattiva.it/eli/id/2012/07/28/012G0141/ORIGINAL" target="_blank" rel="noopener">fonte</a></p></div></li>
+      <li class="sbarra"><svg class="pal is-ue"><use href="#pal-commissione"/></svg><div><span class="anno">2013</span><b>Commissione europea</b><p>La legge di bilancio italiana va mandata a Bruxelles entro il 15 ottobre, prima che il Parlamento la voti.<a class="fonte" href="https://eur-lex.europa.eu/eli/reg/2013/473/oj" target="_blank" rel="noopener">fonte</a></p></div></li>
+      <li class="sbarra"><svg class="pal is-ue"><use href="#pal-bce"/></svg><div><span class="anno">28 giugno 2015</span><b>Banca centrale europea</b><p>La Grecia indice un referendum. La BCE non alza la liquidità d'emergenza: le banche greche chiudono. Il popolo vota No, il governo firma il contrario una settimana dopo.<a class="fonte" href="https://www.ecb.europa.eu/press/pr/date/2015/html/pr150628.en.html" target="_blank" rel="noopener">fonte</a><a class="fonte" href="https://www.esm.europa.eu/sites/default/files/2015-07-12_euro_summit_statement_on_greece.pdf" target="_blank" rel="noopener">fonte</a></p></div></li>
+      <li class="sbarra"><svg class="pal is-ue"><use href="#pal-commissione"/></svg><div><span class="anno">2019</span><b>Commissione e Consiglio UE</b><p>Le «raccomandazioni» all'Italia: riformare il catasto, ridurre il peso delle pensioni, nuove leggi sulla concorrenza, critica a «quota 100». Dal 2021 diventano condizioni per le rate del PNRR.<a class="fonte" href="https://www.sipotra.it/wp-content/uploads/2019/06/RACCOMANDAZIONE-DEL-CONSIGLIO-sul-programma-nazionale-di-riforma-2019-dellItalia-e-che-formula-un-parere-del-Consiglio-sul-programma-di-stabilità-2019-dellIta.pdf" target="_blank" rel="noopener">fonte</a></p></div></li>
+      <li class="sbarra"><svg class="pal is-ue"><use href="#pal-governi"/></svg><div><span class="anno">2024</span><b>Consiglio UE</b><p>Procedura per deficit eccessivo contro l'Italia: ogni legge di bilancio è sotto sorveglianza stretta. Dal 2012 abbiamo pagato circa 1,2 miliardi di multe europee.<a class="fonte" href="https://eur-lex.europa.eu/eli/dec/2024/2124/oj" target="_blank" rel="noopener">fonte</a><a class="fonte" href="https://www.eunews.it/2026/01/09/dal-2012-a-oggi-litalia-ha-pagato-12-miliardi-di-euro-di-multe-allue/" target="_blank" rel="noopener">fonte</a></p></div></li>
+    </ol>
+
+    <h3>Chi puoi votare, in tutto questo?</h3>
+    <p>Solo il Parlamento europeo. Ma il Parlamento europeo non può proporre una legge: lo può fare solo la Commissione (articolo 17 del Trattato sull'UE), che nessuno ha votato. Se il Parlamento chiede una proposta, la Commissione può rifiutare e deve solo spiegare perché (articolo 225).<a class="fonte" href="https://www.unife.it/economia/lm.economia/insegnamenti/diritto-delle-relazioni-di-lavoro/materiale-didattico-a-a-2017-2018/TFUE.pdf" target="_blank" rel="noopener">fonte</a> Per cambiare i trattati serve l'unanimità di 27 Paesi. E quando Francia e Paesi Bassi li hanno bocciati nel 2005, il contenuto è tornato quasi identico nel Trattato di Lisbona.<a class="fonte" href="https://www.robert-schuman.eu/en/observatoire/854" target="_blank" rel="noopener">fonte</a></p>
+
+    <h3>La porta della gabbia c'è</h3>
+    <p>L'articolo 50 del Trattato sull'Unione europea dice che «ogni Stato membro può decidere, conformemente alle proprie norme costituzionali, di recedere dall'Unione».<a class="fonte" href="https://eur-lex.europa.eu/IT/legal-content/summary/article-50-negotiations-with-the-united-kingdom.html" target="_blank" rel="noopener">fonte</a> Il Regno Unito l'ha fatto. In Italia non si può fare un referendum abrogativo sui trattati (articolo 75 della Costituzione), ma nel 1989 il Parlamento ha approvato una legge costituzionale apposta per chiedere agli italiani un parere sull'Europa. Votò l'80,68%.<a class="fonte" href="https://www.normattiva.it/eli/id/1989/04/06/089G0146/ORIGINAL" target="_blank" rel="noopener">fonte</a><a class="fonte" href="https://dait.interno.gov.it/documenti/referendum_risultati_complessivi_1946_2016_0.pdf" target="_blank" rel="noopener">fonte</a> Allora servì a dare più poteri all'Europa. Lo stesso strumento può servire a chiedere se vogliamo restare.</p>
+
+    <div class="ars-box">
+      <span class="ars-kicker">Onestà prima di tutto</span>
+      <p>Non dire mai che «l'80% delle nostre leggi viene da Bruxelles»: è un numero senza prova. Usa il dato vero della Camera: nella scorsa legislatura tre decreti legislativi su quattro recepivano direttive europee, 127 su 164.<a class="fonte" href="https://www.camera.it/temiap/2023/07/13/OCD177-6539.pdf" target="_blank" rel="noopener">fonte</a> E ammetti quello che è vero: uscire ha dei costi, e con il PNRR l'Italia per qualche anno riceve più di quanto versa. Ma 122,6 miliardi su 194,4 del PNRR sono prestiti, e ogni rata è legata a riforme decise con Bruxelles.<a class="fonte" href="https://temi.camera.it/leg19/pnrr/pnrrItalia/OCD57-2/il-pnrr-italiano-quadro-sintesi.html" target="_blank" rel="noopener">fonte</a> Tra il 2016 e il 2022, prima del PNRR, l'Italia ha versato all'UE 31,7 miliardi più di quanto ha ricevuto.<a class="fonte" href="https://www.corteconti.it/Download?id=1694c03c-1425-434a-8867-f256830fbbe7" target="_blank" rel="noopener">fonte</a></p>
+    </div>
+  </div>
+</section>
+
+<!-- 05 BRITANNIA -->
+<section class="ars-sez" id="britannia">
+  <div class="container">
+    <span class="ars-num">07</span>
+    <h2>Leggi il discorso di Mario Draghi sul Britannia</h2>
+    <p class="ars-sottotitolo">2 giugno 1992. Dieci giorni dopo la strage di Capaci, con l'Italia senza un governo nel pieno dei poteri, il direttore generale del Tesoro sale sul panfilo della regina d'Inghilterra e apre, davanti ai banchieri della City di Londra, il seminario sulla vendita delle aziende dello Stato italiano. Nel discorso ammette lui stesso che privatizzare toglierà allo Stato gli strumenti contro la disoccupazione e per il Sud, e che ogni governo futuro dovrà seguire Maastricht, chiunque vinca le elezioni. Apri e leggilo tutto, con le note che spiegano cosa voleva dire per noi.</p>
+    <p>Sul panfilo della regina d'Inghilterra, il Britannia, salgono circa cento invitati: i vertici di ENI, IRI, delle banche pubbliche, dell'INA, della Consob e dell'Antitrust, insieme alle banche d'affari della City di Londra, Warburg, Barings e Barclays de Zoete Wedd. L'incontro lo organizzano i British Invisibles, la lobby della finanza londinese.<a class="fonte" href="https://web.archive.org/web/20090625073310/http://archiviostorico.corriere.it/1992/giugno/02/convegno_sul_Britannia_sponsor_Regina_co_0_92060218751.shtml" target="_blank" rel="noopener">Corriere 1992</a><a class="fonte" href="https://archivio.unita.news/assets/main/1992/06/03/page_011.pdf" target="_blank" rel="noopener">l'Unità 1992</a> Il tema: vendere le aziende dello Stato italiano. Il discorso di apertura lo tiene il direttore generale del Tesoro, <b>Mario Draghi</b>.</p>
+
+    <p><b>Come si legge.</b> Qui sotto c'è il discorso integrale. Le parti evidenziate in giallo si aprono: cliccale e leggi cosa volevano dire per l'Italia. L'originale inglese del 1992 non è mai stato pubblicato. Questa è la nostra traduzione del testo inglese che circola; per un riscontro c'è la traduzione italiana pubblicata dal Fatto Quotidiano nel 2020, <a href="https://www.ilfattoquotidiano.it/in-edicola/articoli/2020/01/22/britannia-la-vera-storia/5681308/" target="_blank" rel="noopener">qui</a>.</p>
+
+    <div class="discorso">
+      <p>Signore e signori, cari amici, desidero innanzitutto congratularmi con l'Ambasciata britannica e con <mark data-nota="n1">i British Invisibles per la loro splendida ospitalità</mark><sup>1</sup>. Tenere questo incontro su questa nave è già di per sé un esempio di privatizzazione di un fantastico bene pubblico. Negli ultimi quindici mesi si è parlato molto di privatizzazione dell'economia italiana. Qualche progresso è stato fatto nel promuovere la vendita di alcune banche pubbliche ad altre istituzioni semipubbliche, e gran parte del merito va a Guido Carli, ministro del Tesoro. Ma quanto alla vendita vera e propria delle grandi aziende pubbliche al settore privato, si è fatto poco.</p>
+      <p>Non deve sorprendere, perché una privatizzazione su larga scala è <mark data-nota="n2">una decisione politica importante, direi straordinaria</mark><sup>2</sup>: scuote le fondamenta dell'ordine socio-economico, ridisegna i confini tra pubblico e privato che non sono stati messi in discussione per quasi cinquant'anni, avvia un ampio processo di deregolamentazione e indebolisce un sistema economico in cui i sussidi alle famiglie e alle imprese hanno ancora un ruolo importante. In altre parole, la decisione di privatizzare è una decisione politica importante, che va oltre le decisioni sui singoli enti da privatizzare. Può quindi essere presa solo da un esecutivo che abbia ricevuto un mandato preciso e stabile.</p>
+      <p>Altri relatori parleranno dello stato dell'arte: a che punto siamo dal punto di vista normativo e quali potrebbero essere i prossimi passi. Una breve panoramica di come il Tesoro vede i principali effetti della privatizzazione può aiutare a comunicare la nostra strategia per i prossimi mesi. Primo: privatizzazione e bilancio. La privatizzazione è nata come un modo per ridurre il deficit. Poi abbiamo capito, e lo abbiamo scritto nella nostra ultima relazione quadrimestrale, che la privatizzazione non può essere considerata un sostituto del risanamento dei conti, così come la vendita di beni da parte di un'impresa privata non può essere considerata un modo per ridurre le perdite annuali. <mark data-nota="n3">I proventi delle privatizzazioni devono andare a ridurre il debito, non il deficit.</mark><sup>3</sup></p>
+      <p>Quando un governo vende un bene redditizio, perde tutti i dividendi futuri, ma può ridurre il debito complessivo e il suo servizio. La privatizzazione cambia quindi il profilo temporale di attività e passività, ma non può essere presentata come una riduzione del deficit, solo come il suo finanziamento. (Questo fatto, secondo il Tesoro, ha alcune implicazioni che vedremo più avanti.) Le conseguenze politiche di questa impostazione sono due. Dal punto di vista della finanza pubblica, il risanamento da mettere in bilancio per il 1993 e gli anni seguenti non dovrebbe includere direttamente alcuna entrata da privatizzazioni. Allo stesso tempo, dovremmo avviare un piano di riduzione del debito che usi i proventi delle privatizzazioni. Questo comporterà da parte del Tesoro una maggiore attenzione alle implicazioni economiche complessive della privatizzazione e all'obiettivo finale di ricostruire gli incentivi per il settore privato.</p>
+      <p>Secondo: privatizzazione e mercati finanziari. La privatizzazione comporta <mark data-nota="n4">un cambiamento nella composizione della ricchezza finanziaria privata, dal debito pubblico alle azioni</mark><sup>4</sup>. La riduzione del debito pubblico può comportare un calo dei tassi d'interesse. Ma l'impatto sui mercati finanziari può essere molto più importante se si considera che la ricchezza privata detenuta in azioni è piccola rispetto alla ricchezza privata totale e che, con le privatizzazioni, può crescere in modo significativo. In altre parole, i mercati finanziari italiani sono piccoli perché sono istituzionalmente piccoli, ma anche perché, forse in modo collegato, gli investitori italiani vogliono che siano piccoli. Le privatizzazioni porteranno su questi mercati molte nuove azioni. L'implicazione politica è che dovremmo vedere le privatizzazioni come un'occasione per approvare leggi e produrre cambiamenti istituzionali che accrescano l'efficienza e le dimensioni dei nostri mercati finanziari.</p>
+      <p>Terzo: privatizzazione e crescita. (In molti casi) vediamo le privatizzazioni come uno strumento per aumentare la crescita. Nella maggior parte dei casi la privatizzazione porterà a un aumento della produttività, grazie a una gestione migliore o più indipendente, e a una struttura di mercato più concorrenziale. La privatizzazione potrebbe quindi compensare in parte i possibili, ma non certi, effetti di breve periodo della stretta fiscale necessaria per un bilancio più equilibrato. In alcuni casi, per godere dei vantaggi della maggiore concorrenza prodotta dalla privatizzazione, può essere necessaria un'ampia deregolamentazione. Questo processo, se da un lato riduce le inefficienze e le rendite delle imprese pubbliche, dall'altro <mark data-nota="n5">indebolisce la capacità del governo di perseguire alcuni obiettivi non di mercato, come la riduzione della disoccupazione e la promozione dello sviluppo regionale</mark><sup>5</sup>. Tuttavia consideriamo questo processo, la privatizzazione accompagnata dalla deregolamentazione, <mark data-nota="n6">inevitabile, perché è innescato dalla crescente integrazione europea. L'Italia può promuoverlo da sé, oppure esservi costretta dalla legislazione europea. Noi preferiamo la prima strada.</mark><sup>6</sup></p>
+      <p>Le implicazioni politiche sono che: a) si darà grande importanza all'analisi della struttura industriale che emergerà dopo le privatizzazioni, e soprattutto a capire se garantiscono prezzi più bassi e una migliore qualità dei servizi; b) nei casi rilevanti, la deregolamentazione dovrà accompagnare la decisione di privatizzare, con particolare attenzione ai requisiti delle norme comunitarie; c) si dovranno trovare mezzi alternativi per perseguire gli obiettivi non di mercato, quando siano considerati essenziali. Quarto: privatizzazione e depoliticizzazione. Un ultimo aspetto attraente della privatizzazione è che viene percepita come uno strumento per limitare le interferenze della politica nella gestione quotidiana delle aziende pubbliche. Questo è certamente vero, e liberarsi di questo fenomeno è un obiettivo lodevole. Tuttavia dobbiamo essere certi che dopo la privatizzazione non ci troveremo davanti allo stesso problema, <mark data-nota="n7">con il proprietario privato che interferisce nella gestione ordinaria dell'azienda</mark><sup>7</sup>. Qui l'implicazione politica immediata è la necessità di accompagnare la privatizzazione con una legislazione capace di tutelare gli azionisti di minoranza e di tracciare linee di separazione chiare tra azionisti di controllo e management, tra decisioni aziendali ordinarie e straordinarie.</p>
+      <p>A cosa dovremmo guardare per valutare la forza del mandato politico di un governo che voglia davvero privatizzare? Primo, serve una chiara decisione politica su cosa debba considerarsi settore strategico. Per quanto sfuggente possa essere questo concetto, è comunque la condizione per andare avanti senza incertezze. Secondo, poiché <mark data-nota="n8">in Italia non c'è nessuna Thatcher all'orizzonte</mark><sup>8</sup>, dobbiamo prevedere un insieme di norme sui possibili effetti delle privatizzazioni sulla disoccupazione (se dovesse aumentare per effetto della ricerca di efficienza), sulla possibile concentrazione del mercato e sulla discriminazione dei prezzi (quest'ultima in particolare per la privatizzazione dei servizi di pubblica utilità). Terzo, vanno superati i problemi normativi. Un esempio importante: le banche, che secondo la legge antitrust (legge 287/91) non possono essere acquistate da imprese industriali, ma solo da altre banche, da istituzioni finanziarie non bancarie (SIM, fondi pensione, fondi comuni, società finanziarie), da compagnie di assicurazione e da persone fisiche che non siano imprenditori professionali. In pratica, poiché in Italia non esistono quasi grandi banche private, gli unici possibili acquirenti nazionali sono le compagnie di assicurazione o le persone fisiche. Un limite molto stringente.</p>
+      <p>In ordine logico, non necessariamente cronologico, tutti questi passi dovrebbero avvenire prima del collocamento. In quel momento affronteremo la sfida più importante: considerato che gran parte delle azioni sarà offerta, almeno all'inizio, agli investitori nazionali, come facciamo spazio a questi titoli nei loro portafogli? Qui diventa pienamente importante che le privatizzazioni completino un piano credibile di riduzione del deficit, soprattutto per ridurre la creazione di nuovo debito pubblico. Solo se riusciremo a ridurre «in modo continuo e sostanziale» il nostro rapporto debito/PIL, come richiede il Trattato di Maastricht, troveremo spazio nei portafogli degli investitori. Allo stesso tempo, l'assorbimento di queste nuove azioni può essere accelerato rendendo più efficiente la nostra Borsa e ampliando la gamma degli intermediari finanziari. Qui si pensa subito alla creazione dei fondi pensione ma, di nuovo, i fondi pensione sono alimentati da risparmio privato che deve in ultima analisi essere accompagnato dal sistema previdenziale nazionale verso i fondi pensione. Ma un ammanco di contributi al sistema nazionale comporterebbe di per sé un deficit più alto. Questo ci porta a una conclusione politica sui fondi pensione: <mark data-nota="n9">potranno essere creati su base davvero ampia solo se il sistema previdenziale nazionale sarà riformato</mark><sup>9</sup> nella direzione di un sistema meglio finanziato o più equilibrato di quello attuale.</p>
+      <p>Questa presentazione non voleva rispondere alla domanda su quanto possa essere rapido il processo di privatizzazione: non è il momento giusto per affrontarla. Lo scopo era darvi un elenco di cose da considerare per valutare la solidità del processo. La conclusione generale è che la privatizzazione è una delle poche riforme nella vita di un Paese che ha assolutamente bisogno del giusto contesto macroeconomico per riuscire. Lasciatemi sottolineare ancora una volta che non dobbiamo fare prima le riforme principali e poi le privatizzazioni. Dovremmo farle insieme. Certo, non possiamo avere privatizzazioni senza una politica di bilancio credibile, che, ne siamo certi, farà parte di ogni futuro programma di governo, perché <mark data-nota="n10">l'adesione al Trattato di Maastricht farà parte di ogni programma di governo</mark><sup>10</sup>.</p>
+      <p>Lasciatemi concludere spiegando, secondo il Tesoro, la principale ragione tecnica (ce ne possono essere altre, legate alla visione personale di chi parla, che vi risparmio) per cui questo processo decollerà. La ragione è questa: <mark data-nota="n11">i mercati vedono le privatizzazioni in Italia come la cartina di tornasole della dipendenza del nostro governo dai mercati stessi</mark><sup>11</sup>, dal loro buon funzionamento come via maestra per ritrovare la crescita. Poiché le privatizzazioni sono così cruciali nello sforzo di riforma del Paese, i mercati le vedono come la prova di credibilità del nostro sforzo di risanamento. E i mercati sono pronti a premiare l'Italia, come hanno fatto in altre occasioni, per un'azione in questa direzione. I benefici indiretti delle privatizzazioni, in termini di maggiore credibilità delle nostre politiche, sono a nostro avviso così significativi da avere un ruolo fondamentale nel ridurre considerevolmente il costo dell'aggiustamento dei conti che ci aspetta nei prossimi cinque anni.</p>
+    </div>
+
+    <div class="nota-draghi" id="n1"><b>1 · Chi organizzava</b>Non il governo italiano, ma la lobby della City: un'associazione nata da un comitato della Banca d'Inghilterra, la «Confindustria» della finanza britannica.<a class="fonte" href="https://www.corriere.it/romano/09-06-16/01.spm" target="_blank" rel="noopener">Corriere 2009</a> Si parlava di vendere aziende italiane davanti a chi le avrebbe aiutate a vendere, incassando commissioni. Il Tesoro, tra il 1994 e il 2004, ha pagato 1,65 miliardi di euro di commissioni e consulenze.<a class="fonte" href="https://documenti.camera.it/_dati/leg14/lavori/documentiparlamentari/indiceetesti/099/006/INTERO.pdf" target="_blank" rel="noopener">Tesoro, relazione al Parlamento</a></div>
+    <div class="nota-draghi" id="n2"><b>2 · Chi diede il mandato?</b>Draghi stesso dice che serve un governo forte con un mandato chiaro. Quel giorno l'Italia non aveva un governo nel pieno dei poteri. Trentanove giorni dopo, l'11 luglio 1992, un decreto-legge trasforma IRI, ENI, ENEL e INA in società per azioni: il primo passo per venderle.<a class="fonte" href="https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto.legge:1992-07-11;333" target="_blank" rel="noopener">DL 333/1992</a> Le vendite le hanno fatte governi tecnici o deboli (Amato, Ciampi, Dini). Nessun italiano ha mai votato su quel programma.</div>
+    <div class="nota-draghi" id="n3"><b>3 · Vendere la casa per pagare il mutuo</b>Dal 1992 lo Stato ha incassato circa 119 miliardi di euro con 93 operazioni: l'Italia è seconda al mondo dopo il Giappone.<a class="fonte" href="https://www1.adnkronos.com/Archivio/AdnAgenzia/2010/02/26/Economia/Privatizzazioni-Corte-Conti-119-mld-nelle-casse-dello-Stato-dal-92_171018.php" target="_blank" rel="noopener">Corte dei conti 2010</a> Aziende come ENI ed ENEL davano utili ogni anno. Lo ammette Draghi: vendendole si perdono quei soldi per sempre. Il debito, intanto, è salito ancora fino al 1994.</div>
+    <div class="nota-draghi" id="n4"><b>4 · I risparmiatori in Borsa</b>Milioni di famiglie comprano azioni delle ex aziende di Stato. Nel novembre 1999 il Tesoro vende il 31,7% dell'ENEL in Borsa per 16,55 miliardi di euro.<a class="fonte" href="https://www.borsaitaliana.it/borsaitaliana/ufficio-stampa/dati-storici/privatizzazioniluglio2010.pdf" target="_blank" rel="noopener">Borsa Italiana</a> Il rischio passa dallo Stato alle famiglie.</div>
+    <div class="nota-draghi" id="n5"><b>5 · L'ammissione più importante</b>A dirlo è lui. L'IRI, l'ENI, le banche pubbliche erano anche lo strumento con cui lo Stato creava lavoro e industria al Sud. Venderle voleva dire rinunciare a quello strumento. Draghi promette che si troveranno «mezzi alternativi». Chiediti quali sono stati.</div>
+    <div class="nota-draghi" id="n6"><b>6 · Il vincolo esterno, in diretta</b>Una scelta politica viene presentata come inevitabile perché «lo chiede l'Europa». È esattamente il meccanismo che raccontiamo nel <a href="#vincolo">capitolo 09</a>. Questa è la nostra lettura: Draghi dice che, se non lo facciamo noi, ce lo imporranno.</div>
+    <div class="nota-draghi" id="n7"><b>7 · Telecom, il caso più grande</b>Telecom è venduta nel 1997. Nel 1999 viene scalata da una cordata che si indebita per comprarla e poi carica quel debito sulla società. Il governo non usa i poteri speciali che aveva.<a class="fonte" href="https://www.corriere.it/dataroom-milena-gabanelli/telecom-come-si-uccide-un-azienda-strategica-soldi/574c7106-7c70-11ec-8a2d-4c61d1a6b1fa-va.shtml" target="_blank" rel="noopener">Corriere, Gabanelli 2022</a> Il rischio che Draghi indicava nel 1992 si è avverato.</div>
+    <div class="nota-draghi" id="n8"><b>8 · Bollette più care</b>Draghi chiede di controllare che dopo le vendite i prezzi scendano. Nel 2010 la Corte dei conti scrive che i profitti delle aziende privatizzate di luce, gas e servizi sono cresciuti soprattutto grazie a tariffe più alte, più care che nel resto d'Europa.<a class="fonte" href="https://archivio.blitzquotidiano.it/politica-italiana/corte-dei-conti-le-ex-aziende-pubbliche-guadagnano-grazie-a-tariffe-piu-care-261968" target="_blank" rel="noopener">Corte dei conti 2010</a> Lo hai pagato tu, ogni mese.</div>
+    <div class="nota-draghi" id="n9"><b>9 · Un pacchetto unico</b>Già nel 1992 il Tesoro lega la vendita delle aziende pubbliche alla riforma delle pensioni e ai vincoli di Maastricht. Le riforme arrivano: Amato nel 1992, Dini nel 1995. Non sono scelte separate prese per caso.</div>
+    <div class="nota-draghi" id="n10"><b>10 · Il voto non conta più</b>Il più alto tecnico del Tesoro dà per scontato che qualunque governo, di qualunque colore, seguirà la stessa linea, perché vincolato da un trattato firmato quattro mesi prima. Tradotto: la politica economica è già decisa, chiunque tu voti.</div>
+    <div class="nota-draghi" id="n11"><b>11 · Il nuovo padrone</b>Il giudizio dei mercati diventa il metro della politica economica italiana. Nel 1997 l'Italia è prima al mondo per incassi annui da privatizzazioni.<a class="fonte" href="https://web.archive.org/web/2009/http://archiviostorico.corriere.it/1997/ottobre/26/SCOMMESSA_DEL_BRITANNIA_co_0_9710261233.shtml" target="_blank" rel="noopener">Corriere 1997</a> Dal 2002 al 2005 Draghi è vicepresidente di Goldman Sachs International.<a class="fonte" href="https://www.bancaditalia.it/chi-siamo/storia/governatori-direttori-generali/governatori/mario-draghi/index.html" target="_blank" rel="noopener">Banca d'Italia</a> Nel 2004 Goldman Sachs è tra le banche che collocano le azioni ENEL per il Tesoro.<a class="fonte" href="https://documenti.camera.it/_dati/leg14/lavori/documentiparlamentari/indiceetesti/099/006/INTERO.pdf" target="_blank" rel="noopener">Tesoro 2005</a> Non risulta un suo ruolo personale in quell'operazione. Ma le porte tra Tesoro e banche d'affari girano.</div>
+
+    <div class="ars-box">
+      <span class="ars-kicker">Onestà prima di tutto</span>
+      <p>Draghi ha dichiarato in Parlamento di essere sceso prima che la nave salpasse, proprio per evitare sospetti; lo confermano le cronache del Corriere.<a class="fonte" href="https://www.ilfattoquotidiano.it/2021/10/15/mario-draghi-la-biografia-non-autorizzata-su-fq-millennium-in-edicola-da-sabato-16-ottobre-2-il-britannia-e-le-privatizzazioni-contestate/6354972/" target="_blank" rel="noopener">fonte</a> Non c'è nessuna prova che sul Britannia sia stato deciso l'attacco alla lira di settembre, e Ciampi, Prodi o Soros a bordo non risultano da nessuna fonte dell'epoca. Chi te lo racconta ti fa perdere il dibattito. Non serve il complotto: basta leggere quello che Draghi ha detto, e guardare cosa è successo dopo.</p>
+    </div>
+  </div>
+</section>
+
+<!-- 03 NATO -->
+<section class="ars-sez is-dark" id="nato">
+  <div class="container">
+    <span class="ars-num">08</span>
+    <h2>La NATO non ti protegge. Ti espone.</h2>
+    <p>Ti hanno detto che la NATO è un ombrello: se qualcuno ci attacca, tutti gli alleati corrono a difenderci. Leggiamo cosa c'è scritto davvero.</p>
+
+    <h3>L'articolo 5 non obbliga nessuno</h3>
+    <p>L'articolo 5 del Trattato dice che un attacco a un alleato è un attacco a tutti. Ma subito dopo dice che ogni alleato prenderà «l'azione che giudica necessaria». Può mandare soldati, oppure una lettera di solidarietà. Lo scrive la NATO stessa: l'azione «può comportare o no l'uso della forza armata».<a class="fonte" href="https://www.nato.int/cps/en/natohq/topics_110496.htm" target="_blank" rel="noopener">fonte</a></p>
+    <p>In 77 anni l'articolo 5 è scattato <span class="ars-sottolinea">una volta sola: il 12 settembre 2001, per difendere gli Stati Uniti</span>.<a class="fonte" href="https://www.nato.int/cps/en/natohq/topics_110496.htm" target="_blank" rel="noopener">fonte</a> Per l'Italia ha voluto dire vent'anni in Afghanistan, 53 soldati morti, 723 feriti e oltre 7 miliardi di euro spesi. Nell'agosto 2021 i talebani sono tornati al potere.<a class="fonte" href="https://pagellapolitica.it/fact-checking/quanto-e-costata-la-guerra-in-afghanistan" target="_blank" rel="noopener">fonte</a></p>
+
+    <h3>Un'alleanza si giudica da quello che fa</h3>
+    <p>Dal 1990 la NATO non ha mai combattuto per difendere un Paese europeo attaccato. Ha combattuto altrove.</p>
+    <ul class="timeline">
+      <li><span class="anno">1999 · Jugoslavia</span>78 giorni di bombardamenti contro un Paese che non aveva attaccato nessun alleato, senza l'autorizzazione dell'ONU. In gran parte partiti dall'Italia, da Aviano.<a class="fonte" href="https://www.nato.int/cps/en/natohq/topics_49602.htm" target="_blank" rel="noopener">fonte</a></li>
+      <li><span class="anno">2011 · Libia</span>Un mandato ONU per proteggere i civili diventa, scrive la Commissione Esteri del Parlamento britannico, una «politica opportunistica di cambio di regime».<a class="fonte" href="https://publications.parliament.uk/pa/cm201617/cmselect/cmfaff/119/119.pdf" target="_blank" rel="noopener">fonte</a> Il comando era a Napoli. Pochi anni prima l'Italia aveva firmato con la Libia un trattato di amicizia (2008). La produzione dell'ENI in Libia crolla da 273.000 a 110.000 barili al giorno.<a class="fonte" href="https://www.eni.com/assets/documents/documents-en/letter-to-shareholders-eni-2011.pdf" target="_blank" rel="noopener">fonte</a> Dopo la caduta dello Stato libico, gli sbarchi in Italia salgono fino a 181.436 nel 2016.<a class="fonte" href="https://webarchive.archive.unhcr.org/20200724093306mp_/https://data2.unhcr.org/en/situations/mediterranean/location/5205" target="_blank" rel="noopener">fonte</a> Chi ci ha guadagnato? Non l'Italia.</li>
+    </ul>
+
+    <h3>Quando l'alleato ha agito contro di noi</h3>
+    <ul class="ars-lista">
+      <li><b>Sigonella, 1985.</b> In una base sul nostro territorio, soldati americani della Delta Force circondano carabinieri e avieri italiani per prendersi i dirottatori dell'Achille Lauro. Il governo Craxi dice no: il reato è avvenuto su una nave italiana, li giudica l'Italia. Gli americani si ritirano.<a class="fonte" href="https://www.agi.it/cronaca/news/2024-10-11/dirottamento-nave-achille-lauro-39-anni-fa-notte-sigonella-28221739/" target="_blank" rel="noopener">fonte</a></li>
+      <li><b>Cermis, 1998.</b> Un aereo dei Marines partito da Aviano vola troppo basso e trancia il cavo della funivia: 20 morti. Per le regole NATO il processo si fa negli Stati Uniti. Il pilota viene assolto per le morti e condannato a sei mesi solo per aver distrutto il video del volo.<a class="fonte" href="https://www.cbsnews.com/news/cable-car-marine-acquitted/" target="_blank" rel="noopener">fonte</a><a class="fonte" href="https://www.cbsnews.com/news/marine-pilot-gets-6-months/" target="_blank" rel="noopener">fonte</a></li>
+      <li><b>Ustica, 1980.</b> 81 morti. Per la Cassazione civile (sentenza 1871 del 2013) è «abbondantemente e congruamente motivata la tesi del missile», e lo Stato è condannato a risarcire perché non ha protetto i cieli. Chi abbia sparato, nessuna sentenza lo ha mai accertato.<a class="fonte" href="https://miolegale.it/sentenze/cassazione-civile-iii-1871-2013/" target="_blank" rel="noopener">fonte</a></li>
+      <li><b>Gladio.</b> Nel 1990 il governo Andreotti ammette che dal 1956 esisteva una struttura armata segreta, creata con la CIA e legata alla NATO, sconosciuta al Parlamento. Il Parlamento europeo chiede di sciogliere tutte le reti di questo tipo.<a class="fonte" href="https://www.ilpost.it/2020/10/24/gladio-stay-behind/" target="_blank" rel="noopener">fonte</a><a class="fonte" href="https://www.statewatch.org/statewatch-database/gladio-resolution-of-the-european-parliament" target="_blank" rel="noopener">fonte</a></li>
+    </ul>
+
+    <h3>Le regole sono segrete</h3>
+    <p>L'accordo che regola le basi americane in Italia è del 20 ottobre 1954. Si chiama BIA ed è <span class="ars-sottolinea">ancora coperto da segreto, più di settant'anni dopo</span>.<a class="fonte" href="https://ilpost.it/2026/06/21/accordi-basi-militari-americane-italia/" target="_blank" rel="noopener">fonte</a> Gli accordi tecnici sulle singole basi sono quasi tutti riservati. L'unico che possiamo leggere, quello su Sigonella del 2006, l'ha pubblicato il governo americano, non quello italiano.<a class="fonte" href="https://www.govinfo.gov/app/details/GOVPUB-S-PURL-gpo14799" target="_blank" rel="noopener">fonte</a></p>
+    <p>In Italia ci sono circa 13.000 militari americani<a class="fonte" href="https://ilpost.it/2026/06/21/accordi-basi-militari-americane-italia/" target="_blank" rel="noopener">fonte</a> e, secondo le stime degli esperti indipendenti, decine di bombe atomiche americane B61 ad Aviano e Ghedi. Nessun governo lo conferma ufficialmente.<a class="fonte" href="https://www.sipri.org/sites/default/files/YB26%2008%20World%20Nuclear%20Forces.pdf" target="_blank" rel="noopener">fonte</a> In caso di guerra, quelle basi sono i primi bersagli.</p>
+
+    <h3>Il conto: dal 2% al 5%</h3>
+    <div class="ars-cifre">
+      <div class="ars-cifra"><b>45,3 mld</b><span>di euro: la spesa militare italiana nel 2025 secondo la NATO, il 2,01% del PIL. Un anno prima erano 32,7.</span><a href="https://www.nato.int/content/dam/nato/webready/documents/finance/def-exp-2025-en.pdf" target="_blank" rel="noopener">NATO 2025</a></div>
+      <div class="ars-cifra"><b>5%</b><span>del PIL entro il 2035: l'impegno preso al vertice dell'Aia il 25 giugno 2025.</span><a href="https://www.nato.int/cps/en/natohq/official_texts_236705.htm" target="_blank" rel="noopener">Dichiarazione dell'Aia</a></div>
+      <div class="ars-cifra"><b>~113 mld</b><span>l'anno: quanto vale il 5% sul PIL di oggi (nostro calcolo sui dati NATO). Più di tutta la spesa per la scuola, che è 89,2 miliardi.</span><a href="https://ec.europa.eu/eurostat/databrowser/view/gov_10a_exp/default/table?lang=en" target="_blank" rel="noopener">Eurostat 2024</a></div>
+    </div>
+
+    <h3>Uscire si può. È scritto nel Trattato.</h3>
+    <p>L'articolo 13 del Trattato del Nord Atlantico prevede che ogni Paese possa uscire: basta una notifica al governo degli Stati Uniti, e dopo un anno si è fuori.<a class="fonte" href="https://www.nato.int/cps/en/natohq/official_texts_17120.htm" target="_blank" rel="noopener">fonte</a> Nel 1966 la Francia di De Gaulle è uscita dal comando militare integrato e ha fatto sloggiare i comandi alleati dal suo territorio. Non è stata invasa, non è stata cacciata dall'Occidente.<a class="fonte" href="https://www.nato.int/cps/en/natohq/declassified_160672.htm" target="_blank" rel="noopener">fonte</a></p>
+    <p>I Paesi neutrali d'Europa spendono in armi molto meno di noi, in rapporto alla loro ricchezza: Irlanda 0,22% del PIL, Svizzera 0,76%, Austria 1,10%. L'Italia oggi l'1,89%.<a class="fonte" href="https://www.sipri.org/sites/default/files/SIPRI-Milex-data-1949-2025.xlsx" target="_blank" rel="noopener">fonte</a> L'Austria è neutrale per legge costituzionale dal 1955: niente alleanze militari, niente basi straniere.<a class="fonte" href="https://www.ris.bka.gv.at/GeltendeFassung.wxe?Abfrage=Bundesnormen&amp;Gesetzesnummer=10000267" target="_blank" rel="noopener">fonte</a></p>
+    <div class="ars-box">
+      <span class="ars-kicker">Onestà prima di tutto</span>
+      <p>Uscire dalla NATO non chiude da solo le basi americane: stanno qui anche per accordi bilaterali Italia-USA, che vanno disdetti a parte. E la Francia nel 1966 non uscì dall'Alleanza, solo dal comando militare. Per questo il primo passo concreto è chiedere che quegli accordi vengano resi pubblici: un Parlamento che non sa cosa c'è scritto non può decidere niente. E neutralità non vuol dire disarmo: vuol dire una difesa dei nostri confini, non un esercito per le guerre degli altri.</p>
+    </div>
+  </div>
+</section>
+
+<!-- 06 IL VINCOLO ESTERNO -->
+<section class="ars-sez" id="vincolo">
+  <div class="container">
+    <span class="ars-num">09</span>
+    <h2>«Noi italiani da soli non ce la facciamo.» Chi te l'ha insegnato?</h2>
+    <p>È la frase che regge tutte le altre. Se sei convinto che gli italiani siano un popolo di furbi, mafiosi e incapaci, allora è giusto che qualcuno da fuori ci tenga a bada: Bruxelles, Francoforte, Washington. Gli economisti la chiamano <b>vincolo esterno</b>. Qui ti mostriamo che non è nata da sola: l'hanno scritta, studiata e diffusa persone con nome e cognome.</p>
+
+    <h3>Lo hanno detto loro</h3>
+    <p>Guido Carli è stato governatore della Banca d'Italia e il ministro del Tesoro che ha firmato il Trattato di Maastricht. Nelle sue memorie, uscite nel 1993, racconta perché voleva l'Europa: senza «un forte vincolo esterno», scrive, in Italia avrebbero prevalso «le forze involutive».<a class="fonte" href="https://ricerca.unistrapg.it/retrieve/31751479-1369-4733-92ae-b3638ad3e46b/13%20Articolo%20riv.%20Storia%20economica%20su%20Carli%2c%20con%20ISSN.pdf" target="_blank" rel="noopener">fonte</a> Tradotto: gli italiani, se votano liberamente, scelgono male, quindi serve un guinzaglio.</p>
+    <p>Nel 1996 due studiosi britannici, Kenneth Dyson e Kevin Featherstone, pubblicano uno studio dal titolo esplicito: «L'Italia e l'euro come vincolo esterno». La loro conclusione: una piccola élite di tecnici della Banca d'Italia e del Tesoro ha usato il negoziato sull'euro per togliere potere ai partiti, cioè a chi gli italiani votavano.<a class="fonte" href="https://eprints.lse.ac.uk/22076" target="_blank" rel="noopener">fonte</a></p>
+    <div class="ars-box">
+      <span class="ars-kicker">Il punto</span>
+      <p>Il vincolo esterno non è un complotto inventato da noi. È una strategia dichiarata da chi l'ha messa in atto e studiata all'università. La sua premessa è proprio il mito: gli italiani da soli non ce la fanno.</p>
+    </div>
+
+    <h3>Il libro che ha dato un nome al pregiudizio</h3>
+    <p>Nel 1958 un politologo americano, Edward Banfield, pubblica «The Moral Basis of a Backward Society», «Le basi morali di una società arretrata». Ha passato circa nove mesi in un paese della Basilicata, Chiaromonte, parlando poco l'italiano. Ne ricava una formula che sentirai ripetere per tutta la vita: <span class="ars-sottolinea">«familismo amorale»</span>. Gli italiani del Sud penserebbero solo al vantaggio della propria famiglia, incapaci di agire per il bene comune.<a class="fonte" href="https://ora.ox.ac.uk/objects/uuid:e2d13816-48c4-480f-8211-1998e05f511c/files/rn009w371z" target="_blank" rel="noopener">fonte</a></p>
+    <p>Il libro è stato smontato dagli studiosi italiani già negli anni Sessanta. Alessandro Pizzorno mostra che il familismo non è la causa della povertà, ma il suo effetto: è quello che succede a un paese abbandonato dallo Stato. Uno studio di Oxford del 2009 conclude che Banfield ha descritto «una fotografia di Chiaromonte nel 1955», non il Sud e tanto meno l'Italia.<a class="fonte" href="https://ora.ox.ac.uk/objects/uuid:e2d13816-48c4-480f-8211-1998e05f511c/files/rn009w371z" target="_blank" rel="noopener">fonte</a> Con i dati alla mano, lo stesso autore mostra nel 2011 che il familismo non spiega la scarsa partecipazione al Sud.<a class="fonte" href="https://ideas.repec.org/a/mul/jl9ury/doi10.1425-35233y2011i2p283-312.html" target="_blank" rel="noopener">fonte</a> Eppure la formula è sopravvissuta, e nel 1993 il politologo americano Robert Putnam la rilancia nelle università di tutto il mondo, proprio negli anni di Maastricht.</p>
+    <p>Nel 1964 è un giornalista italiano, Luigi Barzini, a spiegare gli italiani agli americani, in inglese, in un libro che ancora oggi viene citato come «il classico» sul nostro carattere: «The Italians».<a class="fonte" href="https://www.kirkusreviews.com/book-reviews/a/luigi-barzini-2/the-italians1" target="_blank" rel="noopener">fonte</a> La storica Silvana Patriarca ha ricostruito come l'immagine degli italiani «viziosi» sia stata prodotta, fin dal Risorgimento, anche da politici e intellettuali italiani.<a class="fonte" href="https://muse.jhu.edu/article/456253/pdf" target="_blank" rel="noopener">fonte</a></p>
+
+    <h3>Gli apparati</h3>
+    <p>Negli stessi anni gli Stati Uniti fanno in Italia una propaganda politica e culturale organizzata. Non è una teoria: sono documenti del governo americano oggi pubblici.</p>
+    <ul class="timeline">
+      <li><span class="anno">1947</span>Il Consiglio di sicurezza nazionale USA dedica all'Italia il documento numero uno della sua serie, NSC 1/1: l'Italia è un interesse di sicurezza primario degli Stati Uniti.<a class="fonte" href="https://history.state.gov/historicaldocuments/frus1948v03/d440" target="_blank" rel="noopener">fonte</a></li>
+      <li><span class="anno">1948</span>NSC 1/2, approvato da Truman il 15 marzo: un «programma di informazione» americano in Italia e grano per tenere bassa la razione del pane fino alle elezioni.<a class="fonte" href="https://history.state.gov/historicaldocuments/frus1948v03/d469" target="_blank" rel="noopener">fonte</a> Alle elezioni di aprile la CIA finanzia in segreto i partiti di centro.<a class="fonte" href="https://psi329.cankaya.edu.tr/uploads/files/MILLER-TakingGlovesUnited-1983.pdf" target="_blank" rel="noopener">fonte</a></li>
+      <li><span class="anno">1950</span>Nasce il Congresso per la Libertà della Cultura, finanziato in segreto dalla CIA. In Italia pagherà la rivista «Tempo Presente», che chiude dopo che i fondi vengono scoperti, nel 1966-67.<a class="fonte" href="https://en.wikipedia.org/wiki/Tempo_Presente" target="_blank" rel="noopener">fonte</a></li>
+      <li><span class="anno">1952</span>Piano «Demagnetize» dello Psychological Strategy Board: un'operazione psicologica per ridurre il peso dei comunisti in Italia.<a class="fonte" href="https://history.state.gov/historicaldocuments/frus1950-55Intel/d143" target="_blank" rel="noopener">fonte</a></li>
+      <li><span class="anno">1976</span>Il rapporto della commissione Pike del Congresso USA, filtrato alla stampa, conferma decenni di finanziamenti CIA a partiti e politici italiani.<a class="fonte" href="https://www.cia.gov/resources/csi/studies-in-intelligence/studies-in-intelligence-winter-1998-1999/the-pike-committee-investigations-and-the-cia" target="_blank" rel="noopener">fonte</a></li>
+      <li><span class="anno">1977</span>Der Spiegel mette in copertina una pistola su un piatto di spaghetti: «Italia, paese delle vacanze: sequestri, ricatti, rapine».<a class="fonte" href="https://archivio.unita.news/assets/main/1977/08/09/page_004.pdf" target="_blank" rel="noopener">fonte</a></li>
+      <li><span class="anno">2008-2010</span>La stampa finanziaria ci chiama «PIGS», maiali, insieme a Portogallo, Grecia e Spagna. Nel 2010 la banca Barclays vieta la sigla ai suoi analisti perché offensiva.<a class="fonte" href="https://www.irishtimes.com/business/piigs-label-too-ham-fisted-for-barclays-1.618473" target="_blank" rel="noopener">fonte</a></li>
+      <li><span class="anno">2012</span>Dopo il naufragio della Costa Concordia, un editorialista di Spiegel Online si chiede se qualcuno sia sorpreso che il comandante fosse italiano. L'ambasciatore italiano protesta per iscritto.<a class="fonte" href="https://www.irishtimes.com/news/concordia-disaster-brings-national-prejudices-floating-to-the-top-1.454572" target="_blank" rel="noopener">fonte</a></li>
+      <li><span class="anno">2025</span>Il risultato: gli italiani si fidano più dell'Unione europea (49%) che del proprio governo (34%).<a class="fonte" href="https://www.eunews.it/en/2025/05/28/italians-trust-eu-institutions-more-than-their-own-government/" target="_blank" rel="noopener">fonte</a></li>
+    </ul>
+    <div class="ars-box">
+      <span class="ars-kicker">Onestà prima di tutto</span>
+      <p>I documenti americani dicono che lo scopo era combattere il comunismo, non convincerci di essere inferiori. Non esiste un ordine scritto che dica «fate sentire gli italiani incapaci». Il filo rosso che lega questi fatti è la nostra lettura: decenni di propaganda guidata da fuori, élite che dichiarano di volere un guinzaglio esterno, stampa straniera che ci dipinge come un popolo da sorvegliare. Messi in fila, il risultato è un Paese che si fida più di chi non può votare che di chi elegge.</p>
+    </div>
+
+    <h3>I numeri che il pregiudizio non ti dice</h3>
+    <div class="ars-cifre">
+      <div class="ars-cifra"><b>1°</b><span>Paese al mondo per siti UNESCO.</span><a href="https://www.guinnessworldrecords.com/world-records/681677-most-world-heritage-sites-country" target="_blank" rel="noopener">Guinness World Records</a></div>
+      <div class="ars-cifra"><b>2ª</b><span>manifattura d'Europa dopo la Germania: il 14% della produzione industriale UE.</span><a href="https://ec.europa.eu/eurostat/statistics-explained/index.php/Industrial_production_statistics" target="_blank" rel="noopener">Eurostat 2024</a></div>
+      <div class="ars-cifra"><b>29 su 34</b><span>anni di avanzo primario dal 1992 al 2025: lo Stato ha speso per noi meno di quanto incassava.</span><a href="https://osservatoriocpi.unicatt.it/ocpi-servizi-serie-storiche" target="_blank" rel="noopener">OCPI su dati Banca d'Italia e Istat</a></div>
+      <div class="ars-cifra"><b>0,55</b><span>omicidi ogni 100.000 abitanti (2024). La media UE è 0,91. Il «popolo di mafiosi» è tra i più sicuri d'Europa.</span><a href="https://www.istat.it/wp-content/uploads/2026/02/HOMICIDES_VICTIMS-AND-PERPETRATORS.pdf" target="_blank" rel="noopener">Istat</a></div>
+      <div class="ars-cifra"><b>11.732 mld</b><span>di euro: la ricchezza netta delle famiglie italiane a fine 2024, 8,2 volte il reddito.</span><a href="https://www.istat.it/comunicato-stampa/la-ricchezza-dei-settori-istituzionali-in-italia-anni-2005-2024/" target="_blank" rel="noopener">Banca d'Italia e Istat</a></div>
+    </div>
+  </div>
+</section>
+
+<!-- 10 L'ARSENALE -->
+<section class="ars-sez is-dark" id="arsenale">
+  <div class="container">
+    <span class="ars-num">10</span>
+    <h2>L'Arsenale: cosa leggere, guardare, raccontare</h2>
+    <p>Libri, film e documentari, nomi e storie da far conoscere, e tutte le fonti di questa pagina capitolo per capitolo, con i link per controllarle. Tutto in un PDF da scaricare, stampare e passare a chi vuoi.</p>
+    <p>Dentro trovi, tra gli altri, «Eurosuicidio» di Gabriele Guzzi, «Il tramonto dell'euro» di Alberto Bagnai, «L'euro» del premio Nobel Joseph Stiglitz, «La guerra fredda culturale» di Frances Stonor Saunders, e film come «Il caso Mattei» e «Il muro di gomma».</p>
+    <div class="ars-cta">
+      <a class="ars-btn" href="assets/pdf/guerriglia-neutralia-arsenale.pdf" download>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M12 3v12m0 0l-5-5m5 5l5-5M4 21h16"/></svg>
+        Scarica L'Arsenale (PDF)
+      </a>
+    </div>
+  </div>
+</section>
 
 <!-- 11 VOLANTINO -->
-<section class="ars-sez is-dark" id="volantino">
+<section class="ars-sez" id="volantino">
   <div class="container">
     <span class="ars-num">11</span>
     <h2>Stampalo. Attaccalo. Lascialo in giro.</h2>
@@ -641,10 +673,10 @@
           <a class="ars-btn is-ghost" href="assets/pdf/guerriglia-neutralia-volantino-a4-bn.pdf" download>Versione bianco e nero</a>
         </div>
       </div>
-      <div class="volantino-anteprima" aria-hidden="true">
-        <div class="v-frase">Ogni frase che ripeti l'ha scritta qualcun altro.</div>
-        <div class="v-piede"><small>Scopri chi.<br>neutralia.info/arsenale</small><img src="assets/img/arsenale-qr.svg" alt=""></div>
-      </div>
+      <a class="volantino-link" href="assets/pdf/guerriglia-neutralia-volantino-a4.pdf" download aria-label="Scarica il volantino A4 in PDF">
+        <img src="assets/img/arsenale-volantino.jpg" width="636" height="900" alt="Il volantino: Ogni frase che ripeti l'ha scritta qualcun altro.">
+        <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M12 3v12m0 0l-5-5m5 5l5-5M4 21h16"/></svg>Scarica il volantino A4</span>
+      </a>
     </div>
   </div>
 </section>
@@ -747,6 +779,55 @@ document.querySelectorAll('.discorso mark[data-nota]').forEach(function (m) {
     });
   }, { rootMargin: '-40% 0px -55% 0px' });
   document.querySelectorAll('.ars-sez[id]').forEach(function (s) { obs.observe(s); });
+})();
+
+// Capitoli comprimibili: chiusi all'inizio, si aprono col titolo o dall'indice
+(function () {
+  var sezioni = document.querySelectorAll('.ars-sez[id]');
+  sezioni.forEach(function (s) {
+    var c = s.querySelector('.container'), h2 = c && c.querySelector('h2');
+    if (!h2) return;
+    var corpo = document.createElement('div');
+    corpo.className = 'ars-corpo';
+    corpo.id = s.id + '-corpo';
+    var resta = h2.nextElementSibling && h2.nextElementSibling.classList.contains('ars-sottotitolo') ? h2.nextElementSibling : null;
+    var da = resta || h2;
+    while (da.nextSibling) corpo.appendChild(da.nextSibling);
+    c.appendChild(corpo);
+    var b = document.createElement('button');
+    b.type = 'button';
+    b.className = 'ars-toggle';
+    b.setAttribute('aria-controls', corpo.id);
+    b.innerHTML = '<span>' + h2.innerHTML + '</span><span class="ars-piu" aria-hidden="true"></span>';
+    h2.innerHTML = '';
+    h2.appendChild(b);
+    b.addEventListener('click', function () { imposta(s, s.classList.contains('is-chiusa')); });
+    imposta(s, false);
+  });
+  function imposta(s, aperta) {
+    s.classList.toggle('is-aperta', aperta);
+    s.classList.toggle('is-chiusa', !aperta);
+    var corpo = s.querySelector('.ars-corpo'), b = s.querySelector('.ars-toggle');
+    if (corpo) corpo.hidden = !aperta;
+    if (b) b.setAttribute('aria-expanded', aperta);
+  }
+  function apriDa(hash) {
+    var s = hash && document.getElementById(hash.slice(1));
+    if (!s) return;
+    var sez = s.closest('.ars-sez');
+    if (sez) imposta(sez, true);
+    s.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+  document.addEventListener('click', function (e) {
+    var a = e.target.closest('a[href^="#"]');
+    if (!a || a.getAttribute('href').length < 2) return;
+    var t = document.getElementById(a.getAttribute('href').slice(1));
+    if (!t || !t.closest('.ars-sez')) return;
+    e.preventDefault();
+    history.replaceState(null, '', a.getAttribute('href'));
+    apriDa(a.getAttribute('href'));
+  });
+  if (location.hash) apriDa(location.hash);
 })();
 </script>
 </body>
