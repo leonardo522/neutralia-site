@@ -1,0 +1,10 @@
+// Il sito neutralia.info è servito dal Worker "neutraliadiorse" come soli file statici.
+// Workers Builds esegue "npx wrangler deploy" a ogni push su main.
+// La cartella functions/ (vecchie Pages Functions) non viene pubblicata.
+{
+  "name": "neutraliadiorse",
+  "compatibility_date": "2026-09-01",
+  "assets": {
+    "directory": "."
+  }
+}
