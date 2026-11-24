@@ -37,80 +37,102 @@
   </nav>
 </header>
 
+<main>
+
 <!-- INTRO -->
 <section class="osservatorio-intro">
   <div class="container">
     <h1>Osservatorio</h1>
     <p class="osservatorio-lead">
       La mappa delle basi militari NATO e statunitensi sul suolo italiano, dei siti di produzione di armi,
-      dei porti di esportazione, e dei conflitti dal 1945 a cui basi italiane o armi italiane hanno preso parte.
+      dei porti di esportazione, e dei sette conflitti dal 1995 in cui basi in Italia o armi prodotte in Italia hanno avuto un ruolo documentato.
     </p>
-    <p class="osservatorio-sub">
-      Tutti i dati sono pubblici. Le fonti sono indicate punto per punto.
-      Clicca sui pallini per leggere ciò che lo Stato italiano non vi racconta volentieri.
-    </p>
+    <p class="osservatorio-sub">I dati vengono da fonti pubbliche. Scegli un punto sulla mappa o nell'elenco per aprire la scheda con le fonti.</p>
+  </div>
+</section>
+
+<!-- CIFRE -->
+<section class="osv-cifre" aria-labelledby="osv-cifre-titolo">
+  <div class="container">
+    <h2 id="osv-cifre-titolo">Le 4 cifre da tenere in mente</h2>
+    <ul class="osv-cifre-lista" id="osv-cifre">
+      <li><strong>30-45</strong><span>bombe nucleari B61-12 USA stimate in Italia: 20-30 ad Aviano, 10-15 a Ghedi. Stima non confermata dai governi.</span><small>Fonte: <a href="https://thebulletin.org/premium/2025-12/the-changing-nuclear-landscape-in-europe/" target="_blank" rel="noopener" style="color:inherit">FAS, Bulletin of the Atomic Scientists, dicembre 2025</a></small></li>
+      <li><strong>~12.000 ha</strong><span>il poligono di Perdasdefogu, Salto di Quirra, cui si aggiungono circa 1.200 ha a Capo San Lorenzo.</span><small>Fonte: <a href="https://documenti.camera.it/_dati/leg17/lavori/documentiparlamentari/indiceetesti/022bis/023bis_v2/INTERO.pdf" target="_blank" rel="noopener" style="color:inherit">Camera, Doc. XXII-bis n. 23-bis, relazione di minoranza, 2018</a></small></li>
+      <li><strong>~377.000</strong><span>morti stimati in Yemen entro la fine del 2021: 154.000 per cause dirette, 223.000 indirette. È una proiezione. Resti di una bomba riconducibile a RWM Italia di Domusnovas trovati dopo un raid su civili del 2016.</span><small>Fonte: <a href="https://korbel.du.edu/wp-content/uploads/2024/09/UNDP-Yemen_ImpactofWar_WEB.pdf" target="_blank" rel="noopener" style="color:inherit">UNDP e Pardee Center, 2021</a>; <a href="https://www.disarmo.org/rete/docs/5211.pdf" target="_blank" rel="noopener" style="color:inherit">Mwatana, ECCHR, Rete Disarmo, 2018</a></small></li>
+      <li><strong>~176.000</strong><span>morti diretti in Afghanistan, ottobre 2001-agosto 2021. Reparti USA di Vicenza e Aviano sono stati schierati nel paese.</span><small>Fonte: <a href="https://costsofwar.watson.brown.edu/sites/default/files/papers/Costs-of-War_Direct-War-Deaths_9-1-21.pdf" target="_blank" rel="noopener" style="color:inherit">Costs of War, Brown University, 2021</a></small></li>
+    </ul>
   </div>
 </section>
 
 <!-- MAPPA -->
-<section class="osservatorio-mappa-wrap">
-  <div id="mappa" role="application" aria-label="Mappa interattiva dell'Italia militarizzata">
-    <div class="mappa-loading" id="mappa-loading">
-      <p>Caricamento mappa…</p>
-    </div>
+<section class="osv-mappa-sezione" aria-label="Mappa e schede">
+  <div class="osv-filtri" role="group" aria-label="Mostra o nascondi sulla mappa">
+    <label class="osv-filtro osv-f-basi"><input type="checkbox" data-filter="basi" checked><span>Basi <b data-conta="basi"></b></span></label>
+    <label class="osv-filtro osv-f-produzione"><input type="checkbox" data-filter="produzione" checked><span>Produzione <b data-conta="produzione"></b></span></label>
+    <label class="osv-filtro osv-f-porti"><input type="checkbox" data-filter="porti" checked><span>Porti <b data-conta="porti"></b></span></label>
+    <label class="osv-filtro osv-f-incidenti"><input type="checkbox" data-filter="incidenti" checked><span>Incidenti <b data-conta="incidenti"></b></span></label>
+    <label class="osv-filtro osv-f-aree"><input type="checkbox" data-filter="aree" checked><span>Mare interdetto <b data-conta="aree"></b></span></label>
   </div>
 
-  <!-- LEGENDA -->
-  <aside class="legenda" aria-label="Legenda della mappa">
-    <h2>Legenda</h2>
+  <div class="osv-griglia">
+    <div id="mappa" role="application" aria-label="Mappa interattiva dell'Italia militarizzata">
+      <div class="mappa-loading" id="mappa-loading">
+        <p>Caricamento mappa…</p>
+      </div>
+    </div>
+
+    <aside class="osv-pannello" id="osv-pannello" aria-label="Elenco dei punti e schede">
+      <div id="osv-elenco">
+        <div class="osv-cerca">
+          <label class="visually-hidden" for="osv-cerca">Cerca un luogo</label>
+          <input type="search" id="osv-cerca" placeholder="Cerca una base, un comune, un porto">
+          <label class="visually-hidden" for="osv-regione">Regione</label>
+          <select id="osv-regione"><option value="">Tutte le regioni</option></select>
+        </div>
+        <p class="osv-quanti" id="osv-quanti" aria-live="polite"></p>
+        <ul class="osv-lista" id="osv-lista"></ul>
+      </div>
+      <div id="osv-scheda" hidden>
+        <button type="button" class="osv-chiudi">← Torna all'elenco</button>
+        <figure class="osv-modello">
+          <canvas id="osv-modello" aria-label="Modellino illustrativo del luogo"></canvas>
+          <figcaption>Modello illustrativo, non in scala. Trascina per ruotare.</figcaption>
+        </figure>
+        <div id="osv-scheda-corpo" aria-live="polite"></div>
+      </div>
+    </aside>
+  </div>
+
+  <details class="osv-legenda">
+    <summary>Legenda</summary>
+    <ul class="osv-legenda-tipi" id="osv-legenda-tipi"></ul>
     <ul class="legenda-lista">
-      <li><span class="dot dot-rosso" aria-hidden="true"></span> Base militare NATO / USA / italiana di rilevanza atlantica</li>
       <li>
         <span class="legenda-svg legenda-svg-nuke" aria-hidden="true">
           <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="11.5" fill="#ffe600" stroke="#000" stroke-width="0.7"/><circle cx="12" cy="12" r="2.4" fill="#000"/><path d="M 12 12 L 22.4 12 A 10.4 10.4 0 0 0 17.2 3 Z" fill="#000"/><path d="M 12 12 L 6.8 3 A 10.4 10.4 0 0 0 1.6 12 Z" fill="#000"/><path d="M 12 12 L 17.2 21 A 10.4 10.4 0 0 1 6.8 21 Z" fill="#000"/></svg>
         </span>
-        Base con testate nucleari B61 (Aviano, Ghedi)
+        Base con testate nucleari B61 secondo stime indipendenti (Aviano, Ghedi)
       </li>
       <li>
         <span class="legenda-svg legenda-svg-nuke-scalo" aria-hidden="true">
           <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="11.5" fill="#ffffff" stroke="#000" stroke-width="0.7"/><circle cx="12" cy="12" r="2.4" fill="#000"/><path d="M 12 12 L 22.4 12 A 10.4 10.4 0 0 0 17.2 3 Z" fill="#000"/><path d="M 12 12 L 6.8 3 A 10.4 10.4 0 0 0 1.6 12 Z" fill="#000"/><path d="M 12 12 L 17.2 21 A 10.4 10.4 0 0 1 6.8 21 Z" fill="#000"/></svg>
         </span>
-        Porto autorizzato per scali di sub/navi a propulsione nucleare USA/UK/FR <small>(12 porti italiani)</small>
-      </li>
-      <li>
-        <span class="legenda-svg legenda-svg-prod" aria-hidden="true">
-          <svg viewBox="0 0 24 24"><path d="M 7 8 Q 7 2 12 1 Q 17 2 17 8 Z" fill="currentColor"/><rect x="6.7" y="8" width="10.6" height="0.9" fill="currentColor"/><rect x="7" y="8.9" width="10" height="11.2" fill="currentColor" opacity="0.82"/><rect x="8.4" y="8.9" width="0.45" height="11.2" fill="#000" opacity="0.22"/><rect x="10.5" y="8.9" width="0.45" height="11.2" fill="#000" opacity="0.22"/><rect x="13" y="8.9" width="0.45" height="11.2" fill="#000" opacity="0.22"/><rect x="15" y="8.9" width="0.45" height="11.2" fill="#000" opacity="0.22"/><rect x="6.4" y="20.1" width="11.2" height="1.2" fill="currentColor"/><rect x="6.4" y="21.3" width="11.2" height="1.8" rx="0.3" fill="currentColor" opacity="0.55"/></svg>
-        </span>
-        Sito di produzione di armi
-      </li>
-      <li>
-        <span class="legenda-svg legenda-svg-porto" aria-hidden="true">
-          <svg viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="4.5" r="2.5"/><line x1="12" y1="7" x2="12" y2="22"/><line x1="8" y1="12" x2="16" y2="12"/><path d="M3 13c0 5 4 9 9 9s9-4 9-9"/></svg>
-        </span>
-        Porto di export armi o transito militare
-      </li>
-      <li>
-        <span class="legenda-svg legenda-svg-inc" aria-hidden="true">
-          <svg viewBox="0 0 24 24"><path d="M12 2 L22 21 L2 21 Z" fill="currentColor" stroke="#000" stroke-width="0.8" stroke-linejoin="round"/><rect x="11" y="9" width="2" height="6" fill="#000"/><rect x="11" y="17" width="2" height="2" fill="#000"/></svg>
-        </span>
-        Incidente / caso documentato (Cermis, Vicenza...)
+        Porto nell'elenco di dodici per la sosta di unità a propulsione nucleare <small>(Piano del 1996, da fonti secondarie)</small>
       </li>
       <li><span class="dot dot-grigio" aria-hidden="true"></span> Conflitto in cui basi o armi italiane sono coinvolte <small>(al click di una base)</small></li>
-      <li><span class="dot-line" aria-hidden="true"></span> Rotta da una base al conflitto <small>(al click di una base)</small></li>
+      <li><span class="dot-line" aria-hidden="true"></span> Collegamento fra una base e un conflitto <small>(al click di una base)</small></li>
       <li><span class="dot-area" aria-hidden="true"></span> Zona di mare interdetta alla pesca</li>
-      <li><span class="dot-circle dot-circle-acuto" aria-hidden="true"></span> Raggio danno acuto MUOS (20 km, Niscemi) <small>fonte: Zucchetti PoliTo 2011</small></li>
-      <li><span class="dot-circle dot-circle-interf" aria-hidden="true"></span> Raggio interferenza aerea MUOS (67 km) <small>fonte: Zucchetti PoliTo 2011</small></li>
     </ul>
-    <p class="legenda-tip">Clicca un pallino per i dettagli e le fonti.<br>Clicca una base militare (pallino rosso) per disegnare le rotte verso i conflitti collegati.</p>
-    <div class="legenda-filtri">
-      <h3>Mostra / Nascondi</h3>
-      <label><input type="checkbox" data-filter="basi" checked> Basi</label>
-      <label><input type="checkbox" data-filter="produzione" checked> Produzione</label>
-      <label><input type="checkbox" data-filter="porti" checked> Porti</label>
-      <label><input type="checkbox" data-filter="incidenti" checked> Incidenti</label>
-      <label><input type="checkbox" data-filter="aree" checked> Mare interdetto</label>
-    </div>
-  </aside>
+  </details>
+</section>
+
+<!-- TEMPO -->
+<section class="osv-tempo-sezione" aria-labelledby="osv-tempo-titolo">
+  <div class="container">
+    <h2 id="osv-tempo-titolo">I conflitti nel tempo</h2>
+    <p>Scegli un conflitto: la mappa disegna i collegamenti con le basi in Italia. Una linea non indica una rotta reale.</p>
+    <div class="osv-tempo" id="osv-tempo"></div>
+  </div>
 </section>
 
 <!-- TESTO METODOLOGICO -->
@@ -120,64 +142,59 @@
       <article class="metodo-block">
         <h2>Cosa state vedendo</h2>
         <p>
-          Il territorio italiano è disseminato di basi militari straniere e di siti militari nazionali
-          a vocazione atlantica. Su questo territorio si producono le armi che vengono poi esportate,
-          a volte verso paesi in guerra. Da queste basi partono i velivoli che bombardano altri paesi.
-          Per addestrarsi a farlo, vengono interdetti decine di migliaia di ettari di terra
-          e migliaia di chilometri quadrati di mare alla pesca degli autoctoni.
+          Il territorio italiano ospita installazioni in uso a Stati Uniti e NATO, giuridicamente sotto sovranità
+          italiana, e siti militari nazionali. Qui si producono armi poi esportate, a volte verso paesi in guerra.
+          Da alcune di queste basi sono partiti aerei e reparti impegnati in guerre all'estero.
+          Per l'addestramento decine di migliaia di ettari di terra sono sottratti all'uso civile,
+          e vaste zone di mare sono interdette alla pesca durante le esercitazioni.
         </p>
         <p>
-          Tutto questo è pubblicamente noto. Non è segreto. Ma è frammentato, sparso tra
-          atti parlamentari, rapporti di organizzazioni indipendenti, inchieste giornalistiche.
+          Quasi tutto questo è pubblico. Fa eccezione la presenza di armi nucleari, mai confermata dai governi
+          e nota da stime indipendenti. Il materiale è sparso tra atti parlamentari, rapporti di organizzazioni
+          indipendenti e inchieste giornalistiche.
           L'Osservatorio Neutralia mette questi frammenti su una mappa, in un unico colpo d'occhio.
         </p>
       </article>
 
       <article class="metodo-block">
-        <h2>Le 5 cifre da tenere in mente</h2>
-        <ul class="metodo-stats">
-          <li><strong>~40</strong> bombe nucleari tattiche B61 USA stoccate in Italia (Aviano + Ghedi). <em>Fonte: FAS 2023.</em></li>
-          <li><strong>~12.000 ha</strong> di terra militarizzata solo nel poligono di Salto di Quirra. <em>Fonte: Difesa.</em></li>
-          <li><strong>~4.000 km²</strong> di mare interdetto alla pesca davanti alla Sardegna sud-orientale durante le esercitazioni. <em>Fonte: NOTAMAR.</em></li>
-          <li><strong>~377.000</strong> morti nella guerra in Yemen 2015-2024 (combattenti e civili, dirette+indirette). Bombe italiane RWM Domusnovas documentate. <em>Fonte: UNDP 2021.</em></li>
-          <li><strong>~176.000</strong> morti diretti in Afghanistan 2001-2021. Basi italiane (Aviano, Sigonella, Camp Darby) usate per logistica e operazioni. <em>Fonte: Brown Univ. Costs of War.</em></li>
-        </ul>
-      </article>
-
-      <article class="metodo-block">
-        <h2>Trieste: la sovranità che non c'è</h2>
+        <h2>Trieste: chi controlla il porto</h2>
         <p>
-          Nell'ottobre 2021, durante le proteste No Green Pass dei portuali triestini, la Ministra dell'Interno
-          Luciana Lamorgese dichiarò in audizione parlamentare che il Porto di Trieste «ha una giurisdizione
-          internazionale e particolare»: i Punti Franchi sono extraterritoriali, regolati dall'Allegato VIII
-          del Trattato di Pace del 1947 e dal Memorandum di Londra del 1954.
+          Il Porto franco di Trieste è un regime speciale previsto dall'Allegato VIII del Trattato di pace del 1947,
+          mantenuto dal Memorandum di Londra del 1954 e regolato oggi dal decreto del 13 luglio 2017:
+          i Punti Franchi sono considerati fuori dalla linea doganale. È un regime doganale e commerciale.
+          La Cassazione a Sezioni Unite, con la sentenza 8600 del 16 marzo 2022, ha ribadito la piena sovranità
+          italiana sul territorio triestino.
         </p>
         <p>
-          Tradotto: sulle banchine in cui transitano merci (incluse merci militari) verso l'Europa orientale,
-          la sovranità italiana è limitata da un regime giuridico internazionale.
-          Le concessioni sono in larga parte tedesche (HHLA — Hamburger Hafen und Logistik),
-          ungheresi, in passato cinesi (COSCO, Via della Seta, 2019, poi parzialmente sospesa).
+          Due terminal del porto sono a controllo estero. MSC, svizzera, ha dal 2022 l'80% di Trieste Marine Terminal,
+          il terminal container del Molo VII. La tedesca HHLA ha il 50,01% della Piattaforma Logistica,
+          in concessione dal 2021. Con la Cina ci fu nel 2019 un'intesa commerciale fra l'Autorità portuale
+          e China Communications Construction Company; l'Italia ha lasciato la Via della Seta nel dicembre 2023.
         </p>
         <p>
-          La domanda non è ideologica. È legale e geopolitica:
-          <em>di chi è davvero il principale porto italiano?</em>
+          La domanda è economica e geopolitica:
+          <em>chi controlla i terminal del primo porto italiano per merci, con 53 milioni di tonnellate nel 2024?</em>
         </p>
+        <p><small>Fonti: <a href="https://www.studiomansi.com/wp-content/uploads/2022/03/Cassazione-Sezioni-Unite-16.3.22-n.-8600-su-TLT.pdf" target="_blank" rel="noopener">Cassazione, sentenza 8600/2022</a> · <a href="https://air.uniud.it/bitstream/11390/1200780/4/Il%20Porto%20franco%20di%20Trieste%20-%20Diritto%20dei%20trasporti%202-3%202020.pdf" target="_blank" rel="noopener">Diritto dei trasporti, 2020</a> · <a href="https://www.studiocerbone.com/ministero-infrastrutture-trasporti-decreto-ministeriale-13-luglio-2017" target="_blank" rel="noopener">decreto 13 luglio 2017</a> · <a href="https://www.portseurope.com/msc-acquires-80-of-trieste-marine-terminal/" target="_blank" rel="noopener">Ports Europe</a> · <a href="https://new.informare.it/news/gennews/2023/20230260-Ok-antitrust-MSC-controlloTMT-Rimorchiatori-Meduk.asp" target="_blank" rel="noopener">inforMARE, 2023</a> · <a href="https://maritime-executive.com/corporate/hhla-invests-in-the-adriatic-port-of-trieste" target="_blank" rel="noopener">Maritime Executive</a> · <a href="https://www.shippingitaly.it/2021/04/22/firmata-da-hhla-la-concessione-di-31-anni-per-la-nuova-piattaforma-logistica-di-trieste/?output=pdf" target="_blank" rel="noopener">Shipping Italy</a> · <a href="https://new.informare.it/news/gennews/2019/20190429-intese-AdSP-Trieste-Genova-China-Communication-Constr-Couk.asp" target="_blank" rel="noopener">inforMARE, 2019</a> · <a href="https://www.csis.org/analysis/italy-withdraws-chinas-belt-and-road-initiative" target="_blank" rel="noopener">CSIS</a> · <a href="https://www.istat.it/comunicato-stampa/trasporto-marittimo-in-italia-anno-2024/" target="_blank" rel="noopener">ISTAT</a></small></p>
       </article>
 
       <article class="metodo-block">
         <h2>Metodologia & limiti</h2>
         <ul>
-          <li>Le coordinate delle basi sono pubbliche (visibili su OpenStreetMap, Google Maps, Geoportale della Difesa).</li>
+          <li>Le coordinate delle basi sono pubbliche (visibili su OpenStreetMap e Google Maps).</li>
           <li>Le estensioni in ettari sono indicative, ricostruite da pubblicazioni ufficiali e dossier di organizzazioni indipendenti.</li>
           <li>I dati sanitari e ambientali sono riportati <strong>come segnalati dalle fonti citate</strong>, con esplicitazione del livello di certezza (inchiesta in corso, cluster non confermato ufficialmente, ecc.).</li>
-          <li>I poligoni delle aree marine interdette sono <strong>ricostruzioni didattiche</strong> a partire dai NOTAMAR; non vanno usati per scopi nautici reali.</li>
-          <li>Le vittime dei conflitti sono <strong>vittime totali del conflitto</strong>, non vittime attribuibili solo alle basi/armi italiane. La presenza in mappa indica coinvolgimento documentato di basi italiane o armi italiane, non responsabilità causale italiana per ogni morte.</li>
-          <li>Questo Osservatorio è un'opera in progress. Segnalazioni di errori, fonti più recenti, integrazioni: <a href="mailto:neutralia.info@gmail.com">neutralia.info@gmail.com</a>.</li>
+          <li>I poligoni delle aree marine interdette sono <strong>ricostruzioni didattiche</strong> approssimate: non riproducono un singolo atto ufficiale, la loro superficie non è un dato e non vanno usati per scopi nautici reali.</li>
+          <li>Le vittime dei conflitti sono <strong>vittime totali del conflitto</strong> e non sono attribuibili all'Italia. Il collegamento fra una base e un conflitto indica un uso documentato, spesso indiretto: logistica, comando, partenza di reparti. Non indica che da quella base sia partito ogni attacco, né una responsabilità causale.</li>
+          <li>Questo Osservatorio è un lavoro in corso. Segnalazioni di errori, fonti più recenti, integrazioni: <a href="mailto:neutralia.info@gmail.com">neutralia.info@gmail.com</a>.</li>
+          <li>Il rilievo della mappa viene da <a href="https://registry.opendata.aws/terrain-tiles/" target="_blank" rel="noopener">Terrain Tiles</a> (dati aperti, Mapzen e AWS), i confini regionali da <a href="https://github.com/openpolis/geojson-italy" target="_blank" rel="noopener">openpolis</a>. I modellini 3D sono illustrativi e non in scala.</li>
         </ul>
       </article>
     </div>
   </div>
 </section>
+
+</main>
 
 <!-- FOOTER -->
 <footer class="site-footer">
@@ -224,6 +241,7 @@
 </footer>
 
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+<script src="assets/js/osservatorio-modelli.js"></script>
 <script src="assets/js/osservatorio.js"></script>
 <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
 </body>

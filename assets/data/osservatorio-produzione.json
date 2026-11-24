@@ -5,34 +5,43 @@
     {
       "id": "domusnovas-rwm",
       "nome": "RWM Italia — stabilimento di Domusnovas",
-      "lat": 39.3239,
-      "lon": 8.6347,
+      "lat": 39.3437,
+      "lon": 8.6759,
       "regione": "Sardegna",
       "comune": "Domusnovas (SU)",
       "azienda": "RWM Italia S.p.A. — controllata da Rheinmetall AG (Germania)",
-      "tipo": "Bombe d'aereo, munizioni navali, sistemi d'arma",
+      "tipo": "Bombe d'aereo, granate d'artiglieria, mine navali",
       "produzione": [
         "Bombe d'aereo della famiglia MK-80 (MK-82 da 250 kg, MK-83 da 450 kg, MK-84 da 900 kg)",
-        "Bombe a guida laser",
-        "Munizioni navali e per artiglieria"
+        "Granate d'artiglieria e mine navali"
       ],
       "destinazioni_documentate": [
-        "Arabia Saudita: forniture documentate fino al 2021 (sospese dal Governo Draghi gennaio 2021, parzialmente ripristinate dal Governo Meloni ottobre 2023)",
-        "Emirati Arabi Uniti, Egitto, Turchia, USA, NATO"
+        "Arabia Saudita: bombe d'aereo e missili sospesi nel luglio 2019 (Governo Conte I), almeno sei autorizzazioni revocate il 29 gennaio 2021 (Governo Conte II). Il Consiglio dei ministri del Governo Meloni ha rimosso il divieto il 31 maggio 2023, dopo averlo fatto per gli Emirati il 17 aprile 2023.",
+        "Emirati Arabi Uniti"
       ],
       "casi_documentati": [
-        "8 ottobre 2016, villaggio di Deir Al-Hajari (Yemen): bomba MK-82 con numero seriale RWM Italia (lotto identificato dal NYT e da Mwatana for Human Rights) uccide 6 civili della stessa famiglia, tra cui 4 bambini",
-        "Inchiesta Procura di Roma per concorso in omicidio (archiviata 2021); ricorso in Corte di Cassazione e procedimento alla Corte Penale Internazionale"
+        "8 ottobre 2016, villaggio di Deir Al-Hajari (Yemen): un raid attribuito alla coalizione a guida saudita uccide 6 civili della stessa famiglia, tra cui la madre incinta e 4 bambini. Sul posto Mwatana for Human Rights trova resti di una bomba della serie MK-80 con il codice A4447, riconducibile a RWM Italia, e un numero di serie.",
+        "Aprile 2018: denuncia di Mwatana, ECCHR e Rete Italiana per il Disarmo alla Procura di Roma sulle licenze a RWM Italia. L'indagine, per abuso d'ufficio, viene archiviata dal GIP il 10 marzo 2023, dopo una prima richiesta respinta nel febbraio 2021. Luglio 2023: due familiari delle vittime e un sopravvissuto ricorrono alla Corte europea dei diritti dell'uomo; nessuna decisione reperita al 1 novembre 2026. Dicembre 2019: comunicazione di ECCHR e altre ONG all'Ufficio del Procuratore della Corte Penale Internazionale, che non è un procedimento aperto."
       ],
-      "occupazione": "Circa 250 dipendenti diretti",
+      "occupazione": "Circa 540 addetti a ottobre 2026 secondo la UIL: 107 a tempo indeterminato e circa 430 somministrati.",
       "problemi_ambientali": [
-        "Stabilimento in area di alta disoccupazione (Sulcis-Iglesiente): la presenza viene difesa anche da forze politiche e sindacali locali per ragioni occupazionali"
+        "Stabilimento a rischio di incidente rilevante, soglia superiore (D.Lgs. 105/2015). Il 17 ottobre 2025 il TAR accoglie il ricorso di RWM contro la mancata conclusione dell'iter regionale; nel febbraio 2026 il MASE approva la VIA per l'ampliamento già realizzato, aprendo alla piena operatività. La presenza viene difesa da forze politiche e sindacali locali per ragioni occupazionali."
       ],
       "fonti": [
-        "New York Times — «An Italian Bomb in Yemen», 2017",
-        "Mwatana for Human Rights — rapporti annuali",
-        "Rete Italiana per il Disarmo + ECCHR — esposto Procura di Roma",
-        "Relazione governativa annuale L.185/90 sull'export di armi"
+        {"titolo": "ISPRA, Portale Seveso: stabilimento NV036, RWM Italia, Domusnovas", "url": "https://www.portaleseveso.isprambiente.gov.it/StabilimentoPubblico?cod=NV036"},
+        {"titolo": "Ordine internazionale e diritti umani, n. 4/2023: il primo caso giudiziario italiano su armi e Yemen", "url": "https://www.rivistaoidu.net/wp-content/uploads/2023/10/OIDU-4-2023-COMM-2-DEF.pdf"},
+        {"titolo": "ECCHR: European responsibility for war crimes in Yemen (cronologia del caso)", "url": "https://www.ecchr.eu/en/case/european-responsibility-for-war-crimes-in-yemen/"},
+        {"titolo": "ECCHR: Made in Europe, bombed in Yemen (comunicazione alla CPI, dicembre 2019)", "url": "https://www.ecchr.eu/en/case/made-in-europe-bombed-in-yemen/"},
+        {"titolo": "Avvenire, 15 giugno 2017: Yemen, bombe italiane, ecco le nuove prove", "url": "https://www.avvenire.it/attualita/yemen-bombe-italiane-ecco-le-nuove-prove_28842"},
+        {"titolo": "Il Post, 30 dicembre 2017: il video del New York Times su RWM", "url": "https://www.ilpost.it/2017/12/30/bombe-italiane-yemen/"},
+        {"titolo": "Governo, Comunicato del Consiglio dei Ministri n. 37, 31 maggio 2023", "url": "https://www.governo.it/it/articolo/consiglio-dei-ministri-n-37/22766"},
+        {"titolo": "Governo, Comunicato del Consiglio dei Ministri n. 29, 17 aprile 2023", "url": "https://www.governo.it/it/articolo/comunicato-stampa-del-consiglio-dei-ministri-n-29/22376"},
+        {"titolo": "Rete Italiana Pace e Disarmo, 9 aprile 2026: la Relazione 185/90 sul 2025", "url": "https://retepacedisarmo.org/2026/nuovo-record-di-vendita-di-armi-italiane-nel-2025-ben-91-miliardi-di-autorizzazioni-allexport/"},
+        {"titolo": "Il Fatto Quotidiano, 29 gennaio 2021: il governo revoca l'export di bombe", "url": "https://www.ilfattoquotidiano.it/2021/01/29/governo-revoca-lexport-di-bombe-verso-arabia-saudita-ed-emirati-fermati-12-700-ordigni-sui-20mila-autorizzati-durante-mandato-renzi/6082510/"},
+        {"titolo": "Avvenire, 14 marzo 2023: archiviate le accuse", "url": "https://www.avvenire.it/attualita/bombe-italiane-in-yemen-archiviate-le-accuse-ai-funzionari-italiani_65949"},
+        {"titolo": "lavialibera, 9 aprile 2025: le vittime delle bombe italiane in Yemen", "url": "https://lavialibera.it/it-schede-2238-export_armi_italiane_yemen_rwm_vittime_legge_185"},
+        {"titolo": "Cagliarinews, 30 ottobre 2026: 430 lavoratori da stabilizzare (dati UIL)", "url": "https://cagliarinews.it/cronaca/domusnovas-fabbrica-bombe-430-lavoratori-sardi-stabilizzare-30-ottobre-2026/"},
+        {"titolo": "Analisi Difesa, 17 febbraio 2026: via libera alla piena operatività di Domusnovas", "url": "https://www.analisidifesa.it/2026/02/rwm-italia-dal-mimit-via-libera-alle-piena-operativita-dello-stabilimento-di-domusnovas/"}
       ]
     },
     {
@@ -42,53 +51,64 @@
       "lon": 8.6692,
       "regione": "Piemonte",
       "comune": "Cameri (NO)",
-      "azienda": "Leonardo S.p.A. + Lockheed Martin (USA)",
+      "azienda": "Stabilimento di proprietà del Ministero della Difesa italiano, gestito da Leonardo S.p.A. con Lockheed Martin (USA)",
       "tipo": "Linea di assemblaggio finale e manutenzione caccia F-35 Lightning II",
       "produzione": [
-        "F-35A (convenzionale) e F-35B (STOVL) per Italia, Olanda, Belgio futuro, Polonia futura",
+        "F-35A e F-35B per l'Italia, F-35A per i Paesi Bassi; F-35A per la Polonia, circa 16 su 32, con il primo volo del primo esemplare nel luglio 2026. Il Belgio ha annunciato l'assemblaggio in Italia dei futuri 11 F-35A; contratto non confermato.",
         "Unica FACO F-35 in Europa",
-        "Componenti ala in materiale composito per tutta la flotta globale F-35"
+        "Assiemi alari per F-35 assemblati anche negli Stati Uniti: previsione ridotta da 1.215 a 835 dopo il taglio italiano da 131 a 90 velivoli."
       ],
       "destinazioni_documentate": [
-        "Aeronautica Militare Italiana (90 F-35A + 15 F-35B previsti)",
-        "Marina Militare Italiana (15 F-35B per portaerei Cavour)",
+        "Italia: 115 velivoli previsti dal profilo ufficializzato il 15 gennaio 2025, circa 75 F-35A e 40 F-35B, fra Aeronautica Militare e Marina Militare.",
         "Klu — Royal Netherlands Air Force"
       ],
       "casi_documentati": [
-        "Programma F-35: costo totale italiano stimato 14 miliardi € (acquisto 90 velivoli) + ulteriori 60 miliardi € di ciclo vita 30 anni (Corte dei Conti USA — GAO)",
-        "F-35A italiani certificati per il trasporto della bomba nucleare B61-12 — i Tornado di Ghedi saranno sostituiti progressivamente"
+        "Corte dei conti, deliberazione n. 5/2026: 11,84 miliardi di euro spesi per il programma F-35 fino al giugno 2025, di cui circa 1,31 miliardi per Cameri. La flotta prevista passa da 90 a 115 velivoli, con una nuova crescita dei costi.",
+        "L'F-35A è certificato per la bomba B61-12 dal 12 ottobre 2023, per le unità designate dell'aeronautica USA. Per gli F-35A italiani non esiste conferma pubblica: gli Stati Uniti non divulgano le informazioni sugli aerei a doppia capacità degli alleati."
       ],
-      "occupazione": "Circa 800 addetti diretti",
+      "occupazione": "Circa 1.080 addetti Leonardo per l'F-35 a Cameri a fine 2025 (649 operai, 430 impiegati e quadri), più circa 90 somministrati.",
       "problemi_ambientali": [],
       "fonti": [
-        "Corte dei Conti italiana — relazioni annuali sul Programma F-35",
-        "Sbilanciamoci! — rapporti annuali sulle spese militari",
-        "Leonardo — bilancio annuale"
+        {"titolo": "Corte dei conti, Sezione di controllo per gli affari europei e internazionali, deliberazione n. 5/2026 (programma F-35)", "url": "https://www.corteconti.it/Download?id=aaea0899-bc3d-4c69-9720-d4fdd46d8f87"},
+        {"titolo": "Analisi Difesa, maggio 2026: F-35, i conti non tornano ancora", "url": "https://www.analisidifesa.it/2026/05/f-35-i-conti-non-tornano-ancora/"},
+        {"titolo": "Leonardo Aeronautics: F-35 Lightning II", "url": "https://aeronautics.leonardo.com/en/products/f-35-lightning-ii"},
+        {"titolo": "The Aviationist, 22 luglio 2026: il primo F-35 polacco costruito a Cameri ha volato", "url": "https://theaviationist.com/2026/07/22/first-polish-f-35-built-at-cameris-faco-has-flown/"},
+        {"titolo": "Breaking Defense, marzo 2024: F-35A officially certified to carry nuclear bomb", "url": "https://breakingdefense.com/2024/03/exclusive-f-35a-officially-certified-to-carry-nuclear-bomb/"},
+        {"titolo": "Valori, 2026: Leonardo, l'assemblea e i nodi su Israele, armi nucleari e F-35", "url": "https://valori.it/leonardo-assemblea-2026-israele-nucleare-f35/"},
+        {"titolo": "Startmag: le nuove risorse per gli F-35 nel DPP della Difesa", "url": "https://www.startmag.it/innovazione/ecco-le-nuove-risorse-per-gli-f-35-nel-dpp-della-difesa/"},
+        {"titolo": "Formiche, maggio 2025: F-35, il Belgio guarda all'Italia", "url": "https://formiche.net/2025/05/f-35-il-belgio-guarda-allitalia-e-cameri-diventa-snodo-strategico-europeo/"},
+        {"titolo": "Breaking Defense, febbraio 2026: Belgium wants additional F-35 jets to be as European as possible", "url": "https://breakingdefense.com/2026/02/belgium-wants-additional-f-35-jets-to-be-as-european-as-possible-says-defense-minister/"}
       ]
     },
     {
       "id": "la-spezia-oto",
       "nome": "Leonardo (ex OTO Melara) — La Spezia",
-      "lat": 44.1097,
-      "lon": 9.8225,
+      "lat": 44.1102,
+      "lon": 9.8593,
       "regione": "Liguria",
       "comune": "La Spezia",
-      "azienda": "Leonardo S.p.A. (Divisione Sistemi di Difesa)",
-      "tipo": "Sistemi cannone navali, sistemi terrestri",
+      "azienda": "Leonardo S.p.A., Divisione Elettronica. Il sito ex OTO Melara è anche sede operativa della joint venture Leonardo Rheinmetall Military Vehicles (LRMV)",
+      "tipo": "Sistemi cannone navali, veicoli corazzati terrestri (LRMV)",
       "produzione": [
-        "Cannone navale 76/62 Super Rapid (montato su navi di oltre 60 marine nel mondo)",
+        "Cannone navale 76/62 Super Rapid",
         "Cannone navale 127/64 Lightweight",
-        "Sistema antimissile DART"
+        "Munizionamento guidato DART per il sistema 76/62 Strales"
       ],
-      "destinazioni_documentate": [
-        "Marine NATO, Arabia Saudita, Egitto, Indonesia, Algeria, vari paesi del Golfo"
-      ],
+      "destinazioni_documentate": [],
       "casi_documentati": [],
-      "occupazione": "Circa 1.000 addetti diretti",
+      "occupazione": "Circa 900 addetti e circa mille nell'indotto (dato sindacale, novembre 2021)",
       "problemi_ambientali": [
         "La Spezia è anche sede dell'arsenale militare della Marina e di un'intensa attività industriale dual-use"
       ],
-      "fonti": ["Leonardo — bilancio annuale", "SIPRI Arms Industry Database"]
+      "fonti": [
+        {"titolo": "Leonardo: The Strales 76mm system with DART guided ammunition", "url": "https://www.leonardo.com/en/press-release-detail/-/detail/the-strales-76mm-system-with-dart-guided-ammunition"},
+        {"titolo": "Leonardo, Sintesi di bilancio 2025", "url": "https://www.leonardo.com/documents/15646808/30043445/LDO_SintesiDiBilancio2025_ITA230326b.pdf/4303d0a2-1d8b-483c-940e-99fb3cf19bf5?t=1774348601312"},
+        {"titolo": "SIPRI Fact Sheet: The SIPRI Top 100 Arms-producing and Military Services Companies, 2024", "url": "https://www.sipri.org/sites/default/files/2025-11/fs_2512_top_100_2024.pdf"},
+        {"titolo": "Città della Spezia, 16 giugno 2026: il nuovo carro sarà costruito all'Oto Melara", "url": "https://www.cittadellaspezia.com/2026/06/16/a-parigi-esposto-il-nuovo-carrarmato-per-lesercito-che-sara-costruito-alloto-melara-658950/"},
+        {"titolo": "MBDA Italia, le sedi italiane (sezione carriere)", "url": "https://www.mbda-systems.com/country-it/careers/vuoi-unirti-noi"},
+        {"titolo": "Rete Italiana Pace e Disarmo, 9 aprile 2026: la Relazione 185/90 sul 2025", "url": "https://retepacedisarmo.org/2026/nuovo-record-di-vendita-di-armi-italiane-nel-2025-ben-91-miliardi-di-autorizzazioni-allexport/"},
+        {"titolo": "Conquiste del Lavoro, 14 novembre 2021: Oto Melara, scioperi e presidi", "url": "https://www.conquistedellavoro.it/vertenze/oto-melara-scioperi-e-presidi-contro-lo-smembramento-1.2729961"}
+      ]
     },
     {
       "id": "gardone-beretta",
@@ -97,110 +117,128 @@
       "lon": 10.1903,
       "regione": "Lombardia",
       "comune": "Gardone Val Trompia (BS)",
-      "azienda": "Fabbrica d'Armi Pietro Beretta S.p.A.",
-      "tipo": "Armi leggere (pistole, fucili, mitragliatrici)",
+      "azienda": "Fabbrica d'Armi Pietro Beretta S.p.A. (gruppo Beretta Industrie, Beretta Holding)",
+      "tipo": "Armi leggere (pistole, fucili)",
       "produzione": [
-        "Pistole semiautomatiche (M9, APX, 92FS)",
+        "Pistole semiautomatiche (92FS, APX)",
         "Fucili automatici (ARX-160)",
         "Carabine, fucili da caccia e sportivi"
       ],
       "destinazioni_documentate": [
-        "Forze armate USA (pistola M9 in dotazione US Army per 30 anni)",
-        "Forze armate italiane",
-        "Polizie e forze armate di oltre 100 paesi"
+        "Forze armate USA: pistola M9 adottata nel 1985 e sostituita dal 2017 dalla SIG Sauer M17/M18; prodotta in stabilimenti Beretta USA, non a Gardone.",
+        "Forze armate italiane"
       ],
       "casi_documentati": [
-        "Distretto armi Val Trompia: ~300 aziende coinvolte, circa 6.000 addetti totali",
-        "Tradizione armiera plurisecolare; oggi è il principale polo europeo dell'arma leggera"
+        "Distretto armi della Val Trompia: 110 aziende produttrici, altrettante di munizioni e componenti e più di 5.000 addetti (stima 2018).",
+        "Tradizione armiera plurisecolare."
       ],
-      "occupazione": "Circa 2.700 addetti diretti Beretta + indotto di 6.000",
+      "occupazione": "940 dipendenti della Fabbrica d'Armi Pietro Beretta e 1.436 nel gruppo Beretta Industrie (bilancio 2025).",
       "problemi_ambientali": [],
       "fonti": [
-        "OPAL Brescia — Osservatorio Permanente sulle Armi Leggere",
-        "Beretta Holding — bilancio annuale"
+        {"titolo": "QuiBrescia, 16 settembre 2026: Beretta chiude il 2025 con 473 milioni di ricavi", "url": "https://www.quibrescia.it/aziende/2026/09/16/gardone-valtrompia-beretta-il-gruppo-chiude-il-2025-con-473-milioni-di-ricavi/840018"},
+        {"titolo": "Forbes Italia, 12 novembre 2018: come nasce un distretto dell'eccellenza italiana", "url": "https://forbes.it/2018/11/12/come-nasce-un-distretto-delleccellenza-italiana/"},
+        {"titolo": "American Rifleman: Beretta lascia il Maryland per il Tennessee", "url": "https://americanrifleman.org/content/anatomy-of-a-move-an-in-depth-look-at-beretta-s-decision-to-leave-maryland-for-tennessee"},
+        {"titolo": "Military Times, 29 novembre 2017: la nuova pistola dell'Esercito USA", "url": "https://www.militarytimes.com/news/your-army/2017/11/29/in-a-first-the-armys-new-handgun-will-be-issued-to-team-leaders"}
       ]
     },
     {
       "id": "genova-fincantieri",
-      "nome": "Fincantieri Sestri Ponente",
-      "lat": 44.4231,
-      "lon": 8.8478,
+      "nome": "Fincantieri, cantiere integrato Riva Trigoso-Muggiano",
+      "lat": 44.2574,
+      "lon": 9.4291,
       "regione": "Liguria",
-      "comune": "Genova — Sestri Ponente",
-      "azienda": "Fincantieri S.p.A. (controllata Cassa Depositi e Prestiti)",
-      "tipo": "Navi militari e dual-use",
+      "comune": "Sestri Levante (GE) e La Spezia",
+      "azienda": "Fincantieri S.p.A. (controllata da CDP Equity con circa il 64%)",
+      "tipo": "Navi militari",
       "produzione": [
         "Fregate FREMM",
         "Pattugliatori d'altura (PPA)",
-        "Portaerei e LHD (es. Trieste)",
+        "LHD Trieste, varata a Castellammare di Stabia nel 2019 e allestita in Liguria",
         "Sottomarini (in collaborazione con ThyssenKrupp)"
       ],
       "destinazioni_documentate": [
         "Marina Militare Italiana",
-        "USA (Constellation class — vinta gara 2020)",
-        "Qatar (corvette), Egitto (2 FREMM, 2022), Indonesia (FREMM)"
+        "USA: classe Constellation, assegnata nel 2020 a Fincantieri Marine Group e costruita in Wisconsin; quattro navi su sei cancellate dalla US Navy il 25 novembre 2025.",
+        "Qatar (corvette), Egitto (2 FREMM, consegnate fra dicembre 2020 e aprile 2021), Indonesia (2 PPA, consegnate nel luglio e nel dicembre 2025)"
       ],
       "casi_documentati": [
-        "Vendita Egitto: 2 FREMM ex Marina Militare cedute al regime di al-Sisi nel 2020 — contestata da Amnesty International e dalla famiglia Regeni"
+        "Vendita all'Egitto: 2 FREMM costruite per la Marina Militare cedute con accordo del 2020, contestata da Amnesty International Italia e dai genitori di Giulio Regeni."
       ],
-      "occupazione": "Circa 1.500 addetti diretti Sestri",
+      "occupazione": "Circa 1.300 addetti a Riva Trigoso e 1.600 al Muggiano",
       "problemi_ambientali": [],
       "fonti": [
-        "Fincantieri — bilancio annuale",
-        "Amnesty International Italia — dossier vendita fregate Egitto"
+        {"titolo": "Fincantieri, 2026: cantiere integrato di Riva Trigoso e Muggiano", "url": "https://www.fincantieri.com/it/newsroom/news-e-comunicati-stampa/2026/fondazione-fincantieri-e-societa-al-cantieri-integrato-di-riva-trigoso-e-muggiano-la-consegna-degli-attestati-dei-corsi-di-lingua-italiana-per-lavoratori-stranieri"},
+        {"titolo": "Fincantieri, marzo 2026: tripla cerimonia a Sestri Ponente per Explora Journeys", "url": "https://www.fincantieri.com/it/newsroom/news-e-comunicati-stampa/2026/oggi-tripla-cerimonia-fincantieri-e-explora-journeys-a-sestri-ponente-varo-tecnico-di-explora-iv-posa-della-moneta-di-explora-v-e-taglio-della-prima-lamiera-di-explora-vi"},
+        {"titolo": "Fincantieri, Investor relations: azionariato", "url": "https://www.fincantieri.com/en/investor-relations/fincantieri-in-borsa"},
+        {"titolo": "Naval News, aprile 2021: la seconda FREMM per l'Egitto raggiunge Alessandria", "url": "https://www.navalnews.com/naval-news/2021/04/second-italian-built-fremm-delivered-to-egypt-reaches-alexandria/"},
+        {"titolo": "Naval News, novembre 2025: Constellation-class Frigate Program Cancelled", "url": "https://www.navalnews.com/naval-news/2025/11/constellation-class-frigate-program-cancelled-u-s-navy-looking-for-faster-procurement-of-alternatives/"},
+        {"titolo": "Sky TG24, 13 giugno 2020: i genitori di Regeni sulle navi all'Egitto", "url": "https://tg24.sky.it/politica/2020/06/13/giulio-regeni-famiglia-navi-egitto"},
+        {"titolo": "Ministero della Difesa: a Castellammare di Stabia il varo di Nave Trieste", "url": "https://www.difesa.it/primopiano/marina-militare-a-castellammare-di-stabia-il-varo-di-nave-trieste/60587.html"},
+        {"titolo": "Naval News, dicembre 2024: Italy's New Trieste LHD, Technical Overview", "url": "https://www.navalnews.com/naval-news/2024/12/italys-new-trieste-lhd-technical-overview/"},
+        {"titolo": "Naval News, luglio 2025: Fincantieri consegna KRI Brawijaya", "url": "https://www.navalnews.com/?p=75010"},
+        {"titolo": "Janes: Indonesia receives second Brawijaya-class vessel", "url": "https://www.janes.com/osint-insights/defence-news/sea/indonesia-receives-second-brawijaya-class-vessel"}
       ]
     },
     {
       "id": "roma-leonardo",
       "nome": "Leonardo — sede e stabilimenti Roma",
-      "lat": 41.8997,
-      "lon": 12.4581,
+      "lat": 41.9185,
+      "lon": 12.4686,
       "regione": "Lazio",
       "comune": "Roma",
-      "azienda": "Leonardo S.p.A. (Cassa Depositi e Prestiti 30,2%)",
+      "azienda": "Leonardo S.p.A. (Ministero dell'Economia e delle Finanze 30,2%)",
       "tipo": "Holding industria difesa italiana",
       "produzione": [
         "Sede principale del primo gruppo italiano della difesa",
-        "Tra i top 10 mondiali per fatturato armi (SIPRI)",
-        "Ricavi 2023: ~15,3 miliardi €, di cui >70% da difesa"
+        "Dodicesimo gruppo al mondo per ricavi da armamenti nel 2024: 13,83 miliardi di dollari (SIPRI)",
+        "Ricavi 2025: circa 19,5 miliardi di euro, 71% dal mercato difesa"
       ],
       "destinazioni_documentate": [
-        "Oltre 150 paesi clienti"
+        "Presenza in circa 150 paesi"
       ],
       "casi_documentati": [
         "Leonardo è socio AIAD (Federazione Aziende Italiane Aerospazio Difesa Sicurezza)",
-        "Partecipazione in MBDA (missili), Eurofighter, Telespazio, GEM Elettronica"
+        "Partecipazioni: MBDA 25%, Telespazio 67%. Dal marzo 2026 controlla al 100% GEM Elettronica e la difesa Iveco (IDV e Astra).",
+        "Leonardo: 54,09% delle autorizzazioni 2025 ex legge 185/90, secondo Rete Italiana Pace e Disarmo."
       ],
-      "occupazione": "Circa 50.000 dipendenti globali, ~30.000 in Italia",
+      "occupazione": "62.762 dipendenti a fine 2025, di cui 38.320 in Italia",
       "problemi_ambientali": [],
       "fonti": [
-        "Leonardo — bilancio annuale",
-        "SIPRI Top 100 Arms Companies"
+        {"titolo": "CONSOB, azionariato di Leonardo S.p.A.", "url": "https://www.consob.it/web/consob-and-its-activities/w/leonardo-spa-azionariato"},
+        {"titolo": "Leonardo, Sintesi di bilancio 2025", "url": "https://www.leonardo.com/documents/15646808/30043445/LDO_SintesiDiBilancio2025_ITA230326b.pdf/4303d0a2-1d8b-483c-940e-99fb3cf19bf5?t=1774348601312"},
+        {"titolo": "SIPRI Fact Sheet: The SIPRI Top 100 Arms-producing and Military Services Companies, 2024", "url": "https://www.sipri.org/sites/default/files/2025-11/fs_2512_top_100_2024.pdf"},
+        {"titolo": "Rete Italiana Pace e Disarmo, 9 aprile 2026: la Relazione 185/90 sul 2025", "url": "https://retepacedisarmo.org/2026/nuovo-record-di-vendita-di-armi-italiane-nel-2025-ben-91-miliardi-di-autorizzazioni-allexport/"},
+        {"titolo": "Defaiya, 24 marzo 2026: Leonardo completa l'acquisizione di GEM Elettronica", "url": "https://www.defaiya.com/news/Defense%20News/North%20America/2026/03/24/leonardo-completes-acquisition-of-gem-elettronica"},
+        {"titolo": "Defaiya, 20 marzo 2026: Leonardo completa l'acquisizione della difesa Iveco", "url": "https://www.defaiya.com/news/Defense%20News/North%20America/2026/03/20/leonardo-completes-acquisition-of-iveco-group-s-defence-business"}
       ]
     },
     {
-      "id": "pomezia-mbda",
-      "nome": "MBDA Italia — Pomezia",
-      "lat": 41.6692,
-      "lon": 12.5006,
+      "id": "roma-mbda",
+      "nome": "MBDA Italia, sede di Roma",
+      "lat": 41.9315,
+      "lon": 12.6114,
       "regione": "Lazio",
-      "comune": "Pomezia (RM)",
+      "comune": "Roma",
       "azienda": "MBDA Italia (controllata da Leonardo 25%, Airbus 37,5%, BAE Systems 37,5%)",
       "tipo": "Missili e sistemi missilistici",
       "produzione": [
         "Missili Aster 15/30 (sistema antimissile SAMP/T)",
-        "Missili antinave Teseo",
-        "Missili anticarro Spike",
-        "Sistemi missilistici per Eurofighter"
+        "Missili antinave Teseo (sito della Spezia)"
       ],
       "destinazioni_documentate": [
         "Forze armate europee, NATO",
-        "Sistemi SAMP/T forniti all'Ucraina (2023-) da Italia e Francia"
+        "Batteria SAMP/T fornita all'Ucraina da Italia e Francia nel 2023; sistema del consorzio Eurosam (MBDA Italia, MBDA France, Thales)."
       ],
       "casi_documentati": [],
-      "occupazione": "Circa 1.500 addetti diretti",
+      "occupazione": "Oltre 2.000 persone in Italia, su tutti i siti; circa 400 alla Spezia",
       "problemi_ambientali": [],
-      "fonti": ["MBDA — sito ufficiale", "Leonardo — bilancio annuale"]
+      "fonti": [
+        {"titolo": "MBDA Italia, le sedi italiane (sezione carriere)", "url": "https://www.mbda-systems.com/country-it/careers/vuoi-unirti-noi"},
+        {"titolo": "Liguria Business Journal, 20 marzo 2025: MBDA in Italia", "url": "https://liguria.bizjournal.it/2025/03/20/mbda-in-italia-in-forte-espansione-nel-2024-ricavi-800-mln-ordini-acquisiti-3-mld-portafoglio-ordini-sopra-i-6-mld/"},
+        {"titolo": "ANSA Liguria, 13 ottobre 2026: MBDA alla Spezia", "url": "https://www.ansa.it/liguria/notizie/2026/10/13/difesa-mbda-tocca-quota-500-addetti-alla-spezia-e-cerca-personale_f411e481-89af-4019-afd9-8e847d9bf213.html"},
+        {"titolo": "Leonardo, Sintesi di bilancio 2025", "url": "https://www.leonardo.com/documents/15646808/30043445/LDO_SintesiDiBilancio2025_ITA230326b.pdf/4303d0a2-1d8b-483c-940e-99fb3cf19bf5?t=1774348601312"},
+        {"titolo": "Il Post, 7 settembre 2024: il ritardo italiano sulla difesa antiaerea all'Ucraina", "url": "https://www.ilpost.it/2024/09/07/italia-ritardo-armi-difesa-ucraina/"}
+      ]
     }
   ]
 }

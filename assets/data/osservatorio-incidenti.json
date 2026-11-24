@@ -1,6 +1,6 @@
 {
   "categoria": "incidenti",
-  "descrizione": "Incidenti e casi documentati legati alla presenza militare USA / NATO sul suolo italiano. Vittime civili italiane causate o coperte dall'immunità giurisdizionale prevista dalla Convenzione di Londra del 1951 (SOFA — Status of Forces Agreement).",
+  "descrizione": "Incidenti e casi documentati legati alla presenza militare in Italia o a operazioni militari nei cieli italiani, con le conseguenze giudiziarie per le vittime. La Convenzione di Londra del 1951 regola la giurisdizione sui militari NATO: non è un'immunità.",
   "items": [
     {
       "id": "ustica-1980",
@@ -14,20 +14,29 @@
       "base_collegata": null,
       "sintesi": "Il volo IH 870 della compagnia Itavia, un DC-9 in volo da Bologna a Palermo con 77 passeggeri e 4 membri di equipaggio, precipita nel Mar Tirreno meridionale, a metà strada fra le isole di Ponza e Ustica. Muoiono tutte le 81 persone a bordo. Il relitto giace per anni a 3.700 metri di profondità; viene parzialmente recuperato a partire dal 1987.",
       "esito_giudiziario": [
-        "Inchieste giudiziarie e parlamentari durate oltre 40 anni, in larga parte ostacolate da depistaggi, falsi testimoniali e «morti sospette» dei militari italiani che ebbero accesso ai tracciati radar.",
-        "Sentenza della Corte d'Appello civile di Roma (28 gennaio 2013) e Corte di Cassazione (28 gennaio 2013): è ormai «giudizialmente accertato» che il DC-9 fu abbattuto nel corso di una «azione di guerra» — un missile o una quasi-collisione — in un teatro affollato di velivoli militari NATO (francesi, statunitensi) impegnati in un'operazione contro un caccia libico, possibilmente con a bordo Mu'ammar Gheddafi.",
-        "Lo Stato italiano è stato condannato a risarcire i familiari delle vittime per non aver protetto adeguatamente lo spazio aereo civile e per aver omesso informazioni rilevanti (sentenze civili 2008, 2011, 2013): oltre 100 milioni di euro complessivi.",
-        "Nessun militare straniero è mai stato processato per i fatti. La giurisdizione penale italiana fu di fatto neutralizzata."
+        "Inchieste giudiziarie e parlamentari durate oltre 40 anni, segnate da depistaggi definitivamente accertati in sede civile. In sede penale i generali dell'Aeronautica imputati sono stati assolti in via definitiva nel gennaio 2007.",
+        "In sede civile la Cassazione (III sezione, n. 1871 del 28 gennaio 2013) ha confermato la decisione della Corte d'appello di Palermo, ritenendo motivata la tesi del missile; nell'ottobre 2013 ha definito ormai consacrata in giurisprudenza la tesi di un missile sparato da un aereo ignoto. Le nazionalità dei velivoli e i responsabili non sono stati accertati: la Procura di Roma, nel 2025, parlava di jet di nazionalità non accertata o di una quasi collisione.",
+        "I ministeri della Difesa e dei Trasporti sono stati condannati a risarcire i familiari per non aver garantito la sicurezza del volo. Il Tribunale di Palermo nel 2011 ha riconosciuto in primo grado oltre 100 milioni di euro; in appello parte del diritto al risarcimento è stata dichiarata prescritta. Per Itavia la Corte d'appello di Roma ha liquidato 265 milioni, cifra rimessa al vaglio della Cassazione.",
+        "Nessun militare straniero è mai stato processato. L'inchiesta penale, aperta a Roma nel 2008 contro ignoti, ha visto una richiesta di archiviazione, ritirata dalla Procura il 30 settembre 2026 dopo la disponibilità della Francia a trasmettere documenti; il 2 ottobre 2026 il gip di Roma ha restituito gli atti ai pm per nuovi accertamenti. L'inchiesta è aperta e non ci sono indagati."
       ],
-      "risarcimenti": "Decine di milioni di euro a famiglie delle vittime, pagati interamente dallo Stato italiano (mai dai responsabili militari stranieri).",
-      "rilevanza": "Caso simbolo della sovranità italiana negata sui propri cieli: un aereo civile italiano fu coinvolto in un'operazione militare straniera condotta sul territorio nazionale all'insaputa del governo, e i responsabili non sono mai stati identificati. Il Presidente della Repubblica Francesco Cossiga, nel 2008, riconobbe pubblicamente la responsabilità dei militari francesi.",
+      "risarcimenti": "Risarcimenti a carico dello Stato italiano. In primo grado a Palermo, nel 2011, oltre 100 milioni di euro; gli importi definitivi non risultano dagli atti consultati. Nessun pagamento da parte di Stati esteri risulta dagli atti consultati.",
+      "rilevanza": "A oltre quarant'anni dai fatti i responsabili non sono stati identificati e in sede penale la causa non è accertata: la giustizia civile ha ritenuto motivata la tesi del missile, la Procura di Roma esamina anche quella della bomba a bordo. La giustizia civile ha condannato lo Stato per non aver protetto il volo e ha accertato depistaggi; le richieste di collaborazione a paesi alleati hanno prodotto pochi risultati fino al 2026. Nel 2008 Francesco Cossiga, presidente emerito, attribuì il fatto a un missile francese: è una sua dichiarazione, da cui è nata la nuova inchiesta, non un fatto accertato, e le autorità francesi hanno smentito la presenza della Clemenceau nel Tirreno.",
       "fonti": [
-        "Wikipedia, «Strage di Ustica» — voce ampiamente documentata",
-        "Sentenze: Corte d'Appello Roma sez. I civile, 28 gennaio 2013; Corte di Cassazione, sentenza 28 gennaio 2013",
-        "Associazione Parenti delle Vittime della Strage di Ustica (stragi80.it) — archivio completo atti",
-        "Daria Bonfietti — Presidente Associazione, autrice di numerose pubblicazioni sul caso",
-        "Museo per la Memoria di Ustica, Bologna (museomemoriaustica.it)",
-        "Dichiarazioni del PdR Francesco Cossiga, 2008 (responsabilità francese)"
+        {"titolo": "Cassazione civile, sez. III, 28 gennaio 2013, n. 1871 (massima)", "url": "https://miolegale.it/massime/risarcimento-strage-ustica-cassazione/"},
+        {"titolo": "Cassazione civile, sez. III, ottobre 2013, ricorso Itavia (PDF della sentenza)", "url": "https://www.leggioggi.it/wp-content/uploads/2013/10/cassazione-sentenza-ustica.pdf"},
+        {"titolo": "Tribunale di Palermo, sez. III civile, sentenza del 2011 (giudice Proto Pisani), testo integrale", "url": "https://www.stragi80.it/documenti/civile/palermo11.pdf"},
+        {"titolo": "ANSA, Nessun colpevole per Ustica, il pm chiede due archiviazioni, 5 marzo 2025", "url": "https://www.ansa.it/sito/notizie/cronaca/2025/03/05/al-vaglio-del-gip-di-roma-le-due-richieste-di-archiviazione-su-ustica_d3e61ca5-02b3-4d74-8084-bb90c74c5de7.html"},
+        {"titolo": "Il Post, È stata ritirata la richiesta di archiviazione per la strage di Ustica, 30 settembre 2026", "url": "https://www.ilpost.it/2026/09/30/ritiro-richiesta-archiviazione-strage-ustica/"},
+        {"titolo": "Il Fatto Quotidiano, Ustica, il gip di Roma non archivia e dispone nuove indagini, 2 ottobre 2026", "url": "https://www.ilfattoquotidiano.it/2026/10/02/ustica-gip-roma-inchiesta-nuove-indagini-notizie/8525818/"},
+        {"titolo": "Associazione Parenti delle Vittime della Strage di Ustica", "url": "https://www.stragi80.it/"},
+        {"titolo": "Museo per la Memoria di Ustica", "url": "https://www.museomemoriaustica.it/"},
+        {"titolo": "Italy Magazine, Generals definitively acquitted in Ustica crash case", "url": "https://www.italymagazine.com/featured-story/generals-definitively-acquitted-ustica-crash-case"},
+        {"titolo": "Corriere della Sera, Ministeri condannati a risarcire 100 milioni, 13 settembre 2011", "url": "https://www.stragi80.it/allegati/rassegnastampa/corr130911.pdf"},
+        {"titolo": "Il Fatto Quotidiano, Strage di Ustica, ministeri condannati in appello, 15 aprile 2015", "url": "https://www.ilfattoquotidiano.it/2015/04/15/strage-ustica-ministeri-condannati-in-appello-attesa-per-risarcimenti/1594789/"},
+        {"titolo": "Panorama, Ustica, l'ultimo scandalo è sui risarcimenti", "url": "https://www.panorama.it/attualita/ustica-lultimo-scandalo-e-sui-risarcimenti"},
+        {"titolo": "ANSA, Verso il no all'archiviazione su Ustica, 30 settembre 2026", "url": "https://www.ansa.it/sito/notizie/cronaca/2026/09/30/ustica-lo-voi-nuove-prospettive-per-lindagine_5f6a555c-269b-43ff-ad4d-c5f69b30998f.html"},
+        {"titolo": "Adnkronos, Strage di Ustica, svolta nell'inchiesta: gli atti tornano alla Procura", "url": "https://www.adnkronos.com/cronaca/strage-ustica-atti-procura-svolta-inchiesta_6UYxKWoPrP9og9Qk536kgQ"},
+        {"titolo": "Open, Strage di Ustica, Cossiga nel 2008 e le accuse alla Francia, 2 settembre 2023", "url": "https://www.open.online/2023/09/02/strage-ustica-cossiga-2008-accuse-francia-amato-sapeva/"}
       ]
     },
     {
@@ -40,20 +49,25 @@
       "comune": "Cavalese (TN)",
       "vittime": 20,
       "base_collegata": "aviano",
-      "sintesi": "Un aereo militare statunitense Grumman EA-6B Prowler del Corpo dei Marines USA, decollato dalla base di Aviano in volo di addestramento a bassa quota e in violazione dei regolamenti, taglia con un'ala il cavo portante della funivia del Cermis. La cabina precipita per 80 metri. Muoiono tutti e 20 i passeggeri (turisti tedeschi, polacchi, austriaci, belgi, olandesi, italiani).",
+      "sintesi": "Un aereo militare statunitense Grumman EA-6B Prowler del Corpo dei Marines, decollato dalla base di Aviano per una missione di addestramento nazionale USA a bassissima quota, trancia con la semiala destra le funi della funivia del Cermis. La cabina precipita per oltre 80 metri. Muoiono tutte le 20 persone a bordo: 19 passeggeri e il manovratore, di nazionalità tedesca, belga, italiana, polacca, austriaca e olandese.",
       "esito_giudiziario": [
-        "La Convenzione di Londra del 1951 (SOFA — Status of Forces Agreement NATO) attribuisce la giurisdizione esclusiva agli Stati Uniti.",
-        "Il capitano Richard Ashby e il capitano Joseph Schweitzer sono assolti dall'accusa di omicidio colposo plurimo dalla corte marziale USA nel marzo 1999.",
-        "Vengono condannati solo per «ostruzione alla giustizia» per aver distrutto la videocassetta dell'incidente; congedo con disonore.",
-        "Nel 2012 Schweitzer confessa pubblicamente: «Ho bruciato la cassetta»."
+        "La Convenzione di Londra del 1951 (art. VII, par. 3) prevede una giurisdizione concorrente e assegna allo Stato di origine la priorità per i reati commessi nell'esercizio del servizio. L'Italia chiese agli Stati Uniti di rinunciare a tale priorità e la richiesta fu respinta. Il 13 luglio 1998 il gip di Trento dichiarò il difetto di giurisdizione.",
+        "Il pilota è assolto da corte marziale a Camp Lejeune il 4 marzo 1999 dalle accuse di omicidio colposo; le stesse accuse contro il navigatore vengono poi ritirate, senza processo.",
+        "Per la distruzione della videocassetta il pilota è condannato nel maggio 1999 a sei mesi e alla radiazione; il navigatore, dichiaratosi colpevole, è radiato senza detenzione. Il pilota sconta circa quattro mesi e mezzo.",
+        "Nel 2012, secondo L'Espresso, il navigatore ha ammesso di aver bruciato la cassetta dopo il rientro ad Aviano."
       ],
-      "risarcimenti": "Il Parlamento italiano stanzia inizialmente ~40 milioni di dollari per i risarcimenti, ma il Segretario alla Difesa USA respinge lo stanziamento. L'Italia paga interamente, gli USA rimborsano in un secondo momento il 75% in base agli obblighi NATO.",
-      "rilevanza": "Caso simbolo dell'impunità garantita dal SOFA ai militari USA in Italia: in caso di reati commessi nell'esercizio del servizio, l'Italia rinuncia automaticamente alla propria giurisdizione.",
+      "risarcimenti": "Nel maggio 1999 il Congresso USA ha respinto un fondo per le famiglie. L'Italia ha previsto un indennizzo fino a 3,8 miliardi di lire per ogni vittima (legge 21 dicembre 1999, n. 497). In base all'art. VIII della Convenzione di Londra il 75% degli indennizzi spetta allo Stato di origine e il 25% allo Stato ospitante; il Segretario alla Difesa USA pro tempore si impegnò nel 1998 a rimborsare il 75%.",
+      "rilevanza": "Il caso mostra il limite della Convenzione di Londra: per gli atti compiuti in servizio la priorità spetta allo Stato di origine. L'Italia chiese la rinuncia e non la ottenne. Nessuno è stato condannato per le venti morti.",
       "fonti": [
-        "Wikipedia, «Incidente della funivia del Cermis» (it.wikipedia.org/wiki/Incidente_della_funivia_del_Cermis)",
-        "Convenzione di Londra, 19 giugno 1951 (NATO SOFA), artt. VII",
-        "Atti del processo della Corte marziale USA, Camp Lejeune, marzo 1999",
-        "Commissione parlamentare di inchiesta sulla strage del Cermis (Camera dei deputati, XIII legislatura)"
+        {"titolo": "Camera dei deputati, XIII legislatura, Commissione d'inchiesta sulle responsabilità relative alla tragedia del Cermis, relazione conclusiva, Doc. XXII-bis n. 1, 2001", "url": "https://www.stava1985.it/wp-content/uploads/2019/12/Relazione_Cermis.pdf"},
+        {"titolo": "Camera dei deputati, Doc. XXII-bis n. 1, copia della Camera (parte iniziale)", "url": "https://legislature.camera.it/_dati/leg13/lavori/documentiparlamentari/indiceetesti/xxiibis/001/pdf000.pdf"},
+        {"titolo": "NATO, Agreement between the Parties to the North Atlantic Treaty regarding the Status of their Forces, 19 giugno 1951", "url": "https://www.nato.int/en/about-us/official-texts-and-resources/official-texts/1951/06/19/agreement"},
+        {"titolo": "Normattiva, legge 30 novembre 1955, n. 1335", "url": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:1955-11-30;1335"},
+        {"titolo": "Normattiva, legge 21 dicembre 1999, n. 497, indennizzi per la funivia del Cermis", "url": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:1999-12-21;497"},
+        {"titolo": "CBS News, Cable car Marine acquitted", "url": "https://www.cbsnews.com/news/cable-car-marine-acquitted/"},
+        {"titolo": "CBS News, Marine pilot gets 6 months", "url": "https://www.cbsnews.com/news/marine-pilot-gets-6-months/"},
+        {"titolo": "CBS News, Military jury dismisses Marine pilot", "url": "https://www.cbsnews.com/news/military-jury-dismiss-marine"},
+        {"titolo": "Wikipedia, 1998 Cavalese cable car crash (fonte secondaria, rimanda a L'Espresso del 20 gennaio 2012 e ad AFP)", "url": "https://en.wikipedia.org/wiki/1998_Cavalese_cable_car_crash"}
       ]
     },
     {
@@ -61,24 +75,29 @@
       "nome": "Casi di violenze sessuali — soldati USA, Vicenza",
       "lat": 45.5483,
       "lon": 11.5471,
-      "data": "Casi ricorrenti documentati 2007-oggi",
+      "data": "Casi documentati dal 2004 al 2016",
       "regione": "Veneto",
       "comune": "Vicenza",
       "vittime": null,
       "base_collegata": "vicenza-ederle",
-      "sintesi": "Vicenza ospita la principale concentrazione di truppe USA da combattimento in Italia: la 173rd Airborne Brigade (Camp Ederle e Caserma Del Din). La stampa locale e nazionale ha documentato negli anni numerosi casi di violenza sessuale, aggressione e omicidio commessi da militari statunitensi stanziati nelle basi vicentine ai danni di civili italiani, in genere donne italiane.",
+      "sintesi": "Vicenza ospita la 173ª Brigata aviotrasportata USA (caserme Ederle e Del Din). I tribunali italiani hanno condannato in primo grado militari statunitensi di stanza in città per violenza sessuale: un militare nel 2006, a 5 anni e 8 mesi, per lo stupro di una donna nigeriana nel 2004; due parà nel 2015, a 6 anni, per lo stupro di una donna romena; uno dei due nel 2016, a 7 anni e mezzo, per lo stupro di una minorenne.",
       "esito_giudiziario": [
-        "La giurisdizione su reati commessi 'fuori servizio' resta in linea teorica italiana, ma in pratica il Comando USA può negoziare il trasferimento del militare negli Stati Uniti prima dell'esercizio dell'azione penale italiana.",
-        "Molti casi vengono archiviati per impossibilità di rintracciare l'imputato dopo il rientro negli USA.",
-        "Le associazioni cittadine vicentine («Presidio Permanente No Dal Molin», centri antiviolenza) denunciano da anni una sotto-rappresentazione mediatica e processuale del fenomeno."
+        "Per i reati fuori servizio la priorità di giurisdizione spetta all'Italia, ma gli Stati Uniti chiedono di norma la rinuncia e il ministero della Giustizia decide. Nel 2014 il ministro della Giustizia pro tempore rifiutò: i due parà furono processati in Italia.",
+        "Dopo la condanna del 2006 il militare fu trasferito in Germania e poi negli Stati Uniti."
       ],
-      "risarcimenti": "Risarcimenti spesso non corrisposti per impossibilità di completare i procedimenti.",
-      "rilevanza": "La presenza di una base USA da combattimento nel cuore di una città italiana di 110.000 abitanti rende la convivenza con civili italiani un problema strutturale, non aneddotico.",
+      "risarcimenti": "Risarcimenti stabiliti in sentenza: 100.000 euro nel caso del 2006 e in quello del 2016, secondo la stampa. L'effettivo pagamento non è documentato.",
+      "rilevanza": "Il caso mostra come il regime della Convenzione di Londra incida in concreto: la scelta se processare un militare straniero per un reato fuori servizio è in larga parte politica e amministrativa, e passa dal ministero della Giustizia.",
       "fonti": [
-        "Today.it — «Soldati USA accusati di stupro a Vicenza» (today.it/citta/vicenza-soldati-usa-stupro.html)",
-        "Presidio Permanente No Dal Molin — archivio dei casi documentati 2007-oggi",
-        "Convenzione di Londra 1951 (NATO SOFA), art. VII §3 (giurisdizione concorrente)",
-        "Atti consiglio comunale Vicenza — interrogazioni 2017-2024"
+        {"titolo": "Today.it, Vicenza, soldati Usa accusati di stupro: «Processateli qui», 2014", "url": "https://www.today.it/citta/vicenza-soldati-usa-stupro.html"},
+        {"titolo": "ANSA, U.S. soldiers accused of rape to face Italian justice, 25 luglio 2014", "url": "https://www.ansa.it/english/news/general_news/2014/07/25/u.s.-soldiers-rape-trial-to-be-in-italy_bd9e56a7-e25c-4ba1-8af3-93da4caa3f18.html"},
+        {"titolo": "ANSA, Stuprò minorenne, soldato Usa condannato, 23 febbraio 2016", "url": "https://www.ansa.it/veneto/notizie/2016/02/23/stupro-minorenne-soldato-usa-condannato_13caaf95-83c6-426c-b3f5-ec1a8dcb65a5.html"},
+        {"titolo": "Stars and Stripes, 2 Italy-based soldiers sentenced to 6 years for rape convictions, 21 aprile 2015", "url": "https://www.stripes.com/news/2015-04-21/2-italy-based-soldiers-sentenced-to-6-years-for-rape-convictions-1812801.html1"},
+        {"titolo": "Stars and Stripes, Soldier convicted of Vicenza rape will be free pending appeal, 10 marzo 2006", "url": "https://www.stripes.com/news/2006-03-10/soldier-convicted-of-vicenza-rape-will-be-free-pending-appeal-1923809.html1"},
+        {"titolo": "Il Post, Chi giudica i militari di altri paesi che commettono reati in Italia, 23 agosto 2022", "url": "https://www.ilpost.it/2022/08/23/omicidio-giovanni-zanier-porcia-reati-giudice-miliari-stranieri/"},
+        {"titolo": "VICE, Le violenze dei soldati americani a Vicenza", "url": "https://www.vice.com/it/article/vicenza-soldati-usa-stupro-391/"},
+        {"titolo": "NATO, Agreement between the Parties to the North Atlantic Treaty regarding the Status of their Forces, 19 giugno 1951", "url": "https://www.nato.int/en/about-us/official-texts-and-resources/official-texts/1951/06/19/agreement"},
+        {"titolo": "ANSA, U.S. soldier gets seven years for rape, 23 febbraio 2016", "url": "https://www.ansa.it/amp/english/news/general_news/2016/02/23/u.s.-soldier-gets-seven-years-for-rape_e44b875a-4cc2-404c-831f-acc643b01553.html"},
+        {"titolo": "Corte costituzionale, sentenza n. 446 del 1990, sulla facoltà di rinuncia alla giurisdizione", "url": "https://giurcost.org/decisioni/1990/0446s-90.html"}
       ]
     }
   ]
